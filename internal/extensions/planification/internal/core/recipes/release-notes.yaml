@@ -1,0 +1,11 @@
+# Release notes: the work a release's gate files for its change log
+# (ready-to-release/changelog-updated): what the release ships, listed for its
+# users in the open change-log page, before the person confirms it at the gate.
+# The template for a maintain request that meets a release (resolves).
+name: release-notes
+description: List what a release ships for its users in the change log.
+kind: maintain
+resolves: [release]
+transition: done
+steps:
+  - {name: changelog, phase: release, class: deliver, role: documenter, instructions: "List the user-visible changes of the release's targets in the open change-log page (docs/confluence-tew/changelog/<version>.md): one entry per change, in French, by what the user gets, each naming its request; the person then confirms the gate's requirement."}

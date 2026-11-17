@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Contexte
+  description: >-
+    Comment les objets d'un type sont réunis à travers l'arbre et présentés à
+    un agent — l'héritage que résout object-context — réglé par la section
+    `context:` du type.

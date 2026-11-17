@@ -1,0 +1,11 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Critère d'acceptation
+  description: >-
+    Une affirmation testable et atomique d'un cas d'usage : une seule sonde, à
+    une seule couche — la plus petite unité que la méthode juge. Un objet à
+    part entière, pas un enregistrement dans une liste : c'est le critère
+    lui-même qu'on juge. Le verdict n'est pas ici : le critère dit ce qui doit
+    être vrai et comment le vérifier ; s'il est passé appartient à l'exécution
+    qui l'a vérifié.

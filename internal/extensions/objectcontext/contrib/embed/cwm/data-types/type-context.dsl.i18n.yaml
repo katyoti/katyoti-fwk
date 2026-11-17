@@ -1,0 +1,17 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TypeContext:
+      fields:
+        briefing_fields:
+          description: 'Champs d''un objet de ce type repris dans son brief'
+        injected_objects:
+          description: 'Objets que tout objet de ce type porte avant ceux de l''arbre'
+        override_key:
+          description: 'Le champ sur lequel s''appliquent closest-wins et accumulate-with-local-override'
+        propagation:
+          description: 'Jusqu''où les objets de ce type portent dans l''arbre : inherit-from-ancestors | propagate-to-ancestors | local | local-visible-up | per-criterion ; local si vide'
+        resolution_strategy:
+          description: 'Comment se combinent les objets concurrents de ce type : accumulate | closest-wins | accumulate-with-local-override | local-only | per-criterion-override ; accumulate si vide'

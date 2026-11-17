@@ -1,0 +1,23 @@
+id: base-types/number-basic
+category: base-types
+title: Number — basic
+description: A plain number field with no content type. Renders as a number input.
+schema:
+  name: number-basic-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      label: Number basic
+      fields:
+        quantity:
+          type: number
+          label: Quantity
+          description: Plain number, no content type.
+          default: 0
+value: {}
+mode: edit
+tags:
+  - base-types
+  - number

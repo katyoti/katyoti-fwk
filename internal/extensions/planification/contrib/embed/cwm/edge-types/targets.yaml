@@ -1,0 +1,17 @@
+name: targets
+from: request
+to: release
+cardinality: N:1
+from_capabilities: []
+to_capabilities: [release]
+target: object
+object_storage: edges
+description: |
+  A request AIMS at the increment or release it ships in. One per request;
+  retargeting replaces the edge. Renaming or re-versioning a release moves
+  every target with it: the edge names the release, never a version string.
+  A frozen release takes no new target but a fix (the planification service refuses
+  it; a lint and the release gate catch one added behind its back). A module
+  object carries none: the increment or release takes it (the takes edge); the service writes this edge only from a
+  request.
+inverse_name: targeted-by

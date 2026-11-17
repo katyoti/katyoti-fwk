@@ -1,0 +1,65 @@
+name: compose-skill
+label: Compose Skill
+icon: "📋"
+icon_name: clipboard-list
+fields: ktw-compose:/data-type/compose-skill
+allowed_children:
+    - use-case
+    - test-case
+    - decision
+    - document
+accept_parents:
+    - composition
+description_max_chars: 600
+actions:
+    - uri: ktw-compose:tasks/compose-artifact
+      label: Compose
+      description: Author or iterate this skill — interview to a clear intention, then write and verify the SKILL.md.
+      kind: ai
+      icon: puzzle
+    - uri: ktw-agents:cwm/object-verify
+      label: Verify
+      description: Verify the skill — run every acceptance check under it and report what passed, failed or is unproven.
+      kind: sync
+      icon: checks
+    - uri: ktw-compose:tasks/test-skill
+      label: Test
+      description: Run the skill end-to-end against a scenario and score it on the six skill dimensions.
+      kind: ai
+      icon: flask-conical
+    - uri: ktw-compose:tasks/evaluate-session
+      label: Evaluate
+      description: Evaluate a finished run from its session journals — metrics + scored verdict.
+      kind: sync
+      icon: chart-bar
+hooks:
+    lint:
+        - uri: ktw-methods:methods/file-exists
+          input:
+              path: "${object.fields.skill_file}"
+        - uri: ktw-methods:methods/markdown-frontmatter
+          input:
+              path: "${object.fields.skill_file}"
+        - uri: ktw-methods:methods/frontmatter-keys
+          input:
+              keys:
+                  - name
+                  - description
+              path: "${object.fields.skill_file}"
+        - uri: ktw-methods:methods/non-empty
+          input:
+              path: "${object.fields.skill_file}"
+        - uri: ktw-compose:compose/lint-skill
+          input:
+              path: "${object.fields.skill_file}"
+agent:
+    system:
+        - id: type-context:compose-skill
+          text: |
+              This node is a SKILL being authored. Its `fields.skill_file`
+              points at the SKILL.md; object-lint runs the declared linters over it and
+              lists any format findings, object-verify runs its acceptance checks. Fix every
+              error-severity finding and get object-verify green before marking the
+              deliverable done — the skill-format contract is part of the gate.
+verification:
+    gate_blocks_on: warn

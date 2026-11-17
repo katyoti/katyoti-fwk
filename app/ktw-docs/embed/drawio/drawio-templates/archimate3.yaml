@@ -1,0 +1,11 @@
+# A template library: bindings and constants for the templates in the .drawio file of
+# the same name. Edit the shapes in draw.io; a template is a cell marked ktw-template.
+id: archimate3
+displayName: ArchiMate 3 (standard colours)
+description: 'Every ArchiMate 3.2 element as a box with its icon, in the standard colours: strategy ochre,
+  business yellow, application blue, technology and physical green, motivation purple, implementation
+  and migration pink; the eleven relationships in their standard line and arrow styles.'
+notation: ktw-docs:/notation/archimate3
+bindings:
+  flLinks:
+    expr: 'join(map(attributes.fl_codes ?? [], {(#index == 0 ? '''' : (#index % 3 == 0 ? ''<br>'' : '' / '')) + ''<a href="'' + (#.url ?? '''') + ''">'' + #.code + ''</a>''}), '''')'

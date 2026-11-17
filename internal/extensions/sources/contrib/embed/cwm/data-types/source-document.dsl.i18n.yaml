@@ -1,0 +1,52 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    SourceDocument:
+      fields:
+        anchor_status:
+          label: 'Statut de l''ancrage'
+        content_hash:
+          description: 'Motif attendu : sha256:<64 caractères hexadécimaux>.'
+          label: 'Empreinte du contenu'
+        content_snapshot:
+          description: 'Le texte de la section ancrée tel que lu, 3 500 caractères au plus, coupé pour que le document tienne dans le max_size_bytes de son type.'
+          label: 'Extrait du contenu'
+        generated:
+          label: 'Généré'
+          description: 'Le document a été produit par un générateur (marqué par son connecteur).'
+        generator:
+          label: 'Générateur'
+          description: 'Ce qui a produit le document (par ex. katyoti).'
+        item_key:
+          label: 'Clé de l''élément'
+          description: 'La clé de l''élément choisi pour lequel une synchronisation l''a apporté (l''id d''une page, d''une fiche) : le détail d''une source relie ses éléments à leurs documents par elle. Absente quand son connecteur ne la dit pas.'
+        item_kind:
+          label: 'Sorte d''élément'
+          description: 'Ce qu''est l''élément qu''une synchronisation a apporté, dans les mots de son connecteur : ses données suivent le type de données que le connecteur déclare pour cette sorte.'
+        data_file:
+          label: 'Fichier de données'
+          description: 'Les données de l''élément (JSON), relatives au projet.'
+        data_type:
+          label: 'Type de données'
+          description: 'Le type de données que suivent les données de l''élément.'
+        text_file:
+          label: 'Fichier texte'
+          description: 'Le texte de l''élément (markdown riche, ses images à côté), relatif au projet.'
+        ingested_at:
+          label: 'Ingéré le'
+        ingested_by:
+          description: 'Nom du persona ou du processus.'
+          label: 'Ingéré par'
+        last_reanchor_at:
+          label: 'Dernier réancrage le'
+        section_anchor_legacy:
+          description: 'Ancre numérique (par ex. « section-3.2 ») : acceptée mais signalée comme fragile.'
+          label: 'Ancre de section (ancien format)'
+        section_path:
+          description: 'Fil d''Ariane des titres (par ex. ["Authentication", "Rate Limits"]). Plus stable que les ancres numériques face aux réécritures du document.'
+          label: 'Chemin de section'
+        source_uri:
+          description: 'URI stable de la source. Exemples : - confluence://Space/Page#Heading - gdrive://docID - file:///docs/spec.md - https://example.com/spec'
+          label: 'URI de la source'

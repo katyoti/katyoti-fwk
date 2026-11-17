@@ -1,0 +1,11 @@
+# What the planner learned of a module's relations to other modules: for each
+# reads-module / writes-module edge the module carries, the planned object
+# whose step showed it, that step's task, and when a step last showed it. An
+# edge no step showed for long is stale; the code lint checks the edges
+# against the code.
+name: module-uses
+label: Module uses
+description: >-
+  The module edges the planner learned from the steps it submitted — reads or
+  writes another module — who showed each and when it was last seen.
+schema: ktw-agents:/data-type/cap-module-uses

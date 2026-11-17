@@ -1,0 +1,8 @@
+# One of CWM's own hook points, declared like any other: an extension opens
+# a point of its own by shipping a hook-type file beside its hooks.
+name: before_update
+label: Before update
+description: >-
+  Before an object is written over. Synchronous: the first entry that does not accept refuses the write.
+timing: before
+answer: accept

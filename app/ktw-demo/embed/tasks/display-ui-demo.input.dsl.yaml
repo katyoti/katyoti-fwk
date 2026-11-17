@@ -1,0 +1,17 @@
+name: display-demo-input
+root: DisplayDemoInput
+types:
+  DisplayDemoInput:
+    type: object
+    fields:
+      topic:
+        type: string
+        label: "Topic"
+        description: "What the UI demo should be about (e.g. 'a small library', 'project status')"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Run demo"
+        groups:
+          - title: "Topic"
+            fields: [topic]

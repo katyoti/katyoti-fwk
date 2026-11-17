@@ -1,0 +1,33 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: archimate3-application-cooperation
+displayName: ArchiMate — application cooperation
+description: Applications, their services and the data they exchange, read left to right.
+notation: ktw-docs:/notation/archimate3
+templates: ktw-docs:/drawio-template/archimate3
+page: default
+elements:
+- ApplicationComponent
+- ApplicationCollaboration
+- ApplicationInterface
+- ApplicationFunction
+- ApplicationInteraction
+- ApplicationProcess
+- ApplicationEvent
+- ApplicationService
+- DataObject
+- Location
+- Grouping
+- Junction
+relationships:
+- flow
+- serving
+- access
+- realization
+- assignment
+- composition
+- aggregation
+- triggering
+- association
+layout:
+  algorithm: layered
+  direction: RIGHT

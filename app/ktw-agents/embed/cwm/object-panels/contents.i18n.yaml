@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Contenu
+  description: Tout ce qui est rangé sous cet objet, par type, avec son état

@@ -1,0 +1,11 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Fonctionnalité
+  description: >-
+    Le côté OFFRE : une capacité que l'on construit, priorise et planifie. Une
+    fonctionnalité n'a pas de valeur de vérité propre : elle est FAITE ou NON ;
+    savoir si ce qu'elle livre est VRAI appartient aux besoins qu'elle sert —
+    c'est pourquoi elle affiche un ratio sur ses cas d'usage plutôt qu'un
+    verdict. Les séparer permet d'ordonner l'une par coût du retard et de
+    noter l'autre par une sonde.

@@ -1,0 +1,13 @@
+name: planned-for
+from: increment
+to: release
+cardinality: N:1
+to_capabilities: [release]
+target: object
+object_storage: edges
+description: |
+  An increment is PLANNED FOR a later release of its stream: an intention, not
+  an assignment - it ships only in its stream's next release (ships-in). Once
+  that release is the next, one action ships every increment planned for it;
+  a dropped release returns them to the backlog.
+inverse_name: planned

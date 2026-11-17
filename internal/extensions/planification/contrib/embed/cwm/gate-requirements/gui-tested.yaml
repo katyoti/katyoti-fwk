@@ -1,0 +1,14 @@
+# A feature that changes a screen is done only with a GUI test by element ids
+# on a scenario case: a feature whose module's code is
+# the GUI or the display library, or which realizes a file there or a pack's
+# object panel, needs a criterion running a live GUI test (a tests/live/ script)
+# whose last verdict passed. A feature tagged no-screen (it changes none: a
+# code removal, a guard) is not held, unless it realizes screen code or a
+# criterion serving it runs a live GUI test. Blocks the feature's finish and
+# verify moves.
+name: gui-tested
+label: A feature that changes a screen has passed its GUI test by element ids on a scenario case
+gate: ready-to-test
+applies: {types: [feature]}
+uri: ktw-agents:planning/gui-tested
+resolve: {title: "Write and run the GUI test by element ids of {object} on a scenario case", kind: build}

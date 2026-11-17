@@ -1,0 +1,15 @@
+# The workflow of an approval request: it waits, then it is answered or
+# dismissed. The answer itself — approved, rejected, or free text — is the
+# request's `decision`; the state says only whether it still waits.
+name: approval-request
+label: Approval request
+description: >-
+  Pending until a person answers it or dismisses it; either ends it.
+initial: pending
+states:
+  - {name: pending, description: "Waiting for a person"}
+  - {name: answered, description: "Answered; the decision is in the request", terminal: true}
+  - {name: dismissed, description: "Dismissed without an answer", terminal: true}
+transitions:
+  - {name: answer, from: [pending], to: answered}
+  - {name: dismiss, from: [pending], to: dismissed}

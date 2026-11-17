@@ -1,0 +1,49 @@
+$schema: ktw-schema/v1
+name: rule
+version: "2.0.0"
+root: Rule
+description: |
+  The fields of a CWM `rule` object — a way of working stated once. The rule's
+  title is the object's name and its explanation the object's body; these
+  fields say what it states, how strongly, to whom and where it came from. A
+  lint or probe that enforces it is the object's `checkable` capability.
+types:
+  Rule:
+    type: object
+    fields:
+      statement:
+        type: string
+        label: Statement
+        description: The rule itself, in one or two imperative sentences ("MUST", "NEVER").
+      kind:
+        type: string@enum(constraint, recipe, reference, example)
+        label: Kind
+        description: A constraint is told to every agent in scope; a recipe, a reference or an example is fetched on demand.
+        default: constraint
+        optional: true
+      strength:
+        type: string@enum(pattern, rule, policy)
+        label: Strength
+        description: A pattern suggests, a rule guides, a policy enforces through its check.
+        default: rule
+        optional: true
+      severity:
+        type: string@enum(must, should, may)
+        label: Severity
+        default: must
+        optional: true
+      scope:
+        type: string@enum(module, repo)
+        label: Scope
+        description: module reaches the subtree of the module the rule sits in; repo reaches every module.
+        default: module
+        optional: true
+      tags:
+        type: string[]
+        label: Tags
+        optional: true
+      derived_from:
+        type: string[]
+        label: Derived from
+        description: Where the statement came from — a repo-relative path (the document it was taken from) or a document#anchor.
+        optional: true

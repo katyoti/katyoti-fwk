@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Thème de présentation
+  description: >-
+    La déclaration d'un thème de présentation - nom, couleurs et échelle de
+    tailles (jetons), polices, habillage, aspects et variantes des mises en
+    page, icônes, règles maison - telle qu'une extension la déclare. Ses
+    fichiers sont dans le dossier themes/<nom>/ du module.

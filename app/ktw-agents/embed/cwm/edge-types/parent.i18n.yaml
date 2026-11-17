@@ -1,0 +1,12 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    L'arbre, déclaré comme le genre d'arête qu'il est (identity-and-index.md §3) : toute
+    relation entre deux objets est une arête d'un genre déclaré, et celle-ci est stockée comme
+    le champ `parent` de l'objet GAUCHE. Elle n'apparaît jamais dans une liste `edges:` — un
+    genre stocké comme champ y est refusé, car stocké une fois veut dire stocké à un seul
+    endroit. Son jumeau côté nœud est `parent_id` ; celle-ci est le côté objet.
+  inverse_label: Enfant
+  label: Parent

@@ -1,0 +1,7 @@
+name: Look around the things panel
+description: A tour of the things panel.
+hashtags: [tour, fixture]
+steps:
+  - id: look
+    say: This is the things panel.
+    target: {guide: things.panel}

@@ -1,0 +1,11 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    PermissionAnswer:
+      fields:
+        decision:
+          description: 'Autoriser ou refuser l''acte, une fois ou toujours.'
+        rule:
+          description: 'La règle qu''un « toujours » garde : une de celles que la question propose, ou une de la personne.'

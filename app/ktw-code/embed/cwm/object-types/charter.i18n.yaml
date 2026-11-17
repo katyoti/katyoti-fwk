@@ -1,0 +1,12 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Charte
+  description: >-
+    La référence canonique d'un module. Surtout une cible de projection : seuls
+    les Concepts, le Glossaire et le contrat d'API publique sont rédigés et
+    gardés sur l'objet ; la table des cas d'usage, les critères de fin, les
+    décisions ouvertes, l'historique d'audit et les statistiques sont rendus à
+    la publication depuis leurs propres objets. `module charter publish <m>`
+    régénère `modules/<m>/charter.md` ; une retouche à la main d'une section
+    projetée est signalée par le lint comme une dérive.

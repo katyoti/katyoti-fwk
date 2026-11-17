@@ -1,0 +1,70 @@
+/* The scheduler console — Mantine's theme variables only, so dark and light
+   both hold; motion honours prefers-reduced-motion. */
+
+.sc-root { height: 100%; display: flex; flex-direction: column; min-height: 0; }
+.sc-scroll { flex: 1; min-height: 0; overflow: auto; padding: 14px 16px 32px; }
+.sc-mono { font-family: var(--mantine-font-family-monospace); font-variant-numeric: tabular-nums; }
+
+/* live layout */
+.sc-live { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 14px; align-items: start; margin-top: 14px; }
+@media (max-width: 1100px) { .sc-live { grid-template-columns: minmax(0, 1fr); } }
+.sc-lanes { display: grid; gap: 12px; min-width: 0; }
+.sc-slotbar { height: 6px; border-radius: 999px; background: var(--mantine-color-default-border); overflow: hidden; }
+.sc-slotbar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--mantine-color-violet-6), var(--mantine-color-blue-5)); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+.sc-slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.sc-free { border: 1.5px dashed var(--mantine-color-default-border); border-radius: 10px; min-height: 92px; display: grid; place-items: center; color: var(--mantine-color-dimmed); font-size: 12.5px; }
+
+/* a run tile */
+.sc-tile { all: unset; box-sizing: border-box; cursor: pointer; position: relative; overflow: hidden; display: grid; gap: 6px; min-height: 92px; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--mantine-color-default-border); background: var(--mantine-color-default); transition: transform .15s, box-shadow .15s; animation: sc-enter .5s cubic-bezier(.2,.8,.2,1); }
+.sc-tile:hover { transform: translateY(-1px); box-shadow: var(--mantine-shadow-md); }
+.sc-tile:focus-visible { outline: 2px solid var(--mantine-color-blue-5); outline-offset: 2px; }
+.sc-tile[data-state="running"] { border-color: color-mix(in srgb, var(--mantine-color-blue-5) 50%, var(--mantine-color-default-border));
+  background: linear-gradient(135deg, var(--mantine-color-blue-light) 0%, var(--mantine-color-violet-light) 100%); }
+.sc-tile[data-state="running"]::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--mantine-color-blue-5) 16%, transparent) 50%, transparent 70%);
+  transform: translateX(-100%); animation: sc-sweep 2.8s infinite; }
+.sc-tile[data-state="waiting"] { border-style: dashed; border-color: color-mix(in srgb, var(--mantine-color-orange-5) 60%, var(--mantine-color-default-border)); }
+.sc-tile[data-state="stopping"] { border-color: var(--mantine-color-orange-5); }
+.sc-tile[data-stuck="true"] { border-color: var(--mantine-color-yellow-5); }
+.sc-tile > * { position: relative; }
+.sc-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.sc-breathe { animation: sc-breathe 2.4s ease-in-out infinite; display: inline-block; }
+@keyframes sc-sweep { to { transform: translateX(100%); } }
+@keyframes sc-breathe { 50% { opacity: .35; } }
+@keyframes sc-enter { from { opacity: 0; transform: translateY(10px) scale(.96); } }
+
+/* the queue */
+.sc-queue { display: flex; flex-wrap: wrap; gap: 8px; }
+.sc-chip { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; padding: 4px 12px 4px 4px; border-radius: 999px; font-size: 12.5px;
+  border: 1px solid var(--mantine-color-default-border); background: var(--mantine-color-default); animation: sc-enter .45s ease; }
+.sc-chip:focus-visible { outline: 2px solid var(--mantine-color-blue-5); }
+.sc-pos { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 600;
+  background: var(--mantine-color-indigo-light); color: var(--mantine-color-indigo-light-color); font-family: var(--mantine-font-family-monospace); }
+
+/* the ticker */
+.sc-side { display: grid; gap: 12px; position: sticky; top: 0; }
+.sc-ticker { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; max-height: 460px; overflow: auto; }
+.sc-ev { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 8px; align-items: baseline; padding: 5px 6px; border-radius: 6px; font-size: 12.5px; animation: sc-enter .4s ease; }
+.sc-ev:first-child { background: var(--mantine-color-blue-light); }
+.sc-ev time { font-size: 11px; color: var(--mantine-color-dimmed); font-family: var(--mantine-font-family-monospace); }
+.sc-ev .sc-tr { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+
+/* the live dot */
+.sc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mantine-color-green-6); display: inline-block; flex: none; }
+.sc-dot[data-live="true"] { animation: sc-ping 1.8s infinite; }
+@keyframes sc-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--mantine-color-green-6) 55%, transparent); } 100% { box-shadow: 0 0 0 8px transparent; } }
+
+/* queues */
+.sc-mods { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+.sc-todo { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid var(--mantine-color-default-border); background: var(--mantine-color-default); }
+
+/* the run tree in the drawer */
+.sc-tree { display: grid; gap: 4px; }
+.sc-node { all: unset; box-sizing: border-box; cursor: pointer; display: flex; gap: 8px; align-items: center; padding: 5px 8px; border-radius: 7px; background: var(--mantine-color-default); font-size: 13px; }
+.sc-node[data-me="true"] { outline: 1.5px solid var(--mantine-color-blue-5); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-root *, .sc-root *::before { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@ktw/display-lib",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Schema-driven UI rendering library — schema AST, ui-core surfaces (action / components / filter / i18n), ui-builders (fields / form / view / table / wizard / page / drawio) co-located with their per-type implementations. Used by @ktw/display (iframe runtime) and by ktw-gui (direct React embed in the Wails webview). Peer of @ktw/ktsp-sdk.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts",
+    "./types": "./src/types/index.ts",
+    "./registry-wire": "./src/registry-wire.ts",
+    "./ui-core/*": "./src/ui-core/*",
+    "./ui-builders/*": "./src/ui-builders/*",
+    "./utils/*": "./src/utils/*"
+  },
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@mantine/charts": "^7.17.0",
+    "@mantine/core": "^7.17.0",
+    "@mantine/dates": "^7.17.8",
+    "@mantine/hooks": "^7.17.0",
+    "@tabler/icons-react": "^3.31.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.0",
+    "react-i18next": "^15.0.0",
+    "react-markdown": "^9.0.1",
+    "recharts": "^2.15.4",
+    "remark-gfm": "^4.0.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.20",
+    "i18next": "^23.15.0",
+    "reveal.js": "^5",
+    "reveal.js-plugins": "^4.6.0",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.0"
+  }
+}

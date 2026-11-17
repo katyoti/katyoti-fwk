@@ -1,0 +1,37 @@
+drawio (vendored)
+
+This directory contains vendored copies of artifacts from the draw.io
+project (https://github.com/jgraph/drawio).
+
+  Source:   https://github.com/jgraph/drawio
+  Vendored: 2026-05-08
+  License:  Apache License 2.0
+            https://github.com/jgraph/drawio/blob/dev/LICENSE
+
+Two vendored bundles:
+
+  ./viewer-static.min.js
+    Read-only viewer (~3.7 MB). Loaded on demand by DrawioView.tsx and
+    served at /widget/vendor/drawio/viewer-static.min.js. Used for the
+    streamed-diagram view-only mode (gui-drawio M1).
+
+  ./editor/  (gitignored — ~50 MB)
+    Full drawio editor webapp, minimum subset for embed mode. Loaded
+    by DrawioEditor.tsx via an iframe pointing at
+    /widget/vendor/drawio/editor/index.html?embed=1&proto=json&...
+    Used by gui-drawio-editor (B-Heavy) for in-place editing after the
+    diagram has finished streaming.
+
+    The editor bundle is NOT committed to git (would bloat history with
+    thousands of small static assets). Re-vendor on a fresh clone via:
+
+        cd app/ktw-display/vendor/drawio
+        ./setup-editor.sh        # bash / WSL / git-bash
+        ./setup-editor.ps1       # PowerShell
+
+    Both scripts do a sparse, depth-1 clone of jgraph/drawio and copy
+    the minimum subset required for embed mode.
+
+Upgrades: refetch from the source URL above and update the "Vendored"
+date. Files are copied byte-identical from upstream — no transformation
+applied.

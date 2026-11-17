@@ -1,0 +1,8 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.created
+label: Object created
+description: >-
+  An object was created. An async on_create entry subscribes to it.
+payload: system:/data-type/object-event
+point: on_create

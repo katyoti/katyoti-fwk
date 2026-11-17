@@ -1,0 +1,7 @@
+# Review: judge the quality of something — its findings are the deliverable.
+name: review
+description: Review and report findings.
+kind: review
+transition: done
+steps:
+  - {name: review, phase: verify, class: deliver, role: reviewer, skill: ktw-methods:/skill/audit-pass, instructions: "Review and report findings, each with its severity and where."}

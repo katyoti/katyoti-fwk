@@ -1,0 +1,65 @@
+# Forecast day — the schema for ktw-weather forecast rows. Mirrors
+# internal/extensions/weather/api/weather.go ForecastDay. Lets the
+# forecast render as a schema-bound table/view (URI:
+# ktw-weather:/data-type/forecast-day) alongside the chart page the
+# render-data-as-ui skill (ktw-methods) builds from get-forecast.
+name: forecast-day
+version: 1
+root: ForecastDay
+types:
+  ForecastDay:
+    type: object
+    label: Forecast day
+    idField: [date]
+    titleField: [date]
+    fields:
+      date:
+        type: string@date
+        label: "Date"
+        description: "Forecast date (YYYY-MM-DD)."
+      condition:
+        type: string
+        label: "Condition"
+        description: "Human-readable summary (sunny / cloudy / rainy / …)."
+      tempMax:
+        type: number
+        label: "High °C"
+        description: "Max temperature in degrees Celsius."
+      tempMin:
+        type: number
+        label: "Low °C"
+        description: "Min temperature in degrees Celsius."
+      precipitationMm:
+        type: number
+        label: "Rain (mm)"
+        description: "Total precipitation in millimeters."
+      windKmh:
+        type: number
+        label: "Wind (km/h)"
+        description: "Max wind speed in km/h."
+    extensions:
+      - type: ui-view
+        name: default
+        layout: detail-pane
+        groups:
+          - title: "Day"
+            cols: 2
+            fields: [date, condition]
+          - title: "Temperature"
+            cols: 2
+            fields: [tempMax, tempMin]
+          - title: "Conditions"
+            cols: 2
+            fields: [precipitationMm, windKmh]
+      - type: ui-table
+        name: default
+        columns:
+          - { id: date, label: "Date", sortable: true }
+          - { id: condition, label: "Condition" }
+          - { id: tempMax, label: "High °C", align: right, width: 90 }
+          - { id: tempMin, label: "Low °C", align: right, width: 90 }
+          - { id: precipitationMm, label: "Rain (mm)", align: right, width: 100 }
+          - { id: windKmh, label: "Wind (km/h)", align: right, width: 110 }
+        pagination: false
+        striped: true
+        highlightOnHover: true

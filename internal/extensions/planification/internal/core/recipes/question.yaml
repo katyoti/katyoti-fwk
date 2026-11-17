@@ -1,0 +1,8 @@
+# Question: another module (or a person) asks — an agent answers it with
+# requests Answer, which records the answer and makes the request done.
+name: question
+description: Answer the question; the answer is recorded on the request.
+kind: question
+transition: done
+steps:
+  - {name: answer, phase: inputs, class: deliver, role: specifier, instructions: "Answer the question: a decision, or the constraint that blocks it."}

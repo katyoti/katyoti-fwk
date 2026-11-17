@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Revues
+  description: "Les revues de cet objet : en lancer une, puis chacune avec son type, sa note et ses constats ouverts, les plus récentes d'abord"

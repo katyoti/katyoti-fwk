@@ -1,0 +1,18 @@
+# A periodic stream's timer comes due - or an on-change stream's, cutting what
+# waited past its minimum interval: the stream makes its next release from the
+# increments delivered since the last (streams cut). Nothing delivered,
+# nothing made.
+name: stream-cut
+description: >-
+  A stream's timer comes due - it makes its next release from the increments
+  delivered since the last.
+type: on_timer
+uri: ktw-agents:streams/cut
+async: {}
+filter:
+  types: [stream]
+input:
+  id: "${current.id}"
+  # release-due, the daily timer every stream carries, moves what is past its
+  # date instead of cutting.
+  timer: "${event.payload.timer}"

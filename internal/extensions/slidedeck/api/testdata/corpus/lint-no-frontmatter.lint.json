@@ -1,0 +1,8 @@
+[
+  {
+    "line": 1,
+    "rule": "frontmatter-missing",
+    "severity": "error",
+    "message": "a deck starts with a `---` frontmatter block holding at least `title:`"
+  }
+]

@@ -1,0 +1,8 @@
+# What a change-log entry says beside its title (the object's name) and its
+# text (the object's body).
+name: change
+label: Change
+description: >-
+  Its number on the pages, its domain, value, maturity and who it is for, the
+  modules it changed and the requests it delivers, and when it was recorded.
+schema: ktw-agents:/data-type/cap-change

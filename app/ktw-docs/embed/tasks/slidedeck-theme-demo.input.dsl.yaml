@@ -1,0 +1,18 @@
+name: slidedeck-theme-demo-input
+root: SlidedeckThemeDemoInput
+types:
+  SlidedeckThemeDemoInput:
+    type: object
+    fields:
+      theme:
+        type: string
+        label: "Thème"
+        description: "Le thème à voir, parmi les thèmes disponibles"
+        default: katyoti
+        content:
+          type: text
+          options_from:
+            source: catalog
+            kind: deck-theme
+            value: name
+            label: description

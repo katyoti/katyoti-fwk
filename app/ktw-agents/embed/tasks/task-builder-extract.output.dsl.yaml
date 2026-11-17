@@ -1,0 +1,21 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Same shape as task-builder-interview output — planner consumes either"
+    fields:
+      item_type:
+        type: string@enum(task, agent, skill, service, sidecar)
+      name:
+        type: string
+      purpose:
+        type: string
+      success_criteria:
+        type: string[]
+      constraints:
+        type: string[]
+      notes:
+        type: string
+        description: "Free-form: source files cited, structural observations"
+        optional: true

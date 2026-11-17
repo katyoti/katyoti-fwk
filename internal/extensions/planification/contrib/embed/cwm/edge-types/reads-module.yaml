@@ -1,0 +1,12 @@
+name: reads-module
+from_capabilities: [module]
+to_capabilities: [module]
+cardinality: M:N
+target: object
+object_storage: edges
+description: |
+  A module's work USES another module — its API, its documentation. Learned by
+  the planner from the steps it submits (a step's `reads`): props `observed_by`
+  (the planned object whose step showed it), `task`, `last_seen` (RFC 3339). An
+  edge no step used for long is stale; the code lint checks it against the code.
+inverse_name: read-by

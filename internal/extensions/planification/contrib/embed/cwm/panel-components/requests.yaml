@@ -1,0 +1,2 @@
+# A named view of the GUI's ui-components registry (panel-component kind).
+description: "The work asked of a module: its requests, read from the request service by the view itself."

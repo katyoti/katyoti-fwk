@@ -1,0 +1,56 @@
+name: compose-task
+label: Compose Task
+icon: "📋"
+icon_name: list-check
+fields: ktw-compose:/data-type/compose-task
+allowed_children:
+    - use-case
+    - test-case
+    - decision
+    - document
+accept_parents:
+    - composition
+description_max_chars: 600
+actions:
+    - uri: ktw-compose:tasks/compose-artifact
+      label: Compose
+      description: Author or iterate this task — interview to a clear intention, then write and verify the TASK.md.
+      kind: ai
+      icon: puzzle
+    - uri: ktw-agents:cwm/object-verify
+      label: Verify
+      description: Verify the task — run every acceptance check under it and report what passed, failed or is unproven.
+      kind: sync
+      icon: checks
+hooks:
+    lint:
+        - uri: ktw-methods:methods/file-exists
+          input:
+              path: "${object.fields.task_file}"
+        - uri: ktw-methods:methods/markdown-frontmatter
+          input:
+              path: "${object.fields.task_file}"
+        - uri: ktw-methods:methods/frontmatter-keys
+          input:
+              keys:
+                  - name
+                  - type
+                  - description
+              path: "${object.fields.task_file}"
+        - uri: ktw-methods:methods/non-empty
+          input:
+              path: "${object.fields.task_file}"
+        - uri: ktw-compose:compose/lint-task
+          input:
+              path: "${object.fields.task_file}"
+agent:
+    system:
+        - id: type-context:compose-task
+          text: |
+              This node is a TASK being authored. Its `fields.task_file` points at
+              the TASK.md; object-lint runs the declared linters over it and lists any format
+              findings, object-verify runs its acceptance checks. Fix every error-severity
+              finding and get object-verify green before marking the deliverable done — the
+              task-format contract is part of the gate.
+verification:
+    gate_blocks_on: warn

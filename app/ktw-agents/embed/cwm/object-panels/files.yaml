@@ -1,0 +1,24 @@
+# The files an object attaches — its `attaches` edges, each a path in its
+# module (ktw-methods' edge kind, checked to exist) — and its own named files
+# (a request's screenshot). A file is never an object: the edge or the named
+# file is the only link. The source (the object pane's AttachedFiles) lists
+# them; the GUI's `attached-files` view shows the list and opens one in place
+# through the display engine by its media type — markdown with its relative
+# images and diagrams drawn from the file's folder.
+name: "Files"
+description: "The files this object attaches or names, shown in place"
+icon:
+  tabler: "paperclip"
+  emoji: "📎"
+order: 15
+# Shown on an object that attaches a file or names a file of its own (a
+# request's screenshot): either is enough.
+filter:
+  when: "any(links, .kind == \"attaches\" && .direction == \"out\") || len(object.files) > 0"
+source: "ktw-agents:object-pane/attached-files"
+content:
+  kind: "extension"
+  extension: "attached-files"
+# Re-read when the object changes (an edge added or removed).
+refresh:
+  scope: "self"

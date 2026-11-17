@@ -1,0 +1,23 @@
+id: base-types/string-basic
+category: base-types
+title: String — basic
+description: A plain string field with no content type. Renders as a text input.
+schema:
+  name: string-basic-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      label: String basic
+      fields:
+        message:
+          type: string
+          label: Message
+          description: Plain string, no content type.
+value:
+  message: ""
+mode: edit
+tags:
+  - base-types
+  - string

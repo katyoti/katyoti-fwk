@@ -1,0 +1,19 @@
+# Every profile of the L2 case is served by the harness's fake model.
+default: l2fake
+
+profiles:
+  l2fake:
+    model: l2-fake
+    max_turns: 10
+  fast:
+    model: l2-fake
+    max_turns: 10
+  smart:
+    model: l2-fake
+    max_turns: 10
+  creative:
+    model: l2-fake
+    max_turns: 10
+  powerful:
+    model: l2-fake
+    max_turns: 10

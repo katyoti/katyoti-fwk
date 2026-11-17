@@ -1,0 +1,8 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Source modifiée
+  description: >-
+    Des éléments d'une source d'information ont changé à leur source : une
+    synchronisation les a lus avec un autre contenu ; la charge utile nomme la
+    source et les éléments.

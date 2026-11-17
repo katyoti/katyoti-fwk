@@ -1,0 +1,75 @@
+id: composites/onboarding-wizard
+category: composites
+title: Composite — Onboarding wizard (gui-action)
+description: OnboardingProfile schema with a 3-step ui-wizard extension. Each step is a synthesized UIForm filtered to that step's `fields[]`. State accumulates across steps; the final-step Save emits the merged value as a `submit` postMessage.
+schema:
+  name: onboarding-wizard-test
+  version: 1
+  root: OnboardingProfile
+  types:
+    OnboardingProfile:
+      type: object
+      label: Onboarding profile
+      idField:
+        - email
+      titleField:
+        - name
+      fields:
+        name:
+          type: string
+          label: Full name
+        email:
+          type: string
+          label: Email
+          content:
+            type: email
+        role:
+          type: string
+          label: Role
+        team:
+          type: string
+          label: Team
+        theme:
+          type: string
+          label: Theme
+          default: light
+        notify_email:
+          type: boolean
+          label: Email notifications
+          default: true
+        notify_inapp:
+          type: boolean
+          label: In-app notifications
+          default: true
+      extensions:
+        - type: ui-wizard
+          name: default
+          navigation: linear
+          steps:
+            - id: identity
+              title: Who are you?
+              description: The basics — name and how to reach you.
+              fields:
+                - name
+                - email
+            - id: role
+              title: Your role
+              description: Tell us about your work.
+              fields:
+                - role
+                - team
+            - id: preferences
+              title: Preferences
+              description: Set how you want to be notified.
+              fields:
+                - theme
+                - notify_email
+                - notify_inapp
+value: {}
+mode: create
+tags:
+  - composites
+  - object
+  - ui-wizard
+  - multi-step
+  - gui-action

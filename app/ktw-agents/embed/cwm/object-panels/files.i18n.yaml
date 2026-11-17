@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Fichiers
+  description: Les fichiers que cet objet joint, affichés sur place

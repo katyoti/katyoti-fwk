@@ -1,0 +1,20 @@
+name: close pull requests
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: close with the read-only notice
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr close "$PR" --repo "$REPO" --comment "Thank you. This repository is a read-only mirror of the KaTyoti releases: it takes no pull request. Contributions open with the katyoti/katyoti repository at version 0.11.0 (see CONTRIBUTING.md). To report a vulnerability, write to security@katyoti.ai."

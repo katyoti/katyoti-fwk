@@ -1,0 +1,50 @@
+# compose-edit — broader authoring profile for the compose wizard.
+#
+# The default `workspace-edit` profile only pre-approves writes whose
+# `workspace_path` dimension is set — i.e. paths rooted at the workspace SUBDIR
+# (`<wsRoot>/ktw_workspace`). The compose wizard (and the workers it delegates)
+# author files at a deliverable's `home`, which is typically OUTSIDE that subdir
+# (a sidecar's `embed/`, a doc at the repo root). For those, the file tools
+# present the path under the `absolute_path` dimension and route to Ask → in a
+# delegated worker (no human to answer) it is denied, forcing fragile
+# pandoc/scripts-run fallbacks (see the run-eval of session 019eda95).
+#
+# This profile additionally pre-approves the `absolute_path` dimension for the
+# read/write/edit tools, so authoring at the deliverable home is silent. It is a
+# trusted DEV-AUTHORING profile — broader than workspace-edit, still narrower
+# than full-access (no blanket non-file allow beyond bash + configured fetch).
+#
+# Select it per task with `permission_profile: compose-edit` in TASK.md; an
+# explicit --permission-profile (CLI) / GUI selection still wins.
+#
+# Dimension names are the ones the file tools actually emit (file_write/
+# file_read/file_edit permission.go): `workspace_path` (inside the workspace) or
+# `absolute_path` (outside). A rule keyed on a non-emitted dimension is dead —
+# only these two are live for the file tools.
+
+description: "Compose authoring: allow reads/writes at deliverable homes (incl. outside the workspace subdir); bash + configured fetch allowed."
+
+allow_rules:
+  # Reads — inside the workspace and at any absolute path (authoring inspects
+  # the repo tree + reads source artifacts wherever they live).
+  - "file-read.workspace_path:**"
+  - "file-read.absolute_path:**"
+
+  # Writes + edits — inside the workspace AND at any absolute path, so authoring
+  # at a deliverable `home` outside ktw_workspace/ is silent.
+  - "file-write.workspace_path:**"
+  - "file-write.absolute_path:**"
+  - "file-edit.workspace_path:**"
+  - "file-edit.absolute_path:**"
+
+  # Glob and grep over workspace-relative roots are silent.
+  - "glob.workspace_path:**"
+  - "grep.workspace_path:**"
+
+  # Bash commands are auto-allowed (authoring runs build/test/corpus checks).
+  - "bash:**"
+
+  # REST API fetch (configured endpoints only).
+  - "rest-api-fetch:**"
+
+deny_rules: []

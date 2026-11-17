@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Connaissance
+  description: >-
+    Les sources d'information et la base de connaissance propres à l'objet :
+    chaque source synchronisée dans son dossier input/, la base qui les
+    indexe, un chat qui y répond.

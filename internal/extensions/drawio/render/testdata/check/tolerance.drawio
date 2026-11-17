@@ -1,0 +1,11 @@
+<mxfile host="ktw-test"><diagram id="tolerance" name="tolerance"><mxGraphModel><root>
+<mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="x39a" value="MMMM" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="0.000" y="0.000" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="x39b" value="NNNN" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="36.084" y="0.000" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="x41a" value="MMMM" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="0.000" y="100.000" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="x41b" value="NNNN" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="35.884" y="100.000" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="y39a" value="MMMM" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="200.000" y="0.000" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="y39b" value="NNNN" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="200.000" y="10.500" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="y41a" value="MMMM" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="200.000" y="100.000" width="47.984" height="14.400" as="geometry"/></mxCell>
+<mxCell id="y41b" value="NNNN" style="text;html=1;strokeColor=none;fillColor=none;spacing=0;align=left;verticalAlign=middle;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="200.000" y="110.300" width="47.984" height="14.400" as="geometry"/></mxCell>
+</root></mxGraphModel></diagram></mxfile>

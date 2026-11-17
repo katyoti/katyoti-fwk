@@ -1,0 +1,18 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Ajouter une capacité à mon univers
+  description: Installez un sidecar depuis la Marketplace et branchez-le sur cet univers.
+  hashtags:
+  - capacité
+  - ajouter une capacité
+  - installer un sidecar
+  - marketplace
+  - brancher
+  steps:
+    open-marketplace: Ouvrez la {control:ribbon.marketplace} depuis le ruban.
+    install: Trouvez la capacité voulue et appuyez sur {control:marketplace.install} sur sa ligne.
+    wire: Sur la même ligne, appuyez sur la coche ({control:marketplace.wire}) pour l'utiliser dans cet univers.
+    wired: Une fois la capacité branchée, appuyez sur {control:guide.check}.

@@ -1,0 +1,8 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Avant la suppression d'un objet. Synchrone : la première entrée qui n'accepte pas refuse
+    la suppression. Un déplacement n'est pas une suppression.
+  label: Avant suppression

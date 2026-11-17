@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Des objets modifiés hors des verbes de CWM (un git pull ou merge, un éditeur, une copie en masse) ont été rattrapés à l'ouverture ou au scan du dépôt : un seul événement groupé nomme les ids ajoutés, modifiés et supprimés, la cause, l'acteur extérieur (l'auteur du commit et son sha) et leur nombre. À 50 objets ou moins, chacun reçoit aussi son événement d'objet (opération caught-up) ; au-delà, l'événement est dit retenu et les événements d'objet attendent l'appel de CatchUpRelease avec son id. Déclaré ; pas encore abonnable.
+  label: Objets rattrapés

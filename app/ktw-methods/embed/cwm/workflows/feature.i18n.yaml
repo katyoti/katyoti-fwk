@@ -1,0 +1,35 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Fonctionnalité
+  description: >-
+    Proposée, revue, acceptée par une personne, spécifiée par ses cas
+    d'usage, déclarée prête une fois challengée par une personne, construite —
+    et terminée seulement quand sa vérification est au vert.
+  states:
+    idea: Idée
+    proposed: Proposé
+    in-review: En revue
+    accepted: Accepté
+    active: En cours
+    done: Terminé
+    dropped: Abandonné
+    specified: Spécifié
+    ready: Prêt
+    realized: À vérifier par un agent
+  transitions:
+    propose: Proposer
+    review: Passer en revue
+    rework: Retravailler
+    accept: Accepter
+    start: Démarrer
+    finish: Terminer
+    drop: Abandonner
+    specify: Spécifier
+    ready: Déclarer prêt
+    respecify: Respécifier
+    verify: Vérifier
+    record-realized: Constater réalisé
+    confirm: Confirmer
+    reopen: Rouvrir
+    reopen-done: Rouvrir pour correction

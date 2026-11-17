@@ -1,0 +1,4 @@
+# TaskService configuration
+# Additional task directories (beyond embed/tasks/ and ~/.config/ktw-agents/tasks/)
+# extra_dirs:
+#   - /path/to/shared/tasks

@@ -1,0 +1,479 @@
+# Import discipline — the repo's import-boundary rules, as data.
+#
+# Path syntax (three forms, no glob engine):
+#   some/pkg/...     the package and everything beneath it
+#   .../name         any package whose final element is `name`
+#   some/pkg         that package exactly
+#
+# Fields per rule:
+#   forbid          import paths this rule bans
+#   except          packages allowed to import them anyway
+#   mode            direct  — who wrote the import (authorship discipline)
+#                   closure — who ends up linking it (link cost)
+#   include_tests   whether a test-only import counts as a violation
+#   doc             the rule document explaining WHY, cited in the failure
+#   hint            what to do instead, cited in the failure
+#
+# `mode: direct` and `mode: closure` answer different questions. Use direct for
+# "nobody should write this import"; use closure for "this package must not end
+# up carrying that weight", which catches a dependency arriving one hop away.
+
+rules:
+  - name: nats-message-bus-only
+    doc: modules/bus/rules/R-001-messagebus-only-never-the-nats-client.cwm.md
+    forbid:
+      - github.com/nats-io/nats.go/...
+      - github.com/nats-io/nats-server/v2/...
+    except:
+      - github.com/katyoti/katyoti-fwk/internal/kts/transport/nats/...
+    mode: direct
+    include_tests: false
+    hint: application code goes through the MessageBus interface
+
+  - name: nats-embedded-hub-only
+    doc: modules/bus/rules/R-003-only-ktw-hub-embeds-the-nats-server.cwm.md
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/kts/transport/nats/embedded/...
+    except:
+      - github.com/katyoti/katyoti-fwk/internal/kts/transport/nats/embedded/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+    mode: direct
+    include_tests: false
+    hint: sidecars use the lightweight parent transport/nats package (client only);
+      tests may spin up embedded buses and are exempt
+
+  # The parser lives at internal/core/schema/parser (the rule used to name
+  # internal/extensions/schema/internal/parser, a path that did not exist, so
+  # it guarded nothing — blind audit M8). The schema service is its one
+  # production reader; the baseline is the debt list of packages that still
+  # parse for themselves, meant to shrink.
+  - name: schema-parser-boundary
+    doc: modules/framework/decisions/OD-004-where-do-the-universe-s-data-types-live-and.cwm.md
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/core/schema/parser/...
+    except:
+      - github.com/katyoti/katyoti-fwk/internal/core/schema/parser/...
+      - github.com/katyoti/katyoti-fwk/internal/extensions/schema/internal/core
+      - github.com/katyoti/katyoti-fwk/internal/extensions/schema/local
+      - github.com/katyoti/katyoti-fwk/internal/extensions/schema/commands
+      # The datatype generator and the arch/census tests read the DSL to hold
+      # the Go side and the shipped declarations together; test-only readers.
+      - github.com/katyoti/katyoti-fwk/internal/core/contribution/...
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+    mode: direct
+    include_tests: true
+    hint: import schema/api — the lightweight Type AST and walker — or resolve the
+      data-type through the SchemaService, instead of parsing for yourself
+    baseline:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/actions/internal/core
+      - github.com/katyoti/katyoti-fwk/internal/extensions/cwm/local
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/internal/plugin/task
+      # test only: object_type_schema_test.go parses the object-type DSL
+      - github.com/katyoti/katyoti-fwk/internal/extensions/cwm/api
+
+  # Expressiveness check for the rule language: a boundary that was written down
+  # as a rule but never enforced, because it needs a `from` selector rather than
+  # an except-list — "packages shaped like X must not import Y".
+  # The scenario core is exempt from no-ktsp-in-internal for the case's hub
+  # only: its lifecycle (hubclient) and the calls through it (the messagebus
+  # sender, as the GUI reaches a universe); the rest of the framework stays out.
+  - name: scenario-core-reaches-only-the-hub
+    doc: modules/framework/rules/R-002-an-extension-s-internal-packages-import-no.cwm.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/scenario/internal/core
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/appcore/controlplane
+      - github.com/katyoti/katyoti-fwk/internal/appcore/busclient
+      - github.com/katyoti/katyoti-fwk/internal/appcore/sidecarkit
+      - github.com/katyoti/katyoti-fwk/internal/core/em
+    mode: direct
+    include_tests: false
+    hint: the scenario core reaches the case's hub (hubclient, its messagebus sender) and nothing else of the framework; wire anything else from its caller
+
+  - name: no-ktsp-in-internal
+    doc: modules/framework/rules/R-002-an-extension-s-internal-packages-import-no.cwm.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/internal/...
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/kts/protocol/ktsp/...
+      - github.com/katyoti/katyoti-fwk/internal/appcore/...
+      - github.com/katyoti/katyoti-fwk/internal/core/em
+    mode: direct
+    include_tests: false
+    hint: an extension's internal/ is pure domain logic — KTSP and framework wiring belong in local/
+    # PERMANENTLY allowed: packages whose DOMAIN is the transport. Forbidding
+    # KTSP here would be forbidding SQL in a database driver — there is no
+    # version of these packages that does not speak it, so they are not debt and
+    # must not sit in a backlog that implies they will one day be paid.
+    except:
+      # A connection manager's domain IS spawning sidecars and speaking KTSP to
+      # them; the protocol is the subject, not an implementation leak.
+      - github.com/katyoti/katyoti-fwk/internal/extensions/connmgr/internal/core
+      # A fake KTSP sidecar. KTSP is the thing it fakes.
+      - github.com/katyoti/katyoti-fwk/internal/extensions/connmgr/internal/testing/fakesidecar
+      # EventService is a facade OVER the message bus — the bus is what it
+      # exposes, expressed in EventURI terms.
+      - github.com/katyoti/katyoti-fwk/internal/extensions/events/internal/core
+      # A scenario case installs, starts, reaches and stops a sandboxed
+      # universe's hub, and finds the hubs a run leaked: the hub's lifecycle
+      # (hubclient: connect, spawn environment, lock files) and the calls into
+      # it are its subject; scenario-core-reaches-only-the-hub keeps the rest
+      # out. The installed control-plane path comes from its caller.
+      - github.com/katyoti/katyoti-fwk/internal/extensions/scenario/internal/core
+    # The real backlog: domain packages that reach into the framework. Each is a
+    # seam that belongs in local/, and the list is meant to SHRINK.
+    baseline:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/actions/internal/core
+      - github.com/katyoti/katyoti-fwk/internal/extensions/compose/internal/core
+      - github.com/katyoti/katyoti-fwk/internal/extensions/marketplace/internal/configure
+      - github.com/katyoti/katyoti-fwk/internal/extensions/marketplace/internal/core
+      - github.com/katyoti/katyoti-fwk/internal/extensions/orchestrator/internal/core
+
+  # An `api` package describes contracts and DTOs. It must not end up linking the
+  # application framework — closure mode, because the damage arrives one hop
+  # away: a package can import only permitted things and still carry appcore
+  # through an alias or a DTO that lives in the wrong place. A direct-import
+  # check passes such a package clean.
+  - name: api-packages-stay-light
+    doc: modules/contributions/features.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/api
+      - github.com/katyoti/katyoti-fwk/internal/appcore/*/api
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/appcore
+    mode: closure
+    include_tests: false
+    hint: move the shared DTO to a leaf package and alias DOWNWARD; an alias may
+      only point at a package lighter than the one declaring it
+
+  # A `remote` package is a consumer skeleton: it sends requests and decodes
+  # replies. It needs the KTSP consumer contract (kts/api), never the protocol
+  # implementation — the container, endpoint, engine, slot factory and stubs.
+  # Closure mode, so the boundary cannot be crossed indirectly.
+  # The orchestrator owns the universes and their projects; the marketplace
+  # installs programs and keys. The orchestrator reaches another universe's hub
+  # through connmgr/hubdial, never through a marketplace package.
+  - name: orchestrator-imports-no-marketplace
+    doc: modules/bus/tools.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/orchestrator/...
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/marketplace/...
+    mode: direct
+    include_tests: true
+    hint: reach another universe's hub through internal/extensions/connmgr/hubdial; move what both need to the package that owns it
+
+  - name: remote-uses-kts-api
+    doc: modules/contributions/tools.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/remote
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/kts/protocol/...
+    mode: closure
+    include_tests: false
+    hint: depend on internal/kts/api — the two-method Sender contract — not the protocol implementation
+
+  # A `contrib` package PUBLISHES content. It must never reach the runtime that
+  # CONSUMES that content — publishing a folder of definitions may not link the
+  # engine that interprets them. Closure mode, because the weight arrives
+  # indirectly: a provider importing one heavy helper drags that helper's whole
+  # graph into every binary that publishes the kind.
+  #
+  # This is the rule the milestone's largest finding produced: the guards are
+  # what keep it closed, since Go links by import and no runtime flag can undo it.
+  - name: contrib-publishes-only
+    doc: modules/contributions/tools.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/contrib
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/local
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/internal/core
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/internal/storage
+      - github.com/katyoti/katyoti-fwk/internal/appcore
+      # The runtimes no producer needs: the task engine (its subject builders
+      # are internal/kts/subjects), the agent and the orchestrator.
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/api/engine
+      - github.com/katyoti/katyoti-fwk/internal/extensions/agent/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/orchestrator/...
+    mode: closure
+    include_tests: false
+    hint: a producer depends on the contribution contract and a loader — never on the runtime for its kind
+
+  # The generic producer reads every kind from its declaration (the kind's
+  # `source:` block), so it links no kind's package: what a skill or a task is
+  # made of is data the kind states, never Go code the producer imports.
+  - name: producers-link-no-kind-package
+    doc: modules/contributions/contribution-types.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/contrib
+    # The packages of the kinds whose producers linked them (skill, task,
+    # persona, drawio, the CWM packs and the kinds of their extensions).
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/skills/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/personas/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/drawio/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/cwm/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/gates/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/guide/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/objectpane/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/objectcontext/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/scripts/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/internal/storage
+      - github.com/katyoti/katyoti-fwk/internal/core/el
+    mode: closure
+    include_tests: false
+    hint: declare how the kind's files become layers in its contribution-type (source:) instead of importing its package
+
+  # The sidecar kit is linked by EVERY sidecar, so an optional capability must not
+  # be imported here. Options carry a Feature supplied by the caller, which keeps
+  # the import in the binary that actually uses the capability.
+  - name: kit-holds-no-optional-features
+    doc: modules/contributions/tools.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/appcore/sidecarkit
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/cwm/...
+      - github.com/katyoti/katyoti-fwk/internal/extensions/scripts/...
+      # the agent RUNTIME, not agent/api — that is a light shared contract
+      # reached through appcore and the KTSP surface, and forbidding it would be
+      # forbidding the floor rather than the engine.
+      - github.com/katyoti/katyoti-fwk/internal/extensions/agent/local/...
+      - github.com/katyoti/katyoti-fwk/internal/extensions/agent/internal/...
+      - github.com/katyoti/katyoti-fwk/internal/models/internal/...
+    mode: closure
+    include_tests: false
+    hint: pass the capability as a Feature (e.g. WithScripts(scriptslocal.SidecarFeature())) so its package is imported by the caller
+
+  # A contributor - an extension's contrib package or a binary's bootstrap -
+  # links only the generic contribution stack: what it contributes is a pack of
+  # plain kinds, never a call into the package of the kind's owner. The owners
+  # (a target imported from its own extension), the hosts of a target (the
+  # binary that serves it) and the composition root are out of the rule; no
+  # contributor is baselined. internal/test/arch
+  # TestContributorsLinkNoTargetPackage holds every pair.
+  - name: contributors-link-no-target-package
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/*/contrib
+      - github.com/katyoti/katyoti-fwk/app/*/cmd
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/cwm/contrib
+      - github.com/katyoti/katyoti-fwk/internal/extensions/slidedeck/contrib
+      - github.com/katyoti/katyoti-fwk/internal/extensions/drawio/contrib
+      - github.com/katyoti/katyoti-fwk/internal/extensions/sources/contrib
+      - github.com/katyoti/katyoti-fwk/internal/extensions/sources/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/publications/contrib
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/api
+    except:
+      # owners: sources/contrib reads sources/api, task/contrib reads task/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/contrib
+      # the host of the deck themes and the drawio libraries
+      - github.com/katyoti/katyoti-fwk/app/ktw-docs/cmd
+      # the composition root
+      - github.com/katyoti/katyoti-fwk/app/ktw-agents/cmd
+    mode: direct
+    include_tests: false
+    hint: contribute the kind's files as a pack (ContributePack, the kit's default pack) instead of calling the target's helper
+
+  # ── Sidecar footprint, per binary class (e27) ─────────────────────────────
+  #
+  # The contribution system has a producer side every binary links (contract,
+  # kinds, producers, builder, ResourceService, the self catalog) and a
+  # consumer/aggregation/tooling side only some binaries need. Go links by
+  # import, so the only way to keep a sidecar light is to hold its CLOSURE.
+  # Measured: modules/contributions/_generated/sidecar-footprint.md;
+  # every package named here: modules/contributions/packages.md.
+  #
+  # Each rule selects a binary class by its main package AND its cmd package
+  # (the closure of either is the binary's). Closure mode: a stray arrives one
+  # hop away (e27 found manifest/local → manifest/remote linked into every
+  # sidecar through sidecarkit).
+
+  # Pure sidecars publish; they never consume the universe, aggregate it, lint
+  # it, wire host folders or carry test code.
+  - name: pure-sidecar-footprint
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/*
+      - github.com/katyoti/katyoti-fwk/app/*/cmd
+    except:
+      - github.com/katyoti/katyoti-fwk/app/ktw-agents/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-compose/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-gui/...
+      # ktw-docs has its own rule below: it reads the universe's catalog.
+      - github.com/katyoti/katyoti-fwk/app/ktw-docs/...
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/universe
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/remote
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/skills/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/compose/...
+      - github.com/katyoti/katyoti-fwk/internal/appcore/frozenhost
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+      # The validation stack does not ship in a sidecar (validation.md §1):
+      # the DSL parser is the aggregator's and the schema service's.
+      - github.com/katyoti/katyoti-fwk/internal/core/schema/parser/...
+    mode: closure
+    include_tests: false
+    hint: a pure sidecar links the producer side only — universe reach is
+      manifest/universe (consumers), linting is ktw-compose, aggregation is ktw-hub,
+      schema parsing is the SchemaService's; move the helper that pulled it into a leaf package
+
+  # A content sidecar talks on the bus and publishes its pack: it runs no task,
+  # no agent and no control plane, and reads no CWM store. The bus subject
+  # builders are a leaf (internal/kts/subjects) and the control plane's
+  # locations are appcore/controlplane's, so none of these is linked by the
+  # kit; a binary that hosts one of them is named here.
+  - name: content-sidecar-runs-nothing
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/*
+      - github.com/katyoti/katyoti-fwk/app/*/cmd
+    except:
+      - github.com/katyoti/katyoti-fwk/app/ktw-agents/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-gui/...
+      # The control plane: the launcher and the management services.
+      - github.com/katyoti/katyoti-fwk/app/katyoti/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-univers/...
+      # The developer's journal and session inspector.
+      - github.com/katyoti/katyoti-fwk/app/ktw-utils/...
+      # Contributes an agent plugin (the next-step tool) from its domain.
+      - github.com/katyoti/katyoti-fwk/app/ktw-gocode/...
+      # The authoring tool: scenario universes and the marketplace are the
+      # orchestrator's.
+      - github.com/katyoti/katyoti-fwk/app/ktw-compose/...
+      # Hosts a folder's scripts: the script runtime's tools are agent tools.
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/api/engine
+      - github.com/katyoti/katyoti-fwk/internal/extensions/agent/api
+      - github.com/katyoti/katyoti-fwk/internal/extensions/orchestrator/...
+      - github.com/katyoti/katyoti-fwk/internal/extensions/cwm/internal/...
+    mode: closure
+    include_tests: false
+    hint: a content sidecar links the bus and its pack — subject builders are internal/kts/subjects, the admin
+      universe's home is appcore/controlplane; move what pulled the runtime into a leaf
+
+  # ktw-docs is a pure sidecar with ONE reach into the universe: the deck lint
+  # sees every theme of the universe, so slidedeck/remote reads the hub's
+  # catalog over the bus (manifest/remote: the bus client plus the contract
+  # packages a sidecar already links - no weight). Everything else a pure
+  # sidecar may not link stays forbidden.
+  - name: docs-sidecar-footprint
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/ktw-docs
+      - github.com/katyoti/katyoti-fwk/app/ktw-docs/cmd
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/universe
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/skills/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/compose/...
+      - github.com/katyoti/katyoti-fwk/internal/appcore/frozenhost
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+      - github.com/katyoti/katyoti-fwk/internal/core/schema/parser/...
+    mode: closure
+    include_tests: false
+    hint: ktw-docs reads the universe's catalog through slidedeck/remote only; it links
+      no other consumer, aggregator, linter or parser
+
+  # ktw-agents consumes the universe (manifest/universe + manifest/remote, on
+  # purpose) but authors nothing: no lint, no compose, no hub, no host, no test.
+  - name: agents-consumer-footprint
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/ktw-agents
+      - github.com/katyoti/katyoti-fwk/app/ktw-agents/cmd
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/skills/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/compose/...
+      - github.com/katyoti/katyoti-fwk/internal/appcore/frozenhost
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+    mode: closure
+    include_tests: false
+    hint: ktw-agents consumes the universe; linting belongs to ktw-compose and aggregation to ktw-hub
+
+  # ktw-compose consumes the universe AND is the authoring tool: the lints
+  # (`ktw-compose lint-*`) and freeze-to-exe (frozenhost) are its verbs, so it
+  # may link them. It never carries the hub, the host wiring or test code.
+  - name: compose-authoring-footprint
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/ktw-compose
+      - github.com/katyoti/katyoti-fwk/app/ktw-compose/cmd
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+    mode: closure
+    include_tests: false
+    hint: ktw-compose authors and lints; it reaches the hub over the bus, never by linking it
+
+  # The hub aggregates. It is the catalog's source, so it never pages a
+  # universe view of itself (manifest/universe, manifest/remote), never lints
+  # and never carries test code. It reads a folder member itself, through
+  # manifest/local's FolderManifest, never through a host.
+  - name: hub-aggregator-footprint
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/cmd
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/universe
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/remote
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/skills/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/compose/...
+      - github.com/katyoti/katyoti-fwk/internal/appcore/frozenhost
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/...
+    mode: closure
+    include_tests: false
+    hint: the hub builds the aggregate from the sidecar cache; it is never a consumer of it
+
+  # The host wires served folders (and reads a frozen payload: frozenhost). It
+  # is a producer like any sidecar otherwise.
+  - name: host-footprint
+    doc: modules/contributions/packages.md
+    from:
+      - github.com/katyoti/katyoti-fwk/app/ktw-host
+      - github.com/katyoti/katyoti-fwk/app/ktw-host/cmd
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/universe
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/remote
+      - github.com/katyoti/katyoti-fwk/internal/extensions/manifest/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/skills/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/task/lint
+      - github.com/katyoti/katyoti-fwk/internal/extensions/compose/...
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+      - github.com/katyoti/katyoti-fwk/app/ktw-hub/...
+    mode: closure
+    include_tests: false
+    hint: the host is a producer that serves folders; it neither consumes the universe nor lints it
+
+  # Test code is linked by test code only. A production package whose closure
+  # reaches internal/test/** ships a test harness in a binary.
+  - name: test-packages-test-only
+    doc: modules/contributions/packages.md
+    forbid:
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+    except:
+      - github.com/katyoti/katyoti-fwk/internal/test/...
+    mode: closure
+    include_tests: false
+    hint: move the helper a production package needs out of internal/test into its owning package

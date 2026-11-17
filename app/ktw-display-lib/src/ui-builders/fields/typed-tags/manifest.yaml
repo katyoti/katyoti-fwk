@@ -1,0 +1,23 @@
+name: typed-tags
+kind: field-type
+basePrimitive: array
+description: Typed tags - each a label with its type (an application, a domain, a question…) found through a lookup method while typing, free text allowed; the types named with their label and colour. Without a host that calls methods the tags are typed as free text only.
+
+configSchema:
+  fields:
+    lookup:
+      type: string
+      optional: true
+      description: The method finding tags - {query, object} to {items - each with label, type, key}.
+    types:
+      type: array
+      optional: true
+      description: The types a tag may have - each with name, label and colour.
+    free:
+      type: boolean
+      optional: true
+      description: Free text is allowed as a tag with no type (default true).
+    object:
+      type: string
+      optional: true
+      description: The object the lookup is for.

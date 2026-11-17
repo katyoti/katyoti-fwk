@@ -1,0 +1,25 @@
+name: comparison
+description: Two options side by side under one heading — before and after, option A and option B.
+slots:
+  - name: default
+    description: A level-2 heading stating what is compared.
+    required: true
+  - name: left
+    description: The first option — a level-3 heading naming it, then its points.
+    required: true
+  - name: right
+    description: The second option — a level-3 heading naming it, then its points.
+    required: true
+example: |
+  <!-- slide: layout=comparison -->
+  ## Storage: before and after
+
+  ::left::
+  ### Before
+  - One file per node
+  - History by copying
+
+  ::right::
+  ### After
+  - One YAML per object
+  - History as events

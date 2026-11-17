@@ -1,0 +1,54 @@
+# Canonical data-type for the per-binary sidecar identity payload —
+# `system:/data-type/sidecar-info`. Every binary that wires
+# `appcore.SidecarExt(...)` automatically emits one Contribution of
+# `Type: "sidecar-info"` whose Body matches this shape.
+#
+# This is the IDENTITY-only subset: name + version + description.
+# The richer dynamic introspection (services list, tools, skills,
+# capabilities) stays on the live `Sidecar.Info(...)` method — that
+# returns a fresh snapshot of mutable state, whereas this Contribution
+# is the stable, content-addressable identity any catalog can cache
+# without round-tripping the binary.
+$schema: ktw-schema/v1
+name: sidecar-info
+version: "1.1.0"
+root: SidecarInfo
+description: |
+  Identity payload for a sidecar binary — the small subset of
+  `appcore.SidecarExt`'s introspection that's stable across a binary's
+  lifetime (name, version, description). Bus consumers and catalog
+  layers cache one per binary and address it as
+  `<binary>:/sidecar-info/default`. For the dynamic state (current
+  service list, tool/key health, skill enumeration, capability flags),
+  call the live `<binary>:sidecar/info` slot method.
+types:
+  SidecarInfo:
+    type: object
+    fields:
+      name:
+        type: string
+        description: binary name as defined by the cobra root (e.g. `ktw-docs`)
+      version:
+        type: string
+        description: semantic version stamped into the cobra root's `Version` field
+      description:
+        type: string
+        description: |
+          one-sentence purpose mirrored from the cobra root's `Short` — the
+          same line that prefaces `<binary> --help`.
+      sourceLang:
+        type: string
+        description: |
+          the language the binary's contributions are written in, when not
+          English — declared by its pack (`embed/pack.yaml`, source_lang).
+          Absent means English.
+        optional: true
+      formats:
+        type: object
+        description: |
+          the format (major.minor of the kind's data-type) of every kind this
+          binary publishes entries of, derived by the manifest builder and never
+          authored. A host reads a newer minor ignoring the keys it does not
+          know, and refuses a newer major (update the hub). Added in 1.1.
+        optional: true
+        catchall: string

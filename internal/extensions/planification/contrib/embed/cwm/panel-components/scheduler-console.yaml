@@ -1,0 +1,2 @@
+# A named view of the GUI's ui-components registry (panel-component kind).
+description: "The scheduler console: the runs, the task groups and the to-dos; the view calls the services itself."

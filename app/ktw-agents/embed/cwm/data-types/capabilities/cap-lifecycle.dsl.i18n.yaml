@@ -1,0 +1,10 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapLifecycle:
+      fields:
+        state:
+          description: L'état courant, l'un des états du workflow.
+          label: État

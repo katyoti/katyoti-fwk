@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Ce dont un objet PARLE : une demande déposée par un module dans un autre nomme l''objet qu''elle concerne (une page, un type, un cas d''usage) ; tout objet peut parler de tout autre. L''objet concerné la liste sous Liens comme `subject-of`, si bien que son volet montre ce qui est demandé ou dit à son sujet. Déclaré par CWM lui-même (son pack de base) : chaque univers l''a, quels que soient les packs chargés.'
+  inverse_label: 'Sujet de'
+  label: 'À propos de'

@@ -1,0 +1,22 @@
+# A code review type of ktw-code: performed by an agent following the
+# code-review skill in its run mode, with its guide.
+name: architecture
+title: Code architecture
+description: >-
+  The structure of the module's code: its components and dependencies, its technology choices, its patterns and anti-patterns.
+dimension: architecture
+applies:
+  capabilities: [code]
+  when: "len(object.code.code_packages) > 0"
+trigger:
+  mode: manual
+runner:
+  skill: ktw-code:/skill/code-review
+  input:
+    review: architecture
+    guide: ktw-code:/reference/review/architecture.md
+rating: >-
+  critical when a finding is critical, needs-attention when one is high or
+  medium, good otherwise.
+presets: [code, full]
+max_cost_usd: 4

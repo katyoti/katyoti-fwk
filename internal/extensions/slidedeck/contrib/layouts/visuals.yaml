@@ -1,0 +1,20 @@
+name: visuals
+description: A heading and a short text beside pictures, each with its caption — sites, products, screens (one to six; the grid adapts to the count).
+slots:
+  - name: default
+    description: A level-2 heading, then a short text.
+    required: true
+  - name: visuals
+    description: A list, one item per picture — an image as ![alt](path), then its caption.
+    required: true
+    minItems: 1
+    maxItems: 6
+example: |
+  <!-- slide: layout=visuals -->
+  ## Three sites, one platform
+  Each site runs the same sidecars.
+
+  ::visuals::
+  - ![Paris](assets/paris.jpg) **Paris** — the hub
+  - ![Lyon](assets/lyon.jpg) **Lyon** — the stores
+  - ![Lille](assets/lille.jpg) **Lille** — the warehouses

@@ -1,0 +1,55 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    InformationSourceFields:
+      fields:
+        connector:
+          label: 'Connecteur'
+          description: 'Le type d''endroit qu''elle lit : le nom d''un connecteur de source.'
+        location:
+          label: 'Localisation'
+          description: 'Où elle lit - selon le formulaire de son connecteur.'
+        selection:
+          label: 'Sélection'
+          description: 'Ce qu''elle prend à cet endroit.'
+        sync:
+          label: 'Synchronisation'
+          description: 'Quand elle est relue.'
+        last_synced:
+          label: 'Dernière synchronisation'
+          description: 'Quand elle a été lue pour la dernière fois (écrit par une synchronisation).'
+        items:
+          label: 'Éléments'
+          description: 'Combien d''éléments la dernière synchronisation a apportés (écrit par une synchronisation).'
+        folder:
+          label: 'Dossier'
+          description: 'Où sont ses éléments - relatif au projet (écrit par une synchronisation).'
+        error:
+          label: 'Erreur'
+          description: 'Pourquoi la dernière synchronisation a échoué (écrit par une synchronisation).'
+        held:
+          label: 'Retenus'
+          description: 'Les éléments proposés ou choisis, gardés sans être lus jusqu''à ce que le porteur les applique - une synchronisation ne les lit jamais.'
+        states:
+          label: 'États'
+          description: 'Où en est chaque élément appliqué - lu, en attente, retiré ou en échec - par sa clé.'
+        keywords:
+          label: 'Mots-clés en plus'
+          description: 'Les mots-clés qu''elle cherche en plus de ceux de son porteur.'
+        propose_max:
+          label: 'Propositions'
+          description: 'Combien d''éléments une proposition apporte au plus.'
+        tested_at:
+          label: 'Testée le'
+          description: 'Quand sa connexion a été testée pour la dernière fois.'
+        reachable:
+          label: 'Joignable'
+          description: 'Si sa connexion a répondu au dernier test.'
+        from_seen:
+          label: 'Valeurs vues'
+          description: 'Les valeurs que gardait la source d''où elle lit à son dernier enregistrement - une valeur gardée depuis est nouvelle pour elle.'
+        id_columns:
+          label: 'Colonnes identifiant'
+          description: 'Par type d''élément, l''attribut par lequel commence son tableau lu et sur lequel il filtre - none pour aucune colonne identifiant.'

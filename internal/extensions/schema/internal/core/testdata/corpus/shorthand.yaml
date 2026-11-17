@@ -1,0 +1,51 @@
+$schema: ktw-schema/v1
+name: shorthand
+version: "1.0.0"
+description: "Coverage of every shorthand grammar variant from §3 of the DSL reference."
+types:
+  # Top-level user-type names referenced by shorthand below.
+  Author:
+    type: object
+    id: id
+    fields:
+      id: string@uuid
+      name: string
+
+  Tag:
+    type: object
+    fields:
+      name: string
+
+  Category:
+    type: object
+    fields:
+      name: string
+
+  # Each entry below is a single-field object that exercises one shorthand form.
+  PostLikeFields:
+    type: object
+    fields:
+      # 1. Bare primitive
+      title: string
+      # 2. Primitive + content
+      summary: string@markdown
+      # 3. Primitive + content + optional
+      avatar: string@avatar?
+      # 4. Primitive + content + inline params
+      slug: string@text(max:120, transform:lowercase)
+      # 5. Numeric with multi-param shorthand
+      score: number@slider(min:0, max:100, step:5)
+      # 6. Array of primitive
+      tags: string[]
+      # 7. Array of user type
+      tag_refs: Tag[]
+      # 8. Link many2one
+      author: ->Author
+      # 9. Link many2many
+      contributors: ->Author[]
+      # 10. Tree
+      parent: ~Category
+      # 11. Inline choice
+      mixed: string | number | null
+      # 12. Optional bare reference
+      featured_tag: Tag

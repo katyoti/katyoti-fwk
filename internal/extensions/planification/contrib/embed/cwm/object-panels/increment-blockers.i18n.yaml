@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Blocages
+  description: "Tout ce qui l'empêche de finir, à travers ses dépendances - regroupé par sorte, avec qui agit"

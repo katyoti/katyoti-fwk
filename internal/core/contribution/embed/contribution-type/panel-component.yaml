@@ -1,0 +1,33 @@
+# Registers `panel-component` as a SYSTEM contribution kind: one named view of
+# the GUI's ui-components registry, which an object panel mounts with
+# `content: {kind: extension, extension: <name>}`.
+#
+# The pack that owns the view publishes it from its CWM pack's
+# `panel-components/<name>.yaml`, the name being the file's basename. The
+# census refuses a shipped panel naming a view no entry carries, and a drift
+# test holds the GUI's registry (UI_EXTENSIONS) equal to the published entries.
+name: panel-component
+description: |
+  A named view an object panel can mount: what it shows and, optionally, the
+  data-type of what it receives.
+schema: system:/data-type/panel-component
+validate: error
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  source: {mediaType: application/yaml}
+meta:
+  budget: 256
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from the index.
+  from: data
+  fields: [description]
+
+source:
+  folder: panel-components
+  match: ["*.yaml", "*.yml"]
+  id: basename
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

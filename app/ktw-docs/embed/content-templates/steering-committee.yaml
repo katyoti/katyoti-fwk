@@ -1,0 +1,31 @@
+# The steering committee: progress, risks and the decisions expected.
+name: steering-committee
+label: Comité de pilotage
+description: Report to a steering committee — where the work stands, what was done, the risks, the decisions expected and the next milestones.
+purpose: steering committee
+sections:
+  - id: status
+    title: Où en est-on
+    intent: The state of the work in three or four figures.
+    sources:
+      - {from: object, note: "the subject's status, progress and milestones"}
+    guidance: Figures the sources state only; « [DONNÉE À COMPLÉTER] » for one that is missing.
+    required: true
+    weight: 2
+    deck: {layout: key-figures}
+  - id: done
+    title: Réalisé depuis le dernier comité
+    intent: What moved since last time.
+    sources:
+      - {from: object, note: "the subject's history and its children's states"}
+    weight: 2
+  - id: risks
+    include: risks-and-mitigations
+  - id: decisions
+    title: Décisions attendues
+    intent: What the committee must decide today.
+    required: true
+    weight: 2
+    deck: {layout: statement}
+  - id: next
+    include: next-steps

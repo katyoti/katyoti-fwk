@@ -1,0 +1,13 @@
+name: judged-by
+label: Judged by
+inverse_label: Judges
+from: release
+to: any
+cardinality: M:N
+target: object
+object_storage: edges
+description: |
+  The criteria that JUDGE a release's delivery — a subset of what targets it.
+  When a release names them, its grade is the rollup over them alone;
+  otherwise over everything that targets it.
+inverse_name: judges

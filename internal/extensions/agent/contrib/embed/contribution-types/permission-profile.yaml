@@ -1,0 +1,27 @@
+# Registers `permission-profile` as a contribution kind of the agent
+# extension: a named set of rules the kernel permission gate
+# applies to an agent's tool calls. Its body schema is the generated data-type
+# `permission-profile` (from permrules.ProfileSpec). The agent extension ships
+# workspace-edit, plan-mode and full-access; any member publishes its own as a
+# foreign kind (agentcontrib.ContributeProfiles), so the producer writes name
+# and description into meta itself.
+name: permission-profile
+description: |
+  A permission profile: the rules that pre-approve or refuse an agent's tool
+  calls before they would ask a person. A task selects one by name
+  (permission_profile); the default is workspace-edit.
+schema: ktw-agents:/data-type/permission-profile
+validate: error
+# Its entries run no code but widen an agent's rights: an origin the universe
+# does not trust may not override one (the override gate reads this class).
+execution: executable
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 256
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]

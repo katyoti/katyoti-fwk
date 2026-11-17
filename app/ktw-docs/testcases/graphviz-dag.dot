@@ -1,0 +1,23 @@
+digraph ktw_docs_pipeline {
+    rankdir=LR
+    node [shape=box, style=rounded]
+
+    md [label="Markdown\nInput"]
+    pandoc [label="Pandoc"]
+    typst [label="Typst"]
+    kroki [label="Kroki API"]
+    pdf [label="PDF"]
+    docx [label="DOCX"]
+    pptx [label="PPTX"]
+    svg [label="SVG"]
+    png [label="PNG"]
+
+    md -> pandoc
+    pandoc -> typst -> pdf
+    pandoc -> docx
+    pandoc -> pptx
+
+    md -> kroki [label="diagram blocks"]
+    kroki -> svg
+    kroki -> png
+}

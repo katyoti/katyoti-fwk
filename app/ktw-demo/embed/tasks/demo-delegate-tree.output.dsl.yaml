@@ -1,0 +1,7 @@
+name: demo-delegate-tree-output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Map of step name → simulator output; bg-report appears as a background handle ({run_id, background: true}); leaves carry __spawn_dimensions snapshots"
+    fields: {}

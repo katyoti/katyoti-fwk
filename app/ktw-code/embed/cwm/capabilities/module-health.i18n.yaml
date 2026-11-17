@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Santé du module
+  description: >-
+    L'état en lecture seule de gocode : niveau, totaux des cas d'usage, portes
+    de promotion. Un panneau seulement.

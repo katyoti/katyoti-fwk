@@ -1,0 +1,12 @@
+# TTS pronunciation overrides.
+# Each entry maps a display term to its phonetic TTS spelling.
+# Uses word-boundary matching to avoid mid-word replacements.
+
+rules:
+  - term: ISC
+    phonetic: I S C
+    note: "Ideal State Criteria - spell out"
+
+  - term: KTW
+    phonetic: K T W
+    note: "Project name - spell out"

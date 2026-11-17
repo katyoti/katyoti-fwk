@@ -1,0 +1,14 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Grille d'évaluation
+  label_plural: Grilles d'évaluation
+  description: >-
+    Les critères pondérés sur lesquels une alternative est jugée - fonctionnel,
+    technique, sécurité, coût, organisationnel, stratégique, conformité ; les
+    éliminatoires l'écartent - et l'échelle de notation. Figée avant toute
+    notation.
+  actions:
+    Check: Vérifier
+    Freeze: Figer
+    Reopen: Rouvrir

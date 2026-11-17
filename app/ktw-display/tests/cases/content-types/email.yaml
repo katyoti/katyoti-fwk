@@ -1,0 +1,24 @@
+id: content-types/fields/email
+category: content-types
+title: "Content: email"
+description: "string with content { type: email }. Renders as an email input with HTML5 validation."
+schema:
+  name: email-content-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      fields:
+        contact:
+          type: string
+          label: Contact email
+          description: Try invalid input — the browser flags it on submit.
+          content:
+            type: email
+value: {}
+mode: edit
+tags:
+  - content-types
+  - string
+  - email

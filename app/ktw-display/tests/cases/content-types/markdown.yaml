@@ -1,0 +1,29 @@
+id: content-types/fields/markdown
+category: content-types
+title: "Content: markdown"
+description: "string with content { type: markdown, maxLength }. Renders as a textarea. Production renderer (gui-rich-text) will add syntax highlighting + preview."
+schema:
+  name: markdown-content-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      fields:
+        notes:
+          type: string
+          label: Notes
+          description: Markdown-formatted notes. Walker shows it as a plain textarea; gui-rich-text upgrades to a real editor.
+          content:
+            type: markdown
+            maxLength: 1000
+value:
+  notes: |-
+    # Hello
+
+    This is *markdown*.
+mode: edit
+tags:
+  - content-types
+  - string
+  - markdown

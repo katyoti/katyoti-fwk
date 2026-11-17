@@ -1,0 +1,72 @@
+# Default plugins — used when no profile/task specifies plugins.
+defaults:
+  - augmented
+  - context
+
+# Plugin declarations.
+# Each entry is a PluginRef: {type, name (optional), ...strategy-specific props}.
+# Built-in strategies: workspace, task, template, ask-user, bash, skill,
+#   mcp, context, group
+plugins:
+  # --- Leaf plugin types (one per strategy) ---
+  - type: workspace
+  - type: bash
+  - type: task
+  - type: template
+  - type: ask-user
+  - type: create-document
+  - type: display-ui-component
+  - type: patch-ui-component
+  - type: complete-ui-component
+  - type: skill
+  - type: scripts
+  - type: mcp
+  - type: context
+  - type: web-fetch
+  - type: web-search
+  - type: wikipedia
+  - type: rest-api-fetch
+  - type: orchestration
+  - type: ledger
+  - type: session-read   # read a completed run's journal BY ID (eval tasks; no path-hunting)
+  - type: person-language # the person's language (Profile.language): replies and documents follow it
+
+  # --- Groups (compose leaf types) ---
+
+  # standard: core plugins needed for any task.
+  # NOTE: `bash` is deliberately NOT a member — an agent must be guided by a
+  # curated toolset and use its proper tools (file-read/-write/-edit, web, cwm,
+  # comms), never shell out to path-hunt or run binaries. A task that genuinely
+  # needs a shell adds `- type: bash` to its OWN `config.plugins` explicitly.
+  - name: standard
+    type: group
+    members: [workspace, task, template, ask-user, create-document, display-ui-component, patch-ui-component, complete-ui-component, orchestration, person-language]
+
+  # web-enabled: external research (fetch + search + wikipedia)
+  - name: web-enabled
+    type: group
+    members: [web-fetch, web-search, wikipedia]
+
+  # scripting: run scripts
+  - name: scripting
+    type: group
+    members: [scripts]
+
+  # augmented: standard + web research + scripting.
+  # Skills are NOT here — a task gets skills only via its own `skills:` list
+  # (which auto-attaches the skill plugin, scoped). `skills: ["*"]` = all.
+  - name: augmented
+    type: group
+    members: [standard, web-enabled, scripting]
+
+  # voice-enabled: augmented. (Voice/TTS is no longer a plugin — the
+  # `notify` plugin strategy was removed. A task that wants speech declares
+  # the sidecar tool `ktw-notify:notify/speak` in its own `tools:` list.)
+  - name: voice-enabled
+    type: group
+    members: [augmented]
+
+  # full: everything including MCP and context
+  - name: full
+    type: group
+    members: [voice-enabled, mcp, context]

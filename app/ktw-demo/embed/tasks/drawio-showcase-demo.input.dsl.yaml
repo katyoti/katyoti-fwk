@@ -1,0 +1,27 @@
+name: drawio-showcase-demo-input
+root: DrawioShowcaseInput
+types:
+  DrawioShowcaseInput:
+    type: object
+    fields:
+      viewpoint:
+        type: string@enum(archimate3-layered, archimate3-application-cooperation, archimate3-motivation, archimate3-strategy, archimate3-technology, archimate3-implementation-migration, c4-context, c4-container, c4-component, bpmn2-process, aws-architecture, uml2-class, uml2-overview)
+        label: "Type of drawing"
+        description: "The viewpoint: the notation, the looks and the layout of the drawing"
+      topic:
+        type: string
+        label: "Topic"
+        description: "What to draw (e.g. 'online grocery ordering', 'a bank's mobile app', 'employee onboarding')"
+        optional: true
+      refine:
+        type: boolean
+        label: "Show a refinement"
+        description: "After the first drawing, add to it and redraw it over itself: nothing already drawn moves"
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Draw it"
+        groups:
+          - title: "Diagram"
+            fields: [viewpoint, topic, refine]

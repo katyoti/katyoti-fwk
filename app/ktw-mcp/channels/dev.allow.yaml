@@ -1,0 +1,28 @@
+# The development channel's allow-list for ktw-mcp, copied beside bin/ktw-mcp
+# by `make ktw-mcp`. A rule refuses a command line whose verb starts with its
+# words (flags may come before and between them); `flag` and `by` narrow it.
+# The person's own acts are refused by the server itself, whatever this file says.
+channel: dev
+programs:
+  katyoti:
+    refuse:
+      - verb: [universe, stop]
+        why: a session never stops a running universe - the person does
+      - verb: [universe, restart]
+        why: a restart stops the running universe first - the person does
+      - verb: [universe, delete]
+        why: a session never deletes a universe - the person does
+      - verb: [install-infra]
+        why: replacing the control plane is the person's - it stops what runs
+      - verb: [update]
+        why: updating the installation replaces running binaries - the person does
+      - verb: [self-update]
+        why: updating the installation replaces running binaries - the person does
+      - verb: [uninstall]
+        why: removing an installed item is the person's
+      - verb: [setup]
+        why: first run is the person's
+      - verb: [gui]
+        why: the desktop app is opened by the person
+  ktw-agents: {}
+  ktw-compose: {}

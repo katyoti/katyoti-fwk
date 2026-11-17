@@ -1,0 +1,39 @@
+# What alternatives are judged on (modules/decisions/): weighted criteria and
+# the scale they are scored on. It is frozen before anything is scored on it,
+# so the criteria cannot be tuned to favour an alternative; reopening it sends
+# every evaluation scored on it back to draft.
+name: evaluation-grid
+label: Evaluation grid
+label_plural: Evaluation grids
+description: >-
+  Weighted criteria an alternative is judged on - functional, technical,
+  security, cost, organisational, strategic, compliance; eliminatory ones rule
+  it out - and the scale they are scored on. Frozen before scoring.
+icon: table-options
+folder: grids
+id_prefix: EG
+capabilities: [lifecycle]
+fields: :/data-type/evaluation-grid
+workflow: evaluation-grid
+accept_parents: ["*"]
+actions:
+  - uri: ktw-methods:decisions/grid-check
+    label: Check
+    description: Whether the grid can be frozen - weights at 100 percent, a scored criterion, unique ids.
+    kind: sync
+    icon: list-check
+    input: {id: "${id}"}
+  - uri: ktw-methods:decisions/grid-freeze
+    label: Freeze
+    description: Freeze the grid before anything is scored on it.
+    kind: sync
+    icon: lock
+    confirm: true
+    input: {id: "${id}"}
+  - uri: ktw-methods:decisions/grid-reopen
+    label: Reopen
+    description: Back to draft - every evaluation scored on it goes back to draft.
+    kind: sync
+    icon: lock-open
+    confirm: true
+    input: {id: "${id}"}

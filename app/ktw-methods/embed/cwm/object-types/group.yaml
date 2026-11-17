@@ -1,0 +1,23 @@
+name: group
+label: Group
+description: >-
+  A CONTAINER AND NOTHING ELSE. It exists to hold other objects and to give the
+  tree a place to fold — it has no want, no criterion, and no verdict of its
+  own.
+
+  It has no capability: an object core (a name, a parent, children) drawn in
+  the tree, and nothing more. Anything with a want belongs to a type that has
+  one.
+
+  WHY IT IS NEEDED. `www` is already this shape in practice: it holds
+  www-public, www-docs and www-blog, and its "ideal state" was invented to give
+  the grader something to read. A grouping node should not have to fake a
+  criterion to exist. With `group`, a pure container GRADES BY ROLLUP over its
+  children — which is exactly what the module decision on rollup grading established for any object with
+  children — and nobody has to author a want that means nothing.
+
+  It is drawn as a root (`tree: root`), so a group may sit at the top of a
+  project or be nested inside another.
+icon: folder
+folder: objects
+tree: root

@@ -1,0 +1,16 @@
+# One object under sign-off contests another: stored on the contester, read from
+# the contested side as `contested-by` — and the Contests panel
+# (object-panels/contests.yaml) shows on whatever has one pointing at it.
+name: contests
+label: Contests
+inverse_label: Contested by
+from: any
+to: any
+cardinality: M:N
+from_capabilities: [signoff]
+to_capabilities: [signoff]
+target: object
+object_storage: edges
+inverse_name: contested-by
+description: >-
+  The contester disputes the contested object's sign-off: both carry a sign-off.

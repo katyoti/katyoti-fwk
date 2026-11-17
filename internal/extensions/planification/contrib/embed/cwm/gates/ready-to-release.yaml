@@ -1,0 +1,14 @@
+# READY TO RELEASE — what it ships is listed for its users: every user-visible
+# change in the change log (docs/confluence-tew/changelog — the rule
+# changelog-for-user-visible-changes). A person confirms it; the planning loop
+# first files the request that writes it. Every target done stays the
+# release's own gate (its on_transition hook).
+name: ready-to-release
+label: Ready to release
+description: >-
+  Every user-visible change it ships is listed in the change log.
+requirements:
+  - name: changelog-updated
+    label: The change log lists its user-visible changes
+    person: true
+    resolve: {title: "List the user-visible changes of {object} in the change log", kind: maintain}

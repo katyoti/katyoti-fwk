@@ -1,0 +1,16 @@
+name: deferred-by
+label: Deferred by
+inverse_label: Defers
+from: use-case                  # item
+to: decision                    # item
+cardinality: N:1
+description: |
+  When a use-case's `status_cache` is `fail-deferred`, it MUST point
+  at the OD that justifies the deferral. The promote gate treats
+  fail-deferred UCs as documented limitations (not blockers), but
+  only if this edge is present and the OD is in state=open.
+
+  Lint `DeferredWithoutOD` detector flags UCs with
+  status_cache=fail-deferred but no `deferred-by` edge.
+
+inverse_name: defers

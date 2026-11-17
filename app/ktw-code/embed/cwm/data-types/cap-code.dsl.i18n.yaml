@@ -1,0 +1,32 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapCode:
+      fields:
+        kind:
+          label: "Genre"
+          description: "Quel genre de code c'est : la seule liste des genres de code."
+        code_packages:
+          label: "Packages de code"
+          description: "Packages sources par lesquels ce module est réalisé."
+        tier_current:
+          label: "Palier actuel"
+          description: "Maturité de réalisation, 0-3 ; orthogonale à la profondeur d'articulation de la méthode."
+        tier_target:
+          label: "Palier cible"
+        tier_state:
+          label: "État du palier"
+          description: "bootstrapping | planning | verifying | promoted"
+        facets:
+          label: "Facettes"
+          description: "Les autres chemins vers lesquels pointe le module (app, tests, docs) : son code est code_packages."
+    Facet:
+      fields:
+        kind:
+          label: "Genre"
+          description: "Ce qu'est le chemin (app, tests, docs, ucs, charter, manifest)."
+        path:
+          label: "Chemin"
+          description: "Le chemin, relatif au projet."

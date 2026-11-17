@@ -1,0 +1,16 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    MarketplaceProject:
+      fields:
+        definition:
+          description: "Le marketplace.yaml de la marketplace (ou le dossier qui le contient) : ce qu'elle publie, où, avec quelle clé."
+          label: "Définition"
+        version:
+          description: "La version de la prochaine publication : immuable une fois publiée."
+          label: "Version"
+        dist:
+          description: "Les binaires construits, des dossiers <os>-<arch>/ (par défaut dist)."
+          label: "Construction"

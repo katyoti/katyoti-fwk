@@ -1,0 +1,17 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      plan:
+        type: object
+        description: "Output of task-builder-planner"
+      iteration:
+        type: number
+        description: "Loop iteration number (0-indexed)"
+        optional: true
+      previous_findings:
+        type: array
+        description: "Evaluator findings from prior iteration to address"
+        optional: true

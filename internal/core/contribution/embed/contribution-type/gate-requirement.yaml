@@ -1,0 +1,47 @@
+# Registers `gate-requirement` as a SYSTEM contribution kind (named gates, CWM).
+#
+# Published from a CWM pack: embed/cwm/gate-requirements/<name>.yaml.
+name: gate-requirement
+description: |
+  A requirement a type or a pack adds to a gate it did not declare: its gate,
+  the objects it applies to (by types and capabilities), how it is checked and
+  how it is resolved.
+schema: system:/data-type/gate-requirement
+validate: error
+
+# A gate requirement names something to run: the check that resolves it on a
+# gate, so an untrusted origin may not override one.
+execution: executable
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the requirement's label and description.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 128
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `gate-requirements/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: gate-requirements
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

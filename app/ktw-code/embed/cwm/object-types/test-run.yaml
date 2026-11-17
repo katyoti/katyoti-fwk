@@ -1,0 +1,19 @@
+name: test-run
+label: Test run
+description: |
+    An immutable record of one `module verify` invocation: when it
+    ran, which layers, per-UC verdicts, totals, and whether the tier-
+    promotion DoD was met. Replaces today's `results/<date>/results.json`
+    in `modules/<m>/`.
+
+    test-run items are append-only — once written, do not edit. Re-runs
+    create new test-run items. Used by:
+      - charter `## Use Cases` table projection (latest run's verdicts)
+      - manifest.json `uc_passing` / `uc_failing` / etc. counts
+      - tier-promotion gate (latest run's `tier_N_dod_met`)
+fields: ktw-code:/data-type/test-run
+context:
+    propagation: local
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 32768

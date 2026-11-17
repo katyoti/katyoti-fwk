@@ -1,0 +1,21 @@
+name: use-case
+label: Use case
+description: >-
+  A named set of acceptance criteria — a want at the size a reader can judge in
+  one sitting.
+icon: checklist
+# Objects land beside the documents they replace rather than in `objects/`.
+# A write-side default only: the suffix scan finds a use-case wherever it sits,
+# so nothing breaks for the modules whose use-case objects are already filed
+# elsewhere.
+folder: use-cases
+id_prefix: UC
+capabilities: [want, checkable, lifecycle]
+fields: ktw-methods:/data-type/use-case
+workflow: manual
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+  label: Definition of done
+  description: What has to be true for the use case to be done, in prose.
+  format: markdown

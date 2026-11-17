@@ -1,0 +1,24 @@
+# How a decision moves: it is OPENED as a question, DECIDED (it then applies),
+# and later either SUPERSEDED by another decision (which names it with a
+# `supersedes` edge) or RETIRED when nothing replaces it; an open question that
+# no longer matters is DROPPED. Never edited back silently: the decisions
+# service (Open / Resolve / Supersede) and ObjectTransition drive it.
+name: decision
+label: Decision
+description: >-
+  A question opened, decided and then in force, until a later decision
+  replaces it or it is withdrawn; an open question may be dropped without a
+  choice. Superseded, retired and dropped are final.
+initial: open
+states:
+  - {name: open, description: "The question is asked; no choice yet"}
+  - {name: applies, description: "A choice is made and in force"}
+  - {name: superseded, description: "Replaced by a later decision, which names it with a supersedes edge", terminal: true}
+  - {name: retired, description: "No longer in force; nothing replaces it", terminal: true}
+  - {name: dropped, description: "Closed without a choice; the question no longer matters", terminal: true}
+transitions:
+  - {name: decide, from: [open], to: applies}
+  - {name: reopen, from: [applies], to: open}
+  - {name: supersede, from: [applies], to: superseded}
+  - {name: retire, from: [applies], to: retired}
+  - {name: drop, from: [open], to: dropped}

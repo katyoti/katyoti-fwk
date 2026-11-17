@@ -1,0 +1,569 @@
+{
+  "viewpoint": "drawio-test:/viewpoint/app-flux",
+  "title": "Sample — landscape (16 applications)",
+  "zones": [
+    {
+      "id": "z-upstream",
+      "label": "UPSTREAM (Shared)",
+      "order": 1
+    },
+    {
+      "id": "z-sites",
+      "label": "SITES",
+      "order": 2
+    },
+    {
+      "id": "z-steering",
+      "label": "STEERING (Shared HQ)",
+      "order": 3
+    },
+    {
+      "id": "z-shared",
+      "label": "Cross-cutting / Shared",
+      "order": 4
+    }
+  ],
+  "layoutHints": {
+    "preset": "archi-layered"
+  },
+  "nodes": [
+    {
+      "id": "items",
+      "label": "Items",
+      "kind": "Application",
+      "zone": "z-upstream",
+      "attributes": {
+        "domain": "reference",
+        "description": "Capability Items",
+        "external_url": "https://catalog.example/Application/items"
+      }
+    },
+    {
+      "id": "assorter",
+      "label": "Assorter",
+      "kind": "Application",
+      "zone": "z-upstream",
+      "attributes": {
+        "domain": "reference",
+        "description": "Capability Assorter",
+        "external_url": "https://catalog.example/Application/assorter"
+      }
+    },
+    {
+      "id": "buying",
+      "label": "Buying",
+      "kind": "Application",
+      "zone": "z-upstream",
+      "attributes": {
+        "domain": "reference",
+        "description": "Capability Buying",
+        "external_url": "https://catalog.example/Application/buying"
+      }
+    },
+    {
+      "id": "stock",
+      "label": "Stock",
+      "kind": "Application",
+      "zone": "z-upstream",
+      "attributes": {
+        "domain": "reference",
+        "description": "Capability Stock",
+        "external_url": "https://catalog.example/Application/stock"
+      }
+    },
+    {
+      "id": "till",
+      "label": "Site Till",
+      "kind": "Application",
+      "zone": "z-sites",
+      "attributes": {
+        "domain": "store",
+        "description": "Capability Site Till",
+        "external_url": "https://catalog.example/Application/till"
+      }
+    },
+    {
+      "id": "tags",
+      "label": "Shelf Tags",
+      "kind": "Application",
+      "zone": "z-sites",
+      "attributes": {
+        "domain": "store",
+        "description": "Capability Shelf Tags",
+        "external_url": "https://catalog.example/Application/tags"
+      }
+    },
+    {
+      "id": "loyalty",
+      "label": "Loyalty",
+      "kind": "Application",
+      "zone": "z-sites",
+      "attributes": {
+        "domain": "customer",
+        "description": "Capability Loyalty",
+        "external_url": "https://catalog.example/Application/loyalty"
+      }
+    },
+    {
+      "id": "webstore",
+      "label": "Web Store",
+      "kind": "Application",
+      "zone": "z-sites",
+      "attributes": {
+        "domain": "store",
+        "description": "Capability Web Store",
+        "external_url": "https://catalog.example/Application/webstore"
+      }
+    },
+    {
+      "id": "dwh",
+      "label": "Data Warehouse",
+      "kind": "Application",
+      "zone": "z-steering",
+      "attributes": {
+        "domain": "reporting",
+        "description": "Capability Data Warehouse",
+        "external_url": "https://catalog.example/Application/dwh"
+      }
+    },
+    {
+      "id": "metrics",
+      "label": "Site Metrics",
+      "kind": "Application",
+      "zone": "z-steering",
+      "attributes": {
+        "domain": "reporting",
+        "description": "Capability Site Metrics",
+        "external_url": "https://catalog.example/Application/metrics"
+      }
+    },
+    {
+      "id": "margin",
+      "label": "Margin Tracker",
+      "kind": "Application",
+      "zone": "z-steering",
+      "attributes": {
+        "domain": "reporting",
+        "description": "Capability Margin Tracker",
+        "external_url": "https://catalog.example/Application/margin"
+      }
+    },
+    {
+      "id": "ledger",
+      "label": "Ledger",
+      "kind": "Application",
+      "zone": "z-shared",
+      "attributes": {
+        "domain": "invoicing",
+        "description": "Capability Ledger",
+        "external_url": "https://catalog.example/Application/ledger"
+      }
+    },
+    {
+      "id": "billing",
+      "label": "Billing Run",
+      "kind": "Application",
+      "zone": "z-shared",
+      "attributes": {
+        "domain": "invoicing",
+        "description": "Capability Billing Run",
+        "external_url": "https://catalog.example/Application/billing"
+      }
+    },
+    {
+      "id": "etl",
+      "label": "ETL Hub",
+      "kind": "Application",
+      "zone": "z-shared",
+      "attributes": {
+        "domain": "transverse",
+        "description": "Capability ETL Hub",
+        "external_url": "https://catalog.example/Application/etl"
+      }
+    },
+    {
+      "id": "iam",
+      "label": "IAM",
+      "kind": "Application",
+      "zone": "z-shared",
+      "attributes": {
+        "domain": "transverse",
+        "description": "Capability IAM",
+        "external_url": "https://catalog.example/Application/iam"
+      }
+    },
+    {
+      "id": "mail",
+      "label": "Mail Relay",
+      "kind": "Application",
+      "zone": "z-shared",
+      "attributes": {
+        "domain": "transverse",
+        "description": "Capability Mail Relay",
+        "external_url": "https://catalog.example/Application/mail"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "f0",
+      "source": "items",
+      "target": "till",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1000",
+            "url": "https://catalog.example/Interface/0"
+          }
+        ],
+        "data_types": [
+          "Order"
+        ]
+      }
+    },
+    {
+      "id": "f1",
+      "source": "items",
+      "target": "tags",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1001",
+            "url": "https://catalog.example/Interface/1"
+          }
+        ],
+        "data_types": [
+          "Item shipment"
+        ]
+      }
+    },
+    {
+      "id": "f2",
+      "source": "assorter",
+      "target": "items",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1002",
+            "url": "https://catalog.example/Interface/2"
+          }
+        ],
+        "data_types": [
+          "Price"
+        ]
+      }
+    },
+    {
+      "id": "f3",
+      "source": "buying",
+      "target": "items",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1003",
+            "url": "https://catalog.example/Interface/3"
+          }
+        ],
+        "data_types": [
+          "Stock"
+        ]
+      }
+    },
+    {
+      "id": "f4",
+      "source": "stock",
+      "target": "items",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1004",
+            "url": "https://catalog.example/Interface/4"
+          }
+        ],
+        "data_types": [
+          "Invoice"
+        ]
+      }
+    },
+    {
+      "id": "f5",
+      "source": "till",
+      "target": "dwh",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "reporting",
+        "interface_codes": [
+          {
+            "code": "FL1005",
+            "url": "https://catalog.example/Interface/5"
+          }
+        ],
+        "data_types": [
+          "Payment"
+        ]
+      }
+    },
+    {
+      "id": "f6",
+      "source": "till",
+      "target": "billing",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "invoice",
+        "interface_codes": [
+          {
+            "code": "FL1006",
+            "url": "https://catalog.example/Interface/6"
+          }
+        ],
+        "data_types": [
+          "Customer"
+        ]
+      }
+    },
+    {
+      "id": "f7",
+      "source": "loyalty",
+      "target": "till",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "payment",
+        "interface_codes": [
+          {
+            "code": "FL1007",
+            "url": "https://catalog.example/Interface/7"
+          }
+        ],
+        "data_types": [
+          "Supplier"
+        ]
+      }
+    },
+    {
+      "id": "f8",
+      "source": "webstore",
+      "target": "till",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "payment",
+        "interface_codes": [
+          {
+            "code": "FL1008",
+            "url": "https://catalog.example/Interface/8"
+          }
+        ],
+        "data_types": [
+          "Ledger"
+        ]
+      }
+    },
+    {
+      "id": "f9",
+      "source": "tags",
+      "target": "till",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1009",
+            "url": "https://catalog.example/Interface/9"
+          }
+        ],
+        "data_types": [
+          "Report"
+        ]
+      }
+    },
+    {
+      "id": "f10",
+      "source": "dwh",
+      "target": "metrics",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "reporting",
+        "interface_codes": [
+          {
+            "code": "FL1010",
+            "url": "https://catalog.example/Interface/10"
+          }
+        ],
+        "data_types": [
+          "Shipment"
+        ]
+      }
+    },
+    {
+      "id": "f11",
+      "source": "dwh",
+      "target": "margin",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "reporting",
+        "interface_codes": [
+          {
+            "code": "FL1011",
+            "url": "https://catalog.example/Interface/11"
+          }
+        ],
+        "data_types": [
+          "Contract"
+        ]
+      }
+    },
+    {
+      "id": "f12",
+      "source": "billing",
+      "target": "ledger",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "invoice",
+        "interface_codes": [
+          {
+            "code": "FL1012",
+            "url": "https://catalog.example/Interface/12"
+          }
+        ],
+        "data_types": [
+          "Account"
+        ]
+      }
+    },
+    {
+      "id": "f13",
+      "source": "etl",
+      "target": "dwh",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "default",
+        "interface_codes": [
+          {
+            "code": "FL1013",
+            "url": "https://catalog.example/Interface/13"
+          }
+        ],
+        "data_types": [
+          "Budget"
+        ]
+      }
+    },
+    {
+      "id": "f14",
+      "source": "items",
+      "target": "etl",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL1014",
+            "url": "https://catalog.example/Interface/14"
+          }
+        ],
+        "data_types": [
+          "Forecast"
+        ]
+      }
+    },
+    {
+      "id": "f15",
+      "source": "ledger",
+      "target": "margin",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "reporting",
+        "interface_codes": [
+          {
+            "code": "FL1015",
+            "url": "https://catalog.example/Interface/15"
+          }
+        ],
+        "data_types": [
+          "Catalog"
+        ]
+      }
+    },
+    {
+      "id": "f16",
+      "source": "iam",
+      "target": "till",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "default",
+        "interface_codes": [
+          {
+            "code": "FL1016",
+            "url": "https://catalog.example/Interface/16"
+          }
+        ],
+        "data_types": [
+          "Return"
+        ]
+      }
+    },
+    {
+      "id": "f17",
+      "source": "iam",
+      "target": "webstore",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "default",
+        "interface_codes": [
+          {
+            "code": "FL1017",
+            "url": "https://catalog.example/Interface/17"
+          }
+        ],
+        "data_types": [
+          "Receipt"
+        ]
+      }
+    },
+    {
+      "id": "f18",
+      "source": "mail",
+      "target": "loyalty",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "default",
+        "interface_codes": [
+          {
+            "code": "FL1018",
+            "url": "https://catalog.example/Interface/18"
+          }
+        ],
+        "data_types": [
+          "Schedule"
+        ]
+      }
+    },
+    {
+      "id": "f19",
+      "source": "buying",
+      "target": "billing",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "invoice",
+        "interface_codes": [
+          {
+            "code": "FL1019",
+            "url": "https://catalog.example/Interface/19"
+          }
+        ],
+        "data_types": [
+          "Transfer"
+        ]
+      }
+    }
+  ]
+}

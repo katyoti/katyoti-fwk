@@ -1,0 +1,41 @@
+$schema: ktw-schema/v1
+name: use-case
+version: "1.0.0"
+root: UseCase
+description: |
+  The use-case type's own fields. What every use case has lives elsewhere:
+  its id (UC-NNN), title, description and DoD prose are the object core, its
+  severity and probe the `checkable` capability's, its acceptance criteria
+  objects of their own under it, the decision deferring it a `deferred-by`
+  edge.
+types:
+  UseCase:
+    type: object
+    fields:
+      status_cache:
+        type: string@enum(pass, fail, no-test, fail-deferred, skipped, in-dev, covered, validated, regressed)
+        label: Status
+        description: Last verdict written by a verify-type verb. Never hand-edit.
+        optional: true
+      last_verified_at:
+        type: string@date-time
+        label: Last verified at
+        optional: true
+      layer_targets:
+        type: string[]
+        label: Layer targets
+        description: Test layers this UC expects (L1 / L2 / L3).
+        optional: true
+    extensions:
+      # WANT lens — the use-cases table (drive-method-ui four-lens surface).
+      # `status_cache` is the COMPUTED verdict (worst-of its criteria, written
+      # by verify-and-gate); the GUI badges it.
+      - type: ui-table
+        name: default
+        columns:
+          - { id: id, label: UC, sortable: true, width: 90 }
+          - { id: title, label: Use case, sortable: true }
+          - { id: status_cache, label: Status, align: center, width: 110 }
+        pagination: true
+        pageSize: 20
+        highlightOnHover: true

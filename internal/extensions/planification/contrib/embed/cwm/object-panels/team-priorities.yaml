@@ -1,0 +1,20 @@
+# Team priorities - the weekly team meeting's view:
+# a toggle per stream and one for what the current release delivered on top,
+# then the increments of the streams shown in the order they will be done -
+# delivered in the current release, the current release, the next, later
+# ones, no release - each line's priority and release changed from a
+# drop-down at once, through the existing verbs (team_priorities.go:
+# TeamPrioritiesPage). A GLOBAL panel of the Global strip, after Delivery.
+name: "Team priorities"
+description: "The increments of the streams you pick in the order they will be done - priority and release changed on the line"
+icon:
+  tabler: "users-group"
+  emoji: "👥"
+order: -1
+global: true
+# On no object: a global panel; the view draws every stream itself.
+filter: {}
+source: "ktw-agents:increments/team-priorities-page"
+# A release, an increment or a stream changed anywhere changes it.
+refresh:
+  scope: "universe"

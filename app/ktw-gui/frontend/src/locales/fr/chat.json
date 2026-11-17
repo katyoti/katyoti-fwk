@@ -1,0 +1,144 @@
+{
+  "header": {
+    "noActiveSession": "Aucune conversation en cours",
+    "scopedTooltip": "Ce chat porte sur un élément de votre travail",
+    "scopedTo": "Centré sur {{name}}",
+    "copied": "Copié",
+    "copySessionId": "Copier l’identifiant de la conversation",
+    "sessionSettings": "Paramètres de la conversation",
+    "appSettings": "Paramètres de l’application"
+  },
+  "input": {
+    "attachFile": "Joindre un fichier",
+    "runningPlaceholder": "Conversation en cours — en attente d’une question…",
+    "idlePlaceholder": "Lancer une tâche… (Entrée)",
+    "voice": "Voix",
+    "stop": "Arrêter",
+    "send": "Envoyer"
+  },
+  "prompt": {
+    "inboxBadge": "boîte de réception",
+    "inboxNotice": "Question envoyée dans la boîte de réception — la tâche attend la réponse donnée là-bas, pas dans ce champ.",
+    "openInbox": "Ouvrir la boîte de réception",
+    "promptBadge": "question",
+    "answerPlaceholder": "Saisissez votre réponse…",
+    "send": "Envoyer",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "tabs": {
+    "chat": "Chat",
+    "output": "Résultat",
+    "transcript": "Transcription",
+    "teams": "Équipes",
+    "cost": "Coût",
+    "http": "HTTP"
+  },
+  "panel": {
+    "hideDebugTabs": "Masquer les onglets de débogage",
+    "showDebugTabs": "Afficher les onglets de débogage",
+    "toggleDebugTabs": "Basculer les onglets de débogage",
+    "stopChat": "Arrêter ce chat",
+    "stop": "Arrêter",
+    "docs_one": "{{count}} document",
+    "docs_other": "{{count}} documents",
+    "httpNoSession": "Les appels HTTP apparaissent dès que l’exécution a un identifiant de session.",
+    "costNoSession": "Le coût apparaît dès que l’exécution a un identifiant de session.",
+    "selectTask": "Sélectionnez une tâche dans la barre latérale pour commencer"
+  },
+  "transcript": {
+    "detailed": "Détaillé",
+    "reader": "Lecture",
+    "detailedHint": "Tours du LLM, appels d’outils et télémétrie",
+    "readerHint": "Vue de lecture épurée interlocuteur → message",
+    "noSession": "La transcription apparaît dès que l’exécution a un identifiant de session."
+  },
+  "done": {
+    "completed": "Tâche terminée",
+    "failed": "Tâche en échec",
+    "stopped": "Tâche arrêtée",
+    "finished": "Tâche finie",
+    "scrollHint": "— faites défiler pour consulter le résultat",
+    "dismiss": "Terminé"
+  },
+  "form": {
+    "noAst": "SchemaService n’a renvoyé ni AST ni erreur — le substrat est dans un état incohérent.",
+    "buildFailed": "Construction du formulaire depuis le schéma : {{error}}",
+    "buildTableFailed": "Construction du tableau depuis le schéma : {{error}}",
+    "buildViewFailed": "Construction de la vue depuis le schéma : {{error}}",
+    "schemaUnavailable": "Schéma indisponible",
+    "inputRejected": "Saisie refusée par le validateur de schéma",
+    "noParameters": "Cette tâche ne prend aucun paramètre.",
+    "cancel": "Annuler",
+    "run": "Lancer",
+    "create": "Créer",
+    "next": "Suivant",
+    "invalidSchema": "Impossible d’afficher ce formulaire (schéma invalide)."
+  },
+  "list": {
+    "showing": "Flux de {{name}}",
+    "showAll": "Tout afficher",
+    "noDelegateMessages": "Ce délégué n’a produit aucun message de chat."
+  },
+  "message": {
+    "more": "Plus",
+    "copy": "Copier",
+    "delete": "Supprimer"
+  },
+  "status": {
+    "idle": "Inactif",
+    "running": "En cours",
+    "done": "Terminé",
+    "error": "Erreur",
+    "stopped": "Arrêté"
+  },
+  "stats": {
+    "turn": "tour {{turns}}",
+    "lastResponse": "Dernière réponse {{last}} s · délai du premier jeton {{ttft}} s",
+    "contextTooltip": "Contexte : {{cur}} sur {{win}} jetons ({{pct}} %)",
+    "context": "ctx {{cur}}/{{win}} ({{pct}} %)",
+    "cacheTooltip": "Cache : {{cached}} sur {{total}} jetons d’entrée servis depuis le cache",
+    "tokensTooltip": "Entrée {{input}} (+{{cached}} en cache) · Sortie {{output}}",
+    "tokens": "↑{{input}} ↓{{output}} jetons",
+    "costTooltip": "Dépense estimée pour cette conversation (selon les tarifs $/MTok configurés)"
+  },
+  "identity": {
+    "provider": "Fournisseur",
+    "name": "Nom",
+    "uri": "URI"
+  },
+  "tool": {
+    "input": "Entrée",
+    "output": "Sortie",
+    "errorOutput": "Sortie d’erreur"
+  },
+  "askForm": {
+    "cancelled": "annulé",
+    "cancelledTitled": "{{title}} — annulé"
+  },
+  "tools": {
+    "read": "Lu",
+    "write": "Écrit",
+    "foundFiles": "Fichiers trouvés",
+    "ran": "Exécuté",
+    "built": "Compilé",
+    "git": "Git"
+  },
+  "route": {
+    "yourAnswer": "Votre réponse",
+    "form": "Formulaire"
+  },
+  "sender": {
+    "user": "Utilisateur",
+    "assistant": "Assistant",
+    "system": "Système"
+  },
+  "runTask": {
+    "validationUnavailable": "Validation côté serveur indisponible : {{error}}",
+    "noTask": "Aucune tâche sélectionnée.",
+    "cancelEsc": "Annuler (Échap)",
+    "inputLabel": "Entrée de la tâche (facultative)",
+    "inputPlaceholder": "Saisissez le message initial de cette tâche. Laissez vide si la tâche n’attend aucune entrée.",
+    "tip": "Astuce : Ctrl+Entrée pour lancer, Échap pour annuler."
+  }
+}

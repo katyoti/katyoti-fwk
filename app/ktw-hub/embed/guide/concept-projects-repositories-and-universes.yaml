@@ -1,0 +1,225 @@
+# A concept document of KaTyoti: listed first in the guide,
+# under « Concepts KaTyoti », read in the person's language.
+# Projects, git and universes as KaTyoti delivers them.
+name: 'Projects, repositories and universes'
+description: 'How your work is organised: a git repository in your projects folder is one project, with its own identity, type and planning, belonging to no universe and no solution; a universe attaches several repositories as its members, serves all their projects at once and keeps your settings and keys apart from them.'
+hashtags:
+- katyoti-usage
+- concepts
+- project
+- repository
+- universe
+- git
+level: beginner
+concept: true
+body: |-
+  The reference for how your work is organised in KaTyoti: what a project is, how it
+  relates to git, to your projects folder and to the universe that serves it. Another
+  concept guide goes further: « Project and module types » lists the kinds of
+  projects and modules.
+
+  ## 1. The picture
+
+  ```mermaid
+  flowchart LR
+    SOL["Solution<br/>a starting set"] -->|a universe is created from| U["Universe<br/>sidecars · settings · keys"]
+    U -->|member| R1[("Git repository")]
+    U -->|member| R2[("Git repository")]
+    R1 -->|is| P1["Project"]
+    R2 -->|is| P2["Project"]
+    P2 -->|holds| S1["Module"] & S2["Module"]
+    subgraph PF["Your projects folder"]
+      R1
+      R2
+    end
+  ```
+
+  - A **universe** is created from a **solution** - a starting set of sidecars,
+    settings and keys - and runs that solution's sidecars and the ones you add.
+  - Your work lives in **git repositories** in **your projects folder**, outside
+    KaTyoti's installation.
+  - **A repository is one project:** its root holds the project file, its modules
+    and its planning. A project never holds another project: several studies of one
+    dossier are modules of one project.
+  - A universe **attaches several repositories as its members** and serves every
+    project they hold at once: you open a project where it is, with no switch.
+  - **A project belongs to no universe and no solution:** a universe attaches it, and
+    the project keeps what it needs written in its own file.
+
+  ## 2. The concepts
+
+  | Concept | What it is | Example |
+  |---|---|---|
+  | **Solution** | A starting set from a marketplace: components at exact versions, settings, the keys they need and starting content. A universe is created from it and updated with it; it never owns a project | « ArchiFactory pour Acme » |
+  | **Universe** | Your own KaTyoti, your working context: its sidecars - its solution's and the ones you add - its settings, its keys and its sessions. It holds none of your work: that is in the repositories it attaches. ArchiFactory, SoftwareFactory and KaTyoti Studio are products you use in a universe, not universes | Alice's « archi » universe |
+  | **Sidecar** | A component that gives a universe its capabilities: object types, actions, connectors | ktw-acme, ktw-docs |
+  | **Your projects folder** | The folder that holds your repositories, chosen when KaTyoti is installed; by default `Documents/Katyoti`. An update or an uninstall never touches it | `Documents/Katyoti` |
+  | **Repository** | A git repository that a universe attaches as one of its **members**. It is one project, committed, pushed and cloned as a whole | the katyoti repository, the repository of a dossier |
+  | **Project** | The unit of work: a repository holding its project file at its root, with its modules and its own planning. It has a **type**, brought by a sidecar, and an identity of its own, committed with it | the dossier « SI RH », the katyoti repository |
+  | **Module** | A folder of a project that groups its objects. It has a type too. A project's inbox, planning and journal are its system modules | `etude-existant-paie`, `sys-planification` |
+  | **Object** | What a module holds: a study, a document, a decision, a goal, a request | an étude de l'existant |
+
+  ## 3. The rules
+
+  1. **A repository is one project.** Its root holds the project file, with its
+     modules and its own planning. A project never holds another project: work kept
+     together - several studies of one dossier, for instance - is several modules of
+     one project. Everything that is yours is committed in the repository: the
+     project file, the modules and their objects.
+  2. **A project carries its identity.** Its project file holds an id minted once and
+     never changed, so a clone opened on another machine is the same project. A
+     universe refuses to open two projects with the same id.
+  3. **A project has a type** - software project, dossier d'architecture - and so
+     does each of its modules. The type is brought by a sidecar, never by a solution,
+     and there is no other kind of project. Today a dossier d'architecture opens only
+     in a universe created from ArchiFactory's solution: elsewhere it is not opened,
+     and KaTyoti names the solution. **Coming:** a project opens in any universe;
+     where a sidecar it needs is missing, or older than the one that wrote it, it
+     opens read-only, names the product and offers to install it, to open the
+     project in another universe or to detach that product from it.
+  4. **A repository lives in your projects folder,** under its name: never inside
+     KaTyoti's installation, and never inside another git repository. Creating or
+     attaching a repository in such a place is refused, and KaTyoti says where it
+     belongs.
+  5. **A universe serves every project of its members at once.** It attaches several
+     repositories; each of their projects keeps its own modules and its own
+     planning. An object of another project is named with that project's id in
+     front of it; a name two projects share is refused until you say which project
+     you mean.
+  6. **A repository is attached by one universe at a time.** Attaching a repository
+     that another universe serves is refused, naming that universe, until it is
+     detached there. **Coming:** a project opened in several universes, written by
+     one of them.
+  7. **Beside other members, only a repository created on this PC.** A universe
+     attaches as one of several members only a repository KaTyoti created on this
+     computer - with « New project », or when the universe was created with its
+     project. A repository you cloned brings hooks, skills and tasks KaTyoti cannot
+     check yet: it is attached alone, in a universe of its own; attaching it beside
+     others is refused, saying why.
+  8. **What belongs to your machine stays out of the repository.** Where it is on
+     disk, your keys and your settings belong to the universe. A project's
+     `.katyoti` folder is a rebuildable index and cache, kept out of git: deleting it
+     loses nothing.
+
+  ## 4. On disk
+
+  ```text
+  Documents/Katyoti/                    your projects folder
+  ├── dossier-si-rh/                    ← a repository holding one project
+  │   ├── .git/
+  │   ├── .gitignore                    keeps .katyoti/ and .env out of git
+  │   ├── project.cwm.yaml              its id, its type, its data version
+  │   ├── modules/
+  │   │   ├── sys-inbox/                its inbox
+  │   │   ├── sys-planification/        its own planning
+  │   │   └── etude-existant-paie/      a module: an étude de l'existant
+  │   └── .katyoti/                     rebuildable index and cache, not in git
+  └── demo/                             ← another repository, another project
+      ├── .git/
+      ├── project.cwm.yaml
+      └── modules/
+          ├── etude-sigma/              a study of the project
+          └── etude-crm/                another study, same project
+  ```
+
+  Your universes are not in this folder: they live in KaTyoti's installation, with
+  your settings and keys.
+
+  ## 5. Repositories and git
+
+  - **A new project gets a repository of its own** in your projects folder: its
+    folder made, git initialised there and a `.gitignore` keeping the machine's files
+    out of it.
+  - **A repository you attach** is used as it is. KaTyoti gives a project its project
+    file the first time it opens it. A repository you cloned is attached alone, in a
+    universe of its own (rule 7).
+  - **Committing, pushing, pulling and choosing a remote are yours,** with git or the
+    tool you prefer. KaTyoti does not run them for you.
+  - **A clone keeps the project's identity:** whoever opens it works on the same
+    project.
+
+  ## 6. In the application
+
+  - **Ctrl+Shift+N** opens « New project »: you choose its « Project type », then give
+    its name (lowercase letters, digits and dashes: it is its folder) - or, for a
+    type with a creation form or an assistant of its own, you follow it.
+  - **The universe's Projects:** right-click the universe's icon in the left bar,
+    choose « Edit », then the « Projects » tab, which lists what the universe
+    attaches. « New project… » creates one in your projects folder and attaches it;
+    « Attach folder… » attaches a repository you already have; « Detach » lets it
+    go, its files kept.
+  - **In the tree,** « PROJECTS » shows what the universe serves. An object of
+    another project shows that project's name beside it - in the tree, at the top of
+    its page and in search results - and « À faire » gathers the work of every
+    project. A universe with no project says so and offers to « Attach a project »;
+    « Remove » stops the universe serving one, its folder and its files kept.
+  - **On « Ready to start »,** at the first start, you choose your projects folder.
+    If an earlier installation of KaTyoti used projects on this computer,
+    « Projects from your earlier installations » copies the ones you pick into your
+    projects folder and brings the copies up to date; the originals are never
+    changed.
+
+  ## 7. Example - ArchiFactory: an architect's dossiers
+
+  Alice created her universe « archi » from the solution « ArchiFactory pour Acme ».
+  Each of her dossiers is a project of the type **dossier
+  d'architecture**, in a repository of its own. Her team's demonstration is one
+  dossier holding several études.
+
+  ```mermaid
+  flowchart TB
+    subgraph M["Alice's machine"]
+      AF["Universe « archi »"]
+      subgraph PF["Her projects folder"]
+        R1[("dossier-si-rh")] --> D1["Dossier SI RH"]
+        R2[("demo")] --> D2["Dossier démo"]
+      D2 --> E1["Étude Sigma"] & E2["Étude CRM"]
+      end
+    end
+    AF -->|member| R1
+    AF -->|member| R2
+    R1 -->|pushed to| G1[["Her team's server"]]
+    D1 -->|publishes| CF[["Confluence"]]
+  ```
+
+  - On Home, **« Mes dossiers »** lists her dossiers, each with its études.
+    **« Ouvrir »** on a dossier opens it; **« Nouveau dossier »** creates one.
+  - Inside a dossier, she creates an étude de l'existant with « Nouvelle étude »: one
+    dossier holds as many études as it needs.
+  - Each dossier is a project of its own: its études, its planning and its to-dos
+    stay its own.
+  - She commits and pushes each repository with git, to her team's server. Bob
+    clones it and attaches it alone in a universe of his own, created from the same
+    solution: it is the same dossier.
+
+  ## 8. Example - KaTyoti Studio: KaTyoti developing itself
+
+  The KaTyoti team works in a universe created from the solution of **KaTyoti
+  Studio**, the product that builds and extends KaTyoti - a product, not a universe.
+  The katyoti repository is a project of the type **software project**: its
+  modules are software modules beside their code and documentation modules, and its
+  system modules hold its planning - streams, increments, releases and requests.
+  Another repository of the team, a sidecar split out into its own repository for
+  instance, is attached as another member of the same universe: both are served at
+  once, each with its own planning.
+
+  ## 9. What a project file holds
+
+  ```yaml
+  # project.cwm.yaml - committed with the project
+  id: dossier-si-rh
+  type: dossier-architecture
+  name: Dossier SI RH
+  capabilities:
+    project:
+      uuid: 01a0d3a2-…        # minted once, never changes
+      data_version: 29        # the shape of the project's data
+  ```
+
+  The project file never holds a path or a key: the path is the universe's, the keys
+  are the universe's. It names no universe and no solution either. The data version
+  tells which shape the project's data has; « Universes, solutions and sidecar
+  versions » explains how it follows an update today. **Coming:** the project file
+  also lists the components the project needs, each with the shape of its data, and
+  that shape changes only when you choose « Convertir » - never when a project
+  opens, never on an update.

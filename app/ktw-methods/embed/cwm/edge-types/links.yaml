@@ -1,0 +1,19 @@
+name: links
+label: Links to
+inverse_label: Linked from
+target: uri                        # the RIGHT SIDE IS ELSEWHERE
+object_storage: edges
+cardinality: M:N
+inverse_name: linked-from
+description: |
+  Something this object refers to that does NOT live in the repository: a
+  SharePoint document, a Confluence page, a dashboard, a ticket.
+
+  This is the second half of the attachment rule decided 2026-09-25 — *if we do
+  not put it in git, then we just attach a link to it.* It exists so that
+  "there is a thing, and it is over there" is DECLARED rather than buried in
+  prose: a link can be listed, counted and one day checked, where a URL written
+  into a paragraph cannot.
+
+  It is not a weaker `attaches`. Choosing between them is choosing whether the
+  bytes are part of the module, and that is a real decision each time.

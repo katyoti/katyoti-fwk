@@ -1,0 +1,18 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Appliquer un config-set
+  description: Appliquez un config-set, ses modèles et ses clés, à votre univers.
+  hashtags:
+  - config-set
+  - configuration
+  - clés
+  - modèles
+  - appliquer
+  steps:
+    open-marketplace: Ouvrez la {control:ribbon.marketplace} depuis le ruban.
+    open-config-sets: Ouvrez son onglet {control:marketplace.tab|configsets}.
+    apply: Choisissez un config-set et appuyez sur {control:configset.apply} sur sa ligne.
+    keys: Renseignez les clés demandées (ou importez un fichier de clés), puis appliquez. Toute clé non optionnelle doit avoir une valeur. Appliquer est la seule opération ; vous pourrez réappliquer plus tard.

@@ -1,0 +1,8 @@
+name: text
+kind: field-type
+basePrimitive: string
+description: Plain text input — the default string renderer.
+
+# No params; this is the fallback for kind=string with no content.
+configSchema:
+  fields: {}

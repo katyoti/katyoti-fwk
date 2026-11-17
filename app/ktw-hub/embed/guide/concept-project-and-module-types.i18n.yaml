@@ -1,0 +1,99 @@
+# Translations of the concept document beside this file (modules/guide, OD-015).
+fr:
+  name: 'Types de projets et de modules'
+  description: 'Quel genre de projet ou de module vous avez sous les yeux : son type dit ce qu''il est, ce qu''il montre et à quoi il sert - projet logiciel, dossier d''architecture ; logiciel, documentation, étude de l''existant.'
+  hashtags:
+  - concepts
+  - projet
+  - module
+  - type
+  body: |-
+    Dans KaTyoti, chaque projet et chaque module a un **type**. Le type dit ce que c'est
+    - un projet logiciel, un dossier d'architecture, un module de documentation, une
+    étude de l'existant - et c'est de lui que viennent son icône, ce que « + Nouveau »
+    propose à l'intérieur, les onglets sur lesquels il s'ouvre et ce qu'il sait faire.
+    Cette page présente les types livrés aujourd'hui et l'usage de chacun.
+
+    ## 1. Vue d'ensemble
+
+    ```mermaid
+    flowchart LR
+      P["Projet<br/>un dépôt git<br/>son type : projet logiciel, dossier…"] --> M1["Module<br/>son type : logiciel, documentation…"]
+      P --> M2["Module"]
+      M1 --> O["Ses éléments<br/>documents, décisions, objectifs, fonctionnalités…"]
+    ```
+
+    - Un **projet** est l'unité de travail : un dépôt git qui porte son fichier de
+      projet à sa racine - un dépôt est un projet. Un projet ne contient jamais un autre
+      projet.
+    - Un **module** est une partie d'un projet : un dossier qui regroupe ses éléments.
+    - Les deux ont un type. Le niveau - projet ou module - vient lui aussi du type : un
+      type est soit une sorte de projet, soit une sorte de module.
+
+    ## 2. Les types de projets
+
+    | Type | À quoi il sert | Ce qu'il contient | Fourni par |
+    |---|---|---|---|
+    | **Projet logiciel** | Le type par défaut : un dépôt de code et le travail qui l'entoure | Des modules logiciels, de la documentation, les modules système | KaTyoti - tout univers l'ouvre |
+    | **Dossier d'architecture** | Le dossier d'un architecte sur un système : son cadrage, ses sources, ses études, sa publication | Ses études de l'existant, de la documentation, les modules système | ArchiFactory - aujourd'hui il ne s'ouvre que dans un univers créé à partir de la solution d'ArchiFactory |
+
+    Un nouveau projet est un projet logiciel, sauf si vous choisissez un autre type.
+    Aujourd'hui un projet dont le type demande une solution que votre univers n'a pas
+    ne s'ouvre pas : KaTyoti indique la solution nécessaire, pour que vous l'ouvriez
+    dans le bon univers. **À venir :** il s'ouvre dans n'importe quel univers ; s'il y
+    manque le produit dont il a besoin, il s'ouvre en lecture seule et propose de
+    l'installer. Il n'existe pas d'autre sorte de projet : les listes regroupent les
+    projets par type et par produit qui l'apporte. Plusieurs travaux tenus ensemble sont les modules d'un même projet - plusieurs études
+    d'un même dossier, par exemple - et plusieurs projets menés ensemble sont des dépôts
+    que votre univers rattache côte à côte.
+
+    ## 3. Les types de modules
+
+    | Type | À quoi il sert | Ce qu'il contient |
+    |---|---|---|
+    | **Module logiciel** | Une partie du code : ses paquets, sa santé, ses vérifications | Ses objectifs, fonctionnalités et demandes, avec le code qu'ils concernent |
+    | **Documentation** | Un travail écrit sans code : un guide, un site, un ensemble de décisions | Des documents, des décisions, des objectifs et des fonctionnalités |
+    | **Étude de l'existant** (ArchiFactory) | Ce qui est en place - applications, flux, infrastructure, outillage - étudié section par section | Son cadrage, ses sources et sa base de connaissances, ses sections, sa publication sur Confluence |
+    | **Module système** | Ce que KaTyoti garde pour le projet lui-même : sa boîte de réception, sa planification, son journal | Visible seulement au niveau Expert |
+
+    Seul un module logiciel porte du code : un module de documentation ou une étude n'a
+    ni panneau de santé du code ni vérifications de code.
+
+    ## 4. Ce que le type vous apporte
+
+    Partout où vous croisez un projet ou un module, son type se voit :
+
+    - **Dans l'arborescence**, son icône et sa couleur, et ses modules regroupés par type,
+      dans l'ordre que donne le type du projet.
+    - **En haut de sa page**, son type au-dessus de son nom, son niveau, la solution qu'il
+      demande et son parent, et un encadré qui liste ce que son type apporte.
+    - **Dans « + Nouveau »**, seulement ce qui peut être créé à l'intérieur, chacun avec
+      son propre formulaire de création : une nouvelle étude de l'existant ouvre
+      « Nouvelle étude », par exemple.
+    - **À l'ouverture**, les onglets qui comptent pour son genre d'abord ; les autres
+      attendent derrière « Plus… ».
+
+    Rien n'est à ajouter à la main pour qu'un module soit ce qu'il est : son type le dit.
+
+    ## 5. D'où viennent les types
+
+    Chaque type vient d'un sidecar - n'importe quel sidecar, jamais d'une solution.
+    KaTyoti livre les types généraux - projet logiciel, module logiciel,
+    documentation, module système. Un **produit** ajoute, par ses sidecars, les types
+    de son métier : ArchiFactory apporte le dossier d'architecture et l'étude de
+    l'existant. Un univers propose les types des sidecars qu'il fait tourner, quelle que
+    soit la solution dont il a été créé. Aujourd'hui le dossier d'architecture nomme
+    encore la solution d'ArchiFactory, et ne s'ouvre donc que dans un univers créé à
+    partir d'elle ; **à venir :** il s'ouvre partout où le sidecar d'ArchiFactory est
+    installé, et en lecture seule ailleurs.
+
+    ## 6. Dans ArchiFactory aujourd'hui
+
+    - Vos dossiers d'architecture sont des **projets** de type dossier d'architecture.
+      « Mes dossiers » liste ceux que votre univers sert, et « Ouvrir » sur l'un d'eux
+      l'ouvre. Chaque dossier est un dépôt à lui, et un dossier contient plusieurs
+      études.
+    - Dans un dossier, le module que vous créez est une **étude de l'existant**, avec
+      « Nouvelle étude » ; des modules de documentation sont possibles aussi.
+    - Les études à venir (d'autres genres d'études) seront des types à part entière,
+      ajoutés à la même liste.

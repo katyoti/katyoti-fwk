@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Fonctionnalités et code"
+  description: "Le code fait-il ce que disent les fonctionnalités du module, et disent-elles tout ce qu'il fait : chaque fonctionnalité réalisée ou terminée confrontée à son code et ses critères rejoués, ce qui a changé depuis sa preuve, ce que le code fait sans fonctionnalité déclarée."

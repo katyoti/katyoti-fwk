@@ -1,0 +1,17 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Répondre à une question dans l'Inbox
+  description: Répondez à une demande qu'une tâche a laissée dans votre Inbox, pour qu'elle puisse continuer.
+  hashtags:
+  - inbox
+  - répondre
+  - approbation
+  - demande
+  - question
+  steps:
+    open-inbox: Ouvrez l'{control:ribbon.inbox} depuis le ruban.
+    answer: Dans « À faire », répondez à la question sur sa carte et envoyez votre réponse.
+    answered: Une fois votre réponse envoyée, appuyez sur {control:guide.check}.

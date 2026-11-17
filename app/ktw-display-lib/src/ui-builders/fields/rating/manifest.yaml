@@ -1,0 +1,12 @@
+name: rating
+kind: renderer
+basePrimitive: number
+description: Clickable star rating widget. Value is the integer count of filled stars.
+
+configSchema:
+  fields:
+    max:
+      type: number
+      optional: true
+      default: 5
+      description: Maximum number of stars displayed.

@@ -1,0 +1,51 @@
+# The `persona` kind, declared by the personas pack: every binary that
+# publishes personas (a method pack's embed/personas) emits one
+# `<provider>:/persona/<name>` Contribution per shipped persona; the framework
+# ships none built-in. Its schema is provider-relative: the publisher names
+# `<provider>:/data-type/persona`, the shape of mbapi.PersonaBody
+# (personakind.Leaf).
+name: persona
+description: |
+  A reusable agent persona — an agent-loop task plus binding metadata,
+  resolved + attached by CWM's persona library. Body extends the task
+  shape with persona-specific frontmatter.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: persona
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The markdown body after the frontmatter: the persona's instructions,
+  # also folded into data as `body` (what the persona library reads).
+  instructions: {mediaType: text/markdown}
+  # The TASK.md as written.
+  source: {mediaType: text/markdown}
+meta:
+  budget: 1024  # measured max 411 B across 21 binaries, x1.5 rounded up
+  # The picker fields are written once, in the data layer (the frontmatter).
+  from: data
+  fields: [name, description, icon, hashtags, category, advertised]
+
+# How a file becomes a persona (contribution-types.md "How files become
+# layers"): a TASK.md whose frontmatter says `category: persona`, read once -
+# the frontmatter (with the JSON names: iconName, icon) is the data layer, the
+# body the instructions, folded into data as `body`. Addressed by its name. A
+# task file of another category is not a persona (left out, not dropped). An
+# augmentation (`augments:`) says `advertised: false`; the persona library
+# folds it into its baseline.
+source:
+  folder: personas
+  match: ["*.md"]
+  id: name
+  where: {category: persona}
+  format: frontmatter
+  layers:
+    data: {from: frontmatter}
+    instructions: {from: body, fold: body}
+    source: {from: file}

@@ -1,0 +1,16 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapWant:
+      fields:
+        depth:
+          description: "Jusqu'où la volonté est ARTICULÉE, E1-E5 (la profondeur ISA de la méthode), orthogonale à la maturité de réalisation, qui est le `tier` du module. E1 est une phrase ; E5 est une volonté dont chaque critère est sondé. Optionnel, car la plupart des volontés n'ont jamais été évaluées en articulation."
+          label: "Profondeur d'articulation"
+        reachability:
+          description: "Une propriété distingue un idéal ouvert d'un idéal clôturable. asymptotic : une étoile polaire dont on suit la distance, jamais totalement refermée (un objectif, toujours). closable : la distance peut atteindre zéro, un test peut dire qu'elle est terminée (une fonctionnalité, un cas d'usage, un critère d'acceptation). Une volonté EST un état idéal : le nom de l'objet en est la formulation, et ses aspects vérifiables en sont la décomposition."
+          label: "Atteignabilité"
+        title:
+          description: "Obsolète : ce qui est voulu, en une ligne, est le nom de l'objet (le noyau d'objet). Lu pour les objets écrits avant ; jamais écrit."
+          label: "Titre"

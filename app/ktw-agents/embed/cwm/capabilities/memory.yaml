@@ -1,0 +1,44 @@
+# Memory as ONE NAMED FILE: where the work on an object stands between
+# sessions, in the object's module, OWNED by the object (moved when a rename
+# moves it, deleted with it), read and written through ObjectNamedFile* — the
+# cwm-object-named-file-* tools. A policy on every type, so every object has it;
+# a chat on the object receives the file in its agent context ("(empty)" while
+# nothing is written). What HAPPENED to the object is not memory: it is the
+# journal's. What was LEARNED is not memory either: it goes to finding objects
+# and module pages.
+name: memory
+label: Memory
+icon: brain
+description: >-
+  Where the work on an object stands between sessions: its working memory
+  (what is underway, what is next), one markdown file in the object's module,
+  replaced whole when it changes.
+files:
+  working:
+    path: memory/${id}.md
+    media: text/markdown
+    owned: true
+    description: Where the work on this object stands — what is underway, what is next; rewritten whole when it changes.
+attach:
+  types: ["*"]
+agent:
+  system:
+    - id: memory-how
+      title: Memory and comments
+      order: 30
+      text: >-
+        This object's working memory is where the work on it stands for the
+        next session: what is underway, what is next. When that changes,
+        rewrite it whole: cwm-object-named-file-write with capability
+        "memory", name "working", and the new state as markdown (it replaces
+        the file). Once written it comes back in the next chat on this object,
+        in the "Working memory" section above; "(empty)" there means nothing
+        is written yet — there is nothing to look up. What you LEARNED about
+        the object is not memory: record it as a finding or in the module's
+        pages (skill cwm-knowledge-capture). When the user asks you to "note"
+        where things stand or "remember" what to do next, that is memory. A
+        comment (comment-add) is different: it is said TO the people who look
+        at this object, who may answer it — use it when the user asks to
+        comment, to ask someone, or to answer a comment.
+  files:
+    - {capability: memory, name: working, title: "Working memory", order: 10}

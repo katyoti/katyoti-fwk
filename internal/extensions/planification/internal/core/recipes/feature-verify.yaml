@@ -1,0 +1,11 @@
+# A realized feature is verified by an agent: its checks run, its code read,
+# it is moved done through the workflow's verify (gated on ready-to-test) - or
+# sent back through reopen with the findings, the missing work filed. No
+# person's step: the agent's move is the end.
+name: feature-verify
+description: Verify a realized feature is really implemented - done through verify, or sent back with the findings.
+types: [feature]
+states: [realized]
+kind: review
+steps:
+  - {name: verify, phase: verify, class: deliver, role: tester, share: 1, skill: "ktw-methods:/skill/verify-and-gate", instructions: "Verify the realized feature is really implemented. Run its acceptance criteria (ktw-agents verification verify, for each criterion serving it); with none, write them first (each runnable, serving the feature). Read the code its module says implements it. Then move it: green - ktw-agents cwm object-transition --id <feature> --to done --transition verify; not - ktw-agents cwm object-transition --id <feature> --to proposed --transition reopen with what is missing as the note, and file that work on it (requests file --on <feature> --kind fix). Report what you ran and found."}

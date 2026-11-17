@@ -1,0 +1,34 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      source:
+        type: string@enum(interview, extract)
+        description: "How to gather requirements: interview the user, or extract from existing code/docs. Default 'interview'."
+        optional: true
+      item_type:
+        type: string@enum(task, agent, skill, service, sidecar)
+        description: "What kind of item to build (optional hint for the interview/extract phase)"
+        optional: true
+      threshold:
+        type: number
+        description: "Quality target for the iteration loop (0-1). Default 0.7."
+        optional: true
+      max_iterations:
+        type: number
+        description: "Maximum loop iterations before giving up (1-10). Default 3."
+        optional: true
+      seed:
+        type: string
+        description: "Optional starter prompt for the interview phase (e.g., 'I want a task that summarizes PDFs')"
+        optional: true
+      source_path:
+        type: string
+        description: "When source=extract, path to the code/docs to extract a spec from"
+        optional: true
+      output_root:
+        type: string
+        description: "Optional override for the output directory. Defaults to user dir."
+        optional: true

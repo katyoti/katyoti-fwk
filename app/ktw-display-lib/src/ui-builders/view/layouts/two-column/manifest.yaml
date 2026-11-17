@@ -1,0 +1,18 @@
+name: two-column
+kind: view-layout
+description: >-
+  Two-column SimpleGrid layout. Groups distributed alternately left/right
+  to balance vertical fill. Honors per-group `md` if set (pinning a group
+  to a specific column span). Best for wider viewports / dense detail
+  pages where vertical scrolling should be minimized.
+
+configSchema:
+  fields:
+    spacing:
+      type: string
+      default: md
+      description: "Mantine SimpleGrid spacing between columns + rows"
+    breakpoint:
+      type: string
+      default: md
+      description: "Mantine breakpoint at which the layout collapses to single-column (sm | md | lg | xl)"

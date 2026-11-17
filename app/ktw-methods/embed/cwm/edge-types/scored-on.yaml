@@ -1,0 +1,13 @@
+name: scored-on
+label: Scored on
+inverse_label: Grid of
+from: solution-evaluation
+to: evaluation-grid
+cardinality: N:1
+target: object
+object_storage: edges
+inverse_name: grid-of
+description: |
+  The evaluation grid a solution evaluation is scored on: its criteria, their
+  weights and its scale. Reopening the grid sends the evaluations scored on
+  it back to draft.

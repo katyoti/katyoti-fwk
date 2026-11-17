@@ -1,0 +1,40 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Review:
+      fields:
+        commit:
+          description: 'Le commit du code que la revue a lu'
+          label: 'Commit'
+        rating:
+          description: 'Le jugement d''ensemble'
+          label: 'Note'
+        requested_by:
+          description: 'Qui l''a demandée (manuelle) ou la demande qui l''a déclenchée (automatique)'
+          label: 'Demandée par'
+        reviewed_at:
+          description: 'Quand la revue a eu lieu'
+          label: 'Revue le'
+        reviewers:
+          description: 'Qui a relu : des personnes ou des agents'
+          label: 'Relecteurs'
+        run:
+          description: 'Le passage dont elle fait partie : les revues lancées ensemble le partagent'
+          label: 'Passage'
+        scope:
+          description: 'Ce que la revue a examiné : un module, un objet ou un chemin'
+          label: 'Périmètre'
+        score:
+          description: 'Un score de 0 à 100 quand le type de revue en définit un'
+          label: 'Score'
+        summary:
+          description: 'La note en quelques phrases'
+          label: 'Synthèse'
+        trigger:
+          description: 'Ce qui l''a lancée : une personne, ou la demande dont elle a revu le changement'
+          label: 'Déclenchement'
+        type:
+          description: 'Le type de revue passé : le nom d''une contribution review-type'
+          label: 'Type de revue'

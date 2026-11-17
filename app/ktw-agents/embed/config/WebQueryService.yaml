@@ -1,0 +1,33 @@
+# Web tools configuration.
+#
+# Controls which providers back web-fetch and web-search.
+# API keys are resolved from environment variables via envkey tags.
+
+fetch_provider: firecrawl
+search_provider: valueserp   # valueserp (default), serpapi, brave
+
+# Global defaults
+search_location: France
+search_num_results: 5
+crawl_max_depth: 3
+crawl_limit: 10
+scrape_formats:
+  - markdown
+
+# Cache
+cache_enabled: true
+cache_ttl_hours: 24
+# cache_dir:           # default: ~/.ktw-agents/cache/web
+
+# Provider-specific settings
+firecrawl:
+  timeout_seconds: 30
+  only_main_content: true   # strips nav/footer/ads — reduces token usage significantly
+
+valueserp: {}
+
+serpapi: {}
+
+brave:
+  timeout_seconds: 10
+  result_count: 10

@@ -1,0 +1,26 @@
+{
+  "count": "{{visible}} sur {{total}}",
+  "searchTasks": "Rechercher par nom, description, tag ou catégorie…",
+  "searchItems": "Rechercher par nom, description ou tag…",
+  "filterByTags": "Filtrer par tags",
+  "noTasks": "Aucune tâche disponible pour l’instant.",
+  "tryBuilder": "Essayez {{task}} pour en créer une.",
+  "noNodeTasks": "Cet élément n’a pas encore de tâche.",
+  "pickNode": "Choisissez un autre élément ou créez-en une avec {{task}}.",
+  "noMatch": "Aucune tâche ne correspond à vos filtres.",
+  "noMatches": "Rien ne correspond aux filtres actuels.",
+  "nothingToShow": "Rien à afficher.",
+  "sortBy": "Trier par",
+  "sort": {
+    "name": "Nom",
+    "category": "Catégorie",
+    "source": "Source"
+  },
+  "star": "Ajouter aux actions rapides",
+  "unstar": "Retirer des actions rapides",
+  "starLocked": "Dans les actions rapides par défaut - sa croix la retire",
+  "removeQuick": "Retirer des actions rapides - une étoile la remet",
+  "showAllTasks": "Voir toutes les tâches ({{count}} de plus)",
+  "formBadge": "formulaire",
+  "showDescription": "Afficher la description de la tâche"
+}

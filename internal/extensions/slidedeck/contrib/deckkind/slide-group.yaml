@@ -1,0 +1,31 @@
+# The `slide-group` kind, declared by the slide-deck pack: slides a team keeps
+# once and shows in many decks, shipped as `slide-groups/<name>.yaml` and
+# published as `<provider>:/slide-group/<name>`. Its schema is
+# provider-relative: `<provider>:/data-type/slide-group`, the shape of
+# deckbody.SlideGroupBody. A project keeps its own as `slide-group` objects,
+# which come first.
+name: slide-group
+description: |
+  A slide group: slides shown in many decks — « our team », « the company
+  context » — by a slide whose only setting is `include=<name>`. Updated once,
+  every deck that includes it shows the new slides.
+
+schema: slide-group
+validate: error
+
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 512
+  from: data
+  fields: [name, description]
+
+source:
+  folder: slide-groups
+  match: ["*.yaml", "*.yml"]
+  id: basename
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

@@ -1,0 +1,38 @@
+# The `deck-theme` kind, declared by the slide-deck pack: a theme a sidecar
+# ships as `deck-themes/<name>.yaml` in its pack, published as
+# `<provider>:/deck-theme/<name>`. Its schema is provider-relative: the
+# publisher names `<provider>:/data-type/deck-theme`, the shape of
+# deckbody.ThemeBody (deckkind.Leaves).
+name: deck-theme
+description: |
+  A deck theme: design tokens, fonts, the chrome every slide carries, the looks
+  of each layout and named icons. A deck picks one with `theme: <name>`; a
+  slide picks a look with `variant=<name>`; the deck lint checks both against
+  the theme; the deck component styles the deck from it. The files it names
+  are deck-asset entries under `deck-assets/<name>/`.
+
+# Declared, not derived: a kind whose schema is inferred from its name is
+# unvalidatable the moment the inference fails, and fails silently.
+schema: deck-theme
+validate: error
+
+# Every entry carries its decoded body (data) and the YAML as written
+# (source, the default layer).
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 512
+  # Written once, in the data layer: every binary declares this kind, so the
+  # builder derives the picker fields; the producer writes none.
+  from: data
+  fields: [name, description]
+
+source:
+  folder: deck-themes
+  match: ["*.yaml", "*.yml"]
+  id: basename
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

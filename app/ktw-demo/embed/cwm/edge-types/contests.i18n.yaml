@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Le contestataire dispute le visa de l''objet contesté : tous deux portent un visa.'
+  inverse_label: 'Contesté par'
+  label: 'Conteste'

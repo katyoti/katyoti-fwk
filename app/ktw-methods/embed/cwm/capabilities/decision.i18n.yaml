@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Décision
+  description: >-
+    L'ÉTAT d'une décision, en champs : les options, le choix retenu, quand
+    elle a été posée et quand elle a été tranchée. Le raisonnement n'est
+    jamais ici : c'est le corps de l'objet (Question, Options, Décision). Ce
+    qu'une décision touche n'est pas un champ non plus : c'est un lien.

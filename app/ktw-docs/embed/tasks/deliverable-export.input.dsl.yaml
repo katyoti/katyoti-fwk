@@ -1,0 +1,24 @@
+name: deliverable-export-input
+root: DeliverableExportInput
+types:
+  DeliverableExportInput:
+    type: object
+    fields:
+      to:
+        type: string
+        label: "Format"
+        description: "Le format de la version exportée"
+        default: docx
+        enum: [docx, pdf]
+        content:
+          type: text
+          options:
+            - {value: docx, label: Word}
+            - {value: pdf, label: PDF}
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Exporter"
+        groups:
+          - title: "Export"
+            fields: [to]

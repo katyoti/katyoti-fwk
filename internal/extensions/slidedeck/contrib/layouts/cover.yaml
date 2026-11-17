@@ -1,0 +1,10 @@
+name: cover
+description: The opening slide — the deck title, a subtitle, and who presents it.
+slots:
+  - name: default
+    description: A level-1 heading with the title, then a short subtitle line.
+    required: true
+example: |
+  <!-- slide: layout=cover -->
+  # Q4 architecture review
+  One platform, three sidecars

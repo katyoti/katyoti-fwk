@@ -1,0 +1,5 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Module système
+  description: "Un espace opérationnel que la plateforme garde pour elle (`sys-inbox` contient l'inbox et les messages qui y sont déposés)."

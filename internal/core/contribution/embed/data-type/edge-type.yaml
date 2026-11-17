@@ -1,0 +1,80 @@
+# Canonical data-type for the CWM EdgeTypeRegistration body —
+# `system:/data-type/edge-type`. The Contribution body shape every
+# `<provider>:/edge-type/<name>` entry MUST match.
+#
+# Mirrors the live `api.EdgeTypeRegistration` struct in
+# internal/extensions/cwm/api/kindreg.go.
+#
+# Producer: any binary shipping `cwm/edge-types/*.yaml` emits one
+# Contribution per registered edge type (cwmlocal.ContributeCWMTypes),
+# read directly from its embedded type FS.
+#
+# ONLY `name` is required — every other field has a runtime default —
+# so a minimal edge-type definition stays valid under contribution
+# schema validation (matches the node-type / item-type convention).
+$schema: ktw-schema/v1
+name: edge-type
+version: "1.0.0"
+root: EdgeTypeRegistration
+description: |
+  YAML-defined edge type. Picked up by the substrate's TypeRegistry
+  layering chain (`cwm/edge-types/*.yaml` across sources; closer-wins).
+  Drives edge validation: who may take part (from/to capabilities),
+  cardinality, what the right side is, and where the edge is stored
+  (object_storage). Exposed as the `<provider>:/edge-type/<name>`
+  Contribution.
+types:
+  EdgeTypeRegistration:
+    type: object
+    fields:
+      name:
+        type: string
+        description: kebab-case edge type name (canonical id)
+      from:
+        type: string
+        description: source kind/type (e.g. task, any-item)
+        optional: true
+      to:
+        type: string
+        description: target kind/type (e.g. requirement, code-symbol)
+        optional: true
+      cardinality:
+        type: string
+        description: "1:1 | 1:N | N:1 | M:N (source:target); empty = M:N. Any other value is refused"
+        optional: true
+      inverse_name:
+        type: string
+        description: optional name for traversal in the opposite direction
+        optional: true
+      description:
+        type: string
+        description: human-readable description
+        optional: true
+      label:
+        type: string
+        description: the link as a person reads it from its source (the Links tab); empty = the name
+        optional: true
+      inverse_label:
+        type: string
+        description: the link as a person reads it from its target; empty = the inverse name
+        optional: true
+      from_capabilities:
+        type: string[]
+        description: capabilities the SOURCE object must carry (its effective set); when set, supersedes from (phase 7e)
+        optional: true
+      to_capabilities:
+        type: string[]
+        description: capabilities the TARGET object must carry, checked when it is in the index; supersedes to
+        optional: true
+      target:
+        type: string@enum(object, path, uri)
+        description: what the right side is — object (an id in this project, the default), path (a file in the project), uri (a resource or tool URI)
+        optional: true
+      object_storage:
+        type: string@enum(edges, field)
+        description: where the edge is stored, once — edges (an entry in the source's edges list, the default) or field (a property on one side)
+        optional: true
+      field:
+        type: string
+        description: for object_storage field, <side>.<capability>.<property>, e.g. left.container.parent
+        optional: true

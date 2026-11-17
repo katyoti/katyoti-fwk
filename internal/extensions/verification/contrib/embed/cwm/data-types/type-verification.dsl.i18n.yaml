@@ -1,0 +1,9 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TypeVerification:
+      fields:
+        gate_blocks_on:
+          description: 'Gravité de lint minimale qui bloque : ce que lint() compte comme bloquant ; error si vide'

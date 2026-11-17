@@ -1,0 +1,13 @@
+name: joined
+from: request
+to: increment
+cardinality: N:1
+from_capabilities: [request]
+target: object
+object_storage: edges
+description: |
+  A request JOINED an increment while it ran: filed straight into it - a
+  correction from the command line or its pane, the fix of a failed
+  acceptance criterion, a proposed addition - rather than planned by its own
+  proposal. The increment's delivery card lists what joined it, with why.
+inverse_name: joined-by

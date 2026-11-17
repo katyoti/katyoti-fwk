@@ -1,0 +1,15 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Revue
+  description: >-
+    Préparée, tenue avec ses relecteurs, puis close avec son verdict ; rouverte
+    quand elle doit être tenue à nouveau.
+  states:
+    draft: Brouillon
+    in-review: En revue
+    closed: Close
+  transitions:
+    start: Commencer
+    close: Clore
+    reopen: Rouvrir

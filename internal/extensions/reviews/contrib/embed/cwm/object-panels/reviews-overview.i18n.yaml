@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: "Vue d'ensemble des revues"
+  description: "Où en est chaque module, dimension de revue par dimension : note, tendance, ancienneté et constats ouverts"

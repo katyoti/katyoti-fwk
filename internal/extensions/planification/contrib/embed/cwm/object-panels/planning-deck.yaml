@@ -1,0 +1,18 @@
+# The planning deck: the overview and the control deck of the planification,
+# a page of tabs over the plans, the demands, the task groups and the releases
+# (the deck's source, deck.go, names them). A GLOBAL panel: a tab of the Global strip,
+# its source called with the selector's target; and on every module's pane,
+# called with the module's id. The page is composed of the page DSL's generic
+# nodes only; its actions are declarative, run by the panel's host.
+name: "Planification"
+description: "The planning deck: where the work stands, what needs a person, the task groups and the releases"
+icon:
+  tabler: "layout-kanban"
+  emoji: "🗂️"
+order: 25
+global: true
+filter:
+  capabilities:
+    - "planned"
+source: "ktw-agents:views/deck"
+targets: "ktw-agents:views/deck-targets"

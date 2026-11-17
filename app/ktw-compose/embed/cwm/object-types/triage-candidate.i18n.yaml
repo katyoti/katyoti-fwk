@@ -1,0 +1,12 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Candidat au tri
+  description: >-
+    Un élément entrant en cours de tri de pertinence sur un nœud `triage`. Il
+    note l'élément, son verdict (ajouter / enrichir / déjà inclus / remplacé),
+    l'URI du catalogue auquel il a été comparé (la preuve, obligatoire), la
+    sonde testable (pour un ajout) ou le cas manquant (pour un enrichissement),
+    la suite donnée et un statut d'approbation. Un verdict sans
+    `compared_against` est invalide. Un candidat ajouté et approuvé devient un
+    livrable d'une composition.

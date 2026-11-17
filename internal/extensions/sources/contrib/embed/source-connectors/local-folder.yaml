@@ -1,0 +1,16 @@
+# The connector the sources extension serves itself: a folder of files
+# mirrored into the module.
+name: local-folder
+label: Dossier local
+description: Les fichiers d'un dossier - du projet ou de la machine - copiés dans le module.
+icon: folder
+take: Dossier
+sync: ktw-agents:sources/folder-sync
+browse: ktw-agents:sources/folder-browse
+location: ktw-agents:/data-type/local-folder-location
+# The source model: an item is a file or a folder of it, keyed
+# by its path relative to the folder, its kind folder or file, a text only; it
+# picks by browsing the folder tree - no free search.
+picker:
+  unit: fichier
+  layout: tree

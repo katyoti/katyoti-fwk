@@ -1,0 +1,15 @@
+# What disputes an object: shown on every object that has at least one
+# incoming `challenges` edge — a decision raised against it (answered
+# from CWM's index). Its source is the challenges service: each challenger
+# with its type, its state and where it sits, a click opening it.
+name: "Challenged by"
+description: "What disputes this object, with its state"
+icon:
+  tabler: "swords"
+  emoji: "⚔️"
+order: 26
+filter:
+  incoming: ["challenges"]
+source: "ktw-methods:challenges/challengers"
+refresh:
+  scope: "universe"

@@ -1,0 +1,27 @@
+# The location of a local-folder information source: the form a connector
+# panel draws for it and the shape FolderSync and
+# FolderBrowse read (internal/extensions/sources/internal/core/browse.go,
+# folderOf). Written by hand: no Go type holds it - the connector reads it
+# from the source's location map. Its form's groups are its ui-form
+# extension's: the hints are the data-type's, never the panel's.
+$schema: ktw-schema/v1
+name: local-folder-location
+version: "1.0.0"
+root: LocalFolderLocation
+description: |
+  Which folder a local-folder information source mirrors.
+types:
+  LocalFolderLocation:
+    type: object
+    fields:
+      path:
+        type: string
+        label: Folder
+        description: The folder to mirror - absolute, or relative to the project.
+    extensions:
+      - type: ui-form
+        name: default
+        layout: groups
+        groups:
+          - cols: 1
+            fields: [path]

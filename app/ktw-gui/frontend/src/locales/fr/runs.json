@@ -1,0 +1,263 @@
+{
+  "status": {
+    "queued": "En file",
+    "running": "En cours",
+    "waiting": "En attente",
+    "stopping": "Arrêt en cours",
+    "completed": "Terminée",
+    "failed": "Échouée",
+    "cancelled": "Arrêtée",
+    "killed": "Tuée"
+  },
+  "origin": {
+    "planner": "Planificateur",
+    "plannerFor": "pour la demande {{id}}",
+    "plannerLoop": "la boucle de planification",
+    "agent": "Agent",
+    "agentRun": "déléguée par l’exécution {{id}}",
+    "agentAny": "déléguée par un agent",
+    "system": "Système",
+    "keepAlive": "Maintenue",
+    "keepAliveHint": "maintenue en marche par l’univers (TaskGroups.yaml keep_alive)",
+    "you": "Vous",
+    "youHint": "lancée par une personne"
+  },
+  "keepAlive": {
+    "title": "Maintenues en marche :",
+    "state": {
+      "running": "en marche",
+      "backing-off": "redémarre bientôt",
+      "stopped": "arrêtée",
+      "waiting-to-serve": "pas encore lancée"
+    },
+    "restartAt": "elle s’est terminée — relancée à {{time}}",
+    "waitingHint": "lancée dès que l’univers sert (son hub tourne)",
+    "run": "exécution {{id}}",
+    "restarted_one": " · relancée {{count}} fois",
+    "restarted_other": " · relancée {{count}} fois"
+  },
+  "row": {
+    "warnings_one": "{{count}} avertissement",
+    "warnings_other": "{{count}} avertissements",
+    "stuckHint": "Elle tourne mais n’a fait aucune étape depuis — elle est peut-être bloquée. Arrêtez-la si elle ne repart pas.",
+    "stuckSince": "aucune étape depuis {{time}}",
+    "openSession": "Ouvrir sa session",
+    "noSession": "Pas de session",
+    "openSessionAria": "ouvrir la session",
+    "stop": "Arrêter",
+    "stopAria": "arrêter l’exécution"
+  },
+  "group": {
+    "pause": "Mettre en pause : ses exécutions attendent, aucune ne démarre",
+    "resume": "Reprendre",
+    "switchAria": "groupe {{name}} actif",
+    "load": "{{running}}/{{max}} en cours · {{waiting}} en attente · {{queued}} en file",
+    "queueLimit": " (max {{limit}})",
+    "clear": "Retirer les exécutions en file",
+    "clearAria": "vider {{name}}"
+  },
+  "tabs": {
+    "runs": "Exécutions",
+    "history": "Historique"
+  },
+  "panel": {
+    "title": "Exécutions",
+    "subtitle": "Toutes les exécutions de tâches de cet univers — les vôtres, celles du planificateur, celles des agents — pendant qu’elles tournent et après leur fin (les 200 dernières, pendant une semaine).",
+    "noAnswer": "Le service de tâches n’a pas répondu : {{error}}",
+    "serviceWarning": "Le service de tâches : {{warning}}",
+    "reading": "Lecture des exécutions…",
+    "emptyActive": "Rien ne tourne.",
+    "emptyAll": "Aucune exécution ces dernières minutes.",
+    "chatsNow": "Conversations en cours"
+  },
+  "filter": {
+    "active_one": "Actives ({{count}})",
+    "active_other": "Actives ({{count}})",
+    "all": "Toutes"
+  },
+  "table": {
+    "state": "État",
+    "task": "Tâche",
+    "startedBy": "Lancée par",
+    "for": "Pour",
+    "group": "Groupe",
+    "started": "Début",
+    "duration": "Durée"
+  },
+  "stop": {
+    "title": "Arrêter cette exécution ?",
+    "body": "est priée de s’arrêter. Si elle tourne encore après quelques secondes, elle est tuée : sa place dans le groupe est libérée et son résultat ignoré.",
+    "cancel": "Annuler",
+    "confirm": "Arrêter"
+  },
+  "history": {
+    "title": "Historique",
+    "subtitle": "Les sessions sur disque, les plus récentes d’abord. Ouvrez-en une pour la rejouer.",
+    "cleanHint": "Arrêter et supprimer toutes les sessions",
+    "cleanAll": "Tout nettoyer",
+    "noBinding": "liaison indisponible",
+    "cleanFailed": "Échec du nettoyage : {{error}}",
+    "cleaned_one": "{{count}} session nettoyée",
+    "cleaned_other": "{{count}} sessions nettoyées",
+    "stopped_one": ", {{count}} en cours arrêtée",
+    "stopped_other": ", {{count}} en cours arrêtées",
+    "stillInUse_one": " · {{count}} encore utilisée (réessayez quand elle sera terminée)",
+    "stillInUse_other": " · {{count}} encore utilisées (réessayez quand elles seront terminées)",
+    "confirmTitle": "Nettoyer toutes les sessions",
+    "confirmBody": "Cela arrête toutes les sessions en cours et supprime définitivement TOUT l’historique des sessions de cet espace de travail (transcriptions + enregistrements de terminal). Impossible d’annuler.",
+    "confirmNote": "Une session dont les fichiers sont encore ouverts est ignorée et signalée ; relancez ceci une fois qu’elle est terminée. Les sessions bloquées « en cours » après un plantage du cœur sont nettoyées en réactivant l’univers.",
+    "cancel": "Annuler",
+    "confirm": "Tout arrêter et supprimer"
+  },
+  "console": {
+    "tabs": {
+      "live": "En direct",
+      "queues": "Files de travail",
+      "history": "Historique"
+    },
+    "unreachable": "L’univers ne répond pas",
+    "readAt": "lu à {{time}}",
+    "noGroups": "Aucun groupe de tâches n’est déclaré, et rien ne tourne.",
+    "kpi": {
+      "running": "En cours",
+      "ofSlots": "sur {{count}} places",
+      "waiting": "En attente",
+      "noSlot": "sans place tenue",
+      "queued": "En file",
+      "forSlot": "attendent une place",
+      "endedHour": "Terminées · 1 h",
+      "throughput": "par tranche de 5 min",
+      "failedDay": "Échecs · 24 h",
+      "failedHint": "échouées ou tuées"
+    },
+    "lane": {
+      "load": "{{running}}/{{max}} en cours · {{waiting}} en attente · {{queued}} en file",
+      "queueLimit": "file max {{count}}",
+      "slots": "Places",
+      "free": "place libre",
+      "paused": "groupe en pause",
+      "waiting": "En attente — sans place",
+      "queue": "File",
+      "queueEmpty": "file vide",
+      "on": "Groupe {{group}} actif",
+      "limits": "Limites",
+      "maxRunning": "Places (exécutions simultanées)",
+      "queueLimitLabel": "Limite de file",
+      "queueLimitHint": "0 = illimitée",
+      "apply": "Appliquer"
+    },
+    "tile": {
+      "waitsOn": "attend {{what}}",
+      "waits": "attend",
+      "until": "jusqu’à {{time}}",
+      "stuck": "aucune étape depuis {{since}}",
+      "state": "à l’étape {{state}}"
+    },
+    "ticker": {
+      "title": "Fil des exécutions",
+      "empty": "Les mouvements des exécutions s’affichent ici au moment où ils arrivent."
+    },
+    "transition": {
+      "queued": "en file",
+      "started": "démarrée",
+      "waiting": "en attente",
+      "woken": "réveillée",
+      "timed-out": "délai écoulé",
+      "resumed": "reprise",
+      "restarted": "relancée",
+      "interrupted": "interrompue",
+      "paused": "en pause",
+      "stopping": "arrêt",
+      "killed": "tuée",
+      "cancelled": "arrêtée",
+      "completed": "terminée",
+      "failed": "échouée",
+      "checkpoint-failed": "sauvegarde ratée",
+      "warning": "alerte",
+      "stuck": "bloquée"
+    },
+    "origin": {
+      "person": "Vous",
+      "planner": "Planificateur",
+      "agent": "Agent",
+      "system": "Système"
+    },
+    "drawer": {
+      "openSession": "Ouvrir sa session",
+      "stop": "Arrêter",
+      "unqueue": "Retirer de la file",
+      "repeat": "Relancer",
+      "repeatHint": "Relance la même demande en une nouvelle exécution ; rien de celle-ci n’est repris.",
+      "run": "Exécution",
+      "session": "Session",
+      "started": "Démarrée",
+      "duration": "Durée",
+      "state": "Étape",
+      "why": "Raison",
+      "warning": "Alerte",
+      "family": "Parent et sous-tâches",
+      "parent": "parent",
+      "parentGone": "son parent {{id}} n’est plus listé",
+      "journal": "Journal",
+      "journalLive": "Journal — en direct",
+      "unqueueTitle": "Retirer de la file ?",
+      "stopText": "{{task}} s’arrête, ses sous-tâches aussi. Si elle n’a pas fini 10 s plus tard, elle est tuée. Elle ne sera jamais reprise.",
+      "panels": "Panneaux"
+    },
+    "queues": {
+      "schedulerOn": "L’ordonnanceur interne tourne : il traite les à-faire automatiques des modules en mode auto.",
+      "schedulerOff": "L’ordonnanceur interne est arrêté (Scheduler.yaml) : les sessions et les personnes traitent les à-faire.",
+      "tick": "Tick maintenant",
+      "tickHint": "L’ordonnanceur interne regarde maintenant : il lance ce qui est prêt et rend les exécutions finies sans rapport",
+      "empty": "Aucun module n’a d’à-faire.",
+      "count_one": "{{count}} à-faire",
+      "count_other": "{{count}} à-faire",
+      "mode": {
+        "manual": "manuel",
+        "auto": "auto",
+        "off": "arrêt"
+      },
+      "standing": {
+        "held": "tenu",
+        "failed": "échoué",
+        "person": "pour une personne",
+        "ready": "prêt",
+        "retrying": "réessai",
+        "waiting": "attend",
+        "reported": "rapporté"
+      },
+      "held": "tenu par {{by}} jusqu’à {{until}}",
+      "person": "étape d’une personne ({{what}}) — demandée dans la boîte de réception",
+      "retrying": "tentative {{n}} sur {{of}} dans {{in}}",
+      "after": "après {{what}}",
+      "ready": "prêt · {{priority}}",
+      "run": "Lancer",
+      "retry": "Réessayer"
+    },
+    "history": {
+      "status": "Statut",
+      "group": "Groupe",
+      "origin": "Lancée par",
+      "search": "Tâche, cible ou raison",
+      "ended": "Fin",
+      "why": "Raison",
+      "none": "Aucune exécution terminée ne correspond à ces filtres.",
+      "kept": "Les exécutions terminées des 7 derniers jours (les 200 dernières)."
+    },
+    "done": {
+      "group": "Groupe {{group}} modifié",
+      "cleared": "La file de {{group}} est vidée",
+      "ran": "{{step}} est lancée",
+      "retried": "{{step}} est remise dans la file",
+      "mode": "Module {{module}} : {{mode}}",
+      "tick": "L’ordonnanceur interne a regardé",
+      "stopped": "{{task}} s’arrête",
+      "repeated": "{{task}} est relancée, en une nouvelle exécution"
+    }
+  },
+  "team": {
+    "cancelChild": "Annuler {{label}} ?\n\nL'agent enfant en cours s'arrête immédiatement. Le workflow continue avec le reste de l'équipe.",
+    "cancelChildTip": "Annuler cet agent enfant",
+    "cancelChildLabel": "Annuler {{label}}"
+  }
+}

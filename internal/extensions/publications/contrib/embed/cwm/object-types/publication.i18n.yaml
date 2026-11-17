@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Publication
+  description: >-
+    Une vue de pilotage ou une source arborescente (une étude) publiée vers
+    une cible - un connecteur de publication comme Confluence, ou le
+    convertisseur d'une vue - et le résultat de sa dernière publication.

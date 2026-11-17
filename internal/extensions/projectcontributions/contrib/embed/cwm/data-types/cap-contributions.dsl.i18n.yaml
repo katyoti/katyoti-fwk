@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapContributions:
+      fields:
+        provider:
+          description: "Le jeton sous lequel les contributions du projet sont publiées (fournisseur:/kind/nom) : un jeton kebab qu'aucun membre de l'univers ne porte comme nom ; vide signifie l'id du projet en kebab"
+          label: "Jeton de fournisseur"
+        root:
+          description: "Le dossier qui contient les skills, tâches, kinds et packs du projet, relatif à la racine du projet et séparé par des barres obliques ; vide signifie le module sys-contributions du dossier des modules"
+          label: "Dossier des contributions"

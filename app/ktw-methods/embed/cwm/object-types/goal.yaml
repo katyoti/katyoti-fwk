@@ -1,0 +1,45 @@
+name: goal
+label: Goal
+label_plural: Goals
+description: >-
+  A direction a module strives toward and never finishes: it answers WHY,
+  worded as an outcome or a quality. Always `asymptotic` — it has no done
+  state and no probe, and it is pursued, not scheduled. It is an ALIGNMENT
+  LOOP, not a score: a goal is not graded directly; what is graded are the
+  features that serve it. Can a test ever say it is done? No: a goal. Yes:
+  a feature.
+icon: target
+folder: goals
+# Offered in a module's « + » only when the module is planned: a study or a
+# dossier, not planned, offers none - the rule its panels follow. `type` and `current` are the parent.
+accept_when: "'module' not in current.capabilities or 'planned' in current.capabilities"
+id_prefix: G
+capabilities: [want, lifecycle]
+# Not drawn in the tree: the pane of its parent lists them in a tab.
+workflow: goal
+actions:
+  - uri: ktw-methods:tasks/generate-goal-features
+    label: Generate features
+    description: Propose the features that serve this goal, then create the accepted ones.
+    kind: ai
+    icon: sparkles
+    session:
+      mode: chat
+
+# A goal is always asymptotic: one that reads otherwise (unset reads the
+# capability's default, closable) is an error finding at the lint point.
+hooks:
+  lint:
+    - uri: ktw-methods:methods/value-in
+      input:
+        value: "${object.want.reachability}"
+        default: closable
+        allowed: [asymptotic]
+        rule: goal-asymptotic
+        message: A goal is always asymptotic; something a test can declare done is a feature
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+  label: Detail
+  description: What reaching the goal means, in prose.
+  format: markdown

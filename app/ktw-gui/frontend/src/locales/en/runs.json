@@ -1,0 +1,263 @@
+{
+  "status": {
+    "queued": "Queued",
+    "running": "Running",
+    "waiting": "Waiting",
+    "stopping": "Stopping",
+    "completed": "Done",
+    "failed": "Failed",
+    "cancelled": "Stopped",
+    "killed": "Killed"
+  },
+  "origin": {
+    "planner": "Planner",
+    "plannerFor": "for request {{id}}",
+    "plannerLoop": "the planning loop",
+    "agent": "Agent",
+    "agentRun": "delegated by run {{id}}",
+    "agentAny": "delegated by an agent",
+    "system": "System",
+    "keepAlive": "Kept alive",
+    "keepAliveHint": "kept running by the universe (TaskGroups.yaml keep_alive)",
+    "you": "You",
+    "youHint": "started by a person"
+  },
+  "keepAlive": {
+    "title": "Kept running:",
+    "state": {
+      "running": "running",
+      "backing-off": "restarting soon",
+      "stopped": "stopped",
+      "waiting-to-serve": "not started yet"
+    },
+    "restartAt": "it ended — started again at {{time}}",
+    "waitingHint": "started once the universe serves (its hub runs)",
+    "run": "run {{id}}",
+    "restarted_one": " · restarted {{count}}×",
+    "restarted_other": " · restarted {{count}}×"
+  },
+  "row": {
+    "warnings_one": "{{count}} warning",
+    "warnings_other": "{{count}} warnings",
+    "stuckHint": "It works but has taken no step since then — it may be stuck. Stop it if it does not move again.",
+    "stuckSince": "no step since {{time}}",
+    "openSession": "Open its session",
+    "noSession": "No session",
+    "openSessionAria": "open session",
+    "stop": "Stop",
+    "stopAria": "stop run"
+  },
+  "group": {
+    "pause": "Pause: its runs queue, none starts",
+    "resume": "Resume",
+    "switchAria": "group {{name}} on",
+    "load": "{{running}}/{{max}} running · {{waiting}} waiting · {{queued}} queued",
+    "queueLimit": " (max {{limit}})",
+    "clear": "Remove the queued runs",
+    "clearAria": "clear {{name}}"
+  },
+  "tabs": {
+    "runs": "Runs",
+    "history": "History"
+  },
+  "panel": {
+    "title": "Runs",
+    "subtitle": "Every task run of this universe — yours, the planner's, the agents' — while it runs, and after it ended (the last 200, for a week).",
+    "noAnswer": "The task service did not answer: {{error}}",
+    "serviceWarning": "The task service: {{warning}}",
+    "reading": "Reading the runs…",
+    "emptyActive": "Nothing is running.",
+    "emptyAll": "No run in the last minutes.",
+    "chatsNow": "Chats running now"
+  },
+  "filter": {
+    "active_one": "Active ({{count}})",
+    "active_other": "Active ({{count}})",
+    "all": "All"
+  },
+  "table": {
+    "state": "State",
+    "task": "Task",
+    "startedBy": "Started by",
+    "for": "For",
+    "group": "Group",
+    "started": "Started",
+    "duration": "Duration"
+  },
+  "stop": {
+    "title": "Stop this run?",
+    "body": "is asked to stop. If it is still alive after a few seconds it is killed: its place in the group is freed and its result ignored.",
+    "cancel": "Cancel",
+    "confirm": "Stop"
+  },
+  "history": {
+    "title": "History",
+    "subtitle": "The sessions on disk, most recent first. Open one to replay it.",
+    "cleanHint": "Stop and delete every session",
+    "cleanAll": "Clean all",
+    "noBinding": "binding unavailable",
+    "cleanFailed": "Clean failed: {{error}}",
+    "cleaned_one": "Cleaned {{count}} session",
+    "cleaned_other": "Cleaned {{count}} sessions",
+    "stopped_one": ", stopped {{count}} running",
+    "stopped_other": ", stopped {{count}} running",
+    "stillInUse_one": " · {{count}} still in use (retry after it exits)",
+    "stillInUse_other": " · {{count}} still in use (retry after they exit)",
+    "confirmTitle": "Clean all sessions",
+    "confirmBody": "This stops every running session and permanently deletes ALL session history for this workspace (transcripts + terminal recordings). This cannot be undone.",
+    "confirmNote": "A session whose files are still open is skipped and reported; run this again once it has exited. Sessions stuck \"running\" after a crashed core are cleared by reactivating the universe.",
+    "cancel": "Cancel",
+    "confirm": "Stop & delete all"
+  },
+  "console": {
+    "tabs": {
+      "live": "Live",
+      "queues": "Queues",
+      "history": "History"
+    },
+    "unreachable": "No answer from the universe",
+    "readAt": "read at {{time}}",
+    "noGroups": "No task group is declared, and nothing runs.",
+    "kpi": {
+      "running": "Running",
+      "ofSlots": "of {{count}} slots",
+      "waiting": "Waiting",
+      "noSlot": "they hold no slot",
+      "queued": "Queued",
+      "forSlot": "waiting for a slot",
+      "endedHour": "Ended · 1 h",
+      "throughput": "per 5 minutes",
+      "failedDay": "Failed · 24 h",
+      "failedHint": "failed or killed"
+    },
+    "lane": {
+      "load": "{{running}}/{{max}} running · {{waiting}} waiting · {{queued}} queued",
+      "queueLimit": "queue max {{count}}",
+      "slots": "Slots",
+      "free": "free slot",
+      "paused": "group paused",
+      "waiting": "Waiting — no slot held",
+      "queue": "Queue",
+      "queueEmpty": "nothing queued",
+      "on": "Group {{group}} on",
+      "limits": "Limits",
+      "maxRunning": "Slots (runs at once)",
+      "queueLimitLabel": "Queue limit",
+      "queueLimitHint": "0 = unlimited",
+      "apply": "Apply"
+    },
+    "tile": {
+      "waitsOn": "waits on {{what}}",
+      "waits": "waits",
+      "until": "until {{time}}",
+      "stuck": "no step for {{since}}",
+      "state": "at {{state}}"
+    },
+    "ticker": {
+      "title": "Run events",
+      "empty": "The runs' moves show here as they happen."
+    },
+    "transition": {
+      "queued": "queued",
+      "started": "started",
+      "waiting": "waiting",
+      "woken": "woken",
+      "timed-out": "timed out",
+      "resumed": "resumed",
+      "restarted": "restarted",
+      "interrupted": "interrupted",
+      "paused": "paused",
+      "stopping": "stopping",
+      "killed": "killed",
+      "cancelled": "cancelled",
+      "completed": "completed",
+      "failed": "failed",
+      "checkpoint-failed": "save failed",
+      "warning": "warning",
+      "stuck": "stuck"
+    },
+    "origin": {
+      "person": "You",
+      "planner": "Planner",
+      "agent": "Agent",
+      "system": "System"
+    },
+    "drawer": {
+      "openSession": "Open its session",
+      "stop": "Stop",
+      "unqueue": "Remove from the queue",
+      "repeat": "Run again",
+      "repeatHint": "Runs the same request again as a new run; nothing of this one is taken up.",
+      "run": "Run",
+      "session": "Session",
+      "started": "Started",
+      "duration": "Duration",
+      "state": "State",
+      "why": "Why",
+      "warning": "Warning",
+      "family": "Parent and children",
+      "parent": "parent",
+      "parentGone": "its parent {{id}} is no longer listed",
+      "journal": "Journal",
+      "journalLive": "Journal — live",
+      "unqueueTitle": "Remove from the queue?",
+      "stopText": "{{task}} stops, and its children with it. If it has not ended 10 s later, it is killed. It is never taken up again.",
+      "panels": "Panels"
+    },
+    "queues": {
+      "schedulerOn": "The internal scheduler runs: it works the auto to-dos of the auto modules.",
+      "schedulerOff": "The internal scheduler is off (Scheduler.yaml): sessions and people work the to-dos.",
+      "tick": "Tick now",
+      "tickHint": "Let the internal scheduler look now: start what is ready, give back the runs ended without a report",
+      "empty": "No module has a to-do.",
+      "count_one": "{{count}} to-do",
+      "count_other": "{{count}} to-dos",
+      "mode": {
+        "manual": "manual",
+        "auto": "auto",
+        "off": "off"
+      },
+      "standing": {
+        "held": "held",
+        "failed": "failed",
+        "person": "a person's",
+        "ready": "ready",
+        "retrying": "retrying",
+        "waiting": "waiting",
+        "reported": "reported"
+      },
+      "held": "held by {{by}} until {{until}}",
+      "person": "a person's step ({{what}}) — asked in the inbox",
+      "retrying": "attempt {{n}} of {{of}} in {{in}}",
+      "after": "after {{what}}",
+      "ready": "ready · {{priority}}",
+      "run": "Run now",
+      "retry": "Retry"
+    },
+    "history": {
+      "status": "Status",
+      "group": "Group",
+      "origin": "Started by",
+      "search": "Task, target or reason",
+      "ended": "Ended",
+      "why": "Reason",
+      "none": "No ended run matches these filters.",
+      "kept": "The ended runs of the last 7 days (the last 200)."
+    },
+    "done": {
+      "group": "Group {{group}} changed",
+      "cleared": "The queue of {{group}} is cleared",
+      "ran": "{{step}} runs now",
+      "retried": "{{step}} is back in the queue",
+      "mode": "Module {{module}}: {{mode}}",
+      "tick": "The internal scheduler looked",
+      "stopped": "{{task}} is stopping",
+      "repeated": "{{task}} runs again, as a new run"
+    }
+  },
+  "team": {
+    "cancelChild": "Cancel {{label}}?\n\nThis will stop the running child immediately. The workflow continues with the rest of the team.",
+    "cancelChildTip": "Cancel this child",
+    "cancelChildLabel": "Cancel {{label}}"
+  }
+}

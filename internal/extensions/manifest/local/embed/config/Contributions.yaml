@@ -1,0 +1,28 @@
+# Contributions.yaml — OVERRIDE for contribution schema validation severity.
+#
+# Loaded hub-side via the standard config pipeline
+# (application.UseConfig[contribapi.ContributionsConfig] →
+# ConfigName strips the "Config" suffix → "Contributions.yaml").
+#
+# The severity a failing contribution is reported at is declared BY ITS KIND
+# (`validate:` in the kind's contribution-type declaration — see
+# modules/contributions/contribution-types.md §2). This file never invents a
+# default; it only overrides what the kinds say. An absent or empty file means:
+# every kind is validated at the severity it declares.
+#
+# Severity values:
+#   off    skip validation for this scope (no Valid/ValidationErrors set)
+#   warn   record diagnostics, keep the contribution valid (Valid stays unset)
+#   on     | error  mark the contribution invalid (Valid=false) but KEEP it
+#                    in the catalog (kept-but-flagged, never dropped)
+#
+# Precedence: perType[<kind>] > validate (global) > the kind's own declaration.
+
+# Global override. Leave EMPTY to let each kind's declaration decide.
+validate: ""
+
+# Per-kind overrides. Key is the contribution `type` discriminator.
+# Example — silence one kind while its schema is being reworked:
+#   perType:
+#     notation: off
+perType: {}

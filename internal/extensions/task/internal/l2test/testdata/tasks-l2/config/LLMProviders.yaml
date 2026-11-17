@@ -1,0 +1,16 @@
+# The L2 case's only model: the harness's fake OpenAI-compatible endpoint.
+# __FAKE_LLM_URL__ is replaced by the harness with the endpoint it serves.
+default_model: l2-fake
+
+models:
+  l2-fake:
+    type: openai
+    provider: l2-fake
+    model_id: l2-fake
+    base_url: __FAKE_LLM_URL__
+    api_key: l2-no-key
+    max_tokens: 1024
+    context_window: 128000
+    max_output: 1024
+    cost_input: 0
+    cost_output: 0

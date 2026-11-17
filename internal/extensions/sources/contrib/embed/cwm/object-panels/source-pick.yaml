@@ -1,0 +1,44 @@
+# The « Choisir » tab of an information source: the display
+# library's generic picker bound to the source - its search is
+# `sources/search` on the source (its connector, in its location), its
+# « Parcourir » walks `sources/source-browse` level by level, « Appliquer »
+# saves the choice with `sources/source-select` (the whole choice: an item
+# left out is unpicked), each item showing where it stands
+# (`sources/source-picked`, the tab's source) - then « Synchroniser » brings
+# what is picked. It replaces the pick tree. The page speaks French: the
+# study it serves does. Shown beside the « Source » tab, under every holder
+# but one carrying the capability source-sub-tabs, whose sources pick on
+# information-source-take instead.
+name: "Pick items"
+description: "The source's items chosen in the generic picker: searched, browsed, applied - what is picked is what its sync reads"
+icon:
+  tabler: "list-check"
+  emoji: "☑️"
+order: 2
+filter:
+  types:
+    - "information-source"
+  when: "source_sub_tabs() == false"
+source: "ktw-agents:sources/source-picked"
+refresh:
+  scope: "self"
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "md"
+    children:
+      - {kind: "heading", text: "Choisir les éléments", order: 3}
+      - {kind: "text", content: "Cherchez ou parcourez ce que la source doit lire, puis appliquez : la synchronisation n'apporte que les éléments choisis. Rien de choisi : elle lit tout son emplacement.", size: "sm", color: "dimmed"}
+      - kind: "picker"
+        id: "source-pick"
+        search: "ktw-agents:sources/search"
+        browse: "ktw-agents:sources/source-browse"
+        apply: "ktw-agents:sources/source-select"
+        status: "ktw-agents:sources/status"
+        args: {id: "${id}", source: "${id}"}
+        dataField: "$.selected"
+      - kind: "hbox"
+        gap: "xs"
+        children:
+          - {kind: "button", label: "Synchroniser", icon: "refresh", size: "xs", variant: "filled", action: {label: "Synchroniser la source", uri: "ktw-agents:sources/source-sync", args: {id: "${id}"}}}

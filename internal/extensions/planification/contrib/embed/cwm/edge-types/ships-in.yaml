@@ -1,0 +1,13 @@
+name: ships-in
+from: release
+to: release
+cardinality: N:1
+from_capabilities: [release]
+to_capabilities: [release]
+target: object
+object_storage: edges
+description: |
+  A module release SHIPS IN a project release: the project release's scope is
+  its own targets plus those of its module releases, and it is released only
+  once each of them is. A module release may also ship alone (a sidecar).
+inverse_name: includes

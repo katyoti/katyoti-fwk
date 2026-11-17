@@ -1,0 +1,22 @@
+name: compose-artifact
+label: Compose Artifact
+icon: "🛠️"
+icon_name: tool
+allowed_children:
+    - use-case
+    - test-case
+    - decision
+    - document
+accept_parents:
+    - composition
+description_max_chars: 600
+agent:
+    system:
+        - id: type-context:compose-artifact
+          text: |
+              This node is the work surface for ONE artifact being produced by the
+              parent composition. Its use-case items carry this artifact's inline
+              acceptance criteria; its deliverable record (kind / name / home /
+              status) lives on the PARENT composition — follow `deliverable_id`.
+              Produce the artifact through the create-artifact chain; mark the
+              deliverable done only when the artifact exists at its home.

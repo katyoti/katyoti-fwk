@@ -1,0 +1,19 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapSignoff:
+      fields:
+        approvals:
+          description: 'Les relecteurs qui l''ont approuvé'
+          label: 'Approbations'
+        notes:
+          description: 'Ce que les relecteurs ont dit'
+          label: 'Notes'
+        reviewers:
+          description: 'Qui relit l''objet'
+          label: 'Relecteurs'
+        verdict:
+          description: 'Où en est le visa'
+          label: 'Verdict'

@@ -1,0 +1,14 @@
+# An increment's Information tab: the object's
+# identity, drawn by the Information tab's own extension (object-information) -
+# the pane lists only its own tabs (pane.only), so the increment names it.
+name: "Information"
+description: "Who this increment is, where it sits, what it carries"
+icon:
+  tabler: "info-circle"
+order: 7
+filter:
+  types:
+    - "increment"
+content:
+  kind: "extension"
+  extension: "object-information"

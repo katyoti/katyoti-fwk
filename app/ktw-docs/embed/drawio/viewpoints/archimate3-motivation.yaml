@@ -1,0 +1,26 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: archimate3-motivation
+displayName: ArchiMate — motivation
+description: Stakeholders, drivers and assessments, and the goals, outcomes, principles and requirements
+  they lead to.
+notation: ktw-docs:/notation/archimate3
+templates: ktw-docs:/drawio-template/archimate3
+page: default
+elements:
+- Stakeholder
+- Driver
+- Assessment
+- Goal
+- Outcome
+- Principle
+- Requirement
+- Constraint
+- Meaning
+- Value
+- BusinessActor
+- BusinessRole
+- Grouping
+- Junction
+layout:
+  algorithm: layered
+  direction: UP

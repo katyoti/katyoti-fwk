@@ -1,0 +1,14 @@
+# An increment's History tab: everything that happened
+# to it, the journal's own history page - the pane lists only its own tabs
+# (pane.only), so the increment names it.
+name: "History"
+description: "Everything that happened to this increment: each change, when, who made it and why"
+icon:
+  tabler: "history"
+order: 8
+filter:
+  types:
+    - "increment"
+source: "ktw-agents:journal/history-page"
+refresh:
+  scope: "self"

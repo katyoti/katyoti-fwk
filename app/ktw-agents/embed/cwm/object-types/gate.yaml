@@ -1,0 +1,19 @@
+name: gate
+label: Gate
+description: |
+    An acceptance gate — a scoped, inheritable set of criteria that must
+    all hold. Unifies the former definition-of-ready (phase: ready) and
+    definition-of-done (phase: done): `phase` says WHEN it gates (before
+    work starts vs. to accept delivery); `scope` says at WHICH altitude it
+    is authored (method | project | us | uc) and cascades down. Each
+    criterion carries its own `inherit` flag + optional `applies_to` and
+    `overrides`; the per-criterion-override resolver computes a node's
+    effective gate = union(method, project, us, uc) − overrides.
+    Satisfaction is COMPUTED from each criterion's `verifier` probe — never
+    hand-flipped. See modules/method-core/concepts.md §5.
+fields: ktw-agents:/data-type/gate
+context:
+    propagation: per-criterion
+    resolution_strategy: per-criterion-override
+side: requirements
+max_size_bytes: 4096

@@ -1,0 +1,16 @@
+# How a review moves: drafted, held, then closed once its verdict is written;
+# a closed review may be reopened.
+name: review
+label: Review
+description: >-
+  Drafted, held with its reviewers, then closed with its verdict; reopened when
+  it has to be held again.
+initial: draft
+states:
+  - {name: draft, description: "Being prepared: its scope and reviewers"}
+  - {name: in-review, description: "Being held: findings are filed"}
+  - {name: closed, description: "Its verdict is written"}
+transitions:
+  - {name: start, from: [draft], to: in-review}
+  - {name: close, from: [in-review], to: closed}
+  - {name: reopen, from: [closed], to: in-review}

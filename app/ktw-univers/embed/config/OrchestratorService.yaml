@@ -1,0 +1,6 @@
+# OrchestratorService configuration (the file is named after the service it configures).
+#
+# registry_path overrides where the universe registry (universes.yaml) is kept.
+# Empty = the global root's universes.yaml (~/.config/katyoti/universes.yaml,
+# %APPDATA%\katyoti\universes.yaml on Windows). Tests use KTW_KATYOTI_ROOT.
+registry_path: ""

@@ -1,0 +1,49 @@
+# Registers `agent-context` as a SYSTEM contribution kind: the framing an
+# extension gives a chat started on the objects it applies to — system
+# sections, tools, skills and named files, under an ObjectFilter.
+#
+# The object-context AgentContext layers it between the rules in force and the
+# capabilities (project → rules → extensions → capabilities → type → object);
+# a closer declaration replaces or removes an entry of the same key.
+#
+# Published from a CWM pack: embed/cwm/agent-contexts/<name>.yaml.
+name: agent-context
+description: |
+  The framing an extension gives a chat started on the objects its filter
+  admits: system sections, tools, skills and named files.
+schema: system:/data-type/agent-context
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the titles of the sections the Agent context panel
+# shows from it (the texts themselves are the agent's, never translated).
+translatable: ["agent.system[id].title", "agent.files[name].title"]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 320  # measured max 172 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `agent-contexts/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: agent-contexts
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

@@ -1,0 +1,29 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Objectif
+  description: >-
+    Proposé, revu, accepté par une personne, décomposé en besoins qui le
+    servent, puis poursuivi ; tout peut être abandonné, ou renvoyé à l'idée
+    par une personne.
+  states:
+    idea: Idée
+    proposed: Proposé
+    in-review: En revue
+    accepted: Accepté
+    active: En cours
+    dropped: Abandonné
+    decomposed: Décomposé
+    assumed: Déjà poursuivi
+  transitions:
+    propose: Proposer
+    review: Passer en revue
+    rework: Retravailler
+    accept: Accepter
+    start: Démarrer
+    drop: Abandonner
+    decompose: Décomposer
+    redecompose: Redécomposer
+    rethink: Repenser
+    assume: Constater poursuivi
+    confirm: Confirmer

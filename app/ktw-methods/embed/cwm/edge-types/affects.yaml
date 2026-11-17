@@ -1,0 +1,13 @@
+name: affects
+label: Affects
+inverse_label: Affected by
+from_capabilities: [decision]      # only a decision AFFECTS things in this sense
+to_capabilities: [want]            # what it touches: a goal, a feature, an ideal
+target: object
+object_storage: edges
+cardinality: M:N
+inverse_name: affected-by
+description: |
+  What a decision touches: `C-001 affects F-001, F-004, G-001`. An edge, never
+  a frontmatter field (`affects: [...]`): every non-tree reference is an edge
+  (concepts.md §3).

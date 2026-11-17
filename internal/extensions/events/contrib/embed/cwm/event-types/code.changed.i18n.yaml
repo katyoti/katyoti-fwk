@@ -1,0 +1,8 @@
+# Translations of the event type beside this file.
+
+fr:
+  description: >-
+    Des commits ont changé des chemins que les paquets de code de ce module
+    contiennent (un commit, un pull, une fusion, un checkout) : le contenu nomme
+    les commits et les chemins.
+  label: Code modifié

@@ -1,0 +1,12 @@
+# Discover: existing software's work, found and proposed — what it does (features,
+# use cases) and why (goals) — never accepted on a person's behalf. A specifier
+# surveys the code and documents, then proposes the wants it found, each saying
+# where it was found; a person reviews them: accepts, merges or drops each.
+name: discover
+description: Survey existing software, propose the goals, features and use cases it serves; a person reviews them.
+kind: discover
+transition: done
+steps:
+  - {name: survey, phase: inputs, class: refine, role: specifier, share: 0.3, instructions: "Survey the code and documents the request names: what the software does, for whom, its entry points and its tests. Write what you found as the result; change nothing."}
+  - {name: propose, phase: preparation, class: refine, role: specifier, after: [survey], share: 0.5, skill: ktw-methods:/skill/discover-wants, instructions: "From the survey, propose the goals, features and use cases the software serves, each in its first state (an idea), linked, saying where it was found; link to existing ones instead of proposing them again.", refines: true}
+  - {name: review, phase: preparation, class: refine, actor: person, interaction: validate, after: [propose], share: 0.2, instructions: "Review the proposed goals, features and use cases: accept each that is right (proposed, in-review, then accepted), merge duplicates, drop the wrong ones; approve when the module's wants are right."}

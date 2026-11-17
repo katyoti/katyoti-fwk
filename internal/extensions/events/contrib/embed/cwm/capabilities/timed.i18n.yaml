@@ -1,0 +1,7 @@
+# Translations of the capability beside this file.
+
+fr:
+  description: >-
+    Les minuteries récurrentes de cet objet — toutes les N, ou chaque jour à une
+    heure — chacune lève timer.elapsed sur lui à son échéance.
+  label: Minuteries

@@ -1,0 +1,21 @@
+{
+  "title": "Your profile",
+  "whoAreYou": "Who are you?",
+  "noEmail": "no email yet",
+  "notSet": "Not set — you appear as John Doe",
+  "local": "Local profile — not a sign-in",
+  "handle": "Handle",
+  "handleHelp": "Recorded as you on everything you do. Lowercase letters, digits and hyphens — never your email.",
+  "handlePlaceholder": "e.g. jdoe",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "email": "Email",
+  "emailHelp": "Addresses found on this computer are listed; you can enter another.",
+  "language": "Language",
+  "languageHelp": "The language KaTyoti speaks to you. Automatic follows this computer's language.",
+  "languageAuto": "Automatic (system)",
+  "fill": "Fill from this computer",
+  "cancel": "Cancel",
+  "save": "Save",
+  "emailPlaceholder": "you@example.com"
+}

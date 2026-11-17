@@ -1,0 +1,37 @@
+name: feature
+label: Feature
+label_plural: Features
+description: >-
+  Something we build that a test can declare done: it answers WHAT, worded as
+  what someone can do once it exists. Always `closable`. It serves one or more
+  goals (M:N) and is proven done by its use cases, each a set of acceptance
+  criteria. Recursive: a large feature holds sub-features; initiative, epic
+  and user story are words for its size, never types. Can a test ever say it
+  is done? Yes: a feature. No: a goal.
+icon: package
+folder: features
+# Offered in a module's « + » only when the module is planned: a study or a
+# dossier, not planned, offers none - the rule its panels follow. `type` and `current` are the parent.
+accept_when: "'module' not in current.capabilities or 'planned' in current.capabilities"
+id_prefix: F
+capabilities: [want, feature, lifecycle]
+# Not drawn in the tree: the pane of its parent lists them in a tab.
+workflow: feature
+
+# A feature is always closable (unset reads the capability's default,
+# closable): one that reads asymptotic is an error finding at the lint point.
+hooks:
+  lint:
+    - uri: ktw-methods:methods/value-in
+      input:
+        value: "${object.want.reachability}"
+        default: closable
+        allowed: [closable]
+        rule: feature-closable
+        message: A feature is always closable; a direction never finished is a goal
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+  label: Detail
+  description: What the feature wants and how it is reached, in prose.
+  format: markdown

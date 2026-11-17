@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Vérification
+  description: >-
+    Ajoute verify() et lint() aux expressions : la vérification d'un objet et
+    de tout ce qu'il contient (exécutions, réussis, échoués, non prouvés, vert),
+    et son lint (constats, bloquants — au niveau `verification.gate_blocks_on`
+    du type ou au-dessus).

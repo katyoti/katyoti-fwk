@@ -1,0 +1,24 @@
+name: increment
+label: Increment
+description: >-
+  Open while its goals and features are built, done once each of them is (the
+  release-gate hook refuses it before), its delivery review passed
+  (usable-delivered) and a person closes it, or dropped. A fix filed on a done
+  increment whose release is not released yet reopens it.
+initial: open
+states:
+  - {name: open, description: "Its goals and features are being built: work may target it"}
+  - {name: done, description: "Each goal and feature it holds is done; a fix on it reopens it until its release is released"}
+  - {name: dropped, description: "Will not ship", terminal: true}
+transitions:
+  # Closing an increment is a person's: the delivery
+  # approval in « À faire », or « Mark it done » on its pane - and only once
+  # the user can use what it delivers (usable-delivered),
+  # which a person forces with a note.
+  - name: done
+    from: [open]
+    to: done
+    gate: "by.kind == 'person' && gate('usable-delivered').passes"
+    force: person
+  - {name: reopen, from: [done], to: open}
+  - {name: drop, from: ["*"], to: dropped}

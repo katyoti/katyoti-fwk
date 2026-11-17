@@ -1,0 +1,15 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: "Porte"
+  description: >-
+    Une porte d'acceptation : un ensemble de critères, délimité et héritable,
+    qui doivent tous tenir. Elle réunit l'ancienne définition de prêt
+    (phase: ready) et la définition de fini (phase: done) : `phase` dit QUAND
+    elle s'applique (avant le début du travail ou pour accepter la livraison),
+    `scope` à QUEL niveau elle est écrite (method | project | us | uc), et elle
+    descend en cascade. Chaque critère porte son propre `inherit`, un
+    `applies_to` et des `overrides` facultatifs ; la porte effective d'un nœud
+    est l'union (method, project, us, uc) moins les remplacements. Sa
+    satisfaction est CALCULÉE par la sonde `verifier` de chaque critère, jamais
+    basculée à la main.

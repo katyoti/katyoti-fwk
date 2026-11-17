@@ -1,0 +1,5 @@
+<mxfile host="ktw-test"><diagram id="overlap" name="overlap"><mxGraphModel><root>
+<mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="a" value="&lt;b&gt;Un référentiel d'objets unique et fiable&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=13;align=center;verticalAlign=bottom;" vertex="1" parent="1"><mxGeometry x="444.1" y="105.9" width="174.5" height="44.0" as="geometry"/></mxCell>
+<mxCell id="b" value="&lt;b&gt;Des objets enrichis sans mécanismes parallèles&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=13;align=center;verticalAlign=bottom;" vertex="1" parent="1"><mxGeometry x="536.0" y="105.9" width="174.5" height="44.0" as="geometry"/></mxCell>
+</root></mxGraphModel></diagram></mxfile>

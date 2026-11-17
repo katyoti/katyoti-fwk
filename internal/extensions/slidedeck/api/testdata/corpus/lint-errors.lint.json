@@ -1,0 +1,62 @@
+[
+  {
+    "line": 3,
+    "rule": "deck-value-invalid",
+    "severity": "error",
+    "message": "aspect: \"21:9\" is not one of 16:9, 4:3"
+  },
+  {
+    "line": 4,
+    "rule": "deck-key-unknown",
+    "severity": "warn",
+    "message": "unknown deck setting \"colour\"; known: aspect, author, mark, production_mark, theme, title, transition, watermark"
+  },
+  {
+    "line": 7,
+    "rule": "layout-unknown",
+    "severity": "error",
+    "message": "unknown layout \"hero\"; known: agenda, blank, comparison, content, cover, icons, image-left, image-right, impact, key-figures, quote, section, statement, timeline, two-cols, visuals"
+  },
+  {
+    "line": 12,
+    "rule": "slide-settings-invalid",
+    "severity": "error",
+    "message": "cannot read \"oops\"; write settings as key=value, quoting values with spaces"
+  },
+  {
+    "line": 12,
+    "rule": "slide-key-unknown",
+    "severity": "error",
+    "message": "unknown slide setting \"speed\"; known: background, class, include, layout, steps, transition, variant"
+  },
+  {
+    "line": 12,
+    "rule": "slide-value-invalid",
+    "severity": "error",
+    "message": "steps: \"all\" is not one of list, none"
+  },
+  {
+    "line": 12,
+    "rule": "slot-missing",
+    "severity": "error",
+    "message": "layout \"two-cols\" needs content in slot \"right\""
+  },
+  {
+    "line": 15,
+    "rule": "slot-unknown",
+    "severity": "error",
+    "message": "layout \"two-cols\" has no slot \"middle\"; its slots: default, right"
+  },
+  {
+    "line": 21,
+    "rule": "settings-not-first",
+    "severity": "error",
+    "message": "a `\u003c!-- slide: … --\u003e` line must be the first line of its slide; move it up or it is ignored"
+  },
+  {
+    "line": 25,
+    "rule": "slot-missing",
+    "severity": "error",
+    "message": "layout \"quote\" needs content in slot \"default\""
+  }
+]

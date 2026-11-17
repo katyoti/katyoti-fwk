@@ -1,0 +1,43 @@
+# Registers `gate` as a SYSTEM contribution kind (named gates, CWM).
+#
+# Published from a CWM pack: embed/cwm/gates/<name>.yaml.
+name: gate
+description: |
+  A named definition of done — ready-to-plan, ready-to-build — made of
+  requirements, each checked on its own so a refused move names the unmet ones.
+schema: system:/data-type/gate
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the gate's name, and each requirement's label and description (a refused
+# move names them).
+translatable: [label, description, "requirements[name].label", "requirements[name].description"]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 320  # measured max 187 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `gates/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: gates
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

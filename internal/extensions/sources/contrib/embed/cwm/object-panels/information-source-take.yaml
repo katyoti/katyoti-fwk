@@ -1,0 +1,27 @@
+# An opened information source's sub-tab « Ce qu'elle prend », one of
+# three shown under a holder carrying the capability source-sub-tabs (the
+# as-is study v2) - any other holder keeps the one « Source »
+# tab (information-source.yaml): drawn by the region `sources/source-tab`
+# returns for tab take.
+# Its name is its connector's take label (mock-up v6:
+# « Pages prises », « Fichiers déposés »), « Ce qu'elle prend » when it
+# declares none; no translated name - the GUI's would replace it.
+name: "${source_take()}"
+description: "What the source takes: the connector's picker - search, « Parcourir », the selection with each item's state, « Appliquer »"
+icon:
+  tabler: "checkbox"
+  emoji: "☑️"
+order: 1
+filter:
+  types:
+    - "information-source"
+  when: "source_sub_tabs()"
+refresh:
+  scope: "self"
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "md"
+    children:
+      - {kind: "box", id: "information-source-take", children: [], load: {method: "ktw-agents:sources/source-tab", args: {id: "${id}", tab: "take"}}, placeholder: {kind: "rows", count: 4}, empty: "Ce qu'elle prend"}

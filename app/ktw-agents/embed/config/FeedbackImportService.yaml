@@ -1,0 +1,6 @@
+# FeedbackImportService configuration (the file is named after the service it configures).
+#
+# on: import the feedback folder on a timer in this universe.
+on: false
+# interval_seconds: seconds between two imports when on.
+interval_seconds: 300

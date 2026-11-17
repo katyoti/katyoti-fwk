@@ -1,0 +1,15 @@
+# The release's overview: everything its earlier pane showed, kept as a second
+# tab beside its view on the Delivery screen - the screen shows what the
+# mock-up shows; this tab keeps the rest within reach.
+name: "Overview"
+description: "Everything about it: gauges, what rides along, what awaits a person, what runs or is blocked, the other streams it needs; released, its candidates, its change log and what it delivered"
+icon:
+  tabler: "list-details"
+  emoji: "📋"
+order: 1
+filter:
+  types:
+    - "release"
+source: "ktw-agents:releases/page"
+refresh:
+  scope: "module"

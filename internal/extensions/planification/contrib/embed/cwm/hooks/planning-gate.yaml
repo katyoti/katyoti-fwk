@@ -1,0 +1,10 @@
+# A step is reached when every branch feeding it is done. That reads other
+# objects, so this is a hook; it takes the default payload — `object` is the
+# step as it is about to be.
+name: planning-gate
+description: >-
+  A step is reached only when everything it waits on is done.
+type: on_transition
+uri: ktw-agents:planning/check-transition
+filter:
+  types: [step]

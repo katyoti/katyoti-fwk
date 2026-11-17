@@ -1,0 +1,8 @@
+# One of CWM's own hook points, declared like any other: an extension opens
+# a point of its own by shipping a hook-type file beside its hooks.
+name: verify
+label: Verify
+description: >-
+  When an object and what is under it are verified (the verification service's Verify, verify()). Answers a status (pass, fail or unproven) and the verdict recorded.
+timing: on-demand
+answer: verdict

@@ -1,0 +1,22 @@
+# A source-document's item tab: the item the document records, opened as a
+# knowledge-base item - « Base de connaissance · élément », its title, kind
+# and state, the source it came from as a card opening it, how a link found
+# it, a record's fields or a document's extract, the objects reading it,
+# « Ouvrir dans <système> » and « Ouvrir la source » - drawn by the page
+# `sources/document-page` answers (built on `sources/document-detail`: the
+# source's fetch by the document's parent and item key, else what the
+# document stores). The knowledge base's items open it in a drawer; the
+# source detail's « Ouvrir » on a synchronised item lands here. The page
+# speaks French: the study it serves does.
+name: "Item"
+description: "The item the document records, opened: where it comes from, its fields or its text and the objects reading it"
+icon:
+  tabler: "file-description"
+  emoji: "📄"
+order: 1
+filter:
+  types:
+    - "source-document"
+source: "ktw-agents:sources/document-page"
+refresh:
+  scope: "self"

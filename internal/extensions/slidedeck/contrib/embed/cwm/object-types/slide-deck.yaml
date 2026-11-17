@@ -1,0 +1,49 @@
+# A presentation kept in a module: its title and slides are the object's
+# content (title, and the slides as the .cwm.md body — no deck frontmatter in
+# the body), its deck settings the `deck` field-group. The `deck` panel shows it
+# with the deck component: present, draw, open in a window, print.
+name: slide-deck
+label: Slide deck
+description: >-
+  A presentation: markdown slides shown live with reveal.js. The body is the
+  slides; the deck settings (aspect, theme, transition, author, watermark,
+  mark) are fields.
+folder: decks
+icon: presentation
+capabilities: [deck]
+# The drawings made on the deck while presenting (the Chalkboard data, per
+# slide) — kept with the object, beside it in decks/, and restored when the
+# Deck tab opens.
+files:
+  drawings:
+    path: decks/${id}.drawings.json
+    media: application/json
+    description: The drawings made on the deck's slides while presenting.
+  # The review (OD-017): comment threads anchored on slides, and the reviews
+  # marked done — beside the deck, never in its body. Shape: the data-type
+  # ktw-docs:/data-type/deck-review.
+  review:
+    path: decks/${id}.review.json
+    media: application/json
+    description: The review of the deck - comment threads per slide and the reviews marked done.
+
+# What can be done to a deck, beside presenting and exporting it: each a task
+# run on the deck, each making a NEW deck beside it (the original is kept).
+actions:
+  - uri: ktw-docs:tasks/deck-translate
+    label: Translate
+    description: Une copie de la présentation dans une autre langue — mêmes mises en page, thème et schémas.
+    kind: ai
+    icon: "🌐"
+  - uri: ktw-docs:tasks/deck-shorten
+    label: Short version
+    description: Une version pour un temps de parole donné — l'histoire gardée, les détails en annexe.
+    kind: ai
+    icon: "✂️"
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+  label: Slides
+  description: The deck's slides, in deck markdown.
+  format: deck
+  panel: deck

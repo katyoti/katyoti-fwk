@@ -1,0 +1,12 @@
+name: scenario-user-output
+root: ScenarioUserOutput
+types:
+  ScenarioUserOutput:
+    type: object
+    fields:
+      decision:
+        type: string
+        description: "approved when you accept or agree; rejected when you send it back or refuse; or one word naming your decision"
+      note:
+        type: string
+        description: "Your answer in your own words: the choice, the information asked, or what must change"

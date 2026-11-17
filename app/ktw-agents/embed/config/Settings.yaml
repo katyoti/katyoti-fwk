@@ -1,0 +1,20 @@
+# kt-skills settings
+# App-wide configuration. Secrets (API keys) go in .env, not here.
+# LLM provider/capability settings are in llms.yaml.
+
+# Workspace root for file tools. A `ktw_workspace/` subfolder is auto-created inside.
+workspace: "."
+
+# Maximum agent loop turns (overridable per-task and via --max-turns).
+# Loaded by the run command, not by config.Settings.
+max_turns: 50
+
+# Session journal logs (JSONL debug logs)
+# sessions_dir: ~/.config/kt-skills/sessions
+
+# Default output directory
+# output_dir: ~/.config/kt-skills/outputs
+
+# Supabase (for auth) — secrets (anon_key) in .env
+# supabase:
+#   project_url: https://project.example

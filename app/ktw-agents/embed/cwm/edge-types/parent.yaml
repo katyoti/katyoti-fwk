@@ -1,0 +1,15 @@
+name: parent
+label: Parent
+inverse_label: Child
+target: object
+object_storage: field              # STORED ONCE, AS A FIELD: the child's parent (object core)
+field: left.parent
+cardinality: N:1                   # one parent
+inverse_name: children
+description: |
+  The tree, declared as the edge kind it is (identity-and-index.md §3): every
+  relation between two objects is an edge of a declared kind, and this one's
+  declaration says it is stored as the field `parent` on the LEFT
+  object. It never appears in an `edges:` list — a kind stored as a field is
+  refused there, because stored once means stored in one place. The node-side
+  twin is `parent_id`; this is the object side.

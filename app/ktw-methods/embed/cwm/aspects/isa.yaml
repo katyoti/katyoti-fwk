@@ -1,0 +1,9 @@
+# The ISA treatment — a wanted state with how it is proven. Adding
+# `aspects: [isa]` to any object gives it `want` and `checkable`, with no type
+# minted for the combination.
+name: isa
+label: Wanted state, proven
+description: >-
+  A wanted state with how it is proven: want + checkable, the recursive want
+  node's pair, on any object.
+capabilities: [want, checkable]

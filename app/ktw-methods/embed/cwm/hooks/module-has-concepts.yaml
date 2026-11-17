@@ -1,0 +1,18 @@
+# Every module states its concept: a `hook` contribution at the `lint` point.
+# The lint runs a service the method pack already has (methods/file-exists);
+# `input:` gives it the path it takes — no adapter, no Go.
+#
+# A system module holds live data; its narrative is its plain-named twin's
+# (sys-inbox <-> inbox), so it is not asked for one. It is told apart by what
+# it carries — the system-module capability — never by its name.
+name: module-has-concepts
+description: >-
+  A module has its concepts page (modules/<module>/concepts.md). Linted, not
+  verified: a missing page is a finding, never a verdict.
+type: lint
+uri: ktw-methods:methods/file-exists
+filter:
+  capabilities: [module]
+  when: "not ('system-module' in current.capabilities)"
+input:
+  path: "modules/${current.module}/concepts.md"

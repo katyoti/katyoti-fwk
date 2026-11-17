@@ -1,0 +1,19 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapDeck:
+      fields:
+        aspect:
+          description: "Le format des slides ; 16:9 quand il est omis"
+        author:
+          description: "Qui a écrit la présentation"
+        mark:
+          description: "La marque de production du thème, comme Une production ArchiFactory ; affichée quand elle est omise"
+        theme:
+          description: "Le nom du thème, parmi les thèmes de présentation disponibles ; katyoti quand il est omis"
+        transition:
+          description: "La transition par défaut entre les slides ; slide quand elle est omise"
+        watermark:
+          description: "Un filigrane en travers de chaque slide, comme BROUILLON, INTERNE ou CONFIDENTIEL ; celui du thème quand il est omis ; none le retire"

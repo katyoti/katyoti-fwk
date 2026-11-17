@@ -1,0 +1,50 @@
+# workspace-edit — default profile.
+#
+# Pre-approves all reads and writes inside the workspace so the agent
+# never has to ask for routine in-project file operations. Anything
+# outside the workspace falls through to the tool's own permission
+# check (typically Ask), which routes to the kernel PromptPermission UI.
+#
+# Use this profile for normal day-to-day work.
+
+description: "Allow read/write inside the workspace; ask for anything outside."
+
+allow_rules:
+  # File reads inside the workspace are silent.
+  - "file-read.workspace_path:**"
+
+  # File writes and edits inside the workspace are silent. The
+  # workspace_path field on file-write/file-edit only exists for paths
+  # rooted at the workspace, so this glob is structurally safe.
+  - "file-write.workspace_path:**"
+  - "file-edit.workspace_path:**"
+
+  # Glob and grep over workspace-relative roots are silent.
+  - "glob.workspace_path:**"
+  - "grep.workspace_path:**"
+
+  # Bash commands are auto-allowed.
+  - "bash:**"
+
+  # REST API fetch (configured endpoints only).
+  - "rest-api-fetch:**"
+
+  # CWM graph writes ARE workspace edits — pre-approve them so agents
+  # (chat, the dossier wizard, the dossier action-bar tasks, …) don't
+  # stall on an unsurfaced PromptPermission for routine object/edge
+  # writes. The profile already silences in-workspace file writes; the
+  # graph is the other half of the same workspace. Genuinely destructive
+  # moves are confirmed by the agent itself via ask-user (see the chat
+  # task's "confirm destructive moves first"), not the kernel gate.
+  - "cwm-edge-create:**"
+  - "cwm-edge-delete:**"
+  - "source-reanchor:**"
+  - "cwm-object-create:**"
+  - "cwm-object-update:**"
+  - "cwm-object-move:**"
+  - "cwm-object-split:**"
+  - "cwm-object-named-file-write:**"
+  - "cwm-object-delete:**"
+  - "cwm-object-archive:**"
+
+deny_rules: []

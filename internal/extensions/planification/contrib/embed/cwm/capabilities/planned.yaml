@@ -1,0 +1,9 @@
+name: planned
+label: Planned
+description: >-
+  A TAG, with no schema: a module whose work is planned here - its requests,
+  its plan and its queue. Planification's panels (Requests, Planification,
+  the person's queue) and its « + » children show only on a module carrying
+  it, and so do the method's (Goals, Features, Composition, What's Next). A
+  module made by the modules' creation carries it; an étude de l'existant or
+  a dossier d'architecture does not.

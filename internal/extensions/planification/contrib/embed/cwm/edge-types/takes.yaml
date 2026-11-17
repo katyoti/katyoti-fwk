@@ -1,0 +1,17 @@
+name: takes
+from: release
+to: any
+cardinality: M:N
+from_capabilities: [release]
+to_capabilities: []
+target: object
+object_storage: edges
+description: |
+  An increment or a release TAKES a piece of module work - a goal, a feature,
+  a use case, a decision, a rule: the work it delivers, listed on the
+  planning object, never on the module object.
+  The planification service keeps at most one open taker per object - aiming
+  it elsewhere moves it -, and a done or dropped increment keeps its takes as
+  the record of what it delivered. Ending, dropping or moving an increment
+  leaves the modules untouched. A request keeps its own targets edge.
+inverse_name: taken-by

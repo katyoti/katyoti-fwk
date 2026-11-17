@@ -1,0 +1,7 @@
+name: alert
+kind: renderer
+basePrimitive: string
+description: A text that waits on the person (« needs you ») as a small red filled chip - the surface colour on the block red; an empty value draws nothing.
+
+configSchema:
+  fields: {}

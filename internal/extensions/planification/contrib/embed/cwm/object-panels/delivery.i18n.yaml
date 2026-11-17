@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Livraison
+  description: "Chaque ligne de livraison : son mode et sa prochaine coupe, ses releases et où en est chacune, son backlog - ouvrez n'importe lequel"

@@ -1,0 +1,58 @@
+# Registers `guide-recipe` as a SYSTEM contribution kind: a recipe or a tour of
+# the guide (modules/guide/concepts.md). The GUI's player plays its steps over
+# the GUI's own controls; a recipe whose steps name a `check` ends in a checked
+# result, one without is a tour. Declared here, carried by every binary, so a
+# sidecar's recipes are validated and get their picker fields where they are
+# built (modules/guide/decisions/OD-010).
+#
+# Published from a pack's embed/guide/<name>.yaml (+ an optional <name>.md, the
+# instructions layer, + an optional <name>.i18n.yaml, the translations layer
+# every kind-resource entry gets) through
+# manifestcontrib.ContributeKindResources(provider, "guide-recipe", …,
+# WithSiblingLayer("instructions", ".md")).
+name: guide-recipe
+description: |
+  A guide recipe: the ordered steps the GUI plays over its own controls to
+  teach one thing, ending in a checked result when a step names a check (a
+  recipe without a check is a tour). An optional instructions layer holds a
+  longer text (the instructions layer).
+schema: system:/data-type/guide-recipe
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the recipe's title, description and search words, the
+# markdown body of an Explain me (a concept document read in the person's language,
+# a guide feature), and what each step says.
+translatable: [name, description, hashtags, body, "steps[id].say"]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  source: {mediaType: application/yaml}
+  # A longer explanation, when the recipe needs one (the framework's markdown layer); fetched when opened.
+  instructions: {mediaType: text/markdown}
+  # The recipe's texts in other languages: <name>.i18n.yaml beside the recipe,
+  # language code -> {name, description, hashtags, steps: {<step id>: say}},
+  # published as canonical JSON. A missing string falls back to the recipe's
+  # own. Resident: the hub's translation bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 512
+  # The picker fields are written ONCE, in the data layer; the manifest
+  # builder derives meta from them (modules/guide/decisions/OD-014).
+  from: data
+  fields: [name, description, hashtags]
+
+# How a file becomes a guide recipe (contribution-types.md "How files become
+# layers"): <name>.yaml is the recipe (its tree the data, the file name its
+# identity), <name>.md beside it its longer explanation, <name>.i18n.yaml its
+# translations.
+source:
+  folder: guide
+  match: ["*.yaml", "*.yml"]
+  id: path
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    instructions: {from: sibling, suffix: .md}
+    translations: {from: sibling, suffix: .i18n.yaml}

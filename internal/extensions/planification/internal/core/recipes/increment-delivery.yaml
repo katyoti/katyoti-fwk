@@ -1,0 +1,16 @@
+# An increment's proposal, filed when a person runs it (define now, plan when
+# run): its delivery goals, in the user's words,
+# first analysed against the day's state, then reconciled across the modules
+# into a delta - the module goals and features, existing or added (serves- and
+# parent-linked), and the direct work that deliver them - the person approves
+# it once, an agent applies it; planification then aims the increment at what
+# was created and plans its work.
+name: increment-delivery
+description: When an increment runs, analyse its delivery goals against the day's state, then turn them into the module goals, features and direct work that deliver them; approved once, applied.
+types: [increment]
+transition: done
+steps:
+  - {name: analyse, phase: preparation, class: refine, role: specifier, share: 0.2, skill: ktw-agents:/skill/requirements-analysis, instructions: "The increment has just been run. Read its delivery goals against the state of the day: for each, what already exists (goals, features, open requests, code), what is superseded or out of date, what is missing. Rework a goal that no longer holds (increments set-goals) and say why. Report the findings per goal; plan nothing yourself - the reconcile that follows turns them into the delta."}
+  - {name: reconcile, phase: preparation, class: refine, role: propose-delivery, after: [analyse], share: 0.3, instructions: "For each delivery goal of the increment, search the modules' goals and features across modules and answer the delta under more.delta: increment-target for an existing goal or feature that delivers it, goal-add or feature-add (under the goal or feature it serves) in the module that owns a missing one, direct for a small fix - each operation naming the delivery goal it answers (for) and why. Fold in the open requests the analysis found for a goal rather than adding new ones. Do no work yourself."}
+  - {name: approve, phase: preparation, class: refine, actor: person, interaction: validate, after: [reconcile], share: 0.1, instructions: "Read the proposal, delivery goal by delivery goal: accept it as a whole, or send it back saying what to change."}
+  - {name: apply, phase: build, class: deliver, role: apply-delta, after: [approve], share: 0.4, instructions: "Apply the approved delta, operation by operation, through the verbs; answer under more.applied the object each operation changed or created."}

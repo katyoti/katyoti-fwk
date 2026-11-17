@@ -1,0 +1,43 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    fields:
+      files:
+        type: FileResult[]
+      build_status:
+        type: BuildStatus
+      item_type:
+        type: string
+        description: "Echo of plan.item_type for downstream evaluator"
+        optional: true
+      name:
+        type: string
+        description: "Echo of plan.name"
+        optional: true
+  FileResult:
+    type: object
+    fields:
+      path:
+        type: string
+        optional: true
+      status:
+        type: string@enum(written, skipped, error)
+        optional: true
+      bytes:
+        type: number
+        optional: true
+  BuildStatus:
+    type: object
+    fields:
+      ran:
+        type: boolean
+        optional: true
+      exit_code:
+        type: number
+        optional: true
+      output:
+        type: string
+        description: "Truncated build output if ran"
+        optional: true

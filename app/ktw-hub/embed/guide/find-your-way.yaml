@@ -1,0 +1,26 @@
+name: Find your way in the tree
+description: A tour of the project tree, its modules and objects, and the tabs an object shows.
+hashtags:
+- tree
+- objects
+- modules
+- tabs
+- navigate
+level: beginner
+essential: true
+requires:
+- attach-a-project
+steps:
+- id: objects
+  say: The {control:project.tab|objects} tab shows the project as a tree.
+  target: {guide: project.tab, name: objects}
+  await: click
+- id: pick
+  say: The top level holds *modules*. Open one, then pick an object inside it.
+  target: {guide: tree.node}
+  await: manual
+- id: tabs
+  say: An object's tabs come from its type and capabilities. Each tab shows one side of it.
+- id: sessions
+  say: '{control:project.tab|terminals} lists the terminals you can open here; your chats and runs are under {control:objtab.runs} in the {control:tabs.global} tab.'
+  target: {guide: project.tab, name: terminals}

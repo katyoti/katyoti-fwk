@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Ce qui, dans le code, RÉALISE cet objet : `internal/extensions/cwm` réalise le module cwm. La cible est un chemin dans le projet : une relation vers un non-objet est tout de même déclarée, pour pouvoir être vérifiée (le chemin doit exister) et listée. Déclaré le 2026-09-25 (phase 7e) : il était rédigé depuis un an et déclaré nulle part."
+  inverse_label: "Réalisé par"
+  label: "Réalise"

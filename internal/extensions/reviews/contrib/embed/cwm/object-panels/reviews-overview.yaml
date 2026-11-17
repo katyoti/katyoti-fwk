@@ -1,0 +1,20 @@
+# The managerial view of the reviews, in the Global strip: one row per module
+# (every module, or the module chosen and those under it), a column per review
+# dimension — the worst current rating as a colour, its trend since the
+# previous reviews, its age; a click opens the review — and the open findings
+# by severity, under the KPIs (modules reviewed, critical cells, open critical
+# and high findings, the stalest review). On a module's pane it is that module
+# and the modules under it.
+name: "Reviews overview"
+description: "Where every module stands, review dimension by review dimension: rating, trend, age and open findings"
+icon:
+  tabler: layout-grid
+  emoji: "🧮"
+order: 45
+global: true
+filter:
+  capabilities: [module]
+source: ":reviews/overview"
+refresh:
+  scope: universe
+  types: [review, finding]

@@ -1,0 +1,58 @@
+# A place a module reads from (modules/sources/): its connector - a
+# `source-connector` contribution - where and what it reads, when it is read
+# again, and what the last sync brought. « Lire / Mettre à jour » runs
+# sources/source-sync: the connector writes into <module>/input/<source>/,
+# each item is anchored as a source-document under the source, and the
+# source moves to synced (or failed, with the error). What it feeds is a
+# `feeds` edge. Its header carries no connector badge: a badge reads a stored
+# field, the connector's kebab name; the pane's « Source » tab names the
+# connector by its declared label. It is created from its
+# create page under its holder: a choice per contributed
+# connector, one the holder already reads through greyed with its reason.
+name: information-source
+label: Information source
+label_plural: Information sources
+description: >-
+  A place a module reads from - a Confluence page, a Dynatrace tag, a LeanIX
+  application, a web site, a folder: its connector, its location and
+  selection, and what its last sync brought, anchored so a change is noticed.
+icon: plug-connected
+folder: sources
+capabilities: [lifecycle]
+# A source opens on its take tab, the first of mock-up
+# v6's source view - take, read, settings - whatever its connector and
+# wherever it is opened: under a holder asking for the sub-tabs, the take
+# tab (« Pages prises », « Applications », « Entités », a folder's own), then
+# « Contenu lu » and « Réglages »; under any other holder the « Source » tab
+# then « Choisir les éléments » (source-pick, where the generic Sources list
+# opens a source). « Informations » and « Actions » are technical for a
+# source: they wait behind « Plus… » below the Expert level, first of the
+# generic tabs, and show in the strip at Expert; a name the strip does not
+# hold is skipped. A tab neither list names is hidden: every tab a source can
+# have - its attached files and what challenges it included - is named here.
+pane:
+  tabs: [information-source-take, information-source-read, information-source-settings, information-source, source-pick]
+  more: [information, actions, contents, contributions, links, files, challenged-by, lifecycle, agent-context, history, "tab:children/source-document"]
+fields: :/data-type/information-source
+workflow: information-source
+accept_parents: ["*"]
+allowed_children: [source-document]
+create_task: ktw-agents:sources/new-source-page
+# Its « Actions » are what can be done with the source itself, through its
+# connector: read it (again), test its connection. Proposing again is its
+# holder's (the proposal's terms are the holder's), offered by the holder's
+# module; a task typed ["*"] that makes no sense on a source is its owner's
+# to narrow.
+actions:
+  - uri: ktw-agents:sources/source-sync
+    label: Read / update
+    description: Read the source again through its connector and anchor what it brings.
+    kind: sync
+    icon: refresh
+    input: {id: "${id}"}
+  - uri: ktw-agents:sources/source-test
+    label: Test the connection
+    description: Check that the source's connector can read its location, without reading it.
+    kind: sync
+    icon: plug-connected
+    input: {id: "${id}"}

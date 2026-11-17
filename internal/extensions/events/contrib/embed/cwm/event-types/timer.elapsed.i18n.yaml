@@ -1,0 +1,7 @@
+# Translations of the event type beside this file.
+
+fr:
+  description: >-
+    Une minuterie de cet objet est arrivée à échéance : récurrente (every / at)
+    ou un événement différé ; le contenu nomme la minuterie.
+  label: Minuterie échue

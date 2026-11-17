@@ -1,0 +1,15 @@
+# ObjectContextService configuration (the file is named after the service it configures).
+#
+# What every chat on an object receives before its own context.
+#
+# max_bytes bounds the system sections; over it they are trimmed farthest
+# first, each trim reported. 0 = the default (24 KiB).
+max_bytes: 0
+#
+# agent: the project layer every chat on every object receives first - an
+# agent declaration (system sections, skills, tools, files), as an object
+# type's or a capability's `agent:` block. None by default.
+# agent:
+#   system:
+#     - id: project
+#       text: "..."

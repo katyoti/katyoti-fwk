@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "La décision met en question l'objet cible : une critique, un risque ou un « est-ce juste ? » soulevé contre lui, ouvert jusqu'à ce qu'il soit tranché. Écrit sur la décision, lu côté cible comme `challenged-by`."
+  inverse_label: "Contesté par"
+  label: "Conteste"

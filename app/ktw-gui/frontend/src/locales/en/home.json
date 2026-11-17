@@ -1,0 +1,51 @@
+{
+  "strip": {
+    "actions": "Actions",
+    "runs": "Scheduler",
+    "errors": "Errors",
+    "chat": "Chat"
+  },
+  "builtIn": {
+    "term": {
+      "title": "Terminal",
+      "description": "Spawn a shell or tail a log"
+    },
+    "drawio": {
+      "title": "Drawio",
+      "description": "Open the diagram editor"
+    },
+    "debug": {
+      "title": "Debug & tests",
+      "description": "Catalog, KTSP, tasks, workspace, skills, UI tests."
+    },
+    "chat": {
+      "title": "Start chat",
+      "description": "Open a global conversation",
+      "active": "Chat row already active"
+    }
+  },
+  "actions": {
+    "quickActions": "Quick actions",
+    "tasks": "Tasks",
+    "emptyData": "No tasks registered in this universe.",
+    "emptyFiltered": "No tasks match the current filters."
+  },
+  "chat": {
+    "placeholder": "Global chat — a conversation about everything in this universe."
+  },
+  "unknownSection": "Unknown section: {{section}}",
+  "globalPanel": {
+    "allModules": "All modules",
+    "target": "Target",
+    "refresh": "Refresh",
+    "nothing": "This panel declares nothing to show."
+  },
+  "errors": {
+    "unreadable": "The errors could not be read",
+    "none": "No errors: every object of the project reads clean.",
+    "objects_one": "Objects in error ({{count}})",
+    "objects_other": "Objects in error ({{count}})",
+    "files_one": "Files CWM could not read ({{count}})",
+    "files_other": "Files CWM could not read ({{count}})"
+  }
+}

@@ -1,0 +1,11 @@
+name: markdown
+kind: renderer
+basePrimitive: string
+description: Markdown-formatted text. v1 renders a textarea; v2 (gui-rich-text) adds preview + toolbar.
+
+configSchema:
+  fields:
+    maxLength:
+      type: number
+      optional: true
+      description: Max character count for the textarea.

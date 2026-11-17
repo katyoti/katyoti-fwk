@@ -1,0 +1,14 @@
+# The increment pane's Goals tab, as its mock-up draws it.
+name: "Goals"
+description: "Every delivery goal in detail: each request with its open step and every step named"
+icon:
+  tabler: "list-check"
+order: 1
+filter:
+  types:
+    - "increment"
+source: "ktw-agents:increments/pane-page"
+input:
+  tab: "goals"
+refresh:
+  scope: "module"

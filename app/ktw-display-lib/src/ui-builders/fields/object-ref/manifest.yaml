@@ -1,0 +1,27 @@
+name: object-ref
+kind: field-type
+basePrimitive: string
+description: A reference to an object of the project — its value the object's id. The form searches the objects through the host (filtered by the field's ObjectFilter); without a host it is a text input. The view opens the object.
+
+configSchema:
+  fields:
+    types:
+      type: string[]
+      optional: true
+      description: Object types it may name (any of).
+    capabilities:
+      type: string[]
+      optional: true
+      description: Capabilities the object must carry at least one of.
+    incoming:
+      type: string[]
+      optional: true
+      description: Edge kinds of which the object must have an incoming edge.
+    outgoing:
+      type: string[]
+      optional: true
+      description: Edge kinds of which the object must have an outgoing edge.
+    when:
+      type: string
+      optional: true
+      description: An el predicate over the object vocabulary.

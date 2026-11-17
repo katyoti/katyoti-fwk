@@ -1,0 +1,14 @@
+[
+  {
+    "line": 8,
+    "rule": "slot-items",
+    "severity": "error",
+    "message": "layout \"icons\" slot \"items\" takes 2 to 8 list items; it has 1 — add items or pick another layout"
+  },
+  {
+    "line": 16,
+    "rule": "slot-items",
+    "severity": "error",
+    "message": "layout \"timeline\" slot \"steps\" takes 2 to 8 list items; it has 9 — split the slide or merge items"
+  }
+]

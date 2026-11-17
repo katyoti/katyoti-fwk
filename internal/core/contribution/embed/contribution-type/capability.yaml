@@ -1,0 +1,69 @@
+# Registers `capability` as a SYSTEM contribution kind, beside object-type,
+# node-type and item-type.
+#
+# A capability declares what ONE capability id MEANS: the field-group schema it
+# conforms to, the panels it renders, the actions it offers, the checks it runs
+# and the hooks it fires. Every slot is optional; a capability declaring none of
+# them is a TAG, which is legitimate — "everything marked `deprecated`" is a
+# useful thing to select on.
+#
+# It lives here rather than in a method pack for the same reason object-type had
+# to move: every binary that publishes a CWM type pack publishes capabilities,
+# and a kind published without a contribution-type declaration is refused by the
+# census in every other binary.
+#
+# CAPABILITY ID IS NOT SCHEMA. Two capabilities may both use `cap-checkable`;
+# the id is the STORAGE KEY on the object, and two capabilities of the same
+# shape would otherwise collide on one field-group. Expect dozens of
+# capabilities over a handful of schemas.
+name: capability
+description: |
+  The meaning of one capability id: its field-group schema (a data-type URI),
+  the actions it offers, the checks it runs
+  and the lifecycle hooks it fires. An object-type is a named list of these, so
+  a new type ships a usable interface without any change to ktw-gui.
+schema: system:/data-type/capability
+validate: error
+
+# A capability names something to run: the actions it offers, the checks it
+# runs and the hooks it fires. The whole kind is executable (a trust class is
+# declared per kind, never per entry); a TAG capability, which names nothing,
+# costs nothing when an untrusted origin may not contribute it.
+execution: executable
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the capability's name and description, each action's label, and each
+# badge's prefix and tooltip (a badge named by its field).
+translatable: [label, description, "actions[label].label", "badges[field].label", "badges[field].tooltip"]
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 832  # measured max 523 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `capabilities/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: capabilities
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

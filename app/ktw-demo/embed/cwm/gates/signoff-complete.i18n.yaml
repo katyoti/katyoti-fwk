@@ -1,0 +1,9 @@
+# Translations of the gate beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Visa complet
+  description: >-
+    L'objet nomme ses relecteurs et a les approbations que son type demande.
+  requirements:
+    has-reviewers:
+      label: Il nomme ses relecteurs

@@ -1,0 +1,54 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Strict JSON plan the executor consumes"
+    fields:
+      item_type:
+        type: string@enum(task, agent, skill, service, sidecar)
+      name:
+        type: string
+        description: "kebab-case slug"
+      description:
+        type: string
+        description: "1-line for the item's frontmatter"
+        optional: true
+      files:
+        type: FileSpec[]
+        description: "Files to write, in order"
+      sub_skills_to_load:
+        type: string[]
+        description: "Skills the executor should load via skills-get-instruction"
+        optional: true
+      validation:
+        type: Validation
+      rationale:
+        type: string
+        description: "Why this plan was chosen — informs the reviewer"
+        optional: true
+  FileSpec:
+    type: object
+    fields:
+      path:
+        type: string
+        description: "Workspace-relative or absolute path"
+      content_hint:
+        type: string
+        description: "What the executor should put here"
+      rationale:
+        type: string
+        description: "Why this file is needed"
+  Validation:
+    type: object
+    fields:
+      smoke_test:
+        type: string
+        description: "Bash command to validate the result"
+      expected_exit:
+        type: number
+        optional: true
+      expected_output_contains:
+        type: string
+        description: "Optional substring to grep for"
+        optional: true

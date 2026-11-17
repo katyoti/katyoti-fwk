@@ -1,0 +1,13 @@
+name: writes-module
+from_capabilities: [module]
+to_capabilities: [module]
+cardinality: M:N
+target: object
+object_storage: edges
+description: |
+  A module's work CHANGES another module. Learned by the planner from the steps
+  it submits (a step's `writes`): props `observed_by` (the planned object whose
+  step showed it), `task`, `last_seen` (RFC 3339). A writer runs alone on a
+  module and the modules it contains; the code lint checks the edge against the
+  code.
+inverse_name: written-by

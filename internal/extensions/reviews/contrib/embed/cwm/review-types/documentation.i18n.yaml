@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Documentation"
+  description: "La documentation du module dit-elle ce qui est vrai, à ceux qui la lisent, complètement et en un seul endroit : ses pages, la description de ses fonctionnalités, les commentaires de son API."

@@ -1,0 +1,26 @@
+# A test notation (not shipped): the 1-kind-many-variants pattern the drawio
+# tests prove - one node kind whose looks come from its attributes.
+id: app-flux
+displayName: Application flux (test)
+version: '1.0'
+description: 'A test notation of the canonical 1-kind-many-variants pattern: ONE node kind (Application)
+  whose looks come from attribute-driven lookups (domain → palette) and conditional markers (xls flag →
+  thick green border + corner badge). Plus Spreadsheet for spreadsheet artefacts and Note for free-text
+  annotation.'
+elements:
+  Application:
+    label: Application
+    description: An application participating in the flux. `attributes.domain` drives fill+stroke colours;
+      "xls" in `attributes.markers` fires the XLS marker (thick green border + corner badge).
+  Spreadsheet:
+    label: Spreadsheet
+    description: A spreadsheet artefact participating in a flux (typically source or scratch data).
+  Note:
+    label: Note
+    description: A free-text annotation pinned to the diagram (no semantic participation).
+relationships:
+  Flow:
+    label: Flow
+    description: A directed data flow between two participants. `attributes.flow_type` drives the stroke
+      colour (invoice / payment / catalog / reporting, defaults to neutral grey). Labels link the interface
+      codes joined by " / " and data types joined by "<br>".

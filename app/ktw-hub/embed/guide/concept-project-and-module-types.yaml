@@ -1,0 +1,99 @@
+# A concept document of KaTyoti: listed first in the guide,
+# under « Concepts KaTyoti », read in the person's language.
+# The kinds of projects and modules as KaTyoti delivers them.
+name: 'Project and module types'
+description: 'What kind of project or module you are looking at: its type says what it is, what it shows and what it is for - a software project, a dossier d''architecture; software, documentation, an étude de l''existant.'
+hashtags:
+- katyoti-usage
+- concepts
+- project
+- module
+- type
+level: beginner
+concept: true
+body: |-
+  Every project and every module in KaTyoti has a **type**. The type says what it is
+  - a software project, a dossier d'architecture, a documentation module, an étude de
+  l'existant - and from it come its icon, what « + New » offers inside it, the tabs it
+  opens on and what it can do. This page lists the types delivered today and what each
+  is for.
+
+  ## 1. The picture
+
+  ```mermaid
+  flowchart LR
+    P["Project<br/>one git repository<br/>its type: software project, dossier…"] --> M1["Module<br/>its type: software, documentation…"]
+    P --> M2["Module"]
+    M1 --> O["Its objects<br/>documents, decisions, goals, features…"]
+  ```
+
+  - A **project** is the unit of work: a git repository holding its project file at
+    its root - one repository is one project. A project never holds another project.
+  - A **module** is a part of a project: a folder that groups its objects.
+  - Both have a type. The level - project or module - comes from the type too: a type
+    is either a kind of project or a kind of module.
+
+  ## 2. Project types
+
+  | Type | What it is for | What it holds | Comes with |
+  |---|---|---|---|
+  | **Software project** | The default: a code repository and the work around it | Software modules, documentation, the system modules | KaTyoti - any universe opens it |
+  | **Dossier d'architecture** | An architect's dossier on one system: its framing, its sources, its studies, its publication | Its études de l'existant, documentation, the system modules | ArchiFactory - today it opens only in a universe created from ArchiFactory's solution |
+
+  A new project is a software project unless you choose another type. Today a project
+  whose type needs a solution your universe does not have is not opened: KaTyoti says
+  which solution it needs, so you can open it in the right universe. **Coming:** it
+  opens in any universe; where the product it needs is missing it opens read-only and
+  offers to install it. There is no other kind of project: lists group projects by
+  type and by the product that brings it. Several pieces of work
+  kept together are the modules of one project - several studies of one dossier, for
+  instance - and several projects worked together are repositories your universe
+  attaches side by side.
+
+  ## 3. Module types
+
+  | Type | What it is for | What it holds |
+  |---|---|---|
+  | **Software module** | A part of the code: its packages, its health, its checks | Its goals, features and requests, with the code they are about |
+  | **Documentation** | Written work with no code: a guide, a site, a set of decisions | Documents, decisions, goals and features |
+  | **Étude de l'existant** (ArchiFactory) | What is in place - applications, flows, infrastructure, tooling - studied section by section | Its framing, its sources and knowledge base, its sections, its publication on Confluence |
+  | **System module** | What KaTyoti keeps for the project itself: its inbox, its planning, its journal | Shown only at the Expert level |
+
+  Only a software module carries code: a documentation module or an étude has no code
+  health panel and no code checks.
+
+  ## 4. What a type gives you
+
+  Wherever you meet a project or a module, its type shows:
+
+  - **In the tree**, its icon and colour, and its modules grouped by type in the order
+    its project's type gives.
+  - **At the top of its page**, its type above its name, its level, the solution it
+    needs and its parent, and a box listing what its type brings.
+  - **In « + New »**, only what may be created inside it, each with its own creation
+    form: a new étude de l'existant opens « Nouvelle étude », for instance.
+  - **When it opens**, the tabs that matter for its kind first; the others wait behind
+    « Plus… ».
+
+  Nothing has to be added by hand for a module to be what it is: its type says it.
+
+  ## 5. Where the types come from
+
+  Every type comes from a sidecar - any sidecar, never a solution. KaTyoti delivers
+  the general types - software project, software module, documentation, system
+  module. A **product** adds the types of its trade through its sidecars: ArchiFactory
+  brings the dossier d'architecture and the étude de l'existant. A universe offers the
+  types of the sidecars it runs, whichever solution it was created from. Today the
+  dossier d'architecture still names ArchiFactory's solution, so it opens only in a
+  universe created from it; **coming:** it opens wherever ArchiFactory's sidecar is
+  installed, and read-only elsewhere.
+
+  ## 6. In ArchiFactory today
+
+  - Your dossiers d'architecture are **projects** of the type dossier d'architecture.
+    « Mes dossiers » lists the ones your universe serves, and « Ouvrir » on one opens
+    it. Each dossier is a repository of its own, and one dossier holds several études.
+  - Inside a dossier, the module you create is an **étude de l'existant**, with
+    « Nouvelle étude »; documentation modules are possible too.
+  - The études to come (other kinds of studies) will be types of their own, added to
+    the same list.

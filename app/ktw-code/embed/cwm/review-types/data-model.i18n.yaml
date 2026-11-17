@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Modèle de données"
+  description: "Entités, machines à états, flux de données et types dupliqués du module."

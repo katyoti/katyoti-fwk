@@ -1,0 +1,6 @@
+name: permission
+label: Permission
+description: Allow or deny an act, once or always, with its rule.
+answerable_by: person
+order: 7
+answer: ktw-agents:/data-type/permission-answer

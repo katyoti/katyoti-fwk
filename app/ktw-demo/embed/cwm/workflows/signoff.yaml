@@ -1,0 +1,26 @@
+# How a sign-off item moves. Approving is gated by a named definition of done
+# (gates/signoff-complete.yaml): the gate's checklist says what is missing.
+name: signoff
+label: Sign-off
+description: >-
+  Drafted, put in review, then approved once the sign-off is complete — or sent
+  back with changes; a person closes it.
+initial: draft
+states:
+  - {name: draft, description: "Being written"}
+  - {name: in-review, description: "Waiting for its reviewers"}
+  - {name: changes-requested, description: "Sent back with changes"}
+  - {name: approved, description: "Its sign-off is complete"}
+  - {name: closed, description: "Done with", terminal: true}
+transitions:
+  - {name: submit, from: [draft, changes-requested], to: in-review}
+  - name: approve
+    from: [in-review]
+    to: approved
+    gate: "gate('signoff-complete').passes"
+  - {name: request-changes, from: [in-review], to: changes-requested}
+  - name: close
+    from: [approved]
+    to: closed
+    gate: "by.kind == 'person'"
+  - {name: drop, from: [draft, in-review, changes-requested], to: closed}

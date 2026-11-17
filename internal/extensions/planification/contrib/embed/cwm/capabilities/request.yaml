@@ -1,0 +1,14 @@
+# Work asked for, as a capability any object can carry: a request filed on a
+# goal, a feature or a use case is carried by it, beside its own lifecycle; a
+# request filed on its own is a `request` object that carries it and nothing
+# more. Its fields are the ask: where it comes from (a person, an agent, a
+# module, a feature, a goal, an external system), the details, what the work
+# must deliver and whether each is verified, the budget, the kind and priority.
+# Its state is its plan's (the `plan` capability).
+name: request
+label: Request
+description: >-
+  Work asked for on an object: where it comes from, what the work must deliver
+  (each verified by its check), its kind, priority and budget. Its state is
+  its plan's.
+schema: ktw-agents:/data-type/cap-request

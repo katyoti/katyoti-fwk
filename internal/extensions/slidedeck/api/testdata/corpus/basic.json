@@ -1,0 +1,72 @@
+{
+  "settings": {
+    "aspect": "16:9",
+    "theme": "katyoti",
+    "title": "Q4 architecture review"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 6,
+      "settings": {
+        "layout": "cover"
+      },
+      "settingsLine": 7,
+      "slots": [
+        {
+          "name": "default",
+          "line": 8,
+          "markdown": "# Q4 architecture review\nOne platform, three sidecars"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 12,
+      "settings": {
+        "layout": "two-cols",
+        "steps": "list"
+      },
+      "settingsLine": 13,
+      "slots": [
+        {
+          "name": "default",
+          "line": 14,
+          "markdown": "## Where we are\n\n- The hub owns the catalog\n- Sidecars publish, never read"
+        },
+        {
+          "name": "right",
+          "line": 19,
+          "markdown": "![topology](assets/topology.svg)"
+        }
+      ],
+      "notes": "Start with the hub.\nThe audience knows the sidecars."
+    },
+    {
+      "h": 1,
+      "v": 1,
+      "line": 28,
+      "slots": [
+        {
+          "name": "default",
+          "line": 29,
+          "markdown": "## A vertical detail\n\nOnly reachable downward."
+        }
+      ]
+    },
+    {
+      "h": 2,
+      "v": 0,
+      "line": 34,
+      "slots": [
+        {
+          "name": "default",
+          "line": 35,
+          "markdown": "## Close\n\nThanks. Note: this is not a note, it is mid-line."
+        }
+      ]
+    }
+  ]
+}

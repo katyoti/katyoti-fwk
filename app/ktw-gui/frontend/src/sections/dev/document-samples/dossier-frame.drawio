@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram name="Page-1">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4000" pageHeight="3000">
+      <root>
+        <UserObject label="" ktw-role="diagram" ktw-title="Current application architecture" ktw-viewpoint="ktw-docs:/viewpoint/archimate3-application-cooperation" ktw-layout-hints="{&#34;preset&#34;:&#34;archi-layered&#34;}" ktw-page="{&#34;name&#34;:&#34;dossier&#34;,&#34;values&#34;:{&#34;project_code&#34;:&#34;PRJ-001&#34;,&#34;project_name&#34;:&#34;Sample dossier&#34;}}" id="0">
+          <mxCell/>
+        </UserObject>
+        <mxCell id="1" parent="0"/>
+        <UserObject label="&lt;b&gt;PRJ-001 · Sample dossier&lt;/b&gt;&lt;br&gt;&lt;span style=&#34;font-size:15px&#34;&gt;Current application architecture&lt;/span&gt;" id="page-dossier-banner" ktw-role="decoration">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;strokeColor=none;fontColor=#FFFFFF;fontSize=12;align=left;verticalAlign=middle;spacingLeft=14;" vertex="1" parent="1">
+            <mxGeometry x="20" y="10" width="1560" height="64" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Dossier d&#39;architecture&lt;br&gt;2026-09-29" id="page-dossier-stamp" ktw-role="decoration">
+          <mxCell style="text;html=1;fontColor=#FFFFFF;fontSize=10;align=right;verticalAlign=middle;spacingRight=14;" vertex="1" parent="1">
+            <mxGeometry x="1280" y="10" width="300" height="64" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Upstream" ktw-role="zone" ktw-id="z-upstream" ktw-order="1" id="z-z-upstream">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;dashPattern=8 4;fontSize=13;fontStyle=1;verticalAlign=top;align=center;spacingTop=5;arcSize=8;" vertex="1" parent="1">
+            <mxGeometry x="2" y="173" width="540" height="430" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Front office" ktw-role="zone" ktw-id="z-front" ktw-order="2" id="z-z-front">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;dashPattern=8 4;fontSize=13;fontStyle=1;verticalAlign=top;align=center;spacingTop=5;arcSize=8;" vertex="1" parent="1">
+            <mxGeometry x="602" y="117" width="540" height="371" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Steering" ktw-role="zone" ktw-id="z-steering" ktw-order="3" id="z-z-steering">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;dashPattern=8 4;fontSize=13;fontStyle=1;verticalAlign=top;align=center;spacingTop=5;arcSize=8;" vertex="1" parent="1">
+            <mxGeometry x="1202" y="151" width="540" height="280" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Shared services" ktw-role="zone" ktw-id="z-shared" ktw-order="4" id="z-z-shared">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;dashPattern=8 4;fontSize=13;fontStyle=1;verticalAlign=top;align=center;spacingTop=5;arcSize=8;" vertex="1" parent="1">
+            <mxGeometry x="1802" y="82" width="540" height="521" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application A&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application A&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-a&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-a" ktw-role="node" ktw-id="app-a" ktw-kind="Application" ktw-label="Application A" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application A&#34;,&#34;domain&#34;:&#34;domain-1&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-a&#34;}" description="Capability of Application A" domain="domain-1" external_url="https://catalog.example.com/Application/app-a">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="z-z-upstream">
+            <mxGeometry x="330" y="151" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application B&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application B&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-b&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-b" ktw-role="node" ktw-id="app-b" ktw-kind="Application" ktw-label="Application B" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application B&#34;,&#34;domain&#34;:&#34;domain-1&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-b&#34;}" description="Capability of Application B" domain="domain-1" external_url="https://catalog.example.com/Application/app-b">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="z-z-upstream">
+            <mxGeometry x="30" y="180" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application C&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application C&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-c&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-c" ktw-role="node" ktw-id="app-c" ktw-kind="Application" ktw-label="Application C" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application C&#34;,&#34;domain&#34;:&#34;domain-1&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-c&#34;}" description="Capability of Application C" domain="domain-1" external_url="https://catalog.example.com/Application/app-c">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="z-z-upstream">
+            <mxGeometry x="30" y="330" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application D&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application D&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-d&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-d" ktw-role="node" ktw-id="app-d" ktw-kind="Application" ktw-label="Application D" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application D&#34;,&#34;domain&#34;:&#34;domain-1&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-d&#34;}" description="Capability of Application D" domain="domain-1" external_url="https://catalog.example.com/Application/app-d">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="z-z-upstream">
+            <mxGeometry x="30" y="30" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application E&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application E&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-e&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-e" ktw-role="node" ktw-id="app-e" ktw-kind="Application" ktw-label="Application E" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application E&#34;,&#34;domain&#34;:&#34;domain-2&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-e&#34;}" description="Capability of Application E" domain="domain-2" external_url="https://catalog.example.com/Application/app-e">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673A6;strokeWidth=1;" vertex="1" parent="z-z-front">
+            <mxGeometry x="330" y="218" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application F&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application F&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-f&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-f" ktw-role="node" ktw-id="app-f" ktw-kind="Application" ktw-label="Application F" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application F&#34;,&#34;domain&#34;:&#34;domain-2&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-f&#34;}" description="Capability of Application F" domain="domain-2" external_url="https://catalog.example.com/Application/app-f">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673A6;strokeWidth=1;" vertex="1" parent="z-z-front">
+            <mxGeometry x="30" y="180" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application G&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application G&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-g&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-g" ktw-role="node" ktw-id="app-g" ktw-kind="Application" ktw-label="Application G" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application G&#34;,&#34;domain&#34;:&#34;domain-3&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-g&#34;}" description="Capability of Application G" domain="domain-3" external_url="https://catalog.example.com/Application/app-g">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6C8EBF;strokeWidth=1;" vertex="1" parent="z-z-front">
+            <mxGeometry x="30" y="30" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application H&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application H&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-h&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-h" ktw-role="node" ktw-id="app-h" ktw-kind="Application" ktw-label="Application H" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application H&#34;,&#34;domain&#34;:&#34;domain-2&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-h&#34;}" description="Capability of Application H" domain="domain-2" external_url="https://catalog.example.com/Application/app-h">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673A6;strokeWidth=1;" vertex="1" parent="z-z-front">
+            <mxGeometry x="30" y="271" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application I&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application I&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-i&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-i" ktw-role="node" ktw-id="app-i" ktw-kind="Application" ktw-label="Application I" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application I&#34;,&#34;domain&#34;:&#34;domain-4&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-i&#34;}" description="Capability of Application I" domain="domain-4" external_url="https://catalog.example.com/Application/app-i">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#B85450;strokeWidth=1;" vertex="1" parent="z-z-steering">
+            <mxGeometry x="30" y="30" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application J&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application J&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-j&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-j" ktw-role="node" ktw-id="app-j" ktw-kind="Application" ktw-label="Application J" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application J&#34;,&#34;domain&#34;:&#34;domain-4&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-j&#34;}" description="Capability of Application J" domain="domain-4" external_url="https://catalog.example.com/Application/app-j">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#B85450;strokeWidth=1;" vertex="1" parent="z-z-steering">
+            <mxGeometry x="330" y="180" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application K&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application K&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-k&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-k" ktw-role="node" ktw-id="app-k" ktw-kind="Application" ktw-label="Application K" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application K&#34;,&#34;domain&#34;:&#34;domain-4&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-k&#34;}" description="Capability of Application K" domain="domain-4" external_url="https://catalog.example.com/Application/app-k">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#B85450;strokeWidth=1;" vertex="1" parent="z-z-steering">
+            <mxGeometry x="330" y="30" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application L&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application L&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-l&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-l" ktw-role="node" ktw-id="app-l" ktw-kind="Application" ktw-label="Application L" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application L&#34;,&#34;domain&#34;:&#34;domain-5&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-l&#34;}" description="Capability of Application L" domain="domain-5" external_url="https://catalog.example.com/Application/app-l">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#D6B656;strokeWidth=1;" vertex="1" parent="z-z-shared">
+            <mxGeometry x="330" y="237" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application M&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application M&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-m&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-m" ktw-role="node" ktw-id="app-m" ktw-kind="Application" ktw-label="Application M" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application M&#34;,&#34;domain&#34;:&#34;domain-5&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-m&#34;}" description="Capability of Application M" domain="domain-5" external_url="https://catalog.example.com/Application/app-m">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#D6B656;strokeWidth=1;" vertex="1" parent="z-z-shared">
+            <mxGeometry x="30" y="421" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application N&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application N&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-n&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-n" ktw-role="node" ktw-id="app-n" ktw-kind="Application" ktw-label="Application N" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application N&#34;,&#34;domain&#34;:&#34;domain-6&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-n&#34;}" description="Capability of Application N" domain="domain-6" external_url="https://catalog.example.com/Application/app-n">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="z-z-shared">
+            <mxGeometry x="30" y="30" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application O&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application O&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-o&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-o" ktw-role="node" ktw-id="app-o" ktw-kind="Application" ktw-label="Application O" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application O&#34;,&#34;domain&#34;:&#34;domain-6&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-o&#34;}" description="Capability of Application O" domain="domain-6" external_url="https://catalog.example.com/Application/app-o">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="z-z-shared">
+            <mxGeometry x="30" y="271" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;Application P&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&#34;font-size:9px&#34;&gt;Capability of Application P&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&#34;https://catalog.example.com/Application/app-p&#34; style=&#34;font-size:8px&#34;&gt;Catalog&lt;/a&gt;" id="n-app-p" ktw-role="node" ktw-id="app-p" ktw-kind="Application" ktw-label="Application P" ktw-attributes="{&#34;description&#34;:&#34;Capability of Application P&#34;,&#34;domain&#34;:&#34;domain-6&#34;,&#34;external_url&#34;:&#34;https://catalog.example.com/Application/app-p&#34;}" description="Capability of Application P" domain="domain-6" external_url="https://catalog.example.com/Application/app-p">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="z-z-shared">
+            <mxGeometry x="30" y="180" width="180" height="70" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/0&#34;&gt;FL1000&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 0&lt;/i&gt;" id="e-f0" ktw-role="edge" ktw-id="f0" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 0&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1000&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/0&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-a" target="n-app-e">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="512" y="377"/>
+                <mxPoint x="932" y="377"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/1&#34;&gt;FL1001&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 1&lt;/i&gt;" id="e-f1" ktw-role="edge" ktw-id="f1" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 1&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1001&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/1&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-a" target="n-app-f">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="512" y="359"/>
+                <mxPoint x="532" y="359"/>
+                <mxPoint x="532" y="332"/>
+                <mxPoint x="632" y="332"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/2&#34;&gt;FL1002&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 2&lt;/i&gt;" id="e-f2" ktw-role="edge" ktw-id="f2" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 2&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1002&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/2&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-b" target="n-app-a">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="212" y="388"/>
+                <mxPoint x="222" y="388"/>
+                <mxPoint x="222" y="359"/>
+                <mxPoint x="332" y="359"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/3&#34;&gt;FL1003&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 3&lt;/i&gt;" id="e-f3" ktw-role="edge" ktw-id="f3" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 3&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1003&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/3&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-c" target="n-app-a">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="212" y="526"/>
+                <mxPoint x="232" y="526"/>
+                <mxPoint x="232" y="377"/>
+                <mxPoint x="332" y="377"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/4&#34;&gt;FL1004&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 4&lt;/i&gt;" id="e-f4" ktw-role="edge" ktw-id="f4" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 4&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1004&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/4&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-d" target="n-app-a">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="212" y="238"/>
+                <mxPoint x="222" y="238"/>
+                <mxPoint x="222" y="342"/>
+                <mxPoint x="332" y="342"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/5&#34;&gt;FL1005&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 5&lt;/i&gt;" id="e-f5" ktw-role="edge" ktw-id="f5" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 5&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1005&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/5&#34;}],&#34;flow_type&#34;:&#34;reporting&#34;}" flow_type="reporting">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#993366;" edge="1" parent="1" source="n-app-e" target="n-app-i">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1112" y="353"/>
+                <mxPoint x="1122" y="353"/>
+                <mxPoint x="1122" y="216"/>
+                <mxPoint x="1232" y="216"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/6&#34;&gt;FL1006&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 6&lt;/i&gt;" id="e-f6" ktw-role="edge" ktw-id="f6" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 6&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1006&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/6&#34;}],&#34;flow_type&#34;:&#34;invoice&#34;}" flow_type="invoice">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#CC6600;" edge="1" parent="1" source="n-app-e" target="n-app-m">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1112" y="388"/>
+                <mxPoint x="1122" y="388"/>
+                <mxPoint x="1122" y="446"/>
+                <mxPoint x="1722" y="446"/>
+                <mxPoint x="1722" y="526"/>
+                <mxPoint x="1832" y="526"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/7&#34;&gt;FL1007&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 7&lt;/i&gt;" id="e-f7" ktw-role="edge" ktw-id="f7" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 7&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1007&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/7&#34;}],&#34;flow_type&#34;:&#34;payment&#34;}" flow_type="payment">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#006699;" edge="1" parent="1" source="n-app-g" target="n-app-e">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="812" y="194"/>
+                <mxPoint x="832" y="194"/>
+                <mxPoint x="832" y="349"/>
+                <mxPoint x="932" y="349"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/8&#34;&gt;FL1008&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 8&lt;/i&gt;" id="e-f8" ktw-role="edge" ktw-id="f8" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 8&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1008&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/8&#34;}],&#34;flow_type&#34;:&#34;payment&#34;}" flow_type="payment">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#006699;" edge="1" parent="1" source="n-app-h" target="n-app-e">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="812" y="411"/>
+                <mxPoint x="822" y="411"/>
+                <mxPoint x="822" y="391"/>
+                <mxPoint x="932" y="391"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/9&#34;&gt;FL1009&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 9&lt;/i&gt;" id="e-f9" ktw-role="edge" ktw-id="f9" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 9&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1009&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/9&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-f" target="n-app-e">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="812" y="332"/>
+                <mxPoint x="822" y="332"/>
+                <mxPoint x="822" y="363"/>
+                <mxPoint x="932" y="363"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/10&#34;&gt;FL1010&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 10&lt;/i&gt;" id="e-f10" ktw-role="edge" ktw-id="f10" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 10&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1010&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/10&#34;}],&#34;flow_type&#34;:&#34;reporting&#34;}" flow_type="reporting">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#993366;" edge="1" parent="1" source="n-app-i" target="n-app-j">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1412" y="234"/>
+                <mxPoint x="1422" y="234"/>
+                <mxPoint x="1422" y="366"/>
+                <mxPoint x="1532" y="366"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/11&#34;&gt;FL1011&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 11&lt;/i&gt;" id="e-f11" ktw-role="edge" ktw-id="f11" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 11&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1011&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/11&#34;}],&#34;flow_type&#34;:&#34;reporting&#34;}" flow_type="reporting">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#993366;" edge="1" parent="1" source="n-app-i" target="n-app-k">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1412" y="216"/>
+                <mxPoint x="1532" y="216"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/12&#34;&gt;FL1012&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 12&lt;/i&gt;" id="e-f12" ktw-role="edge" ktw-id="f12" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 12&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1012&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/12&#34;}],&#34;flow_type&#34;:&#34;invoice&#34;}" flow_type="invoice">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#CC6600;" edge="1" parent="1" source="n-app-m" target="n-app-l">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="2012" y="538"/>
+                <mxPoint x="2022" y="538"/>
+                <mxPoint x="2022" y="366"/>
+                <mxPoint x="2132" y="366"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/13&#34;&gt;FL1013&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 13&lt;/i&gt;" id="e-f13" ktw-role="edge" ktw-id="f13" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 13&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1013&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/13&#34;}],&#34;flow_type&#34;:&#34;default&#34;}" flow_type="default">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#444444;" edge="1" parent="1" source="n-app-n" target="n-app-i">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1832" y="159"/>
+                <mxPoint x="1422" y="159"/>
+                <mxPoint x="1422" y="199"/>
+                <mxPoint x="1412" y="199"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/14&#34;&gt;FL1014&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 14&lt;/i&gt;" id="e-f14" ktw-role="edge" ktw-id="f14" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 14&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1014&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/14&#34;}],&#34;flow_type&#34;:&#34;catalog&#34;}" flow_type="catalog">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#669933;" edge="1" parent="1" source="n-app-a" target="n-app-n">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="512" y="342"/>
+                <mxPoint x="522" y="342"/>
+                <mxPoint x="522" y="136"/>
+                <mxPoint x="1722" y="136"/>
+                <mxPoint x="1722" y="135"/>
+                <mxPoint x="1832" y="135"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/15&#34;&gt;FL1015&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 15&lt;/i&gt;" id="e-f15" ktw-role="edge" ktw-id="f15" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 15&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1015&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/15&#34;}],&#34;flow_type&#34;:&#34;reporting&#34;}" flow_type="reporting">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#993366;" edge="1" parent="1" source="n-app-l" target="n-app-k">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="2132" y="342"/>
+                <mxPoint x="1722" y="342"/>
+                <mxPoint x="1722" y="216"/>
+                <mxPoint x="1712" y="216"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/16&#34;&gt;FL1016&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 16&lt;/i&gt;" id="e-f16" ktw-role="edge" ktw-id="f16" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 16&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1016&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/16&#34;}],&#34;flow_type&#34;:&#34;default&#34;}" flow_type="default">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#444444;" edge="1" parent="1" source="n-app-o" target="n-app-e">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1832" y="376"/>
+                <mxPoint x="1722" y="376"/>
+                <mxPoint x="1722" y="411"/>
+                <mxPoint x="1132" y="411"/>
+                <mxPoint x="1132" y="370"/>
+                <mxPoint x="1112" y="370"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/17&#34;&gt;FL1017&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 17&lt;/i&gt;" id="e-f17" ktw-role="edge" ktw-id="f17" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 17&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1017&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/17&#34;}],&#34;flow_type&#34;:&#34;default&#34;}" flow_type="default">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#444444;" edge="1" parent="1" source="n-app-o" target="n-app-h">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1832" y="400"/>
+                <mxPoint x="1732" y="400"/>
+                <mxPoint x="1732" y="435"/>
+                <mxPoint x="812" y="435"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/18&#34;&gt;FL1018&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 18&lt;/i&gt;" id="e-f18" ktw-role="edge" ktw-id="f18" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 18&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1018&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/18&#34;}],&#34;flow_type&#34;:&#34;default&#34;}" flow_type="default">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#444444;" edge="1" parent="1" source="n-app-p" target="n-app-g">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1832" y="297"/>
+                <mxPoint x="1732" y="297"/>
+                <mxPoint x="1732" y="170"/>
+                <mxPoint x="812" y="170"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;a href=&#34;https://catalog.example.com/Interface/19&#34;&gt;FL1019&lt;/a&gt;&lt;br&gt;&lt;i&gt;Data 19&lt;/i&gt;" id="e-f19" ktw-role="edge" ktw-id="f19" ktw-kind="Flow" ktw-attributes="{&#34;data_types&#34;:[&#34;Data 19&#34;],&#34;fl_codes&#34;:[{&#34;code&#34;:&#34;FL1019&#34;,&#34;url&#34;:&#34;https://catalog.example.com/Interface/19&#34;}],&#34;flow_type&#34;:&#34;invoice&#34;}" flow_type="invoice">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#CC6600;" edge="1" parent="1" source="n-app-c" target="n-app-m">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="212" y="550"/>
+                <mxPoint x="1832" y="550"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Legend" ktw-role="legend" id="legend">
+          <mxCell style="swimlane;startSize=26;rounded=1;html=1;fillColor=#FAFAFA;strokeColor=#BDBDBD;fontStyle=1;fontSize=12;collapsible=0;" vertex="1" parent="1">
+            <mxGeometry x="2402" y="82" width="250" height="98" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" ktw-role="legend" id="legend-0-swatch">
+          <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="legend">
+            <mxGeometry x="12" y="36" width="44" height="22" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Application" ktw-role="legend" id="legend-0-label">
+          <mxCell style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="legend">
+            <mxGeometry x="68" y="32" width="170" height="30" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" ktw-role="legend" id="legend-1-swatch">
+          <mxCell style="html=1;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#444444;" edge="1" parent="legend">
+            <mxGeometry relative="1" as="geometry"><mxPoint x="12" y="77" as="sourcePoint"/><mxPoint x="56" y="77" as="targetPoint"/></mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Flow" ktw-role="legend" id="legend-1-label">
+          <mxCell style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="legend">
+            <mxGeometry x="68" y="62" width="170" height="30" as="geometry"/>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

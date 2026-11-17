@@ -1,0 +1,17 @@
+name: display-documents-showcase-input
+root: DocumentsDemoInput
+types:
+  DocumentsDemoInput:
+    type: object
+    fields:
+      topic:
+        type: string
+        label: "Topic"
+        description: "The subject every document is about (e.g. 'a small library', 'a payment platform')"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Start the tour"
+        groups:
+          - title: "Topic"
+            fields: [topic]

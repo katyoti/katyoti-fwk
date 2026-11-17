@@ -1,0 +1,15 @@
+name: icon
+kind: field-type
+basePrimitive: string
+description: Tabler icon name (external-link or IconExternalLink) drawn as that icon; an unknown name draws a dot, an empty value nothing.
+
+configSchema:
+  fields:
+    colorMap:
+      type: string
+      optional: true
+      description: JSON-encoded value→color map applied to the icon based on the field value.
+    colorField:
+      type: string
+      optional: true
+      description: Sibling field whose value drives the colorMap lookup. Defaults to the field's own value.

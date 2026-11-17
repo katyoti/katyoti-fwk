@@ -1,0 +1,31 @@
+name: hello-world-input
+root: HelloWorldInput
+types:
+  HelloWorldInput:
+    type: object
+    fields:
+      name:
+        type: string
+        label: "Your name"
+        description: "Who should I greet?"
+      greeting:
+        type: string@enum(Hello, Hi, Bonjour, Hola, Ciao)
+        label: "Greeting style"
+        description: "Greeting style (defaults to Hello)"
+        optional: true
+      loud:
+        type: boolean
+        label: "Shout it?"
+        description: "If checked, the greeting is upper-cased (defaults to false)."
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        layout: groups
+        submit_label: "Run hello-world"
+        cancel_label: "Cancel"
+        groups:
+          - title: "Greeting"
+            fields: [name, greeting]
+          - title: "Style"
+            fields: [loud]

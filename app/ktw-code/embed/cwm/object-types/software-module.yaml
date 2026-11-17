@@ -1,0 +1,24 @@
+# A software module: a module - the `module` level capability - whose code it
+# carries (`code`: its kind, its packages, its tiers, its facets), planned. It absorbs ktw-code's former
+# code-module; gocode creates software modules.
+name: software-module
+label: Software module
+label_plural: Software modules
+folder: objects
+description: >-
+  A module realized by code: its packages, its tiers and its facets, with the
+  method objects that say what it must do.
+icon: code
+color: indigo
+capabilities: [module, code, planned, lifecycle]
+tree: root
+workflow: manual
+# What a software module holds: the method objects that say what
+# it must do, its requests, streams, studies' findings and reviews, its decks
+# and portfolio - « + New » under it offers these and nothing else.
+allowed_children: [feature, goal, decision, rule, document, use-case, acceptance-criterion, request, stream, finding, review, slide-deck, slide-group, portfolio]
+
+body:
+  label: Overview
+  description: What the module is and what its code does.
+  format: markdown

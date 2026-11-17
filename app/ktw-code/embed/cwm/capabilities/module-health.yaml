@@ -1,0 +1,10 @@
+name: module-health
+label: Module health
+icon: heartbeat
+description: >-
+  The gocode read-only status surface: tier, use-case totals, promote
+  gates. Panel-only.
+# Its status surface goes on every module that carries code - the `code`
+# capability: a documentation module or a study has none.
+attach:
+  capabilities: [code]

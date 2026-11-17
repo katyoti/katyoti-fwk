@@ -1,0 +1,61 @@
+# Registers `edge-type` as a system contribution kind. Parallels
+# `node-type` / `item-type`: any binary that ships CWM edge-type
+# YAMLs (`cwm/edge-types/*.yaml`) emits one
+# `<provider>:/edge-type/<name>` Contribution per registered edge
+# type, so the universe-wide CWM type registry can be assembled from
+# the catalog like any other contribution.
+#
+# The URI of this entry is `system:/contribution-type/edge-type`.
+# Consumers walking the open list of contribution kinds discover
+# `edge-type` here and resolve its body schema through
+# `system:/data-type/edge-type`.
+name: edge-type
+description: |
+  YAML-defined CWM edge type registration. Carries the edge's
+  from/to kinds and capabilities, cardinality, target, where it is
+  stored (object_storage), and optional inverse-traversal name. Pair with the CWM substrate's
+  edge linter, which validates graph edges against these registrations.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/edge-type
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the names a link is shown by in the Links tab, from
+# either side (label, inverse_label), and its description in the link picker.
+translatable: [label, inverse_label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 1152  # measured max 747 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `edge-types/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: edge-types
+  former: [edge_types]   # a pack or an override tree laid out before the rename: read, with a warning
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

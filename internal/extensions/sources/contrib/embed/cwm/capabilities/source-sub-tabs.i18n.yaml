@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Sous-onglets des sources
+  description: >-
+    Les sources d'information de l'objet s'ouvrent sur trois sous-onglets -
+    ce que chacune prend, le contenu lu, ses réglages - au lieu de l'onglet
+    unique « Source ».

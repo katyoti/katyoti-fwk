@@ -1,0 +1,46 @@
+{
+  "title": "Boîte de réception",
+  "noUniverse": "Activez un univers pour voir sa boîte de réception.",
+  "pending_one": "{{count}} en attente",
+  "pending_other": "{{count}} en attente",
+  "refresh": "Rafraîchir",
+  "error": "Erreur de la boîte de réception",
+  "empty": "Boîte de réception vide. Ce qui demande votre attention — questions d’agents, documents reçus, idées à trier — arrive ici.",
+  "from": "de {{who}}",
+  "answer": "Répondre",
+  "open": "Ouvrir {{id}}",
+  "answerPlaceholder": "Saisissez votre réponse…",
+  "notePlaceholder": "Votre note — obligatoire pour refuser : dites quoi changer",
+  "notePlaceholderVerdict": "Votre note — obligatoire pour renvoyer : dites quoi changer",
+  "notePlaceholderChoice": "Votre note — pourquoi cette option ; obligatoire pour aucune : dites pourquoi elle est renvoyée",
+  "noteRequired": "Écrivez d’abord une note : elle dit quoi changer",
+  "dismiss": "Écarter",
+  "cancel": "Annuler",
+  "reject": "Refuser",
+  "approve": "Approuver",
+  "sendBack": "Renvoyer",
+  "send": "Envoyer",
+  "none": "Aucune / renvoyer",
+  "kind": {
+    "item": "élément",
+    "itemTitle": "Élément",
+    "approval-request": "Demande d’approbation",
+    "validation": "Validation",
+    "question": "Question",
+    "notice": "Information",
+    "choice": "Décision"
+  },
+  "urgency": {
+    "blocking": "bloquante",
+    "high": "haute",
+    "medium": "moyenne",
+    "low": "basse"
+  },
+  "time": {
+    "justNow": "à l’instant",
+    "seconds": "il y a {{n}} s",
+    "minutes": "il y a {{n}} min",
+    "hours": "il y a {{n}} h",
+    "days": "il y a {{n}} j"
+  }
+}

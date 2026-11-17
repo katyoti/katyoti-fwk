@@ -1,0 +1,26 @@
+# Registers `deck-layout` as a ktw-docs contribution kind of the slide-deck
+# engine. Its URI is `ktw-docs:/contribution-type/deck-layout`; its body schema
+# is the generated `ktw-docs:/data-type/deck-layout` (from the Go type in
+# internal/extensions/slidedeck/api). Any sidecar may publish more layouts.
+name: deck-layout
+description: |
+  A slide layout: when to use it and its named slots. A slide picks one with
+  `<!-- slide: layout=<name> -->`; the deck lint refuses an unknown layout or
+  slot; the deck component styles it.
+
+# Declared, not derived: a kind whose schema is inferred from its name is
+# unvalidatable the moment the inference fails, and fails silently.
+schema: ktw-docs:/data-type/deck-layout
+validate: error
+
+# Every entry carries its decoded body (data) and the YAML as written
+# (source, the default layer).
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 512
+  # The picker fields are written once, in the layout's body; the manifest
+  # builder derives meta from them.
+  from: data
+  fields: [name, description]

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "ktw-gui",
+  "outputfilename": "ktw-gui",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "Christophe Strohl (katyoti.ai)",
+    "email": "christophe@katyoti.ai"
+  }
+}

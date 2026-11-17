@@ -1,0 +1,37 @@
+# Registers `reference` as a system contribution kind. Binaries that ship
+# reference files (docs, diagrams, datasets) emit one
+# `<provider>:/reference/<rel-path>` Contribution each. The URI of this
+# entry is `system:/contribution-type/reference`; its body schema is
+# `system:/data-type/reference`.
+name: reference
+description: |
+  An arbitrary reference file shipped by a sidecar. Descriptor body is
+  metadata only (path + media type); the content is fetched on demand via
+  ResourceService.Get.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/reference
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {required: true, default: true}
+meta:
+  budget: 128  # measured max 70 B across 21 binaries (2026-09-21), x1.5 rounded up
+
+# How a file becomes a reference (contribution-types.md "How files become
+# layers"): any file of the folder, read as it is - named by its path with its
+# extension, its data the path, the file its source (its media type by its
+# extension).
+source:
+  folder: references
+  id: file
+  format: raw
+  layers:
+    data: {from: path}
+    source: {from: file}

@@ -1,0 +1,8 @@
+name: step
+label: Step
+description: >-
+  A synchronisation point of a release's plan, and what reaching it produces:
+  the branches of work feeding it join there once each is done (management
+  pages label it "Sprint N"). What it produces is a result of the work - a
+  release candidate, a merged branch - not a request's verified deliverables.
+schema: ktw-agents:/data-type/cap-step

@@ -1,0 +1,20 @@
+name: tabs
+kind: view-layout
+description: >-
+  Each group becomes a Mantine Tab. Best for long views with naturally
+  distinct sections (Profile / Activity / Permissions / etc.) where the
+  user typically focuses on one section at a time. Group title becomes
+  the tab label; group icon (heuristic from title) becomes the tab's
+  leftSection. Falls back to a single Paper render when the view has 0
+  or 1 groups.
+
+configSchema:
+  fields:
+    keep_mounted:
+      type: boolean
+      default: false
+      description: "Keep all tabs' content mounted (preserves scroll/state). Default unmounts inactive tabs to save memory."
+    orientation:
+      type: string
+      default: horizontal
+      description: "Tab orientation (horizontal | vertical) — vertical for tall viewports / sidebar style"

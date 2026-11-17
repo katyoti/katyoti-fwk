@@ -1,0 +1,24 @@
+# An opened information source's sub-tab « Réglages », one of
+# three shown under a holder carrying the capability source-sub-tabs (the
+# as-is study v2) - any other holder keeps the one « Source »
+# tab (information-source.yaml): drawn by the region `sources/source-tab`
+# returns for tab settings.
+name: "Settings"
+description: "Where the source reads: its connector's location form"
+icon:
+  tabler: "settings"
+  emoji: "⚙️"
+order: 3
+filter:
+  types:
+    - "information-source"
+  when: "source_sub_tabs()"
+refresh:
+  scope: "self"
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "md"
+    children:
+      - {kind: "box", id: "information-source-settings", children: [], load: {method: "ktw-agents:sources/source-tab", args: {id: "${id}", tab: "settings"}}, placeholder: {kind: "rows", count: 4}, empty: "Réglages"}

@@ -1,0 +1,11 @@
+name: color
+kind: field-type
+basePrimitive: string
+description: Color picker / swatch. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    format:
+      type: string
+      optional: true
+      description: Output format — 'hex', 'rgb', 'rgba', or 'hsl'. Default 'hex'.

@@ -1,0 +1,62 @@
+name: deck-from-object-input
+root: DeckFromObjectInput
+types:
+  DeckFromObjectInput:
+    type: object
+    fields:
+      template:
+        type: string
+        label: "Trame"
+        description: "Ce que la présentation doit dire, partie par partie — le moment où elle sera montrée"
+        default: architecture-board
+        content:
+          type: text
+          options_from:
+            # every content template in reach: the project's first, then
+            # those the sidecars publish (partial ones are only included)
+            source: content-templates
+            value: name
+            label: label
+      theme:
+        type: string
+        label: "Thème"
+        description: "L'habillage, parmi les thèmes disponibles"
+        default: katyoti
+        content:
+          type: text
+          options_from:
+            source: deck-themes
+            value: name
+            label: description
+      audience:
+        type: string
+        label: "Public"
+        description: "Qui sera là (ex. comité d'architecture groupe, direction métier)"
+        optional: true
+      minutes:
+        type: number
+        label: "Temps de parole (minutes)"
+        description: "Une slide par minute au plus, couverture comprise"
+        optional: true
+        default: 15
+        min: 5
+        max: 60
+      language:
+        type: string
+        label: "Langue"
+        optional: true
+        default: auto
+        enum: [auto, fr, en]
+        content:
+          type: text
+          options:
+            - {value: auto, label: "Celle de l'objet (par défaut)"}
+            - {value: fr, label: Français}
+            - {value: en, label: English}
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Écrire la présentation"
+        groups:
+          - title: "Présentation"
+            fields: [template, theme, audience, minutes, language]

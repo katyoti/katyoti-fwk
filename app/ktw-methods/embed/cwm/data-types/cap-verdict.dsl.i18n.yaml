@@ -1,0 +1,25 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapVerdict:
+      fields:
+        evidence:
+          description: "Ce que l'exécution a rapporté : la lecture de l'expression, le message du harnais, la raison pour laquelle elle n'a pas pu s'exécuter."
+          label: "Preuve"
+        kind:
+          description: "Comment la sonde a été exécutée."
+          label: "Type de sonde"
+        probe:
+          description: "La sonde telle qu'elle était à l'exécution, pour qu'une modification ultérieure du critère apparaisse comme une différence."
+          label: "Sonde"
+        ran_at:
+          description: "Moment de l'exécution qui a produit ce statut."
+          label: "Exécuté le"
+        status:
+          description: "Exactement ce que l'exécution a renvoyé. pass / fail sont des verdicts : la sonde command d'un critère s'exécute dans le projet, son code de sortie fait le verdict. needs-harness signifie qu'une commande est laissée au harnais de la méthode : ni une réussite ni un échec de la sonde. no-probe signifie que rien n'était déclaré à exécuter. harness-error signifie que le contrôle n'a pas pu s'exécuter, ce qui n'est jamais vert. Un statut n'est écrit que par une exécution."
+          label: "Statut"
+        timeout:
+          description: "La limite étendue sur laquelle la sonde a tourné, quand son critère en déclarait une (30m) ; absente quand elle a tourné sur la limite par défaut."
+          label: "Limite de temps"

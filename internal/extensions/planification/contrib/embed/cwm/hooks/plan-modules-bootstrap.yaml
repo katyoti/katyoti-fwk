@@ -1,0 +1,12 @@
+# When a project opens, every module that already has planning work - a
+# request, a goal or a feature of its own, or code packages - carries the
+# planned capability, so planification's panels keep showing on it; a module
+# with none (an étude de l'existant, a dossier d'architecture) is left as it is.
+# Idempotent.
+name: plan-modules-bootstrap
+description: >-
+  When a project opens, its modules with planning work carry the planned capability.
+type: bootstrap
+uri: ktw-agents:requests/plan-modules
+filter:
+  capabilities: [project]

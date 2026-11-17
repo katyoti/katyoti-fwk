@@ -1,0 +1,11 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Règle
+  description: >-
+    Une manière de travailler, énoncée une seule fois, dans le module qui la
+    porte. Son genre dit comment elle atteint un agent : une contrainte est
+    dite à tout agent qui travaille dans sa portée ; une recette, une
+    référence ou un exemple se consulte à la demande. Sa portée est le
+    sous-arbre de son module ou, avec `scope: repo`, tous les modules. Sa
+    force (pattern, règle, politique) est un champ, jamais un type.

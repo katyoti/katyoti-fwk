@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Objectifs
+  description: "Tous les objectifs de ce module : leur état, leur place, leur atteignabilité et ce qui les sert"

@@ -1,0 +1,12 @@
+# A definition of done named once: what the sign-off workflow's approve
+# transition asks (gate('signoff-complete').passes). Its own requirement; the
+# pack adds one more for sign-off items (gate-requirements/).
+name: signoff-complete
+label: Sign-off complete
+description: >-
+  The object names its reviewers and has the approvals its type requires.
+requirements:
+  - name: has-reviewers
+    label: It names its reviewers
+    check: "len(object.signoff.reviewers ?? []) > 0"
+    resolve: {title: "Name the reviewers of {object}", kind: analyse}

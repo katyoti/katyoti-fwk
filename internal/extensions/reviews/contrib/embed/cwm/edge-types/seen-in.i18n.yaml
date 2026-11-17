@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'La dernière revue qui a vu un constat. Chaque revue de son type qui le retrouve (par son empreinte) déplace ce lien vers elle-même ; un constat que la revue courante ne voit plus est résolu par elle. Comparer une revue à la précédente lit ces liens : nouveau (relevé dans elle), persistant (vu dans elle, relevé avant), résolu (vu pour la dernière fois dans la précédente).'
+  inverse_label: 'A vu'
+  label: 'Vu dans'

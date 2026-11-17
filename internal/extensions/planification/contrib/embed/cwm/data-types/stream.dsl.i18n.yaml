@@ -1,0 +1,31 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Stream:
+      fields:
+        color:
+          description: 'Sa couleur dans les dessins (#3651D4)'
+          label: 'Couleur'
+        order:
+          description: 'Son rang parmi les lignes : la première est dessinée en haut'
+          label: 'Ordre'
+        role:
+          description: 'platform : la plateforme sur laquelle les autres lignes s''appuient ; dessinée sous elles, en ligne fine aux cartes plus petites'
+          label: 'Rôle'
+        version_scheme:
+          description: 'La numérotation de ses versions : semver (1.4.0 ou 1.005) ou calendrier (2026.10) - tous deux avec -rcN - ou date (2026-10-10)'
+          label: 'Schéma de version'
+        release_mode:
+          description: 'La façon dont ses versions sont faites : manuel (par une personne - par défaut), au changement (quand un incrément est livré - au plus une fois par intervalle minimal) ou périodique (tous les « every »)'
+          label: 'Mode de livraison'
+        min_interval:
+          description: 'Au changement : le temps minimal entre deux versions (1d ou 2d)'
+          label: 'Intervalle minimal'
+        every:
+          description: 'Périodique : le temps entre deux versions (14d)'
+          label: 'Période'
+        last_cut:
+          description: 'Quand elle a fait sa dernière version selon son mode (RFC 3339)'
+          label: 'Dernière version faite'

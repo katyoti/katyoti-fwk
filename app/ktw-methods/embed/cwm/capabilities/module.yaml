@@ -1,0 +1,6 @@
+name: module
+label: Module
+icon: package
+description: >-
+  A functional concern: one folder, its documents and its objects.
+schema: ktw-methods:/data-type/cap-module

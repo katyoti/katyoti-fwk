@@ -1,0 +1,22 @@
+# A code review type of ktw-code: performed by an agent following the
+# code-review skill in its run mode, with its guide.
+name: threat-model
+title: Threat model
+description: >-
+  The module's threats mapped to OWASP and CWE, their risk, the attack paths and the tests to write first.
+dimension: security
+applies:
+  capabilities: [code]
+  when: "len(object.code.code_packages) > 0"
+trigger:
+  mode: manual
+runner:
+  skill: ktw-code:/skill/code-review
+  input:
+    review: threat-model
+    guide: ktw-code:/reference/review/threat-model.md
+rating: >-
+  critical when a finding is critical, needs-attention when one is high or
+  medium, good otherwise.
+presets: [code-deep]
+max_cost_usd: 5

@@ -1,0 +1,20 @@
+name: Open or create a universe
+description: Create a universe of your own and open it.
+hashtags:
+- universe
+- create universe
+- open universe
+- add universe
+level: beginner
+steps:
+- id: add-universe
+  say: Press {control:ribbon.add-universe} at the bottom of the ribbon.
+  target: {guide: ribbon.add-universe}
+  await: click
+- id: create
+  say: Choose {control:add-universe.create}, give it a name and press {control:create-universe.submit}.
+  target: {guide: add-universe.create}
+  await: manual
+- id: ready
+  say: Once created, the universe opens on screen. When you see it, press {control:guide.check}.
+  check: ktw-univers:universe-checks/universe-ready

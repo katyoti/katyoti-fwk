@@ -1,0 +1,21 @@
+# The module type of the reserved `sys-*` spaces. A module is an object type
+# carrying the `module` capability; this one also carries `system-module`,
+# which is what reserves the name and what every reader asks (cwm api
+# IsSystemModule / UserModules) — never this type's name.
+#
+# allowed_children is the create picker under a system module: what the
+# platform files directly in one — the inbox (sys-inbox), a journal-day
+# (sys-journal), an unrouted request, a project release, a publication and a
+# stream (sys-planification) - never an increment: one comes from a study's
+# hand-over.
+name: system-module
+label: System module
+description: >-
+  An operational space the platform keeps for itself (`sys-inbox` holds the
+  inbox and the messages filed into it).
+folder: objects
+icon: settings
+icon_name: settings
+capabilities: [module, system-module]
+tree: root
+allowed_children: [inbox, journal-day, request, release, publication, stream]

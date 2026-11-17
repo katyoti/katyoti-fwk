@@ -1,0 +1,19 @@
+name: about
+label: About
+inverse_label: Subject of
+from: any
+to: any
+cardinality: M:N
+from_capabilities: []                # anything may be about something
+to_capabilities: []
+target: object
+object_storage: edges
+description: |
+  What an object is ABOUT: a request filed by one module into another names
+  the object it concerns (a page, a type, a use case) — any object may be
+  about any other. The object concerned lists it under Links as `subject-of`,
+  so its pane shows what is asked or said about it.
+
+  Declared by CWM itself (its core pack), so every universe has it whatever
+  packs are loaded.
+inverse_name: subject-of

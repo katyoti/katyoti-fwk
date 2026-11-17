@@ -1,0 +1,7 @@
+name: mrtree
+description: "Tree layout — parent-children hierarchy, top-to-bottom"
+layoutOptions:
+  elk.algorithm: mrtree
+  elk.direction: DOWN
+  elk.spacing.nodeNode: "30"
+  elk.mrtree.weighting: CONSTRAINT

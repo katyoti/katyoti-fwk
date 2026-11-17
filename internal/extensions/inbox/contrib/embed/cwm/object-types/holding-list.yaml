@@ -1,0 +1,13 @@
+# A holding list: who may answer the questions it holds -
+# persons, roles, agents. Its objects are filed in the system module
+# `sys-inbox`, under `holding-lists/`; its id is the scheduler group of the
+# human tasks it holds. `sys-inbox.project` is the project's
+# list, the default one.
+name: holding-list
+label: Holding list
+folder: holding-lists
+description: >-
+  Who may answer the questions it holds - persons, roles and agents: any
+  member answers, the first proven answer wins, and the record says who.
+icon: users-group
+fields: :/data-type/holding-list

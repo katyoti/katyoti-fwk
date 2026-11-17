@@ -1,0 +1,27 @@
+# plan-mode — read-only mode for planning agents.
+#
+# Reads are allowed everywhere (workspace and absolute paths) so the
+# planner can pull in references, specs, and supporting docs from
+# anywhere on disk without prompts. Writes, edits, and shell execution
+# are HARD DENIED — even if a tool's own CheckPermissions would allow
+# them, the profile blocks them at the gate.
+#
+# Use this profile when running planner/researcher agents that should
+# never mutate the filesystem or run commands.
+
+description: "Read-only mode for planning. All writes hard-denied. Reads pre-approved everywhere."
+
+allow_rules:
+  # Reads anywhere are silent.
+  - "file-read.workspace_path:**"
+  - "file-read.absolute_path:**"
+
+  # Discovery tools are silent.
+  - "glob.workspace_path:**"
+  - "grep.workspace_path:**"
+
+deny_rules:
+  # Hard block on all mutations and execution.
+  - "file-write:**"
+  - "file-edit:**"
+  - "bash:**"

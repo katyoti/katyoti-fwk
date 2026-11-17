@@ -1,0 +1,35 @@
+name: hello-world-output
+root: HelloWorldOutput
+types:
+  HelloWorldOutput:
+    type: object
+    fields:
+      greeting_file:
+        type: string
+        label: "File written"
+        description: "Path to the greeting.md the task created."
+      rendered_greeting:
+        type: string@markdown
+        label: "Greeting"
+        description: "The greeting that was rendered, as markdown."
+      executed_at:
+        type: string@date-time
+        label: "Executed at"
+        description: "ISO 8601 timestamp of when the greeting was composed."
+        optional: true
+      was_loud:
+        type: boolean
+        label: "Shouted"
+        description: "Whether the loud (upper-case) transform was applied."
+        optional: true
+    extensions:
+      - type: ui-view
+        name: default
+        layout: detail-pane
+        groups:
+          - title: "Result"
+            cols: 1
+            fields: [rendered_greeting]
+          - title: "Details"
+            cols: 2
+            fields: [greeting_file, executed_at, was_loud]

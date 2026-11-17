@@ -1,0 +1,44 @@
+# One sentence of user value, holding the goals and features that make it: done
+# once each of them is. It carries the release capability - the same targets,
+# scope, grade and network - and ships in at most one release, which then ships
+# its goals and features. One level: no increment in an increment.
+name: increment
+label: Increment
+folder: .ktw/increments
+id_prefix: IN
+description: >-
+  One sentence of user value - the goals and features that make it - shipping
+  in at most one release; done once each of them is.
+icon: stack-2
+capabilities: [release, lifecycle]
+workflow: increment
+# Its pane is the approved mock-up and nothing else: it opens on its open requests - Open requests, Goals,
+# Increment, Information, History -, no object header - the Open requests tab
+# draws its head - and no generic tab, even at Expert. The Blockers tab
+# sits fourth, after Increment and before Information, as its
+# mock-up places it, its count in red on the tab.
+pane:
+  tabs: [increment-open-requests, increment-goals, increment-page, increment-blockers, increment-information, increment-journal]
+  only: true
+# An agent working on this increment keeps in sight only the work aimed at it: its
+# scope - what it takes and the requests targeting it, and the work of the
+# module releases and increments shipping in it - never the backlog.
+agent:
+  system:
+    - id: type-context:increment-scope
+      title: "The work of this increment"
+      text: |
+        This node is an increment. The work in sight is its scope only: what it takes
+        (its takes edges: goals, features, use cases) and the requests targeting
+        it, and - for a release - the work of the module releases and increments
+        shipping in it. Work aimed at no release is backlog: it is out of this scope.
+        Read the scope with the increment's scope tool before planning or reporting, and
+        What's Next on its module or project narrowed to it (release: <its id>).
+  tools:
+    - uri: "ktw-agents:increments/scope"
+    - uri: "ktw-agents:releases/backlog"
+
+# Offered in a module's « + » only when the module is planned: a study or a dossier, not planned, offers none - the
+# rule the planning panels follow. `type` and
+# `current` are the parent.
+accept_when: "'module' not in current.capabilities or 'planned' in current.capabilities"

@@ -1,0 +1,7 @@
+name: stage
+kind: renderer
+basePrimitive: string
+description: A release stage (planned, frozen, candidate, canary, released, dropped) as a chip.
+
+configSchema:
+  fields: {}

@@ -1,0 +1,16 @@
+# A files-only pack that publishes entries of a kind it does NOT declare.
+# `recipe` is declared — with its schema — by another member of the universe
+# (files-only-pack, beside this fixture). Served by the generic host
+# (bin/ktw-host) through a `dirs:` line, with no `contribution-types/` folder:
+#
+#   recipes/waffles.yaml   one entry of the kind   -> foreign-kind-pack:/recipe/waffles
+#
+# The host's manifest builds with `recipe` recorded under ForeignKinds (the
+# kind is foreign to this member, not undeclared); the hub, which holds every
+# member's declarations, validates the entry against files-only-pack's schema
+# — or refuses the entry when no member declares the kind (blind audit H3).
+name: foreign-kind-pack
+version: 1.0.0
+description: a files-only pack publishing a kind another member declares (e29 fixture)
+dirs:
+  recipe: recipes

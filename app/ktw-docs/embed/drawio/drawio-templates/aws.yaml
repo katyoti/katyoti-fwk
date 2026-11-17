@@ -1,0 +1,8 @@
+# A template library: bindings and constants for the templates in the .drawio file of
+# the same name. Edit the shapes in draw.io; a template is a cell marked ktw-template.
+id: aws
+displayName: AWS architecture icons
+description: 'draw.io''s AWS 4 icons: a service is its resource icon in its category colour, the name
+  below; a zone of kind AWSCloud, Region, AvailabilityZone, VPC, PublicSubnet, PrivateSubnet, SecurityGroup
+  or AutoScalingGroup is the AWS group.'
+notation: ktw-docs:/notation/aws

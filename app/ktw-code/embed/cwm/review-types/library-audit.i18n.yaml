@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Audit de bibliothèque"
+  description: "Pour un paquet réutilisable : cohérence, extensibilité et complétude de l'API."

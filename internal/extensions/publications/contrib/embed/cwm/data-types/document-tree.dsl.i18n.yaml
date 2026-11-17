@@ -1,0 +1,35 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Asset:
+      fields:
+        content:
+          description: 'Ses octets - en base64 dans le JSON - quand aucun chemin ne le porte.'
+        media_type:
+          description: 'Son type de média.'
+        name:
+          description: 'Son nom de fichier - celui auquel le markdown fait référence.'
+        path:
+          description: 'Le fichier local, en chemin absolu, qui le contient.'
+    Document:
+      fields:
+        assets:
+          description: 'Les fichiers qu''il montre ou joint - images, diagrammes et pièces jointes.'
+        language:
+          description: 'Sa langue : en ou fr.'
+        markdown:
+          description: 'Son contenu en markdown standard - blocs mermaid compris.'
+        source:
+          description: 'D''où il vient - un chemin de fichier ou un id d''objet.'
+        translation:
+          description: 'La clé du nœud qui porte sa traduction appariée.'
+        version:
+          description: 'La version de sa source dont il est tiré - un hash ou une révision.'
+    DocumentTree:
+      fields:
+        meta:
+          description: 'Ce qu''est l''arbre - son nom et ce qu''il documente.'
+        nodes:
+          description: 'Les documents et groupes de premier niveau, dans l''ordre.'

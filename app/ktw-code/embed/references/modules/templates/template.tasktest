@@ -1,0 +1,60 @@
+# L2 Scenario Template — copy this when authoring a new .tasktest
+#
+# Schema reference: ktw-code llm resources read ktw-code:/reference/modules/e2e-test-authoring.md
+# Required fields: uc, title, setup.home, setup.llm, invoke.cmd, invoke.timeout
+#
+# All paths in `setup.home` and `setup.llm` are resolved relative to this
+# file's directory unless absolute. The harness substitutes:
+#   $TMP_HOME              — fresh temp dir for this run
+#   $SAFE_TOOL_SUBSET      — [file_read, file_write, file_edit, glob, complete]
+#   $RUN_ID                — the run's runID, populated after invoke
+#   $NOW                   — scenario start timestamp
+#   $SCENARIO_DIR          — directory of this .tasktest
+
+uc: UC-XXX                          # required — must exist in /modules/tasks/charter.md
+title: Short human-readable title
+description: |
+  What this scenario validates and why. Cite the relevant audit finding if any.
+severity: core                      # core | security | qol
+audit_finding: null                 # optional — e.g. "sec-1", "threat-T2", or null
+
+setup:
+  home: ../../fixtures/<fixture-folder>/
+                                    # path to a fixture home dir (copied to $TMP_HOME)
+  llm: simulator                    # "simulator" for token-free, or path to scripted JSON
+  env:
+    KTW_HOME: $TMP_HOME
+
+invoke:
+  cmd: ./bin/ktw-agents run <task-name> --pipe --home $TMP_HOME
+  timeout: 30s
+  expect_exit: 0                    # 0 | 1 | "non-zero"
+
+assertions:
+  # Positive: events that MUST appear in the journal
+  journal:
+    - event: <event-type>
+      <field>: <value or matcher>
+      # Field matchers:
+      #   any                         → wildcard
+      #   $VARIABLE                   → harness variable
+      #   "literal"                   → exact match
+      #   {contains: "x"}             → substring (string) or list-contains (list)
+      #   {regex: "^foo"}             → regex (string)
+      #   {exists: true|false}        → field presence
+
+  # Negative: events that MUST NOT appear (REQUIRED for security UCs)
+  journal_must_not_contain:
+    - event: <forbidden-event>
+      <field>: <value>
+
+  # Output / filesystem
+  output:
+    stdout_contains: null
+    stderr_not_contains: "panic:"
+    files_created: []
+
+# Verdict mapping (defaults shown)
+verdict_on_pass: pass
+verdict_on_fail: fail               # use "fail-deferred" only for OD-deferred UCs
+deferred_by: null                   # required when verdict_on_fail is "fail-deferred"

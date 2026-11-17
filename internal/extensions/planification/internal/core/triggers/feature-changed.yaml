@@ -1,0 +1,12 @@
+# A feature changed once its use cases were written: they may no longer say
+# what it wants.
+name: feature-changed
+description: A feature changed after it was specified - verify its use cases still say what it wants.
+on: change
+types: [feature]
+states: [specified, ready, active, done]
+holds: true
+file:
+  kind: review
+  title: Verify the use cases of the changed feature
+  details: The feature changed. Check each use case it wants still says what it wants, and its criteria still prove it; release, change or drop the held to-dos accordingly.

@@ -1,0 +1,16 @@
+# Everything a module or a project holds, wherever it sits under it — not
+# only its direct children, and not only the types the tree draws. Its source
+# (the object pane's Contents) reads CWM's index only and answers the page:
+# chips by type and by state, a text search, the objects by type, each with
+# its state and the object it sits under, a click opening it.
+name: "Contents"
+description: "Everything filed under this object, by type, with its state"
+icon:
+  tabler: "list-tree"
+  emoji: "🗃"
+order: 60
+filter:
+  capabilities: ["module", "project"]
+source: "ktw-agents:object-pane/contents"
+refresh:
+  scope: "module"

@@ -1,0 +1,43 @@
+# Meta-schema for a published service definition (meta.ServiceDef) —
+# `system:/data-type/service`. Every `<provider>:/service/<name>` Contribution
+# stamps `schema: system:/data-type/service` on itself; the catalog Reindex
+# resolves that URI here. Without this file those entries logged
+# `catalog.Reindex: data-type not found`.
+#
+# Fields are all optional so the meta-schema never rejects a concrete
+# ServiceDef body during reindex.
+$schema: ktw-schema/v1
+name: service
+version: "1.0.0"
+root: Service
+description: |
+  A published service: a named interface with a set of callable methods,
+  exposed as a KTSP slot (and optionally CLI / HTTP / MCP).
+types:
+  Service:
+    type: object
+    fields:
+      name:
+        type: string
+        description: PascalCase service identifier (KTSP slot type)
+        optional: true
+      busName:
+        type: string
+        description: kebab-case wire form used in NATS slot subjects
+        optional: true
+      short:
+        type: string
+        description: one-line summary
+        optional: true
+      long:
+        type: string
+        description: detailed description
+        optional: true
+      version:
+        type: string
+        description: service API version
+        optional: true
+      methods:
+        type: object
+        description: map of method-name to its definition (input / output / description)
+        optional: true

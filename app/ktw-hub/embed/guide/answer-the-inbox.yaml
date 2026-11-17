@@ -1,0 +1,25 @@
+name: Answer a question in the Inbox
+description: Answer a request a task left in your inbox so the task can go on.
+hashtags:
+- katyoti-usage
+- inbox
+- answer
+- approval
+- request
+- question
+level: beginner
+essential: true
+# Pour aller plus loin: what to read once this guide is done.
+next: [run-a-task, chat-about-an-object]
+steps:
+- id: open-inbox
+  say: Open the {control:ribbon.inbox} from the ribbon.
+  target: {guide: ribbon.inbox}
+  await: click
+- id: answer
+  say: In « À faire », answer the question on its card and send your answer.
+  target: {guide: todo.screen}
+  await: manual
+- id: answered
+  say: Once your answer is sent, press {control:guide.check}.
+  check: ktw-agents:inbox-checks/request-answered

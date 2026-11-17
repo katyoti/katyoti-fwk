@@ -1,0 +1,39 @@
+name: enum-multi
+kind: field-type
+basePrimitive: array
+description: |
+  Multi-select renderer for `string[]` array fields, with three modes:
+    - free-entry creatable: when no `enum:` constraint, the user types
+      values and they become tags (good for free-form labels, the
+      `Workspace tags` field, or a list of codes).
+    - bounded enum: when the field has `enum:` values declared, only
+      those are selectable.
+    - bounded with options data: same as bounded but the option list
+      comes from a runtime `options:` slot on `info.contentType`.
+
+  The same renderer covers all three; the form widget picks via the
+  presence / absence of `enum` on the schema.
+
+configSchema:
+  fields:
+    creatable:
+      type: boolean
+      description: |
+        When true, the user can type a value not in the enum list and
+        it becomes a new tag. Defaults to true when no `enum:`
+        constraint is declared on the schema; defaults to false when
+        the schema is bounded.
+    maxSelected:
+      type: integer
+      description: |
+        Optional cap on number of selectable values. Empty / 0 = no
+        limit.
+    editAs:
+      type: string
+      description: |
+        How a bounded enum renders for editing: 'multiselect' (default,
+        a dropdown), 'checkboxes' (a Checkbox.Group listing every
+        option at once) or 'cards' (a grid of option cards, two columns
+        or one on a phone: a checkbox, the icon, the label and the
+        description; a ticked card has an accent border). Ignored for
+        free-entry (no-enum) fields.

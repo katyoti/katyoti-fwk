@@ -1,0 +1,13 @@
+{
+  "name": "ktw-agents-workspace",
+  "private": true,
+  "description": "Root workspace for Bun-based TypeScript packages. Hoists shared deps (React, Mantine, …) to a single node_modules so bundlers don't ship two copies of React. ktw-gui's frontend stays OUT of this workspace because it uses Vite for its own deduped build.",
+  "workspaces": [
+    "app/ktw-display",
+    "app/ktw-display-lib",
+    "app/ktw-ktsp-sdk"
+  ],
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

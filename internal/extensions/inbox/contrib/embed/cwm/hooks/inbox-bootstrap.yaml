@@ -1,0 +1,11 @@
+# Every project has an inbox: a `hook` contribution at the `bootstrap` point.
+# When a project opens, the inbox extension makes sure it has sys-inbox and the
+# inbox object in it (InboxService.Ensure is idempotent).
+name: inbox-bootstrap
+description: >-
+  When a project opens, the inbox extension makes sure it has its inbox: the
+  sys-inbox system module and the inbox object in it.
+type: bootstrap
+uri: ktw-agents:inbox/ensure
+filter:
+  capabilities: [project]

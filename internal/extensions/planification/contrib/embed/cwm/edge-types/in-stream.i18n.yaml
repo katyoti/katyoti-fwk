@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Une version APPARTIENT à sa ligne (une seule), son numéro suivant le schéma de la ligne ; un incrément nomme la ligne qu''il vise. Un module dans une ligne est signalé : un module sert plusieurs lignes.'
+  inverse_label: 'Contient'
+  label: 'Dans la ligne'

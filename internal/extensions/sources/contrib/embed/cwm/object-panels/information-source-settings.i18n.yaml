@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: 'Réglages'
+  description: 'Où la source lit - le formulaire de lieu de son connecteur'

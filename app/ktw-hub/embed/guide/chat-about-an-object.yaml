@@ -1,0 +1,25 @@
+name: Chat about an object
+description: Open a chat whose agent already knows the object you are on.
+hashtags:
+- chat
+- chat here
+- agent
+- ask
+level: beginner
+requires:
+- find-your-way
+steps:
+- id: pick-object
+  say: Pick an object in the tree.
+  target: {guide: tree.node}
+  await: manual
+- id: chat-tab
+  say: Open its {control:objtab.tab:agent-context} tab.
+  target: {guide: objtab.tab:agent-context}
+  await: click
+- id: chat-here
+  say: Press {control:object.chat-here}. The chat starts with the object as its context.
+  target: {guide: object.chat-here}
+  await: click
+- id: ask
+  say: Ask your question. The agent can read the object and act on it within its permissions.

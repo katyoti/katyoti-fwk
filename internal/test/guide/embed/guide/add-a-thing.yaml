@@ -1,0 +1,12 @@
+name: Add a thing to my universe
+description: Add one thing and check it is there.
+hashtags: [add thing, fixture]
+level: beginner
+steps:
+  - id: open
+    say: Open the things panel.
+    target: {guide: things.panel}
+    await: click
+  - id: there
+    say: The thing is there.
+    check: ktw-univers:universe-checks/universe-ready

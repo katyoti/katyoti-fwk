@@ -1,0 +1,18 @@
+name: display-drawio-demo-input
+root: DrawioDemoInput
+types:
+  DrawioDemoInput:
+    type: object
+    fields:
+      diagram:
+        type: string
+        label: "Diagram"
+        description: "What diagram to produce (e.g. 'e-commerce class diagram', 'microservices C4', 'library ER')"
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Generate diagram"
+        groups:
+          - title: "Diagram"
+            fields: [diagram]

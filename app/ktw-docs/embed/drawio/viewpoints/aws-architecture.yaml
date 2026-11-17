@@ -1,0 +1,13 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: aws-architecture
+displayName: AWS — architecture
+description: 'Services and the requests between them, read left to right, in their AWS groups: a zone
+  with a kind (Region, VPC, PublicSubnet …) and a parent zone draws the nesting.'
+notation: ktw-docs:/notation/aws
+templates: ktw-docs:/drawio-template/aws
+page: default
+layout:
+  algorithm: layered
+  direction: RIGHT
+  lanes: true
+  laneHeader: top

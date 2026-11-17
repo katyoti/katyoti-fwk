@@ -1,0 +1,1 @@
+Please send a detailed email to security@katyoti.ai to report vulnerabilities in KaTyoti products.

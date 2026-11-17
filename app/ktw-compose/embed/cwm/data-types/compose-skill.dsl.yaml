@@ -1,0 +1,22 @@
+$schema: ktw-schema/v1
+name: compose-skill
+version: "1.0.0"
+root: ComposeSkill
+description: |
+  Type-specific body schema for CWM nodes of type 'compose-skill' — a SKILL
+  artifact being authored. skill_file points at the SKILL.md the node's
+  linters/verifiers run over; status tracks the authoring phase.
+types:
+  ComposeSkill:
+    type: object
+    fields:
+      skill_file:
+        type: string
+        label: Skill file
+        description: Workspace-relative or absolute path to the SKILL.md being authored. The compose-skill linters/verifiers run over this file.
+      status:
+        type: string@enum(drafting, verifying, verified)
+        label: Status
+        default: drafting
+        optional: true
+        description: Authoring phase — drafting (being written), verifying (linters running), verified (all checks pass).

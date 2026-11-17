@@ -1,0 +1,46 @@
+{
+  "cwm": {
+    "objectNotFound": "{{id}} does not exist (it was deleted or moved).",
+    "objectArchived": "{{id}} has ended: it was archived to {{path}}.",
+    "objectAlreadyExists": "{{id}} already exists — choose another id.",
+    "objectConflict": "{{id}} was changed by someone else since you opened it — reload it, then redo your change.",
+    "objectReferenced": "{{id}} cannot be deleted: {{by}} still depend on it.",
+    "refusedByHook": "Refused by {{by}}: {{reason}}",
+    "transitionRefused": "The move \"{{transition}}\" is refused: {{reason}}",
+    "transitionFromTerminal": "{{id}} is in {{state}}, a final state of {{workflow}}: it moves no further.",
+    "lifecycleRetiredField": "{{id}}: the lifecycle has no {{field}} — an item follows the workflow of its kind, and its moves are recorded by the journal.",
+    "transitionUnknownState": "{{state}} is not a state of {{workflow}}.",
+    "transitionNone": "{{workflow}} has no move from {{from}} to {{to}}.",
+    "forceNotAllowed": "The move \"{{transition}}\" is refused ({{reason}}), and it cannot be forced.",
+    "forceNeedsPerson": "The move \"{{transition}}\" is refused ({{reason}}); forcing it takes a person and a note.",
+    "noType": "{{id}} has no kind.",
+    "unknownType": "The kind {{type}} of {{id}} is declared by no pack.",
+    "abstractType": "{{type}} is a general kind: create one of its more precise kinds instead.",
+    "retiredType": "The kind {{type}} is retired: the items already of it are read until the project is converted - create one of the kind that replaces it ({{replaced}}).",
+    "brokenLink": "{{id}}: {{link}} — a link must name an item of the project.",
+    "descriptionTooLong": "The description is {{chars}} characters long; {{type}} allows {{max}}.",
+    "childTypeNotAllowed": "A {{type}} cannot be placed under a {{parentType}}.",
+    "unknownCapability": "{{id}} carries the property {{capability}}, which no pack declares.",
+    "unknownAspect": "{{id}} names the property {{aspect}}, which no pack declares.",
+    "sizeBudget": "{{id}} would be {{bytes}} bytes, over the {{max}} bytes {{type}} allows — shorten it."
+  },
+  "actions": {
+    "invalidURI": "\"{{uri}}\" is not a valid action.",
+    "unknownAction": "The action {{uri}} does not exist.",
+    "fieldNotMutable": "The field {{field}} cannot be changed here.",
+    "transitionOnly": "{{field}} changes only through a transition of its workflow."
+  },
+  "agent": {
+    "modelKeyMissing": "The task could not call the language model {{model}}: its key is not installed. Import the keys: Check installation › Keys, then run the task again. ({{reason}})",
+    "modelKeyRefused": "The language model {{model}} refused the key: it is invalid or has lost its rights. Import valid keys: Check installation › Keys, then run the task again. ({{reason}})",
+    "modelUnreachable": "The language model {{model}} cannot be reached: check the network and the service address (Check installation › Keys), then run the task again. ({{reason}})",
+    "modelUnknown": "The service does not know the language model {{model}}: check the model chosen for this task and the keys (Check installation › Keys), then run the task again. ({{reason}})",
+    "modelCallFailed": "The call to the language model {{model}} failed: the task ends failed. Run it again; if the error comes back, check the installation (Check installation › Keys). ({{reason}})"
+  },
+  "panel": {
+    "unknownPanel": "The panel {{panel}} is not kept (it has not started or has ended)."
+  },
+  "load": {
+    "timedOut": "The read did not answer within {{seconds}} s - the universe may be busy or restarting."
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "settings": {
+    "theme": "brand",
+    "title": "Corporate layouts"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 5,
+      "settings": {
+        "layout": "agenda"
+      },
+      "settingsLine": 6,
+      "slots": [
+        {
+          "name": "default",
+          "line": 7,
+          "markdown": "## Agenda\n1. **Where we are** — the platform\n2. **What changes** — themes\n3. **Next steps** — decisions"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 13,
+      "settings": {
+        "layout": "section"
+      },
+      "settingsLine": 14,
+      "slots": [
+        {
+          "name": "default",
+          "line": 15,
+          "markdown": "## Where we are"
+        },
+        {
+          "name": "number",
+          "line": 17,
+          "markdown": "01"
+        }
+      ]
+    },
+    {
+      "h": 2,
+      "v": 0,
+      "line": 21,
+      "settings": {
+        "layout": "statement"
+      },
+      "settingsLine": 22,
+      "slots": [
+        {
+          "name": "default",
+          "line": 23,
+          "markdown": "Every presentation is written once and shown in any brand."
+        }
+      ]
+    },
+    {
+      "h": 3,
+      "v": 0,
+      "line": 26,
+      "settings": {
+        "layout": "key-figures"
+      },
+      "settingsLine": 27,
+      "slots": [
+        {
+          "name": "default",
+          "line": 28,
+          "markdown": "## The platform today\nOne shared catalog."
+        },
+        {
+          "name": "figures",
+          "line": 31,
+          "markdown": "- **15 000** stores served\n- **400** applications"
+        }
+      ]
+    },
+    {
+      "h": 4,
+      "v": 0,
+      "line": 36,
+      "settings": {
+        "layout": "visuals"
+      },
+      "settingsLine": 37,
+      "slots": [
+        {
+          "name": "default",
+          "line": 38,
+          "markdown": "## Three sites\nThe same sidecars everywhere."
+        },
+        {
+          "name": "visuals",
+          "line": 41,
+          "markdown": "- ![Paris](assets/paris.jpg) **Paris** — the hub\n- ![Lyon](assets/lyon.jpg) **Lyon** — the stores\n- ![Lille](assets/lille.jpg) **Lille** — the warehouses"
+        }
+      ]
+    },
+    {
+      "h": 5,
+      "v": 0,
+      "line": 47,
+      "settings": {
+        "layout": "icons"
+      },
+      "settingsLine": 48,
+      "slots": [
+        {
+          "name": "default",
+          "line": 49,
+          "markdown": "## Why themes\nOne source, any look."
+        },
+        {
+          "name": "items",
+          "line": 52,
+          "markdown": "- ![Truck](icon:truck) **Faster** — minutes, not days\n- ![Truck](icon:truck) **On brand** — always\n- ![Truck](icon:truck) **Portable** — present anywhere"
+        }
+      ]
+    },
+    {
+      "h": 6,
+      "v": 0,
+      "line": 58,
+      "settings": {
+        "layout": "impact"
+      },
+      "settingsLine": 59,
+      "slots": [
+        {
+          "name": "default",
+          "line": 60,
+          "markdown": "## One deck, any brand"
+        },
+        {
+          "name": "right",
+          "line": 62,
+          "markdown": "### Written once\nThe story is markdown.\n\n### Presented anywhere\nFull screen, Teams, PDF."
+        }
+      ]
+    },
+    {
+      "h": 7,
+      "v": 0,
+      "line": 70,
+      "settings": {
+        "layout": "timeline",
+        "steps": "list"
+      },
+      "settingsLine": 71,
+      "slots": [
+        {
+          "name": "default",
+          "line": 72,
+          "markdown": "## Our approach"
+        },
+        {
+          "name": "steps",
+          "line": 74,
+          "markdown": "1. **Scoping** — needs\n2. **Design** — architecture\n3. **Build** — increments\n4. **Go-live** — support"
+        }
+      ]
+    },
+    {
+      "h": 8,
+      "v": 0,
+      "line": 81,
+      "settings": {
+        "layout": "blank"
+      },
+      "settingsLine": 82,
+      "slots": [
+        {
+          "name": "default",
+          "line": 83,
+          "markdown": "![Target architecture](assets/target.svg)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+name: What's new
+description: The changes of the versions released since you last looked, each version opening on what it brings you.
+hashtags:
+- katyoti-usage
+- what's new
+- release notes
+- changes
+- new version
+level: beginner
+gui: '>=0.9'
+# Its text is the change log's entries (planification's changes service):
+# those recorded after the last one you saw, by version, the newest first.
+# Nothing new, it does not open.
+source: ktw-agents:changes/whats-new
+shown_once: 2

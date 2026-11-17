@@ -1,0 +1,16 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Lancer une tâche et lire son résultat
+  description: Lancez une tâche depuis la galerie et lisez ce qu'elle a produit.
+  hashtags:
+  - tâche
+  - lancer une tâche
+  - galerie
+  - résultat
+  steps:
+    pick-task: Les tâches sont dans la galerie de tâches de l'accueil de l'univers. Choisissez une carte de tâche.
+    run: Remplissez son formulaire et appuyez sur {control:task.run}.
+    result: L'exécution s'ouvre dans son propre onglet. Son résultat s'affiche quand elle se termine ; {control:objtab.runs} dans l'onglet {control:tabs.global} la conserve.

@@ -1,0 +1,6 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Composition
+  actions:
+    Compose Artifact: Composer un artefact

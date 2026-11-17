@@ -1,0 +1,2 @@
+# A named view of the GUI's ui-components registry (panel-component kind).
+description: "What the project publishes under its provider token, by kind; its input is the panel source's answer."

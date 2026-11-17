@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Priorités d'équipe
+  description: "Les incréments des flux choisis dans l'ordre où ils seront faits - priorité et version changées sur la ligne"

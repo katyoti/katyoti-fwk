@@ -1,0 +1,11 @@
+name: "History"
+description: "Everything that happened to this object: each change, when, who made it and why"
+icon:
+  tabler: "history"
+  emoji: "🕘"
+order: 850
+filter:
+  types: ["*"]
+source: "ktw-agents:journal/history-page"
+refresh:
+  scope: "self"

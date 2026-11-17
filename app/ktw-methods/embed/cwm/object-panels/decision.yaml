@@ -1,0 +1,20 @@
+# A decision on its own: the question and its reasoning, the proposal, the
+# challenge against it and one card per option (what it means, for, against,
+# its cost, what follows if chosen), each with a form choosing it while the
+# decision is open (decisions/resolve, the person's reason required); decided,
+# who chose what, when and why. Its source is the decisions service's panel
+# (generic page nodes only); the forms are run by the panel's host.
+name: "Decision"
+description: "The question, the proposal, its challenge and the options, each with a button choosing it"
+icon:
+  tabler: "scale"
+  emoji: "⚖️"
+# First on a decision, before the Request panel (-1) of a decision that
+# carries a request: the choice is what the person came for.
+order: -2
+filter:
+  capabilities: ["decision"]
+source: "ktw-methods:decisions/panel"
+# Re-read when the decision changes (prepared, challenged, resolved).
+refresh:
+  scope: "self"

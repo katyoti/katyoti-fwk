@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Couverture des tests"
+  description: "La qualité des tests : chemins critiques couverts, cas limites, instabilité, architecture des tests."

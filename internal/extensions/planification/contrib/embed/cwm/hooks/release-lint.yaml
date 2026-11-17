@@ -1,0 +1,9 @@
+# A frozen or released release whose targets are not the scope it was frozen
+# with: work was aimed at it behind the service's back.
+name: release-lint
+description: >-
+  A target added to a release after it was frozen.
+type: lint
+uri: ktw-agents:releases/lint
+filter:
+  types: [release, increment]

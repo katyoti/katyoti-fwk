@@ -1,0 +1,8 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.transitioned
+label: Object transitioned
+description: >-
+  An object's lifecycle moved to another state. An async on_transitioned entry subscribes to it.
+payload: system:/data-type/object-transitioned-event
+point: on_transitioned

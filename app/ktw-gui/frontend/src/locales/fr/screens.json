@@ -1,0 +1,83 @@
+{
+  "http": {
+    "loading": "Chargement des appels au modèle…",
+    "loggingOff": "La journalisation des appels au modèle était désactivée pour cette session.",
+    "enableHint": "Activez-la avec {{flag}} dans {{file}} — globalement à la racine, ou par profil.",
+    "noCalls": "Aucun appel au modèle enregistré pour l’instant.",
+    "calls_one": "{{count}} appel",
+    "calls_other": "{{count}} appels",
+    "msTotal": "{{ms}} ms au total",
+    "refresh": "Actualiser",
+    "live": "en direct",
+    "model": "Modèle",
+    "path": "Chemin",
+    "status": "Statut",
+    "firstByte": "Premier octet",
+    "duration": "Durée",
+    "headers": "En-têtes",
+    "request": "Requête",
+    "response": "Réponse",
+    "stream": "Flux",
+    "requestHeaders": "En-têtes de requête",
+    "responseHeaders": "En-têtes de réponse",
+    "noRequestBody": "Aucun corps de requête.",
+    "inFlight": "En cours…",
+    "noResponseBody": "Aucun corps de réponse.",
+    "deltas": "deltas (agrégés)",
+    "emptyStream": "Flux vide."
+  },
+  "terminals": {
+    "running": "EN COURS ({{count}})",
+    "start": "Démarrer un terminal",
+    "logs": "Journaux (dans l’application)",
+    "guiLogs": "Journaux ktw-gui",
+    "shells": "Shells (PTY intégré)",
+    "error": "Erreur : {{error}}",
+    "noneBefore": "Aucun terminal en cours. Cliquez sur",
+    "noneAfter": "pour en démarrer un.",
+    "kindLog": "journal",
+    "kindShell": "shell",
+    "noneSelected": "Aucun terminal sélectionné",
+    "clickPlus": "Cliquez sur + pour en démarrer un.",
+    "notFound": "Terminal introuvable",
+    "clear": "Effacer l’historique",
+    "close": "Fermer le terminal"
+  },
+  "camera": {
+    "drag": "Faites glisser n’importe où pour déplacer",
+    "off": "Éteindre la caméra"
+  },
+  "document": {
+    "waiting": "En attente de l’artefact {{id}}…",
+    "formSubmitted": "Formulaire envoyé — l’assistant s’en occupe…",
+    "actionSent": "Action « {{action}} » envoyée — l’assistant s’en occupe…",
+    "wait": "Cela peut prendre quelques secondes. Les autres clics sont ignorés jusqu’à sa réponse."
+  },
+  "conversation": {
+    "empty": "Aucune entrée de conversation pour l’instant.",
+    "initialPrompt": "Invite initiale",
+    "showLess": "Afficher moins",
+    "showMore": "Afficher plus",
+    "turn": "tour {{turn}}",
+    "assistant": "Assistant",
+    "you": "Vous",
+    "tool": "Outil",
+    "system": "Système",
+    "error": "Erreur"
+  },
+  "skills": {
+    "count": "{{visible}} sur {{total}}",
+    "search": "Rechercher par nom, fournisseur, description, tag ou catégorie…",
+    "noMatch": "Aucun skill ne correspond à vos filtres.",
+    "none": "Aucun skill disponible dans cet univers."
+  },
+  "gallery": {
+    "tasks": "Tâches",
+    "skills": "Skills"
+  },
+  "contextTree": {
+    "showFull": "Afficher l’arbre complet",
+    "collapse": "Replier",
+    "expand": "Déplier"
+  }
+}

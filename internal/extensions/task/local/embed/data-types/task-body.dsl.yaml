@@ -1,0 +1,153 @@
+$schema: ktw-schema/v1
+name: task-body
+version: "1.0.0"
+description: |
+  Canonical shape of the Body for a task Contribution (Contribution.Type == "task").
+  Mirrors the legacy Go TaskBody struct; ms-rc1 makes this the source-of-truth.
+root: TaskBody
+types:
+  TaskBody:
+    type: object
+    id: name
+    title: name
+    fields:
+      # === Core identity + L0 ===
+      name:
+        type: string@text(max:64)
+        label: Task name
+        description: Kebab-case task identifier (matches the entry's ID in the URI).
+      title:
+        type: string@text(max:128)
+        label: Display title
+        description: |
+          Human-friendly label shown in the GUI gallery and pickers. When empty,
+          consumers fall back to name. name stays the runnable id.
+        optional: true
+      type:
+        type: string
+        label: Strategy type
+        description: |
+          Machine strategy name (e.g. "agent", "workflow", "template", "simulator").
+          The task engine routes execution through the matching MachineFactory.
+      description:
+        type: string@text(max:1024)
+        label: Description
+        description: One-line picker description.
+        optional: true
+
+      # === Strategy config + body ===
+      config:
+        type: any
+        label: Config block
+        description: |
+          Frontmatter `config:` block — strategy-specific params decoded by the
+          machine factory at runtime. Opaque JSON RawMessage at the catalog
+          layer; each strategy declares its own typed shape.
+        optional: true
+      body:
+        type: string@markdown
+        label: Body
+        description: |
+          Markdown body after the frontmatter (the task's prompt / template
+          source / workflow YAML). Strategy maps this into its `config` block
+          via BodyFieldName().
+        optional: true
+
+      # === Sort / picker metadata ===
+      capability:
+        type: string
+        label: Capability
+        description: Coarse capability tag (e.g. "writing", "analysis").
+        optional: true
+      icon:
+        type: string
+        label: Icon (emoji)
+        optional: true
+      iconName:
+        type: string
+        label: Icon (Tabler)
+        optional: true
+      hashtags:
+        type: array
+        items: string
+        label: Hashtags
+        optional: true
+      category:
+        type: string
+        label: Category
+        optional: true
+      tags:
+        type: array
+        items: string
+        label: Behavioral tags
+        description: Markers like "quick-action" / "background-only".
+        optional: true
+
+      # === Visibility ===
+      advertised:
+        type: boolean
+        label: Advertised
+        description: |
+          Whether the task appears in the GUI gallery, pickers, and bulk
+          selectors. Default true. Set false for worker/sub-tasks that are run
+          by a top-level task and should not clutter the gallery — they stay
+          callable by exact name.
+        optional: true
+
+      # === Node-targeting (for CWM-bound tasks) ===
+      kind:
+        type: string
+        label: Kind
+        description: |
+          Picker scope. "global" (default) for arbitrary invocation; "node" for
+          tasks targeted at a CWM node selection.
+        optional: true
+      nodeTypes:
+        type: array
+        items: string
+        label: Node types
+        description: When kind=="node", the CWM node types this task accepts.
+        optional: true
+      filter:
+        type: string
+        label: Filter predicate
+        description: expr-lang predicate evaluated against the candidate node.
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        layout: groups
+        groups:
+          - title: Identity
+            cols: 2
+            fields: [name, title, type, description]
+          - title: Implementation
+            cols: 1
+            fields: [config, body]
+          - title: Picker metadata
+            cols: 2
+            fields: [capability, category, hashtags, tags, icon, iconName, advertised]
+          - title: Node targeting
+            cols: 1
+            fields: [kind, nodeTypes, filter]
+      - type: ui-table
+        name: default
+        columns: [name, type, description, category]
+        sortable: true
+        filterable: true
+      - type: ui-cli
+        name: default
+        mode: table
+        columns: [name, type, description, category]
+
+
+  # Stub for cross-Contribution link targets. The actual Contribution
+  # envelope lives outside this schema (internal/extensions/manifest/api/
+  # contribution.go); this stub is the DSL's anchor for `->Contribution`
+  # link references — the catalog's edge extractor (3I) reads the
+  # LinkMode field on the parent type to populate Contribution.Edges.
+  Contribution:
+    type: object
+    id: uri
+    fields:
+      uri: string

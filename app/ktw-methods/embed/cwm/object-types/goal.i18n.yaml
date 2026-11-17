@@ -1,0 +1,15 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Objectif
+  label_plural: Objectifs
+  description: >-
+    Une direction vers laquelle un module tend sans jamais l'atteindre : il
+    répond au POURQUOI, formulé comme un résultat ou une qualité. Toujours
+    asymptotique — sans état terminé ni sonde, on le poursuit, on ne le
+    planifie pas. C'est une boucle d'alignement, pas un score : un objectif
+    n'est pas noté directement, ce sont les fonctionnalités qui le servent qui
+    le sont. Un test pourra-t-il dire qu'il est terminé ? Non : un objectif.
+    Oui : une fonctionnalité.
+  actions:
+    Generate features: Générer les fonctionnalités

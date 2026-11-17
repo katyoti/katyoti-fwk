@@ -1,0 +1,8 @@
+# One of CWM's own hook points, declared like any other: an extension opens
+# a point of its own by shipping a hook-type file beside its hooks.
+name: on_transition
+label: State change
+description: >-
+  When a lifecycle state is about to change (ObjectTransition). May refuse the transition.
+timing: before
+answer: accept

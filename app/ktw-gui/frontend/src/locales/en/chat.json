@@ -1,0 +1,144 @@
+{
+  "header": {
+    "noActiveSession": "No conversation running",
+    "scopedTooltip": "This chat is about one item of your work",
+    "scopedTo": "Scoped to {{name}}",
+    "copied": "Copied",
+    "copySessionId": "Copy the conversation's id",
+    "sessionSettings": "Conversation settings",
+    "appSettings": "App Settings"
+  },
+  "input": {
+    "attachFile": "Attach file",
+    "runningPlaceholder": "Conversation running — waiting for a question…",
+    "idlePlaceholder": "Run a task… (Enter)",
+    "voice": "Voice",
+    "stop": "Stop",
+    "send": "Send"
+  },
+  "prompt": {
+    "inboxBadge": "inbox",
+    "inboxNotice": "Question sent to the Inbox — the task waits for the answer given there, not in this input.",
+    "openInbox": "Open the Inbox",
+    "promptBadge": "prompt",
+    "answerPlaceholder": "Write your answer…",
+    "send": "Send",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "tabs": {
+    "chat": "Chat",
+    "output": "Output",
+    "transcript": "Transcript",
+    "teams": "Teams",
+    "cost": "Cost",
+    "http": "HTTP"
+  },
+  "panel": {
+    "hideDebugTabs": "Hide debug tabs",
+    "showDebugTabs": "Show debug tabs",
+    "toggleDebugTabs": "Toggle debug tabs",
+    "stopChat": "Stop this chat",
+    "stop": "Stop",
+    "docs_one": "{{count}} doc",
+    "docs_other": "{{count}} docs",
+    "httpNoSession": "HTTP calls appear once the run has a session id.",
+    "costNoSession": "Cost appears once the run has a session id.",
+    "selectTask": "Select a task from the sidebar to start"
+  },
+  "transcript": {
+    "detailed": "Detailed",
+    "reader": "Reader",
+    "detailedHint": "LLM turns, tool calls & telemetry",
+    "readerHint": "Clean speaker → message reading view",
+    "noSession": "The transcript appears once the run has a session id."
+  },
+  "done": {
+    "completed": "Task completed",
+    "failed": "Task failed",
+    "stopped": "Task stopped",
+    "finished": "Task finished",
+    "scrollHint": "— scroll to review the result",
+    "dismiss": "Done"
+  },
+  "form": {
+    "noAst": "SchemaService returned no AST and no error — substrate is in an inconsistent state.",
+    "buildFailed": "Build form from schema: {{error}}",
+    "buildTableFailed": "Build table from schema: {{error}}",
+    "buildViewFailed": "Build view from schema: {{error}}",
+    "schemaUnavailable": "Schema unavailable",
+    "inputRejected": "Input rejected by the schema validator",
+    "noParameters": "This task takes no input parameters.",
+    "cancel": "Cancel",
+    "run": "Run",
+    "create": "Create",
+    "next": "Next",
+    "invalidSchema": "Unable to render this form (invalid schema)."
+  },
+  "list": {
+    "showing": "Showing {{name}}'s stream",
+    "showAll": "Show all",
+    "noDelegateMessages": "This delegate produced no chat messages."
+  },
+  "message": {
+    "more": "More",
+    "copy": "Copy",
+    "delete": "Delete"
+  },
+  "status": {
+    "idle": "Idle",
+    "running": "Running",
+    "done": "Done",
+    "error": "Error",
+    "stopped": "Stopped"
+  },
+  "stats": {
+    "turn": "turn {{turns}}",
+    "lastResponse": "Last response {{last}}s · time-to-first-token {{ttft}}s",
+    "contextTooltip": "Context: {{cur}} of {{win}} tokens ({{pct}}%)",
+    "context": "ctx {{cur}}/{{win}} ({{pct}}%)",
+    "cacheTooltip": "Cache hit: {{cached}} of {{total}} input tokens served from cache",
+    "tokensTooltip": "Input {{input}} (+{{cached}} cached) · Output {{output}}",
+    "tokens": "↑{{input}} ↓{{output}} tok",
+    "costTooltip": "Estimated spend of this conversation (from configured $/MTok rates)"
+  },
+  "identity": {
+    "provider": "Provider",
+    "name": "Name",
+    "uri": "URI"
+  },
+  "tool": {
+    "input": "Input",
+    "output": "Output",
+    "errorOutput": "Error Output"
+  },
+  "askForm": {
+    "cancelled": "cancelled",
+    "cancelledTitled": "{{title}} — cancelled"
+  },
+  "tools": {
+    "read": "Read",
+    "write": "Write",
+    "foundFiles": "Found files",
+    "ran": "Ran",
+    "built": "Built",
+    "git": "Git"
+  },
+  "route": {
+    "yourAnswer": "Your answer",
+    "form": "Form"
+  },
+  "sender": {
+    "user": "User",
+    "assistant": "Assistant",
+    "system": "System"
+  },
+  "runTask": {
+    "validationUnavailable": "Server-side validation unavailable: {{error}}",
+    "noTask": "No task selected.",
+    "cancelEsc": "Cancel (Esc)",
+    "inputLabel": "Task input (optional)",
+    "inputPlaceholder": "Write the first message for this task. Leave empty if the task needs no input.",
+    "tip": "Tip: Ctrl+Enter to run, Esc to cancel."
+  }
+}

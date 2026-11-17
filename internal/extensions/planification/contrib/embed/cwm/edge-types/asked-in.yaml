@@ -1,0 +1,14 @@
+name: asked-in
+from: any
+to: approval-request
+cardinality: M:N
+from_capabilities: []
+to_capabilities: []
+target: object
+object_storage: edges
+description: |
+  An object WAITS ON a person's answer in the inbox: a request waiting on a
+  question to its requester, a person's job, an object whose gate needs a
+  person's confirmation. The answer wakes what points at it; an answered ask
+  stays as the record of what was asked.
+inverse_name: asks-for

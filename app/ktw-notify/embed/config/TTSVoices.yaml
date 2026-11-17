@@ -1,0 +1,125 @@
+
+enabled: false
+default_voice: koraly
+tts_model: eleven_flash_v2_5
+max_message_length: 500
+streaming: true
+language_code: "fr"
+
+voices:
+  maxime:
+    voice_id: "5Qfm4RqcAer0xoyWtoHC"
+    voice_name: "Maxime - Young and Casual"
+    stability: 0.50
+    similarity_boost: 0.80
+    style: 0.0
+    speed: 1.0
+    use_speaker_boost: true
+    volume: 0.8
+    description: "Young French male - casual, conversational"
+    language: fr
+    type: "Professional Clone"
+
+  adam:
+    voice_id: "93nuHbke4dTER9x2pDwE"
+    voice_name: "Adam - warm and friendly"
+    stability: 0.55
+    similarity_boost: 0.80
+    style: 0.0
+    speed: 0.95
+    use_speaker_boost: true
+    volume: 0.8
+    description: "Quebec French Canadian male - warm, teaching, e-learning"
+    language: fr-CA
+    type: "Professional Clone"
+
+  koraly:
+    voice_id: "gidGFDFyCSnGFnZ9hK7l"
+    voice_name: "Koraly - Virtual Assistant"
+    stability: 0.65
+    similarity_boost: 0.85
+    style: 0.0
+    speed: 1.0
+    use_speaker_boost: true
+    volume: 0.8
+    description: "French female - ultra-realistic virtual assistant, captures human nuances"
+    language: fr
+    type: "Professional Clone"
+
+  lucie:
+    voice_id: "YxrwjAKoUKULGd0g8K9Y"
+    voice_name: "Lucie - Support Agent"
+    stability: 0.60
+    similarity_boost: 0.80
+    style: 0.0
+    speed: 1.0
+    use_speaker_boost: true
+    volume: 0.8
+    description: "French female - empathetic customer care, professional support"
+    language: fr
+    type: "Professional Clone"
+
+  leo:
+    voice_id: "2dxaXwaYxEEIDjoHj0V4"
+    voice_name: "Leo - Quebec French"
+    stability: 0.50
+    similarity_boost: 0.75
+    style: 0.0
+    speed: 0.95
+    use_speaker_boost: true
+    volume: 0.8
+    description: "Quebec French male - gentle, enthusiastic, reassuring, commercial"
+    language: fr-CA
+    type: "Professional Clone"
+
+  gabriel:
+    voice_id: "cg8BLCnP9YxrsTgCaLbb"
+    voice_name: "Gabriel - Calm and Soothing"
+    stability: 0.70
+    similarity_boost: 0.85
+    style: 0.0
+    speed: 0.90
+    use_speaker_boost: true
+    volume: 0.8
+    description: "French male - calm, soothing, ideal for narration and meditation"
+    language: fr
+    type: "Professional Clone"
+
+  matthieu:
+    voice_id: "EjtTWI2Y9BBilPwnIBhg"
+    voice_name: "Matthieu"
+    stability: 0.65
+    similarity_boost: 0.80
+    style: 0.0
+    speed: 1.0
+    use_speaker_boost: true
+    volume: 0.8
+    description: "Middle-aged French male - great for narration"
+    language: fr
+    type: "Professional Clone"
+
+  helene:
+    voice_id: "imRmmzTqlLHt9Do1HufF"
+    voice_name: "Helene"
+    stability: 0.65
+    similarity_boost: 0.80
+    style: 0.0
+    speed: 1.0
+    use_speaker_boost: true
+    volume: 0.8
+    description: "French female - soothing and pleasant, educational"
+    language: fr
+    type: "Professional Clone"
+
+  chris:
+    voice_id: "y3n2nKNOd12dCkxc8LMO"
+    voice_name: "Chris Voix Hypnose"
+    stability: 0.75
+    similarity_boost: 0.90
+    style: 0.0
+    speed: 0.85
+    use_speaker_boost: false
+    volume: 0.8
+    description: "French male - deep hypnotic voice (personal clone)"
+    language: fr
+    type: "Instant Clone"

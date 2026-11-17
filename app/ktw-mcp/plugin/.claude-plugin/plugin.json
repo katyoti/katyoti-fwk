@@ -1,0 +1,5 @@
+{
+  "name": "ktw-dev",
+  "description": "KaTyoti's development channel (bin/) in Claude Code: one MCP tool per program - ktw-agents, katyoti, ktw-compose - taking the command line's arguments, served by bin/ktw-mcp.",
+  "version": "0.1.0"
+}

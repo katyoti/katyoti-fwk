@@ -1,0 +1,22 @@
+name: wizard
+kind: form-layout
+description: >-
+  Step-by-step navigation: each schema group becomes a step. Prev/next
+  buttons + progress indicator. Per-step validation gates the next button —
+  cannot advance until current step is valid. Best for onboarding flows,
+  multi-stage workflows where the user benefits from focused chunks.
+
+configSchema:
+  fields:
+    show_progress:
+      type: boolean
+      default: true
+      description: "Render the progress bar / step counter at the top"
+    allow_back_after_complete:
+      type: boolean
+      default: true
+      description: "Allow Prev navigation after the wizard reaches its final step"
+    step_validation:
+      type: string
+      default: blocking
+      description: "blocking | warning | none — whether per-step validation gates Next"

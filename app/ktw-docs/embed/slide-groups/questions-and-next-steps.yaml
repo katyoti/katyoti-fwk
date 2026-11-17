@@ -1,0 +1,17 @@
+# A slide group any deck may end with (th22): include it with a slide whose
+# only setting is `include=questions-and-next-steps`.
+name: questions-and-next-steps
+description: Closing slides — the questions, then what happens next and who to contact.
+slides: |
+  <!-- slide: layout=statement -->
+  Des questions ?
+
+  ---
+
+  ## Et ensuite
+  - Vos retours, d'ici une semaine
+  - Une décision au prochain comité
+  - Un contact : l'auteur de la présentation
+
+  Note:
+  Adapt the dates and the contact to the deck; a group is the same in every deck that includes it.

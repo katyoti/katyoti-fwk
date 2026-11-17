@@ -1,0 +1,123 @@
+id: composites/product
+category: composites
+title: Composite — Product (legacy port)
+description: Product entity ported from old cpm-ui test corpus. 7 flat fields covering string, boolean, plus a markdown description. Two ui-form extensions (default = groups layout, compact = single layout) and a ui-view extension (detail-pane layout, with an Audit group visibility:[view]-only).
+schema:
+  name: product-demo
+  version: 1
+  root: Product
+  types:
+    Product:
+      type: object
+      label: Product
+      idField:
+        - id
+      titleField:
+        - name
+      fields:
+        id:
+          type: string
+          label: ID
+        type:
+          type: string
+          label: Type
+          default: product
+        name:
+          type: string
+          label: Name
+          description: Product display name (lowercase recommended).
+        info:
+          type: string
+          label: Info
+          description: Short summary line shown in lists.
+          optional: true
+        description:
+          type: string
+          label: Description
+          description: Full product description (markdown).
+          content:
+            type: markdown
+            maxLength: 1000
+          optional: true
+        ribbon:
+          type: string
+          label: Ribbon
+          description: Promotional banner text (e.g. "NEW", "-20%").
+          optional: true
+        visible:
+          type: boolean
+          label: Visible
+          default: false
+      extensions:
+        - type: ui-form
+          name: default
+          layout: groups
+          submit_label: Save product
+          groups:
+            - title: Identity
+              cols: 1
+              md: 4
+              fields:
+                - id
+                - type
+                - name
+                - visible
+                - ribbon
+            - title: Description
+              cols: 1
+              md: 8
+              fields:
+                - info
+                - description
+        - type: ui-form
+          name: compact
+          layout: single
+          submit_label: Quick save
+          groups:
+            - fields:
+                - name
+                - visible
+                - ribbon
+        - type: ui-view
+          name: default
+          layout: detail-pane
+          groups:
+            - title: Identity
+              cols: 2
+              fields:
+                - name
+                - type
+                - ribbon
+                - visible
+            - title: Description
+              cols: 1
+              fields:
+                - info
+                - description
+            - title: Audit
+              cols: 1
+              visibility:
+                - view
+              fields:
+                - id
+value:
+  id: product-001
+  type: product
+  name: Premium widget
+  info: Our top-of-the-line widget with platinum trim.
+  description: |-
+    # Features
+
+    - Hand-finished aluminum body
+    - Lifetime warranty
+    - Available in 3 colors
+  ribbon: NEW
+  visible: true
+mode: edit
+tags:
+  - composites
+  - object
+  - multi-field
+  - ui-form
+  - ui-view
+  - legacy-port

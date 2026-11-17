@@ -1,0 +1,86 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    BacklogItem:
+      fields:
+        held:
+          description: 'Il est suspendu'
+        id:
+          description: 'L''incrément'
+        priority:
+          description: 'P0 à P3'
+        title:
+          description: 'Son titre court'
+    ReleaseCard:
+      fields:
+        build:
+          description: 'Le build de sa dernière version candidate'
+        candidate:
+          description: 'Sa dernière version candidate (rc2)'
+        candidate_text:
+          description: 'Sa dernière version candidate et son build en une ligne (rc1 · build 1.006-rc1)'
+        date:
+          description: 'Sa date prévue (AAAA-MM-JJ)'
+        days_left:
+          description: 'Les jours restants jusqu''à sa date - négatifs une fois en retard'
+        done:
+          description: 'Les objectifs et fonctionnalités qu''elle livre qui sont faits'
+        gates:
+          description: 'Un point par porte - sa raison au survol'
+        id:
+          description: 'La version'
+        label:
+          description: 'Comment chaque vue la nomme (ReleaseLabel)'
+        next:
+          description: 'C''est la prochaine version de son flux'
+        planned:
+          description: 'Les incréments prévus pour elle'
+        planned_text:
+          description: 'Ce qui est prévu pour elle (+6 prévus) - dessiné dans le ton prévu'
+        stage:
+          description: 'planifiée ou gelée ou candidate ou publiée ou abandonnée'
+        stream:
+          description: 'Son flux'
+        summary:
+          description: 'Sa date et ce qu''elle livre de fait sur le total en une ligne (2026-10-31 · 5/8 faits)'
+        total:
+          description: 'Les objectifs et fonctionnalités qu''elle livre'
+        version:
+          description: 'Sa version'
+    StreamLane:
+      extensions:
+        default:
+          axisLabel: 'Flux · mode de livraison'
+        lane-header:
+          slots:
+            actions:
+              cut:
+                confirm: 'Faire sa prochaine version maintenant à partir de ses incréments faits hors de toute version ?'
+                label: 'Couper maintenant'
+              mode:
+                label: 'Mode de livraison'
+      fields:
+        backlog:
+          description: 'Ses incréments ouverts hors de toute version - les suspendus parmi eux'
+        color:
+          description: 'Sa couleur dans les dessins'
+        id:
+          description: 'Le flux'
+        mode:
+          description: 'Son mode de livraison : manual ou on-change ou periodic'
+        mode_text:
+          description: 'Son mode et sa prochaine coupe en une ligne'
+        name:
+          description: 'Son nom'
+        next_cut:
+          description: 'Le jour de sa prochaine coupe (AAAA-MM-JJ) - vide quand aucune n''est due à une date'
+        next_text:
+          description: 'Sa prochaine coupe en quelques mots (prochaine : coupe 2026-10-31 - prochaine : à la main - prochaine : quand un incrément est livré)'
+        releases:
+          description: 'Ses versions par date : sa dernière publiée puis celles qui restent à livrer'
+        scheme:
+          description: 'Son schéma de version : semver ou calendar ou date'
+        scheme_mode:
+          description: 'Son schéma et son mode en puce (semver · periodic · 14d)'

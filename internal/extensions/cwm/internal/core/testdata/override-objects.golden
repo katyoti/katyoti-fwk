@@ -1,0 +1,23 @@
+=== objects/override-ktw-example-note-hello.cwm.yaml
+id: sys-contributions.override-ktw-example-note-hello
+type: document
+name: ktw-example:/note/hello
+description: 'Overrides ktw-example:/note/hello for this project: the layers it carries replace the entry''s, the others are inherited.'
+fields:
+  title: ktw-example:/note/hello
+capabilities:
+  contributes:
+    id: hello
+    kind: note
+    layers:
+      data: files/overrides/ktw-example/note/hello/data.json
+      source: files/overrides/ktw-example/note/hello/source.yaml
+      translations: files/overrides/ktw-example/note/hello/translations.json
+    overrides: ktw-example:/note/hello
+=== overrides/ktw-example/note/hello/data.json
+{"text":"overridden","title":"Hello"}
+=== overrides/ktw-example/note/hello/source.yaml
+title: Hello
+text: overridden
+=== overrides/ktw-example/note/hello/translations.json
+{"fr":{"title":"Bonjour"}}

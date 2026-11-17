@@ -1,0 +1,27 @@
+# Canonical data-type for a reference entry's body —
+# `system:/data-type/reference`. The Body shape every
+# `<provider>:/reference/<rel-path>` Contribution carries. Mirrors
+# `ReferenceBody` in internal/extensions/manifest/api/reference_resources.go.
+# Intentionally minimal — metadata only; the file content is fetched via
+# ResourceService.Get(uri), not inlined in the descriptor.
+$schema: ktw-schema/v1
+name: reference
+version: "1.0.0"
+root: Reference
+description: |
+  An arbitrary reference file shipped by a sidecar (doc, diagram, dataset).
+  The descriptor records WHAT references exist (path + media type) so a
+  prompt builder can list them; the body is loaded on demand.
+types:
+  Reference:
+    type: object
+    fields:
+      path:
+        type: string
+        description: |
+          relative path under the sidecar's references root
+          (e.g. "diagrams/architecture.md") — same as the entry ID.
+      mediaType:
+        type: string
+        description: content type derived from extension (text/markdown, application/pdf, ...)
+        optional: true

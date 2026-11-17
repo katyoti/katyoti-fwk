@@ -1,0 +1,8 @@
+# The events extension's: a timer declared on an object (the timed capability)
+# or a delayed event came due. An async on_timer entry subscribes to it.
+name: timer.elapsed
+label: Timer elapsed
+description: >-
+  A timer of this object came due: a recurring one (every / at) or a delayed
+  event; the payload names the timer.
+point: on_timer

@@ -1,0 +1,7 @@
+# Maintain: keep an artefact true — update it, nothing more.
+name: maintain
+description: Update the artefact so it states what is true.
+kind: maintain
+transition: done
+steps:
+  - {name: update, phase: build, class: deliver, role: coder, instructions: "Update the artefact so it states what is true. Then bring the module up to date, following the skill module-update (ktw-agents:/skill/module-update): the feature it serves and its use cases, the acceptance check that proves the change, the module pages in place, the change-log entry naming the request — recorded with requests module-update."}

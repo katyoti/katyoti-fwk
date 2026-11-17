@@ -1,0 +1,7 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Journée du journal
+  description: >-
+    Une journée du journal — chaque objet créé, modifié, déplacé, supprimé ou
+    passé d'un état à un autre ce jour-là, un enregistrement par ligne.

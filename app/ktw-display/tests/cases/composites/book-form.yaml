@@ -1,0 +1,87 @@
+id: composites/book-form
+category: composites
+title: Composite — Book form
+description: A Book entity with 6 fields covering string, number, boolean BaseTypes and email / markdown / rating / slider content variants. Submit fires postMessage to the harness; outcome shows the submitted value.
+schema:
+  name: reading-list-demo
+  version: 1
+  root: Book
+  types:
+    Book:
+      type: object
+      label: Book
+      idField:
+        - id
+      titleField:
+        - title
+      fields:
+        title:
+          type: string
+          label: Title
+          description: Title of the book.
+        author_email:
+          type: string
+          label: Author email
+          description: Email address of the book's author.
+          content:
+            type: email
+          optional: true
+        notes:
+          type: string
+          label: Notes
+          description: Markdown-formatted notes about the book.
+          content:
+            type: markdown
+            maxLength: 500
+          optional: true
+        rating:
+          type: number
+          label: Rating
+          description: Your rating from 1 to 5 stars.
+          content:
+            type: rating
+            max: 5
+          default: 3
+        progress_pct:
+          type: number
+          label: Reading progress (%)
+          content:
+            type: slider
+            min: 0
+            max: 100
+          default: 0
+        is_finished:
+          type: boolean
+          label: Finished?
+          default: false
+value: {}
+mode: edit
+tags:
+  - composites
+  - object
+  - multi-field
+script:
+  - action: fill
+    selector: '[data-testid="input.title"]'
+    value: The Pragmatic Programmer
+  - action: fill
+    selector: '[data-testid="input.author_email"]'
+    value: andy.hunt@example.com
+  - action: fill
+    selector: '[data-testid="input.notes"]'
+    value: |-
+      # Thoughts
+
+      Classic. Re-read every 5 years.
+  - action: click
+    selector: '[data-testid="star.rating.5"]'
+  - action: fill
+    selector: '[data-testid="input.progress_pct"]'
+    value: "100"
+  - action: click
+    selector: '[data-testid="input.is_finished"]'
+  - action: click
+    selector: '[data-testid="action.submit"]'
+  - action: assert
+    selector: '[data-testid="case.outcome"]'
+    text: submit

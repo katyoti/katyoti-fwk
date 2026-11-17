@@ -1,0 +1,18 @@
+$schema: ktw-schema/v1
+name: cap-lifecycle
+version: "2.0.0"
+root: CapLifecycle
+description: |
+  Field-group for the `lifecycle` capability: the object's state in the
+  workflow its type names. Changed only through ObjectTransition, which checks
+  the workflow and its gates; how the object got there is the journal's
+  `transitioned` records, never stored here.
+types:
+  CapLifecycle:
+    type: object
+    fields:
+      state:
+        type: string
+        label: State
+        description: The current state, one of the workflow's states.
+        optional: true

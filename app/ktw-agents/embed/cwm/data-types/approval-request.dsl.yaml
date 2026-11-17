@@ -1,0 +1,126 @@
+$schema: ktw-schema/v1
+name: approval-request
+version: "1.0.0"
+root: ApprovalRequest
+description: |
+  Body schema for CWM items of kind 'approval-request' — a request
+  for explicit human / role / "any-human" approval, optionally blocking
+  the requesting Task until resolved.
+types:
+  ApprovalRequest:
+    type: object
+    fields:
+      title:
+        type: string
+        label: Title
+      description:
+        type: string
+        label: Description
+        optional: true
+      requested_by:
+        type: string
+        label: Requested by
+        description: Persona name or process that needs approval.
+      requested_at:
+        type: string@date-time
+        label: Requested at
+        optional: true
+      approver:
+        type: string
+        label: Required approver
+        description: User, role, or "any-human".
+        optional: true
+      decision:
+        type: string
+        label: Decision
+        description: >-
+          The answer: approved, rejected or free text. Set when the request is
+          answered; whether it still waits is its lifecycle state.
+        optional: true
+      urgency:
+        type: string@enum(low, medium, high, blocking)
+        label: Urgency
+        default: medium
+      blocks_task:
+        type: boolean
+        label: Blocks requesting task
+        description: If true, the requesting Task is suspended until resolved.
+        default: true
+        optional: true
+      expires_at:
+        type: string@date-time
+        label: Expires at
+        optional: true
+      expects:
+        type: string@enum(verdict, text, choice, notice)
+        label: Expects
+        description: >-
+          What the answer is. verdict: approved, or rejected with a note saying
+          what to change. text: the person's answer as the note; dismissed
+          otherwise, never rejected. choice: one of the options, approved, which
+          decides the decision it is about; or none, rejected with a note that
+          sends it back. notice: nothing - an information, read and dismissed, in no
+          pending total. Unset: any answer, a rejection with a note.
+        optional: true
+      options:
+        type: string[]
+        label: Options
+        description: >-
+          A choice's options: the labels of the decision it is about, at least
+          two and distinct. Set on a choice only.
+        optional: true
+      choice:
+        type: string
+        label: Choice
+        description: >-
+          The option the person chose, answering a choice; unset while pending
+          and when none was.
+        optional: true
+      panel:
+        type: string
+        label: Panel
+        description: >-
+          The panel of the object it is about the Inbox opens it on — where it
+          is answered (a person step's card in « À faire »). Unset: its first.
+        optional: true
+      decision_note:
+        type: string
+        label: Decision note
+        description: Approver's note on resolution.
+        optional: true
+      resolved_by:
+        type: string
+        label: Resolved by
+        optional: true
+      relayed:
+        type: ApprovalRelayed
+        label: Relayed
+        description: >-
+          Set when an agent's session relayed the person's answer: which
+          session and how the person confirmed it.
+        optional: true
+      resolved_at:
+        type: string@date-time
+        label: Resolved at
+        optional: true
+      related_items:
+        type: string[]
+        label: Related items
+        description: Decisions / defects this request relates to.
+        optional: true
+  ApprovalRelayed:
+    type: object
+    fields:
+      by:
+        type: string
+        label: Relayed by
+        description: The agent session that relayed the answer.
+      confirmed:
+        type: string
+        label: Confirmed
+        description: How the person confirmed it (prompt or totp or entra).
+      at:
+        type: string
+        label: At
+        description: When the person confirmed it.
+        optional: true

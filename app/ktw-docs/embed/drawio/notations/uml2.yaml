@@ -1,0 +1,57 @@
+# A notation: element and relationship kinds, and the rules a model must follow.
+# Looks live in a drawio-template library; which kinds one picture shows, in a viewpoint.
+id: uml2
+displayName: UML 2.5
+version: '2.5'
+description: Stencil set for UML 2.5 diagrams. 10 element kinds covering class / component / use-case
+  / activity / state / sequence diagrams + 7 standard UML relationships. Class uses the `compartmented`
+  label mode with `repeat_from + item_as` sections so attribute and operation lists drive directly off
+  `node.attributes.attributes` and `node.attributes.operations`.
+elements:
+  Class:
+    label: Class
+    description: 'UML class with name / attributes / operations compartments. Authors pass `attributes.attributes:
+      []string` and `attributes.operations: []string` on the node; the compartmented label joins them
+      with <hr> dividers.'
+  Interface:
+    label: Interface
+    description: Abstract type specifying a contract. Renders with the «interface» stereotype.
+  Package:
+    label: Package
+    description: Namespace grouping of related model elements.
+  Component:
+    label: Component
+    description: A modular, deployable part of a system.
+  Node:
+    label: Node
+    description: Physical or virtual computational resource.
+  Actor:
+    label: Actor
+    description: External role interacting with the system (use-case diagrams).
+  UseCase:
+    label: Use Case
+    description: A unit of functionality exposed to actors.
+  Activity:
+    label: Activity
+    description: A behavioural step in an activity diagram.
+  State:
+    label: State
+    description: A node in a UML state machine.
+  Lifeline:
+    label: Lifeline
+    description: Participant lifeline for a UML sequence diagram.
+relationships:
+  generalization:
+    label: Generalization
+  realization:
+    label: Realization
+  dependency:
+    label: Dependency
+  association:
+    label: Association
+  aggregation:
+    label: Aggregation
+  composition:
+    label: Composition
+  usage:
+    label: Usage

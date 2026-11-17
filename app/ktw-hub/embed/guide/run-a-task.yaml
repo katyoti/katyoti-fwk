@@ -1,0 +1,24 @@
+name: Run a task and read its result
+description: Launch a task from the gallery and read what it produced.
+hashtags:
+- task
+- run task
+- gallery
+- result
+level: beginner
+essential: true
+requires:
+- open-a-universe
+# Pour aller plus loin: what to read once this guide is done.
+next: [answer-the-inbox]
+steps:
+- id: pick-task
+  say: Tasks are in the task gallery of the universe home. Pick a task card.
+  target: {guide: task.card}
+  await: manual
+- id: run
+  say: Fill in its form and press {control:task.run}.
+  await: manual
+- id: result
+  say: The run opens in its own tab. Its result shows when it completes; {control:objtab.runs} in the {control:tabs.global} tab keeps it.
+  target: {guide: objtab.runs}

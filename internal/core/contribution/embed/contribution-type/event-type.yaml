@@ -1,0 +1,47 @@
+# Registers `event-type` as a SYSTEM contribution kind: a kind of event a
+# module emits — its name, its payload (a data-type), whether other modules
+# may subscribe to it (published) and the hook point an asynchronous
+# subscription to it is declared at. CWM ships its own (object.created …
+# object.split); a pack declares its own the same way, and an `async` hook
+# entry is accepted at any point a declared event type names.
+#
+# Published from a CWM pack: embed/cwm/event-types/<name>.yaml.
+name: event-type
+description: |
+  A kind of event a module emits: its name, its payload, whether other
+  modules may subscribe to it and the point a subscription is declared at.
+schema: system:/data-type/event-type
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the event's name and what it is.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 896  # measured max 566 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `event-types/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: event-types
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

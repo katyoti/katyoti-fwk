@@ -1,0 +1,21 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Manuel
+  description: >-
+    Une personne (ou un agent) choisit l'état ; chaque état est accessible
+    depuis tous les autres, aucun n'est final.
+  states:
+    idea: Idée
+    proposed: Proposé
+    accepted: Accepté
+    active: En cours
+    done: Terminé
+    dropped: Abandonné
+  transitions:
+    to-idea: Revenir à l'idée
+    propose: Proposer
+    accept: Accepter
+    start: Démarrer
+    finish: Terminer
+    drop: Abandonner

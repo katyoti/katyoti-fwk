@@ -1,0 +1,9 @@
+# A feature is ready to build once a person has challenged its specification and
+# decided it need not be split — confirmed through the inbox, recorded on the
+# feature.
+name: feature-challenged
+label: A person challenged its specification and decided it need not be split
+gate: ready-to-build
+applies: {types: [feature]}
+person: true
+resolve: {interaction: challenge}

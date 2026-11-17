@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Décision
+  description: "La question, la proposition, sa contestation et les options, chacune avec un bouton pour la choisir"

@@ -1,0 +1,27 @@
+name: triage
+label: Asset Triage
+icon: "📥"
+icon_name: inbox-arrow-down
+allowed_children:
+    - triage-candidate
+    - document
+    - decision
+accept_parents:
+    - '*'
+description_max_chars: 600
+actions:
+    - uri: ktw-compose:tasks/import-artifact
+      label: Triage Assets
+      description: Triage incoming assets against the live catalog (value-fit) — add / enhance / included / superseded — and route what's worth keeping.
+      kind: ai
+      icon: inbox-arrow-down
+agent:
+    system:
+        - id: type-context:triage
+          text: |
+              This node is an ASSET-TRIAGE batch. Each triage-candidate item is one
+              incoming asset with a value-fit verdict (add / enhance / included /
+              superseded), the existing URI it was compared against, and its route.
+              Drive triage through the asset-intake flow — never verdict without
+              comparing against the live catalog. ADD-approved candidates become
+              deliverables on a composition; the compose-artifact wizard builds them.

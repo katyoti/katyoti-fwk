@@ -1,0 +1,20 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: archimate3-strategy
+displayName: ArchiMate — strategy
+description: Capabilities, resources, value streams and courses of action, and the outcomes they serve.
+notation: ktw-docs:/notation/archimate3
+templates: ktw-docs:/drawio-template/archimate3
+page: default
+elements:
+- Resource
+- Capability
+- ValueStream
+- CourseOfAction
+- Outcome
+- Goal
+- BusinessActor
+- Grouping
+- Junction
+layout:
+  algorithm: layered
+  direction: DOWN

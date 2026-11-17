@@ -1,0 +1,6 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Ligne de livraison
+  description: >-
+    Une ligne de versions que la direction reconnaît par son nom : ses versions suivent un même schéma de numérotation et sont faites selon un même mode.

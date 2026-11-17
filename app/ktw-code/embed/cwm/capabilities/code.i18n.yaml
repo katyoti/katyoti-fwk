@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Code
+  description: >-
+    Le code d'un module logiciel : son genre, ses packages, ses paliers et ses
+    facettes.

@@ -1,0 +1,17 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Constat
+  description: >-
+    Ouvert jusqu'à ce qu'il soit traité, puis clos une fois la réponse vérifiée
+    — ou accepté tel quel.
+  states:
+    open: Ouvert
+    addressed: Traité
+    closed: Clos
+    accepted: Accepté
+  transitions:
+    address: Traiter
+    close: Clore
+    accept: Accepter
+    reopen: Rouvrir

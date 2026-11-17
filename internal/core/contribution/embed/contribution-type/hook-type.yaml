@@ -1,0 +1,46 @@
+# Registers `hook-type` as a SYSTEM contribution kind: a POINT at which declared
+# behaviour runs — when it fires (before / after a write, or on demand) and what
+# an answer to it is (accept, findings, verdict, none). CWM ships its own points
+# (before_create … bootstrap) as hook-types; an extension opens a new point by
+# contributing one, and runs it with ObjectRunHooks.
+#
+# Published from a CWM pack: embed/cwm/hook-types/<name>.yaml.
+name: hook-type
+description: |
+  A point at which declared behaviour runs: when it fires and what an answer
+  to it is.
+schema: system:/data-type/hook-type
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the point's name and what it is.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 384  # measured max 228 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `hook-types/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: hook-types
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

@@ -1,0 +1,35 @@
+name: label
+kind: renderer
+basePrimitive: string
+description: Mantine Badge / pill label, with options-driven color + variant. Renderer comes via gui-rich-text.
+
+configSchema:
+  fields:
+    transformation:
+      type: string
+      optional: true
+      description: Text transformation — 'lowercase', 'uppercase', 'capitalize', 'upper-first'.
+    color:
+      type: string
+      optional: true
+      description: Static fallback color when colorField/colorMap don't resolve.
+    colorMap:
+      type: string
+      optional: true
+      description: JSON-encoded value→color map.
+    colorField:
+      type: string
+      optional: true
+      description: Sibling field whose value drives the colorMap lookup.
+    variant:
+      type: string
+      optional: true
+      description: Default Mantine Badge variant ('light'/'filled'/'outline'/'dot'/'transparent'/'gradient').
+    variantField:
+      type: string
+      optional: true
+      description: Sibling field driving the variantMap lookup.
+    variantMap:
+      type: string
+      optional: true
+      description: JSON-encoded value→variant map.

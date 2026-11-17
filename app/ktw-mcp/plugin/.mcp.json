@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "katyoti": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/../ktw-mcp@EXT@",
+      "args": []
+    }
+  }
+}

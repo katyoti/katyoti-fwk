@@ -1,0 +1,20 @@
+[
+  {
+    "line": 12,
+    "rule": "variant-unknown",
+    "severity": "error",
+    "message": "theme \"brand\" has no variant \"bordeaux\" for layout \"cover\"; its variants: sand"
+  },
+  {
+    "line": 17,
+    "rule": "variant-unknown",
+    "severity": "error",
+    "message": "theme \"brand\" has no variant \"sand\" for layout \"content\"; its variants: none"
+  },
+  {
+    "line": 20,
+    "rule": "icon-unknown",
+    "severity": "error",
+    "message": "theme \"brand\" has no icon \"crane\"; its icons: truck"
+  }
+]

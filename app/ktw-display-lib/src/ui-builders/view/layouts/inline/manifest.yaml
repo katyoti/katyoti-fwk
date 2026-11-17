@@ -1,0 +1,19 @@
+name: inline
+kind: view-layout
+description: >-
+  Flat horizontal Group of all fields, group framing dropped. Best for
+  compact row-summary surfaces (table-cell expansion, breadcrumb bar,
+  tooltip card). Ignores per-group `cols`; honors per-field `detail` (a
+  L1 detail-level cycle suppresses verbose fields without changing the
+  horizontal flow).
+
+configSchema:
+  fields:
+    gap:
+      type: string
+      default: md
+      description: "Mantine Group gap between fields (xs | sm | md | lg | xl)"
+    wrap:
+      type: boolean
+      default: true
+      description: "Allow fields to wrap to a second line on narrow viewports"

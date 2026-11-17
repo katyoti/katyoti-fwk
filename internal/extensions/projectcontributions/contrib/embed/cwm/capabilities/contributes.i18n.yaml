@@ -1,0 +1,11 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Contribue
+  description: >-
+    Publie l'objet comme une entrée de contribution d'un kind déclaré, sous le
+    jeton de fournisseur de son projet : son kind, son id (par défaut le slug
+    ou l'id de l'objet), d'où vient chacune de ses couches (son corps, ses
+    champs, le groupe de champs d'une capacité, un fichier de son module) et,
+    pour une surcharge, l'URI de l'entrée qu'elle surcharge - elle ne porte
+    alors que les couches qu'elle remplace.

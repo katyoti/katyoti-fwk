@@ -1,0 +1,17 @@
+# ONE SOURCE PER CONNECTOR: a holder type composing this
+# capability reads each connector through one information source. Sources owns
+# information-source, so its own save gate (hook source-check-on-create,
+# sources/source-check) holds the rule, and only under a holder carrying this
+# capability - by its type's bundle or its own choice: a second active source
+# of a connector the holder already reads is refused « <source> est déjà dans
+# l'étude : une seule source par connecteur », and the create page greys that
+# connector. A holder without it - a module, an as-is study v1 - keeps as many
+# sources of a connector as it likes. No schema, no panel: a marker the gate
+# reads.
+name: one-source-per-connector
+label: One source per connector
+icon: plug
+description: >-
+  The object reads each source connector through one information source: a
+  second source of a connector it already reads is refused, the one it has is
+  opened to change what it takes.

@@ -1,0 +1,577 @@
+$schema: ktw-schema/v1
+name: object-type
+version: "3.5.0"
+root: ObjectType
+description: |
+  What an object's `type` MEANS — declared once as a contribution, never
+  repeated on each instance (decided 2026-09-18, D1/D2/D4).
+
+  Before this, `Object.Type` was a free string: `ObjectCreate` accepted anything,
+  while the 41 node/item type declarations that carried the real meaning had no
+  reader. A type is now a CONTRIBUTION any sidecar ships, and the sidecar that
+  owns a domain owns its types.
+
+  THE CENTRAL FIELD IS `capabilities`. A type is a NAMED CAPABILITY BUNDLE:
+  `use-case` means {container, content, want, checkable}. Everything downstream
+  reads the bundle, not the name — the GUI picks panels BY CAPABILITY, so a new
+  type gets a usable interface without touching ktw-gui, and policies attach by
+  capability rather than by a growing list of type names.
+
+  v2.0.0 (2026-09-19) — THE UNION. This type is the merge of `node-type` and
+  `item-type`, so it carries BOTH their field sets: containment, hooks, badges,
+  agent context, and the item side's storage semantics. A guard fails if this
+  declaration and the Go struct drift apart.
+
+  SECTIONS. Every other top-level key is a capability's SECTION — the type's
+  settings for that capability, named after it (`context:`, `pane:`,
+  `verification:`). Writing one puts the capability in force on the type; CWM
+  checks it against the capability's `type_schema` and refuses one no
+  capability declares; the owning extension reads it.
+types:
+  ObjectType:
+    type: object
+    fields:
+      # --- identity --------------------------------------------------------
+      name:
+        type: string
+        label: Type name
+        description: >-
+          The value that appears in an object's `type:` field. Lowercase kebab —
+          it is matched literally, never normalised.
+      label:
+        type: string
+        label: Label
+        description: >-
+          The human name. Distinct from `name`, which is what an object matches
+          on; renaming the label never breaks an object.
+        optional: true
+      label_plural:
+        type: string
+        label: Plural label
+        description: >-
+          The name of a list of objects of this type — the tab of the parent's
+          pane that lists them when the type is not drawn in the tree. Empty =
+          the label.
+        optional: true
+      description:
+        type: string
+        label: Description
+        description: What this type is, for a human choosing between types.
+        optional: true
+      icon:
+        type: string
+        label: Icon
+        description: Icon id for tree and list rendering.
+        optional: true
+      icon_name:
+        type: string
+        label: Icon name
+        description: >-
+          Named icon for renderers that resolve by name rather than by glyph.
+          Kept beside `icon` rather than merged — they feed different renderers.
+        optional: true
+      abstract:
+        type: boolean
+        label: Abstract
+        default: false
+        description: >-
+          When true the type may not be instantiated — it exists to be composed
+          or extended. Declared rather than inferred: a type nobody may create is
+          a real intent, not an accident of having no instances.
+        optional: true
+      folder:
+        type: string
+        label: Storage folder
+        description: >-
+          Where NEW objects of this type are written, relative to the module;
+          empty means `objects`. A WRITE-SIDE DEFAULT, not a read rule — objects
+          are found by their `.cwm.yaml` suffix wherever they sit, so nothing
+          depends on the folder and the path stays non-semantic. A `_`-prefixed
+          folder is refused: `_` paths are never scanned, so such a type would
+          write objects invisible from the moment they are created.
+        optional: true
+      runtime:
+        type: boolean
+        label: Runtime
+        description: >-
+          Objects of this type are produced by runs (approval-request,
+          records) and live in the project's CWM store, never
+          in the committed modules folder (concepts.md §5, 2026-09-25).
+        optional: true
+      tree:
+        type: string@enum(root, node, none)
+        label: Tree
+        optional: true
+        description: >-
+          Where objects of this type show: root (drawn in the tree and may sit
+          at its top), node (drawn under a parent), none or empty (not drawn —
+          listed by the pane of their parent). A display fact of the type; an
+          object does not carry it.
+      load:
+        type: string@enum(with-tree, on-demand, never-eager)
+        label: Load policy
+        description: >-
+          The one override of the load policy: empty derives it from `tree` — a
+          drawn type loads with the tree, anything else ⇒ on-demand (a list
+          under its parent).
+          never-eager marks a type whose objects are read only by an explicit
+          ObjectGet.
+        optional: true
+      id_prefix:
+        type: string
+        label: Id prefix
+        description: >-
+          The readable id scheme for objects created with a title and no id
+          (phase 7c): <id_prefix>-<NNN>, next in the module. Empty means a
+          UUIDv7 — for kinds created concurrently.
+        optional: true
+      capabilities:
+        type: string[]
+        label: Capabilities
+        description: >-
+          THE list: every capability this type composes. It used to be three
+          overlapping lists (this, `aspects`, `surfaces`) which were the same
+          kind of thing differing only in what is attached to the id. What a
+          capability MEANS lives in its `capability` declaration, written once.
+        optional: true
+      fields:
+        type: string
+        label: Fields schema URI
+        description: >-
+          Data-type URI of the type's own fields — what this kind of thing is,
+          beyond the core every object has; stored under `fields:` on the
+          object. A field any type could want is a capability instead.
+        optional: true
+      body:
+        type: BodyDecl
+        label: Body
+        description: >-
+          What this type's body is — its label (Slides, Reasoning), its format,
+          the panel that shows it. CWM stores every body the same way (the
+          markdown of a .cwm.md file); the type says what it means. Empty =
+          Text, in markdown.
+        optional: true
+
+      # --- containment -----------------------------------------------------
+      allowed_children:
+        type: string[]
+        label: Allowed children
+        description: >-
+          Type names allowed as children; empty = no restriction. Effective
+          compatibility is the UNION with the child's `accept_parents` — the two
+          are sides of one question. Node-type's `allowed_item_types` folds in
+          here, because an item is an object now.
+        optional: true
+      accept_parents:
+        type: string[]
+        label: Accept parents
+        description: >-
+          Parent type names that may host this type; `*` = any; empty = no
+          restriction from this side.
+        optional: true
+      accept_when:
+        type: string
+        label: Accept when
+        description: >-
+          A condition over the parent - an el predicate in which current is the
+          parent - under which the create picker offers this type; empty means
+          wherever the names allow. A create is not refused by it.
+        optional: true
+      description_max_chars:
+        type: number
+        label: Description budget
+        description: Override the default description budget; 0 = use the default.
+        optional: true
+
+      # --- runnables -------------------------------------------------------
+      workflow:
+        type: string
+        label: Workflow
+        description: >-
+          The workflow objects of this type move through (a `workflow`
+          contribution); an object may override it in its lifecycle.
+        optional: true
+      hooks:
+        type: object
+        label: Hooks
+        description: >-
+          (HookEntry lists, by point.) Hook entries by point — before_create /
+          before_update (synchronous, may refuse), on_create / on_update /
+          on_delete (after the write), lint (findings), verify (verdicts),
+          on_transition, bootstrap. Each entry is an action URI with an optional
+          when and filter; a closer declaration with the same uri replaces a
+          farther one.
+          Closer than a capability's, farther than an object's own.
+        optional: true
+        catchall: HookEntry[]
+      agent:
+        type: AgentDecl
+        label: Agent context
+        description: >-
+          What a chat on an object receives from this contributor: system
+          sections, tools, skills and named files. A closer entry with the same
+          key replaces a farther one; a closer when "false" removes it.
+        optional: true
+      files:
+        type: object
+        label: Files
+        description: >-
+          (NamedFile entries, by name.) Named files every object of this type
+          has: a module-relative path each, `${...}` allowed over the object.
+          Between a capability's files and the object's own, closer wins.
+        optional: true
+        catchall: NamedFile
+      actions:
+        type: array
+        label: Actions
+        description: >-
+          (ActionRef entries.) Actions every object of this type can run. A bare URI still decodes,
+          but the struct form is what carries label, icon, confirm, when, target,
+          session, bind and pre-bound input — a plain string list would drop all
+          of that from every binding site. A sidecar may also contribute an
+          action to a type it does NOT own (UC-4); those arrive by selector and
+          are not listed here.
+        optional: true
+
+      # --- creation ---------------------------------------------------------
+      create_task:
+        type: string
+        label: Create task
+        description: >-
+          Task URI run INSTEAD of the default create form — a guided wizard that
+          calls create itself. Not a hook: a check that may refuse the create is
+          a `before_create` entry in `hooks`.
+        optional: true
+
+      # --- display ---------------------------------------------------------
+      color:
+        type: string
+        label: Colour
+        description: >-
+          The type's tone in the tree, the lists and a pane's header: a named
+          palette colour (indigo, teal) or #rgb / #rrggbb. Empty = neutral.
+        optional: true
+      child_order:
+        type: string[]
+        label: Child order
+        description: >-
+          The child type names in the order the tree groups a project's or a
+          module's children; a child type not named comes after. Within
+          `allowed_children` when that is set.
+        optional: true
+      solution:
+        type: string
+        label: Solution needed
+        description: >-
+          A project type: the solution a project of this type needs; opening it
+          in a universe without it says so, naming it.
+        optional: true
+      opens:
+        type: string
+        label: Opens with
+        description: >-
+          A project type: the action URI that opens a project of this type;
+          empty = the ordinary opening.
+        optional: true
+
+      # --- storage ---------------------------------------------------------
+      side:
+        type: string
+        label: Side
+        description: >-
+          Informational tag: requirements | implementation | delivery | both |
+          root.
+        optional: true
+      max_size_bytes:
+        type: number
+        label: Max size
+        description: Per-write size budget, enforced at the write path.
+        optional: true
+  HookEntry:
+    type: object
+    description: One hook declaration at one point.
+    fields:
+      uri:
+        type: string
+        label: Action
+        description: The action URI run at the point (a method, a script, a task).
+      when:
+        type: string
+        label: When
+        description: >-
+          el predicate over the object vocabulary. The literal "false" on a closer
+          declaration removes a farther entry with the same uri.
+        optional: true
+      filter:
+        type: HookFilter
+        label: Filter
+        description: The objects the entry applies to.
+        optional: true
+      input:
+        type: object
+        label: Input
+        description: >-
+          The action's input, each value's ${...} resolved over the object;
+          declared, it replaces the default {point, object, prior}.
+        optional: true
+        catchall: any
+      async:
+        type: AsyncSpec
+        label: Async
+        description: >-
+          Makes the entry an asynchronous subscription (an on_* point an event
+          type names): CWM records a match at the write and hands it to the
+          scheduler; it never runs the entry itself.
+        optional: true
+      "on":
+        type: EventSource
+        label: On
+        description: >-
+          On a module object only: the module and the event type the module
+          subscribes to (a published type, or one of its own). The entry sits
+          at the point the type names and is async. Ignored elsewhere.
+        optional: true
+      writes:
+        type: array
+        items:
+          type: string
+        label: Writes
+        description: >-
+          With on: the modules the subscription's reactions may write; default
+          the subscriber's own. CWM refuses a reaction's write into any other.
+        optional: true
+  EventSource:
+    type: object
+    description: The events a cross-module subscription listens to.
+    fields:
+      module:
+        type: string
+        label: Module
+        description: The emitting module.
+      event:
+        type: string
+        label: Event
+        description: The event type (an event-type name).
+  AsyncSpec:
+    type: object
+    description: What makes an on_* hook entry a subscription.
+    fields:
+      priority:
+        type: string
+        label: Priority
+        description: The reaction's priority (P0 to P3); default P2.
+        optional: true
+      key:
+        type: string
+        label: Coalescing key
+        description: >-
+          An el interpolation over the object; default ${id} (one pending
+          reaction per object).
+        optional: true
+      attempts:
+        type: number
+        label: Attempts
+        description: How many attempts before the reaction is given up; default 3.
+        optional: true
+      accepts_caused:
+        type: boolean
+        label: Accepts caused
+        description: >-
+          True also matches writes made by a reaction or a hook (depth above 0).
+        optional: true
+      atomic:
+        type: boolean
+        label: Atomic
+        description: >-
+          True stages the reaction's object writes in a change set, written
+          together after its action and before it reports success; none is
+          written when it fails.
+        optional: true
+  HookFilter:
+    type: object
+    description: The one ObjectFilter every applicability question uses.
+    fields:
+      types:
+        type: string[]
+        label: Types
+        description: Object types it applies to (any of); * means every type.
+        optional: true
+      capabilities:
+        type: string[]
+        label: Capabilities
+        description: Capabilities the object must carry at least one of.
+        optional: true
+      incoming:
+        type: string[]
+        label: Incoming edges
+        description: Edge kinds of which the object must have at least one incoming edge (any of).
+        optional: true
+      outgoing:
+        type: string[]
+        label: Outgoing edges
+        description: Edge kinds of which the object must have at least one outgoing edge (any of).
+        optional: true
+      when:
+        type: string
+        label: When
+        description: el predicate over the object vocabulary.
+        optional: true
+  BodyDecl:
+    type: object
+    description: What a type says its body is.
+    fields:
+      label:
+        type: string
+        label: Label
+        description: What the body is called on this type; empty = Text.
+        optional: true
+      description:
+        type: string
+        label: Description
+        description: What the body holds.
+        optional: true
+      format:
+        type: string
+        label: Format
+        description: markdown (default), text, html, or a format a panel owns (deck).
+        optional: true
+      panel:
+        type: string
+        label: Panel
+        description: The panel that shows the body, when one does; the type's fields section then names it.
+        optional: true
+  NamedFile:
+    type: object
+    description: One declared named file.
+    fields:
+      path:
+        type: string
+        label: Path
+        description: Module-relative path; may use ${...} over the object (current / object / id / type).
+      media:
+        type: string
+        label: Media type
+        description: Media type of the content (for example text/markdown).
+        optional: true
+      description:
+        type: string
+        label: Description
+        description: What the file holds.
+        optional: true
+      capability:
+        type: string
+        label: Owning capability
+        description: >-
+          On a type or object declaration, the capability that owns the file;
+          empty means the object's own file. Ignored in a capability's files.
+        optional: true
+      owned:
+        type: boolean
+        label: Owned
+        description: >-
+          The file lives with the object: moved when a rename moves its path,
+          deleted with the object.
+        optional: true
+  AgentDecl:
+    type: object
+    description: One contributor's agent-context declaration.
+    fields:
+      system:
+        type: AgentSection[]
+        label: System sections
+        description: System-prompt sections, keyed by id.
+        optional: true
+      tools:
+        type: AgentTool[]
+        label: Tools
+        description: Tools the agent receives, keyed by uri (or plugin).
+        optional: true
+      skills:
+        type: AgentSkill[]
+        label: Skills
+        description: Skill selectors to advertise, keyed by selector.
+        optional: true
+      files:
+        type: AgentFile[]
+        label: Files
+        description: Named files of the object read as context sections.
+        optional: true
+  AgentSection:
+    type: object
+    description: One system-prompt section.
+    fields:
+      id:
+        type: string
+        label: Id
+        description: Stable id; a closer section with the same id replaces this one.
+      title:
+        type: string
+        label: Title
+        optional: true
+      text:
+        type: string
+        label: Text
+        description: The section; ${...} is el over the object vocabulary.
+        optional: true
+      order:
+        type: number
+        label: Order
+        description: Sort key; equal orders keep the layer order.
+        optional: true
+      when:
+        type: string
+        label: When
+        description: el predicate; the literal false removes a farther section.
+        optional: true
+  AgentTool:
+    type: object
+    description: One tool — an action URI, or a plugin ref that brings its tools.
+    fields:
+      uri:
+        type: string
+        label: Action
+        optional: true
+      plugin:
+        type: string
+        label: Plugin
+        description: Plugin ref; exactly one of uri and plugin.
+        optional: true
+      when:
+        type: string
+        label: When
+        optional: true
+  AgentSkill:
+    type: object
+    description: One skill selector.
+    fields:
+      selector:
+        type: string
+        label: Selector
+      when:
+        type: string
+        label: When
+        optional: true
+  AgentFile:
+    type: object
+    description: One named file of the object read into the context.
+    fields:
+      capability:
+        type: string
+        label: Capability
+        description: Owning capability; empty = the object's own file.
+        optional: true
+      name:
+        type: string
+        label: Name
+      title:
+        type: string
+        label: Title
+        optional: true
+      order:
+        type: number
+        label: Order
+        optional: true
+      when:
+        type: string
+        label: When
+        optional: true

@@ -1,0 +1,10 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Revue
+  description: >-
+    Un type de revue passé sur un module ou un objet : quand, sur quel commit, ce qui l'a déclenchée, une note et sa synthèse ; son corps est le rapport. Elle contient les documents et présentations écrits pour elle, et une vue d'ensemble.
+  pane:
+    badges:
+      fields.rating:
+        label: note

@@ -1,0 +1,24 @@
+package cmd
+
+import (
+	"embed"
+
+	"github.com/katyoti/katyoti-fwk/internal/appcore"
+	"github.com/katyoti/katyoti-fwk/internal/appcore/sidecarkit"
+	"github.com/katyoti/katyoti-fwk/internal/core/application"
+)
+
+// buildExtensions declares all ApplicationExtensions for the {{name}}
+// sidecar. Files-only: no domain service, no Go business logic — the
+// sidecar's value is its embedded skills / tasks / references.
+func buildExtensions(efs embed.FS) []application.Extension {
+	return sidecarkit.NewSidecar(appcore.AppConfig{
+		AppName: "{{name}}",
+		Version: version,
+		Short:   "{{short}}",
+		Long:    `{{long}}`,
+		EmbeddedFS: efs,
+	},
+		sidecarkit.WithKTSPDescription("{{ktsp_description}}"),
+{{options}}	)
+}

@@ -1,0 +1,13 @@
+graph TD
+    A[Markdown Input] --> B{Output Format?}
+    B -->|PDF| C[Pandoc + Typst]
+    B -->|DOCX| D[Pandoc]
+    B -->|PPTX| E[Pandoc]
+    B -->|HTML| F[Pandoc]
+    C --> G[PDF Output]
+    D --> H[DOCX Output]
+    E --> I[PPTX Output]
+    F --> J[HTML Output]
+
+    K[Diagram Source] --> L[Kroki API]
+    L --> M[SVG/PNG Image]

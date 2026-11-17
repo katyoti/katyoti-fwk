@@ -1,0 +1,9 @@
+name: statement
+description: One strong sentence, very large — a conviction, a finding, a turning point in the story.
+slots:
+  - name: default
+    description: The statement, as one short paragraph (or one heading).
+    required: true
+example: |
+  <!-- slide: layout=statement -->
+  Every presentation we make is written by an agent, in our colours, in minutes.

@@ -1,0 +1,34 @@
+# How a release moves. Freezing records its scope and closes it to new targets;
+# only a PERSON unfreezes it (the explicit, recorded override); releasing passes
+# the ready-to-release gate (a person confirmed the change log lists what it
+# ships; only a person may force it, with a note) and waits until every target
+# is done — the pack's on_transition hook,
+# since a gate reads only the release itself.
+name: release
+label: Release
+description: >-
+  Planned, frozen (its scope recorded), released once every target is done; a
+  person may unfreeze it to change its scope; anything may be dropped, and a
+  person may reopen a dropped release, planned again with its version and date.
+initial: planned
+states:
+  - {name: planned, description: "Its scope is open: work may target it"}
+  - {name: frozen, description: "Its scope is recorded; no new target"}
+  - {name: released, description: "Shipped", terminal: true}
+  - {name: dropped, description: "Will not ship - a person may reopen it"}
+transitions:
+  - {name: freeze, from: [planned], to: frozen}
+  - name: unfreeze
+    from: [frozen]
+    to: planned
+    gate: "by.kind == 'person'"
+  - name: release
+    from: [frozen]
+    to: released
+    gate: "gate('ready-to-release').passes"
+    force: person
+  - {name: drop, from: ["*"], to: dropped}
+  - name: reopen
+    from: [dropped]
+    to: planned
+    gate: "by.kind == 'person'"

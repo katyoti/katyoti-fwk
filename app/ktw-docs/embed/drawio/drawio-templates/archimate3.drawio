@@ -1,0 +1,426 @@
+<mxfile host="ktw-docs">
+    <diagram name="templates">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Resource" ktw-template="Resource" id="tpl-Resource">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=resource;archiType=square;html=1;whiteSpace=wrap;fillColor=#F5DEAA;strokeColor=#B38B2E;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Capability" ktw-template="Capability" id="tpl-Capability">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=capability;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#F5DEAA;strokeColor=#B38B2E;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Value Stream" ktw-template="ValueStream" id="tpl-ValueStream">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=valueStream;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#F5DEAA;strokeColor=#B38B2E;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Course of Action" ktw-template="CourseOfAction" id="tpl-CourseOfAction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=course;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#F5DEAA;strokeColor=#B38B2E;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Actor" ktw-template="BusinessActor" id="tpl-BusinessActor">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=actor;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Role" ktw-template="BusinessRole" id="tpl-BusinessRole">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=role;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Collaboration" ktw-template="BusinessCollaboration" id="tpl-BusinessCollaboration">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=collab;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="160" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Interface" ktw-template="BusinessInterface" id="tpl-BusinessInterface">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=interface;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="160" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Process" ktw-template="BusinessProcess" id="tpl-BusinessProcess">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="160" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Function" ktw-template="BusinessFunction" id="tpl-BusinessFunction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=func;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="160" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Interaction" ktw-template="BusinessInteraction" id="tpl-BusinessInteraction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=interaction;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="160" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Event" ktw-template="BusinessEvent" id="tpl-BusinessEvent">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=event;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="160" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Service" ktw-template="BusinessService" id="tpl-BusinessService">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="280" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Business Object" ktw-template="BusinessObject" id="tpl-BusinessObject">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=passive;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="280" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Contract" ktw-template="Contract" id="tpl-Contract">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=contract;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="280" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Representation" ktw-template="Representation" id="tpl-Representation">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=representation;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="280" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Product" ktw-template="Product" id="tpl-Product">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=product;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFFFB3;strokeColor=#A88F00;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="280" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Component" ktw-template="ApplicationComponent" id="tpl-ApplicationComponent">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=comp;archiType=square;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="280" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Collaboration" ktw-template="ApplicationCollaboration" id="tpl-ApplicationCollaboration">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=collab;archiType=square;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="400" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Interface" ktw-template="ApplicationInterface" id="tpl-ApplicationInterface">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=interface;archiType=square;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="400" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Function" ktw-template="ApplicationFunction" id="tpl-ApplicationFunction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=func;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="400" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Interaction" ktw-template="ApplicationInteraction" id="tpl-ApplicationInteraction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=interaction;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="400" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Process" ktw-template="ApplicationProcess" id="tpl-ApplicationProcess">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="400" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Event" ktw-template="ApplicationEvent" id="tpl-ApplicationEvent">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=event;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="400" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Application Service" ktw-template="ApplicationService" id="tpl-ApplicationService">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="520" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Data Object" ktw-template="DataObject" id="tpl-DataObject">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=passive;archiType=square;html=1;whiteSpace=wrap;fillColor=#B3E1F5;strokeColor=#0066CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="520" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Node" ktw-template="TechnologyNode" id="tpl-TechnologyNode">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=node;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="520" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Device" ktw-template="Device" id="tpl-Device">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=device;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="520" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="System Software" ktw-template="SystemSoftware" id="tpl-SystemSoftware">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="520" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Collaboration" ktw-template="TechnologyCollaboration" id="tpl-TechnologyCollaboration">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=collab;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="520" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Interface" ktw-template="TechnologyInterface" id="tpl-TechnologyInterface">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=interface;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Path" ktw-template="Path" id="tpl-Path">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=path;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Communication Network" ktw-template="CommunicationNetwork" id="tpl-CommunicationNetwork">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=netw;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Function" ktw-template="TechnologyFunction" id="tpl-TechnologyFunction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=func;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Process" ktw-template="TechnologyProcess" id="tpl-TechnologyProcess">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Interaction" ktw-template="TechnologyInteraction" id="tpl-TechnologyInteraction">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=interaction;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Event" ktw-template="TechnologyEvent" id="tpl-TechnologyEvent">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=event;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="760" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Technology Service" ktw-template="TechnologyService" id="tpl-TechnologyService">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="760" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Artifact" ktw-template="Artifact" id="tpl-Artifact">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=artifact;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="760" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Equipment" ktw-template="Equipment" id="tpl-Equipment">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=equipment;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="760" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Facility" ktw-template="Facility" id="tpl-Facility">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=facility;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="760" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Distribution Network" ktw-template="DistributionNetwork" id="tpl-DistributionNetwork">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=distribution;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="760" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Material" ktw-template="Material" id="tpl-Material">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=material;archiType=square;html=1;whiteSpace=wrap;fillColor=#C9E7C8;strokeColor=#4D9444;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="880" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Stakeholder" ktw-template="Stakeholder" id="tpl-Stakeholder">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=role;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="880" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Driver" ktw-template="Driver" id="tpl-Driver">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=driver;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="880" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Assessment" ktw-template="Assessment" id="tpl-Assessment">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=assess;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="880" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Goal" ktw-template="Goal" id="tpl-Goal">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=goal;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="880" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Outcome" ktw-template="Outcome" id="tpl-Outcome">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=outcome;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="880" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Principle" ktw-template="Principle" id="tpl-Principle">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=principle;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="1000" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Requirement" ktw-template="Requirement" id="tpl-Requirement">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=requirement;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="1000" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Constraint" ktw-template="Constraint" id="tpl-Constraint">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=constraint;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="1000" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Meaning" ktw-template="Meaning" id="tpl-Meaning">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=meaning;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="1000" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Value" ktw-template="Value" id="tpl-Value">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=amValue;archiType=oct;html=1;whiteSpace=wrap;fillColor=#E0CCE7;strokeColor=#6633CC;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="840" y="1000" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Work Package" ktw-template="WorkPackage" id="tpl-WorkPackage">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=workPackage;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFE0E0;strokeColor=#C45C5C;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="1000" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Deliverable" ktw-template="Deliverable" id="tpl-Deliverable">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=deliverable;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFE0E0;strokeColor=#C45C5C;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="40" y="1120" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Implementation Event" ktw-template="ImplementationEvent" id="tpl-ImplementationEvent">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=event;archiType=rounded;html=1;whiteSpace=wrap;fillColor=#FFE0E0;strokeColor=#C45C5C;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="240" y="1120" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Plateau" ktw-template="Plateau" id="tpl-Plateau">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=plateau;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFE0E0;strokeColor=#C45C5C;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="440" y="1120" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Gap" ktw-template="Gap" id="tpl-Gap">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=gap;archiType=square;html=1;whiteSpace=wrap;fillColor=#FFE0E0;strokeColor=#C45C5C;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="640" y="1120" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Grouping" ktw-template="Grouping" id="tpl-Grouping">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=grouping;archiType=square;html=1;whiteSpace=wrap;fillColor=none;dashed=1;strokeColor=#000000;verticalAlign=top;align=left;spacingLeft=6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+              <mxGeometry x="840" y="1120" width="240" height="140" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Location" ktw-template="Location" id="tpl-Location">
+            <mxCell style="shape=mxgraph.archimate3.application;appType=location;archiType=square;html=1;whiteSpace=wrap;fillColor=#FBB875;strokeColor=#B06A1D;fontSize=11;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="1120" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="" placeholders="1" name="Junction" ktw-template="Junction" id="tpl-Junction">
+            <mxCell style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="1">
+              <mxGeometry x="40" y="1240" width="14" height="14" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:composition" id="tpl-edge-composition">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;startArrow=diamondThin;startFill=1;startSize=10;endArrow=none;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="40" y="1400" as="sourcePoint"/>
+                <mxPoint x="200" y="1400" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:aggregation" id="tpl-edge-aggregation">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;startArrow=diamondThin;startFill=0;startSize=10;endArrow=none;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="240" y="1400" as="sourcePoint"/>
+                <mxPoint x="400" y="1400" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:assignment" id="tpl-edge-assignment">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;startArrow=oval;startFill=1;endArrow=block;endFill=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="440" y="1400" as="sourcePoint"/>
+                <mxPoint x="600" y="1400" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:realization" id="tpl-edge-realization">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=0;dashed=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="640" y="1400" as="sourcePoint"/>
+                <mxPoint x="800" y="1400" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:serving" id="tpl-edge-serving">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=open;endFill=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="840" y="1400" as="sourcePoint"/>
+                <mxPoint x="1000" y="1400" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:access" id="tpl-edge-access">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=open;endSize=4;dashed=1;dashPattern=1 4;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="1040" y="1400" as="sourcePoint"/>
+                <mxPoint x="1200" y="1400" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:influence" id="tpl-edge-influence">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=open;dashed=1;dashPattern=6 4;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="40" y="1520" as="sourcePoint"/>
+                <mxPoint x="200" y="1520" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:triggering" id="tpl-edge-triggering">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="240" y="1520" as="sourcePoint"/>
+                <mxPoint x="400" y="1520" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:flow" id="tpl-edge-flow">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="440" y="1520" as="sourcePoint"/>
+                <mxPoint x="600" y="1520" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:specialization" id="tpl-edge-specialization">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=block;endFill=0;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="640" y="1520" as="sourcePoint"/>
+                <mxPoint x="800" y="1520" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%&lt;br&gt;%flLinks%" placeholders="1" name="" ktw-template="edge:association" id="tpl-edge-association">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=1;endArrow=none;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="840" y="1520" as="sourcePoint"/>
+                <mxPoint x="1000" y="1520" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Unknown kind" ktw-template="*" id="tpl-default">
+            <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;" vertex="1" parent="1">
+              <mxGeometry x="1040" y="1480" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+    <diagram name="page:default">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%title%&lt;/b&gt;" placeholders="1" title="Diagram title" id="page-title">
+            <mxCell style="text;html=1;align=left;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+              <mxGeometry x="20" y="10" width="900" height="30" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="" ktw-slot="content" id="page-content">
+            <mxCell style="rounded=0;dashed=1;fillColor=none;strokeColor=#CCCCCC;" vertex="1" parent="1">
+              <mxGeometry x="20" y="60" width="900" height="600" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,14 @@
+package cmd
+
+import (
+	"embed"
+
+	"github.com/katyoti/katyoti-fwk/internal/appcore"
+)
+
+var version = "dev"
+
+// Execute runs the {{name}} CLI with the given embedded filesystem.
+func Execute(efs embed.FS) error {
+	return appcore.BootstrapCLI("sidecar", buildExtensions(efs)...)
+}

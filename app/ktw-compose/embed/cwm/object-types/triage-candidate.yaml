@@ -1,0 +1,18 @@
+name: triage-candidate
+label: Triage candidate
+description: |
+    One incoming asset under value-fit triage on a `triage` node. Records
+    the asset, its verdict (add / enhance / included / superseded), the
+    existing catalog URI it was compared against (evidence — required), the
+    testable probe (for add) or the missing-case delta (for enhance), the
+    route, and an approval status.
+
+    A verdict with an empty `compared_against` is invalid — value-fit
+    requires every verdict to name what it compared against (or "none").
+    ADD-approved candidates become `deliverable` items on a composition.
+fields: ktw-compose:/data-type/triage-candidate
+context:
+    propagation: local
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 4096

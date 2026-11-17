@@ -1,0 +1,34 @@
+# The decisions extension's framing of a chat on a decision, or on a
+# module (whose decisions it is): how a decision moves, and the decisions
+# service as tools.
+name: decisions
+description: How decisions are opened, decided, superseded or withdrawn, told to a chat on a decision or on a module.
+filter:
+  # a decision, or any module - its type's level capability
+  when: "type == 'decision' or 'module' in current.capabilities"
+agent:
+  system:
+    - id: decisions-how
+      title: Decisions
+      text: >-
+        A decision is a question about how module ${current.module} is or does
+        something, opened with the options on the table and decided by
+        choosing among them. Its state follows the decision workflow: open,
+        then applies once decided; superseded (final) when a newer decision
+        replaces it, retired (final) when it no longer holds and nothing
+        replaces it; an open question that no longer matters is dropped. A
+        challenge is a decision with a challenges edge to the object it
+        questions. A decision is the person's (product direction, cost, a
+        customer's commitment, an irreversible choice) unless it is opened as
+        an agent's (owner agent, saying why: technical, reversible, inside an
+        approved study); an agent decides only an agent's, giving its reasons,
+        and the person may reopen it. Who decides is recorded. Open a decision, propose options, resolve
+        and supersede with the decisions tools; never edit a decision's state.
+  tools:
+    - uri: ktw-methods:decisions/open
+    - uri: ktw-methods:decisions/propose-option
+    - uri: ktw-methods:decisions/resolve
+    - uri: ktw-methods:decisions/supersede
+    - uri: ktw-methods:decisions/list-open
+  skills:
+    - selector: decision-capture

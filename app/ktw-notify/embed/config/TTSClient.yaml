@@ -1,0 +1,5 @@
+# TTS (Text-to-Speech) engine configuration.
+# API key is stored in .env as ELEVEN_LABS_API_KEY — never in this file.
+
+model: eleven_flash_v2_5
+streaming: true

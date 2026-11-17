@@ -1,0 +1,12 @@
+name: found-in
+label: Found in
+inverse_label: Raised
+from: finding
+to: review
+cardinality: N:1
+description: |
+  The review that raised a finding. A finding is filed under the object
+  reviewed, not under its review, so it stays one object across the reviews
+  of its type; this edge keeps where it was first found. The review lists it
+  under Links as `raised`.
+inverse_name: raised

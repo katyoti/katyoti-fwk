@@ -1,0 +1,20 @@
+# What a chat on a sign-off item is told, given and offered — the extension's
+# framing beside the capability's own agent block.
+name: signoff-item
+description: How a sign-off item moves and what its gate asks, told to a chat on one.
+filter:
+  types: [signoff-item]
+agent:
+  system:
+    - id: signoff-item-workflow
+      title: This chat is on a sign-off item
+      order: 41
+      text: >-
+        ${current.id} is a sign-off item in state ${current.lifecycle.state}. It
+        moves draft, in-review, then approved once the gate signoff-complete
+        passes (its reviewers named, two approvals), or changes-requested; a
+        person closes it. Check the gate before proposing a move.
+  tools:
+    - uri: ktw-agents:gates/check
+  skills:
+    - selector: signoff-an-object

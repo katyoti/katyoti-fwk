@@ -1,0 +1,8 @@
+# One of CWM's own hook points, declared like any other: an extension opens
+# a point of its own by shipping a hook-type file beside its hooks.
+name: lint
+label: Lint
+description: >-
+  When an object or a module is linted (the verification service's Lint, lint()). Answers findings (rule, message, severity), never a verdict.
+timing: on-demand
+answer: findings

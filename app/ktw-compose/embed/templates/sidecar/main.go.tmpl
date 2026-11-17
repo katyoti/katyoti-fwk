@@ -1,0 +1,15 @@
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/katyoti/katyoti-fwk/app/{{name}}/cmd"
+)
+
+func main() {
+	if err := cmd.Execute(embeddedFS); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+}

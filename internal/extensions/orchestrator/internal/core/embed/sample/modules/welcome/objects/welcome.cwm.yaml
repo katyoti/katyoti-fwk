@@ -1,0 +1,9 @@
+# The module object: this folder declares itself a module.
+id: welcome
+type: documentation
+name: welcome
+description: >-
+  A module to explore: the sample project the guide's welcome tour attaches.
+capabilities:
+  module:
+    kind: platform

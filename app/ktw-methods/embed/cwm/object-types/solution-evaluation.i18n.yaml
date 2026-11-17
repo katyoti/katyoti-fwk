@@ -1,0 +1,15 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Évaluation de solution
+  label_plural: Évaluations de solution
+  description: >-
+    Une alternative notée sur une grille d'évaluation : une note par critère
+    avec sa justification et sa preuve, et le total pondéré calculé sur la
+    grille figée.
+  actions:
+    Compute: Calculer
+  pane:
+    badges:
+      fields.total:
+        label: total

@@ -1,0 +1,14 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: uml2-class
+displayName: UML — class diagram
+description: Classes, interfaces and packages with their relationships.
+notation: ktw-docs:/notation/uml2
+templates: ktw-docs:/drawio-template/uml2
+page: default
+elements:
+- Class
+- Interface
+- Package
+layout:
+  algorithm: layered
+  direction: DOWN

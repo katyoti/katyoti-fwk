@@ -1,0 +1,50 @@
+# Self-referential meta-meta: this file describes the shape of every
+# entry under embed/contribution-type/. The Contribution it produces
+# (URI: system:/contribution-type/contribution-type) is its own
+# contribution-type — the bootstrap chain bottoms out here. Its body
+# conforms to system:/data-type/contribution-type.
+#
+# Per contribution-meta-model.md §2: every concrete contribution-type
+# entry (data-type, service, skill, …) follows this shape. Validators
+# walking the type chain hit this self-reference and stop.
+#
+# A contribution-type is identity + summary only. The body SHAPE of a
+# kind lives in the matching data-type `system:/data-type/<name>` (one
+# per kind) — it is NOT repeated here as a `schema` field.
+name: contribution-type
+description: |
+  Defines a contribution kind — one entry in the open list of artifact
+  families every sidecar can advertise. Names the kebab discriminator
+  written into Contribution.Type plus a human-readable description; the
+  body schema is the matching `system:/data-type/<name>`.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/contribution-type
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  source: {mediaType: application/yaml}
+meta:
+  budget: 512  # measured max 263 B across 21 binaries (2026-09-21), x1.5 rounded up
+  # The picker fields are written once, in the data layer (the declaration).
+  from: data
+  fields: [name, description]
+
+# How a file becomes a kind declaration (contribution-types.md "How files
+# become layers"): a YAML file of the pack's contribution-types folder, its
+# tree the data, the file the source. The system set's own declarations are
+# read by the system loader (they come first: they say how everything else
+# is read).
+source:
+  folder: contribution-types
+  match: ["*.yaml", "*.yml"]
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

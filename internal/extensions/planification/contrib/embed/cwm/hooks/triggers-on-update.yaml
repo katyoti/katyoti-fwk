@@ -1,0 +1,10 @@
+# The triggers and rules see every change to a goal, a feature, a use case or a decision —
+# with what it was, so planning's own writes (a request filed on it, its plan)
+# are no change and never fire them.
+name: triggers-on-update
+description: >-
+  A goal, a feature, a use case or a decision changes or moves - the triggers and rules that apply to it raise a request.
+type: on_update
+uri: ktw-agents:triggers/fire
+filter:
+  types: [goal, feature, use-case, decision]

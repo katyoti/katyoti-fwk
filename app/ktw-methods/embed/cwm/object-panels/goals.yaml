@@ -1,0 +1,22 @@
+# Every goal of a module — wherever it sits under it, not only its direct
+# children. Its source is the goals service's board: the goals by state, each
+# with its state, the object it sits under, its reachability and what serves
+# it, a click opening it, Add creating one under the module. It stands for the
+# module's goal children tab (`replaces_children`): the goals show once.
+name: "Goals"
+description: "Every goal of this module: its state, where it sits, its reachability and what serves it"
+icon:
+  tabler: "target"
+  emoji: "🎯"
+order: 30
+filter:
+  capabilities: ["module"]
+  # Only a planned module shows it: a study or a dossier, not planned, does
+  # not; the project, code modules and
+  # system modules are not of type module and keep it.
+  when: "'module' not in current.capabilities or 'planned' in current.capabilities"
+replaces_children: ["goal"]
+source: "ktw-methods:goals/board"
+refresh:
+  scope: "module"
+  types: ["goal", "feature", "use-case"]

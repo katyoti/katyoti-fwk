@@ -1,0 +1,19 @@
+name: impact
+description: A large impact title on the left, the points that support it on the right.
+slots:
+  - name: default
+    description: The impact title — one level-1 or level-2 heading, a few words.
+    required: true
+  - name: right
+    description: The supporting points — a few blocks, each a level-3 heading then a short text.
+    required: true
+example: |
+  <!-- slide: layout=impact -->
+  ## One deck, any brand
+
+  ::right::
+  ### Written once
+  The story is markdown; the look is the theme's.
+
+  ### Presented anywhere
+  Full screen, a second screen, Teams, PDF.

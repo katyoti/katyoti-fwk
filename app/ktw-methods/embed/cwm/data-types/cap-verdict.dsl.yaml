@@ -1,0 +1,60 @@
+$schema: ktw-schema/v1
+name: cap-verdict
+version: "1.0.0"
+root: CapVerdict
+description: |
+  Field-group for the `verdict` capability — the RECORD OF A RUN against one
+  checkable criterion. It answers "what happened when this probe was last
+  run", and nothing else.
+
+  It is a separate object from the criterion on purpose, filed under it: the
+  criterion it is about is its parent, never a field. A criterion declares
+  what would have to be true and how to check it; whether it passed belongs to
+  the run that checked it (`acceptance-criterion` says exactly that). Writing
+  the verdict back onto the criterion would put an authored claim and a
+  measured fact in one file, where the next edit cannot tell them apart.
+
+  ONE VERDICT PER CRITERION, upserted: the id is derived from the criterion, so
+  re-running replaces the record instead of appending one per run. That is what
+  keeps a committed folder bounded (G2) — the history of runs is the journal's,
+  not the corpus's.
+types:
+  CapVerdict:
+    type: object
+    fields:
+      status:
+        type: string@enum(pass, fail, needs-harness, no-probe, harness-error)
+        label: Status
+        description: >-
+          Exactly what the run returned. pass / fail are verdicts — a criterion's command
+          probe runs in the project, its exit status the verdict. needs-harness means a
+          command left to the method harness — not a pass and not a failure of the probe.
+          no-probe means nothing was declared to run. harness-error means the check could
+          not run, which is never green. A status is only ever written by a run.
+      ran_at:
+        type: string@datetime
+        label: Run at
+        description: When the run that produced this status happened.
+        optional: true
+      probe:
+        type: string
+        label: Probe
+        description: The probe as it was at run time, so a later edit to the criterion is visible as a difference.
+        optional: true
+      kind:
+        type: string@enum(command, expression, manual, none)
+        label: Probe kind
+        description: How the probe was run.
+        optional: true
+      timeout:
+        type: string
+        label: Time limit
+        description: >-
+          The extended bound the probe ran on, when its criterion declared one (30m);
+          absent when it ran on the default bound.
+        optional: true
+      evidence:
+        type: string
+        label: Evidence
+        description: What the run reported — the expression's reading, the harness's message, the reason it could not run.
+        optional: true

@@ -1,0 +1,7 @@
+name: uuid
+kind: field-type
+basePrimitive: string
+description: UUID input / display. Renderer comes via gui-advanced.
+
+configSchema:
+  fields: {}

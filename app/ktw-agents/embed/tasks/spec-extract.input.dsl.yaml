@@ -1,0 +1,17 @@
+name: spec-extract-input
+root: SpecExtractInput
+types:
+  SpecExtractInput:
+    type: object
+    fields:
+      folder_path:
+        type: string
+        label: "Chemin du dossier"
+        description: "Le dossier de code ou de documentation à analyser"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Extraire"
+        groups:
+          - title: "Source"
+            fields: [folder_path]

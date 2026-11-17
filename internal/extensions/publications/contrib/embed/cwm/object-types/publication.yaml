@@ -1,0 +1,19 @@
+# What is published: a management view of planification
+# or a document-tree source object such as a study of any version, its target -
+# a publication connector or a view's converter - with its settings, and how
+# the last publication went. One version-neutral type: a study's publications
+# are children of the study, planification's live in sys-planification.
+name: publication
+label: Publication
+folder: .ktw/publications
+id_prefix: PB
+description: >-
+  A management view or a document-tree source (a study) published to a
+  target - a publication connector such as Confluence, or a view's converter -
+  and the outcome of its last publication.
+icon: world-upload
+capabilities: [publication]
+# « + Nouveau › Publication » under the object it publishes (a study): its
+# create page asks where it publishes - one contributed connector - and its
+# name, then opens it.
+create_task: ktw-agents:publishers/new-publication-page

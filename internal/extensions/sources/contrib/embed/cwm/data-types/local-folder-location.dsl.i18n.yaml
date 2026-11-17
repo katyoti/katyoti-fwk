@@ -1,0 +1,10 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    LocalFolderLocation:
+      fields:
+        path:
+          label: 'Dossier'
+          description: 'Le dossier à copier - absolu, ou relatif au projet.'

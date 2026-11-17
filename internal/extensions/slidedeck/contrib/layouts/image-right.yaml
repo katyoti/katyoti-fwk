@@ -1,0 +1,16 @@
+name: image-right
+description: A heading and text on the left, an image on the right half.
+slots:
+  - name: default
+    description: A level-2 heading, then the text.
+    required: true
+  - name: image
+    description: One image, as ![alt](path).
+    required: true
+example: |
+  <!-- slide: layout=image-right -->
+  ## The object pane
+  Every tab is a declared panel.
+
+  ::image::
+  ![object pane](assets/pane.png)

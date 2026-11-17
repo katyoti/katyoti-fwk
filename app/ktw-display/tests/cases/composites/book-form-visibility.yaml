@@ -1,0 +1,101 @@
+id: composites/book-form-visibility
+category: composites
+title: Composite — Book form with visibility
+description: Book entity with a ui-form extension exercising group-level AND field-level visibility. Group [Audit] is view-only (hidden in both create + update form modes); group [Slug] is update-only; field [slug] inside the [Slug] group is also update-only. Until Subtask 4 of gui-form wires /widget/form through buildUIForm(), the proto walker renders all fields regardless of visibility.
+schema:
+  name: reading-list-with-visibility
+  version: 1
+  root: Book
+  types:
+    Book:
+      type: object
+      label: Book
+      idField:
+        - id
+      titleField:
+        - title
+      fields:
+        id:
+          type: string
+          label: ID
+        title:
+          type: string
+          label: Title
+          description: Title of the book.
+        slug:
+          type: string
+          label: URL slug
+          description: Generated server-side on create; editable after.
+        cover_url:
+          type: string
+          label: Cover image URL
+          content:
+            type: url
+          optional: true
+        notes:
+          type: string
+          label: Notes
+          content:
+            type: markdown
+            maxLength: 500
+          optional: true
+        rating:
+          type: number
+          label: Rating
+          content:
+            type: rating
+            max: 5
+          default: 3
+        is_finished:
+          type: boolean
+          label: Finished?
+          default: false
+        created_at:
+          type: string
+          label: Created at
+          description: Audit timestamp — never editable.
+      extensions:
+        - type: ui-form
+          name: default
+          layout: groups
+          groups:
+            - title: Identity
+              description: Always-visible identity fields.
+              cols: 2
+              visibility:
+                - create
+                - update
+              fields:
+                - title
+                - rating
+                - is_finished
+                - notes
+            - title: Slug
+              description: Generated on create; only editable after.
+              cols: 1
+              visibility:
+                - update
+              fields:
+                - id: slug
+                  visibility:
+                    - update
+            - title: Cover
+              cols: 1
+              fields:
+                - cover_url
+            - title: Audit
+              description: View-only — never appears in create or update forms.
+              cols: 1
+              visibility:
+                - view
+              fields:
+                - id
+                - created_at
+value: {}
+mode: create
+tags:
+  - composites
+  - object
+  - multi-field
+  - ui-form
+  - visibility

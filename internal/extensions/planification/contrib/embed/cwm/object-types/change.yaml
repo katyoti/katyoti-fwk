@@ -1,0 +1,14 @@
+# One user-visible change in a release's change log: a child of the release it
+# ships in (so its version and its stream are the release's), numbered across
+# the releases. A session adds one (`changes add`) instead of editing a page;
+# the release's page is rendered from its entries (`changes render`).
+name: change
+label: Change
+folder: .ktw/changes
+id_prefix: CH
+description: >-
+  A user-visible change listed in a release's change log: its title, domain,
+  value, maturity, who it is for, its text and the requests it delivers.
+icon: list-check
+accept_parents: [release]
+capabilities: [change]

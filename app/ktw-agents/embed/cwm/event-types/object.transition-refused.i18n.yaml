@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Un passage d'état d'un objet a été refusé par sa garde (jamais une simulation). Une entrée on_transition_refused asynchrone s'y abonne.
+  label: Passage d'état refusé

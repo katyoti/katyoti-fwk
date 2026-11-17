@@ -1,0 +1,19 @@
+# full-access — wildcard allow profile.
+#
+# Pre-approves every tool call without prompting. Use ONLY when running
+# fully trusted automation in a sandbox environment (CI, scratch
+# container) where the agent can do anything with no user oversight.
+#
+# WARNING: this profile bypasses all interactive permission gates.
+# Tool-level CheckPermissions still runs (so a tool that returns Deny
+# is still denied), but Ask paths are silently auto-approved. There is
+# no permission fatigue here — by design — but there is also no last
+# line of defense.
+
+description: "Allow everything without prompting. Use with care in trusted environments only."
+
+allow_rules:
+  # Bare wildcard matches any tool, any input.
+  - "*"
+
+deny_rules: []

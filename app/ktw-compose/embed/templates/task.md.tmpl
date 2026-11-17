@@ -1,0 +1,20 @@
+---
+name: {{name}}
+type: {{type}}
+description: {{description}}
+# --- optional meta (uncomment + fill; see ktw-compose:/skill/task-format) ---
+# icon: "📋"                 # emoji for terminal / agent
+# iconName: clipboard-list   # Tabler icon name for the GUI
+# hashtags: [analysis]       # grouping tags
+# category: analysis         # primary grouping
+# tags: [quick-action]       # behavioral markers
+# --- optional targeting (when the task operates on a CWM object) ---
+# kind: object               # global (default) | object | collection
+# types: [composition]       # required unless global — the targeted object types
+# filter: object.lifecycle.state != 'done'   # optional el predicate over the object
+config:
+{{config}}
+# The input / output contracts are optional files beside this one, in the
+# ktw-schema DSL: <name>.input.dsl.yaml and <name>.output.dsl.yaml.
+---
+{{body}}

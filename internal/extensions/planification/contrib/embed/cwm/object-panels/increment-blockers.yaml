@@ -1,0 +1,19 @@
+# The increment pane's Blockers tab (its mock-up
+# modules/research/planification-resilience/blockers-mockup.html):
+# everything that locks the increment through its dependencies, grouped by
+# kind K1-K6 with who acts - `increments blockers <id>` drawn -, its count
+# (how many roots hold it) in red on the tab.
+name: "Blockers"
+description: "Everything that keeps it from ending, through its dependencies - grouped by kind, with who acts"
+icon:
+  tabler: "lock"
+order: 3
+filter:
+  types:
+    - "increment"
+source: "ktw-agents:increments/pane-page"
+count: "ktw-agents:increments/blocker-count"
+input:
+  tab: "blockers"
+refresh:
+  scope: "module"

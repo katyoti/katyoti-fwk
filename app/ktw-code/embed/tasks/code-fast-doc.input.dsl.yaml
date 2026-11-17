@@ -1,0 +1,13 @@
+name: code-fast-doc-input
+root: CodeFastDocInput
+types:
+  CodeFastDocInput:
+    type: object
+    fields:
+      target:
+        type: string
+        description: "Module name or code path to document (e.g. 'internal/extensions/task' or 'tasks')."
+      output:
+        type: string
+        description: "Optional output path for the Markdown file. Defaults to docs-out/<slug>.md."
+        optional: true

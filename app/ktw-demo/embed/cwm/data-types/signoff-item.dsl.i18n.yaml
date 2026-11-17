@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    SignoffItem:
+      fields:
+        area:
+          description: 'La partie du travail concernée par l''élément'
+          label: 'Domaine'
+        severity:
+          description: 'L''importance de l''élément'
+          label: 'Gravité'

@@ -1,0 +1,11 @@
+# Carried by an object whose move a named gate refused, while the planner
+# resolves the unmet requirements: the move, who asked for it and since when.
+# What was filed for each requirement — a request, an inbox validation — is
+# found by its edges (resolves, asked-in) filed since; the move is tried again
+# once none of them is open. Taken off when the wait ends.
+name: gate-wait
+label: Waiting on a gate
+description: >-
+  A move a gate refused, and the requests and validations filed to meet its
+  unmet requirements; the move is tried again once they end.
+schema: ktw-agents:/data-type/cap-gate-wait

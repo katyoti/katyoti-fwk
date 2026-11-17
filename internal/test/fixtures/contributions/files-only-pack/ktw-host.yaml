@@ -1,0 +1,15 @@
+# A files-only pack that declares a kind of its own and publishes one entry of
+# it. Served by the generic host (bin/ktw-host) with no code for the kind:
+#
+#   contribution-types/recipe.yaml   the kind's declaration  -> files-only-pack:/contribution-type/recipe
+#   data-types/recipe.yaml           the kind's schema (DSL) -> files-only-pack:/data-type/recipe
+#   recipes/pancakes.yaml            one entry of the kind   -> files-only-pack:/recipe/pancakes
+#
+# `contribution-types/` and `data-types/` are conventional folders; the kind's
+# entries need the `dirs:` line below, because a folder for a kind the host
+# cannot name has no convention to fall back on.
+name: files-only-pack
+version: 1.0.0
+description: a files-only pack declaring its own kind (e19 fixture)
+dirs:
+  recipe: recipes

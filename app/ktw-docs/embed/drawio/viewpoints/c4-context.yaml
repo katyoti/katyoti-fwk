@@ -1,0 +1,15 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: c4-context
+displayName: C4 — system context
+description: A software system, the people who use it and the systems it depends on.
+notation: ktw-docs:/notation/c4
+templates: ktw-docs:/drawio-template/c4
+page: default
+elements:
+- Person
+- ExternalPerson
+- SoftwareSystem
+- ExternalSoftwareSystem
+layout:
+  algorithm: layered
+  direction: DOWN

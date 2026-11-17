@@ -1,0 +1,24 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    fields:
+      subject:
+        type: string
+        description: "What was audited (the sidecar name or artifact path)."
+      kind:
+        type: string@enum(artifact, sidecar)
+        description: "The kind actually audited."
+      verdict:
+        type: string@enum(clean, findings)
+        description: "`clean` if no defects survived, else `findings`."
+      findings_count:
+        type: number
+        description: "Count of confirmed defects (excludes intentional preview:true / advertised:false)."
+      proposals_count:
+        type: number
+        description: "Count of ranked change proposals in the report."
+      report_path:
+        type: string
+        description: "Workspace-relative path to the written audit report."

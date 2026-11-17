@@ -1,0 +1,52 @@
+# A demo deck theme: what a corporate theme can declare, on a small scale —
+# token overrides, a font stack, the chrome every slide carries (logo, rules,
+# footer, slide number), a cover with its own background and a variant, a
+# section look, and two pictograms. A deck uses it with `theme: demo`.
+name: demo
+sample: sample.deck.md        # the theme preview: its layouts and variants
+description: Demo theme — navy and teal, a logo and rules on every slide, a gradient cover.
+aspect: "16:9"
+tokens:
+  fg: "#0f172a"
+  heading: "#0f172a"
+  accent: "#0d9488"
+  accent-soft: "#ccfbf1"
+  muted: "#475569"
+  icon: "#0d9488"
+  heading-font: "Georgia, 'Times New Roman', serif"
+  pad-y: 96px
+  pad-x: 68px
+  cover-rule-width: 0px
+  cover-transform: uppercase
+dark:
+  bg: "#0b1220"
+  fg: "#e2e8f0"
+  heading: "#f8fafc"
+  muted: "#94a3b8"
+chrome:
+  logo: {asset: logo.png, box: {x: 68, y: 18, w: 200, h: 50}}
+  rules:
+    - {y: 76, x1: 68, x2: 1212, width: 1, token: muted}
+    - {y: 650, x1: 68, x2: 1212, width: 1, token: muted}
+  footer: {template: "{title}", box: {x: 612, y: 660, w: 600, h: 40}, size: 14px, align: right}
+  slideNumber: {template: "{n} / {total}", box: {x: 68, y: 660, w: 200, h: 40}, size: 14px}
+layouts:
+  cover:
+    chrome: false
+    default:
+      background: bg/cover.png
+      tokens: {heading: "#ffffff", fg: "#ccfbf1", muted: "#ccfbf1"}
+    variants:
+      light:
+        background: "#f0fdfa"
+        tokens: {heading: "#0f172a", fg: "#0f172a", muted: "#475569"}
+        logo: {asset: logo.png, box: {x: 68, y: 620, w: 200, h: 50}}
+  section:
+    default:
+      tokens: {section-bar: 12px}
+icons:
+  rocket: {asset: icons/rocket.png, label: Rocket}
+  flower: {asset: icons/flower.png, label: Flower}
+guidance: |
+  Titles in sentence case; the cover title is set in capitals by the theme.
+  Put the presentation's name in the deck title — the footer shows it.

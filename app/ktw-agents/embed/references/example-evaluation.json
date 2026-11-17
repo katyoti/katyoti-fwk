@@ -1,0 +1,64 @@
+{
+  "evaluationVersion": "1.0",
+  "sessionId": "20260414_120000_hello-world",
+  "task": "hello-world",
+  "timestamp": "2026-04-14T12:01:30Z",
+  "goal": {
+    "source": "task_prompt",
+    "text": "Ask the user for their name and create a personalized greeting file"
+  },
+  "outcome": {
+    "status": "completed",
+    "summary": "Asked for name, received 'Alice', created greeting.md",
+    "goalAchieved": "yes",
+    "evidence": "greeting.md exists with personalized content for Alice"
+  },
+  "metrics": {
+    "totalTurns": 3,
+    "totalTokens": { "input": 4200, "output": 85 },
+    "totalDuration": "2.8s",
+    "agentCount": 1,
+    "errorCount": 0,
+    "toolCalls": {
+      "ask_user": { "count": 1, "totalMs": 5200, "errors": 0 },
+      "file_write": { "count": 1, "totalMs": 12, "errors": 0 },
+      "complete": { "count": 1, "totalMs": 1, "errors": 0 }
+    }
+  },
+  "agents": [
+    {
+      "runId": "run-abc123",
+      "task": "hello-world",
+      "mode": "root",
+      "turns": 3,
+      "tokens": { "input": 4200, "output": 85 },
+      "duration": "2.8s",
+      "evaluation": {
+        "tag": "good",
+        "comment": "Completed in 3 turns with minimal token usage. No retries, no wasted calls."
+      }
+    }
+  ],
+  "efficiency": {
+    "overall": {
+      "tag": "good",
+      "comment": "Simple task completed efficiently. 3 turns is optimal for ask → write → complete."
+    },
+    "tokenEfficiency": {
+      "tag": "good",
+      "comment": "4285 tokens for a 3-turn task is within budget. System prompt dominates (expected)."
+    },
+    "retryWaste": {
+      "tag": "good",
+      "comment": "No retries detected. No duplicate tool calls."
+    }
+  },
+  "budgets": {
+    "maxTurns": { "budget": 10, "actual": 3, "status": "within" },
+    "maxTokens": { "budget": 20000, "actual": 4285, "status": "within" },
+    "maxDuration": { "budget": "30s", "actual": "2.8s", "status": "within" }
+  },
+  "recommendations": [
+    "No improvements needed — this is a reference-quality simple run."
+  ]
+}

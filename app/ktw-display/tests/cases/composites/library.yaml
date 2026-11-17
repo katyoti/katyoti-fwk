@@ -1,0 +1,273 @@
+id: composites/library
+category: composites
+title: Composite — Library (gui-table)
+description: Array<Book> schema with 25 rows. ui-table extension declares column overrides + opts into the ui-filter extension (search on title + author_email). Sortable columns; client-side pagination at 10 rows/page. Row click → action postMessage.
+schema:
+  name: library-test
+  version: 1
+  root: BookList
+  types:
+    BookList:
+      type: array
+      label: Library
+      items: Book
+      extensions:
+        - type: ui-table
+          name: default
+          columns:
+            - id: id
+              label: ID
+              width: 110
+            - id: title
+              label: Title
+            - id: author_email
+              label: Author
+            - id: rating
+              label: Rating
+              align: center
+              width: 80
+            - id: progress_pct
+              label: Progress
+              align: right
+              width: 100
+            - id: is_finished
+              label: Finished
+              align: center
+              width: 100
+          filters: true
+          pagination: true
+          pageSize: 10
+          striped: true
+          highlightOnHover: true
+        - type: ui-filter
+          filters:
+            - title
+            - author_email
+    Book:
+      type: object
+      label: Book
+      idField:
+        - id
+      titleField:
+        - title
+      fields:
+        id:
+          type: string
+          label: ID
+        title:
+          type: string
+          label: Title
+        author_email:
+          type: string
+          label: Author email
+          content:
+            type: email
+        notes:
+          type: string
+          label: Notes
+          content:
+            type: markdown
+          optional: true
+        rating:
+          type: number
+          label: Rating
+          content:
+            type: rating
+            max: 5
+          default: 3
+        progress_pct:
+          type: number
+          label: Progress (%)
+          content:
+            type: slider
+            min: 0
+            max: 100
+          default: 0
+        is_finished:
+          type: boolean
+          label: Finished?
+          default: false
+value:
+  - id: book-001
+    title: The Pragmatic Programmer
+    author_email: thomas.hunt@example.com
+    rating: 1
+    progress_pct: 100
+    is_finished: true
+    notes: "Re-read book #1 every 5 years."
+  - id: book-002
+    title: Clean Code
+    author_email: martin.cleancode@example.com
+    rating: 3
+    progress_pct: 11
+    is_finished: false
+    notes: ""
+  - id: book-003
+    title: Designing Data-Intensive Applications
+    author_email: martin.kleppmann@example.com
+    rating: 5
+    progress_pct: 22
+    is_finished: false
+    notes: ""
+  - id: book-004
+    title: Domain-Driven Design
+    author_email: evans.dddesign@example.com
+    rating: 2
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+  - id: book-005
+    title: Refactoring
+    author_email: fowler.martinfowler@example.com
+    rating: 4
+    progress_pct: 44
+    is_finished: false
+    notes: ""
+  - id: book-006
+    title: Code Complete
+    author_email: mcconnell.codecomplete@example.com
+    rating: 1
+    progress_pct: 55
+    is_finished: false
+    notes: "Re-read book #6 every 5 years."
+  - id: book-007
+    title: The Mythical Man-Month
+    author_email: brooks.unc@example.com
+    rating: 3
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+  - id: book-008
+    title: Working Effectively with Legacy Code
+    author_email: feathers.legacycode@example.com
+    rating: 5
+    progress_pct: 77
+    is_finished: false
+    notes: ""
+  - id: book-009
+    title: Patterns of Enterprise Application Architecture
+    author_email: fowler.martinfowler@example.com
+    rating: 2
+    progress_pct: 88
+    is_finished: false
+    notes: ""
+  - id: book-010
+    title: Release It!
+    author_email: nygard.releaseit@example.com
+    rating: 4
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+  - id: book-011
+    title: Site Reliability Engineering
+    author_email: beyer.google@example.com
+    rating: 1
+    progress_pct: 10
+    is_finished: false
+    notes: "Re-read book #11 every 5 years."
+  - id: book-012
+    title: Accelerate
+    author_email: forsgren.accelerate@example.com
+    rating: 3
+    progress_pct: 21
+    is_finished: false
+    notes: ""
+  - id: book-013
+    title: The Phoenix Project
+    author_email: kim.gene@example.com
+    rating: 5
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+  - id: book-014
+    title: Continuous Delivery
+    author_email: humble.continuous@example.com
+    rating: 2
+    progress_pct: 43
+    is_finished: false
+    notes: ""
+  - id: book-015
+    title: The DevOps Handbook
+    author_email: kim.devops@example.com
+    rating: 4
+    progress_pct: 54
+    is_finished: false
+    notes: ""
+  - id: book-016
+    title: Building Microservices
+    author_email: newman.microservices@example.com
+    rating: 1
+    progress_pct: 100
+    is_finished: true
+    notes: "Re-read book #16 every 5 years."
+  - id: book-017
+    title: Hands-On Concurrency with Rust
+    author_email: mcnamara.rust@example.com
+    rating: 3
+    progress_pct: 76
+    is_finished: false
+    notes: ""
+  - id: book-018
+    title: Database Internals
+    author_email: petrov.databases@example.com
+    rating: 5
+    progress_pct: 87
+    is_finished: false
+    notes: ""
+  - id: book-019
+    title: High Performance Browser Networking
+    author_email: grigorik.web@example.com
+    rating: 2
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+  - id: book-020
+    title: Computer Networks
+    author_email: tanenbaum.cs@example.com
+    rating: 4
+    progress_pct: 9
+    is_finished: false
+    notes: ""
+  - id: book-021
+    title: "Operating Systems: Three Easy Pieces"
+    author_email: arpaci.cs@example.com
+    rating: 1
+    progress_pct: 20
+    is_finished: false
+    notes: "Re-read book #21 every 5 years."
+  - id: book-022
+    title: Algorithms to Live By
+    author_email: christian.algos@example.com
+    rating: 3
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+  - id: book-023
+    title: Structure and Interpretation of Computer Programs
+    author_email: abelson.mit@example.com
+    rating: 5
+    progress_pct: 42
+    is_finished: false
+    notes: ""
+  - id: book-024
+    title: Crafting Interpreters
+    author_email: nystrom.craftinginterpreters@example.com
+    rating: 2
+    progress_pct: 53
+    is_finished: false
+    notes: ""
+  - id: book-025
+    title: Programming Rust
+    author_email: blandy.oreilly@example.com
+    rating: 4
+    progress_pct: 100
+    is_finished: true
+    notes: ""
+mode: view
+tags:
+  - composites
+  - array-root
+  - ui-table
+  - ui-filter
+  - sortable
+  - paginated

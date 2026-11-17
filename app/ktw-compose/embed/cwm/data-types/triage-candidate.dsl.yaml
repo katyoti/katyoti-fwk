@@ -1,0 +1,49 @@
+$schema: ktw-schema/v1
+name: triage-candidate
+version: "1.0.0"
+root: TriageCandidate
+description: |
+  Body schema for CWM items of kind 'triage-candidate' — one incoming
+  asset under value-fit triage, with its verdict + evidence + route.
+types:
+  TriageCandidate:
+    type: object
+    fields:
+      asset:
+        type: string
+        label: Asset
+        description: The candidate — its name or source (a path, a title).
+      asset_kind:
+        type: string@enum(skill, task, document, explanation, pattern, snippet, other)
+        label: Asset kind
+        default: other
+        optional: true
+      verdict:
+        type: string@enum(add, enhance, included, superseded)
+        label: Verdict
+        description: The value-fit decision for this candidate.
+      compared_against:
+        type: string
+        label: Compared against
+        description: The existing catalog URI this was compared against, or "none — no existing artifact covers this". Required — a verdict without it is invalid.
+      probe:
+        type: string
+        label: Probe / delta
+        description: add — the testable value that becomes possible; enhance — the missing case (the delta to merge).
+        optional: true
+      route:
+        type: string
+        label: Route
+        description: Where this verdict goes (e.g. "composition deliverable", "extend ktw-docs:/skill/mermaid-syntax", "discard").
+        optional: true
+      nuance_harvested:
+        type: string
+        label: Nuance harvested
+        description: superseded only — the one nuance worth keeping from the candidate.
+        optional: true
+      status:
+        type: string@enum(proposed, approved, rejected, realized)
+        label: Status
+        default: proposed
+        description: User triage decision; realized = the add-deliverable was built.
+        optional: true

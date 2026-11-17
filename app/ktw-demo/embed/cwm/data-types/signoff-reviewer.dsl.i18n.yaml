@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ReviewerRow:
+      fields:
+        approved:
+          description: 'S''il a approuvé'
+          label: 'Approuvé'
+        name:
+          description: 'Le relecteur'
+          label: 'Relecteur'

@@ -1,0 +1,18 @@
+name: object-change-input
+root: ObjectChangeInput
+types:
+  ObjectChangeInput:
+    type: object
+    fields:
+      request:
+        type: string
+        label: "Que faut-il changer ?"
+        description: "La modification, en une phrase ou quelques lignes (ex. « ajoute une slide sur les risques », « raccourcis l'introduction »)"
+        content: markdown
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Modifier"
+        groups:
+          - title: "Modification"
+            fields: [request]

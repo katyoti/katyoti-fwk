@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": false,
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["bun"],
+    "paths": {
+      "@ktw/display-lib":                ["../ktw-display-lib/src/index.ts"],
+      "@ktw/display-lib/schema":         ["../ktw-display-lib/src/schema/index.ts"],
+      "@ktw/display-lib/types":          ["../ktw-display-lib/src/types/index.ts"],
+      "@ktw/display-lib/registry-wire":  ["../ktw-display-lib/src/registry-wire.ts"],
+      "@ktw/display-lib/ui-core/*":      ["../ktw-display-lib/src/ui-core/*"],
+      "@ktw/display-lib/ui-builders/*":  ["../ktw-display-lib/src/ui-builders/*"],
+      "@ktw/display-lib/utils/*":        ["../ktw-display-lib/src/utils/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "../ktw-display-lib/src/**/*"
+  ]
+}

@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Incrément
+  description: "L'incrément lui-même : sa livraison, sa priorité et sa mise en attente, son intention, sa proposition et ce dont il dépend"

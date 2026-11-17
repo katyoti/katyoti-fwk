@@ -1,0 +1,23 @@
+# REST API Endpoints Configuration
+#
+# Each endpoint is a named REST API that the LLM can call via the
+# rest-api-fetch tool. Headers support ${{env:KEY}} variable expansion.
+#
+# Usage: rest-api-fetch(endpoint="artificialanalysis-models")
+
+endpoints:
+  artificialanalysis-models:
+    url: https://artificialanalysis.ai/api/v2/data/llms/models
+    method: GET
+    headers:
+      x-api-key: "${{env:ARTIFICIAL_ANALYSIS_AI_API_KEY}}"
+    save_as: artificialanalysis-models.json
+    description: "Fetch LLM model benchmarks, pricing, and performance data from Artificial Analysis"
+    timeout_sec: 60
+
+  openrouter-models:
+    url: https://openrouter.ai/api/v1/models
+    method: GET
+    save_as: openrouter-models.json
+    description: "Fetch all available models from OpenRouter with pricing and context info"
+    timeout_sec: 30

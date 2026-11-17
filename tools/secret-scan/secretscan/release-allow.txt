@@ -1,0 +1,12 @@
+# The samples and messages shaped like a credential that KaTyoti's own
+# binaries carry from their libraries: a release scan lets them pass
+# (secretscan.ReleaseAllow). One "<glob> <kind>" per line, matched on the
+# file's path or its base name; each entry says where the string comes from.
+#
+# rclone's documentation (ktw-sync): a proxy URL carrying a user and password.
+ktw-sync* url-credential
+# rclone's documentation (ktw-sync): a key_pem example opening on a PEM
+# private-key header.
+ktw-sync* private-key
+# The NATS server (ktw-hub): « Account does not allow bearer tokens ».
+ktw-hub* bearer

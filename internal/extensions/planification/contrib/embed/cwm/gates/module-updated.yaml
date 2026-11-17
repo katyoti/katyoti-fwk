@@ -1,0 +1,19 @@
+# MODULE UPDATED — a request whose work changes a module (its template is
+# build, fix, maintain or feature-build) ends with its module saying what is
+# true: the want it serves set, an acceptance check added or changed to prove
+# the change, the change log naming it (or why no user sees it). One
+# requirement, answered by the request service — the same function the end of
+# the request's last step asks before its node moves; this gate, on the plan's
+# finish, holds any other end (a move by hand). Exempt: another template, a
+# request filed before the configured date (none: the gate is off), one a gate
+# filed, a split demand, a person's waiver. Only a person forces it.
+name: module-updated
+label: Module up to date
+description: >-
+  The want it serves is set, an acceptance check proves the change, and the
+  change log names it — or it is exempt.
+requirements:
+  - name: module-up-to-date
+    label: Its module is up to date
+    uri: "ktw-agents:requests/check-module-updated"
+    applies: {capabilities: [request]}

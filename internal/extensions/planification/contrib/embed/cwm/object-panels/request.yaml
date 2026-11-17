@@ -1,0 +1,25 @@
+# A request — on its own, or carried by any object with a plan (a goal, a
+# feature, a decision): where it stands and, when only a person can move it
+# on, what is expected in plain words with the actions that do it (run its
+# checks, try a failed step again, answer in the Inbox, drop it); its
+# deliverables — each check, whether it passed or who verified it by hand, a
+# "Verify by hand" on each one not verified —, a form revising them, its
+# details, its steps and its trail. Every card of the planning deck opens it.
+# Its source answers the page (generic nodes only); its actions are run by the
+# panel's host.
+name: "Request"
+description: "Where this request stands, what is expected and its deliverables, steps and trail"
+icon:
+  tabler: "send"
+  emoji: "📨"
+# First on a request (before Information, 1): an Inbox entry about it opens here.
+# 0 would mean "no order" (100): hence -1.
+order: -1
+filter:
+  capabilities:
+    - "plan"
+source: "ktw-agents:views/request"
+# Re-read when the request changes (a check run, a deliverable verified or
+# revised, a step reported).
+refresh:
+  scope: "self"

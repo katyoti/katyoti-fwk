@@ -1,0 +1,157 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    IncrementRow:
+      extensions:
+        default:
+          menu:
+            change-release:
+              label: 'Changer de version'
+            hold:
+              label: 'Suspendre'
+              prompt: 'Pourquoi attend-il ?'
+            priority:
+              label: 'Priorité'
+            resume:
+              label: 'Reprendre'
+            take-out:
+              confirm: 'Le retirer de sa version ?'
+              label: 'Retirer'
+        team:
+          menu:
+            change-release:
+              label: 'Changer de version'
+            hold:
+              label: 'Suspendre'
+              prompt: 'Pourquoi attend-il ?'
+            priority:
+              label: 'Priorité'
+            resume:
+              label: 'Reprendre'
+            take-out:
+              confirm: 'Le retirer de sa version ?'
+              label: 'Retirer'
+      fields:
+        description:
+          description: 'Ce qu''il livre - montré au survol de son titre'
+        held:
+          description: 'Pourquoi il est suspendu'
+        held_text:
+          description: 'suspendu - tant qu''il est suspendu'
+        id:
+          description: 'L''incrément'
+        needs_you:
+          description: 'Ses étapes qui attendent la personne'
+        needs_you_text:
+          description: 'à vous - tant qu''une de ses étapes attend la personne'
+        options:
+          description: 'Les versions vers lesquelles il peut aller : la prochaine le livre - une plus tardive le planifie'
+        planned_chip:
+          description: 'prévu - tant qu''il est prévu pour une version plus tardive'
+        planned_for:
+          description: 'La version plus tardive pour laquelle il est prévu'
+        priority:
+          description: 'P0 à P3'
+        progress:
+          description: 'Ses demandes : faites - en cours - en attente d''une personne - à faire - bloquées'
+        release:
+          description: 'La version dans laquelle il est livré ou pour laquelle il est prévu (1.006)'
+        place:
+          description: "Son id et la version de sa livraison sur une ligne (billing.IN-001 · 1.006) - la seconde ligne de la vue d'ensemble"
+        ships_in:
+          description: 'La version dans laquelle il est livré'
+        standing:
+          description: 'Où il en est : défini ou en cours ou en livraison ou suspendu ou fait ou livré ou abandonné'
+        title:
+          description: 'Son titre court'
+        waits:
+          description: 'La première chose qu''il attend'
+    ReleaseCard:
+      fields:
+        build:
+          description: 'Le build de sa dernière version candidate'
+        candidate:
+          description: 'Sa dernière version candidate (rc2)'
+        candidate_text:
+          description: 'Sa dernière version candidate et son build en une ligne (rc1 · build 1.006-rc1)'
+        date:
+          description: 'Sa date prévue (AAAA-MM-JJ)'
+        days_left:
+          description: 'Les jours restants jusqu''à sa date - négatifs une fois en retard'
+        done:
+          description: 'Les objectifs et fonctionnalités qu''elle livre qui sont faits'
+        gates:
+          description: 'Un point par porte - sa raison au survol'
+        id:
+          description: 'La version'
+        label:
+          description: 'Comment chaque vue la nomme (ReleaseLabel)'
+        next:
+          description: 'C''est la prochaine version de son flux'
+        planned:
+          description: 'Les incréments prévus pour elle'
+        planned_text:
+          description: 'Ce qui est prévu pour elle (+6 prévus) - dessiné dans le ton prévu'
+        stage:
+          description: 'planifiée ou gelée ou candidate ou publiée ou abandonnée'
+        stream:
+          description: 'Son flux'
+        summary:
+          description: 'Sa date et ce qu''elle livre de fait sur le total en une ligne (2026-10-31 · 5/8 faits)'
+        total:
+          description: 'Les objectifs et fonctionnalités qu''elle livre'
+        version:
+          description: 'Sa version'
+    ReleaseRows:
+      extensions:
+        default:
+          groups:
+            planned:
+              title: 'Prévus pour cette version'
+            ships:
+              title: 'Livrés dans cette version'
+        header:
+          slots:
+            actions:
+              deliver:
+                prompt: 'Son build (facultatif)'
+              drop:
+                confirm: 'L''abandonner ? Ses incréments retournent au backlog.'
+                label: 'Abandonner'
+              reschedule:
+                label: 'Replanifier'
+                prompt: 'Sa nouvelle date (AAAA-MM-JJ)'
+              unfreeze:
+                confirm: 'La dégeler pour changer ce qu''elle livre ?'
+                label: 'Dégeler'
+      fields:
+        can_drop:
+          description: 'Elle peut être abandonnée : elle reste à livrer'
+        can_reschedule:
+          description: 'Sa date peut être déplacée : elle reste à livrer'
+        can_unfreeze:
+          description: 'Elle peut être dégelée : gelée sans version candidate'
+        due:
+          description: 'Sa date et les jours restants (échéance 2026-10-31 · 13 jours restants)'
+        eyebrow:
+          description: 'Son flux et son id - et si c''est la prochaine version de son flux (Acme · RL-1 · la prochaine version du flux)'
+        gates:
+          description: 'Chaque porte nommée en ligne avec son point (Incréments faits (3 ouverts))'
+        next_action:
+          description: 'Ce qu''une personne fait ensuite sur elle'
+        next_label:
+          description: 'Sa prochaine étape en mots (Terminer 3 incréments, puis la geler - Livrer une version candidate - Promouvoir rc1)'
+        next_step:
+          description: 'Sa prochaine étape : freeze ou deliver ou letter ou signoff ou promote - vide une fois publiée ou abandonnée'
+        planned:
+          description: 'Les incréments prévus pour elle - ils y sont livrés dès qu''elle est la prochaine version de son flux'
+        ship_planned:
+          description: 'Livrer les incréments prévus est proposé : c''est la prochaine version de son flux et certains sont prévus pour elle'
+        ships:
+          description: 'Les incréments qui y sont livrés - par priorité'
+        stepper:
+          description: 'Ses étapes - planifiée gelée candidate publiée - l''actuelle marquée'
+        title:
+          description: 'Son flux et comment chaque vue la nomme (KaTyoti 1.006 · Une usine logicielle pilotée depuis le PC)'

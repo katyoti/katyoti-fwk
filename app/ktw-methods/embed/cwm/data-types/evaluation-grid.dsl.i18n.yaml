@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    EvaluationGrid:
+      fields:
+        criteria:
+          label: 'Critères'
+          description: "Ce sur quoi une alternative est jugée."
+        scale:
+          label: 'Échelle'
+          description: 'Comment un critère est noté - de 0 à 5 si vide.'

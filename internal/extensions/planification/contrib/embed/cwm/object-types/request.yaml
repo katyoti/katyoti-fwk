@@ -1,0 +1,22 @@
+# Work asked for on its own — a fix, a decision to take — rather than on a goal
+# or a feature (on which a request is filed instead). A person or an agent
+# files it in one line; filing plans it: its work template's to-dos, the intake
+# first, in its module's queue, worked by whoever pulls them. Where it stands is
+# its plan capability's state (idle, ready, running, blocked, split, done,
+# dropped): it has no lifecycle of its own. It lives in the PLANNING SPACE of the
+# module it targets (committed), and in sys-planification until intake routes
+# it there; work spanning modules is split into parts.
+name: request
+label: Request
+folder: .ktw/requests
+id_prefix: RQ
+description: >-
+  Work asked for in one line — by whom, what it must deliver, its budget, what
+  it waits on — planned at once, its steps worked from its module's queue to done.
+icon: send
+capabilities: [request, network-node]
+
+# Offered in a module's « + » only when the module is planned: a study or a dossier, not planned, offers none - the
+# rule the planning panels follow. `type` and
+# `current` are the parent.
+accept_when: "'module' not in current.capabilities or 'planned' in current.capabilities"

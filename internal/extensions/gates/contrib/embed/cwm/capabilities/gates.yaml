@@ -1,0 +1,19 @@
+# The gates extension's: where an object keeps the confirmations of the person
+# requirements of its named gates, written only by the gates service — and
+# gate(name), a guard's question: `gate('ready-to-build').passes`.
+name: gates
+label: Gate confirmations
+icon: checklist
+description: >-
+  Who confirmed which requirement of a named gate on this object, and when —
+  keyed <gate>/<requirement> — and, under `revoked`, the confirmations a
+  person withdrew. Written by a person's confirmation or withdrawal, read by
+  the gate's check. Adds gate(name) to expressions: the object's checklist for a
+  named gate (gate, label, items, passes).
+functions:
+  - name: gate
+    description: The object's checklist for the named gate — each requirement met, unmet or unproven, why and how it is resolved; passes when all are met.
+    action: :gates/gate-function
+    args: [name]
+    returns: object
+    timeout: 30s

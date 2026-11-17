@@ -1,0 +1,20 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Décision
+  description: >-
+    Une question posée, tranchée puis en vigueur, jusqu'à ce qu'une décision
+    ultérieure la remplace ou qu'elle soit retirée ; une question ouverte peut
+    être abandonnée sans choix. Remplacée, retirée et abandonnée sont finales.
+  states:
+    open: Ouverte
+    applies: En vigueur
+    superseded: Remplacée
+    retired: Retirée
+    dropped: Abandonnée
+  transitions:
+    decide: Trancher
+    reopen: Rouvrir
+    supersede: Remplacer
+    retire: Retirer
+    drop: Abandonner

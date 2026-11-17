@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Le cycle de vie d'un objet est passé à un autre état. Une entrée on_transitioned asynchrone s'y abonne.
+  label: Objet passé d'un état à un autre

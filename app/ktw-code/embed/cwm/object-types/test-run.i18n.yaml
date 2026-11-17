@@ -1,0 +1,10 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Exécution de tests
+  description: >-
+    La trace immuable d'une invocation de `module verify` : quand elle a
+    tourné, quelles couches, le verdict par cas d'usage, les totaux, et si
+    les critères de promotion de niveau sont atteints. Ajout seul : une
+    nouvelle exécution crée une nouvelle trace. Lue par la table des cas
+    d'usage de la charte, les compteurs du manifeste et la porte de promotion.

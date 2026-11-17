@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Journal de visa
+  description: >-
+    Une ligne par écriture du visa de l'objet, ajoutée par son hook
+    on_update, gardée dans un fichier à côté de l'objet.

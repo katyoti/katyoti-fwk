@@ -1,0 +1,17 @@
+name: depends-on
+from: network-node
+to: network-node
+cardinality: M:N
+from_capabilities: [network-node]
+to_capabilities: [network-node]
+target: object
+object_storage: edges
+description: |
+  A network node — a request, a step, or a goal, feature or use case carrying a
+  request — WAITS ON another. A request may not
+  become ready, nor a step be reached, while a node it waits on is not done
+  (the pack's on_transition hooks refuse it); its steps wait
+  until none of them is open. The planification service
+  refuses an edge that would close a cycle; a file race found by planning is
+  recorded as this edge too.
+inverse_name: blocks

@@ -1,0 +1,34 @@
+# Something put up for sign-off — ktw-demo's object type. It composes the sign-off
+# capability (and writes its section: two approvals), moves through the sign-off
+# workflow, and declares how its Information tab looks (pane.view) and its own
+# header chip (pane.badges).
+name: signoff-item
+label: Sign-off item
+description: >-
+  A piece of work put up for sign-off: two reviewers approve it before it is
+  approved; other items may contest it.
+icon: eye-check
+folder: signoffs
+capabilities: [signoff, lifecycle]
+fields: :/data-type/signoff-item
+workflow: signoff
+body:
+  label: What is signed off
+  description: The work put up for sign-off, in prose.
+  format: markdown
+# The sign-off capability's section on this type (checked against type-signoff).
+signoff:
+  required_reviewers: 2
+# The object pane's section on this type: the Information view and a chip.
+pane:
+  badges:
+    - field: fields.severity
+      label: severity
+      icon: alert-triangle
+      colors:
+        high: red
+        medium: orange
+        low: gray
+  view:
+    kind: markdown
+    data: "**Severity**: ${object.fields.severity} · **Area**: ${object.fields.area}\n\n**Sign-off**: ${object.signoff.verdict}"

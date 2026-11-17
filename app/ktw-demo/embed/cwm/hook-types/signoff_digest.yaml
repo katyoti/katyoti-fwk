@@ -1,0 +1,10 @@
+# A point of the pack's own, run on demand (ObjectRunHooks with point
+# signoff_digest): each object's sign-off in one finding. The sign-off capability
+# declares what answers it.
+name: signoff_digest
+label: Sign-off digest
+description: >-
+  When the sign-offs of an object, a subtree or a module are summed up. Answers
+  findings: the sign-off of each object in one line.
+timing: on-demand
+answer: findings

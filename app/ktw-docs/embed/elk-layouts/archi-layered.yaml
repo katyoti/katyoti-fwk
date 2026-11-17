@@ -1,0 +1,21 @@
+name: archi-layered
+description: |
+  Canonical architecture-diagram layout — layered left-to-right with
+  zone partitioning (swimlanes), NETWORK_SIMPLEX node placement, and
+  orthogonal edge routing. Functionally identical to layered-right;
+  named for discoverability by architecture-focused viewpoints and LLMs
+  (LLM authoring an application-landscape or ArchiMate diagram should
+  ask for this preset by name).
+
+  The visual pattern of an application landscape: horizontal bands of
+  nodes grouped by data-flow phase (zones), with apps spread
+  left-to-right inside each band by upstream→downstream order.
+layoutOptions:
+  elk.algorithm: layered
+  elk.direction: RIGHT
+  elk.spacing.nodeNode: "80"
+  elk.layered.spacing.nodeNodeBetweenLayers: "120"
+  org.eclipse.elk.partitioning.activate: "true"
+  elk.layered.crossingMinimization.strategy: LAYER_SWEEP
+  elk.edgeRouting: ORTHOGONAL
+  elk.layered.nodePlacement.strategy: NETWORK_SIMPLEX

@@ -1,0 +1,183 @@
+{
+  "documentView": {
+    "toc": "Sommaire",
+    "noDocument": "Aucun document.",
+    "noEngine": "Aucun moteur d’affichage pour {{mediaType}}.",
+    "remoteUpdateHint": "Une nouvelle version est arrivée pendant la modification. Enregistrer l’écrasera. Annulez puis rouvrez pour voir la nouvelle version.",
+    "remoteUpdate": "mise à jour distante",
+    "cancelEdit": "Annuler la modification (abandonner les changements)",
+    "edit": "Modifier",
+    "streaming": "réception en cours…",
+    "complete": "✓ Terminé",
+    "sizeKb": "{{size}} Ko",
+    "exportFailed": "échec de l’export",
+    "exporting": "Export {{format}}…",
+    "export": "Exporter",
+    "exportDocument": "Exporter le document",
+    "exportAs": "Exporter en",
+    "closeExport": "Fermer l’export",
+    "saved": "Enregistré !",
+    "saveToFile": "Enregistrer dans un fichier",
+    "saveDocument": "Enregistrer le document"
+  },
+  "saveToWorkspace": {
+    "hint": "Le garder dans l’espace de travail : ses panneaux, ses actions, son historique",
+    "title": "Enregistrer dans l’espace de travail",
+    "name": "Nom",
+    "where": "Où",
+    "whereHint": "Sous un élément (tapez pour le trouver), ou dans les brouillons",
+    "drafts": "Brouillons — à déplacer plus tard",
+    "typeTwoLetters": "Tapez deux lettres pour trouver un élément",
+    "noObjectFound": "Aucun élément trouvé",
+    "deckNote": "Une présentation : ses réglages deviennent ses champs Deck, ses diapositives son contenu.",
+    "markdownNote": "Un document : le markdown devient son contenu."
+  },
+  "download": {
+    "document": "Document",
+    "unknownType": "format inconnu",
+    "noViewer": "Aucune visionneuse pour ce format — enregistrez-le pour l’ouvrir avec une autre application."
+  },
+  "uiComponents": {
+    "noComponent": "Ce document ui-component n’a aucun composant à afficher.",
+    "unknownExtension": "Extension d’interface inconnue « {{name}} »."
+  },
+  "mermaid": {
+    "pending": "Diagramme — dessiné une fois complet…",
+    "error": "Mermaid : {{error}}"
+  },
+  "errorBoundary": {
+    "title": "⚠ Erreur d’affichage",
+    "dismiss": "Fermer"
+  },
+  "welcome": {
+    "close": "fermer"
+  },
+  "dynamicForm": {
+    "cancel": "Annuler",
+    "submit": "Valider",
+    "unknownElement": "Élément d’interface inconnu : {{type}}"
+  },
+  "fieldRenderer": {
+    "edit": "Modifier",
+    "preview": "Aperçu",
+    "nothingToPreview": "Rien à prévisualiser",
+    "time": "Heure"
+  },
+  "deckSettings": {
+    "default": "(par défaut)",
+    "noVariant": "Le thème {{theme}} n’a pas de variante de {{layout}}",
+    "backgroundHint": "Une couleur de la palette {{theme}}, ou le chemin d’une image",
+    "deck": "Présentation",
+    "slide": "Diapositive",
+    "slideN": "Diapositive {{n}}",
+    "missingSlots": "La mise en page {{layout}} attend {{slots}} : la diapositive n’en a pas. Écrivez-le, ou choisissez une autre mise en page."
+  },
+  "deckTheme": {
+    "unreadable": "Ce thème ne peut pas être lu",
+    "noSample": "Ce thème n’a pas de présentation d’exemple à prévisualiser.",
+    "title": "Thème « {{name}} »",
+    "usage": "Une présentation l’utilise en écrivant {{code}}. Les variantes, l’habillage et les icônes restent tels qu’importés.",
+    "description": "Description",
+    "colours": "Couleurs",
+    "fonts": "Polices et tailles",
+    "notSaved": "Non enregistré",
+    "undo": "Annuler",
+    "save": "Enregistrer",
+    "tokens": {
+      "bg": "Fond",
+      "fg": "Texte",
+      "heading": "Titres",
+      "muted": "Légendes",
+      "accent": "Accent",
+      "accent-2": "Second accent (chiffres clés)",
+      "surface": "Surfaces (cartes)",
+      "border": "Bordures",
+      "icon": "Pictogrammes",
+      "heading-font": "Police des titres",
+      "font": "Police du texte",
+      "size": "Taille du texte",
+      "h1": "Taille du titre de couverture",
+      "h2": "Taille du titre de diapositive"
+    }
+  },
+  "uiDeck": {
+    "editHint": "Modifier les réglages de la présentation et de la diapositive affichée (mise en page, variante, thème, format…)",
+    "edit": "✎ Modifier",
+    "presentHint": "Ouvrir la présentation dans une fenêtre du navigateur — pour un second écran, la vue présentateur (S) ou un partage dans Teams",
+    "present": "⧉ Présenter dans une fenêtre",
+    "opening": "{{icon}} Ouverture…",
+    "exportHint": "Exporter la présentation : PDF, PowerPoint, ou une page HTML qui se présente hors ligne",
+    "pptxProgress_one": "⇩ PowerPoint… {{seconds}} s / {{count}} diapositive",
+    "pptxProgress_other": "⇩ PowerPoint… {{seconds}} s / {{count}} diapositives",
+    "export": "⇩ Exporter ▾",
+    "exportPdf": "⎙ PDF — la boîte d’impression de votre navigateur (une page par diapositive et par étape)",
+    "exportPptx": "PowerPoint — diapositives modifiables dans le thème, avec les notes du présentateur",
+    "exportPptxPictures": "PowerPoint (images) — une image par diapositive, exactement comme affichée",
+    "exportHtml": "Page HTML — se présente hors ligne d’un double-clic, à envoyer par e-mail",
+    "assetsMissing": "Introuvable à côté de la présentation : {{files}}",
+    "titleReadOnly": "Le nom de l’élément : modifiez-le dans l’onglet Identité",
+    "openedPdf": "Ouvert dans votre navigateur : sa boîte d’impression y apparaît — choisissez Enregistrer au format PDF",
+    "openedWindow": "Ouvert dans votre navigateur — S pour la vue présentateur",
+    "pptxSaved": "PowerPoint enregistré : {{path}}",
+    "htmlSaved": "Page enregistrée : {{path}} — ouvrez-la d’un double-clic pour présenter"
+  },
+  "drawio": {
+    "loadFailed": "Impossible de charger l’éditeur drawio",
+    "loading": "Chargement de l’éditeur drawio…",
+    "title": "Éditeur drawio"
+  },
+  "liveObject": {
+    "start": "Démarrer",
+    "running": "En cours…",
+    "done": "terminé"
+  },
+  "graphFlow": {
+    "empty": "Rien à afficher."
+  },
+  "displayPanel": {
+    "untitled": "Panneau",
+    "tab": "Panneau",
+    "state": {
+      "open": "en cours",
+      "asking": "attend votre réponse",
+      "complete": "terminé",
+      "closed": "fermé"
+    },
+    "meta": {
+      "type": "modèle {{type}}",
+      "owner": "propriétaire {{owner}}",
+      "seq": "seq {{seq}}"
+    },
+    "lost": "Déconnecté. La tâche continue ; ce panneau montre son dernier état connu (seq {{seq}}).",
+    "progress": "{{current}} / {{total}}",
+    "ask": {
+      "send": "Envoyer ma réponse",
+      "placeholder": "Votre réponse…",
+      "note": "La tâche attend cette réponse : elle peut attendre des jours.",
+      "yours": "Votre réponse :",
+      "formSent": "le formulaire envoyé"
+    },
+    "chat": {
+      "placeholder": "Écrire à l'agent…",
+      "send": "Envoyer"
+    },
+    "done": {
+      "ok": "✓ Terminé",
+      "failed": "Échec",
+      "cancelled": "Annulé",
+      "okSaid": "✓ {{message}}"
+    },
+    "cancel": "Annuler",
+    "openTab": "Ouvrir dans un onglet",
+    "chip": {
+      "running": "en cours",
+      "asking": "attend une réponse",
+      "complete": "terminé"
+    },
+    "list": {
+      "aria": "Panneaux ouverts",
+      "empty": "Aucun panneau ouvert.",
+      "none": "Choisissez un panneau dans la liste."
+    }
+  }
+}

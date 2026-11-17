@@ -1,0 +1,12 @@
+# A use case changed: its criteria are run again — when it has something to
+# run (a probe of its own, or criteria under it); a note alone is no change.
+name: use-case-changed
+description: A use case changed - run its acceptance criteria again.
+on: change
+types: [use-case]
+holds: true
+check: "(object.checkable?.kind ?? 'none') != 'none' || len(children) > 0"
+file:
+  kind: review
+  title: Run the criteria of the changed use case again
+  details: The use case changed. Check its acceptance criteria still match it, run them, and say which pass.

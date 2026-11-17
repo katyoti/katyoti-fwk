@@ -1,0 +1,10 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Groupe
+  description: >-
+    UN CONTENEUR ET RIEN D'AUTRE. Il tient d'autres objets et donne à l'arbre
+    un endroit où se replier — sans besoin, sans critère ni verdict propre, et
+    sans capacité. Un pur conteneur se note par agrégation de ses enfants :
+    personne n'a à écrire un besoin vide de sens. Il se dessine comme une
+    racine : un groupe peut être en tête d'un projet ou dans un autre groupe.

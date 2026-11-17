@@ -1,0 +1,12 @@
+# A stored answer: a person's or an agent's answer to a human
+# task, kept under the object it is about (sys-inbox when it is about none or
+# a system object), committed with it - so a proven answer outlives the
+# scheduler's done to-dos and the journal's retention.
+name: answer
+label: Answer
+folder: answers
+description: >-
+  An answer to a question asked of a person: what was asked, what was
+  answered, by whom and with what proof.
+icon: message-check
+fields: :/data-type/answer

@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Ce qu''une source d''information alimente : un module, une étude, une solution. L''onglet Liens de chacun montre les sources dont il s''informe.'
+  inverse_label: 'Alimenté par'
+  label: 'Alimente'

@@ -1,0 +1,8 @@
+Add the new binary to the build by appending its name to the APPS list in
+the repo Makefile (one variable drives every target):
+
+    APPS := ... {{name}}
+
+Then build it:
+
+    go build -o bin/{{name}}.exe ./app/{{name}}

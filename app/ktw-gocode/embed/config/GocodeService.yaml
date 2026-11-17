@@ -1,0 +1,4 @@
+# Default GocodeService configuration. Workspaces override via
+# <HomeDir>/config/GocodeService.yaml.
+default_tier_target: 1
+audit_perspectives: []

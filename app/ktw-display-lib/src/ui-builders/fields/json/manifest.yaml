@@ -1,0 +1,12 @@
+name: json
+kind: renderer
+basePrimitive: string
+description: Pretty-printed / editable JSON. Renderer comes via gui-rich-text.
+
+configSchema:
+  fields:
+    indent:
+      type: number
+      optional: true
+      default: 2
+      description: Indent level (spaces).

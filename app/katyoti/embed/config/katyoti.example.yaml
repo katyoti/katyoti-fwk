@@ -1,0 +1,19 @@
+# Example katyoti marketplace SEED.
+#
+# Place a "<binary-name>.yaml" file BESIDE the executable to pre-point a
+# distribution at one or more marketplaces (name-agnostic: rename the exe to
+# `katyoti-acme` and it reads `katyoti-acme.yaml`). This file is a read-only
+# default; user CRUD writes the overlay at <GlobalHomeDir>/marketplaces.yaml,
+# and the effective list is seed ∪ user.
+version: 1
+marketplaces:
+  - name: official
+    url: https://example.invalid/katyoti-marketplace.yaml
+    enabled: true
+    # A public/official (or team) marketplace pins its publisher's key so the
+    # catalog signature is verified before every install (fail-closed). Ship
+    # trust + pubKey (the minisign base64 key line) right here in the seed, so a
+    # fresh install trusts the core pack with no manual key step. Uncomment and
+    # set a real key. See modules/katyoti/team-marketplace.md.
+    #   trust: pinned
+    #   pubKey: "RWQ...the-official-public-key-line..."

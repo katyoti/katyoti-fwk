@@ -1,0 +1,29 @@
+# A general presentation of a subject.
+name: overview
+label: Présentation générale
+description: Explain a subject — what it is, why it matters, how it works, where it stands and what comes next.
+purpose: overview
+sections:
+  - id: what
+    title: De quoi s'agit-il
+    intent: The subject in two sentences.
+    sources:
+      - {from: object, note: "its name, description and body"}
+    required: true
+    weight: 1
+  - id: why
+    title: Pourquoi
+    intent: The stake — what it changes and for whom.
+    weight: 2
+  - id: how
+    title: Comment
+    intent: How it works, with its diagram.
+    sources:
+      - {from: files, value: "**/*.drawio", note: "a diagram of it — shown, not described"}
+    weight: 3
+  - id: status
+    title: Où en est-on
+    intent: Where it stands today.
+    weight: 1
+  - id: next
+    include: next-steps

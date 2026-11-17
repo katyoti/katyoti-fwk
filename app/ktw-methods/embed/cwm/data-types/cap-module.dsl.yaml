@@ -1,0 +1,45 @@
+$schema: ktw-schema/v1
+name: cap-module
+version: "2.0.0"
+root: CapModule
+description: |
+  Field-group for the `module` capability — a module's own scalar attributes.
+  This is what used to be `node.TypeSpecific` on a module node. A module's code
+  (its kind, packages and tiers) is the `code` capability's (ktw-code
+  cap-code): a documentation module or a study carries none.
+
+  Declared 2026-09-18 after a consistency sweep found live objects writing this
+  group with no schema behind it — the same gap `severity` had. Undeclared
+  groups are invisible to validation, so they drift until something reads them
+  and finds the wrong shape.
+types:
+  CapModule:
+    type: object
+    fields:
+      decisions:
+        type: string | string[]
+        label: Open decisions
+        description: >-
+          The module's open decisions: their ids (one or a list), or `none` when
+          the module has none today. Silence (the field absent) and `none` stay
+          distinguishable: absent means nobody has said, `none` means someone
+          looked and found no open decision.
+        optional: true
+      linked_goals:
+        type: string[]
+        label: Linked goals
+        optional: true
+      owns_capabilities:
+        type: string[]
+        label: Owns capabilities
+        description: >-
+          The capability ids this module OWNS — its doctrine, its use-cases, its
+          open decisions. Declared as a FIELD rather than derived from the module
+          name: the rule `<parent>-<capability>` is mechanical and would make a
+          NAME A KEY, which this model has rejected for object identity, for a
+          module's parent and for a folder name. The naming convention survives
+          as a `qol` check.
+
+          A capability's DECLARATION still lives with the sidecar that ships it;
+          this says which module carries its doctrine.
+        optional: true

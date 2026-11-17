@@ -1,0 +1,202 @@
+// SPDX-License-Identifier: Apache-2.0
+
+package core
+
+import (
+	"fmt"
+	"os"
+	"path/filepath"
+	"runtime"
+	"strings"
+
+	"github.com/katyoti/katyoti-fwk/internal/extensions/scenario/api"
+	"github.com/katyoti/katyoti-fwk/internal/extensions/scenario/sandbox"
+)
+
+// THE GUI LAUNCHER — a file in the case's runtime folder a person double-clicks
+// to look at the case in ktw-gui, in exactly the conditions the scenario runs
+// it: the case's universe started by `scenario start` (which enters the case's
+// sandbox itself: its own hub and members from the case's bin folder), then
+// the GUI opened in the same sandbox — its global root and cache are the
+// case's (the sandbox's World), it starts from the case's folder, and it finds
+// the running hub and connects to it. It shows the case's universe and the
+// sandbox's admin only, with the same binaries, config and data; the
+// installation of the person who opens it is neither shown nor touched. The
+// GUI gets no KTW_DATA or KTW_WORKSPACE: it holds several universes, each with
+// its own.
+
+// LauncherName is the launcher's file name for this platform.
+func LauncherName() string {
+	if runtime.GOOS == "windows" {
+		return "open-gui.cmd"
+	}
+	return "open-gui.sh"
+}
+
+// WriteLauncher writes the case's GUI launcher and answers its path. casesDir
+// is the folder holding the case folders (the launcher passes it back to
+// `scenario start`).
+func (e *Engine) WriteLauncher(casesDir string) (string, error) {
+	return e.WriteLauncherOpen(casesDir, "")
+}
+
+// WriteLauncherOpen is WriteLauncher with the GUI started on an element's
+// address (`scenario gui <case> --open <address>`): the case's universe when
+// the address names none; an address the GUI could not open is refused.
+func (e *Engine) WriteLauncherOpen(casesDir, open string) (string, error) {
+	if open != "" {
+		open = api.WithUniverse(open, e.Case.UniverseName())
+		if _, err := api.ParseAddress(open); err != nil {
+			return "", fmt.Errorf("--open: %w", err)
+		}
+	}
+	compose, err := os.Executable()
+	if err != nil {
+		return "", fmt.Errorf("the scenario command's own path: %w", err)
+	}
+	cases, err := filepath.Abs(casesDir)
+	if err != nil {
+		return "", err
+	}
+	l := launcher{
+		Case: e.Case.Name, Universe: e.Case.UniverseName(), Compose: compose, Cases: cases,
+		Root: filepath.Dir(e.RT.Dir), Bin: e.RT.Bin(), Workspace: e.RT.Universe(), Data: e.RT.Data(),
+		Project: e.RT.Project(), GUI: e.guiBinary(), Dir: e.RT.Dir, World: e.Sandbox().World(),
+		Open: open,
+	}
+	path := filepath.Join(e.RT.Dir, LauncherName())
+	body, mode := l.cmd(), os.FileMode(0o644)
+	if runtime.GOOS != "windows" {
+		body, mode = l.sh(), 0o755
+	}
+	if err := os.MkdirAll(e.RT.Dir, 0o755); err != nil {
+		return "", err
+	}
+	return path, os.WriteFile(path, []byte(body), mode)
+}
+
+// guiBinaryName is the GUI's binary, copied into the case's bin folder with
+// the members when the folder they come from has it.
+const guiBinaryName = "ktw-gui"
+
+// guiBinary is the ktw-gui the launcher opens: the case's own (the build its
+// universe runs), else the repository's build when the scenario command runs
+// from the repository, else the installed one, else the one on PATH.
+func (e *Engine) guiBinary() string {
+	name := exe(guiBinaryName)
+	if p := filepath.Join(e.RT.Bin(), name); fileExists(p) {
+		return p
+	}
+	if p, err := filepath.Abs(filepath.Join("bin", name)); err == nil && fileExists(p) {
+		return p
+	}
+	if e.InstalledBinary != nil {
+		if p, err := e.InstalledBinary(guiBinaryName); err == nil && fileExists(p) {
+			return p
+		}
+	}
+	return name
+}
+
+// fileExists is whether path names an existing file.
+func fileExists(path string) bool {
+	st, err := os.Stat(path)
+	return err == nil && !st.IsDir()
+}
+
+type launcher struct {
+	Case, Universe, Compose, Cases, Root, Bin, Workspace, Data, Project, GUI, Dir string
+	// World is the GUI's environment in the case's sandbox.
+	World []sandbox.Var
+	// Open is the address the GUI starts on ("" its home).
+	Open string
+}
+
+// openArg is the GUI's `--open <address>` argument, quoted by q ("" none).
+func (l launcher) openArg(q string) string {
+	if l.Open == "" {
+		return ""
+	}
+	return " --open " + q + l.Open + q
+}
+
+func (l launcher) cmd() string {
+	scn := func(verb string) string {
+		return `"` + l.Compose + `" scenario ` + verb + " " + l.Case + ` --root "` + l.Root + `" --cases "` + l.Cases + `"`
+	}
+	lines := []string{
+		"@echo off",
+		"setlocal",
+		"rem Opens the scenario case " + l.Case + " in ktw-gui, in exactly the conditions the scenario runs it:",
+		"rem   universe  " + l.Universe + ", served by its own hub and members from " + l.Bin,
+		"rem   universe  " + l.Workspace + ", its data " + l.Data,
+		"rem   project   " + l.Project,
+		"rem Both run in the case's sandbox (" + l.Dir + "): nothing of your own installation is shown or touched.",
+		"rem Close the GUI before running the scenario again: one writer per workspace.",
+		"rem Generated by `ktw-compose scenario install` / `scenario gui`.",
+		"",
+		scn("start"),
+		"if errorlevel 1 (",
+		"  echo The universe could not be started.",
+		"  pause",
+		"  exit /b 1",
+		")",
+		"rem The GUI in the case's sandbox.",
+	}
+	for _, v := range l.World {
+		lines = append(lines, `set "`+v.Name+"="+v.Value+`"`)
+	}
+	lines = append(lines,
+		`cd /d "`+l.Dir+`"`,
+		`start "" "`+l.GUI+`" --universe `+l.Universe+l.openArg(`"`),
+		"echo.",
+		"echo The universe keeps running after you close the GUI. To stop it:",
+		"echo   "+scn("stop"),
+		// Windows' own timeout: a shell's PATH may name another first.
+		`"%SystemRoot%\System32\timeout.exe" /t 15 >nul`,
+	)
+	return strings.Join(lines, crlf) + crlf
+}
+
+// crlf ends a line of a Windows batch file.
+const crlf = "\r\n"
+
+func (l launcher) sh() string {
+	scn := func(verb string) string {
+		return "'" + l.Compose + "' scenario " + verb + " " + l.Case + " --root '" + l.Root + "' --cases '" + l.Cases + "'"
+	}
+	lines := []string{
+		"#!/bin/sh",
+		"# Opens the scenario case " + l.Case + " in ktw-gui, in exactly the conditions the scenario runs it:",
+		"#   universe  " + l.Universe + ", served by its own hub and members from " + l.Bin,
+		"#   universe  " + l.Workspace + ", its data " + l.Data,
+		"#   project   " + l.Project,
+		"# Both run in the case's sandbox (" + l.Dir + "): nothing of your own installation is shown or touched.",
+		"# Close the GUI before running the scenario again: one writer per workspace.",
+		"# Generated by `ktw-compose scenario install` / `scenario gui`.",
+		"set -e",
+		scn("start"),
+		"# The GUI in the case's sandbox.",
+		"cd '" + l.Dir + "'",
+		guiEnvSh(l.World) + " nohup '" + l.GUI + "' --universe " + l.Universe + l.openArg("'") + " >/dev/null 2>&1 &",
+		"echo 'The universe keeps running after you close the GUI. To stop it:'",
+		`echo "  ` + scn("stop") + `"`,
+	}
+	return strings.Join(lines, "\n") + "\n"
+}
+
+// guiEnvSh is the `env` prefix that puts the GUI in the sandbox's world.
+func guiEnvSh(world []sandbox.Var) string {
+	parts := []string{"env"}
+	for _, v := range world {
+		if v.Value == "" {
+			parts = append(parts, "-u", v.Name)
+		}
+	}
+	for _, v := range world {
+		if v.Value != "" {
+			parts = append(parts, v.Name+"='"+v.Value+"'")
+		}
+	}
+	return strings.Join(parts, " ")
+}

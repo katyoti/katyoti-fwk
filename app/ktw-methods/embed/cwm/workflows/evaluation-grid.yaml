@@ -1,0 +1,13 @@
+# An evaluation grid: written, then frozen before anything is scored on it;
+# reopened (decisions/grid-reopen) when a criterion must change - its
+# evaluations then go back to draft.
+name: evaluation-grid
+label: Evaluation grid
+description: Written, then frozen before scoring; reopened when a criterion must change.
+initial: draft
+states:
+  - {name: draft, description: "Being written: criteria, weights, scale"}
+  - {name: frozen, description: "Fixed: alternatives are scored on it"}
+transitions:
+  - {name: freeze, from: [draft], to: frozen}
+  - {name: reopen, from: [frozen], to: draft}

@@ -1,0 +1,15 @@
+name: agenda
+description: The plan of the presentation — its parts, numbered, beside a large title.
+slots:
+  - name: default
+    description: A level-2 heading (e.g. Agenda), then an ordered list — one item per part, as **Part** and a short line.
+    required: true
+    minItems: 2
+    maxItems: 8
+example: |
+  <!-- slide: layout=agenda -->
+  ## Agenda
+  1. **Where we are** — the current platform
+  2. **What changes** — themes and layouts
+  3. **What it costs** — effort and risks
+  4. **Next steps** — decisions to take

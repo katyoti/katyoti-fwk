@@ -1,0 +1,7 @@
+name: force
+description: "Force-directed — organic, exploratory layout"
+layoutOptions:
+  elk.algorithm: force
+  elk.spacing.nodeNode: "50"
+  elk.force.temperature: "0.001"
+  elk.force.iterations: "300"

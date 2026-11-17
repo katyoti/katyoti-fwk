@@ -1,0 +1,35 @@
+# One finding, filed under the object reviewed (the imported ones and an
+# audit's stay under their review): its severity, what was found, where, what
+# to do about it and its fingerprint. The review that raised it and the latest
+# that saw it are its found-in and seen-in edges, so it stays one object across
+# the reviews of its type. The object it is about is named by an `about` edge
+# (CWM's own kind), so that object lists it under Links. It moves open →
+# addressed → closed, or is accepted as it stands.
+name: finding
+label: Finding
+description: >-
+  One finding of a review: its severity, what was found, where, and what to do
+  about it — one object across the reviews that see it; answered, then
+  closed, or accepted as it stands.
+icon: alert-circle
+folder: findings
+id_prefix: FD
+capabilities: [lifecycle]
+fields: :/data-type/finding
+workflow: finding
+accept_parents: ["*"]
+body:
+  label: Details
+  description: The finding in full — the evidence and the reasoning.
+  format: markdown
+pane:
+  badges:
+    - field: fields.severity
+      label: severity
+      icon: alert-circle
+      colors:
+        critical: red
+        high: orange
+        medium: yellow
+        low: gray
+        info: blue

@@ -1,0 +1,76 @@
+{
+  "settings": {
+    "aspect": "21:9",
+    "colour": "red",
+    "title": "Broken"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 6,
+      "settings": {
+        "layout": "hero"
+      },
+      "settingsLine": 7,
+      "slots": [
+        {
+          "name": "default",
+          "line": 8,
+          "markdown": "# Unknown layout"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 11,
+      "settings": {
+        "layout": "two-cols",
+        "speed": "fast",
+        "steps": "all"
+      },
+      "settingsLine": 12,
+      "slots": [
+        {
+          "name": "default",
+          "line": 13,
+          "markdown": "## Missing right column"
+        },
+        {
+          "name": "middle",
+          "line": 15,
+          "markdown": "nothing"
+        }
+      ]
+    },
+    {
+      "h": 2,
+      "v": 0,
+      "line": 19,
+      "slots": [
+        {
+          "name": "default",
+          "line": 20,
+          "markdown": "## Settings in the wrong place\n\u003c!-- slide: layout=cover --\u003e"
+        }
+      ]
+    },
+    {
+      "h": 3,
+      "v": 0,
+      "line": 24,
+      "settings": {
+        "layout": "quote"
+      },
+      "settingsLine": 25,
+      "slots": [
+        {
+          "name": "author",
+          "line": 27,
+          "markdown": "Someone"
+        }
+      ]
+    }
+  ]
+}

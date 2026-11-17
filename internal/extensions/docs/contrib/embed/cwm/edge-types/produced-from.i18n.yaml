@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Les objets dont un livrable a été écrit : une étude, une solution, une grille, une source. Régénérer le livrable les relit ; l''onglet Liens de chacun montre les livrables écrits à partir de lui.'
+  inverse_label: 'A produit'
+  label: 'Produit à partir de'

@@ -1,0 +1,141 @@
+id: composites/site-info
+category: composites
+title: Composite — SiteInfo (legacy port)
+description: "SiteInfo entity ported from old cpm-ui test corpus. 7 flat fields exercising visibility filtering (`status_label` + `hasWarnings` are visibility:[update]-only — hidden in create mode). Multi-form support: default form spans 2 columns; compact form is single-column. ui-view extension renders all fields read-only."
+schema:
+  name: site-info-demo
+  version: 1
+  root: SiteInfo
+  types:
+    SiteInfo:
+      type: object
+      label: SiteInfo
+      idField:
+        - id
+      titleField:
+        - brand
+      fields:
+        id:
+          type: string
+          label: ID
+        avatar:
+          type: string
+          label: Avatar
+          description: Site avatar (URL or asset reference).
+          optional: true
+        brand:
+          type: string
+          label: Site
+          description: Site brand / display name.
+        slogan:
+          type: string
+          label: Slogan
+          description: Site tagline.
+          optional: true
+        userRole:
+          type: string
+          label: Role
+          placeholder: Choisir un rôle
+          description: Role de l'utilisateur sur ce site.
+          content:
+            type: text
+            options:
+              admin: Administrateur
+              editor: Editeur
+              reviewer: Relecteur
+        status:
+          type: string
+          label: Status
+          placeholder: Choisir un status
+          description: Status du site.
+          content:
+            type: text
+            options:
+              oncreate: En cours de création
+              readyToPublish: Prêt à publier
+              published: Publié
+              archived: Archivé
+              deleted: Supprimé
+        hasWarnings:
+          type: boolean
+          label: Alertes
+          description: Alertes en cours.
+          default: false
+      extensions:
+        - type: ui-form
+          name: default
+          layout: groups
+          submit_label: Save site
+          groups:
+            - title: Avatar
+              cols: 1
+              md: 4
+              fields:
+                - id: status_label
+                  name: status
+                  visibility:
+                    - update
+                - id: avatar
+                - id: hasWarnings
+                  visibility:
+                    - update
+            - title: Identity
+              cols: 2
+              md: 8
+              fields:
+                - id: id
+                - brand
+                - slogan
+                - userRole
+                - id: status
+                  visibility:
+                    - create
+                    - update
+        - type: ui-form
+          name: compact
+          layout: single
+          submit_label: Quick save
+          groups:
+            - fields:
+                - brand
+                - slogan
+                - userRole
+        - type: ui-view
+          name: default
+          layout: detail-pane
+          groups:
+            - title: Identity
+              cols: 2
+              fields:
+                - brand
+                - slogan
+                - avatar
+            - title: Access
+              cols: 2
+              fields:
+                - userRole
+                - status
+                - hasWarnings
+            - title: Audit
+              cols: 1
+              visibility:
+                - view
+              fields:
+                - id
+value:
+  id: site-001
+  avatar: /avatars/site-001.png
+  brand: Acme Corp
+  slogan: We make the things
+  userRole: admin
+  status: published
+  hasWarnings: false
+mode: edit
+tags:
+  - composites
+  - object
+  - multi-field
+  - ui-form
+  - ui-view
+  - visibility
+  - legacy-port

@@ -1,0 +1,21 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      plan:
+        type: object
+        description: "The planner's output"
+      final_evaluation:
+        type: object
+        description: "The last evaluator's output (after the loop ended)"
+      iterations:
+        type: number
+        description: "How many times the executor+evaluator ran"
+      threshold:
+        type: number
+        description: "The quality target"
+      max_iterations:
+        type: number
+        description: "The hard cap"

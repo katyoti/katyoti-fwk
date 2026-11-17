@@ -1,0 +1,8 @@
+# READY TO PLAN — what a piece of work is and what it depends on are known, so it
+# can be planned. Its requirements come from the types that pass it (a goal
+# decomposed, a feature specified — ktw-methods' gate-requirements). An unmet
+# requirement's `resolve` is the request the planning loop files to meet it.
+name: ready-to-plan
+label: Ready to plan
+description: >-
+  What it is and what it depends on are known: it can be planned.

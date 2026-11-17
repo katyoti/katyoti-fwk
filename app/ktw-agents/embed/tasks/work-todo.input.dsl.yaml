@@ -1,0 +1,14 @@
+name: work-todo-input
+root: WorkTodoInput
+types:
+  WorkTodoInput:
+    type: object
+    fields:
+      todo:
+        type: string
+        label: "To-do"
+        description: "The id of the to-do to work; it is pulled for this run"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Work it"

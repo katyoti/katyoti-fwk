@@ -1,0 +1,88 @@
+# What the object is made of, as planning reads it: its goals and the tree of
+# features serving them (a sub-feature under the feature it breaks down), each
+# row its title and state; Advanced adds the planning fields (cost of delay and
+# its parts, reachability), Simple takes them away; Full view opens What's
+# Next on the same object. Add opens the new-object dialog under this object,
+# a click on a row opens it. Its source is the method-assistant verb.
+name: "Composition"
+description: "What this object is made of: its goals and its features"
+icon:
+  tabler: "layout-grid"
+  emoji: "🗂"
+order: 20
+filter:
+  # A project or a module, whatever its type's name: the level is a
+  # capability.
+  capabilities: ["project", "module"]
+  # Only a planned module shows it: a study or a dossier, not planned, does
+  # not; the project keeps it.
+  when: "'module' not in current.capabilities or 'planned' in current.capabilities"
+source: "ktw-methods:method-assistant/composition"
+# Re-read when one of the lenses' objects under it changes.
+refresh:
+  scope: "children"
+  types: ["goal", "feature"]
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "lg"
+    children:
+      - kind: "section"
+        size: "md"
+        title: "Goals and features"
+        description: "Why this exists, and what is built for it"
+        icon: "sitemap"
+        color: "blue"
+        dataField: "$.tree"
+        empty: "No goals or features yet."
+        aside:
+          - kind: "button"
+            label: "Add a goal"
+            icon: "bulb"
+            size: "xs"
+            variant: "light"
+            action: { label: "Add a goal", create: { type: "goal" } }
+          - kind: "button"
+            label: "Add a feature"
+            icon: "package"
+            size: "xs"
+            variant: "light"
+            action: { label: "Add a feature", create: { type: "feature" } }
+          - kind: "button"
+            label: "Advanced"
+            icon: "adjustments"
+            size: "xs"
+            variant: "subtle"
+            action: { label: "Advanced", query: { args: { advanced: true } } }
+          - kind: "button"
+            label: "Simple"
+            icon: "list-tree"
+            size: "xs"
+            variant: "subtle"
+            action: { label: "Simple", query: { args: { advanced: false } } }
+          - kind: "button"
+            label: "Full view"
+            icon: "compass"
+            size: "xs"
+            variant: "subtle"
+            action: { label: "Full view (What's Next)", navigate: { object: "${id}", panel: "method-next" } }
+        children:
+          - kind: "tree"
+            dataField: "$.tree"
+            badgeField: "state"
+            item:
+              kind: "vbox"
+              gap: 2
+              children:
+                - kind: "text"
+                  content: ""
+                  dataField: "$.item.title"
+                  size: "sm"
+                  fw: 500
+                - kind: "text"
+                  content: ""
+                  dataField: "$.item.meta"
+                  size: "xs"
+                  color: "dimmed"
+            open: { label: "Open", navigate: { object: "${item.id}" } }

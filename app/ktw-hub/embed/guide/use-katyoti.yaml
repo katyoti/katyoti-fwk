@@ -1,0 +1,43 @@
+name: Use KaTyoti
+description: A tour of the interface - the left bar, your menu, the display level, the guides, a chat, your feedback, the camera and recording.
+hashtags:
+- katyoti-usage
+- tour
+- interface
+- menu
+- level
+level: beginner
+essential: true
+# Pour aller plus loin: what to read once this guide is done -
+# an entry a universe does not have is left out by the player.
+next: [answer-the-inbox, record-your-screen, whats-new]
+steps:
+- id: left-bar
+  say: The bar on the left holds your universe, the chat, the Inbox, your feedback and the settings; your avatar is at its foot.
+  await: manual
+# The installation already set the profile: the tour opens
+# the menu for what follows and asks nothing about it.
+- id: menu
+  say: Open your avatar at the foot of the bar - your menu. Your name and your e-mail are already there, set when KaTyoti was installed.
+  target: {guide: profile.open}
+  await: click
+- id: level
+  say: In the same menu, the display level - Essentiel shows the essential, Standard adds the everyday tools, Expert the rest. Pick one; it holds for every universe.
+  target: {guide: profile-menu.level, name: essential}
+  await: manual
+- id: guides
+  say: '{control:profile.help} in the same menu opens the guides; a « ? » on a screen opens the ones about that screen.'
+  target: {guide: profile.help}
+  await: manual
+- id: chat
+  say: The {control:ribbon.chat} button opens a chat with the assistant; on Home, the quick action « Démarrer une discussion » does the same.
+  open: home/actions
+  target: {guide: ribbon.chat}
+  await: manual
+- id: feedback
+  say: The feedback button on the bar sends us your comment with a capture of the screen.
+  target: {guide: ribbon.feedback}
+  await: manual
+- id: camera-record
+  say: Unless your universe leaves them out, the bar also shows the camera (on and off) and the recording of your screen - the guide « Record my screen » shows it step by step.
+  await: manual

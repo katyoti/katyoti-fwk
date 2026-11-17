@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Volet
+  description: >-
+    Comment un objet d'un type s'affiche dans son volet — la vue de l'onglet
+    Informations et les badges d'en-tête du type — réglé par la section
+    `pane:` du type.

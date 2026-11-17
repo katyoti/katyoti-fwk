@@ -1,0 +1,13 @@
+# Demand: what a person (or an outside system) asks, which does no work
+# itself - it reconciles against the modules' releases, increments, goals,
+# features and open requests and proposes a delta; the person approves it
+# once; an agent applies it through the verbs. A small fix is recognised at
+# intake and becomes direct work (a fix at depth quick) instead.
+name: demand
+description: Reconcile the demand into a delta, have it approved, apply it.
+kind: demand
+transition: done
+steps:
+  - {name: reconcile, phase: requests, class: refine, role: reconcile, share: 0.4, instructions: "Search what the demand touches (the index, bounded to the modules it names) and answer its delta under more.delta: goals or features added or changed, an increment created, aimed or completed, open requests rescoped, merged, superseded or dropped - each operation with why. Do no work yourself."}
+  - {name: approve, phase: preparation, class: refine, actor: person, interaction: validate, after: [reconcile], share: 0.1, instructions: "Read the delta: accept it as a whole, or send it back saying what to change."}
+  - {name: apply, phase: build, class: deliver, role: apply-delta, after: [approve], share: 0.5, instructions: "Apply the approved delta, operation by operation, through the verbs; answer under more.applied the object each operation changed or created."}

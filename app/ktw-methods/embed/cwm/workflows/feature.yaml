@@ -1,0 +1,76 @@
+# A feature's ladder. Approval's stages, then SPECIFIED (the ready-to-plan gate:
+# it wants the use cases that say what done is), READY (ready-to-build: a person
+# challenged the specification and decided it need not be split — confirmed on
+# the feature) and DONE (ready-to-test: its verification declared and green, no
+# blocking lint finding; only a person may force it, the forced pass recorded).
+# Code is planned only on a ready feature. Each gate is a guard calling gate();
+# only a person may force one, with a note. An unmet requirement's resolve is
+# the request the planning loop files to meet it.
+# REALIZED is the side door for what the code already does when the feature is
+# first recorded (an inventory, a migration from an older tracker) - or a build
+# that ran on a feature not yet active, whose end has no gated way to done: anyone may
+# record it. It is TO BE VERIFIED BY AN AGENT: `verify` takes it to done once
+# its verification passes (the gate ready-to-test), or `reopen` sends it back
+# to the ladder with what was found; a person may still `confirm` one by hand.
+# DONE has two ways back. `reopen` (anyone) sends it to proposed: a later
+# alignment check (features-vs-code) that finds its code no longer delivers it,
+# or its criteria failing. `reopen-done` (a person only) sends it to specified,
+# its approval kept, so a fix round can plan and build it again; the reason is
+# the transition's note.
+name: feature
+label: Feature
+description: >-
+  Proposed, reviewed, accepted by a person, specified by its use cases, made
+  ready once a person challenged it, built — and done only when its verification is green.
+initial: idea
+states:
+  - {name: idea, description: "Captured, not yet proposed"}
+  - {name: proposed, description: "Put forward for review"}
+  - {name: in-review, description: "Being reviewed"}
+  - {name: accepted, description: "Approved by a person"}
+  - {name: specified, description: "It wants the use cases that say what done is"}
+  - {name: ready, description: "Specification challenged and accepted by a person; not to be split further"}
+  - {name: active, description: "Being built"}
+  - {name: realized, description: "To be verified by an agent - already in the code when recorded: an agent verifies it (verify, when its verification passes) or sends it back (reopen); a person may confirm it by hand"}
+  - {name: done, description: "Delivered and verified; reopened to proposed when its code no longer delivers it, or by a person to specified (reopen-done) with the reason in its note"}
+  - {name: dropped, description: "Not pursued", terminal: true}
+transitions:
+  - {name: propose, from: [idea], to: proposed}
+  - {name: review, from: [proposed], to: in-review}
+  - {name: rework, from: [in-review], to: proposed}
+  - name: accept
+    from: [in-review]
+    to: accepted
+    gate: "by.kind == 'person'"
+  - name: specify
+    from: [accepted]
+    to: specified
+    gate: "gate('ready-to-plan').passes"
+    force: person
+  - name: ready
+    from: [specified]
+    to: ready
+    gate: "gate('ready-to-build').passes"
+    force: person
+  - {name: respecify, from: [ready, active], to: specified}
+  - {name: start, from: [ready], to: active}
+  - name: finish
+    from: [active]
+    to: done
+    gate: "gate('ready-to-test').passes"
+    force: person
+  - {name: record-realized, from: [idea, proposed, in-review, accepted, specified, ready], to: realized}
+  - name: confirm
+    from: [realized, in-review]
+    to: done
+    gate: "by.kind == 'person'"
+  - name: verify
+    from: [realized]
+    to: done
+    gate: "gate('ready-to-test').passes"
+  - {name: reopen, from: [realized, done], to: proposed}
+  - name: reopen-done
+    from: [done]
+    to: specified
+    gate: "by.kind == 'person'"
+  - {name: drop, from: ["*"], to: dropped}

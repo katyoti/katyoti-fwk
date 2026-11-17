@@ -1,0 +1,96 @@
+{
+  "viewpoint": "drawio-test:/viewpoint/app-flux",
+  "title": "Sample — order intake",
+  "nodes": [
+    {
+      "id": "items",
+      "label": "Items",
+      "kind": "Application",
+      "attributes": {
+        "domain": "reference",
+        "markers": [
+          "xls"
+        ],
+        "description": "Item and price master data"
+      }
+    },
+    {
+      "id": "bus",
+      "label": "Integration Bus",
+      "kind": "Application",
+      "attributes": {
+        "domain": "transverse"
+      }
+    },
+    {
+      "id": "dwh",
+      "label": "Data Warehouse",
+      "kind": "Application",
+      "attributes": {
+        "domain": "reporting"
+      }
+    },
+    {
+      "id": "ledger",
+      "label": "Ledger",
+      "kind": "Application",
+      "attributes": {
+        "domain": "invoicing"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "items",
+      "target": "bus",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL7349",
+            "url": "u1"
+          }
+        ],
+        "data_types": [
+          "Order",
+          "Item"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "source": "bus",
+      "target": "dwh",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "catalog",
+        "interface_codes": [
+          {
+            "code": "FL7350",
+            "url": "u2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "source": "dwh",
+      "target": "ledger",
+      "kind": "Flow",
+      "attributes": {
+        "flow_type": "invoice",
+        "interface_codes": [
+          {
+            "code": "FL7351",
+            "url": "u3"
+          }
+        ],
+        "data_types": [
+          "Price receipt"
+        ]
+      }
+    }
+  ]
+}

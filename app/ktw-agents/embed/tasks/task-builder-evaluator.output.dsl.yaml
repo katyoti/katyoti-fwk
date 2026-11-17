@@ -1,0 +1,26 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    fields:
+      quality_score:
+        type: number
+        description: "0 = unusable, 0.7 = acceptable, 1 = perfect (range 0-1). Workflow's `while` condition compares to `threshold` (default 0.7)"
+      verdict:
+        type: string@enum(good, fixable, bad)
+        description: "Coarse decision: good = ship, fixable = retry should help, bad = abandon"
+      findings:
+        type: Finding[]
+        description: "Specific issues. Each becomes a hint for the next iteration's executor."
+  Finding:
+    type: object
+    fields:
+      severity:
+        type: string@enum(critical, warning, info)
+      description:
+        type: string
+      fix_hint:
+        type: string
+        description: "Optional: concrete suggestion for how to fix"
+        optional: true

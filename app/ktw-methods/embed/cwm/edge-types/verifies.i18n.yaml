@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Lien de couverture : ce `test-case` exerce ce `use-case`. Obligatoire à la rédaction d'un test-case : un test qui ne revendique aucune UC est un signal de lint (`OrphanedTestCases`). Alimente l'agrégation de `module verify` (le verdict d'une UC est le pire des last_run_status de ses test-cases `verifies`, fail-deferred prenant la priorité via `deferred-by`), la colonne de statut du tableau des cas d'usage de la charte, et la condition n°2 de la porte de promotion de palier (toutes les UC passent ou sont différées)."
+  inverse_label: "Vérifié par"
+  label: "Vérifie"

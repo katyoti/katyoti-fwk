@@ -1,0 +1,16 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Ouvrir ou créer un univers
+  description: Créez votre propre univers et ouvrez-le.
+  hashtags:
+  - univers
+  - créer un univers
+  - ouvrir un univers
+  - ajouter un univers
+  steps:
+    add-universe: Appuyez sur {control:ribbon.add-universe} en bas du ruban.
+    create: Choisissez {control:add-universe.create}, donnez-lui un nom et appuyez sur {control:create-universe.submit}.
+    ready: Une fois créé, l'univers s'ouvre à l'écran. Quand vous le voyez, appuyez sur {control:guide.check}.

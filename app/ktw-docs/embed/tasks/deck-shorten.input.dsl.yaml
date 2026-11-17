@@ -1,0 +1,26 @@
+name: deck-shorten-input
+root: DeckShortenInput
+types:
+  DeckShortenInput:
+    type: object
+    fields:
+      minutes:
+        type: number
+        label: "Temps de parole (minutes)"
+        description: "Environ une slide par minute, couverture comprise"
+        default: 10
+        min: 2
+        max: 60
+      appendix:
+        type: boolean
+        label: "Garder les détails en annexe"
+        description: "Les slides retirées passent en annexe (slides verticales après la conclusion) au lieu d'être supprimées — la présentation reste alors aussi longue à parcourir"
+        optional: true
+        default: false
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Faire la version courte"
+        groups:
+          - title: "Version courte"
+            fields: [minutes, appendix]

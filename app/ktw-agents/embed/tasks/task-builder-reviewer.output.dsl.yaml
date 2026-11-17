@@ -1,0 +1,24 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    fields:
+      verdict:
+        type: string@enum(accept, fix-manually, abandon)
+        description: "Recommendation to the user. Non-binding — files are kept either way."
+      summary:
+        type: string
+        description: "1-page markdown summary suitable for a human to read"
+      accept_actions:
+        type: string[]
+        description: "If verdict=accept: what the user should do next (e.g., 'rebuild and `tasks list` to see it')"
+        optional: true
+      fix_actions:
+        type: string[]
+        description: "If verdict=fix-manually: what the user should manually fix"
+        optional: true
+      abandon_actions:
+        type: string[]
+        description: "If verdict=abandon: what to clean up. (Files are NOT auto-deleted.)"
+        optional: true

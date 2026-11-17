@@ -1,0 +1,5 @@
+name: test-by-hand
+label: Test by hand
+description: Run the listed checks by hand, give each result and an overall verdict.
+answerable_by: person
+order: 3

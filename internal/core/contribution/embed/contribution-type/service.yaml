@@ -1,0 +1,24 @@
+# Registers `service` as a system contribution kind. Every binary that
+# publishes a service via `publish.PublishService[...]` emits one
+# `<provider>:/service/<name>` Contribution describing its interface.
+# The URI of this entry is `system:/contribution-type/service`; its body
+# schema is `system:/data-type/service`.
+name: service
+description: |
+  A published service interface — a named set of callable methods exposed
+  as a KTSP slot (and optionally CLI / HTTP / MCP). Body carries the
+  meta.ServiceDef (name, busName, methods with typed I/O).
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/service
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+meta:
+  budget: 128  # measured max 26 B across 21 binaries (2026-09-21), x1.5 rounded up

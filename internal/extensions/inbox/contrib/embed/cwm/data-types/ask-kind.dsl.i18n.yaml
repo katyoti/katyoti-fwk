@@ -1,0 +1,23 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    AskKind:
+      fields:
+        name:
+          description: 'Le nom du genre de question, tel qu''une tâche humaine le nomme (kebab) : approve, test-by-hand, ou celui d''un pack.'
+        label:
+          description: 'Le libellé court que chaque carte, liste et canal montre en premier : Validation, Test à la main.'
+        description:
+          description: 'Ce que fait la personne pour y répondre.'
+        answer:
+          description: 'Le data-type de sa réponse (une URI) : sa variante carte dessine la question.'
+        answerable_by:
+          description: 'Qui peut répondre par défaut : person, agent ou any.'
+        requires:
+          description: 'Le code de permission que doit détenir qui répond, par défaut ; vide : <type de l''objet>:<genre>.'
+        satisfies:
+          description: 'Ce que sa réponse règle par défaut : exigences de porte, vérifications, étapes.'
+        order:
+          description: 'Sa place parmi les compteurs d''une liste (le plus petit d''abord).'

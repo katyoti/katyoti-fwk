@@ -1,0 +1,18 @@
+# SyncJobService configuration (the file is named after the service type)
+
+server_host: "127.0.0.1"
+server_port: 8894
+log_level: info
+
+defaults:
+  conflict: newest
+  transfers: 4
+  checkers: 8
+  retry_count: 3
+  exclude:
+    - ".DS_Store"
+    - "Thumbs.db"
+    - "*.tmp"
+    - ".git/**"
+
+bisync_workdir: "sync/bisync-state"

@@ -1,0 +1,22 @@
+name: display-document-demo-input
+root: DocumentDemoInput
+types:
+  DocumentDemoInput:
+    type: object
+    fields:
+      topic:
+        type: string
+        label: "Topic"
+        description: "The subject of the document"
+      document:
+        type: string@enum(markdown,html,mermaid,code)
+        label: "Document type"
+        description: "markdown (a report with mermaid diagrams), html (a dashboard), mermaid (one diagram) or code (JSON, YAML and source code)"
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Generate the document"
+        groups:
+          - title: "Document"
+            fields: [topic, document]

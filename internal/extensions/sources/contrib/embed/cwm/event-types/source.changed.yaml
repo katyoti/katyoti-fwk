@@ -1,0 +1,13 @@
+# The sources extension's: a sync read items of an information
+# source with another content than before. Raised on the source's carriers -
+# the module it sits under and those it feeds -; an async on_source_change
+# entry reacts to it. Published: another module subscribes to it from its own
+# module object (on: {module, event: source.changed}).
+name: source.changed
+label: Source changed
+description: >-
+  Items of an information source changed at their source: a sync read them
+  with another content than before; the payload names the source and the
+  items.
+point: on_source_change
+published: true

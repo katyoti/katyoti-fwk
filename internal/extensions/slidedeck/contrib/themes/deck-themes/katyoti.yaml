@@ -1,0 +1,11 @@
+# The default theme: the deck component's own look. Its values ARE the
+# defaults of deck.css, so this declaration overrides nothing; it names the
+# theme a deck gets when it names none, and lists it with the others.
+name: katyoti
+sample: sample.deck.md        # the theme preview: its layouts and variants
+description: The KaTyoti look — the deck component's defaults, light and dark.
+# The production mark on every slide (the component's own default too:
+# theme.ts DEFAULT_WATERMARK, held equal by a test). A deck removes it with
+# `mark: off` and adds a watermark text with `watermark: <text>`.
+watermark:
+  mark: {template: "Une production KaTyoti", box: {x: 440, y: 686, w: 400, h: 24}, size: 12px, align: center, token: muted}

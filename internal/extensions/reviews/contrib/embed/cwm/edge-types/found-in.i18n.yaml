@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'La revue qui a relevé un constat. Un constat est déposé sous l''objet revu, pas sous sa revue, pour rester un seul objet d''une revue de son type à la suivante ; ce lien garde où il a été trouvé la première fois. La revue le liste sous Liens comme `raised`.'
+  inverse_label: 'A relevé'
+  label: 'Relevé dans'

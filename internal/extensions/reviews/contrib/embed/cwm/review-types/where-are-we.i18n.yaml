@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Où en sommes-nous"
+  description: "L'état des lieux du module pour un responsable : où il en est sur chaque dimension de revue, ce qui a bougé, les cinq choses à faire d'abord — la synthèse de ses revues courantes."

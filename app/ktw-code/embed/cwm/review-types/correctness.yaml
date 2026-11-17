@@ -1,0 +1,22 @@
+# A code review type of ktw-code: performed by an agent following the
+# code-review skill in its run mode, with its guide.
+name: correctness
+title: Correctness
+description: >-
+  Bugs, logic errors, error handling, edge cases and input validation in the module's code.
+dimension: quality
+applies:
+  capabilities: [code]
+  when: "len(object.code.code_packages) > 0"
+trigger:
+  mode: manual
+runner:
+  skill: ktw-code:/skill/code-review
+  input:
+    review: correctness
+    guide: ktw-code:/reference/review/correctness.md
+rating: >-
+  critical when a finding is critical, needs-attention when one is high or
+  medium, good otherwise.
+presets: [code, full]
+max_cost_usd: 4

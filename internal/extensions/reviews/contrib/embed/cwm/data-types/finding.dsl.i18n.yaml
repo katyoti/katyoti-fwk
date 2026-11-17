@@ -1,0 +1,25 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Finding:
+      fields:
+        fingerprint:
+          description: 'Ce qui en fait le même constat d''une revue à la suivante : son type de revue, son emplacement et sa règle'
+          label: 'Empreinte'
+        found_by:
+          description: 'Le type de revue qui l''a fait apparaître'
+          label: 'Trouvé par'
+        location:
+          description: 'Où il a été trouvé : un fichier et ses lignes, ou une section'
+          label: 'Emplacement'
+        recommendation:
+          description: 'Que faire à son sujet'
+          label: 'Recommandation'
+        severity:
+          description: 'Son importance'
+          label: 'Gravité'
+        statement:
+          description: 'Ce qui a été trouvé, en une phrase'
+          label: 'Constat'

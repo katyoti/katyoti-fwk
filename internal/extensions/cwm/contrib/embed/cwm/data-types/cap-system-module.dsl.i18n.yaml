@@ -1,0 +1,10 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapSystemModule:
+      fields:
+        operates:
+          description: "La capacité dont ce module est l'espace opérationnel (sys-contributions opère contributions) : une capacité que l'univers déclare ; vide pour un module qui n'en opère aucune"
+          label: "Opère"

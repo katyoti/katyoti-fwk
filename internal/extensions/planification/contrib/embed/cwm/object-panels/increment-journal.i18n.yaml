@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Historique
+  description: Tout ce qui est arrivé à cet incrément - chaque changement, quand, par qui et pourquoi

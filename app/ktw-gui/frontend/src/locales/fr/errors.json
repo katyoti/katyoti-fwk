@@ -1,0 +1,46 @@
+{
+  "cwm": {
+    "objectNotFound": "{{id}} n’existe pas (il a été supprimé ou déplacé).",
+    "objectArchived": "{{id}} est terminé : il a été archivé dans {{path}}.",
+    "objectAlreadyExists": "{{id}} existe déjà — choisissez un autre identifiant.",
+    "objectConflict": "{{id}} a été modifié par quelqu’un d’autre depuis que vous l’avez ouvert — rechargez-le, puis refaites votre modification.",
+    "objectReferenced": "{{id}} ne peut pas être supprimé : {{by}} en dépendent encore.",
+    "refusedByHook": "Refusé par {{by}} : {{reason}}",
+    "transitionRefused": "Le passage « {{transition}} » est refusé : {{reason}}",
+    "transitionFromTerminal": "{{id}} est dans l’état {{state}}, un état final de {{workflow}} : il n’en sort plus.",
+    "lifecycleRetiredField": "{{id}} : le cycle de vie n’a pas de {{field}} — un élément suit le workflow de sa sorte, et ses passages sont consignés par le journal.",
+    "transitionUnknownState": "{{state}} n’est pas un état de {{workflow}}.",
+    "transitionNone": "{{workflow}} ne prévoit aucun passage de {{from}} à {{to}}.",
+    "forceNotAllowed": "Le passage « {{transition}} » est refusé ({{reason}}) et ne peut pas être forcé.",
+    "forceNeedsPerson": "Le passage « {{transition}} » est refusé ({{reason}}) ; le forcer demande une personne et une note.",
+    "noType": "{{id}} n’a pas de sorte.",
+    "unknownType": "La sorte {{type}} de {{id}} n’est déclarée par aucun pack.",
+    "abstractType": "{{type}} est une sorte générale : créez plutôt l’une de ses sortes précises.",
+    "retiredType": "La sorte {{type}} est retirée : les éléments qui en sont déjà sont lus jusqu’à la conversion du projet - créez plutôt un élément de la sorte qui la remplace ({{replaced}}).",
+    "brokenLink": "{{id}} : {{link}} — un lien doit désigner un élément du projet.",
+    "descriptionTooLong": "La description fait {{chars}} caractères ; {{type}} en permet {{max}}.",
+    "childTypeNotAllowed": "Un {{type}} ne peut pas être placé sous un {{parentType}}.",
+    "unknownCapability": "{{id}} porte la propriété {{capability}}, qu’aucun pack ne déclare.",
+    "unknownAspect": "{{id}} nomme la propriété {{aspect}}, qu’aucun pack ne déclare.",
+    "sizeBudget": "{{id}} ferait {{bytes}} octets, au-delà des {{max}} octets que permet {{type}} — raccourcissez-le."
+  },
+  "actions": {
+    "invalidURI": "« {{uri}} » n’est pas une action valide.",
+    "unknownAction": "L’action {{uri}} n’existe pas.",
+    "fieldNotMutable": "Le champ {{field}} ne se modifie pas ici.",
+    "transitionOnly": "{{field}} ne change que par une transition de son workflow."
+  },
+  "agent": {
+    "modelKeyMissing": "La tâche n’a pas pu appeler le modèle de langage {{model}} : sa clé n’est pas installée. Importez les clés : Vérifier l'installation › Clés, puis relancez la tâche. ({{reason}})",
+    "modelKeyRefused": "Le modèle de langage {{model}} a refusé la clé : elle est invalide ou n’a plus de droits. Importez des clés valides : Vérifier l'installation › Clés, puis relancez la tâche. ({{reason}})",
+    "modelUnreachable": "Le modèle de langage {{model}} est injoignable : vérifiez la connexion au réseau et l’adresse du service (Vérifier l'installation › Clés), puis relancez la tâche. ({{reason}})",
+    "modelUnknown": "Le modèle de langage {{model}} est inconnu du service : vérifiez le modèle choisi pour cette tâche et les clés (Vérifier l'installation › Clés), puis relancez la tâche. ({{reason}})",
+    "modelCallFailed": "L’appel au modèle de langage {{model}} a échoué : la tâche s’arrête en échec. Relancez-la ; si l’erreur revient, vérifiez l’installation (Vérifier l'installation › Clés). ({{reason}})"
+  },
+  "panel": {
+    "unknownPanel": "Le panneau {{panel}} n’est pas conservé (il n’a pas commencé ou il est terminé)."
+  },
+  "load": {
+    "timedOut": "La lecture n’a pas répondu en {{seconds}} s - l’univers est peut-être occupé ou en train de redémarrer."
+  }
+}

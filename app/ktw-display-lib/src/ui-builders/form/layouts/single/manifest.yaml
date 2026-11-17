@@ -1,0 +1,13 @@
+name: single
+kind: form-layout
+description: >-
+  Single group, no section title, fields in sequence. Simplest possible
+  layout. Used for short forms (login, signup, single-page edit) where
+  visual sectioning would be overkill.
+
+configSchema:
+  fields:
+    spacing:
+      type: string
+      default: md
+      description: "Mantine Stack spacing (xs | sm | md | lg | xl)"

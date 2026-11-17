@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "title": "Streaming"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 4,
+      "slots": [
+        {
+          "name": "default",
+          "line": 5,
+          "markdown": "## One\n\n```go\nfunc main() {\n---"
+        }
+      ]
+    }
+  ],
+  "open": "code",
+  "openLine": 7
+}

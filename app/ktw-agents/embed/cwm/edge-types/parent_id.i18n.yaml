@@ -1,0 +1,10 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    L'arête structurelle de l'arbre. Chaque nœud, sauf la racine du workspace, a un parent_id.
+    Forme l'arbre strict (parent unique, sans cycle) qui sous-tend l'algèbre d'héritage.
+    Modifier parent_id déplace le nœud ; son UUID est conservé.
+  inverse_label: Enfant
+  label: Parent

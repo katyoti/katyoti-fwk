@@ -1,0 +1,17 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      session_id:
+        type: string
+        description: "Root session id of the finished run to evaluate."
+      goal:
+        type: string
+        description: "The original goal the run was meant to achieve, to judge achievement against. If omitted, it is resolved from the session itself."
+        optional: true
+      subject:
+        type: string
+        description: "Optional name of the artifact the run exercised (a task / skill / agent / workflow), for the report header. Omit when evaluating a run on its own terms."
+        optional: true

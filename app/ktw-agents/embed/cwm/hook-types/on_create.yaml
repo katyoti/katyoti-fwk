@@ -1,0 +1,8 @@
+# One of CWM's own hook points, declared like any other: an extension opens
+# a point of its own by shipping a hook-type file beside its hooks.
+name: on_create
+label: Created
+description: >-
+  After an object is created. A failure is reported; it never undoes the write.
+timing: after
+answer: none

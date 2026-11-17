@@ -1,0 +1,13 @@
+title = "check-public"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "reviewed paths: test fixtures by design, census goldens"
+paths = [
+  '''(^|[/\\])internal[/\\]core[/\\]redact[/\\]redact_test\.go$''',
+  '''(^|[/\\])internal[/\\]extensions[/\\]tools[/\\]bash[/\\]secrets_test\.go$''',
+  '''(^|[/\\])app[/\\][^/\\]+[/\\]testdata[/\\]census\.golden$''',
+  '''(^|[/\\])app[/\\]ktw-display[/\\]src[/\\]runtime[/\\]_compiled[/\\]drawio-viewer-static\.min\.js$''',
+]

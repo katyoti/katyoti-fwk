@@ -1,0 +1,12 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Décision
+  description: >-
+    Une question sur la façon dont une chose est ou se fait : ses options, le
+    choix et le raisonnement. Elle est ouverte jusqu'à ce qu'elle soit
+    tranchée, puis elle s'applique ; une décision ultérieure peut la remplacer,
+    ou elle est retirée. Visible dans les agrégats des ancêtres (un projet voit
+    les questions ouvertes de ses descendants) ; une décision centrale encore
+    ouverte empêche le vert. Son état est structuré, son raisonnement est de la
+    prose.

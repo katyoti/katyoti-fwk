@@ -1,0 +1,20 @@
+name: key-figures
+description: A few numbers that tell the story — a heading and a short text, the figures large beside them (one to six; the grid adapts to the count).
+slots:
+  - name: default
+    description: A level-2 heading, then a short text giving the figures their context.
+    required: true
+  - name: figures
+    description: A list, one item per figure — the value in bold, then its caption.
+    required: true
+    minItems: 1
+    maxItems: 6
+example: |
+  <!-- slide: layout=key-figures -->
+  ## The platform today
+  Three years of growth, one shared catalog.
+
+  ::figures::
+  - **15 000** stores served
+  - **400** applications
+  - **24** sidecars

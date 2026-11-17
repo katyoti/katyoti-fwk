@@ -1,0 +1,17 @@
+# The reviews of an object, on every object carrying `reviewable`: drawn by the
+# reviews service as a page — Start a review (the review types that apply, by
+# dimension, and the presets), then each review newest first with its type,
+# day, commit, rating and open findings by severity, opening it on a click.
+# Re-read when an object of the module changes (a review or a finding written
+# under it).
+name: Reviews
+description: "The reviews of this object: start one, then each with its type, rating and open findings, newest first"
+icon:
+  tabler: clipboard-check
+  emoji: "📋"
+order: 40
+filter:
+  capabilities: [reviewable]
+source: ":reviews/reviews-of"
+refresh:
+  scope: module

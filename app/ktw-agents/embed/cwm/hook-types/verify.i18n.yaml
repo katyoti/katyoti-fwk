@@ -1,0 +1,9 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Quand un objet et ce qui se trouve dessous sont vérifiés (Verify du service de
+    vérification, verify()). Répond par un statut (pass, fail ou unproven) et le verdict
+    enregistré.
+  label: Vérifier

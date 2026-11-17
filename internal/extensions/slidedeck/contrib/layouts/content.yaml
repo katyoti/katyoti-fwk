@@ -1,0 +1,11 @@
+name: content
+description: The default slide — a heading and one block of content (a list, a paragraph, a table, a diagram or code).
+slots:
+  - name: default
+    description: A level-2 heading, then the content.
+    required: true
+example: |
+  ## Three things changed
+  - The hub owns the catalog
+  - Sidecars publish, never read
+  - Every contribution is graded

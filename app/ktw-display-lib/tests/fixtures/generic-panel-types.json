@@ -1,0 +1,42 @@
+{
+  "ktw-agents:/panel-type/chat": {
+    "children": [
+      {
+        "children": [],
+        "id": "chat:artifacts",
+        "kind": "vbox"
+      }
+    ],
+    "id": "chat",
+    "kind": "vbox"
+  },
+  "ktw-agents:/panel-type/log": {
+    "children": [
+      {
+        "data": [],
+        "id": "log",
+        "kind": "log"
+      }
+    ],
+    "id": "log-panel",
+    "kind": "vbox"
+  },
+  "ktw-agents:/panel-type/progress": {
+    "children": [
+      {
+        "bar": true,
+        "id": "steps",
+        "kind": "progress-list",
+        "layout": "rows",
+        "stages": []
+      }
+    ],
+    "id": "progress",
+    "kind": "vbox"
+  },
+  "ktw-agents:/panel-type/question": {
+    "children": [],
+    "id": "question",
+    "kind": "vbox"
+  }
+}

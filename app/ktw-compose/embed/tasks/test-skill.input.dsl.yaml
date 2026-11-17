@@ -1,0 +1,43 @@
+name: test-skill-input
+root: TestSkillInput
+types:
+  TestSkillInput:
+    type: object
+    fields:
+      target:
+        type: SkillTarget
+        description: "The SKILL under test."
+        optional: true
+      persona:
+        type: string
+        description: "Who the simulated user is (role, expertise, temperament)"
+      goal:
+        type: string
+        description: "The triggering request — what the user wants, phrased as they would say it (this is what should invoke the skill)"
+      constraints:
+        type: string[]
+        description: "Concrete facts the user would know (names, paths, choices) so the sim stays consistent"
+        optional: true
+      criteria:
+        type: string[]
+        description: "The expected-outcome acceptance criteria the run is SCORED against (not a transcript)"
+      max_turns:
+        type: number
+        description: "Cap on driver turns before declaring a stall (default 40)"
+        optional: true
+  SkillTarget:
+    type: object
+    description: "`skill` is its name/URI; for a PLATFORM-PROVIDED skill (a provider URI like ktw-acme:/skill/<name>) this is the handle — it is loaded from the catalog, not a file. `skill_file` is the on-disk source, used for the latest-sync check + the format lint + the authored-skill fallback."
+    fields:
+      skill:
+        type: string
+        description: "Skill name or provider URI under test (e.g. ktw-acme:/skill/<name>). A provider URI ⇒ platform-provided."
+        optional: true
+      skill_file:
+        type: string
+        description: "Workspace/source path to the SKILL.md — for the latest-sync compare, the format lint, and (authored skills only) injection"
+        optional: true
+      node_id:
+        type: string
+        description: "CWM compose-skill node id (optional — enables the object-lint format check)"
+        optional: true

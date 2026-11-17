@@ -1,0 +1,5 @@
+# Translations of the gate requirement beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Ses relecteurs l'ont approuvé
+  description: Autant d'approbations que son type en demande.

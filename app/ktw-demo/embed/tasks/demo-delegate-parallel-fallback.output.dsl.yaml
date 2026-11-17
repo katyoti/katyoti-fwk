@@ -1,0 +1,7 @@
+name: demo-delegate-parallel-fallback-output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Map of branch name → simulator output (or fallback output for branch C)"
+    fields: {}

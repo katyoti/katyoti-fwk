@@ -1,0 +1,7 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Demande d'approbation
+  description: >-
+    Un point de contrôle humain : un agent face à une décision qui dépasse son
+    autorité en crée une sous l'inbox et attend ; une personne y répond là.

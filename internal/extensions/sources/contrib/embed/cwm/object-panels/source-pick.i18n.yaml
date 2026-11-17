@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Choisir les éléments
+  description: Les éléments de la source choisis dans le sélecteur générique - cherchés, parcourus, appliqués - ce qui est choisi est ce que sa synchronisation lit

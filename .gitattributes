@@ -1,0 +1,74 @@
+# Census goldens are generated with LF; keep them LF so the guard does not
+# fail on a checkout where git translates line endings.
+*.golden text eol=lf
+
+# The census hashes the BYTES of every embedded declaration, so with
+# core.autocrlf=true a checkout rewrote them CRLF and moved their hashes —
+# silently, and once per file. Measured 2026-09-19: 21 of 136 embedded YAMLs had
+# flipped to CRLF, exactly the ones written that session, while the other 115
+# were LF only because they had not been checked out recently. On a FRESH CLONE
+# every one of them would flip and every census hash would break.
+#
+# Pinning them to LF makes the hash describe the CONTENT rather than the
+# checkout, which is the only way the census can mean the same thing on two
+# machines.
+internal/core/contribution/embed/** text eol=lf
+app/*/embed/** text eol=lf
+modules/** text eol=lf
+# Every other embed tree, same reason (found 2026-09-25: a fresh worktree
+# checked internal/extensions/{manifest,task}/local/embed out CRLF and moved
+# config-body / reference-body / task-body in all 22 goldens).
+internal/**/embed/** text eol=lf
+
+# Every other embedded content tree a binary publishes from (the manifest
+# extension's own data-types, the task extension's demos): same rule, same
+# reason. Found 2026-09-25: config-body/reference-body hashed from a mixed
+# CRLF/LF working copy in every golden.
+internal/extensions/*/local/embed/** text eol=lf
+internal/extensions/*/embed/** text eol=lf
+# Packs an extension declares itself (inbox, journal): same rule.
+internal/extensions/*/contrib/embed/** text eol=lf
+
+# Embedded outside an embed/ folder: the slide-deck layouts and themes the
+# census hashes. YAML only: a theme folder also holds binary assets.
+internal/extensions/slidedeck/contrib/layouts/*.yaml text eol=lf
+internal/extensions/slidedeck/contrib/themes/*.yaml text eol=lf
+# A theme's sample deck and its notices (licences), embedded from the theme
+# folder beside its binary assets.
+internal/extensions/slidedeck/contrib/themes/**/*.md text eol=lf
+internal/extensions/slidedeck/contrib/themes/**/*.txt text eol=lf
+
+# The infra installers the publisher writes into a channel: run on macOS and
+# Linux as shell scripts, so a CRLF checkout would break them on a fresh clone.
+internal/extensions/marketplace/authoring/installers/** text eol=lf
+
+# The journal appends one record per line to each day's file; a union merge
+# keeps both branches' lines instead of conflicting on an append-only file.
+modules/sys-journal/**/*.jsonl merge=union
+
+# Binary files are never text, wherever a folder rule above reaches (a deck
+# theme's images and fonts under an embed/, the site media under modules/).
+# `text eol=lf` on a binary strips its CR bytes when it is added — a PNG's own
+# signature holds one. Last, so these win over the folder rules.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.pptx binary
+*.potx binary
+*.docx binary
+*.xlsx binary
+*.zip binary
+
+# Shell scripts run in bash (WSL, Linux, macOS): a CRLF checkout breaks them
+# (bash reads the carriage return as part of every command).
+*.sh text eol=lf
+# Git hooks run in bash: a CRLF checkout breaks them.
+.githooks/* text eol=lf

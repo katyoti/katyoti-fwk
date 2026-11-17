@@ -1,0 +1,64 @@
+# Registers `object-panel` as a SYSTEM contribution kind (p7p, 2026-09-25).
+# Replaces `capability-panel`, and inverts its direction.
+#
+# An object-panel is ONE TAB an object shows when the panel's filter admits it:
+# `filter: {types, capabilities, when}` — any of the types, any of the
+# effective capabilities, and an el predicate over the object. The PANEL says
+# where it shows; a capability no longer lists panels, because one panel may
+# serve several capabilities and the filter is where that is said once. A panel
+# shows at most once per object. Tabs sort by `order`, then `name`.
+#
+# What it shows is a render definition (system:/data-type/render-def): inline
+# `content` whose `${...}` strings resolve against the object, or a `source`
+# method whose result is the definition. Special views are named UI extensions
+# (`content: {kind: extension, extension: method-next}`), so a tab is always
+# ui-components rather than GUI code keyed by an id.
+#
+# Published from a sidecar's CWM pack: embed/cwm/object-panels/<id>.yaml, the id
+# being the file's basename.
+name: object-panel
+description: |
+  One tab of the object pane: a name, a tooltip, an icon and an order, a filter
+  (types, capabilities, an el `when`) deciding which objects show it, and a
+  render definition — inline content or a source method — of what it shows.
+schema: system:/data-type/object-panel
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the tab's label and its tooltip, and its empty
+# state's sentence and button.
+translatable: [name, description, empty.text, empty.label]
+
+# The filter's `when` is an el predicate over the object: the census compiles
+# it against the object vocabulary, so a name it does not know (`capabilities.x`)
+# is a finding before the pane evaluates it.
+expressions: [filter.when]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 448  # measured max 259 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `object-panels/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its file's name.
+source:
+  folder: object-panels
+  match: ["*.yaml", "*.yml"]
+  id: basename       # a panel is its file; its name is the tab's label
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

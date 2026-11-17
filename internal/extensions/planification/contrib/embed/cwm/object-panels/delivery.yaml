@@ -1,0 +1,20 @@
+# The Delivery view: every stream as a lane - its release mode and next cut
+# with Change mode and Cut now, its releases with their stage, done of total
+# and a dot per gate, its backlog with the held increments among it - every
+# item showing its id and opening on a click (delivery_view.go: DeliveryPage).
+# A GLOBAL panel of the Global strip; on a stream, its lane alone: the
+# stream's own pane.
+name: "Delivery"
+description: "Every stream on a timeline - its release mode, its releases and its backlog - and the release and increment chosen"
+icon:
+  tabler: "route"
+  emoji: "🛤️"
+order: -2
+global: true
+filter:
+  types:
+    - "stream"
+source: "ktw-agents:streams/delivery-page"
+# A release, an increment or a stream changed anywhere changes it.
+refresh:
+  scope: "universe"

@@ -1,0 +1,26 @@
+{
+  "_": "Element addresses and what each opens - read by the GUI's parseAddress (tests/address.test.ts) and by the scenario's Go ParseAddress (internal/extensions/scenario/api/address_test.go): one grammar, two languages, the same examples.",
+  "opens": [
+    {"raw": "dev/object/m.F-001", "want": {"kind": "object", "universe": "dev", "id": "m.F-001"}},
+    {"raw": "dev/object/m.F-001/links", "want": {"kind": "object", "universe": "dev", "id": "m.F-001", "tab": "tab:links"}},
+    {"raw": "dev/object/m.F-001/children/record", "want": {"kind": "object", "universe": "dev", "id": "m.F-001", "tab": "tab:children/record"}},
+    {"raw": "dev/object/m.F-001/information/fields", "want": {"kind": "object", "universe": "dev", "id": "m.F-001", "tab": "tab:information", "section": "section:fields"}},
+    {"raw": "dev/object/m.F-001/information/cap/plan", "want": {"kind": "object", "universe": "dev", "id": "m.F-001", "tab": "tab:information", "section": "section:cap/plan"}},
+    {"raw": "archi/home/mes-etudes", "want": {"kind": "home", "universe": "archi", "entry": "mes-etudes"}},
+    {"raw": "archi/home", "want": {"kind": "home", "universe": "archi", "entry": "actions"}},
+    {"raw": "archi/screen/marketplace/sidecars", "want": {"kind": "screen", "universe": "archi", "screen": "marketplace", "section": "sidecars"}},
+    {"raw": "archi/screen/inbox", "want": {"kind": "screen", "universe": "archi", "screen": "inbox"}},
+    {"raw": "archi/screen/ready/keys", "want": {"kind": "screen", "universe": "archi", "screen": "ready", "section": "keys"}},
+    {"raw": "archi/rail/inbox", "want": {"kind": "screen", "universe": "archi", "screen": "inbox"}},
+    {"raw": "katyoti://open/dev/object/m.F-001/links", "want": {"kind": "object", "universe": "dev", "id": "m.F-001", "tab": "tab:links"}},
+    {"raw": "#/open/dev/object/m.F-001/links", "want": {"kind": "object", "universe": "dev", "id": "m.F-001", "tab": "tab:links"}}
+  ],
+  "refused": [
+    {"raw": "dev", "error": "no address"},
+    {"raw": "dev/nowhere/x", "error": "no place"},
+    {"raw": "dev/object", "error": "names the object"},
+    {"raw": "dev/object/m.F-001/children", "error": "children names their type"},
+    {"raw": "dev/screen/elsewhere", "error": "no screen"},
+    {"raw": "dev/rail/runs", "error": "opens no screen"}
+  ]
+}

@@ -1,0 +1,19 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapProject:
+      fields:
+        data_version:
+          description: "La version de la forme des données du projet : un binaire refuse des données plus récentes que celles qu'il connaît et cwm migrate amène des données plus anciennes à la sienne. Écrit par CWM ; vide signifie 1"
+          label: "Version des données"
+        modules_dir:
+          description: "Le dossier sous la racine du projet qui contient les modules ; vide signifie modules"
+          label: "Dossier des modules"
+        scan:
+          description: "Ce que le parcours des objets écarte en plus de ses exclusions intégrées"
+          label: "Parcours des objets"
+        uuid:
+          description: "L'unique id machine : un UUIDv7 généré une fois par cwm project-init et committé avec le dépôt ; un clone le porte et un fork en génère un nouveau. Le premier segment du nom complet de chaque objet"
+          label: "Id du projet"

@@ -1,0 +1,8 @@
+# Sign-off on any object, no new type: `aspects: [signable]` gives an object
+# the sign-off capability and a lifecycle in one move.
+name: signable
+label: Signable
+description: >-
+  A sign-off and a lifecycle on any object: reviewers, approvals, a verdict,
+  and a state.
+capabilities: [signoff, lifecycle]

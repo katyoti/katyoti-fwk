@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Performance"
+  description: "Complexité algorithmique, requêtes répétées, cache, entrées et sorties, mémoire et chemins chauds."

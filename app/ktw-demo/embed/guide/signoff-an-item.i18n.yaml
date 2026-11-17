@@ -1,0 +1,18 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Viser un élément
+  description: Créez un élément à viser, recueillez ses approbations et approuvez-le une fois son visa complet.
+  hashtags:
+  - visa
+  - approuver
+  - contester
+  - démo
+  steps:
+    pick-object: Choisissez un *élément à viser* dans l'arbre, ou créez-en un avec {control:object.new}.
+    signoff-tab: Ouvrez son onglet {control:objtab.tab:signoff-board}. Il montre les approbations qui manquent encore, ses relecteurs et ce qui le conteste.
+    approve: Appuyez sur {control:page.action|ktw-demo:signoff/approve} sur la ligne d'un relecteur. L'élément demande deux approbations.
+    move: Dans son onglet {control:objtab.tab:lifecycle}, appuyez sur {control:lifecycle.move|approved}. Le passage est refusé, avec la liste de la porte, tant que le visa n'est pas complet.
+    done: L'élément est approuvé — son visa est complet.

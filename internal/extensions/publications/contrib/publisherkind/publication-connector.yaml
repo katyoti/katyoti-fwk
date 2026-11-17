@@ -1,0 +1,36 @@
+# The `publication-connector` kind, declared by the publications pack: every
+# binary that ships publishers (its pack's publication-connectors folder)
+# emits one `<provider>:/publication-connector/<name>` Contribution per
+# publisher. Its schema is provider-relative: the publisher names
+# `<provider>:/data-type/publication-connector`, the shape of
+# api.ConnectorDecl (publisherkind.Leaf).
+name: publication-connector
+description: |
+  A publisher - a wiki, a static site, a PDF, a markdown folder: the data
+  type of its instances' settings and the method that publishes a document
+  tree with an instance's settings and state, answering what it created,
+  updated, skipped and refused and the new state it keeps.
+schema: publication-connector
+validate: error
+# Its entries name the method a publish runs.
+execution: executable
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 256
+  # The picker fields are written once, in the data layer (the YAML tree).
+  from: data
+  fields: [name, description]
+
+# How a file becomes a publisher (contribution-types.md "How files become
+# layers"): a YAML file of the pack's `publication-connectors/` folder, its
+# tree the data layer, the file as written the source. Addressed by its file
+# name.
+source:
+  folder: publication-connectors
+  match: ["*.yaml", "*.yml"]
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

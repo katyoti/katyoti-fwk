@@ -1,0 +1,19 @@
+# Where the object stands and where it may go: for each lifecycle it has (its
+# own, and a capability's that follows a workflow), the state on its workflow's
+# path, the transitions from it with each guard's verdict and each named gate's
+# checklist, and the history. A person confirms a requirement and makes a move
+# here; CWM checks both. Its filter names `lifecycle` only: a panel naming a
+# capability takes that capability's fields out of Information, and a request's
+# other fields belong there (planification's Requests panel moves requests).
+name: "Lifecycle"
+description: "The state, where it may go next, what each move requires, and the history"
+icon:
+  tabler: "progress"
+  emoji: "🔁"
+order: 5
+filter:
+  capabilities:
+    - "lifecycle"
+content:
+  kind: "extension"
+  extension: "object-lifecycle"

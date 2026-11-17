@@ -1,0 +1,5 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Projet
+  description: Un dépôt git — le dossier qui tient le travail et héberge le graphe.

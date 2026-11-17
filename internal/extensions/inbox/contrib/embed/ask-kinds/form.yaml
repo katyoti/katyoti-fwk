@@ -1,0 +1,5 @@
+name: form
+label: Answer to give
+description: Fill a form whose fields a data-type defines.
+answerable_by: any
+order: 4

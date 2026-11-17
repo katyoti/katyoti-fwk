@@ -1,0 +1,17 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      object:       { type: string, description: "The object reviewed" }
+      type:         { type: string, description: "The review type" }
+      title:        { type: string, optional: true, description: "What the review type is called" }
+      description:  { type: string, optional: true, description: "What it looks at" }
+      rating:       { type: string, optional: true, description: "How it rates its result" }
+      skill:        { type: string, description: "The skill the agent follows" }
+      input:        { type: object, optional: true, description: "What the skill is given beside the object" }
+      run:          { type: string, optional: true, description: "The run it belongs to" }
+      trigger:      { type: string, optional: true, description: "manual or automatic" }
+      requested_by: { type: string, optional: true, description: "Who asked or the request that set it off" }
+      commit:       { type: string, optional: true, description: "The commit reviewed" }

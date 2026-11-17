@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Besoin
+  description: >-
+    Un état voulu, et son atteignabilité. Un objectif est toujours
+    asymptotique (une direction jamais atteinte) ; une fonctionnalité, un cas
+    d'usage et un critère d'acceptation sont atteignables (un test peut dire
+    qu'ils sont terminés).

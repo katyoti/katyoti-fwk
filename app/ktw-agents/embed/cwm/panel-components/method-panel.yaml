@@ -1,0 +1,2 @@
+# A named view of the GUI's ui-components registry (panel-component kind).
+description: "A generic panel drawn from a descriptor (description, options, actions calling methods, a note); its input is the descriptor."

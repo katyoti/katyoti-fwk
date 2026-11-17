@@ -1,0 +1,55 @@
+$schema: ktw-schema/v1
+name: composites
+version: "1.0.0"
+description: "Composite types: Object, Array, Choice — including nested arrays and recursive choice (JSON-value pattern)."
+root: BlogPost
+types:
+  Author:
+    type: object
+    id: id
+    title: name
+    fields:
+      id: string@uuid
+      name:
+        type: string@text(max:120)
+        label: Display name
+        description: Public name shown on posts
+      email: string@email?
+      bio: string@markdown?
+
+  BlogPost:
+    type: object
+    id: id
+    title: title
+    fields:
+      id: string@uuid
+      title:
+        type: string@text(max:200)
+        label: Title
+      body: string@markdown
+      author: ->Author
+      tags: string[]
+      ratings:
+        type: array
+        items: number@rating(max:5)
+        min: 0
+        max: 100
+
+  # Recursive choice — the JSON-value pattern from spec §5.
+  JsonValue:
+    type: choice
+    types:
+      - string
+      - number
+      - boolean
+      - "null"
+      - JsonObject
+      - JsonArray
+
+  JsonObject:
+    type: object
+    catchall: JsonValue
+
+  JsonArray:
+    type: array
+    items: JsonValue

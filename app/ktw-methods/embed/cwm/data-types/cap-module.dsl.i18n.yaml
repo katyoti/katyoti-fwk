@@ -1,0 +1,15 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapModule:
+      fields:
+        decisions:
+          description: "Les décisions ouvertes du module : leurs ids (un seul ou une liste), ou `none` quand le module n'en a aucune aujourd'hui. Le silence (champ absent) et `none` restent distincts : absent signifie que personne ne l'a dit, `none` signifie que quelqu'un a regardé et n'a trouvé aucune décision ouverte."
+          label: "Décisions ouvertes"
+        linked_goals:
+          label: "Objectifs liés"
+        owns_capabilities:
+          description: "Les ids de capacités que ce module PORTE : sa doctrine, ses cas d'usage, ses décisions ouvertes. Déclaré comme CHAMP plutôt que dérivé du nom du module : la règle `<parent>-<capability>` est mécanique et ferait d'un NOM une CLÉ, ce que ce modèle a rejeté pour l'identité d'objet, le parent d'un module et le nom d'un dossier. La convention de nommage subsiste comme contrôle `qol`. La DÉCLARATION d'une capacité reste avec le sidecar qui la livre ; ceci indique quel module porte sa doctrine."
+          label: "Capacités portées"

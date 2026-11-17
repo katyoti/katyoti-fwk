@@ -1,0 +1,12 @@
+name: feeds
+label: Feeds
+inverse_label: Fed by
+from: information-source
+to: any                              # the object the source informs
+cardinality: M:N
+target: object
+object_storage: edges
+inverse_name: fed-by
+description: |
+  What an information source informs: a module, a study, a solution. The
+  Links tab of each shows the sources it reads from.

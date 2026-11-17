@@ -1,0 +1,70 @@
+{
+  "settings": {
+    "title": "Item ranges"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 4,
+      "settings": {
+        "layout": "icons"
+      },
+      "settingsLine": 5,
+      "slots": [
+        {
+          "name": "default",
+          "line": 6,
+          "markdown": "## One icon is not a set"
+        },
+        {
+          "name": "items",
+          "line": 8,
+          "markdown": "- ![Rocket](assets/rocket.png) **Alone**"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 12,
+      "settings": {
+        "layout": "timeline"
+      },
+      "settingsLine": 13,
+      "slots": [
+        {
+          "name": "default",
+          "line": 14,
+          "markdown": "## Too many steps"
+        },
+        {
+          "name": "steps",
+          "line": 16,
+          "markdown": "1. **One**\n2. **Two**\n3. **Three**\n4. **Four**\n5. **Five**\n6. **Six**\n7. **Seven**\n8. **Eight**\n9. **Nine**"
+        }
+      ]
+    },
+    {
+      "h": 2,
+      "v": 0,
+      "line": 28,
+      "settings": {
+        "layout": "key-figures"
+      },
+      "settingsLine": 29,
+      "slots": [
+        {
+          "name": "default",
+          "line": 30,
+          "markdown": "## Six figures fit"
+        },
+        {
+          "name": "figures",
+          "line": 32,
+          "markdown": "- **1** one\n- **2** two\n- **3** three\n- **4** four\n- **5** five\n- **6** six\n\n```markdown\n- not an item: it is code\n```"
+        }
+      ]
+    }
+  ]
+}

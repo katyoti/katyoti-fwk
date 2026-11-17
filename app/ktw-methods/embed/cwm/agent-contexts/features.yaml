@@ -1,0 +1,32 @@
+# The features extension's framing of a chat on a feature, or on a module
+# (whose features it is): what a feature is, and the features service as
+# tools — "add this feature", "split it", "what does nothing check" are calls,
+# the person never handles files.
+name: features
+description: How features are added, split, retired and checked, told to a chat on a feature or on a module.
+filter:
+  # a feature, or any module - its type's level capability
+  when: "type == 'feature' or 'module' in current.capabilities"
+agent:
+  system:
+    - id: features-how
+      title: Features
+      text: >-
+        A feature is something module ${current.module} builds that a test can
+        declare done, worded as what someone can do once it exists: always
+        closable, it serves one or more goals and is proven by its acceptance
+        criteria, each verified with object-verify (a verdict per criterion). It
+        is recursive: a large feature holds sub-features (a use case is a small
+        one), and a criterion under a sub-feature checks its parent too. A
+        feature no longer wanted is retired, one that holds two wants is split —
+        both keep the trail in the journal. Add, split, retire, attach criteria
+        and find what nothing checks with the features tools; change a state
+        through a transition, never by editing it.
+  tools:
+    - uri: ktw-methods:features/add
+    - uri: ktw-methods:features/split
+    - uri: ktw-methods:features/retire
+    - uri: ktw-methods:features/attach-criterion
+    - uri: ktw-methods:features/uncovered
+    - uri: ktw-methods:features/goals
+    - plugin: verification   # object-verify

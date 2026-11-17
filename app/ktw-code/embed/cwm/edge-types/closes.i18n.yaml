@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Quand l'implémentation d'une UC résout un constat (celui d'un audit, par exemple), ce lien exprime la résolution ; le constat passe à `closed` par son propre cycle de vie.\n\nAlimente la comptabilité de la porte de promotion : un constat critique ou élevé ouvert bloque la promotion de palier jusqu'à ce qu'un lien `closes` issu d'une UC validée le ferme, OU que le constat soit différé via `deferred-by` vers une OD."
+  inverse_label: "Fermé par"
+  label: "Ferme"

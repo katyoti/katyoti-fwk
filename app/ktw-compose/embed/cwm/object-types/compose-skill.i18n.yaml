@@ -1,0 +1,9 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Skill à composer
+  actions:
+    Compose: Composer
+    Verify: Vérifier
+    Test: Tester
+    Evaluate: Évaluer

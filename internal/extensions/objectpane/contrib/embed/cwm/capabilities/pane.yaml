@@ -1,0 +1,13 @@
+# The object pane's settings on a type: the view of its Information tab and
+# the type's own header badges. A TYPE-LEVEL capability: a type writes them in
+# its `pane:` section, which puts the capability in force on it; an object
+# carries no group of it. A capability's own badges stay on the capability —
+# they read its own fields. CWM checks the section against type_schema, the
+# object pane reads it.
+name: pane
+label: Pane
+icon: layout-sidebar-right
+description: >-
+  How an object of a type shows in its pane — the Information tab's view and
+  the type's header badges — set by the type's `pane:` section.
+type_schema: :/data-type/type-pane

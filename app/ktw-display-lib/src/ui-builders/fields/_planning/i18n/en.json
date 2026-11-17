@@ -1,0 +1,35 @@
+{
+  "segment": { "done": "done", "running": "running", "waiting": "waiting", "todo": "to do", "blocked": "blocked" },
+  "gate": {
+    "increments": "Increments done",
+    "dependencies": "Dependencies",
+    "no-open-p0-fix": "No open P0 fix",
+    "e2e": "End to end",
+    "alpha-sign-off": "Sign-off",
+    "change-log": "Change log"
+  },
+  "status": {
+    "done": "done", "shipped": "shipped", "released": "released", "passed": "passed",
+    "running": "running", "delivering": "delivering", "current": "current", "review": "review",
+    "waiting": "waiting", "on-hold": "on-hold", "idle": "idle", "held": "held",
+    "todo": "todo", "defined": "defined", "ready": "ready", "pending": "pending", "split": "split",
+    "blocked": "blocked", "failed": "failed",
+    "planned": "planned", "frozen": "frozen", "candidate": "candidate", "on-you": "on-you",
+    "dropped": "dropped"
+  },
+  "stage": {
+    "planned": "planned", "frozen": "frozen", "candidate": "candidate", "canary": "canary",
+    "released": "released", "dropped": "dropped"
+  },
+  "step": {
+    "intake": "intake", "analyse": "analyse", "implement": "implement", "auto-review": "auto-review",
+    "auto-test": "auto-test", "module-update": "module-update", "verify": "verify", "review": "review",
+    "specify": "specify", "size": "size", "survey": "survey", "propose": "propose",
+    "prepare": "prepare", "decide": "decide", "approve": "approve", "approve-addition": "approve-addition",
+    "approve-delivery": "approve-delivery", "accept": "accept", "answer": "answer", "apply": "apply",
+    "reconcile": "reconcile", "challenge": "challenge", "validate": "validate", "follow": "follow",
+    "find-features": "find-features", "changelog": "changelog", "update": "update"
+  },
+  "legend": { "waiting": "awaiting a person", "todo": "to do" },
+  "open": "Open {{id}}"
+}

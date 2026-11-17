@@ -1,0 +1,27 @@
+name: acceptance-criterion
+label: Acceptance criterion
+description: >-
+  One atomic testable claim belonging to a use-case: a single probe at a single
+  layer. The method's smallest gradeable unit.
+
+  A STANDALONE OBJECT, not an inline record. The legacy `use-case` ITEM type
+  says the opposite — "inline acceptance-criterion records ... never a
+  standalone item" — and that rule belongs to the model being retired. A list
+  inside one object cannot be graded individually, and grading the individual
+  criterion is the whole point of the method's atomic unit. The OBJECT type it
+  replaces already reads the right way: "a named set of acceptance criteria",
+  with `container`.
+
+  The verdict is NOT here. A criterion declares what would have to be true and
+  how to check it; whether it passed belongs to the run that checked it.
+icon: check
+folder: use-cases
+id_prefix: AC
+capabilities: [want, checkable]
+fields: ktw-methods:/data-type/acceptance-criterion
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+  label: Why
+  description: Why this criterion matters and what it proves.
+  format: markdown

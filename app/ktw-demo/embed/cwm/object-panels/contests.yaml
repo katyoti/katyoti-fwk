@@ -1,0 +1,18 @@
+# A tab on what something points at: shown on every object that has at least
+# one incoming `contests` edge (answered from CWM's index, never by a graph
+# read in a `when`). The source answers the rows; the content is the table it
+# fills.
+name: Contests
+description: "The objects that contest this one, with their own verdict"
+icon:
+  tabler: swords
+  emoji: "⚔️"
+order: 25
+filter:
+  incoming: [contests]
+source: ":signoff/contests-of"
+content:
+  kind: table
+  schema: ":/data-type/contest-row"
+refresh:
+  scope: module

@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Architecture du code"
+  description: "La structure du code du module : ses composants et dépendances, ses choix techniques, ses motifs et anti-motifs."

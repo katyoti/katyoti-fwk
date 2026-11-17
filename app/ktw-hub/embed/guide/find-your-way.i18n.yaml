@@ -1,0 +1,18 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: S'orienter dans l'arbre
+  description: Une visite de l'arbre du projet, de ses modules et objets, et des onglets d'un objet.
+  hashtags:
+  - arbre
+  - objets
+  - modules
+  - onglets
+  - naviguer
+  steps:
+    objects: L'onglet {control:project.tab|objects} montre le projet sous forme d'arbre.
+    pick: Le premier niveau contient les *modules*. Ouvrez-en un, puis choisissez un objet à l'intérieur.
+    tabs: Les onglets d'un objet dépendent de son type et de ses capacités. Chaque onglet en montre une facette.
+    sessions: '{control:project.tab|terminals} liste les terminaux que vous pouvez ouvrir ici ; vos chats et vos exécutions sont sous {control:objtab.runs} dans l''onglet {control:tabs.global}.'

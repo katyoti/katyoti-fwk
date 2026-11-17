@@ -1,0 +1,102 @@
+{
+  "$schema": "ktw-schema/v1",
+  "description": "Object with ui-form, ui-table, and ui-filter extensions attached. Extensions are opaque to the parser; the AST preserves them for downstream UI generators.",
+  "name": "ui-extensions",
+  "types": {
+    "User": {
+      "extensions": [
+        {
+          "groups": [
+            {
+              "cols": 2,
+              "fields": [
+                "first_name",
+                "last_name"
+              ],
+              "title": "Identity"
+            },
+            {
+              "cols": 1,
+              "fields": [
+                "email",
+                "role",
+                "active"
+              ],
+              "title": "Account"
+            }
+          ],
+          "layout": "groups",
+          "name": "default",
+          "type": "ui-form"
+        },
+        {
+          "columns": [
+            "first_name",
+            "last_name",
+            "email",
+            "role"
+          ],
+          "filterable": true,
+          "name": "default",
+          "page_size": 25,
+          "pagination": true,
+          "sortable": true,
+          "type": "ui-table"
+        },
+        {
+          "filters": [
+            "role",
+            "active"
+          ],
+          "name": "default",
+          "type": "ui-filter"
+        }
+      ],
+      "fields": {
+        "active": {
+          "content": "switch",
+          "default": true,
+          "type": "boolean"
+        },
+        "email": {
+          "content": "email",
+          "type": "string"
+        },
+        "first_name": {
+          "content": "text",
+          "contentParams": {
+            "max": 80
+          },
+          "label": "First name",
+          "type": "string"
+        },
+        "id": {
+          "content": "uuid",
+          "type": "string"
+        },
+        "last_name": {
+          "content": "text",
+          "contentParams": {
+            "max": 80
+          },
+          "label": "Last name",
+          "type": "string"
+        },
+        "role": {
+          "content": "label",
+          "label": "Role",
+          "type": "string"
+        }
+      },
+      "idField": [
+        "id"
+      ],
+      "titleField": [
+        "first_name",
+        "last_name"
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ComposeSkill:
+      fields:
+        skill_file:
+          description: "Chemin, relatif à l'espace de travail ou absolu, du SKILL.md en cours de rédaction. Les linters et vérificateurs de compose-skill s'exécutent sur ce fichier."
+          label: "Fichier de skill"
+        status:
+          description: "Phase de rédaction : drafting (en cours d'écriture), verifying (linters en cours d'exécution), verified (toutes les vérifications passent)."
+          label: "Statut"

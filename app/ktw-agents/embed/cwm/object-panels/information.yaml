@@ -1,0 +1,14 @@
+# The object's identity: type, module, parent, status, tags, badges and the
+# capabilities it carries — first on every object. Declared like any panel, so
+# a type or an object may replace it.
+name: "Information"
+description: "Who this object is, where it sits, what it carries"
+icon:
+  tabler: "info-circle"
+  emoji: "ℹ️"
+order: 1
+filter:
+  types: ["*"]
+content:
+  kind: "extension"
+  extension: "object-information"

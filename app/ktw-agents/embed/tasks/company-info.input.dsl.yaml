@@ -1,0 +1,17 @@
+name: company-info-input
+root: CompanyInfoInput
+types:
+  CompanyInfoInput:
+    type: object
+    fields:
+      company_name:
+        type: string
+        label: "Nom de l'entreprise"
+        description: "L'entreprise à analyser"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Analyser"
+        groups:
+          - title: "Entreprise"
+            fields: [company_name]

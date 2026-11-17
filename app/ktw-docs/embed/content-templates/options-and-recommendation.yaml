@@ -1,0 +1,41 @@
+# A section group (partial template): the candidate solutions compared and
+# the one recommended.
+name: options-and-recommendation
+label: Options et recommandation
+description: The criteria, the candidate solutions, their comparison and the recommendation.
+partial: true
+sections:
+  - id: criteria
+    title: Critères
+    intent: What a good solution must satisfy, in the order that matters.
+    sources:
+      - {from: files, value: "solutions/criteria*.yaml", note: "the dossier's criteria and their weights"}
+    guidance: At most five criteria; say which one decides.
+    weight: 1
+  - id: option
+    title: Option
+    intent: One candidate — what it is, how it answers the criteria, its cost and its risk.
+    repeat: dossier-solution
+    sources:
+      - {from: children, value: dossier-solution, note: "each candidate solution"}
+    guidance: The same structure for every option so they can be compared; its diagram when it has one.
+    weight: 2
+  - id: comparison
+    title: Comparaison
+    intent: The options side by side on the criteria.
+    sources:
+      - {from: files, value: "solutions/comparison.md", note: "the comparison the dossier holds"}
+    guidance: A table or two columns; mark the decisive criterion; never a score the dossier does not give.
+    required: true
+    weight: 2
+    deck: {layout: comparison}
+  - id: recommendation
+    title: Recommandation
+    intent: The option recommended and the one reason it wins.
+    sources:
+      - {from: links, value: decided-by, note: "a decision already taken"}
+      - {from: files, value: "solutions/comparison.md"}
+    guidance: One sentence, then what it costs to choose it.
+    required: true
+    weight: 2
+    deck: {layout: statement}

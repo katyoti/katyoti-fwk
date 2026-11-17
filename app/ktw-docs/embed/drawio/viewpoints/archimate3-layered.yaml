@@ -1,0 +1,10 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: archimate3-layered
+displayName: ArchiMate — layered view
+description: Every ArchiMate element and relationship, business above application above technology.
+notation: ktw-docs:/notation/archimate3
+templates: ktw-docs:/drawio-template/archimate3
+page: default
+layout:
+  algorithm: layered
+  direction: DOWN

@@ -1,0 +1,17 @@
+name: justified-by
+label: Justified by
+inverse_label: Justifies
+from: rule | document                # documentation: the objects that carry a how
+to: decision                         # held by to_capabilities
+to_capabilities: [decision]
+cardinality: M:N
+target: object
+object_storage: edges
+inverse_name: justifies
+description: |
+  The decision that says WHY a rule holds or a guide is written the way it
+  is. A rule or a document carries the how; a decision that applies
+  carries the why, once. Written on the rule or the document, read from the
+  decision's side as `justifies`. The target must carry the `decision`
+  capability: a rule justified by another rule, or by a page, is a link,
+  not a justification.

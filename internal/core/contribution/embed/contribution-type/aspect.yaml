@@ -1,0 +1,51 @@
+# Registers `aspect` as a SYSTEM contribution kind, beside capability and
+# object-type (phase 7g, decided 2026-09-25 — identity-and-index.md §8).
+#
+# An aspect is a NAMED LIST OF CAPABILITIES added to an object in one move:
+# `aspects: [isa]` on any object brings `want` + `checkable` exactly as if each
+# had been written on the instance. The capability stays the atom; the type
+# stays the identity; the aspect is the reusable bundle that is NOT an identity.
+#
+# Effective capabilities = type ∪ aspects (expanded, declaration order) ∪ the
+# instance's groups — read by ONE function (cwm core `effectiveCapabilities`).
+name: aspect
+description: |
+  A named list of capabilities an object may add in one move (`aspects: [isa]`).
+  Each named capability must be declared; an aspect naming an undeclared one is
+  dropped at load with a warning, never silently expanded.
+schema: system:/data-type/aspect
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the aspect's name and description, as the aspect picker and the
+# capability badges show them.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 320  # measured max 204 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `aspects/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: aspects
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

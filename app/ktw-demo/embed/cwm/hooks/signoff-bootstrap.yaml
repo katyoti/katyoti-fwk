@@ -1,0 +1,13 @@
+# When a project opens, the demo module has its welcome sign-off item: a `hook`
+# contribution at the bootstrap point, on the project object. The service
+# takes the declared input (no adapter); a project without a `demo` module is
+# left alone.
+name: signoff-bootstrap
+description: >-
+  When a project opens, the demo module holds its welcome sign-off item.
+type: bootstrap
+uri: :signoff/ensure-desk
+filter:
+  capabilities: [project]
+input:
+  module: demo

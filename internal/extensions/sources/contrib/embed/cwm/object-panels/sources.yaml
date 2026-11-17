@@ -1,0 +1,119 @@
+# The « Sources » tab of every carrier of the knowledge capability (a study),
+# drawn as the approved mock-up
+# (modules/architecture/knowledge-sources/knowledge-sources-mockup.html): a
+# board of every contributed connector - its row says what is picked and
+# whether the object uses it, its switch « Utiliser » (`sources/use`, off:
+# its source removed) - beside
+# the selected connector's panel (`sources/connector-panel`: « Utiliser » while
+# unused, then the generic picker - search, « Parcourir », its status banner,
+# the derived note, the selection with each item's state, « Appliquer »
+# holding the choice); then the knowledge base - documents read, « en cours »
+# or « à jour » - with « Appliquer tout » (`sources/apply`: reads what is
+# held), « Tout synchroniser » and « Réindexer »; then each source's row and
+# « Choisir » (its source-pick tab), « Synchroniser » and « Retirer »
+# (`sources/remove`); between them, « Documents » (`sources/documents-page`,
+# a region): « Déposer un document » (`sources/deposit`) and each deposited
+# document, who deposited it. The page speaks French: the study it shows does.
+name: "Sources"
+description: "The object's information sources and knowledge base: each source's state and last sync, syncing them all, reindexing the base"
+icon:
+  tabler: "books"
+  emoji: "📚"
+order: 6
+filter:
+  capabilities:
+    - "knowledge"
+source: "ktw-agents:sources/sources-of"
+# Its badge: the carrier's own sources waiting on the
+# person - unreachable or holding an item in failure -, red; none at 0.
+count: "ktw-agents:sources/waiting-count"
+refresh:
+  scope: "self"
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "md"
+    children:
+      - kind: "hbox"
+        gap: "sm"
+        children:
+          - {kind: "heading", text: "Sources", order: 3}
+          - {kind: "badge", text: "", dataField: "$.label", color: "teal"}
+          - {kind: "badge", text: "", dataField: "$.kb_label", color: "grape"}
+      - kind: "board"
+        id: "sources-board"
+        title: "Sources de l'objet"
+        select: "connector"
+        dataField: "$.connectors"
+        empty: "Aucun connecteur de source n'est contribué dans cet univers."
+        # Laid out as cards: one card per
+        # connector - its state, meta line, kept items and note - drawn so
+        # only behind the host's sourceModel switch, else the former list.
+        layout: "cards"
+        openLabel: "Choisir…"
+        backLabel: "← Toutes les sources"
+        moreLabel: "et {n} autres"
+        actions:
+          - {label: "Actualiser", icon: "refresh", uri: "ktw-agents:sources/source-sync", args: {id: "${item.source}"}, when: "used"}
+          - {label: "Retirer", icon: "trash", color: "red", uri: "ktw-agents:sources/remove", args: {id: "${item.source}", carrier: "${id}"}, when: "used", confirm: "Retirer cette source ? Ce qu'elle a lu quitte la base de connaissance.", dangerous: true}
+        toggle: {label: "Utiliser cette source", uri: "ktw-agents:sources/use", args: {id: "${id}", connector: "${item.key}", "on": "${value}"}}
+        panel: {kind: "box", id: "connector-panel", children: [], load: {method: "ktw-agents:sources/connector-panel", args: {id: "${id}", connector: "${selection.connector}"}}, placeholder: {kind: "skeleton", count: 3}, empty: "Choisissez une source à gauche."}
+      - kind: "section"
+        size: "md"
+        title: "Base de connaissance"
+        description: "Elle contient exactement ce que les sélections apportent, interfaces et services compris"
+        icon: "database"
+        color: "grape"
+        children:
+          - kind: "hbox"
+            gap: "xs"
+            children:
+              - {kind: "badge", text: "", dataField: "$.documents_label", color: "teal"}
+              - kind: "badge"
+                text: ""
+                dataField: "$.pending_label"
+                colors: {"à jour": "gray"}
+                color: "yellow"
+          - kind: "hbox"
+            gap: "xs"
+            children:
+              - {kind: "button", label: "Appliquer tout", icon: "check", size: "xs", variant: "filled", action: {label: "Lire ce qui est retenu", uri: "ktw-agents:sources/apply", args: {id: "${id}"}}}
+              - {kind: "button", label: "Tout synchroniser", icon: "refresh", size: "xs", variant: "light", action: {label: "Tout synchroniser", uri: "ktw-agents:sources/sync-all", args: {id: "${id}"}}}
+              - {kind: "button", label: "Réindexer", icon: "database", size: "xs", variant: "subtle", action: {label: "Réindexer la base de connaissance", uri: "ktw-agents:sources/reindex", args: {id: "${id}"}}}
+      # « Documents »: a file chosen on the machine joins the
+      # object's « Documents » source and its knowledge base; each document
+      # says who deposited it. A section fed by its own load so
+      # a study's « Schémas et documents » holds the same.
+      - {kind: "box", id: "documents", children: [], load: {method: "ktw-agents:sources/documents-page", args: {id: "${id}"}}, placeholder: {kind: "rows", count: 4}, empty: "Documents"}
+      - kind: "section"
+        size: "md"
+        title: "Les sources"
+        description: "Ce que l'objet lit, et ce que la dernière synchronisation a apporté"
+        icon: "plug-connected"
+        color: "teal"
+        dataField: "$.sources"
+        empty: "Aucune source : « Utiliser » sur une source disponible en crée une."
+        children:
+          - kind: "list"
+            dataField: "$.sources"
+            gap: "xs"
+            item:
+              kind: "hbox"
+              gap: "sm"
+              children:
+                - kind: "badge"
+                  text: ""
+                  dataField: "$.item.state"
+                  colors: {synced: "green", stale: "yellow", failed: "red", declared: "gray"}
+                - {kind: "link", text: "(source)", dataField: "$.item.name", size: "sm", action: {label: "Ouvrir la source", navigate: {object: "${item.id}"}}}
+                - {kind: "badge", text: "", dataField: "$.item.connector_label", color: "gray"}
+                - {kind: "text", content: "", dataField: "$.item.items", size: "xs", color: "dimmed"}
+                - {kind: "text", content: "", dataField: "$.item.picked_label", size: "xs", color: "teal"}
+                - {kind: "text", content: "", dataField: "$.item.last_synced", size: "xs", color: "dimmed"}
+                - {kind: "text", content: "", dataField: "$.item.error", size: "xs", color: "red"}
+                - {kind: "button", label: "Choisir", icon: "list-check", size: "xs", variant: "subtle", action: {label: "Choisir les éléments de la source", navigate: {object: "${item.id}", panel: "source-pick"}}}
+                - {kind: "button", label: "Synchroniser", icon: "refresh", size: "xs", variant: "subtle", action: {label: "Synchroniser la source", uri: "ktw-agents:sources/source-sync", args: {id: "${item.id}"}}}
+                # « Retirer »: the source leaves the object,
+                # what it read leaves the knowledge base.
+                - {kind: "button", label: "Retirer", icon: "trash", size: "xs", variant: "subtle", color: "red", action: {label: "Retirer la source", uri: "ktw-agents:sources/remove", args: {id: "${item.id}", carrier: "${id}"}, confirm: "Retirer cette source ? Ce qu'elle a lu quitte la base de connaissance."}}

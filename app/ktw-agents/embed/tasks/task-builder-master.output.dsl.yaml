@@ -1,0 +1,6 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Final report from the build loop"

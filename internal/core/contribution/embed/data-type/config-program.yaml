@@ -1,0 +1,41 @@
+# Canonical data-type for a config-program entry's body —
+# `system:/data-type/config-program`. The Body shape every
+# `<provider>:/config-program/<name>` Contribution carries. Mirrors
+# `ConfigProgramBody` in internal/extensions/manifest/api/config_resources.go.
+# The entry ID is the program's display name (e.g. `pandoc`).
+$schema: ktw-schema/v1
+name: config-program
+version: "1.0.0"
+root: ConfigProgram
+description: |
+  Declares one external program the binary depends on, used by
+  `config check` to verify availability + version and to point the user
+  at an install skill when missing.
+types:
+  ConfigProgram:
+    type: object
+    fields:
+      commands:
+        type: string[]
+        description: candidate executable names to probe on PATH
+        optional: true
+      required:
+        type: boolean
+        description: whether the binary cannot function without this program
+        optional: true
+      install_skill:
+        type: string
+        description: skill id that walks the user through installing it
+        optional: true
+      version_flag:
+        type: string
+        description: flag that prints the program's version (e.g. "--version")
+        optional: true
+      required_version:
+        type: string
+        description: minimum acceptable semantic version
+        optional: true
+      config_key:
+        type: string
+        description: config key holding an explicit path override for the program
+        optional: true

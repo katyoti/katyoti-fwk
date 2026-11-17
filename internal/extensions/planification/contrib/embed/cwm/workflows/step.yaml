@@ -1,0 +1,14 @@
+# How a step moves: reached only when everything it waits on is done (the
+# pack's on_transition hook — a gate reads only the step itself).
+name: step
+label: Step
+description: >-
+  Open until every branch feeding it is done, then reached; may be dropped.
+initial: open
+states:
+  - {name: open, description: "Waiting on the branches feeding it"}
+  - {name: reached, description: "Every branch done: its deliverable exists", terminal: true}
+  - {name: dropped, description: "No longer a sync point", terminal: true}
+transitions:
+  - {name: reach, from: [open], to: reached}
+  - {name: drop, from: ["*"], to: dropped}

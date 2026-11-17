@@ -1,0 +1,5 @@
+name: accept
+label: Acceptance
+description: Confirm what was delivered, or reopen it saying why.
+answerable_by: person
+order: 9

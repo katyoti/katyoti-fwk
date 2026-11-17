@@ -1,0 +1,22 @@
+name: test-scenario-output
+root: TestScenarioOutput
+types:
+  TestScenarioOutput:
+    type: object
+    fields:
+      verdict:
+        type: string@enum(pass, fail, stall)
+      target:
+        type: string
+        optional: true
+      child_session_id:
+        type: string
+        optional: true
+      evaluation:
+        type: object
+        description: "The evaluation.json envelope (measured A/B + judged C/D/E + conclusion)"
+        catchall: any
+        optional: true
+      unmet_criteria:
+        type: string[]
+        optional: true

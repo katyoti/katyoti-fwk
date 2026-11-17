@@ -1,0 +1,12 @@
+# A template library: bindings and constants for the templates in the .drawio file of
+# the same name. Edit the shapes in draw.io; a template is a cell marked ktw-template.
+id: uml2
+displayName: UML 2.5
+description: UML 2.5 shapes. A Class shows its attributes and operations, one per line, from attributes.attributes
+  and attributes.operations.
+notation: ktw-docs:/notation/uml2
+bindings:
+  attributeLines:
+    expr: join(attributes.attributes ?? [], '<br>')
+  operationLines:
+    expr: join(attributes.operations ?? [], '<br>')

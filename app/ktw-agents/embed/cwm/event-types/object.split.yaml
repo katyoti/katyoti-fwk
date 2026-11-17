@@ -1,0 +1,6 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.split
+label: Object split
+description: >-
+  An object was replaced by several (one event per split). Declared; not subscribable yet.

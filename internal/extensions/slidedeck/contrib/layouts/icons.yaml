@@ -1,0 +1,20 @@
+name: icons
+description: A heading and a short text, then points side by side, each under a pictogram — benefits, pillars, principles (two to eight; the grid adapts to the count).
+slots:
+  - name: default
+    description: A level-2 heading, then a short text.
+    required: true
+  - name: items
+    description: A list, one item per point — a pictogram as ![label](icon:name) (or an image), then **its title** and a short caption.
+    required: true
+    minItems: 2
+    maxItems: 8
+example: |
+  <!-- slide: layout=icons -->
+  ## Why themes
+  One source, any corporate look.
+
+  ::items::
+  - ![Speed](icon:rocket) **Faster** — a deck in minutes
+  - ![Brand](icon:flower) **On brand** — the house look, always
+  - ![Truck](icon:truck) **Portable** — present, share, print

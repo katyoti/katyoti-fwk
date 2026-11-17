@@ -1,0 +1,18 @@
+name: two-cols
+description: A heading over two columns of equal weight — text beside an image, two lists, a list beside code.
+slots:
+  - name: default
+    description: A level-2 heading, then the left column.
+    required: true
+  - name: right
+    description: The right column.
+    required: true
+example: |
+  <!-- slide: layout=two-cols -->
+  ## Where we are
+  - The hub owns the catalog
+  - Sidecars publish, never read
+
+  ::right::
+
+  ![topology](assets/topology.svg)

@@ -1,0 +1,901 @@
+{
+  "children": [
+    {
+      "align": "center",
+      "children": [
+        {
+          "align": "center",
+          "children": [
+            {
+              "color": "red",
+              "id": "blockers-state",
+              "kind": "badge",
+              "size": "sm",
+              "text": "bloqué · 6 blocages",
+              "variant": "light"
+            }
+          ],
+          "gap": 6,
+          "kind": "hbox",
+          "wrap": true
+        },
+        {
+          "align": "center",
+          "children": [
+            {
+              "action": {
+                "label": "Recalculer",
+                "select": {
+                  "key": "blockers_round",
+                  "value": 3
+                }
+              },
+              "id": "blockers-recompute",
+              "kind": "button",
+              "label": "Recalculer",
+              "size": "xs",
+              "variant": "default"
+            },
+            {
+              "action": {
+                "label": "Ma prochaine action",
+                "navigate": {
+                  "object": "shop.RQ-051"
+                }
+              },
+              "id": "blockers-next",
+              "kind": "button",
+              "label": "Ma prochaine action",
+              "size": "xs",
+              "variant": "filled"
+            }
+          ],
+          "gap": 6,
+          "kind": "hbox",
+          "wrap": true
+        }
+      ],
+      "data-view": "increment-blockers-bar",
+      "gap": "sm",
+      "justify": "space-between",
+      "kind": "hbox",
+      "wrap": true
+    },
+    {
+      "callout": "red",
+      "children": [
+        {
+          "align": "center",
+          "children": [
+            {
+              "content": "Cet incrément ne peut pas finir aujourd'hui.",
+              "fw": 700,
+              "kind": "text"
+            },
+            {
+              "content": "3 actions vous reviennent, le reste avance seul ou a un responsable.",
+              "kind": "text",
+              "size": "sm"
+            },
+            {
+              "children": [
+                {
+                  "color": "yellow",
+                  "kind": "badge",
+                  "size": "sm",
+                  "text": "Pour vous 3",
+                  "variant": "light"
+                },
+                {
+                  "color": "orange",
+                  "kind": "badge",
+                  "size": "sm",
+                  "text": "Agents 1",
+                  "variant": "light"
+                },
+                {
+                  "color": "grape",
+                  "kind": "badge",
+                  "size": "sm",
+                  "text": "Extérieur 1",
+                  "variant": "light"
+                },
+                {
+                  "color": "red",
+                  "kind": "badge",
+                  "size": "sm",
+                  "text": "Incidents 2",
+                  "variant": "light"
+                },
+                {
+                  "color": "green",
+                  "kind": "badge",
+                  "size": "sm",
+                  "text": "Réparés 1",
+                  "variant": "light"
+                }
+              ],
+              "gap": 6,
+              "kind": "hbox",
+              "wrap": true
+            }
+          ],
+          "gap": "md",
+          "kind": "hbox",
+          "wrap": true
+        }
+      ],
+      "kind": "box"
+    },
+    {
+      "badge": 1,
+      "badgeColor": "yellow",
+      "children": [
+        {
+          "children": [
+            {
+              "align": "flex-start",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "align": "baseline",
+                      "children": [
+                        {
+                          "content": "Choose the dossier's export format",
+                          "fw": 600,
+                          "kind": "text",
+                          "size": "sm"
+                        },
+                        {
+                          "color": "dimmed",
+                          "content": "shop.RQ-051",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 6,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "sa question attend une réponse dans mail.E-12 · depuis 4d · retient 2 de ses travaux",
+                      "kind": "text",
+                      "size": "sm"
+                    },
+                    {
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "Qui agit :",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        },
+                        {
+                          "content": "Vous",
+                          "kind": "text",
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    }
+                  ],
+                  "gap": 2,
+                  "kind": "vbox"
+                },
+                {
+                  "align": "flex-end",
+                  "children": [
+                    {
+                      "action": {
+                        "label": "Répondre",
+                        "navigate": {
+                          "object": "shop.RQ-051"
+                        }
+                      },
+                      "id": "blocker-open-shop.RQ-051",
+                      "kind": "button",
+                      "label": "Répondre",
+                      "size": "xs",
+                      "variant": "filled"
+                    }
+                  ],
+                  "gap": 4,
+                  "kind": "vbox"
+                }
+              ],
+              "gap": "sm",
+              "justify": "space-between",
+              "kind": "hbox",
+              "wrap": false
+            }
+          ],
+          "gap": 4,
+          "id": "blocker-K1-shop.RQ-051",
+          "kind": "card",
+          "p": "sm",
+          "radius": "sm",
+          "stripe": "yellow",
+          "withBorder": true
+        }
+      ],
+      "description": "Une question qui vous est posée, ou une réponse que vous avez donnée et qui n'est pas encore appliquée.",
+      "empty": "Rien.",
+      "icon": "",
+      "kind": "section",
+      "size": "md",
+      "title": "K1 · Vos réponses"
+    },
+    {
+      "badge": 1,
+      "badgeColor": "yellow",
+      "children": [
+        {
+          "children": [
+            {
+              "align": "flex-start",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "align": "baseline",
+                      "children": [
+                        {
+                          "content": "The dossier opens on its overview",
+                          "fw": 600,
+                          "kind": "text",
+                          "size": "sm"
+                        },
+                        {
+                          "color": "dimmed",
+                          "content": "shop.F-049",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 6,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "votre confirmation : confirm the feature · depuis 4d",
+                      "kind": "text",
+                      "size": "sm"
+                    },
+                    {
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "Qui agit :",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        },
+                        {
+                          "content": "Vous (jdoe)",
+                          "kind": "text",
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    }
+                  ],
+                  "gap": 2,
+                  "kind": "vbox"
+                },
+                {
+                  "align": "flex-end",
+                  "children": [
+                    {
+                      "action": {
+                        "label": "Confirmer",
+                        "navigate": {
+                          "object": "shop.F-049"
+                        }
+                      },
+                      "id": "blocker-open-shop.F-049",
+                      "kind": "button",
+                      "label": "Confirmer",
+                      "size": "xs",
+                      "variant": "filled"
+                    }
+                  ],
+                  "gap": 4,
+                  "kind": "vbox"
+                }
+              ],
+              "gap": "sm",
+              "justify": "space-between",
+              "kind": "hbox",
+              "wrap": false
+            }
+          ],
+          "gap": 4,
+          "id": "blocker-K2-shop.F-049",
+          "kind": "card",
+          "p": "sm",
+          "radius": "sm",
+          "stripe": "yellow",
+          "withBorder": true
+        }
+      ],
+      "description": "Un acte que seule une personne peut faire : confirmer une fonctionnalité, passer une porte, approuver une proposition.",
+      "empty": "Rien.",
+      "icon": "",
+      "kind": "section",
+      "size": "md",
+      "title": "K2 · Vos actions"
+    },
+    {
+      "badge": 1,
+      "badgeColor": "orange",
+      "children": [
+        {
+          "children": [
+            {
+              "align": "flex-start",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "align": "baseline",
+                      "children": [
+                        {
+                          "content": "The document engine assembles a dossier's sections",
+                          "fw": 600,
+                          "kind": "text",
+                          "size": "sm"
+                        },
+                        {
+                          "color": "dimmed",
+                          "content": "docs.RQ-012",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 6,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "tout agent peut le prendre maintenant · depuis 4d",
+                      "kind": "text",
+                      "size": "sm"
+                    },
+                    {
+                      "align": "center",
+                      "children": [
+                        {
+                          "color": "orange",
+                          "kind": "badge",
+                          "size": "xs",
+                          "text": "docs.RQ-012",
+                          "variant": "outline"
+                        },
+                        {
+                          "color": "dimmed",
+                          "content": "→",
+                          "kind": "text",
+                          "size": "xs"
+                        },
+                        {
+                          "color": "gray",
+                          "kind": "badge",
+                          "size": "xs",
+                          "text": "shop.F-033",
+                          "variant": "outline"
+                        },
+                        {
+                          "color": "dimmed",
+                          "content": "→",
+                          "kind": "text",
+                          "size": "xs"
+                        },
+                        {
+                          "color": "gray",
+                          "kind": "badge",
+                          "size": "xs",
+                          "text": "shop.F-050",
+                          "variant": "outline"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "Qui agit :",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        },
+                        {
+                          "content": "Agent · un agent : une boucle sur release:roadmap.RL-014",
+                          "kind": "text",
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    }
+                  ],
+                  "gap": 2,
+                  "kind": "vbox"
+                },
+                {
+                  "align": "flex-end",
+                  "children": [
+                    {
+                      "action": {
+                        "label": "Lancer une boucle roadmap.RL-014",
+                        "modal": {
+                          "title": "Lancer une boucle dans Claude Code",
+                          "node": {
+                            "children": [
+                              {
+                                "content": "Rien en marche ne prend ce travail : ouvrez Claude Code dans le projet et lancez :",
+                                "kind": "text"
+                              },
+                              {
+                                "content": "/k-loop --release roadmap.RL-014",
+                                "fw": 600,
+                                "kind": "text",
+                                "mono": true
+                              }
+                            ],
+                            "gap": "md",
+                            "kind": "vbox"
+                          }
+                        }
+                      },
+                      "id": "blocker-open-docs.RQ-012",
+                      "kind": "button",
+                      "label": "Lancer une boucle roadmap.RL-014",
+                      "size": "xs",
+                      "variant": "filled"
+                    }
+                  ],
+                  "gap": 4,
+                  "kind": "vbox"
+                }
+              ],
+              "gap": "sm",
+              "justify": "space-between",
+              "kind": "hbox",
+              "wrap": false
+            }
+          ],
+          "gap": 4,
+          "id": "blocker-K3-docs.RQ-012",
+          "kind": "card",
+          "p": "sm",
+          "radius": "sm",
+          "stripe": "orange",
+          "withBorder": true
+        }
+      ],
+      "description": "Du travail qui peut être pris maintenant, et si une boucle le prendra.",
+      "empty": "Rien.",
+      "icon": "",
+      "kind": "section",
+      "size": "md",
+      "title": "K3 · Travail prêt pour un agent"
+    },
+    {
+      "badge": 0,
+      "badgeColor": "gray",
+      "children": [],
+      "description": "Du travail qu'un agent ne peut pas encore prendre, avec ce qui le retient et qui le retient.",
+      "empty": "Rien.",
+      "icon": "",
+      "kind": "section",
+      "size": "md",
+      "title": "K4 · Travail en attente d'autre chose"
+    },
+    {
+      "badge": 1,
+      "badgeColor": "grape",
+      "children": [
+        {
+          "children": [
+            {
+              "align": "flex-start",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "align": "baseline",
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "shop.RQ-049",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 6,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "attend the hub's GUI test runner · depuis 4d",
+                      "kind": "text",
+                      "size": "sm"
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "core.RQ-053, dans aucune version",
+                      "kind": "text",
+                      "size": "xs"
+                    },
+                    {
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "Qui agit :",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        },
+                        {
+                          "content": "Responsable · core.RQ-053",
+                          "kind": "text",
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    }
+                  ],
+                  "gap": 2,
+                  "kind": "vbox"
+                },
+                {
+                  "align": "flex-end",
+                  "children": [
+                    {
+                      "action": {
+                        "label": "Ouvrir la demande",
+                        "navigate": {
+                          "object": "shop.RQ-049"
+                        }
+                      },
+                      "id": "blocker-open-shop.RQ-049",
+                      "kind": "button",
+                      "label": "Ouvrir la demande",
+                      "size": "xs",
+                      "variant": "default"
+                    }
+                  ],
+                  "gap": 4,
+                  "kind": "vbox"
+                }
+              ],
+              "gap": "sm",
+              "justify": "space-between",
+              "kind": "hbox",
+              "wrap": false
+            }
+          ],
+          "gap": 4,
+          "id": "blocker-K5-shop.RQ-049",
+          "kind": "card",
+          "p": "sm",
+          "radius": "sm",
+          "stripe": "grape",
+          "withBorder": true
+        }
+      ],
+      "description": "Un autre flux, aucune version, l'infrastructure, un gel - avec son responsable.",
+      "empty": "Rien.",
+      "icon": "",
+      "kind": "section",
+      "size": "md",
+      "title": "K5 · En dehors de l'incrément"
+    },
+    {
+      "badge": 2,
+      "badgeColor": "red",
+      "children": [
+        {
+          "children": [
+            {
+              "align": "flex-start",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "align": "baseline",
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "ui.F-050",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 6,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "its step verify waits on it - personne ne travaille sur shop.F-032 (aucun plan ouvert) · depuis 4d",
+                      "kind": "text",
+                      "size": "sm"
+                    },
+                    {
+                      "color": "red",
+                      "content": "incident wait-on-nothing:ui.F-050 · vu par 2 balayages",
+                      "kind": "text",
+                      "size": "xs"
+                    },
+                    {
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "Qui agit :",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        },
+                        {
+                          "content": "Système · le réconciliateur",
+                          "kind": "text",
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    }
+                  ],
+                  "gap": 2,
+                  "kind": "vbox"
+                },
+                {
+                  "align": "flex-end",
+                  "children": [
+                    {
+                      "action": {
+                        "label": "Créer la demande sur shop.F-032",
+                        "uri": "ktw-agents:requests/file",
+                        "args": {
+                          "by": "${person}",
+                          "increment": "roadmap.IN-046",
+                          "on": "shop.F-032"
+                        }
+                      },
+                      "id": "blocker-open-ui.F-050",
+                      "kind": "button",
+                      "label": "Créer la demande sur shop.F-032",
+                      "size": "xs",
+                      "variant": "default"
+                    },
+                    {
+                      "action": {
+                        "label": "Retirer l'attente",
+                        "navigate": {
+                          "object": "ui.F-050"
+                        }
+                      },
+                      "id": "blocker-alt-ui.F-050",
+                      "kind": "button",
+                      "label": "Retirer l'attente",
+                      "size": "xs",
+                      "variant": "default"
+                    }
+                  ],
+                  "gap": 4,
+                  "kind": "vbox"
+                }
+              ],
+              "gap": "sm",
+              "justify": "space-between",
+              "kind": "hbox",
+              "wrap": false
+            }
+          ],
+          "gap": 4,
+          "id": "blocker-K6-ui.F-050",
+          "kind": "card",
+          "p": "sm",
+          "radius": "sm",
+          "stripe": "red",
+          "withBorder": true
+        },
+        {
+          "children": [
+            {
+              "align": "flex-start",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "align": "baseline",
+                      "children": [
+                        {
+                          "content": "The dossier is exported",
+                          "fw": 600,
+                          "kind": "text",
+                          "size": "sm"
+                        },
+                        {
+                          "color": "dimmed",
+                          "content": "shop.F-011",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 6,
+                      "kind": "hbox",
+                      "wrap": true
+                    },
+                    {
+                      "color": "dimmed",
+                      "content": "aucun travail prévu : rien d'ouvert n'y travaille · depuis 4d",
+                      "kind": "text",
+                      "size": "sm"
+                    },
+                    {
+                      "children": [
+                        {
+                          "color": "dimmed",
+                          "content": "Qui agit :",
+                          "kind": "text",
+                          "mono": true,
+                          "size": "xs"
+                        },
+                        {
+                          "content": "Vous : planifier son travail",
+                          "kind": "text",
+                          "size": "xs"
+                        }
+                      ],
+                      "gap": 4,
+                      "kind": "hbox",
+                      "wrap": true
+                    }
+                  ],
+                  "gap": 2,
+                  "kind": "vbox"
+                },
+                {
+                  "align": "flex-end",
+                  "children": [
+                    {
+                      "action": {
+                        "label": "Planifier",
+                        "uri": "ktw-agents:requests/file",
+                        "args": {
+                          "by": "${person}",
+                          "increment": "roadmap.IN-046",
+                          "on": "shop.F-011"
+                        }
+                      },
+                      "id": "blocker-open-shop.F-011",
+                      "kind": "button",
+                      "label": "Planifier",
+                      "size": "xs",
+                      "variant": "filled"
+                    },
+                    {
+                      "action": {
+                        "label": "Sortir de l'incrément",
+                        "uri": "ktw-agents:increments/untarget",
+                        "args": {
+                          "id": "shop.F-011"
+                        },
+                        "confirm": "Sortir shop.F-011 de l'incrément ? Il n'y compte plus."
+                      },
+                      "id": "blocker-alt-shop.F-011",
+                      "kind": "button",
+                      "label": "Sortir de l'incrément",
+                      "size": "xs",
+                      "variant": "default"
+                    }
+                  ],
+                  "gap": 4,
+                  "kind": "vbox"
+                }
+              ],
+              "gap": "sm",
+              "justify": "space-between",
+              "kind": "hbox",
+              "wrap": false
+            }
+          ],
+          "gap": 4,
+          "id": "blocker-K6-shop.F-011",
+          "kind": "card",
+          "p": "sm",
+          "radius": "sm",
+          "stripe": "red",
+          "withBorder": true
+        }
+      ],
+      "description": "Des états que le réconciliateur ne répare pas seul : un cycle, une attente sur rien, du travail sans plan. Ils vivent dans la liste des incidents du système, groupés par racine et clos après deux balayages propres ; seuls ceux qui demandent l'acte d'une personne arrivent dans « À faire ».",
+      "empty": "Rien.",
+      "icon": "",
+      "kind": "section",
+      "size": "md",
+      "title": "K6 · Incidents"
+    },
+    {
+      "id": "blockers-repaired-fold",
+      "kind": "accordion",
+      "multiple": true,
+      "panels": [
+        {
+          "color": "green",
+          "content": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "align": "baseline",
+                    "children": [
+                      {
+                        "content": "A plan closes after its feature is done",
+                        "fw": 600,
+                        "kind": "text",
+                        "size": "sm"
+                      },
+                      {
+                        "color": "dimmed",
+                        "content": "store.F-085",
+                        "kind": "text",
+                        "mono": true,
+                        "size": "xs"
+                      }
+                    ],
+                    "gap": 6,
+                    "kind": "hbox",
+                    "wrap": true
+                  },
+                  {
+                    "color": "dimmed",
+                    "content": "terminer son plan - son cycle de vie est terminé alors que son plan est encore ready · 20/10 09:50",
+                    "kind": "text",
+                    "size": "sm"
+                  }
+                ],
+                "gap": 0,
+                "id": "blocker-repaired-store.F-085",
+                "kind": "vbox"
+              }
+            ],
+            "gap": "md",
+            "kind": "vbox"
+          },
+          "data-repaired": "1",
+          "id": "blockers-repaired",
+          "label": "Réparé automatiquement (1) - par le réconciliateur, sans agent"
+        }
+      ]
+    }
+  ],
+  "data-view": "increment-blocker-list",
+  "gap": "md",
+  "kind": "vbox"
+}

@@ -1,0 +1,9 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Marketplace
+  actions:
+    Check: Vérifier
+    Publish: Publier
+    Start over: Tout republier
+    Promote: Promouvoir

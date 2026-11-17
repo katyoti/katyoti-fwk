@@ -1,0 +1,6 @@
+name: stress
+description: "Stress minimization — even spacing, organic feel for large graphs"
+layoutOptions:
+  elk.algorithm: stress
+  elk.spacing.nodeNode: "60"
+  elk.stress.desiredEdgeLength: "120"

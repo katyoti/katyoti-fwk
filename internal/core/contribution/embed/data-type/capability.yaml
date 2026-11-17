@@ -1,0 +1,483 @@
+$schema: ktw-schema/v1
+name: capability
+version: "2.3.0"
+root: Capability
+description: |
+  What ONE capability id means (capability model, 2026-09-19).
+
+  A capability is a NAMED FIELD-GROUP CONFORMING TO A SCHEMA. The id is the
+  storage key under which an object holds its values, and the schema is the
+  reusable part — many capabilities share one. `config-no-direct-io` and
+  `require-tests` both conform to `cap-checkable`, which is why capability id
+  is not schema, and why the `cap-<id>.dsl.yaml` filename convention that
+  preceded this was wrong.
+
+  Three levels, as a strategy has: the capability, its SECTION on a type
+  (`type_schema`) and its GROUP on an object (`schema`).
+
+  Every slot is optional. A capability declaring none of them is a TAG — still
+  useful, because selection targets it.
+types:
+  Capability:
+    type: object
+    fields:
+      name:
+        type: string
+        label: Capability id
+        description: >-
+          The id, and the KEY under which an object stores this capability's
+          field-group. Lowercase kebab; matched literally, never normalised.
+      label:
+        type: string
+        label: Label
+        description: Section header in a form; defaults to the name.
+        optional: true
+      description:
+        type: string
+        label: Description
+        description: What this capability means, for someone composing a type.
+        optional: true
+      icon:
+        type: string
+        label: Icon
+        description: >-
+          An icon name: the capability shows among an object's capabilities as a
+          badge with this icon, its description as the tooltip.
+        optional: true
+      schema:
+        type: string
+        label: Field-group schema
+        description: >-
+          A `data-type` URI describing this capability's field-group. A reference,
+          not an inline shape: a data-type already carries per-field label,
+          default and description, and already drives form rendering via
+          GetSchemaAST. Empty = this capability contributes no fields.
+        optional: true
+      type_schema:
+        type: string
+        label: Type section schema
+        description: >-
+          A `data-type` URI describing the SECTION a type writes under this
+          capability's name — its settings on the type (`context:`, `pane:`).
+          Writing the section puts the capability in force on the type; CWM
+          checks it against this schema, the owning extension reads it. With no
+          `schema`, the capability is type-level: no field-group on objects.
+        optional: true
+      files:
+        type: object
+        label: Files
+        description: >-
+          (NamedFile entries, by name.) The named files this capability
+          manages: a module-relative path each, `${...}` allowed over the
+          object. Read and written through ObjectNamedFile*, never by a caller
+          composing the path.
+        optional: true
+        catchall: NamedFile
+      actions:
+        type: array
+        label: Actions
+        description: >-
+          (ActionRef entries.) Actions offered by objects carrying this
+          capability. A type may still bind an action inline; that binding is the
+          curated one and wins.
+        optional: true
+      hooks:
+        type: object
+        label: Hooks
+        description: >-
+          (HookEntry lists, by point.) Hook entries by point — before_create /
+          before_update (synchronous, may refuse), on_create / on_update /
+          on_delete (after the write), lint (findings), verify (verdicts),
+          on_transition, bootstrap. Each entry is an action URI with an optional
+          when and filter; a closer declaration with the same uri replaces a
+          farther one.
+        optional: true
+        catchall: HookEntry[]
+      agent:
+        type: AgentDecl
+        label: Agent context
+        description: >-
+          What a chat on an object receives from this contributor: system
+          sections, tools, skills and named files. A closer entry with the same
+          key replaces a farther one; a closer when "false" removes it.
+        optional: true
+      attach:
+        type: object
+        label: Attach
+        description: >-
+          Puts this capability on every object it selects without any of them
+          declaring it (the memory every object has). The capability's AUTHOR
+          declares who carries it. A rule put on objects is a `policy`, not a
+          capability.
+
+          A SHAPE FILTER, and that is a rule rather than a limitation: it reads
+          the object's type and the capabilities it carries before attachment
+          (an attached capability never attaches another), never its content —
+          a filter over an object's own data would make its shape depend on its
+          content, which is circular and unvalidatable. `when`, `incoming` and
+          `outgoing` are refused. Instance-level variation belongs on a panel or
+          an action as a `when` predicate, evaluated at render.
+        optional: true
+        fields:
+          types:
+            type: string[]
+            label: Types
+            description: Object types it selects (any of); `*` = every type.
+            optional: true
+          capabilities:
+            type: string[]
+            label: Capabilities
+            description: Capabilities the object must carry at least one of, before attachment.
+            optional: true
+      badges:
+        type: array
+        label: Badges
+        description: >-
+          (BadgeDef entries.) Header chips read from this capability's
+          field-group. They belong here rather than on the type because the
+          capability OWNS the key a badge reads.
+        optional: true
+      uses:
+        type: string[]
+        label: Uses
+        description: >-
+          The capabilities whose fields this one reads. Giving it to an object
+          requires them to be present; removing one of them is refused while
+          this one is.
+        optional: true
+      workflow:
+        type: object
+        label: Workflow
+        description: >-
+          The workflow this capability's own state follows. The capability names
+          which of its fields holds the state and which the history — it knows
+          what its fields mean. Giving the capability starts it in the
+          workflow's initial state; ObjectTransition with this capability moves
+          it.
+        optional: true
+        fields:
+          name:
+            type: string
+            label: Workflow
+            description: The workflow contribution's name.
+          state:
+            type: string
+            label: State field
+            description: The field of this capability's group that holds the state.
+          history:
+            type: string
+            label: History field
+            description: The field that holds the transition history; empty keeps none.
+            optional: true
+      functions:
+        type: CapabilityFunction[]
+        label: Functions
+        description: >-
+          Read-only functions this capability adds to expressions over an object
+          (guards, gate checks, when, filters, views, inputs) — e.g.
+          `gate('ready')`. Each runs a read-only method through the
+          ActionService with {function, object, args}; CWM calls it and never
+          knows what it means. Not in a before_* hook's `when:`, nor in a task's
+          `filter:`.
+        optional: true
+  CapabilityFunction:
+    type: object
+    description: One function a capability adds to expressions.
+    fields:
+      name:
+        type: string
+        label: Name
+        description: The name expressions call; a lowercase identifier unique in the universe.
+      description:
+        type: string
+        label: Description
+        description: What the function answers.
+        optional: true
+      action:
+        type: string
+        label: Action
+        description: The read-only method that answers it (an action URI).
+      args:
+        type: string[]
+        label: Arguments
+        description: The arguments by name; each passed as given.
+        optional: true
+      returns:
+        type: string@enum(boolean, number, string, object, list)
+        label: Returns
+        description: What the function answers; any when empty.
+        optional: true
+      timeout:
+        type: string
+        label: Timeout
+        description: How long a call may take (a Go duration); 5s when empty.
+        optional: true
+      costly:
+        type: boolean
+        label: Costly
+        description: Too heavy for a preview — a list of possible moves leaves a guard calling it to the move itself.
+        optional: true
+  HookEntry:
+    type: object
+    description: One hook declaration at one point.
+    fields:
+      uri:
+        type: string
+        label: Action
+        description: The action URI run at the point (a method, a script, a task).
+      when:
+        type: string
+        label: When
+        description: >-
+          el predicate over the object vocabulary. The literal "false" on a closer
+          declaration removes a farther entry with the same uri.
+        optional: true
+      filter:
+        type: HookFilter
+        label: Filter
+        description: The objects the entry applies to.
+        optional: true
+      input:
+        type: object
+        label: Input
+        description: >-
+          The action's input, each value's ${...} resolved over the object;
+          declared, it replaces the default {point, object, prior}.
+        optional: true
+        catchall: any
+      async:
+        type: AsyncSpec
+        label: Async
+        description: >-
+          Makes the entry an asynchronous subscription (an on_* point an event
+          type names): CWM records a match at the write and hands it to the
+          scheduler; it never runs the entry itself.
+        optional: true
+      "on":
+        type: EventSource
+        label: On
+        description: >-
+          On a module object only: the module and the event type the module
+          subscribes to (a published type, or one of its own). The entry sits
+          at the point the type names and is async. Ignored elsewhere.
+        optional: true
+      writes:
+        type: array
+        items:
+          type: string
+        label: Writes
+        description: >-
+          With on: the modules the subscription's reactions may write; default
+          the subscriber's own. CWM refuses a reaction's write into any other.
+        optional: true
+  EventSource:
+    type: object
+    description: The events a cross-module subscription listens to.
+    fields:
+      module:
+        type: string
+        label: Module
+        description: The emitting module.
+      event:
+        type: string
+        label: Event
+        description: The event type (an event-type name).
+  AsyncSpec:
+    type: object
+    description: What makes an on_* hook entry a subscription.
+    fields:
+      priority:
+        type: string
+        label: Priority
+        description: The reaction's priority (P0 to P3); default P2.
+        optional: true
+      key:
+        type: string
+        label: Coalescing key
+        description: >-
+          An el interpolation over the object; default ${id} (one pending
+          reaction per object).
+        optional: true
+      attempts:
+        type: number
+        label: Attempts
+        description: How many attempts before the reaction is given up; default 3.
+        optional: true
+      accepts_caused:
+        type: boolean
+        label: Accepts caused
+        description: >-
+          True also matches writes made by a reaction or a hook (depth above 0).
+        optional: true
+      atomic:
+        type: boolean
+        label: Atomic
+        description: >-
+          True stages the reaction's object writes in a change set, written
+          together after its action and before it reports success; none is
+          written when it fails.
+        optional: true
+  HookFilter:
+    type: object
+    description: The one ObjectFilter every applicability question uses.
+    fields:
+      types:
+        type: string[]
+        label: Types
+        description: Object types it applies to (any of); * means every type.
+        optional: true
+      capabilities:
+        type: string[]
+        label: Capabilities
+        description: Capabilities the object must carry at least one of.
+        optional: true
+      incoming:
+        type: string[]
+        label: Incoming edges
+        description: Edge kinds of which the object must have at least one incoming edge (any of).
+        optional: true
+      outgoing:
+        type: string[]
+        label: Outgoing edges
+        description: Edge kinds of which the object must have at least one outgoing edge (any of).
+        optional: true
+      when:
+        type: string
+        label: When
+        description: el predicate over the object vocabulary.
+        optional: true
+  NamedFile:
+    type: object
+    description: One declared named file.
+    fields:
+      path:
+        type: string
+        label: Path
+        description: Module-relative path; may use ${...} over the object (current / object / id / type).
+      media:
+        type: string
+        label: Media type
+        description: Media type of the content (for example text/markdown).
+        optional: true
+      description:
+        type: string
+        label: Description
+        description: What the file holds.
+        optional: true
+      capability:
+        type: string
+        label: Owning capability
+        description: >-
+          On a type or object declaration, the capability that owns the file;
+          empty means the object's own file. Ignored in a capability's files.
+        optional: true
+      owned:
+        type: boolean
+        label: Owned
+        description: >-
+          The file lives with the object: moved when a rename moves its path,
+          deleted with the object.
+        optional: true
+  AgentDecl:
+    type: object
+    description: One contributor's agent-context declaration.
+    fields:
+      system:
+        type: AgentSection[]
+        label: System sections
+        description: System-prompt sections, keyed by id.
+        optional: true
+      tools:
+        type: AgentTool[]
+        label: Tools
+        description: Tools the agent receives, keyed by uri (or plugin).
+        optional: true
+      skills:
+        type: AgentSkill[]
+        label: Skills
+        description: Skill selectors to advertise, keyed by selector.
+        optional: true
+      files:
+        type: AgentFile[]
+        label: Files
+        description: Named files of the object read as context sections.
+        optional: true
+  AgentSection:
+    type: object
+    description: One system-prompt section.
+    fields:
+      id:
+        type: string
+        label: Id
+        description: Stable id; a closer section with the same id replaces this one.
+      title:
+        type: string
+        label: Title
+        optional: true
+      text:
+        type: string
+        label: Text
+        description: The section; ${...} is el over the object vocabulary.
+        optional: true
+      order:
+        type: number
+        label: Order
+        description: Sort key; equal orders keep the layer order.
+        optional: true
+      when:
+        type: string
+        label: When
+        description: el predicate; the literal false removes a farther section.
+        optional: true
+  AgentTool:
+    type: object
+    description: One tool — an action URI, or a plugin ref that brings its tools.
+    fields:
+      uri:
+        type: string
+        label: Action
+        optional: true
+      plugin:
+        type: string
+        label: Plugin
+        description: Plugin ref; exactly one of uri and plugin.
+        optional: true
+      when:
+        type: string
+        label: When
+        optional: true
+  AgentSkill:
+    type: object
+    description: One skill selector.
+    fields:
+      selector:
+        type: string
+        label: Selector
+      when:
+        type: string
+        label: When
+        optional: true
+  AgentFile:
+    type: object
+    description: One named file of the object read into the context.
+    fields:
+      capability:
+        type: string
+        label: Capability
+        description: Owning capability; empty = the object's own file.
+        optional: true
+      name:
+        type: string
+        label: Name
+      title:
+        type: string
+        label: Title
+        optional: true
+      order:
+        type: number
+        label: Order
+        optional: true
+      when:
+        type: string
+        label: When
+        optional: true

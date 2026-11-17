@@ -1,0 +1,17 @@
+name: planning-methodology-input
+root: PlanningMethodologyInput
+types:
+  PlanningMethodologyInput:
+    type: object
+    fields:
+      goal:
+        type: string
+        label: "Project or goal"
+        description: "What project or goal should be planned for"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Start planning"
+        groups:
+          - title: "Goal"
+            fields: [goal]

@@ -1,0 +1,5 @@
+# JournalService configuration (the file is named after the service it configures).
+#
+# retention_days: how many days of journal stay in the project tree; older
+# journal days are pruned on the first record of a day (git keeps them).
+retention_days: 90

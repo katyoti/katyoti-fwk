@@ -1,0 +1,7 @@
+# Translations of the agent-context beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  agent:
+    system:
+      features-how: "Fonctionnalités"

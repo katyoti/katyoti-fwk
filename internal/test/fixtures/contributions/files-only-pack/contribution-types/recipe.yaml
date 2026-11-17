@@ -1,0 +1,21 @@
+# Registers `recipe` as a contribution kind owned by this pack. The pack ships
+# one `files-only-pack:/recipe/<id>` Contribution per file under recipes/. The
+# URI of this entry is `files-only-pack:/contribution-type/recipe`; its body
+# schema is `files-only-pack:/data-type/recipe`, shipped beside it.
+name: recipe
+description: |
+  A cooking recipe. The data layer is the recipe's structure (validated
+  against the pack's own schema); the source layer is the YAML file as
+  written.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived.
+schema: files-only-pack:/data-type/recipe
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget.
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 128

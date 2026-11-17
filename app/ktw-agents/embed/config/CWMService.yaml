@@ -1,0 +1,8 @@
+# CWMService configuration
+#
+# The CWM store is configured automatically by the application:
+#   - the workspace root is computed from the active universe/workspace,
+#   - first-run bootstrap (workspace + inbox) is always on.
+# There are no operator-tunable settings at this time; this file is a
+# reserved placeholder. Leave it empty unless a future setting documents
+# itself here.

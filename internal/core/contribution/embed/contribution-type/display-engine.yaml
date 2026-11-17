@@ -1,0 +1,41 @@
+# Registers `display-engine` as a SYSTEM contribution kind: a renderer a sidecar
+# contributes to the GUI's display-engine registry (modules/display/document-display.md).
+# It declares the media types it accepts and what it can do beyond viewing
+# (stream, edit, save, export); its `widget` layer is the page the GUI loads in
+# a sandboxed iframe. A built-in engine wins a tie on the same media type.
+#
+# Published from a sidecar's embed/display-engines/<name>.yaml (+ <name>.html,
+# the widget) through manifestcontrib.ContributeKindResources(provider,
+# "display-engine", …, WithSiblingLayer("widget", ".html")).
+name: display-engine
+description: |
+  A display engine a sidecar contributes: the media types it shows, its
+  capabilities (stream, edit, save, export) and the widget page that renders
+  them (the widget layer).
+schema: system:/data-type/display-engine
+validate: error
+
+# A display engine RUNS: its widget layer is a page the GUI loads and runs,
+# so an untrusted origin may not override one.
+execution: executable
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  source: {mediaType: application/yaml}
+  # One self-contained HTML page; fetched when a document first needs it.
+  widget: {mediaType: text/html, required: true}
+meta:
+  budget: 128
+
+# How a file becomes a display engine (contribution-types.md "How files
+# become layers"): <name>.yaml declares it (its tree the data, sub-folders
+# kept in its id), <name>.html beside it is its widget page.
+source:
+  folder: display-engines
+  match: ["*.yaml", "*.yml"]
+  id: path
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    widget: {from: sibling, suffix: .html}

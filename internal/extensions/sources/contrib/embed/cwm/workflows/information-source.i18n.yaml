@@ -1,0 +1,16 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Source d'information
+  description: >-
+    Déclarée, synchronisée par son connecteur, périmée quand ce qu'elle a lu a
+    changé ; en échec quand la dernière synchronisation n'a pas pu la lire.
+  states:
+    declared: Déclarée
+    synced: Synchronisée
+    stale: Périmée
+    failed: En échec
+  transitions:
+    sync: Synchroniser
+    fail: Échouer
+    go-stale: Périmer

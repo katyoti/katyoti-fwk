@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Groupe de projets
+  description: >-
+    Le projet tient des projets enfants, chacun de son propre type, embarqués
+    dans un sous-dossier de son dossier des projets.

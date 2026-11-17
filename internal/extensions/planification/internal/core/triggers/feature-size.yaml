@@ -1,0 +1,11 @@
+# A feature that wants more use cases than one piece of work can hold is split.
+name: feature-size
+description: A feature wants at most seven use cases - else it is split into sub-features.
+on: rule
+types: [feature]
+states: [accepted, specified]
+check: "len(filter(links, {.kind == 'wants' && .direction == 'out'})) <= 7"
+file:
+  kind: analyse
+  title: Split the feature - it wants more than seven use cases
+  details: This feature wants more use cases than one piece of work holds. Split it into sub-features, each with its use cases.

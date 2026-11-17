@@ -1,0 +1,25 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Bienvenue dans KaTyoti
+  description: Créez un univers, rattachez-y un projet, faites-en le tour et répondez à votre première question dans l'Inbox.
+  hashtags:
+  - bienvenue
+  - premier lancement
+  - démarrer
+  - visite guidée
+  steps:
+    create-universe: 'Bienvenue. Un *univers* est votre propre KaTyoti : il réunit ses capacités et rattache vos projets. Sur la page des univers, appuyez sur {control:picker.create}, donnez-lui un nom, puis appuyez sur {control:create-universe.submit} ; depuis un univers, partez de {control:ribbon.add-universe} en bas du ruban, puis {control:add-universe.create}.'
+    universe-ready: Une fois créé, l'univers s'ouvre à l'écran. Quand vous le voyez, appuyez sur {control:guide.check}.
+    add-agents: L'Inbox, les tâches et l'agent de chat viennent avec la capacité ktw-agents. Si vous ne l'avez pas cochée en créant l'univers, appuyez sur {control:guide.do-it}.
+    agents-ready: Une fois ktw-agents dans votre univers, appuyez sur {control:guide.check}.
+    open-edit: Un univers travaille sur des *projets*. Faites un clic droit sur l'icône de l'univers dans le ruban et choisissez {control:universe-menu.edit}.
+    attach-project: Ouvrez l'onglet {control:universe-edit.projects}, appuyez sur {control:projects.attach} et choisissez l'un de vos dossiers. Pas de projet sous la main ? Appuyez sur {control:guide.do-it} pour un petit projet d'exemple dans un dossier katyoti-sample du dossier de vos projets.
+    project-attached: Une fois le projet rattaché, appuyez sur {control:guide.check}.
+    open-objects: 'L''onglet {control:project.tab|objects} montre votre projet comme un arbre de modules et d''objets. Ouvrez-le et choisissez un objet : ses onglets à droite dépendent de ce qu''il est.'
+    ask-question: L'{control:ribbon.inbox} réunit ce qui vous attend quand une tâche vous pose une question. Appuyez sur {control:guide.do-it} pour qu'une petite tâche de démonstration vous en pose une.
+    open-inbox: Ouvrez l'{control:ribbon.inbox} depuis le ruban.
+    answer: Dans « À faire », répondez à la question sur sa carte et envoyez votre réponse.
+    answered: Une fois votre réponse envoyée, appuyez sur {control:guide.check} ; la tâche qui l'a posée peut alors continuer. C'est la fin de la visite ; {control:profile.help} dans le menu de votre profil rouvre ce guide, avec une recette pour tout le reste.

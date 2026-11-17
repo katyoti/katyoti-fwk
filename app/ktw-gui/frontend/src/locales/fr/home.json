@@ -1,0 +1,51 @@
+{
+  "strip": {
+    "actions": "Actions",
+    "runs": "Ordonnanceur",
+    "errors": "Erreurs",
+    "chat": "Conversation"
+  },
+  "builtIn": {
+    "term": {
+      "title": "Terminal",
+      "description": "Lancer un shell ou suivre un journal"
+    },
+    "drawio": {
+      "title": "Drawio",
+      "description": "Ouvrir l’éditeur de diagrammes"
+    },
+    "debug": {
+      "title": "Débogage et tests",
+      "description": "Catalogue, KTSP, tâches, espace de travail, skills, tests d’interface."
+    },
+    "chat": {
+      "title": "Démarrer une conversation",
+      "description": "Ouvrir une conversation globale",
+      "active": "Conversation déjà active"
+    }
+  },
+  "actions": {
+    "quickActions": "Actions rapides",
+    "tasks": "Tâches",
+    "emptyData": "Aucune tâche enregistrée dans cet univers.",
+    "emptyFiltered": "Aucune tâche ne correspond aux filtres."
+  },
+  "chat": {
+    "placeholder": "Conversation globale — une conversation sur tout ce que contient cet univers."
+  },
+  "unknownSection": "Section inconnue : {{section}}",
+  "globalPanel": {
+    "allModules": "Tous les modules",
+    "target": "Cible",
+    "refresh": "Rafraîchir",
+    "nothing": "Ce panneau ne déclare rien à afficher."
+  },
+  "errors": {
+    "unreadable": "Les erreurs n’ont pas pu être lues",
+    "none": "Aucune erreur : chaque objet du projet se lit sans problème.",
+    "objects_one": "Objet en erreur ({{count}})",
+    "objects_other": "Objets en erreur ({{count}})",
+    "files_one": "Fichier que CWM n’a pas pu lire ({{count}})",
+    "files_other": "Fichiers que CWM n’a pas pu lire ({{count}})"
+  }
+}

@@ -1,0 +1,19 @@
+# A slide-deck object shown as its deck. Its source (deck/view) COMPOSES the
+# deck: a frontmatter from the object's fields (the `deck` field-group), then
+# the body, which holds only the slides — so the object's frontmatter and the
+# deck's never share a block — and writes the production mark in
+# (production_mark, from the one definition in docs). An empty field leaves
+# its key out and the deck falls back to its default.
+name: "Deck"
+description: "The presentation — present it full screen, draw on it, open it in a window for the speaker view, print it to PDF"
+icon:
+  tabler: "presentation"
+  emoji: "🎞"
+order: 10
+filter:
+  types:
+    - "slide-deck"
+    - "slide-group"
+source: "ktw-docs:deck/view"
+refresh:
+  scope: "self"

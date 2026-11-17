@@ -1,0 +1,20 @@
+# A person decides only a prepared decision: its options, each explained, and
+# a proposal. An open decision that appears or changes without them is
+# prepared first, by an agent: a decide request filed on it, whose work
+# template prepares, challenges, then asks the person. A decision a request's
+# work raised (its source names that request) is prepared by that work, and
+# one that already carries a request is in its plan's hands. Its author is
+# given a minute first (grace): one opened, then prepared or given its decide
+# request at once, raises nothing.
+name: decision-prepared
+description: An open decision has its options and a proposal - else an agent prepares it before a person decides.
+on: rule
+types: [decision]
+check: "(object.lifecycle?.state ?? 'open') != 'open' || ((object.decision?.proposal?.option ?? '') != '' && len(object.decision?.options ?? []) >= 2) || (object.decision?.source ?? '') matches '^[a-z0-9-]+[.]RQ-[0-9]+$' || (object.request?.kind ?? '') != ''"
+on_object: true
+file:
+  kind: decide
+  priority: P1
+  title: Prepare the decision, then let a person choose
+  details: The decision is open with no options or no proposal, so a person cannot decide it. Prepare it - the question's context, each option with what it means, its pros, cons, cost and consequence, and the option proposed with why - or drop it when the question no longer stands.
+grace: 1m

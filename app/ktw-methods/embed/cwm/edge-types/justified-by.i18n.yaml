@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "La décision qui dit POURQUOI une règle tient ou un guide est écrit ainsi. Une règle ou un document porte le comment ; une décision en vigueur porte le pourquoi, une seule fois. Écrit sur la règle ou le document, lu côté décision comme `justifies`. La cible doit porter la capacité `decision` : une règle justifiée par une autre règle, ou par une page, est un lien, pas une justification."
+  inverse_label: "Justifie"
+  label: "Justifié par"

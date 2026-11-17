@@ -1,0 +1,8 @@
+name: want
+label: Want
+icon: target
+description: >-
+  A wanted state and how reachable it is. A goal is always asymptotic (a
+  direction never finished); a feature, a use case and an acceptance
+  criterion are closable (a test can say they are done).
+schema: ktw-methods:/data-type/cap-want

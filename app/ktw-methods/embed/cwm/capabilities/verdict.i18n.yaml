@@ -1,0 +1,10 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Verdict
+  description: >-
+    La trace d'une EXÉCUTION sur un critère vérifiable : ce que la sonde a
+    rendu, quand, et sur quoi. Portée par les objets `verdict` et par rien
+    d'autre. Volontairement pas un champ de `checkable` : un critère dit ce
+    qui devrait être vrai, un verdict dit ce qui s'est passé à la
+    vérification — et seule une exécution écrit un verdict.

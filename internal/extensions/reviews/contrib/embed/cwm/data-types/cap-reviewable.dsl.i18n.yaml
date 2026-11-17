@@ -1,0 +1,10 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapReviewable:
+      fields:
+        history:
+          description: 'Les revues retirées : une entrée chacune avec son type, son jour, sa note et ses constats comptés ; les plus anciennes d''abord'
+          label: 'Historique'

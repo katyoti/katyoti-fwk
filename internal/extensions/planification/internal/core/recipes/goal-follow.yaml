@@ -1,0 +1,11 @@
+# A goal's work is its features': a build asked on a goal (a goal added by an
+# applied delta, its features added beside it) builds nothing on the goal
+# itself. It follows them and ends when every feature serving it is done:
+# it waits on their work, its agent reports success,
+# and planification holds its end until each is done.
+name: goal-follow
+description: Follow the features serving the goal; end when every one is done.
+types: [goal]
+kind: build
+steps:
+  - {name: follow, phase: verify, class: deliver, role: tester, share: 1, instructions: "A goal is delivered by the features serving it - build nothing on the goal itself. This step is ready once their work has ended. List them (ktw-agents cwm object-get --id <goal> for its incoming serves edges) and report success naming them, with the state of each: the request ends by itself once every one is done - until then planification holds it blocked, naming those not done, and ends it when the last is confirmed. Never report blocked for a feature not done yet."}

@@ -1,0 +1,29 @@
+name: deck-translate-input
+root: DeckTranslateInput
+types:
+  DeckTranslateInput:
+    type: object
+    fields:
+      language:
+        type: string
+        label: "Langue"
+        description: "La langue de la copie"
+        default: en
+        enum: [en, fr, de, es, it, nl, pt]
+        content:
+          type: text
+          options:
+            - {value: en, label: English}
+            - {value: fr, label: Français}
+            - {value: de, label: Deutsch}
+            - {value: es, label: Español}
+            - {value: it, label: Italiano}
+            - {value: nl, label: Nederlands}
+            - {value: pt, label: Português}
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Traduire"
+        groups:
+          - title: "Traduction"
+            fields: [language]

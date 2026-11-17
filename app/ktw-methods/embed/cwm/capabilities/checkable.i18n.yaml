@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Vérifiable
+  description: >-
+    Un critère d'acceptation exécutable : sa sonde, comment elle s'exécute, et
+    sa gravité. Le VERDICT est déduit, jamais écrit ici : déclarer cette
+    capacité sans sonde donne « non prouvé / pas de sonde », un état légitime
+    et non une erreur.

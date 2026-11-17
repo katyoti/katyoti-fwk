@@ -1,0 +1,34 @@
+# A notation: element and relationship kinds, and the rules a model must follow.
+# Looks live in a drawio-template library; which kinds one picture shows, in a viewpoint.
+id: c4
+displayName: C4 model
+version: '1.0'
+description: 'The C4 model (Simon Brown): people, software systems, containers and components, and the
+  relationships between them, drawn at context, container and component level. A boundary (a software
+  system around its containers, a container around its components) is a zone. An element''s technology and
+  description are the attributes technology and description; a relationship''s technology is the
+  attribute technology.'
+elements:
+  Person: {label: Person, description: 'A user of the software system: an actor, role or persona.', category: person}
+  ExternalPerson: {label: External Person, description: A person outside the organization that owns the system.,
+    category: person}
+  SoftwareSystem: {label: Software System, description: The highest level of abstraction; something that delivers
+      value to its users., category: system}
+  ExternalSoftwareSystem: {label: External Software System, description: A software system outside the scope of
+      the one being described., category: system}
+  Container: {label: Container, description: 'An application or data store: something that needs to be running
+      for the system to work.', category: container}
+  Database: {label: Database, description: A container that stores data., category: container}
+  Queue: {label: Queue, description: A container that carries messages., category: container}
+  Component: {label: Component, description: A grouping of related functionality behind a well-defined interface,
+    inside a container., category: component}
+relationships:
+  uses: {label: Uses, description: 'A dependency or interaction: what one element does with another, with the technology
+      when it helps.'}
+rules:
+  allowed:
+  # People use systems, containers and components; elements use each other
+  # at their own level or one level down; nothing uses a person.
+  - relationship: uses
+    sources: ['category:person', 'category:system', 'category:container', 'category:component']
+    targets: ['category:system', 'category:container', 'category:component']

@@ -1,0 +1,28 @@
+# Canonical data-type for a recipe entry's data layer —
+# `files-only-pack:/data-type/recipe`. Authored by the pack, never by Go code.
+$schema: ktw-schema/v1
+name: recipe
+version: "1.0.0"
+root: Recipe
+description: |
+  A cooking recipe: what it is called, how many it serves, what goes in and
+  what to do.
+types:
+  Recipe:
+    type: object
+    fields:
+      name:
+        type: string
+        description: the recipe's display name
+      serves:
+        type: number
+        description: how many people one batch feeds
+      ingredients:
+        type: array
+        items: string
+        description: one line per ingredient
+      steps:
+        type: array
+        items: string
+        description: the method in order
+        optional: true

@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Un objet a été créé. Une entrée on_create asynchrone s'y abonne.
+  label: Objet créé

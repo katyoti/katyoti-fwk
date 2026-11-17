@@ -1,0 +1,17 @@
+name: requirements-analysis-input
+root: RequirementsAnalysisInput
+types:
+  RequirementsAnalysisInput:
+    type: object
+    fields:
+      subject:
+        type: string
+        label: "Subject"
+        description: "The system, feature, or project to analyze requirements for"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Start analysis"
+        groups:
+          - title: "Subject"
+            fields: [subject]

@@ -1,0 +1,7 @@
+# READY TO BUILD — specified, challenged, not to be split further: code may be
+# planned on it. Its requirements come from the types that pass it (a feature's
+# specification challenged by a person — ktw-methods).
+name: ready-to-build
+label: Ready to build
+description: >-
+  Specified and challenged by a person: it can be built.

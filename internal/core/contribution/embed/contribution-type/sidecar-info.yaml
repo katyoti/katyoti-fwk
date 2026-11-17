@@ -1,0 +1,34 @@
+# Registers `sidecar-info` as a system contribution kind. Every binary
+# that wires `appcore.SidecarExt(...)` emits exactly one Contribution
+# of this type carrying its identity (see system:/data-type/sidecar-info
+# for the body shape).
+#
+# The URI of this entry is `system:/contribution-type/sidecar-info`.
+# Consumers walking the open list of contribution kinds discover
+# `sidecar-info` here and resolve its body schema through the linked
+# data-type URI.
+name: sidecar-info
+description: |
+  Per-binary identity payload (name, version, description). Cacheable
+  by any catalog without spawning the binary's services. Distinct from
+  the live `Sidecar.Info(...)` slot method which reports mutable
+  state (service list, tool health, skills, capabilities).
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/sidecar-info
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+meta:
+  budget: 128  # measured max 18 B across 21 binaries (2026-09-21), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]

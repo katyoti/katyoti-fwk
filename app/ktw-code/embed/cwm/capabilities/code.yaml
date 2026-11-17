@@ -1,0 +1,9 @@
+# A module's code: what kind of code it is, the packages that realize it, its
+# tiers and the facets the gocode lint reads - carried only by software modules,
+# never by a documentation module or a study.
+name: code
+label: Code
+icon: code
+description: >-
+  A software module's code: its kind, its packages, its tiers and its facets.
+schema: ktw-code:/data-type/cap-code

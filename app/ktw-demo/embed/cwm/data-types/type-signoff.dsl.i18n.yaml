@@ -1,0 +1,10 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TypeSignoff:
+      fields:
+        required_reviewers:
+          description: 'Combien d''approbations demande un objet du type (une seule si non renseigné)'
+          label: 'Relecteurs requis'

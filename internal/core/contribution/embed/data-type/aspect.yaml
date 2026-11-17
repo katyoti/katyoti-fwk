@@ -1,0 +1,46 @@
+$schema: ktw-schema/v1
+name: aspect
+version: "1.2.0"
+root: Aspect
+description: |
+  An aspect: a named list of capabilities added to an object in one move
+  (identity-and-index.md §8, 2026-09-25). `isa` = want + checkable.
+types:
+  Aspect:
+    type: object
+    fields:
+      name:
+        type: string
+        label: Aspect id
+        description: Lowercase kebab; what an object names in its `aspects:` list.
+      label:
+        type: string
+        label: Label
+        optional: true
+      description:
+        type: string
+        label: Description
+        description: What adding this aspect means, for someone composing an object.
+        optional: true
+      capabilities:
+        type: string[]
+        label: Capabilities
+        description: >-
+          The capability ids this aspect adds, in order. Each must be a declared
+          capability; an aspect naming an undeclared one is dropped at load.
+      pane:
+        type: any
+        label: Pane
+        description: >-
+          How an object carrying this aspect shows in the object pane, read by
+          the object pane: `tabs` lists its main tabs in order (a panel id or a
+          strip id); every other tab goes behind « More… ».
+        optional: true
+      create_task:
+        type: string
+        label: Create task
+        description: >-
+          The task that creates an object carrying this aspect (a study's short
+          creation form). « + New » offers the aspect beside the object types
+          and opens it.
+        optional: true

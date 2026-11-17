@@ -1,0 +1,173 @@
+# LLM Provider Model Configuration (April 2026)
+# cost_input / cost_output = $/MTok. context_window / max_output in tokens.
+
+default_model: claude-sonnet
+
+models:
+  # ── Anthropic (Claude 4.6) ──────────────────────────────────────────
+  claude-opus:
+    type: anthropic
+    provider: anthropic
+    model_id: claude-opus-4-6
+    max_tokens: 16384
+    context_window: 1000000
+    max_output: 128000
+    cost_input: 5.00
+    cost_output: 25.00
+    thinking:
+      enabled: true
+      budget_tokens: 10000
+    auto_cache: true
+
+  claude-sonnet:
+    type: anthropic
+    provider: anthropic
+    model_id: claude-sonnet-4-6
+    max_tokens: 16384
+    context_window: 1000000
+    max_output: 64000
+    cost_input: 3.00
+    cost_output: 15.00
+    auto_cache: true
+
+  claude-haiku:
+    type: anthropic
+    provider: anthropic
+    model_id: claude-haiku-4-5-20251001
+    max_tokens: 8192
+    context_window: 200000
+    max_output: 64000
+    cost_input: 1.00
+    cost_output: 5.00
+    auto_cache: true
+
+  # ── OpenAI (GPT-5.4) ───────────────────────────────────────────────
+  gpt-5.4:
+    type: openai
+    provider: openai
+    model_id: gpt-5.4
+    max_tokens: 16384
+    context_window: 1050000
+    max_output: 128000
+    cost_input: 2.00
+    cost_output: 8.00
+
+  gpt-5.4-mini:
+    type: openai
+    model_id: gpt-5.4-mini
+    max_tokens: 16384
+    context_window: 400000
+    max_output: 128000
+    cost_input: 0.40
+    cost_output: 1.60
+
+  gpt-5.4-nano:
+    type: openai
+    model_id: gpt-5.4-nano
+    max_tokens: 8192
+    context_window: 400000
+    max_output: 128000
+    cost_input: 0.15
+    cost_output: 0.60
+
+  # ── Ollama (local — $0) ────────────────────────────────────────────
+  llama3:
+    type: ollama
+    model_id: llama3.3
+    max_tokens: 4096
+    context_window: 128000
+    cost_input: 0
+    cost_output: 0
+
+  qwen3:
+    type: ollama
+    model_id: qwen3
+    max_tokens: 4096
+    context_window: 128000
+    cost_input: 0
+    cost_output: 0
+
+  qwen2.5-coder:
+    type: ollama
+    model_id: qwen2.5-coder
+    max_tokens: 4096
+    context_window: 128000
+    cost_input: 0
+    cost_output: 0
+
+  deepseek-r1:
+    type: ollama
+    model_id: deepseek-r1
+    max_tokens: 4096
+    context_window: 128000
+    cost_input: 0
+    cost_output: 0
+
+  # ── Mistral ─────────────────────────────────────────────────────────
+  mistral-large:
+    type: mistral
+    model_id: mistral-large-latest
+    max_tokens: 8192
+    context_window: 256000
+    cost_input: 2.00
+    cost_output: 6.00
+
+  mistral-small:
+    type: mistral
+    model_id: mistral-small-latest
+    max_tokens: 8192
+    context_window: 256000
+    cost_input: 0.50
+    cost_output: 1.50
+
+  devstral:
+    type: mistral
+    model_id: devstral-small-latest
+    max_tokens: 8192
+    context_window: 256000
+    cost_input: 0.50
+    cost_output: 1.50
+
+  magistral:
+    type: mistral
+    model_id: magistral-medium-latest
+    max_tokens: 16384
+    context_window: 256000
+    cost_input: 2.00
+    cost_output: 6.00
+
+  # ── Google Gemini ───────────────────────────────────────────────────
+  gemini-3.1-pro:
+    type: gemini
+    model_id: gemini-3.1-pro-preview
+    max_tokens: 16384
+    context_window: 1000000
+    max_output: 65000
+    cost_input: 1.25
+    cost_output: 10.00
+
+  gemini-3-flash:
+    type: gemini
+    model_id: gemini-3-flash
+    max_tokens: 8192
+    context_window: 1000000
+    max_output: 8000
+    cost_input: 0.10
+    cost_output: 0.40
+
+  # ── Cohere ──────────────────────────────────────────────────────────
+  command-a:
+    type: cohere
+    model_id: command-a-03-2025
+    max_tokens: 8192
+    context_window: 256000
+    cost_input: 2.50
+    cost_output: 10.00
+
+  command-r-plus:
+    type: cohere
+    model_id: command-r-plus-08-2024
+    max_tokens: 4096
+    context_window: 128000
+    cost_input: 2.50
+    cost_output: 10.00

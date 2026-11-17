@@ -1,0 +1,54 @@
+# A notation: element and relationship kinds, and the rules a model must follow.
+# Looks live in a drawio-template library; which kinds one picture shows, in a viewpoint.
+id: bpmn2
+displayName: BPMN 2
+version: 2.0.2
+description: 'Business Process Model and Notation: the most-used core of activities, events, gateways and data,
+  with sequence flow, message flow and association. A pool is a zone and a lane a zone inside it; a sequence flow
+  never enters a start event nor leaves an end event.'
+elements:
+  Task: {label: Task, description: A unit of work., category: activity}
+  UserTask: {label: User Task, description: Work a person does with the help of software., category: activity}
+  ServiceTask: {label: Service Task, description: Work a service or an application does., category: activity}
+  SendTask: {label: Send Task, description: Sends a message to another participant., category: activity}
+  ReceiveTask: {label: Receive Task, description: Waits for a message from another participant., category: activity}
+  ScriptTask: {label: Script Task, description: A script the process engine runs., category: activity}
+  ManualTask: {label: Manual Task, description: Work done without any software., category: activity}
+  BusinessRuleTask: {label: Business Rule Task, description: A decision taken by a business rule., category: activity}
+  SubProcess: {label: Sub-Process, description: An activity made of its own process (collapsed)., category: activity}
+  CallActivity: {label: Call Activity, description: Calls a process defined elsewhere., category: activity}
+  StartEvent: {label: Start Event, description: Where the process starts., category: start}
+  MessageStartEvent: {label: Message Start Event, description: The process starts when a message arrives., category: start}
+  TimerStartEvent: {label: Timer Start Event, description: The process starts at a time or a period., category: start}
+  SignalStartEvent: {label: Signal Start Event, description: The process starts on a broadcast signal., category: start}
+  IntermediateMessageCatchEvent: {label: Message Catch Event, description: The flow waits for a message., category: intermediate}
+  IntermediateMessageThrowEvent: {label: Message Throw Event, description: The flow sends a message and goes on.,
+    category: intermediate}
+  IntermediateTimerEvent: {label: Timer Event, description: The flow waits until a time or for a period., category: intermediate}
+  IntermediateSignalEvent: {label: Signal Event, description: The flow waits for a broadcast signal., category: intermediate}
+  ErrorEvent: {label: Error Event, description: An error caught on the boundary of an activity., category: intermediate}
+  EndEvent: {label: End Event, description: Where a path of the process ends., category: end}
+  MessageEndEvent: {label: Message End Event, description: The path ends by sending a message., category: end}
+  ErrorEndEvent: {label: Error End Event, description: The path ends with an error., category: end}
+  TerminateEndEvent: {label: Terminate End Event, description: The whole process ends at once., category: end}
+  ExclusiveGateway: {label: Exclusive Gateway, description: 'One path out of several, by a condition (XOR).', category: gateway}
+  ParallelGateway: {label: Parallel Gateway, description: 'All paths at once, or waits for all (AND).', category: gateway}
+  InclusiveGateway: {label: Inclusive Gateway, description: 'One or more paths, by their conditions (OR).', category: gateway}
+  EventBasedGateway: {label: Event-Based Gateway, description: The path of the first event that happens., category: gateway}
+  DataObject: {label: Data Object, description: Information an activity reads or writes., category: data}
+  DataStore: {label: Data Store, description: Information that outlives the process., category: data}
+relationships:
+  sequenceFlow: {label: Sequence Flow, description: 'The order of activities, events and gateways in a process.'}
+  messageFlow: {label: Message Flow, description: A message between two participants (pools).}
+  association: {label: Association, description: Links data or an annotation to a flow element.}
+rules:
+  allowed:
+  - relationship: sequenceFlow
+    sources: ['category:activity', 'category:start', 'category:intermediate', 'category:gateway']
+    targets: ['category:activity', 'category:intermediate', 'category:end', 'category:gateway']
+  - relationship: messageFlow
+    sources: ['category:activity', IntermediateMessageThrowEvent, MessageEndEvent]
+    targets: ['category:activity', MessageStartEvent, IntermediateMessageCatchEvent]
+  - relationship: association
+    sources: ['*']
+    targets: ['*']

@@ -1,0 +1,20 @@
+name: attaches
+label: Attaches
+inverse_label: Attached to
+target: path                       # the RIGHT SIDE IS A FILE, in this object's module
+object_storage: edges
+cardinality: M:N
+inverse_name: attached-to
+description: |
+  A file attached to this object, as a path inside the project. Decided
+  2026-09-25: an object's attachments live IN ITS MODULE, because a module has
+  to be a self-contained view (G1) — it travels with its own bytes, and anyone
+  who clones the repo has them.
+
+  The path is validated to EXIST. An attachment that names nothing is a broken
+  reference, and the whole reason a relation to a non-object is still declared
+  is so it can be checked rather than believed.
+
+  When the bytes do NOT belong in git — too large, external, owned by another
+  system — this is the wrong kind. Use `links` and point at where they live.
+  Two shapes, no third: a file in the module, or a link.

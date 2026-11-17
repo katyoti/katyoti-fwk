@@ -1,0 +1,33 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TestRun:
+      fields:
+        archived_to:
+          description: "Chemin du système de fichiers où la projection a écrit."
+          label: "Archivé vers"
+        layer_filter:
+          description: "Les couches de test exercées."
+          label: "Couches"
+        module:
+          description: "Slug du module (par ex. tasks, echo)."
+          label: "Module"
+        ran_at:
+          description: "Moment où le verbe verify a été déclenché."
+          label: "Exécuté le"
+        tier_N_blockers:
+          description: "Résumés des échecs qui bloquent la promotion de palier."
+          label: "Blocages du palier"
+        tier_N_dod_met:
+          description: "Indique si le tier_target du module a été atteint par cette exécution."
+          label: "DoD du palier atteinte"
+        totals:
+          label: "Totaux"
+        uc_filter:
+          description: "Motif ou liste d'identifiants de UC transmis via --uc."
+          label: "Filtre de UC"
+        verdicts:
+          description: "Table associant l'identifiant de chaque UC à son verdict ({layers, verdict, reason})."
+          label: "Verdicts"

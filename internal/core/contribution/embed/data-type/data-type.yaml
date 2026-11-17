@@ -1,0 +1,46 @@
+# Meta-schema for a ktw-schema DSL data-type definition itself —
+# `system:/data-type/data-type`. This is the "DSL for the DSL": the shape
+# of the `source` carried inside a data-type Contribution's DataTypeBody.
+#
+# Every auto-generated method I/O data-type (`<provider>:/data-type/<slot>/<method>/{Input,Output}`)
+# and CWM type asset stamps `schema: system:/data-type/data-type` on itself;
+# the catalog Reindex resolves that URI here. Without this file those entries
+# logged `catalog.Reindex: data-type not found`.
+#
+# Fields are all optional so the meta-schema never rejects a concrete schema
+# body during reindex; it exists to make the URI resolvable + document the shape.
+$schema: ktw-schema/v1
+name: data-type
+version: "1.0.0"
+root: DataType
+description: |
+  A ktw-schema DSL document: a named collection of type definitions with an
+  entry `root`. Compiles to JSON Schema 2020-12 for validation + form-gen.
+types:
+  DataType:
+    type: object
+    fields:
+      name:
+        type: string
+        description: schema name (becomes the data-type id)
+        optional: true
+      version:
+        type: string
+        description: schema API version (e.g. 1.0.0)
+        optional: true
+      description:
+        type: string
+        description: human-readable summary
+        optional: true
+      imports:
+        type: string[]
+        description: other schema URIs this one references
+        optional: true
+      root:
+        type: string
+        description: name of the entry type in `types` (emits a top-level $ref)
+        optional: true
+      types:
+        type: object
+        description: map of type-name to its definition (object / fields / shorthand)
+        optional: true

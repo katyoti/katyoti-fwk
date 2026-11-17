@@ -1,0 +1,26 @@
+# A section group (partial template): where the subject stands before any
+# option — included by the architecture board, the solution proposal and the
+# overview.
+name: context-and-scope
+label: Contexte et périmètre
+description: The context, the scope and the current situation, before any option is discussed.
+partial: true
+sections:
+  - id: context
+    title: Contexte et périmètre
+    intent: Why this subject now, what is in and out of scope, who is concerned.
+    sources:
+      - {from: field, value: perimeter, note: "the scope as the dossier states it"}
+      - {from: named-file, value: overview, note: "the dossier's synthesis"}
+      - {from: files, value: "scope.yaml", note: "in and out of scope, risks and assumptions"}
+    guidance: Three or four facts, no history lesson. Name the business stake in one line.
+    required: true
+    weight: 2
+  - id: current-situation
+    title: Situation actuelle
+    intent: The current architecture and what does not work with it — the reason to change.
+    sources:
+      - {from: files, value: "confluence/as-is/*.md", note: "the AS-IS study"}
+      - {from: files, value: "**/*.drawio", note: "the AS-IS diagrams — show one, never describe it in bullets"}
+    guidance: One diagram and the two or three pains it explains.
+    weight: 2

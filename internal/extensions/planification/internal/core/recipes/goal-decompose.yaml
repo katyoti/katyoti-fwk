@@ -1,0 +1,11 @@
+# An accepted goal's work is not code: it is finding the wants that make it
+# happen — until then its dependencies are unknown. An analyst proposes the
+# features, a person validates them; the goal is then decomposed.
+name: goal-decompose
+description: Find the features that make the goal happen; a person validates them.
+types: [goal]
+states: [accepted]
+transition: decomposed
+steps:
+  - {name: find-features, phase: preparation, class: refine, role: specifier, gate: ready-to-plan, share: 0.8, skill: ktw-methods:/skill/new-functionality, instructions: "Find the features that make the goal happen; each serves the goal.", refines: true}
+  - {name: validate, phase: preparation, class: refine, actor: person, interaction: validate, after: [find-features], share: 0.2, instructions: "Validate the features found for the goal; add, remove or change them."}

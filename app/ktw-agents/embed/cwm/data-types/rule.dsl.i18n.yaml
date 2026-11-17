@@ -1,0 +1,34 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Rule:
+      fields:
+        derived_from:
+          description: >-
+            D'où vient l'énoncé — un chemin relatif au dépôt (le document d'où il a été extrait) ou un
+            document#ancre.
+          label: Dérivé de
+        kind:
+          description: >-
+            Une contrainte est communiquée à chaque agent concerné ; une recette, une référence ou un
+            exemple est récupéré à la demande.
+          label: Nature
+        scope:
+          description: >-
+            module atteint le sous-arbre du module où se trouve la règle ; repo atteint tous les
+            modules.
+          label: Portée
+        severity:
+          label: Gravité
+        statement:
+          description: >-
+            La règle elle-même, en une ou deux phrases impératives (« MUST », « NEVER »).
+          label: Énoncé
+        strength:
+          description: >-
+            Un pattern suggère, une règle guide, une politique contraint par sa vérification.
+          label: Force
+        tags:
+          label: Étiquettes

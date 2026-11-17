@@ -1,0 +1,13 @@
+# SOURCE SUB-TABS: a holder type composing
+# this capability shows its opened information sources in three sub-tabs -
+# what it takes, « Contenu lu », « Réglages » (object-panels
+# information-source-take, -read, -settings). Every other holder - a module,
+# an as-is study v1 - keeps the one « Source » tab (information-source.yaml).
+# The panels ask it through source_sub_tabs(), the knowledge capability's
+# function over the source. No schema, no panel: a marker the function reads.
+name: source-sub-tabs
+label: Source sub-tabs
+icon: layout-navbar
+description: >-
+  The object's information sources open on three sub-tabs - what each takes,
+  the content it read, its settings - in place of the one « Source » tab.

@@ -1,0 +1,7 @@
+name: deck
+label: Deck settings
+description: >-
+  The settings of a slide deck — aspect ratio, theme, default transition,
+  author, watermark and the theme's production mark. The slides are the
+  object's body; the deck panel and the object lint join the two.
+schema: ktw-docs:/data-type/cap-deck

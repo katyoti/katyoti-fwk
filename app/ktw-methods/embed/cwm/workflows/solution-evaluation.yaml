@@ -1,0 +1,15 @@
+# A solution evaluation: scored, then reviewed by a person; back to draft when
+# its grid is reopened or a score must change.
+name: solution-evaluation
+label: Solution evaluation
+description: Scored, then reviewed by a person; back to draft when its grid is reopened.
+initial: draft
+states:
+  - {name: draft, description: "Being scored"}
+  - {name: reviewed, description: "Its scores reviewed by a person"}
+transitions:
+  - name: review
+    from: [draft]
+    to: reviewed
+    gate: "by.kind == 'person'"
+  - {name: rework, from: [reviewed], to: draft}

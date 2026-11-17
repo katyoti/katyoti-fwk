@@ -1,0 +1,23 @@
+name: serves
+label: Serves
+inverse_label: Served by
+from: feature                     # node
+to: goal                          # item — a standing north-star
+cardinality: M:N
+from_capabilities: []            # the object side: ANYTHING may serve a goal — features, use cases,
+                                 # and a decision, which has no want
+to_capabilities: [want]          # anything that wants — a goal above all
+target: object
+object_storage: edges
+description: |
+  A Feature SERVES one or more Goals (the standing north-stars). This
+  is the ALIGNMENT axis — NOT a parent edge: goals are not a tree above
+  the feature. M:N — many features serve one goal, and a feature may
+  serve several.
+
+  Drives the alignment loop (modules/method-core/concepts.md §8):
+    - a feature with no `serves` edge is WASTE (want without purpose);
+    - a goal with no incoming `serves` is a GAP (purpose without want);
+    - delivered serving features roll up to a goal's advancement gauge.
+
+inverse_name: served-by

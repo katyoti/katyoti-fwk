@@ -1,0 +1,10 @@
+# The triggers and rules (planification's triggers table) see every goal,
+# feature, use case and decision that appears: a rule it fails raises its request. It
+# takes the default payload — the object as written.
+name: triggers-on-create
+description: >-
+  A goal, a feature, a use case or a decision appears - the rules that apply to it raise a request when it fails them.
+type: on_create
+uri: ktw-agents:triggers/fire
+filter:
+  types: [goal, feature, use-case, decision]

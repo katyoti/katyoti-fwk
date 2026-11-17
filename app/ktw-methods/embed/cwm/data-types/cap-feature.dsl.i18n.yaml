@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapFeature:
+      fields:
+        cod:
+          description: "Ce que coûte le fait de NE PAS avoir encore cela, dans l'unité dont le projet convient. C'est le signal d'ordonnancement, porté par la fonctionnalité car l'ordonnancement est une décision côté offre : un objectif n'est pas planifié, il est poursuivi."
+          label: "Coût du retard"
+        decomposes:
+          description: "Id de la fonctionnalité PARENTE que celle-ci décompose, pour un arbre de fonctionnalités. Mono-valué, car la décomposition EST de la contenance : contrairement à servir un objectif, une sous-fonctionnalité appartient à un seul parent."
+          label: "Décompose"

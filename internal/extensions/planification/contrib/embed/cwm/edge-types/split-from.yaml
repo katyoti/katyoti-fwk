@@ -1,0 +1,13 @@
+name: split-from
+from: request
+to: request
+cardinality: N:1
+from_capabilities: [request]
+to_capabilities: [request]
+target: object
+object_storage: edges
+description: |
+  A request is a PART of the request it was split from — one per module it
+  affects, per unmet goal, or one to route it. The split request is dropped,
+  naming its parts.
+inverse_name: split-into

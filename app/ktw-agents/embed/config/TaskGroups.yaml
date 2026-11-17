@@ -1,0 +1,48 @@
+# Task groups: how many runs of each group RUN at once. A run holds a slot from
+# the moment it starts or is woken until it waits (an inbox answer, an event, a
+# child's result); waiting holds none. A run names its group, else takes its
+# parent run's, else the default group. A group not declared here does not
+# exist: a run naming one runs in the default group.
+#
+# The universe:
+#   max_running       runs at once, all groups together (default 32); at the
+#                     ceiling a person's runs (the default group) start first
+#   priority_aging_s  a queued run's priority rises by one every this many
+#                     seconds it waits — nothing starves (default 60; -1 = off)
+#
+# Per group:
+#   max_running  runs at once (default 8)
+#   priority     the group's order (higher first) — in the GUI's list, and
+#                for which group's runs start first at the universe's ceiling
+#   queue_limit  queued runs before a new one is refused (0 = no limit)
+#   on           false pauses the group: its runs queue, none starts
+#
+# Limits and on/off can also be changed live from Global -> Runs (until restart).
+#
+# Tasks the universe keeps running (keep_alive): its serving process starts
+# each one that has no run, after every restart too, and again when it ends —
+# after a wait that doubles (30 s up to 30 min). Ending 5 times within an hour
+# stops it, as does a person stopping its run; running it by hand starts it
+# again. Per task:
+#   task   the task's name
+#   group  the group it runs in (default: its own, else the default group)
+#   input  its input
+
+default_group: user
+max_running: 32
+
+groups:
+  # A person's runs: chats, actions, tasks launched by hand.
+  user:
+    max_running: 4
+    priority: 10
+
+  # The planner's runs (intake, preparation, build, ...).
+  planning:
+    max_running: 1
+    priority: 5
+    queue_limit: 20
+
+# keep_alive:
+#   - task: inbox-watcher
+#     group: planning

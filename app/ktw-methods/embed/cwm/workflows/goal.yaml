@@ -1,0 +1,50 @@
+# A goal's ladder. Approval's stages, then DECOMPOSED — a goal is ready to be
+# pursued only once the wants that make it happen (features, use cases) serve
+# it: until then its dependencies are unknown, so finding them is its first
+# work. A goal is asymptotic: it has no done state — one no longer pursued is
+# dropped.
+# A person may send any goal not dropped back to `idea` (rethink) — its
+# definition is reopened, whatever stage it had reached.
+# ASSUMED is the side door for a goal the code already pursues when it is first
+# recorded (an inventory, a migration from an older tracker): anyone may record
+# it, only a person confirms it (it becomes active) — or sends it back.
+name: goal
+label: Goal
+description: >-
+  Proposed, reviewed, accepted by a person, decomposed into the wants that
+  serve it, then pursued; anything may be dropped.
+initial: idea
+states:
+  - {name: idea, description: "Captured, not yet proposed"}
+  - {name: proposed, description: "Put forward for review"}
+  - {name: in-review, description: "Being reviewed"}
+  - {name: accepted, description: "Approved by a person"}
+  - {name: decomposed, description: "The wants that make it happen serve it"}
+  - {name: active, description: "Being pursued"}
+  - {name: assumed, description: "Already pursued by the code when recorded; a person confirms it"}
+  - {name: dropped, description: "Not pursued", terminal: true}
+transitions:
+  - {name: propose, from: [idea], to: proposed}
+  - {name: review, from: [proposed], to: in-review}
+  - {name: rework, from: [in-review], to: proposed}
+  - name: accept
+    from: [in-review]
+    to: accepted
+    gate: "by.kind == 'person'"
+  - name: decompose
+    from: [accepted]
+    to: decomposed
+    gate: "gate('ready-to-plan').passes"
+    force: person
+  - {name: redecompose, from: [decomposed, active], to: accepted}
+  - {name: start, from: [decomposed], to: active}
+  - {name: assume, from: [idea, proposed], to: assumed}
+  - name: confirm
+    from: [assumed]
+    to: active
+    gate: "by.kind == 'person'"
+  - name: rethink
+    from: [proposed, in-review, accepted, decomposed, active, assumed]
+    to: idea
+    gate: "by.kind == 'person'"
+  - {name: drop, from: ["*"], to: dropped}

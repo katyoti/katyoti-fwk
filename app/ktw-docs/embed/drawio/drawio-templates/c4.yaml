@@ -1,0 +1,27 @@
+# A template library: bindings and constants for the templates in the .drawio file of
+# the same name. Edit the shapes in draw.io; a template is a cell marked ktw-template.
+id: c4
+displayName: C4 model
+description: 'The C4 shapes in their usual colours: people dark blue, software systems blue, containers
+  light blue, components lighter blue, anything external grey. Each box reads name, [type: technology] and
+  description; a relationship reads its label and [technology].'
+notation: ktw-docs:/notation/c4
+constants:
+  typeNames:
+    Person: Person
+    ExternalPerson: Person
+    SoftwareSystem: Software System
+    ExternalSoftwareSystem: Software System
+    Container: Container
+    Database: Container
+    Queue: Container
+    Component: Component
+bindings:
+  typeLine:
+    expr: "let t = constants.typeNames[kind] ?? kind; let tech = attributes?.technology ?? ''; tech == '' ? '[' + t + ']' : '[' + t + ': ' + tech + ']'"
+  relTech:
+    expr: "let tech = attributes?.technology ?? ''; tech == '' ? '' : '[' + tech + ']'"
+  description:
+    expr: "attributes?.description ?? ''"
+  flLinks:
+    expr: 'join(map(attributes.fl_codes ?? [], {(#index == 0 ? '''' : (#index % 3 == 0 ? ''<br>'' : '' / '')) + ''<a href="'' + (#.url ?? '''') + ''">'' + #.code + ''</a>''}), '''')'

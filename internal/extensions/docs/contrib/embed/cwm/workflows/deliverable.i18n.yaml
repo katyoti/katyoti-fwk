@@ -1,0 +1,17 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Livrable
+  description: >-
+    Rédigé, relu, validé par une personne, puis publié ; une reprise le
+    renvoie en brouillon.
+  states:
+    draft: Brouillon
+    in-review: En revue
+    validated: Validé
+    published: Publié
+  transitions:
+    submit: Soumettre
+    rework: Reprendre
+    validate: Valider
+    publish: Publier

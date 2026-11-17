@@ -1,0 +1,21 @@
+name: file
+kind: field-type
+basePrimitive: string
+description: File attachment (URL or storage key after upload). Renderer comes via gui-media.
+
+configSchema:
+  fields:
+    maxFileSize:
+      type: number
+      optional: true
+      description: Max upload size in bytes.
+    allowedTypes:
+      type: array
+      items: string
+      optional: true
+      description: Allowed MIME types or extensions.
+    multiple:
+      type: boolean
+      optional: true
+      default: false
+      description: Allow uploading multiple files at once.

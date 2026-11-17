@@ -1,0 +1,12 @@
+# A release is frozen with its scope and released once all of it is done. The
+# check reads other objects (the targets, the module releases), which a
+# workflow gate cannot, so it is this hook; it takes the default payload
+# {point, object, prior} — `object` is the release as it is about to be.
+name: release-gate
+description: >-
+  A freeze carries the release's scope; a release is refused while a target is
+  not done, was added after the freeze, or a module release in it is not released.
+type: on_transition
+uri: ktw-agents:releases/check-transition
+filter:
+  types: [release, increment]

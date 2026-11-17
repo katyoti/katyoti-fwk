@@ -1,0 +1,41 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    AnswerRecord:
+      fields:
+        task:
+          description: 'La tâche (to-do) de la tâche humaine à laquelle elle répond.'
+        kind:
+          description: 'Ce qui était attendu : le genre de question.'
+        question:
+          description: 'La question en une ligne.'
+        satisfies:
+          description: 'Ce que la réponse a réglé.'
+        status:
+          description: 'success, fail ou blocked.'
+        verdict:
+          description: 'approved ou rejected.'
+        answer:
+          description: 'Ce qui a été décidé ou fourni.'
+        summary:
+          description: 'La réponse en une ligne.'
+        details:
+          description: 'Le reste de la réponse (markdown).'
+        data:
+          description: 'Les données d''une réponse structurée (un formulaire, un choix).'
+        by_id:
+          description: 'Qui a répondu : l''identifiant d''une personne ou d''un agent.'
+        by_kind:
+          description: 'person ou agent.'
+        at:
+          description: 'Quand elle a été donnée (RFC 3339).'
+        proof:
+          description: 'Comment la réponse relayée d''une personne a été confirmée : prompt, totp, passkey ou entra.'
+        relayed_by:
+          description: 'La session d''agent qui a relayé la réponse de la personne.'
+        list:
+          description: 'La liste d''attente d''où elle a été donnée.'
+        run:
+          description: 'Le run de l''agent qui a répondu.'

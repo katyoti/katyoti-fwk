@@ -1,0 +1,9 @@
+# Translations of the policy beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  agent:
+    system:
+      signoff-has-notes: 'Les visas disent pourquoi'
+  description: 'Le visa d''un objet porte des notes disant pourquoi il est approuvé ou ce qui doit changer.'
+  label: 'Les visas disent pourquoi'

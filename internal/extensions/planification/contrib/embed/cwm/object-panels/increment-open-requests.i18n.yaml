@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Demandes ouvertes
+  description: "Ce qui n'est pas encore fait - chaque demande avec ses étapes, son étape et qui - les faites repliées dessous"

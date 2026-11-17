@@ -1,0 +1,29 @@
+# Registers `content-template` as a ktw-docs contribution kind: WHAT a
+# deliverable must say, whatever its format (modules/doc-engine/, th21). Its
+# URI is `ktw-docs:/contribution-type/content-template`; its body schema is the
+# generated `ktw-docs:/data-type/content-template` (from the Go type in
+# internal/extensions/docs/api). Any sidecar may publish a template; a project
+# keeps its own as `content-template` objects, which come first.
+name: content-template
+description: |
+  A content template: the ordered sections a deliverable must have — what each
+  establishes, where its facts come from, how to write it — whatever the
+  format it is written in (a deck, a document). A partial template is a
+  section group other templates include.
+
+schema: ktw-docs:/data-type/content-template
+validate: error
+
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 512
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from the
+  # index. Templates are also published by other sidecars, as a foreign kind
+  # their builder does not derive: there the producer (docs
+  # ContributeTemplates) copies the same description, and the census checks
+  # that meta agrees with the data layer.
+  from: data
+  fields: [description]

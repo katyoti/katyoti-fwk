@@ -1,0 +1,8 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.transition-refused
+label: Object transition refused
+description: >-
+  A move of an object's lifecycle was refused by its guard (never a dry run). An async on_transition_refused entry subscribes to it.
+payload: system:/data-type/object-transition-refused-event
+point: on_transition_refused

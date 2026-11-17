@@ -1,0 +1,7 @@
+name: deck-theme
+label: Deck theme
+description: >-
+  A deck theme's declaration — name, colours and type scale (tokens), fonts,
+  chrome, layout looks and variants, icons, house rules — exactly as a
+  sidecar declares one. Its files sit in the module's themes/<name>/ folder.
+schema: ktw-docs:/data-type/deck-theme

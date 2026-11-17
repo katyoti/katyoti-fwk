@@ -1,0 +1,16 @@
+# A content template shown as a storyline: its parts in reading order — what
+# each must establish, where its facts come from, how to write it, its deck
+# and document hints — with the section groups it includes expanded and
+# marked. The GUI's `content-template` view.
+name: "Outline"
+description: "The template's parts in reading order: what each must establish, its sources and its guidance, with included section groups expanded"
+icon:
+  tabler: "list-details"
+  emoji: "🧭"
+order: 10
+filter:
+  types:
+    - "content-template"
+content:
+  kind: "extension"
+  extension: "content-template"

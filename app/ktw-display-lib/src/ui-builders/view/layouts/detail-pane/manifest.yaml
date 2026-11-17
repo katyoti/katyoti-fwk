@@ -1,0 +1,18 @@
+name: detail-pane
+kind: view-layout
+description: >-
+  DEFAULT layout. Vertical Stack with title header + groups stacked one
+  below the other. Each group renders as a bordered Paper with title +
+  SimpleGrid of fields. Best for record-detail-pane expansions in tables,
+  side-panels, or full-page record views.
+
+configSchema:
+  fields:
+    spacing:
+      type: string
+      default: md
+      description: "Mantine Stack spacing between groups (xs | sm | md | lg | xl)"
+    show_section_titles:
+      type: boolean
+      default: true
+      description: "Render the per-group title above its content. Set false for tight layouts."

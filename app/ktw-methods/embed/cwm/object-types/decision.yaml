@@ -1,0 +1,28 @@
+# decision: a question about how something is or is done, with its STATE as
+# fields (the `decision` capability) and its REASONING as prose (the .cwm.md
+# body: ## Question, ## Options, ## Decision). Graded on `decision.resolved`
+# being non-empty — not on prose in a status field. A challenge is a decision
+# with a `challenges` edge to the object it questions.
+name: decision
+label: Decision
+folder: decisions
+id_prefix: OD
+description: >-
+  A question about how something is or is done: its options, the choice and
+  the reasoning. It is open until decided, then applies; a later decision may
+  replace it, or it is withdrawn. Visible in ancestor rollups (a project sees
+  its descendants' open questions); an open core decision blocks green
+  (MB-12). Its state is structured, its reasoning is prose.
+icon: help-circle
+capabilities: [decision, lifecycle]
+workflow: decision
+context:
+  propagation: local-visible-up
+  resolution_strategy: local-only
+side: both
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+  label: Reasoning
+  description: The question, the options weighed and the decision, in prose.
+  format: markdown

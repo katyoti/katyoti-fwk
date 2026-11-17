@@ -1,0 +1,5 @@
+name: approve
+label: Validation
+description: Approve or reject what is shown, with a note when rejecting.
+answerable_by: person
+order: 1

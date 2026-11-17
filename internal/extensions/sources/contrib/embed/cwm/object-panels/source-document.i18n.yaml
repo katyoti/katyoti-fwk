@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Élément
+  description: L'élément que le document enregistre, ouvert - d'où il vient, ses champs ou son texte et les objets qui le lisent

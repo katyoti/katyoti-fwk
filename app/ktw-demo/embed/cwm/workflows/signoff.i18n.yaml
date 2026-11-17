@@ -1,0 +1,19 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Visa
+  description: >-
+    Rédigé, mis en revue, puis approuvé une fois le visa complet — ou
+    renvoyé avec des changements ; une personne le clôt.
+  states:
+    draft: Brouillon
+    in-review: En revue
+    changes-requested: Changements demandés
+    approved: Approuvé
+    closed: Clos
+  transitions:
+    submit: Soumettre
+    approve: Approuver
+    request-changes: Demander des changements
+    close: Clore
+    drop: Abandonner

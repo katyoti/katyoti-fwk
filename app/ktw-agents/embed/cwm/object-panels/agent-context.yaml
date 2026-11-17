@@ -1,0 +1,16 @@
+# What a chat started on this object receives — on every object. The source is
+# the method the object-context plugin calls (AgentContext), so the panel and
+# the agent cannot disagree; the content is the registered view its answer fills
+# (the answer arrives as the view's input).
+name: "Agent context"
+description: "What a chat started on this object receives"
+icon:
+  tabler: "message-chatbot"
+  emoji: "💬"
+order: 900
+filter:
+  types: ["*"]
+source: "ktw-agents:object-context/agent-context"
+content:
+  kind: "extension"
+  extension: "agent-context"

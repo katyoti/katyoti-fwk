@@ -1,0 +1,38 @@
+# The goals extension's framing of a chat on a goal, or on a module (whose
+# goals it is): what a goal is, how its state moves, the skill that defines
+# goals well, and the goals service as tools — "add this goal to this module"
+# is a call, the person never handles files (goals UC-002). Removing a goal is
+# a person's call: no tool here removes one.
+name: goals
+description: How goals are managed, told to a chat on a goal or on a module.
+filter:
+  # a goal, or any module - its type's level capability
+  when: "type == 'goal' or 'module' in current.capabilities"
+agent:
+  system:
+    - id: goals-how
+      title: Goals
+      text: >-
+        A goal is a direction module ${current.module} strives toward and never
+        finishes: the reason it exists, stated so that work can be said to
+        serve it. It is always asymptotic: no test declares it done (something
+        a test can declare done is a feature). Goals form a tree (a goal
+        serves a larger goal) and sit at the top of the serves chain every
+        feature and use-case answers to. A goal is not measured itself; it is
+        covered when something measured serves it. Its state follows the goal
+        workflow (idea, proposed, in-review, accepted, decomposed, active,
+        assumed, dropped), which has no done state: an agent may propose, only
+        a person accepts, and an accepted goal is decomposed (the ready-to-plan
+        gate) once the features and use cases that make it happen serve it,
+        before it is pursued; a goal no longer pursued is dropped. Add, order
+        and link goals with the goals tools; change a state through a
+        transition, never by editing it.
+  tools:
+    - uri: ktw-methods:goals/add
+    - uri: ktw-methods:goals/list
+    - uri: ktw-methods:goals/reorder
+    - uri: ktw-methods:goals/reparent
+    - uri: ktw-methods:goals/link-server
+    - uri: ktw-methods:goals/uncovered
+  skills:
+    - selector: define-goals

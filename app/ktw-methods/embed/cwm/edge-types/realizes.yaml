@@ -1,0 +1,13 @@
+name: realizes
+label: Realizes
+inverse_label: Realized by
+target: path                       # the RIGHT SIDE IS A FILE in the project, not an object
+object_storage: edges
+cardinality: M:N
+inverse_name: realized-by
+description: |
+  What in the code REALIZES this object: `internal/extensions/cwm` realizes the
+  cwm module. The target is a path inside the project — a relation to something
+  that is not an object is still declared, so it can be checked (the path must
+  exist) and listed. Declared 2026-09-25 (phase 7e): it had been authored for a
+  year and declared nowhere.

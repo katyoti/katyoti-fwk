@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Aperçu
+  description: L'aperçu rédigé de l'objet, tiré de son fichier d'aperçu

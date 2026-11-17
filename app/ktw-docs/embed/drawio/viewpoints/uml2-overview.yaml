@@ -1,0 +1,10 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: uml2-overview
+displayName: UML — overview
+description: 'Every UML 2.5 element kind: components, nodes, actors, use cases, activities, states, lifelines.'
+notation: ktw-docs:/notation/uml2
+templates: ktw-docs:/drawio-template/uml2
+page: default
+layout:
+  algorithm: layered
+  direction: DOWN

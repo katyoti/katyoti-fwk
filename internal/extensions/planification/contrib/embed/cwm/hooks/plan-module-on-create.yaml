@@ -1,0 +1,11 @@
+# A module created plain - with no capability of its own beyond its type's -
+# is planned: it gets the `planned` capability, and planification's panels and
+# the method's show on it. A module created with a domain capability of its
+# own (an étude de l'existant, a dossier d'architecture) is left to its domain.
+name: plan-module-on-create
+description: >-
+  A module appears - created plain, its work is planned here: it carries the planned capability.
+type: on_create
+uri: ktw-agents:requests/plan-module
+filter:
+  capabilities: [module]

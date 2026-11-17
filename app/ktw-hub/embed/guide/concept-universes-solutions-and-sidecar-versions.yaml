@@ -1,0 +1,174 @@
+# A concept document of KaTyoti: listed first in the guide,
+# under « Concepts KaTyoti », read in the person's language.
+# Universes, solutions and versions as KaTyoti delivers them.
+name: 'Universes, solutions and sidecar versions'
+description: 'How KaTyoti is delivered and kept up to date: what a marketplace offers, a solution as the starting set a universe is created from, which version of each sidecar a universe runs, and how a project''s data follows an update.'
+hashtags:
+- katyoti-usage
+- concepts
+- universe
+- solution
+- version
+- update
+- marketplace
+level: beginner
+concept: true
+body: |-
+  The reference for how KaTyoti is delivered and kept up to date: what a marketplace
+  offers, how a universe is created from a solution, which version of each sidecar
+  runs in a universe, and how a project's data follows an update. « Projects,
+  repositories and universes » explains the projects a universe opens. What is not
+  delivered yet is marked **Coming**.
+
+  ## 1. The picture
+
+  ```mermaid
+  flowchart LR
+    subgraph PUB["Publisher side"]
+      PR["Products<br/>shipped as sidecars"] --> S1["Sidecars<br/>each at its version"] --> SOL["Solution version<br/>a starting set: sidecars pinned · config-sets · project template · vaults"]
+    end
+    SOL -->|signed marketplace: a universe is created from it| INST
+    subgraph PERSON["Your machine"]
+      ST["Version store<br/>one copy of each version"]
+      INST["Universe<br/>runs exactly the versions it pins, and the sidecars you add"]
+      INST -->|uses| ST
+      INST -->|serves| P["Project<br/>its data version"]
+    end
+  ```
+
+  - **A publisher composes a solution; you create a universe from it and update it.**
+  - A solution version **pins every sidecar at an exact version**, and a universe
+    created from it runs exactly those - there are no version ranges.
+  - A solution is a **starting set**, not a fence: your universe adds sidecars of its
+    own and attaches projects of any type.
+  - **Several versions live side by side** on one machine: each universe runs its own.
+
+  ## 2. The concepts
+
+  | Concept | What it is | Who changes it |
+  |---|---|---|
+  | **Product** | What you choose by name - KaTyoti, SoftwareFactory, KaTyoti Studio, ArchiFactory: sidecars, screens and guides under one name. A product is not a universe | Its publisher |
+  | **Marketplace** | A catalog signed with its publisher's key: the control plane, sidecars, config-sets, project templates, vaults and solutions, each at its versions | Its publisher |
+  | **Sidecar** | A component at a version, giving a universe capabilities: object types, actions, connectors | Its developers |
+  | **Solution** | A starting set frozen at a version: the control plane's version, its sidecars at exact versions, its config-sets, its project template, its vaults and its documents. A universe is created from it and updated with it; afterwards it only says where the universe came from. A published version never changes. Today a solution may also lay out several universes, one of them the main one | Its publisher |
+  | **Universe** | Your KaTyoti, your working context: the sidecars it runs - its solution's and the ones you add -, its settings, its keys, the guides and screens it shows, the projects it attaches. It names the solution it came from | You: create, update, sidecars, settings, keys |
+  | **Config-set** | Settings applied to a universe, with the keys they need | Its publisher |
+  | **Project template** | A universe's starting content: a project (its objects, documents and files) and its tasks; a « Demo » badge marks one that is demo data | Its publisher |
+  | **Vault** | A sealed file of keys, opened with your team's password | Its publisher |
+  | **Data version** | The shape of a project's data, recorded in its project file | Moves only when the shape changes, with a migration step |
+
+  ## 3. The rules
+
+  1. **The publisher composes solutions;** you create universes from them, update
+     them, add sidecars and set your keys and settings.
+  2. **A solution version is fixed.** Once published it is never changed: installing it
+     anywhere gives exactly the same versions.
+  3. **A universe runs exactly the versions it pins.** A sidecar whose program reports
+     another version than the pin is not started, and KaTyoti names both versions.
+  4. **Versions live side by side.** The machine keeps one copy of each version; two
+     universes may run two versions of the same sidecar at the same time.
+  5. **A solution is where a universe starts, not a fence.** The universe adds or
+     removes sidecars of its own and attaches projects of any type. **Coming:** a
+     universe combines several solutions whose versions agree, a conflict being named
+     and refused.
+  6. **An update moves a solution's universes together** to another of its versions,
+     and never cuts running work: a universe running tasks, or with work held by a
+     worker, is refused. Today the update resets the universe to exactly the
+     solution's sidecars; **coming:** it moves only the solution's sidecars and keeps
+     the ones you added.
+  7. **The project's data follows the update, today:**
+     - **older** → brought up to date by the update, after a backup;
+     - **newer** than the program knows → refused: the project is not opened, and both
+       versions are named;
+     - **equal** → nothing to do.
+     You then commit the migrated project with git. **Coming:** an update never
+     changes a project's data. The shape moves only when you choose « Convertir »,
+     component by component; a project written by a newer version opens read-only,
+     names the product and offers to install it or to open the project in another
+     universe.
+  8. **A fix that changes no data blocks nobody,** because the data version did not move.
+
+  ## 4. Installing a solution
+
+  In the Marketplace, the « Solutions » tab installs a solution into a universe you
+  name - a new one, or one you already have:
+
+  1. **The gates first:** each vault is opened with your team's password, asked once,
+     and every key the config-sets need is checked. Nothing is installed while a
+     vault does not open or a key is missing.
+  2. **Its sidecars** are installed at their exact versions, in the version store.
+  3. **Its universes** are created, the main one first; another universe of the
+     solution goes beside it, named after it.
+  4. **Their content:** the keys are imported, the config-sets applied, the project
+     template laid out as the universe's project, and the solution's documents placed in it.
+  5. At the first start, **« Ready to start »** shows each sidecar's status, the
+     programs to install on your machine, and the keys still missing.
+
+  Installing again repairs the universe and never overwrites your project.
+
+  ## 5. Keeping up to date
+
+  | What moves | How | What happens |
+  |---|---|---|
+  | **A whole solution** | `katyoti solution update`, to its newest version or one you name | The plan first; the universe stopped; its project's data backed up; every universe of the solution repinned to the new versions; the universe started; the project's data migrated; a smoke test. A failure after the backup rolls back to the previous version and data |
+  | **One sidecar** | Marketplace › « Sidecars »: « Update », « Update in … » | The new version is added to the store and the universe repointed to it; the old one stays. A universe installed from a solution keeps its pinned version |
+  | **The control plane** | Marketplace › « Infra »: « Update to … & restart » | KaTyoti's own programs move to the channel's version and restart |
+
+  ## 6. Example - ArchiFactory
+
+  ### What the publisher publishes
+
+  ```yaml
+  # a solution version - « ArchiFactory pour Acme »
+  name: acme
+  version: "1.006"
+  infra: "1.006"                 # the control plane it was made with
+  includes:                      # its sidecars, at exact versions
+    - { name: ktw-acme,       version: 3.4.0 }
+    - { name: ktw-docs,       version: 1.8.1 }
+    - { name: ktw-kb,         version: 2.1.0 }
+  universes:
+    - name: archifactory
+      main: true                 # the universe that opens after the install
+  configSets: [{ name: acme-base, version: "1.006" }]
+  seed:       { name: acme-seed, version: "1.006" }
+  vaults:     [{ name: acme-keys, version: "1.006" }]
+  ```
+
+  ### Two architects on one dossier
+
+  ```mermaid
+  sequenceDiagram
+    actor A as Alice (solution 1.007)
+    participant G as Dossier SI RH (git)
+    actor B as Bob (solution 1.006)
+    A->>A: update to 1.007: her dossier's data migrated, a backup kept
+    A->>G: commit the migrated dossier and push
+    B->>G: pull, open: its data is newer than his KaTyoti knows
+    G-->>B: refused, naming both data versions
+    B->>B: update to 1.007
+    B->>G: open: equal, nothing to do
+  ```
+
+  If 1.007 had changed no data shape, the data version would not have moved, and Bob
+  would open the dossier without updating. **Coming:** Alice's update leaves her
+  dossier as it is until she chooses « Convertir »; Bob, on the older version, then
+  sees it read-only and is offered to install the newer one.
+
+  ## 7. Example - KaTyoti Studio
+
+  - **KaTyoti Studio is a product, not a universe:** the sidecars that build and
+    extend KaTyoti, with a solution built on SoftwareFactory's, the generic software
+    factory. The KaTyoti team creates its universe from that solution, and its
+    sidecars include the development tools that no other product has.
+  - **A developer's universe** runs sidecars built from the code being developed. They
+    are not taken from the version store, so the version check leaves them alone. A
+    user's universe always runs published versions.
+
+  ## 8. Roles
+
+  | Role | Does |
+  |---|---|
+  | **Sidecar developer** | Releases the sidecar at a new version; ships a migration step with any change of data shape |
+  | **Marketplace publisher** | Composes and tests solutions, publishes them signed; never changes a published version |
+  | **Person** | Creates a universe from a solution, sets their keys, adds sidecars, updates, and commits the migrated projects with git |

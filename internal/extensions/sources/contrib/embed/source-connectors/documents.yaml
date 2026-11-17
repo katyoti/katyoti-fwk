@@ -1,0 +1,17 @@
+# The documents a person deposits on a carrier: the files of
+# the carrier's documents/ folder, each picked by the deposit that brought it,
+# who deposited it kept on its item. A connector of its own, so a carrier's
+# folder source and its deposited documents never share one source.
+name: documents
+label: Documents
+description: Les fichiers déposés sur l'objet - un PDF, un document Word, un classeur - lus dans sa base de connaissance.
+icon: file-upload
+take: Fichiers déposés
+sync: ktw-agents:sources/folder-sync
+browse: ktw-agents:sources/folder-browse
+# The source model: an item is a document deposited, keyed by
+# its file name in the documents/ folder, its kind file, a text only; it picks
+# by browsing what was deposited - no free search.
+picker:
+  unit: document
+  layout: list

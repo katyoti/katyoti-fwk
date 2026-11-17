@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Module système
+  description: >-
+    Un espace opérationnel que la plateforme garde pour elle, nommé
+    `sys-<nom>`, à côté du module fonctionnel qui décrit son concept.

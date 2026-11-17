@@ -1,0 +1,10 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Élément à viser
+  description: >-
+    Un travail soumis à visa : deux relecteurs l'approuvent avant qu'il soit approuvé ; d'autres éléments peuvent le contester.
+  pane:
+    badges:
+      fields.severity:
+        label: gravité

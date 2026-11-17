@@ -1,0 +1,12 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: bpmn2-process
+displayName: BPMN — process
+description: 'A process read left to right in pools and lanes: a zone is a pool, a zone inside it (parent)
+  a lane.'
+notation: ktw-docs:/notation/bpmn2
+templates: ktw-docs:/drawio-template/bpmn2
+page: default
+layout:
+  algorithm: layered
+  direction: RIGHT
+  lanes: true

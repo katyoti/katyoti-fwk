@@ -1,0 +1,19 @@
+name: code-symbol
+label: Code symbol
+description: |
+    An exported Go identifier (func, type, interface, struct, var, or
+    const) auto-discovered by ktw-gocode's `module.discover` verb.
+
+    Code-symbol items are AST-derived and deterministic — re-scanning
+    the same source produces the same items. Per concepts.md §15.12
+    LOCKED decision, they auto-commit (architect/specifier persona
+    doesn't have to approve each one) because their content has no
+    judgement layer.
+
+    Item kinds that ARE judgement-based (use-case, charter, …) stay
+    on the proposal path: the persona must accept them.
+context:
+    propagation: local
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 4096

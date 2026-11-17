@@ -1,0 +1,21 @@
+# A solution proposal: compare candidates and recommend one.
+name: solution-proposal
+label: Proposition de solution
+description: Propose a solution — the need, the criteria, the candidates, their evaluation and the recommendation, then the next steps.
+purpose: solution proposal
+target: dossier
+sections:
+  - id: need
+    title: Le besoin
+    intent: The business need and what success looks like.
+    sources:
+      - {from: field, value: perimeter}
+      - {from: named-file, value: overview}
+    required: true
+    weight: 2
+  - id: context
+    include: context-and-scope
+  - id: options
+    include: options-and-recommendation
+  - id: next
+    include: next-steps

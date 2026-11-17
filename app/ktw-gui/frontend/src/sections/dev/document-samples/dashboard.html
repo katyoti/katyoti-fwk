@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Library network — operations</title>
+<style>
+  :root { --bg:#111317; --panel:#1b1e24; --line:#2a2f38; --text:#e6e8eb; --dim:#8b93a1;
+          --blue:#4c8dff; --green:#3ecf8e; --amber:#f5b83d; --red:#ff5d5d; --violet:#a78bfa; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); }
+  header { display:flex; align-items:center; gap:16px; padding:18px 28px; border-bottom:1px solid var(--line);
+           background:linear-gradient(90deg, #16202f, var(--bg)); position:sticky; top:0; z-index:2; }
+  header h1 { font-size:18px; margin:0; font-weight:650; letter-spacing:.2px; }
+  header .sub { color:var(--dim); font-size:12px; }
+  .pill { margin-left:auto; display:flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px;
+          background:#12301f; color:var(--green); font-size:12px; font-weight:600; }
+  .pill i { width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.6s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(62,207,142,.6)} 100%{box-shadow:0 0 0 9px rgba(62,207,142,0)} }
+  main { padding:22px 28px 40px; display:grid; gap:18px; grid-template-columns:repeat(12, 1fr); }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .kpi { grid-column:span 2; display:flex; flex-direction:column; gap:4px; }
+  .kpi .label { color:var(--dim); font-size:12px; text-transform:uppercase; letter-spacing:.6px; }
+  .kpi .value { font-size:26px; font-weight:700; }
+  .kpi .delta { font-size:12px; font-weight:600; }
+  .up { color:var(--green); } .down { color:var(--red); } .flat { color:var(--amber); }
+  .kpi svg { margin-top:4px; }
+  .wide { grid-column:span 8; } .side { grid-column:span 4; } .full { grid-column:span 12; }
+  h2 { font-size:14px; margin:0 0 12px; font-weight:650; display:flex; align-items:center; gap:8px; }
+  h2 small { color:var(--dim); font-weight:400; }
+  .legend { display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; color:var(--dim); font-size:12px; }
+  .legend b { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+  .tabs { display:flex; gap:6px; margin-left:auto; }
+  .tabs button { background:transparent; color:var(--dim); border:1px solid var(--line); border-radius:8px;
+                 padding:4px 10px; font:inherit; font-size:12px; cursor:pointer; }
+  .tabs button.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  table { width:100%; border-collapse:collapse; }
+  th { text-align:left; color:var(--dim); font-weight:500; font-size:12px; padding:8px 10px; border-bottom:1px solid var(--line);
+       cursor:pointer; user-select:none; white-space:nowrap; }
+  th:hover { color:var(--text); }
+  td { padding:10px; border-bottom:1px solid var(--line); }
+  tr:hover td { background:#20242c; }
+  .bar { height:8px; background:#2a2f38; border-radius:4px; overflow:hidden; min-width:120px; }
+  .bar span { display:block; height:100%; border-radius:4px; }
+  .badge { font-size:11px; font-weight:650; padding:3px 8px; border-radius:999px; }
+  .ok { background:#12301f; color:var(--green); } .warn { background:#33290f; color:var(--amber); } .crit { background:#3a1616; color:var(--red); }
+  .timeline { list-style:none; margin:0; padding:0 0 0 14px; border-left:2px solid var(--line); }
+  .timeline li { position:relative; padding:0 0 14px 14px; }
+  .timeline li::before { content:""; position:absolute; left:-21px; top:4px; width:10px; height:10px; border-radius:50%;
+                         background:var(--panel); border:2px solid var(--blue); }
+  .timeline li.alert::before { border-color:var(--red); } .timeline li.done::before { border-color:var(--green); }
+  .timeline time { color:var(--dim); font-size:12px; display:block; }
+  @media (max-width: 1100px) { .kpi { grid-column:span 4; } .wide, .side { grid-column:span 12; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Library network — operations</h1>
+    <div class="sub">Six branches · 48,210 titles · refreshed every 5 minutes</div>
+  </div>
+  <div class="pill"><i></i>All systems normal</div>
+</header>
+
+<main>
+  <div class="card kpi"><span class="label">Loans today</span><span class="value">1,284</span>
+    <span class="delta up">▲ 8.2% vs last week</span>
+    <svg width="100%" height="34" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="#4c8dff" stroke-width="2" points="0,26 12,22 24,24 36,18 48,20 60,14 72,16 84,10 96,12 108,6 120,8"/></svg></div>
+  <div class="card kpi"><span class="label">Active members</span><span class="value">9,730</span>
+    <span class="delta up">▲ 214 this month</span>
+    <svg width="100%" height="34" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="#3ecf8e" stroke-width="2" points="0,28 12,27 24,25 36,24 48,22 60,21 72,18 84,16 96,15 108,12 120,10"/></svg></div>
+  <div class="card kpi"><span class="label">Late returns</span><span class="value">137</span>
+    <span class="delta down">▲ 12 since Monday</span>
+    <svg width="100%" height="34" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="#ff5d5d" stroke-width="2" points="0,20 12,22 24,18 36,21 48,17 60,19 72,14 84,15 96,12 108,11 120,9"/></svg></div>
+  <div class="card kpi"><span class="label">Reservations</span><span class="value">412</span>
+    <span class="delta flat">■ stable</span>
+    <svg width="100%" height="34" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="#f5b83d" stroke-width="2" points="0,18 12,17 24,19 36,18 48,17 60,18 72,19 84,17 96,18 108,17 120,18"/></svg></div>
+  <div class="card kpi"><span class="label">E-book share</span><span class="value">31%</span>
+    <span class="delta up">▲ 3 pts this quarter</span>
+    <svg width="100%" height="34" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="#a78bfa" stroke-width="2" points="0,26 20,24 40,23 60,20 80,18 100,15 120,12"/></svg></div>
+  <div class="card kpi"><span class="label">Catalog uptime</span><span class="value">99.97%</span>
+    <span class="delta up">● 30 days</span>
+    <svg width="100%" height="34" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="#3ecf8e" stroke-width="2" points="0,8 20,8 40,8 60,9 80,8 100,8 120,8"/></svg></div>
+
+  <section class="card wide">
+    <h2>Loans per month <small>2026, all branches</small>
+      <span class="tabs" id="series"><button class="on" data-s="print">Print</button><button data-s="ebook">E-books</button><button data-s="both">Both</button></span></h2>
+    <svg id="chart" width="100%" height="230" viewBox="0 0 640 230"></svg>
+    <div class="legend"><span><b style="background:#4c8dff"></b>Print</span><span><b style="background:#a78bfa"></b>E-books</span></div>
+  </section>
+
+  <section class="card side">
+    <h2>Collection by genre</h2>
+    <svg width="100%" height="230" viewBox="0 0 230 230">
+      <g transform="translate(115 115) rotate(-90)" fill="none" stroke-width="34">
+        <circle r="80" stroke="#4c8dff" stroke-dasharray="176 503"/>
+        <circle r="80" stroke="#3ecf8e" stroke-dasharray="126 503" stroke-dashoffset="-176"/>
+        <circle r="80" stroke="#f5b83d" stroke-dasharray="100 503" stroke-dashoffset="-302"/>
+        <circle r="80" stroke="#a78bfa" stroke-dasharray="65 503" stroke-dashoffset="-402"/>
+        <circle r="80" stroke="#ff5d5d" stroke-dasharray="36 503" stroke-dashoffset="-467"/>
+      </g>
+      <text x="115" y="110" text-anchor="middle" fill="#e6e8eb" font-size="26" font-weight="700">48.2k</text>
+      <text x="115" y="132" text-anchor="middle" fill="#8b93a1" font-size="12">titles</text>
+    </svg>
+    <div class="legend"><span><b style="background:#4c8dff"></b>Fiction 35%</span><span><b style="background:#3ecf8e"></b>Science 25%</span>
+      <span><b style="background:#f5b83d"></b>History 20%</span><span><b style="background:#a78bfa"></b>Children 13%</span><span><b style="background:#ff5d5d"></b>Other 7%</span></div>
+  </section>
+
+  <section class="card wide">
+    <h2>Branches <small>click a column to sort</small>
+      <span class="tabs" id="filter"><button class="on" data-f="all">All</button><button data-f="warn">Needs attention</button></span></h2>
+    <table id="branches">
+      <thead><tr><th data-k="name">Branch</th><th data-k="loans">Loans</th><th data-k="capacity">Shelf capacity</th><th data-k="late">Late</th><th data-k="status">Status</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="card side">
+    <h2>Today</h2>
+    <ul class="timeline">
+      <li class="done"><time>08:30</time>Night returns processed — 212 items</li>
+      <li><time>10:05</time>North branch: school visit, 3 classes</li>
+      <li class="alert"><time>11:40</time>Harbour: self-checkout #2 offline</li>
+      <li class="done"><time>12:15</time>Harbour: self-checkout restored</li>
+      <li><time>14:00</time>Catalog sync with the regional network</li>
+      <li><time>17:30</time>Author talk — <em>Cities of tomorrow</em></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep']
+  const data = { print:[820,760,910,880,940,700,640,720,980], ebook:[240,260,300,320,330,360,380,390,420] }
+  function drawChart(which) {
+    const svg = document.getElementById('chart'), max = 1400, h = 190, bw = 26
+    let out = ''
+    for (let g = 0; g <= 4; g++) {
+      const y = 10 + h - g * h / 4
+      out += `<line x1="40" x2="630" y1="${y}" y2="${y}" stroke="#2a2f38"/><text x="32" y="${y + 4}" fill="#8b93a1" font-size="10" text-anchor="end">${g * 350}</text>`
+    }
+    months.forEach((m, i) => {
+      const x = 60 + i * 64
+      const p = data.print[i] * h / max, e = data.ebook[i] * h / max
+      if (which !== 'ebook') out += `<rect x="${x}" y="${10 + h - p}" width="${bw}" height="${p}" rx="4" fill="#4c8dff"><title>${m} print: ${data.print[i]}</title></rect>`
+      if (which !== 'print') out += `<rect x="${which === 'both' ? x + bw + 2 : x}" y="${10 + h - e}" width="${bw}" height="${e}" rx="4" fill="#a78bfa"><title>${m} e-books: ${data.ebook[i]}</title></rect>`
+      out += `<text x="${x + (which === 'both' ? bw : bw / 2)}" y="222" fill="#8b93a1" font-size="11" text-anchor="middle">${m}</text>`
+    })
+    svg.innerHTML = out
+  }
+  document.querySelectorAll('#series button').forEach((b) => b.onclick = () => {
+    document.querySelectorAll('#series button').forEach((x) => x.classList.toggle('on', x === b))
+    drawChart(b.dataset.s)
+  })
+  drawChart('print')
+
+  const branches = [
+    { name:'Centre', loans:412, capacity:92, late:9, status:'ok' },
+    { name:'North', loans:188, capacity:64, late:3, status:'ok' },
+    { name:'Harbour', loans:97, capacity:97, late:41, status:'crit' },
+    { name:'University', loans:356, capacity:81, late:22, status:'warn' },
+    { name:'Old Town', loans:143, capacity:58, late:6, status:'ok' },
+    { name:'Riverside', loans:88, capacity:88, late:18, status:'warn' },
+  ]
+  const label = { ok:'Healthy', warn:'Watch', crit:'Critical' }
+  const colour = (c) => c > 90 ? '#ff5d5d' : c > 80 ? '#f5b83d' : '#3ecf8e'
+  let sortKey = 'loans', asc = false, filter = 'all'
+  function drawTable() {
+    const rows = branches.filter((b) => filter === 'all' || b.status !== 'ok')
+      .sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : -1) * (asc ? 1 : -1))
+    document.querySelector('#branches tbody').innerHTML = rows.map((b) => `<tr>
+      <td><b>${b.name}</b></td><td>${b.loans}</td>
+      <td><div class="bar"><span style="width:${b.capacity}%;background:${colour(b.capacity)}"></span></div></td>
+      <td>${b.late}</td><td><span class="badge ${b.status}">${label[b.status]}</span></td></tr>`).join('')
+  }
+  document.querySelectorAll('#branches th').forEach((th) => th.onclick = () => {
+    asc = sortKey === th.dataset.k ? !asc : false; sortKey = th.dataset.k; drawTable()
+  })
+  document.querySelectorAll('#filter button').forEach((b) => b.onclick = () => {
+    document.querySelectorAll('#filter button').forEach((x) => x.classList.toggle('on', x === b))
+    filter = b.dataset.f; drawTable()
+  })
+  drawTable()
+</script>
+</body>
+</html>

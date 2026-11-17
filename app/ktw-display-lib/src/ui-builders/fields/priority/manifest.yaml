@@ -1,0 +1,7 @@
+name: priority
+kind: renderer
+basePrimitive: string
+description: A priority P0-P3 as a chip - P0 red, P1 orange, P2 and P3 muted.
+
+configSchema:
+  fields: {}

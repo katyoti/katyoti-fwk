@@ -1,0 +1,5 @@
+name: decide
+label: Decision
+description: Choose one option of a decision and say why.
+answerable_by: person
+order: 2

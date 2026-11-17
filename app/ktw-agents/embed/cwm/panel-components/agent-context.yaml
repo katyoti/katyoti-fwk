@@ -1,0 +1,2 @@
+# A named view of the GUI's ui-components registry (panel-component kind).
+description: "What an agent working on the object is given; its input is the panel source's answer, the view calls nothing."

@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Liens
+  description: Ce vers quoi cet objet pointe, et ce qui pointe vers lui

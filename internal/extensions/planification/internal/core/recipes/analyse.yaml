@@ -1,0 +1,9 @@
+# Analyse: find out. It produces requirements, not code — a person validates
+# its findings before they are filed.
+name: analyse
+description: Analyse, then have a person validate the findings (they become requirements).
+kind: analyse
+transition: done
+steps:
+  - {name: analyse, phase: preparation, class: refine, role: specifier, share: 0.9, skill: ktw-agents:/skill/requirements-analysis, instructions: "Analyse what is asked: what exists, what is missing, the options; write the findings as requirements."}
+  - {name: accept, phase: preparation, class: refine, actor: person, interaction: validate, after: [analyse], share: 0.1, verifies: true, instructions: "Read the findings; accept them as requirements, or say what to change."}

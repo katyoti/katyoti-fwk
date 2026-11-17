@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Groupe de projets
+  label_plural: Groupes de projets
+  description: >-
+    Un dépôt git qui tient des projets enfants, chacun de son propre type, et
+    ses propres modules.

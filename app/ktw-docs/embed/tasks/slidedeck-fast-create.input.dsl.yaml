@@ -1,0 +1,120 @@
+name: slidedeck-fast-create-input
+root: SlidedeckFastCreateInput
+types:
+  SlidedeckFastCreateInput:
+    type: object
+    fields:
+      theme:
+        type: string
+        label: "Thème"
+        description: "L'habillage de la présentation, parmi les thèmes disponibles"
+        default: katyoti
+        content:
+          type: text
+          options_from:
+            # every theme in reach: the project's (deck-theme objects)
+            # first, then those the sidecars publish
+            source: deck-themes
+            value: name
+            label: description
+      subject:
+        type: string
+        label: "Sujet"
+        description: "De quoi parle la présentation"
+        placeholder: "ex. passer de PowerPoint à des présentations écrites par un agent"
+      audience:
+        type: string
+        label: "Public"
+        description: "À qui elle s'adresse — ce qu'il sait déjà, ce qu'il attend"
+        placeholder: "ex. le comité de direction, des architectes, une équipe projet"
+      context:
+        type: string
+        label: "Contexte"
+        description: "Ce qu'il faut savoir : situation, contraintes, chiffres, décisions déjà prises"
+        optional: true
+        content: markdown
+      template:
+        type: string
+        label: "Trame"
+        description: "Facultatif : une trame qui dit ce que la présentation doit dire, partie par partie (comité d'architecture, comité de pilotage…)"
+        optional: true
+        content:
+          type: text
+          options_from:
+            source: content-templates
+            value: name
+            label: label
+      goal:
+        type: string
+        label: "Objectif / message clé"
+        description: "Ce que le public doit retenir, décider ou faire à la fin"
+        optional: true
+      slides:
+        type: number
+        label: "Nombre de slides"
+        description: "Exactement, couverture comprise à partir de 2 ; une seule slide : sans couverture"
+        optional: true
+        default: 8
+        min: 1
+        max: 30
+      language:
+        type: string
+        label: "Langue"
+        description: "Par défaut, la langue dans laquelle le sujet et le public sont écrits"
+        optional: true
+        default: auto
+        enum: [auto, fr, en, de, es, it]
+        content:
+          type: text
+          options:
+            - {value: auto, label: "Ma langue (par défaut)"}
+            - {value: fr, label: Français}
+            - {value: en, label: English}
+            - {value: de, label: Deutsch}
+            - {value: es, label: Español}
+            - {value: it, label: Italiano}
+      tone:
+        type: string
+        label: "Ton"
+        description: "ex. factuel, pédagogique, inspirant, synthétique"
+        optional: true
+      sources:
+        type: string
+        label: "Sources"
+        description: "Fichiers (chemins dans l'espace de travail) ou adresses web à exploiter, un par ligne"
+        optional: true
+        content: markdown
+      watermark:
+        type: string
+        label: "Filigrane"
+        description: "Un texte en travers de chaque slide (ex. BROUILLON, INTERNE, CONFIDENTIEL) ; vide : aucun"
+        optional: true
+        placeholder: "ex. BROUILLON"
+      export:
+        type: string
+        label: "Fichier à produire"
+        description: "Pour la partager avec quelqu'un qui n'a pas ArchiFactory"
+        optional: true
+        default: none
+        enum: [none, pptx, pptx-pictures, html]
+        content:
+          type: text
+          options:
+            - {value: none, label: "Aucun (par défaut)"}
+            - {value: pptx, label: "PowerPoint — slides modifiables dans le thème"}
+            - {value: pptx-pictures, label: "PowerPoint — une image par slide"}
+            - {value: html, label: "Page HTML autonome — s'ouvre d'un double-clic, s'envoie par mail"}
+    extensions:
+      - type: ui-form
+        name: default
+        layout: tabs
+        submit_label: "Créer la présentation"
+        groups:
+          - title: "Essentiel"
+            fields: [subject, audience, theme, tone, slides]
+          - title: "Détails"
+            fields: [template, language, export, watermark, goal]
+          - title: "Contexte"
+            fields: [context]
+          - title: "Sources"
+            fields: [sources]

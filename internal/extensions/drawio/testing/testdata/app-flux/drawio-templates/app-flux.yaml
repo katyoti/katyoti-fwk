@@ -1,0 +1,57 @@
+# A test template library (not shipped): bindings and constants for the templates
+# in the .drawio file of the same name.
+id: app-flux
+displayName: Application flux (test)
+description: 'A test library of the app-flux notation: an application''s colour is its domain, an Excel-fed application
+  gets a green border and an XLS badge, the application a view is centred on (marker seed) a thick
+  border, a flow''s colour is its type and its label links the interface codes.'
+notation: drawio-test:/notation/app-flux
+constants:
+  domainPalette:
+    reference:
+      fill: '#d5e8d4'
+      stroke: '#82B366'
+    invoicing:
+      fill: '#fff2cc'
+      stroke: '#D6B656'
+    customer:
+      fill: '#dae8fc'
+      stroke: '#6C8EBF'
+    store:
+      fill: '#e1d5e7'
+      stroke: '#9673A6'
+    reporting:
+      fill: '#f8cecc'
+      stroke: '#B85450'
+    transverse:
+      fill: '#f5f5f5'
+      stroke: '#666666'
+  flowPalette:
+    invoice: '#CC6600'
+    payment: '#006699'
+    catalog: '#669933'
+    reporting: '#993366'
+    default: '#444444'
+bindings:
+  appFill:
+    lookup: attributes.domain
+    table: domainPalette
+    field: fill
+    default: '#FFFFFF'
+  appStroke:
+    expr: '''xls'' in (attributes.markers ?? []) ? ''#107C41'' : (constants.domainPalette[attributes.domain
+      ?? '''']?.stroke ?? ''#000000'')'
+  appStrokeWidth:
+    expr: '''xls'' in (attributes.markers ?? []) || ''seed'' in (attributes.markers ?? []) ? 3 : 1'
+  linkLabel:
+    expr: attributes.external_url_label ?? 'Catalog'
+  flowColor:
+    lookup: attributes.flow_type
+    table: flowPalette
+    default: '#444444'
+  flowCodes:
+    expr: 'join(map(attributes.interface_codes ?? [], {(#index == 0 ? '''' : (#index % 3 == 0 ? ''<br>'' : '' / '')) + ''<a href="'' + (#.url ?? '''') + ''">'' + #.code + ''</a>''}), '''')'
+  flowData:
+    expr: join((attributes.data_types ?? [])[:4], '<br>')
+  flowTooltip:
+    expr: 'len(attributes.data_types ?? []) > 4 ? join(attributes.data_types, '', '') : '''''

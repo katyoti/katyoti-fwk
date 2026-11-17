@@ -1,0 +1,8 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    À l'ouverture d'un projet : une extension crée ce dont elle a besoin (l'extension inbox,
+    sys-inbox).
+  label: Projet ouvert

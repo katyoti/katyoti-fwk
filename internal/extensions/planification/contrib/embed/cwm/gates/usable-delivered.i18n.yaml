@@ -1,0 +1,10 @@
+# Translations of the gate beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Livré utilisable
+  description: >-
+    Sa revue de livraison est passée : l'utilisateur peut se servir de ce qu'il
+    livre, ou la suite est prévue dans la même release.
+  requirements:
+    delivery-reviewed:
+      label: Sa revue de livraison est passée et tient toujours

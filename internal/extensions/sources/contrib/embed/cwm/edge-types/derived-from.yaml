@@ -1,0 +1,25 @@
+name: derived-from
+label: Derived from
+inverse_label: Derives
+from: any                            # any object
+to: source-document                  # the source-document object that anchors it
+cardinality: M:N
+from_capabilities: []                # anything may be derived from a source
+to_capabilities: []
+target: object
+object_storage: edges
+description: |
+  Traceability of any object back to the source-document it was produced
+  from (a spec, a Confluence page, an idea-capture session). The anchored
+  section is the source-document's `section_path`: one source-document
+  per anchored section.
+
+  Drives:
+  - Forward coverage: "sections of this spec not yet captured"
+    (source-document → derived-from⁻¹ → objects).
+  - Inverse coverage: "where did this rule come from?".
+  - Anchor resilience: sources/Reanchor re-hashes the source-document; the
+    objects carrying a `derived-from` edge to it are reported stale or
+    missing when the section drifted or disappeared.
+
+inverse_name: derives

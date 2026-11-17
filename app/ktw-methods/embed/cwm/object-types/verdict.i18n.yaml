@@ -1,0 +1,11 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Verdict
+  description: >-
+    Le résultat enregistré de la sonde d'un critère. Écrit par une
+    vérification, jamais à la main. Il est rangé avec son critère, dont il est
+    l'enfant, et ne s'affiche que sur demande : il n'apparaît pas dans l'arbre
+    et se lit quand on ouvre le critère. Son identifiant dérive du critère :
+    une nouvelle exécution remplace l'enregistrement ; l'historique des
+    exécutions est dans le journal.

@@ -1,0 +1,41 @@
+# A search across the universe, in the Global strip: every object an
+# ObjectFilter (types, capabilities, incoming and outgoing edge kinds), its
+# lifecycle states and a text keep — in every module or the one targeted. Its
+# source (the object pane's Search) reads CWM's index only. The saved views
+# below are its input: each is a chip running its criteria.
+name: "Objects"
+description: "Find objects across the universe: by type, capability, state, links and text"
+icon:
+  tabler: "search"
+  emoji: "🔎"
+order: 15
+global: true
+filter: {}   # every object: a global panel is not about one
+source: "ktw-agents:object-pane/search"
+refresh:
+  scope: "module"
+input:
+  views:
+    - name: open-decisions
+      label: Open decisions
+      labels: {fr: Décisions ouvertes}
+      description: The decisions still waiting for an answer
+      types: [decision]
+      states: [open]
+    - name: proposed-features
+      label: Proposed features
+      labels: {fr: Fonctionnalités proposées}
+      description: The features put forward for review
+      types: [feature]
+      states: [proposed]
+    - name: goals-in-idea
+      label: Goals in idea
+      labels: {fr: Objectifs à l'état d'idée}
+      description: The goals captured but not yet proposed
+      types: [goal]
+      states: [idea]
+    - name: challenged
+      label: Challenged objects
+      labels: {fr: Objets contestés}
+      description: Every object a decision challenges
+      incoming: [challenges]

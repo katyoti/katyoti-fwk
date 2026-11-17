@@ -1,0 +1,58 @@
+# Registers `workflow` as a SYSTEM contribution kind: a named state machine an
+# object's lifecycle moves through — states, the initial one, and the
+# transitions allowed between them, each with an optional gate (an el predicate
+# over the object and the actor making it).
+#
+# A type names the workflow its objects follow (`workflow:` on the object type);
+# an object never names its own. CWM's ObjectTransition checks the transition
+# and its gate, writes the state, runs the `on_transition` hooks and publishes
+# the move, which the journal records — the object's history. KaTyoti ships `manual` and `approval`; a solution adds
+# its own by contributing one.
+#
+# Published from a CWM pack: embed/cwm/workflows/<name>.yaml.
+name: workflow
+description: |
+  A named state machine an object's lifecycle moves through: its states, the
+  initial one, and the transitions allowed between them, each with an optional
+  gate over the object and the actor.
+schema: system:/data-type/workflow
+validate: error
+
+# A workflow names something to run: its transitions fire the
+# `on_transition` hooks and carry gates the move evaluates, so an untrusted
+# origin may not override one.
+execution: executable
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the workflow's name, the name a state is shown by and the name of the
+# move a transition offers.
+translatable: [label, description, "states[name].name", "transitions[name].name"]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 512  # measured max 341 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `workflows/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: workflows
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

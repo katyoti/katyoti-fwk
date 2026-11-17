@@ -1,0 +1,76 @@
+{
+  "$schema": "ktw-schema/v1",
+  "description": "Primitive types catalog — string / number / boolean / any / null.",
+  "name": "primitives",
+  "types": {
+    "Active": {
+      "content": "switch",
+      "type": "boolean"
+    },
+    "Anything": {
+      "type": "any"
+    },
+    "Email": {
+      "content": "email",
+      "type": "string"
+    },
+    "MarkdownDoc": {
+      "content": "markdown",
+      "type": "string"
+    },
+    "Money": {
+      "content": "currency",
+      "contentParams": {
+        "code": "EUR"
+      },
+      "type": "number"
+    },
+    "Nothing": {
+      "type": "null"
+    },
+    "PlainText": {
+      "type": "string"
+    },
+    "Priority": {
+      "enum": [
+        1,
+        2,
+        3
+      ],
+      "type": "number"
+    },
+    "Role": {
+      "enum": [
+        "admin",
+        "member",
+        "guest"
+      ],
+      "type": "string"
+    },
+    "Score": {
+      "content": "rating",
+      "contentParams": {
+        "half": true,
+        "max": 5
+      },
+      "type": "number"
+    },
+    "Slug": {
+      "content": "text",
+      "contentParams": {
+        "max": 120,
+        "transform": "lowercase"
+      },
+      "type": "string"
+    },
+    "Status": {
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "optional": true,
+      "type": "string"
+    }
+  },
+  "version": "1.0.0"
+}

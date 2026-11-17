@@ -1,0 +1,20 @@
+# READY TO TEST — built, with a verification that runs and passes, and no
+# blocking lint finding: what delivery's done means. Each unmet requirement is
+# resolved by a request the planning loop files.
+name: ready-to-test
+label: Ready to test
+description: >-
+  Built; its verification declared and green, no blocking lint finding.
+requirements:
+  - name: verification-declared
+    label: Its verification is declared
+    check: "verify().runs > 0"
+    resolve: {title: "Declare the verification of {object}", kind: build}
+  - name: verification-green
+    label: Its verification passes
+    check: "verify().green"
+    resolve: {title: "Make the verification of {object} pass", kind: fix}
+  - name: no-blocking-lint
+    label: No blocking lint finding
+    check: "lint().blocking == 0"
+    resolve: {title: "Clear the blocking lint findings of {object}", kind: fix}

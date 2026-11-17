@@ -1,0 +1,20 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    fields:
+      rating:   { type: "string@enum(good, needs-attention, critical)", description: "The overall judgement" }
+      score:    { type: number, optional: true, description: "0 to 100, only when the review type defines a score" }
+      summary:  { type: string, description: "The rating in a few sentences" }
+      report:   { type: string, description: "The full report in markdown" }
+      findings: { type: "Finding[]", optional: true, description: "What was found, one entry each" }
+  Finding:
+    type: object
+    fields:
+      severity:       { type: "string@enum(critical, high, medium, low, info)", description: "How much it matters" }
+      statement:      { type: string, description: "What was found in one sentence" }
+      location:       { type: string, optional: true, description: "A file and its lines, or a section" }
+      recommendation: { type: string, optional: true, description: "What to do about it" }
+      key:            { type: string, optional: true, description: "The rule or subject it is about, worded the same each time" }
+      evidence:       { type: string, optional: true, description: "The evidence in full (markdown)" }

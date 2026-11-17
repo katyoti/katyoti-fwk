@@ -1,0 +1,21 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    fields:
+      achievement:
+        type: string@enum(full, partial, none)
+        description: "Did the run achieve its goal — fully, partially, or not at all."
+      summary:
+        type: string
+        description: "One-line verdict naming the headline result and the biggest gap (if any)."
+      critical_findings:
+        type: number
+        description: "Count of ✗✗ failed / ✗ wasteful findings across all dimensions."
+      evaluation_path:
+        type: string
+        description: "Workspace-relative path to the machine-readable evaluation (test_results/<session_id>.json)."
+      report_path:
+        type: string
+        description: "Path to the human-readable evaluation report."

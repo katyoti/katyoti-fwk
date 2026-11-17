@@ -1,0 +1,51 @@
+# A document written for someone (modules/doc-engine/): an architecture study,
+# a flow matrix, a technology watch, a comparison. The `document` object keeps
+# its prose or attaches its files (`attaches`, shown inline in the Files tab);
+# this capability says what wrote it, for whom, in which language and format,
+# and where it stands in its own workflow. The objects it was written from are
+# its `produced-from` edges. A document carries it when it is created as a
+# deliverable - it attaches to nothing by itself.
+name: deliverable
+label: Deliverable
+icon: file-certificate
+description: >-
+  A document written for someone: the template that wrote it, its audience,
+  language and format, and where it stands - draft, in review, validated by a
+  person, published.
+schema: ktw-docs:/data-type/cap-deliverable
+workflow: {name: deliverable, state: state, history: trail}
+badges:
+  - field: state
+    icon: file-certificate
+    tooltip: Where the deliverable stands
+    colors:
+      draft: gray
+      in-review: orange
+      validated: green
+      published: blue
+  - field: template
+    icon: template
+    tooltip: What wrote it
+actions:
+  - uri: ktw-docs:tasks/deliverable-regenerate
+    label: Regenerate
+    description: Writes the deliverable again from its template and the objects it was written from.
+    kind: ai
+    icon: refresh
+  - uri: ktw-docs:tasks/deliverable-export
+    label: Export
+    description: Makes a Word or PDF version of the deliverable and attaches it beside it.
+    kind: ai
+    icon: file-export
+agent:
+  system:
+    - id: deliverable-how
+      title: Working on this deliverable
+      order: 40
+      text: >-
+        ${current.name} is a deliverable: a document written for someone, from
+        a template, for an audience, in a language and a format. Its files are
+        attached to it; the objects it was written from are its produced-from
+        edges - read them before rewriting it. Its state moves through its
+        workflow (draft, in-review, validated, published); validating belongs
+        to a person, never to you.

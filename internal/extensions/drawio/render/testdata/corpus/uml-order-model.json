@@ -1,0 +1,93 @@
+{
+  "viewpoint": "ktw-docs:/viewpoint/uml2-class",
+  "title": "UML — order model",
+  "nodes": [
+    {
+      "id": "user",
+      "label": "User",
+      "kind": "Class",
+      "attributes": {
+        "attributes": [
+          "+id: int",
+          "+name: string",
+          "+email: string"
+        ],
+        "operations": [
+          "+login()",
+          "+logout()",
+          "+placeOrder(): Order"
+        ]
+      }
+    },
+    {
+      "id": "order",
+      "label": "Order",
+      "kind": "Class",
+      "attributes": {
+        "attributes": [
+          "+id: int",
+          "+total: decimal"
+        ],
+        "operations": [
+          "+submit()",
+          "+cancel()"
+        ]
+      }
+    },
+    {
+      "id": "line",
+      "label": "OrderLine",
+      "kind": "Class",
+      "attributes": {
+        "attributes": [
+          "+quantity: int"
+        ],
+        "operations": [
+          "+subtotal(): decimal"
+        ]
+      }
+    },
+    {
+      "id": "product",
+      "label": "Product",
+      "kind": "Class",
+      "attributes": {
+        "attributes": [
+          "+sku: string",
+          "+price: decimal"
+        ]
+      }
+    },
+    {
+      "id": "payable",
+      "label": "Payable",
+      "kind": "Interface"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "user",
+      "target": "order",
+      "kind": "association"
+    },
+    {
+      "id": "e2",
+      "source": "order",
+      "target": "line",
+      "kind": "composition"
+    },
+    {
+      "id": "e3",
+      "source": "line",
+      "target": "product",
+      "kind": "association"
+    },
+    {
+      "id": "e4",
+      "source": "order",
+      "target": "payable",
+      "kind": "realization"
+    }
+  ]
+}

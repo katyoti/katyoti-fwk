@@ -1,0 +1,229 @@
+# Translations of the concept document beside this file (modules/guide, OD-015).
+fr:
+  name: 'Projets, dépôts et univers'
+  description: 'Comment votre travail est organisé : un dépôt git du dossier de vos projets est un projet, avec son identité, son type et sa planification, et n''appartient à aucun univers ni à aucune solution ; un univers rattache plusieurs dépôts comme ses membres, sert tous leurs projets à la fois et garde vos réglages et vos clés à part.'
+  hashtags:
+  - concepts
+  - projet
+  - dépôt
+  - univers
+  - git
+  body: |-
+    La référence sur l'organisation de votre travail dans KaTyoti : ce qu'est un
+    projet, son lien avec git, avec le dossier de vos projets et avec l'univers qui
+    le sert. Un autre guide de concepts va plus loin :
+    « Types de projets et de modules » liste les sortes de projets et de modules.
+
+    ## 1. Vue d'ensemble
+
+    ```mermaid
+    flowchart LR
+      SOL["Solution<br/>un ensemble de départ"] -->|on en crée| U["Univers<br/>sidecars · réglages · clés"]
+      U -->|membre| R1[("Dépôt git")]
+      U -->|membre| R2[("Dépôt git")]
+      R1 -->|est| P1["Projet"]
+      R2 -->|est| P2["Projet"]
+      P2 -->|contient| S1["Module"] & S2["Module"]
+      subgraph PF["Le dossier de vos projets"]
+        R1
+        R2
+      end
+    ```
+
+    - Un **univers** est créé à partir d'une **solution** - un ensemble de départ de
+      sidecars, de réglages et de clés - et fait tourner les sidecars de cette
+      solution et ceux que vous ajoutez.
+    - Votre travail est rangé dans des **dépôts git**, dans **le dossier de vos
+      projets**, en dehors de l'installation de KaTyoti.
+    - **Un dépôt est un projet :** sa racine porte le fichier de projet, ses modules
+      et sa planification. Un projet ne contient jamais un autre projet : plusieurs
+      études d'un même dossier sont des modules d'un même projet.
+    - Un univers **rattache plusieurs dépôts comme ses membres** et sert à la fois
+      tous les projets qu'ils contiennent : vous ouvrez un projet là où il est, sans
+      changer de projet servi.
+    - **Un projet n'appartient à aucun univers ni à aucune solution :** un univers le
+      rattache, et le projet garde ce dont il a besoin écrit dans son propre fichier.
+
+    ## 2. Les concepts
+
+    | Concept | Ce que c'est | Exemple |
+    |---|---|---|
+    | **Solution** | Un ensemble de départ venu d'une marketplace : des composants en versions exactes, des réglages, les clés qu'ils demandent et un contenu de départ. On en crée un univers et on le met à jour avec elle ; elle ne possède jamais un projet | « ArchiFactory pour Acme » |
+    | **Univers** | Votre KaTyoti, votre contexte de travail : ses sidecars - ceux de sa solution et ceux que vous ajoutez -, ses réglages, ses clés et ses sessions. Il ne contient pas votre travail : celui-ci est dans les dépôts qu'il rattache. ArchiFactory, SoftwareFactory et KaTyoti Studio sont des produits que vous utilisez dans un univers, pas des univers | l'univers « archi » d'Alice |
+    | **Sidecar** | Un composant qui donne ses capacités à un univers : types d'objets, actions, connecteurs | ktw-acme, ktw-docs |
+    | **Le dossier de vos projets** | Le dossier qui range vos dépôts, choisi à l'installation de KaTyoti ; par défaut `Documents/Katyoti`. Une mise à jour ou une désinstallation n'y touche jamais | `Documents/Katyoti` |
+    | **Dépôt** | Un dépôt git qu'un univers rattache comme l'un de ses **membres**. Il est un projet, validé, poussé et cloné d'un seul tenant | le dépôt katyoti, le dépôt d'un dossier |
+    | **Projet** | L'unité de travail : un dépôt qui porte son fichier de projet à sa racine, avec ses modules et sa propre planification. Il a un **type**, apporté par un sidecar, et une identité à lui, versionnée avec lui | le dossier « SI RH », le dépôt katyoti |
+    | **Module** | Un dossier d'un projet qui regroupe ses objets. Il a lui aussi un type. La boîte de réception, la planification et le journal d'un projet sont ses modules système | `etude-existant-paie`, `sys-planification` |
+    | **Objet** | Ce que contient un module : une étude, un document, une décision, un objectif, une demande | une étude de l'existant |
+
+    ## 3. Les règles
+
+    1. **Un dépôt est un projet.** Sa racine porte le fichier de projet, avec ses
+       modules et sa propre planification. Un projet ne contient jamais un autre
+       projet : un travail tenu ensemble - plusieurs études d'un même dossier, par
+       exemple - est fait de plusieurs modules d'un même projet. Tout ce qui est à
+       vous est versionné dans le dépôt : le fichier de projet, les modules et leurs
+       objets.
+    2. **Un projet porte son identité.** Son fichier de projet contient un identifiant
+       créé une fois et jamais modifié : un clone ouvert sur un autre poste est le même
+       projet. Un univers refuse d'ouvrir deux projets au même identifiant.
+    3. **Un projet a un type** - projet logiciel, dossier d'architecture - et chacun de
+       ses modules aussi. Le type est apporté par un sidecar, jamais par une solution,
+       et il n'existe pas d'autre sorte de projet. Aujourd'hui un dossier
+       d'architecture ne s'ouvre que dans un univers créé à partir de la solution
+       d'ArchiFactory : ailleurs il n'est pas ouvert, et KaTyoti nomme la solution.
+       **À venir :** un projet s'ouvre dans n'importe quel univers ; s'il y manque un
+       sidecar dont il a besoin, ou si ce sidecar est plus ancien que celui qui l'a
+       écrit, il s'ouvre en lecture seule, nomme le produit et propose de
+       l'installer, d'ouvrir le projet dans un autre univers ou d'en détacher ce
+       produit.
+    4. **Un dépôt vit dans le dossier de vos projets,** sous son nom : jamais dans
+       l'installation de KaTyoti, jamais dans un autre dépôt git. Créer ou rattacher un
+       dépôt à un tel endroit est refusé, et KaTyoti dit où il doit aller.
+    5. **Un univers sert à la fois tous les projets de ses membres.** Il rattache
+       plusieurs dépôts ; chacun de leurs projets garde ses modules et sa propre
+       planification. Un objet d'un autre projet se nomme avec l'identifiant de ce
+       projet devant lui ; un nom que deux projets partagent est refusé tant que vous
+       ne dites pas de quel projet il s'agit.
+    6. **Un dépôt est rattaché par un seul univers à la fois.** Rattacher un dépôt
+       qu'un autre univers sert est refusé, en nommant cet univers, tant qu'il n'y est
+       pas détaché. **À venir :** un projet ouvert dans plusieurs univers, écrit par
+       l'un d'eux.
+    7. **À côté d'autres membres, seulement un dépôt créé sur ce poste.** Un univers
+       ne rattache comme l'un de plusieurs membres qu'un dépôt que KaTyoti a créé sur
+       cet ordinateur - avec « Nouveau projet », ou quand l'univers a été créé avec
+       son projet. Un dépôt que vous avez cloné apporte des hooks, des skills et des
+       tâches que KaTyoti ne sait pas encore vérifier : il est rattaché seul, dans un
+       univers à lui ; le rattacher à côté d'autres est refusé, en disant pourquoi.
+    8. **Ce qui est propre à votre poste reste hors du dépôt.** Son emplacement sur le
+       disque, vos clés et vos réglages appartiennent à l'univers. Le dossier
+       `.katyoti` d'un projet est un index et un cache reconstructibles, hors de git :
+       le supprimer ne perd rien.
+
+    ## 4. Sur le disque
+
+    ```text
+    Documents/Katyoti/                    le dossier de vos projets
+    ├── dossier-si-rh/                    ← un dépôt qui contient un projet
+    │   ├── .git/
+    │   ├── .gitignore                    garde .katyoti/ et .env hors de git
+    │   ├── project.cwm.yaml              son identifiant, son type, sa version de données
+    │   ├── modules/
+    │   │   ├── sys-inbox/                sa boîte de réception
+    │   │   ├── sys-planification/        sa propre planification
+    │   │   └── etude-existant-paie/      un module : une étude de l'existant
+    │   └── .katyoti/                     index et cache reconstructibles, hors de git
+    └── demo/                             ← un autre dépôt, un autre projet
+        ├── .git/
+        ├── project.cwm.yaml
+        └── modules/
+            ├── etude-sigma/              une étude du projet
+            └── etude-crm/                une autre étude, du même projet
+    ```
+
+    Vos univers ne sont pas dans ce dossier : ils vivent dans l'installation de
+    KaTyoti, avec vos réglages et vos clés.
+
+    ## 5. Les dépôts et git
+
+    - **Un nouveau projet reçoit un dépôt à lui** dans le dossier de vos projets : son
+      dossier fait, git initialisé et un `.gitignore` qui en écarte les fichiers
+      propres au poste.
+    - **Un dépôt que vous rattachez** est pris tel quel. KaTyoti donne à un projet son
+      fichier de projet la première fois qu'il l'ouvre. Un dépôt que vous avez cloné
+      est rattaché seul, dans un univers à lui (règle 7).
+    - **Valider (commit), pousser, tirer et choisir un dépôt distant vous
+      reviennent,** avec git ou l'outil de votre choix. KaTyoti ne les fait pas pour
+      vous.
+    - **Un clone garde l'identité du projet :** qui l'ouvre travaille sur le même
+      projet.
+
+    ## 6. Dans l'application
+
+    - **Ctrl+Maj+N** ouvre « Nouveau projet » : vous choisissez son « Type de projet »,
+      puis donnez son nom (lettres minuscules, chiffres et tirets : c'est son dossier)
+      - ou, pour un type qui a son propre formulaire de création ou son assistant,
+      vous le suivez.
+    - **Les Projets de l'univers :** clic droit sur l'icône de l'univers dans la barre
+      de gauche, « Modifier », puis l'onglet « Projets », qui liste ce que l'univers
+      rattache. « Nouveau projet… » en crée un dans le dossier de vos projets et le
+      rattache ; « Rattacher un dossier… » rattache un dépôt que vous avez déjà ;
+      « Détacher » le libère, ses fichiers conservés.
+    - **Dans l'arborescence,** « PROJETS » montre ce que l'univers sert. Un objet d'un
+      autre projet montre le nom de ce projet à côté de lui - dans l'arborescence, en
+      haut de sa page et dans les résultats de recherche - et « À faire » rassemble le
+      travail de tous les projets. Un univers sans projet le dit et propose
+      « Attacher un projet » ; « Retirer » fait que l'univers n'en sert plus un, son
+      dossier et ses fichiers conservés.
+    - **Sur « Prêt à démarrer »,** au premier démarrage, vous choisissez le dossier de
+      vos projets. Si une installation précédente de KaTyoti utilisait des projets sur
+      ce poste, « Les projets de vos installations précédentes » copie ceux que vous
+      cochez dans le dossier de vos projets et met les copies à jour ; les originaux ne
+      sont jamais modifiés.
+
+    ## 7. Exemple - ArchiFactory : les dossiers d'une architecte
+
+    Alice a créé son univers « archi » à partir de la solution « ArchiFactory pour
+    Acme ». Chacun de ses dossiers est un projet de type **dossier
+    d'architecture**, dans un dépôt à lui. La démonstration de son équipe est un seul
+    dossier qui contient plusieurs études.
+
+    ```mermaid
+    flowchart TB
+      subgraph M["Le poste d'Alice"]
+        AF["Univers « archi »"]
+        subgraph PF["Le dossier de ses projets"]
+          R1[("dossier-si-rh")] --> D1["Dossier SI RH"]
+          R2[("demo")] --> D2["Dossier démo"]
+        D2 --> E1["Étude Sigma"] & E2["Étude CRM"]
+        end
+      end
+      AF -->|membre| R1
+      AF -->|membre| R2
+      R1 -->|poussé vers| G1[["Le serveur de son équipe"]]
+      D1 -->|publie| CF[["Confluence"]]
+    ```
+
+    - Sur l'Accueil, **« Mes dossiers »** liste ses dossiers, chacun avec ses études.
+      **« Ouvrir »** sur un dossier l'ouvre ; **« Nouveau dossier »** en crée un.
+    - Dans un dossier, elle crée une étude de l'existant avec « Nouvelle étude » : un
+      dossier contient autant d'études qu'il lui faut.
+    - Chaque dossier est un projet à part entière : ses études, sa planification et
+      ses tâches restent les siennes.
+    - Elle valide et pousse chaque dépôt avec git, vers le serveur de son équipe. Bob
+      le clone et le rattache seul dans un univers à lui, créé à partir de la même
+      solution : c'est le même dossier.
+
+    ## 8. Exemple - KaTyoti Studio : KaTyoti qui se développe lui-même
+
+    L'équipe KaTyoti travaille dans un univers créé à partir de la solution de
+    **KaTyoti Studio**, le produit qui construit et étend KaTyoti - un produit, pas un
+    univers. Le dépôt katyoti est un projet de type **projet logiciel** : ses
+    modules sont des modules logiciels, à côté de leur code, et des modules de
+    documentation, et ses modules système portent sa planification - flux,
+    incréments, versions et demandes. Un autre dépôt de l'équipe, par exemple un
+    sidecar sorti dans son propre dépôt, est rattaché comme un autre membre du même
+    univers : les deux sont servis à la fois, chacun avec sa propre planification.
+
+    ## 9. Ce que contient un fichier de projet
+
+    ```yaml
+    # project.cwm.yaml - versionné avec le projet
+    id: dossier-si-rh
+    type: dossier-architecture
+    name: Dossier SI RH
+    capabilities:
+      project:
+        uuid: 01a0d3a2-…        # créé une fois, ne change jamais
+        data_version: 29        # la forme des données du projet
+    ```
+
+    Le fichier de projet ne contient jamais de chemin ni de clé : le chemin est celui
+    de l'univers, les clés sont celles de l'univers. Il ne nomme pas non plus d'univers
+    ni de solution. La version de données dit quelle forme ont les données du projet ;
+    « Univers, solutions et versions des sidecars » explique comment elle suit
+    aujourd'hui une mise à jour. **À venir :** le fichier de projet liste aussi les
+    composants dont le projet a besoin, chacun avec la forme de ses données, et cette
+    forme ne change que lorsque vous choisissez « Convertir » - jamais à l'ouverture
+    d'un projet, jamais lors d'une mise à jour.

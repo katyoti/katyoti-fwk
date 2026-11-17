@@ -1,0 +1,12 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      plan:
+        type: object
+        description: "The planner's output that was applied"
+      execute_result:
+        type: object
+        description: "The executor's output (files written + build status)"

@@ -1,0 +1,8 @@
+[
+  {
+    "line": 7,
+    "rule": "code-fence-unclosed",
+    "severity": "error",
+    "message": "the code block opened here is never closed; everything after it is code"
+  }
+]

@@ -1,0 +1,139 @@
+<mxfile host="ktw-docs">
+    <diagram name="templates">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;&lt;hr&gt;%attributeLines%&lt;hr&gt;%operationLines%" placeholders="1" name="Class" ktw-template="Class" ktw-autosize="1" id="tpl-Class">
+            <mxCell style="align=left;fillColor=#FFFFFF;fontSize=10;html=1;rounded=0;strokeColor=#000000;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="40" y="40" width="180" height="100" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Interface" ktw-template="Interface" id="tpl-Interface">
+            <mxCell style="fillColor=#FFFFEE;fontSize=10;html=1;shape=mxgraph.uml.interface;strokeColor=#000000;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="280" y="40" width="160" height="80" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Package" ktw-template="Package" id="tpl-Package">
+            <mxCell style="fillColor=#FFFFCC;fontSize=12;fontStyle=1;html=1;shape=folder;strokeColor=#444444;tabPosition=left;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="520" y="40" width="200" height="120" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Component" ktw-template="Component" id="tpl-Component">
+            <mxCell style="align=left;fillColor=#DAE8FC;fontSize=10;html=1;shape=component;spacingLeft=20;strokeColor=#6C8EBF;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="760" y="40" width="160" height="80" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Node" ktw-template="Node" id="tpl-Node">
+            <mxCell style="fillColor=#D5E8D4;fontSize=10;html=1;shape=cube;size=12;strokeColor=#82B366;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="40" y="190" width="160" height="80" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Actor" ktw-template="Actor" id="tpl-Actor">
+            <mxCell style="fillColor=#FFFFFF;fontSize=10;html=1;shape=umlActor;strokeColor=#000000;verticalAlign=top;verticalLabelPosition=bottom;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="280" y="190" width="60" height="100" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Use Case" ktw-template="UseCase" id="tpl-UseCase">
+            <mxCell style="ellipse;fillColor=#FFFFFF;fontSize=10;html=1;strokeColor=#000000;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="520" y="190" width="160" height="80" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Activity" ktw-template="Activity" id="tpl-Activity">
+            <mxCell style="arcSize=40;fillColor=#DAE8FC;fontSize=10;html=1;rounded=1;strokeColor=#6C8EBF;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="760" y="190" width="140" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="State" ktw-template="State" id="tpl-State">
+            <mxCell style="arcSize=20;fillColor=#D5E8D4;fontSize=10;html=1;rounded=1;strokeColor=#82B366;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="40" y="340" width="140" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Lifeline" ktw-template="Lifeline" id="tpl-Lifeline">
+            <mxCell style="fillColor=#FFFFFF;fontSize=10;html=1;perimeter=lifelinePerimeter;shape=umlLifeline;strokeColor=#000000;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="280" y="340" width="100" height="200" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:generalization" id="tpl-edge-generalization">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=0;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="520" y="380" as="sourcePoint"/>
+                <mxPoint x="700" y="380" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:realization" id="tpl-edge-realization">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;endArrow=block;endFill=0;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="760" y="380" as="sourcePoint"/>
+                <mxPoint x="940" y="380" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:dependency" id="tpl-edge-dependency">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;endArrow=open;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="40" y="530" as="sourcePoint"/>
+                <mxPoint x="220" y="530" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:association" id="tpl-edge-association">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=open;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="280" y="530" as="sourcePoint"/>
+                <mxPoint x="460" y="530" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:aggregation" id="tpl-edge-aggregation">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=diamondThin;endFill=0;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="520" y="530" as="sourcePoint"/>
+                <mxPoint x="700" y="530" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:composition" id="tpl-edge-composition">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=diamondThin;endFill=1;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="760" y="530" as="sourcePoint"/>
+                <mxPoint x="940" y="530" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:usage" id="tpl-edge-usage">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;endArrow=open;startArrow=none;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="40" y="680" as="sourcePoint"/>
+                <mxPoint x="220" y="680" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Unknown kind" ktw-template="*" id="tpl-default">
+            <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;" vertex="1" parent="1">
+              <mxGeometry x="280" y="640" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+    <diagram name="page:default">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%title%&lt;/b&gt;" placeholders="1" title="Diagram title" id="page-title">
+            <mxCell style="text;html=1;align=left;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+              <mxGeometry x="20" y="10" width="900" height="30" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="" ktw-slot="content" id="page-content">
+            <mxCell style="rounded=0;dashed=1;fillColor=none;strokeColor=#CCCCCC;" vertex="1" parent="1">
+              <mxGeometry x="20" y="60" width="900" height="600" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+</mxfile>

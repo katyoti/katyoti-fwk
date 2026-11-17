@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Un objet est terminé : son fichier a rejoint, inchangé, l'historique de son module, et les liens vers lui restent valides comme terminés (un événement par archivage). Déclaré ; pas encore abonnable.
+  label: Objet archivé

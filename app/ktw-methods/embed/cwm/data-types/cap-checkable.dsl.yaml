@@ -1,0 +1,85 @@
+$schema: ktw-schema/v1
+name: cap-checkable
+version: "1.0.0"
+root: CapCheckable
+description: |
+  Field-group for the `checkable` capability — a runnable acceptance criterion:
+  its probe plus the L1/L2/L3 test levels. Stored under the `cap:checkable` key
+  of the object's TypeSpecific map. The verdict is DERIVED (not authored here).
+types:
+  CapCheckable:
+    type: object
+    fields:
+      kind:
+        type: string@enum(command, expression, manual, none)
+        label: Probe kind
+        default: expression
+        description: >-
+          How the probe is run, and therefore what counts as a pass. command — a shell
+          command; pass is exit 0. expression — an EL expression; pass is true. manual —
+          a human claim; NEVER auto-passes. none — no probe declared. `manual` and `none`
+          both yield UNPROVEN (reason no-probe): a check that cannot run is never green.
+        optional: true
+      probe:
+        type: string
+        label: Probe
+        description: >-
+          The check expression or reference. Absent means no probe yet: the check is
+          unproven, not invalid.
+        optional: true
+      timeout:
+        type: string
+        label: Time limit
+        description: >-
+          How long a command probe may run before it is stopped and fails as timed
+          out: a duration (30m, 1h) above zero and at most one hour. Absent means the
+          default bound (10 minutes). Only a slow check declares one; the verdict and
+          the grade say when a check ran on such an extended bound.
+        optional: true
+      l1:
+        type: string
+        label: L1 test
+        description: >-
+          Unit-level test. Often OWNED BY A PACKAGE rather than the module: reference the
+          package's test command (e.g. `go test ./internal/...`). A module realized by
+          many shared packages does not own their unit tests — it points at them (G3).
+          A module that does own one puts it in `modules/<name>/tests/L1/`.
+        optional: true
+      l2:
+        type: string
+        label: L2 test
+        description: >-
+          Integration-level test, owned by the MODULE because it spans packages. Lives in
+          `modules/<name>/tests/L2/`.
+        optional: true
+      l3:
+        type: string
+        label: L3 test
+        description: >-
+          End-to-end test, owned by the MODULE. Lives in `modules/<name>/tests/L3/`.
+        optional: true
+      severity:
+        type: string@enum(core, security, qol, cosmetic)
+        label: Severity
+        default: core
+        description: >-
+          WHICH GATE a KO blocks — never whether it blocks green. Green stays
+          every-child-OK regardless (concepts.md §3). core — the module's promise;
+          a KO here means it does not do what it claims. security — never waivable
+          at any maturity level. qol / cosmetic — block nothing but green.
+          The vocabulary matches the Module Quality Program's, deliberately: the
+          program IS the method applied to software, so a second severity scale
+          would be the parallel system the alignment removed.
+        optional: true
+      note:
+        type: string@markdown
+        label: Note
+        description: What this check guards — for the readout, not the run (markdown).
+        optional: true
+      blocked_by:
+        type: string@markdown
+        label: Blocked by
+        description: >-
+          Why no probe exists yet (a milestone, a missing mechanism). Turns an opaque
+          UNPROVEN into an actionable one; read by the DO lens.
+        optional: true

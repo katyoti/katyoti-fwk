@@ -1,0 +1,19 @@
+# Slides a team keeps once and shows in many decks (th22): a deck shows them
+# with a slide whose only setting is `include=<the group's local id>`. Its body
+# is the slides; its `deck` field-group is the look of its preview on the Deck
+# tab. A deck of the project names it before a sidecar's group of that name.
+name: slide-group
+label: Slide group
+description: >-
+  Reusable slides — our team, the company context, the architecture
+  principles — shown in every deck that includes them; changed here, changed
+  everywhere.
+folder: slide-groups
+icon: stack-2
+capabilities: [deck]
+
+body:
+  label: Slides
+  description: The group's slides, in deck markdown, without a frontmatter; none includes another group.
+  format: deck
+  panel: deck

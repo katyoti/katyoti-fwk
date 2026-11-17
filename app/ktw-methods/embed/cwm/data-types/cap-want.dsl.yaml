@@ -1,0 +1,53 @@
+$schema: ktw-schema/v1
+name: cap-want
+version: "1.0.0"
+root: CapWant
+description: |
+  Field-group for the `want` capability — the demand side of an object: WHAT
+  is wanted. The goals it serves are a `serves` EDGE, not a field here, per
+  §3's reference rule; this group holds only the want's own properties.
+  Stored under the `cap:want` key of the object's TypeSpecific map (the
+  capability-as-aspect field-group shape).
+types:
+  CapWant:
+    type: object
+    fields:
+      title:
+        type: string
+        label: Title
+        description: >-
+          Retired: what is wanted, in one line, is the object's name (the object
+          core). Read for objects written before; never written.
+        optional: true
+      reachability:
+        type: string@enum(asymptotic, closable)
+        label: Reachability
+        default: closable
+        description: >-
+          One property distinguishes an open-ended ideal from a closable one.
+          asymptotic — a north star you track the distance to, never fully closed
+          (a goal, always). closable — the distance can reach zero, a test can say
+          it is done (a feature, a use case, an acceptance criterion). A want IS an ideal state: the object's name is its phrase, and its
+          checkable aspects are its decomposition.
+        optional: true
+
+# `serves` WAS DECLARED HERE AND HAS MOVED TO AN EDGE.
+#
+# It pointed at other objects (the goals a want contributes to), and
+# `modules/cwm/concepts.md` §3 — the reference rule — says the tree is a field
+# and everything else that points at another object is an edge, naming `serves`
+# outright. A reference buried in a field is invisible to traversal, untyped,
+# and unlintable.
+#
+# The MODEL is unchanged: an edge list is M:N in both directions, which is all
+# D1 ever decided. Read it as `edges: [{kind: serves, to: <goal id>}]`.
+      depth:
+        type: string@enum(E1, E2, E3, E4, E5)
+        label: Articulation depth
+        description: >-
+          How far the want is ARTICULATED, E1-E5 (the method's ISA depth) --
+          orthogonal to realization maturity, which is the module's `tier`. E1 is
+          a sentence; E5 is a want whose every criterion is probed. Declared
+          2026-09-25 when factory's 5 ISAs became objects carrying it; optional,
+          because most wants have never been graded for articulation.
+        optional: true

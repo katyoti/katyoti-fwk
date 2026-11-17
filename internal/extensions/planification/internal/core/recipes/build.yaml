@@ -1,0 +1,13 @@
+# Build: make something exist or change. Analysed (refine), implemented, its
+# module brought up to date (the module-updated gate) and reviewed (deliver) —
+# the review is an agent's - a person's where asked.
+name: build
+description: Analyse the need, implement it, bring the module up to date, have a reviewer judge the result - a person where the request, its release or its stream asks it.
+kind: build
+transition: done
+steps:
+  - {name: analyse, phase: preparation, class: refine, role: specifier, share: 0.2, skill: ktw-agents:/skill/requirements-analysis, instructions: "Understand the need and what exists; say what must be built, in which pieces and modules, the want it serves and the acceptance check that will prove it.", refines: true}
+  - {name: implement, phase: build, class: deliver, role: coder, after: [analyse], share: 0.45, instructions: "Build what the analysis said, with its tests; keep the change as small as holds."}
+  - {name: auto-review, phase: verify, class: deliver, role: auto-review, after: [implement], share: 0.05, instructions: "Run the automatic reviews that apply to the change (reviews start --trigger automatic with the request's kind and the paths its commits changed) and report each rating and its new findings; a new critical finding blocks the request."}
+  - {name: module-update, phase: build, class: deliver, role: coder, after: [auto-review], share: 0.1, gate: module-updated, skill: ktw-agents:/skill/module-update, instructions: "Bring the module up to date with the change: the feature it serves and its use cases, the acceptance check that proves it (kept for non-regression), the module pages updated in place, the change-log entry naming the request — then record it (requests module-update)."}
+  - {name: review, phase: verify, class: deliver, role: reviewer, person_when_asked: true, interaction: validate, verifies: true, after: [implement, auto-review, module-update], share: 0.2, instructions: "Review the work against the request, as its reviewer: run its checks again (requests check), run the code review on its commits, judge each deliverable against what was asked. Report your verdict: approved, or rejected saying what to change - the work before you is then done again with it. A person reviews instead where the request, its release or its stream asks it (review: person)."}

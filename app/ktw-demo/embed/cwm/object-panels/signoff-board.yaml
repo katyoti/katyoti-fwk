@@ -1,0 +1,19 @@
+# The sign-off on the pane of every object carrying it, drawn by the sign-off
+# service as a page (the page DSL): the approvals and the verdict with a form
+# to change them, the reviewers with an Approve row action, what contests it
+# (each opening the contester) and a New sign-off item dialog, a form choosing
+# the item it contests (an object-ref picker), a chat asking for a sign-off,
+# and the sign-off log. Naming the capability takes its fields out of
+# Information. Re-read when an object of the module changes (an approval, a
+# contest written on the contester).
+name: Sign-off
+description: "The sign-off of this object: approvals, verdict, reviewers, contests and activity"
+icon:
+  tabler: eye-check
+  emoji: "👁️"
+order: 20
+filter:
+  capabilities: [signoff]
+source: ":signoff/board"
+refresh:
+  scope: module

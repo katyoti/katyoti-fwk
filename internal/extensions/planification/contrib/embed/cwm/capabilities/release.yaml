@@ -1,0 +1,7 @@
+# A release's version, its planned date, and — once frozen — the scope it was
+# frozen with.
+name: release
+label: Release
+description: >-
+  The version it ships as, its planned date, and the targets it was frozen with.
+schema: ktw-agents:/data-type/cap-release

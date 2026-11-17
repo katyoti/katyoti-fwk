@@ -1,0 +1,18 @@
+# How a finding moves: open until something answers it, then closed once the
+# answer is checked — or accepted as it stands, a risk taken knowingly.
+name: finding
+label: Finding
+description: >-
+  Open until it is addressed, then closed once the answer is checked — or
+  accepted as it stands.
+initial: open
+states:
+  - {name: open, description: "Nothing answers it yet"}
+  - {name: addressed, description: "Something answers it: to be checked"}
+  - {name: closed, description: "The answer was checked"}
+  - {name: accepted, description: "Kept as it stands, knowingly"}
+transitions:
+  - {name: address, from: [open], to: addressed}
+  - {name: close, from: [addressed], to: closed}
+  - {name: accept, from: [open, addressed], to: accepted}
+  - {name: reopen, from: [addressed, closed, accepted], to: open}

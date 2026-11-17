@@ -1,0 +1,42 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Gate:
+      fields:
+        criteria:
+          description: >-
+            Critères qui doivent tous être remplis pour cette porte. Un descendant hérite des critères
+            de ses ancêtres, sauf si leur indicateur « inherit » est à false.
+          label: Critères
+        phase:
+          description: >-
+            ready = préconditions avant le début du travail (anciennement definition-of-ready) ; done
+            = conditions d'acceptation (anciennement definition-of-done).
+          label: Phase
+        scope:
+          description: >-
+            L'altitude à laquelle cette porte est rédigée ; elle se propage aux descendants
+            (method→project→us→uc), sauf si un critère fixe inherit:false ou est remplacé.
+          label: Portée
+    GateCriterion:
+      fields:
+        applies_to:
+          description: Types de nœud auxquels ce critère s'applique (vide = tous).
+          label: S'applique aux types de nœud
+        id:
+          description: ID local ; l'ID complet est {nodeID}.{id}.
+          label: ID
+        inherit:
+          label: Hérité par les descendants
+        label:
+          label: Libellé
+        overrides:
+          description: ID complet du critère d'ancêtre que celui-ci remplace.
+          label: Remplace un critère d'ancêtre
+        verifier:
+          description: >-
+            La sonde dont le résultat calcule la satisfaction de ce critère (par ex. « test-case
+            T-1234 passing », « addressing-tasks-all-done »). Calculé, jamais saisi à la main.
+          label: Vérificateur automatique

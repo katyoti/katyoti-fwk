@@ -1,0 +1,11 @@
+# The events extension's: a new git HEAD changed paths a module's code packages
+# hold. Raised on the module object by the code source; an async on_code_change
+# entry subscribes to it. Published: another module subscribes to it from its
+# own module object (on: {module, event: code.changed}) - security, docs.
+name: code.changed
+label: Code changed
+description: >-
+  Commits changed paths this module's code packages hold (a commit, a pull, a
+  merge, a checkout): the payload names the commits and the paths.
+point: on_code_change
+published: true

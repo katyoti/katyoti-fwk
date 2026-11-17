@@ -1,0 +1,15 @@
+# Object-context's settings on a type: how objects of the type are gathered
+# across the tree (propagation, resolution_strategy, override_key), what of
+# each is carried into its brief (briefing_fields) and what every object of
+# the type carries (injected_objects). A TYPE-LEVEL capability: a type writes
+# them in its `context:` section, which puts the capability in force on it; an
+# object carries no group of it. CWM checks the section against type_schema,
+# object-context reads it.
+name: context
+label: Context
+icon: hierarchy
+description: >-
+  How objects of a type are gathered across the tree and briefed — the
+  inheritance object-context resolves (Effective) — set by the type's
+  `context:` section.
+type_schema: :/data-type/type-context

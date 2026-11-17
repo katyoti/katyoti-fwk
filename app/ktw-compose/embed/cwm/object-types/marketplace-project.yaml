@@ -1,0 +1,43 @@
+name: marketplace-project
+label: Marketplace
+icon: "🏪"
+icon_name: building-store
+tree: node
+fields: ktw-compose:/data-type/marketplace-project
+accept_parents:
+    - '*'
+actions:
+    - uri: ktw-compose:compose/build-from-definition
+      label: Check
+      description: Run every check a publish needs — the signing key, the build's platforms, every config-set, seed and scenario case, every vault's .env and password — and say what would be published. Writes nothing.
+      kind: sync
+      icon: checklist
+      input:
+        definition: ${object.fields.definition}
+        version: ${object.fields.version}
+        dist: ${object.fields.dist}
+        dryRun: true
+    - uri: ktw-compose:compose/build-from-definition
+      label: Publish
+      description: Publish the whole marketplace its marketplace.yaml defines at the version — sidecars, infra channel, config-sets, seeds, vaults, solutions — checked first, then verified and mirrored. The catalog accumulates versions.
+      kind: sync
+      icon: cloud-upload
+      input:
+        definition: ${object.fields.definition}
+        version: ${object.fields.version}
+        dist: ${object.fields.dist}
+    - uri: ktw-compose:compose/build-from-definition
+      label: Start over
+      description: The same publish after wiping the published tree — subscribers' pinned versions stop resolving. Bump the version first.
+      kind: sync
+      icon: refresh-alert
+      input:
+        definition: ${object.fields.definition}
+        version: ${object.fields.version}
+        dist: ${object.fields.dist}
+        reinit: true
+    - uri: ktw-compose:compose/promote-marketplace
+      label: Promote
+      description: Commit the published tree into its git repository (push is opt-in).
+      kind: sync
+      icon: git-commit

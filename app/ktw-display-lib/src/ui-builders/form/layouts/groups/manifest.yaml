@@ -1,0 +1,22 @@
+name: groups
+kind: form-layout
+description: >-
+  DEFAULT layout. Vertical Stack of collapsible sections, each containing
+  a SimpleGrid of fields. Sections come from the schema's ui-form
+  extension `groups:` field. Best for medium-to-long forms with natural
+  topical grouping (Identity / Access / Preferences / etc.).
+
+configSchema:
+  fields:
+    md:
+      type: number
+      default: 12
+      description: "Default group span on the parent Grid (1-12)"
+    grow:
+      type: boolean
+      default: true
+      description: "Grid grow flag — fills remaining horizontal space"
+    spacing:
+      type: string
+      default: md
+      description: "Mantine Stack spacing between groups"

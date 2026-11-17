@@ -1,0 +1,23 @@
+# The standard workflow: write it down, set the state by hand. Every state is
+# reachable from every state, nothing is final, no gate — the history still
+# records who moved it and why.
+name: manual
+label: Manual
+description: >-
+  A person (or an agent) sets the state; every state is reachable from every
+  other and none is final.
+initial: idea
+states:
+  - {name: idea, description: "Captured, not yet anything more"}
+  - {name: proposed, description: "Put forward to be worked on"}
+  - {name: accepted, description: "Decided: this is wanted"}
+  - {name: active, description: "Being worked on"}
+  - {name: done, description: "Reached"}
+  - {name: dropped, description: "Not pursued"}
+transitions:
+  - {name: to-idea, from: ["*"], to: idea}
+  - {name: propose, from: ["*"], to: proposed}
+  - {name: accept, from: ["*"], to: accepted}
+  - {name: start, from: ["*"], to: active}
+  - {name: finish, from: ["*"], to: done}
+  - {name: drop, from: ["*"], to: dropped}

@@ -1,0 +1,19 @@
+# Sources' save gate on an information source: sources owns the
+# type, so it holds the gate - an information source about to be created is
+# checked by its connector's `check` method when the connector declares one
+# (a Dynatrace source's time frame...), refused with the connector's reason.
+# Before that, one source per connector:
+# a source under a holder that asks for it - its type composes the capability
+# one-source-per-connector, as the as-is study v2 - already reading its
+# connector through an active source is refused « <source> est déjà dans
+# l'étude : une seule source par connecteur ». Any other holder (a module, an
+# as-is study v1) is never refused.
+# A connector's pack never gates the type itself. It takes the default
+# payload: `object` is the source as it is about to be.
+name: source-check-on-create
+description: >-
+  An information source is checked by its connector before it is saved.
+type: before_create
+uri: ktw-agents:sources/source-check
+filter:
+  types: [information-source]

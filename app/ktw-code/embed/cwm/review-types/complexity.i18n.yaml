@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Complexité"
+  description: "Le code trop compliqué et le code trop simpliste : ce qui pourrait être plus simple, ce qui est trop naïf."

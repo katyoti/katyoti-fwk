@@ -1,0 +1,140 @@
+$schema: ktw-schema/v1
+name: config-body
+version: "1.0.0"
+description: |
+  Canonical shapes for the three config-related Contribution kinds:
+  config-file, config-program, env. Each is a separate type; the
+  Contribution.Type discriminator picks one.
+
+  Per the round-2 design proposal §4 mapping table, a future evolution
+  may collapse these into a single "config" type with a sub-kind tag —
+  for RC1 they stay distinct to match the existing Go bodies.
+types:
+  ConfigFileBody:
+    type: object
+    title: name
+    description: |
+      Body for resources with type "config-file". Describes one YAML/JSON
+      configuration file the binary reads. Entry ID is the file name
+      (e.g. "DocService.yaml"); URI is `<provider>:/config-file/<id>`.
+    fields:
+      hasDefault:
+        type: boolean
+        label: Has default
+        description: |
+          True if the binary ships a default template embedded; ConfigService
+          can materialize it via 'config setup'.
+      description:
+        type: string@text(max:1024)
+        label: Description
+        description: One-line picker description.
+        optional: true
+    extensions:
+      - type: ui-table
+        name: default
+        columns: [hasDefault, description]
+      - type: ui-cli
+        name: default
+        mode: table
+        columns: [hasDefault, description]
+
+  ConfigProgramBody:
+    type: object
+    description: |
+      Body for resources with type "config-program". Describes one external
+      program the binary depends on. Entry ID is the program's display name
+      (e.g. "pandoc"); URI is `<provider>:/config-program/<id>`.
+    fields:
+      commands:
+        type: array
+        items: string
+        label: Command aliases
+        description: |
+          Names this program may be invoked under in $PATH (e.g. ["pandoc"]).
+          ConfigService.Check probes them at validate time.
+        optional: true
+      required:
+        type: boolean
+        label: Required
+        description: |
+          When true, the binary cannot operate without this program present.
+          Materialize step prompts the user to install.
+        optional: true
+      installSkill:
+        type: ->Contribution
+        label: Install skill
+        description: |
+          URI of a skill Contribution that documents how to install the
+          program (e.g. "ktw-docs:/skill/install-pandoc"). Edge: the catalog
+          uses this for "missing program → step-by-step install" walkthroughs.
+        optional: true
+      versionFlag:
+        type: string
+        label: Version flag
+        description: CLI flag that prints the program's version (default "--version").
+        optional: true
+      requiredVersion:
+        type: string
+        label: Required version
+        description: Minimum acceptable version (semver-ish).
+        optional: true
+      configKey:
+        type: string
+        label: Config key
+        description: |
+          The config-file key where the program's path override is stored
+          (e.g. "pandoc_path" in DocService.yaml).
+        optional: true
+    extensions:
+      - type: ui-table
+        name: default
+        columns: [commands, required, requiredVersion]
+      - type: ui-cli
+        name: default
+        mode: table
+        columns: [commands, required, requiredVersion]
+
+  EnvBody:
+    type: object
+    description: |
+      Body for resources with type "env". Describes one environment variable
+      the binary reads. Entry ID is the env name (e.g. "ANTHROPIC_API_KEY");
+      URI is `<provider>:/env/<id>`.
+    fields:
+      label:
+        type: string
+        label: Display label
+        description: Human-friendly label for the env variable.
+        optional: true
+      required:
+        type: boolean
+        label: Required
+        description: |
+          When true, the binary errors at startup if the env var is unset.
+          Setup walkthrough prompts the user.
+        optional: true
+      description:
+        type: string@text(max:1024)
+        label: Description
+        description: What the env variable is for; how to obtain a value.
+        optional: true
+    extensions:
+      - type: ui-table
+        name: default
+        columns: [label, required, description]
+      - type: ui-cli
+        name: default
+        mode: table
+        columns: [label, required, description]
+
+
+  # Stub for cross-Contribution link targets. The actual Contribution
+  # envelope lives outside this schema (internal/extensions/manifest/api/
+  # contribution.go); this stub is the DSL's anchor for `->Contribution`
+  # link references — the catalog's edge extractor (3I) reads the
+  # LinkMode field on the parent type to populate Contribution.Edges.
+  Contribution:
+    type: object
+    id: uri
+    fields:
+      uri: string

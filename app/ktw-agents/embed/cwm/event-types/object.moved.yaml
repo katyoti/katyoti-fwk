@@ -1,0 +1,6 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.moved
+label: Object moved
+description: >-
+  An object was refiled or renamed (one event per move). Declared; not subscribable yet.

@@ -1,0 +1,19 @@
+# The work asked of a module: its requests by state, with the moves each state
+# allows and a form to file one. Every module shows it (the `module`
+# capability, whatever the module's type). The view calls RequestService
+# itself and reloads after a move, so it has no `source:` (a source is read
+# once per mount). It stands for the module's request children tab
+# (`replaces_children`): the requests show once.
+name: "Requests"
+description: "The work asked of this module: requests by state, what they wait on, and their deliverables"
+icon:
+  tabler: "send"
+  emoji: "📨"
+order: 30
+filter:
+  capabilities:
+    - "planned"
+replaces_children: ["request"]
+content:
+  kind: "extension"
+  extension: "requests"

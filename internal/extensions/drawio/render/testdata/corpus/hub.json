@@ -1,0 +1,917 @@
+{
+  "edges": [
+    {
+      "attributes": {
+        "data_types": [
+          "Order / stock",
+          "Item shipment"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0001",
+            "url": "https://catalog.example/Interface/0001"
+          },
+          {
+            "code": "FL0002",
+            "url": "https://catalog.example/Interface/0002"
+          },
+          {
+            "code": "FL0003",
+            "url": "https://catalog.example/Interface/0003"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e0",
+      "kind": "Flow",
+      "source": "app-08",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Price receipt voucher price"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0004",
+            "url": "https://catalog.example/Interface/0004"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e1",
+      "kind": "Flow",
+      "source": "app-08",
+      "target": "app-11"
+    },
+    {
+      "attributes": {
+        "data_types": null,
+        "interface_codes": [
+          {
+            "code": "FL0005",
+            "url": "https://catalog.example/Interface/0005"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e2",
+      "kind": "Flow",
+      "source": "app-01",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Stock",
+          "Order / stock"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0006",
+            "url": "https://catalog.example/Interface/0006"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e3",
+      "kind": "Flow",
+      "source": "app-08",
+      "target": "app-03"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Invoice customer contract",
+          "Payment budget schedule",
+          "Customer batch",
+          "Order / stock",
+          "Supplier price"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0007",
+            "url": "https://catalog.example/Interface/0007"
+          },
+          {
+            "code": "FL0008",
+            "url": "https://catalog.example/Interface/0008"
+          },
+          {
+            "code": "FL0009",
+            "url": "https://catalog.example/Interface/0009"
+          },
+          {
+            "code": "FL0010",
+            "url": "https://catalog.example/Interface/0010"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e4",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-00"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Ledger report forecast / transfer tax"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0011",
+            "url": "https://catalog.example/Interface/0011"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e5",
+      "kind": "Flow",
+      "source": "app-02",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Report / return parcel",
+          "Shipment rate / stock ledger",
+          "Contract"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0012",
+            "url": "https://catalog.example/Interface/0012"
+          },
+          {
+            "code": "FL0013",
+            "url": "https://catalog.example/Interface/0013"
+          },
+          {
+            "code": "FL0014",
+            "url": "https://catalog.example/Interface/0014"
+          },
+          {
+            "code": "FL0015",
+            "url": "https://catalog.example/Interface/0015"
+          },
+          {
+            "code": "FL0016",
+            "url": "https://catalog.example/Interface/0016"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e6",
+      "kind": "Flow",
+      "source": "app-10",
+      "target": "app-00"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Payment budget schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0017",
+            "url": "https://catalog.example/Interface/0017"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e7",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-06"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Account"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0018",
+            "url": "https://catalog.example/Interface/0018"
+          }
+        ],
+        "flow_type": "payment"
+      },
+      "id": "e8",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-05"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Budget"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0019",
+            "url": "https://catalog.example/Interface/0019"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e9",
+      "kind": "Flow",
+      "source": "app-09",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Forecast item",
+          "Catalog / ledger budget schedule",
+          "Return"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0020",
+            "url": "https://catalog.example/Interface/0020"
+          },
+          {
+            "code": "FL0021",
+            "url": "https://catalog.example/Interface/0021"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e10",
+      "kind": "Flow",
+      "source": "app-09",
+      "target": "app-08"
+    },
+    {
+      "attributes": {
+        "data_types": null,
+        "interface_codes": [
+          {
+            "code": "FL0022",
+            "url": "https://catalog.example/Interface/0022"
+          },
+          {
+            "code": "FL0023",
+            "url": "https://catalog.example/Interface/0023"
+          },
+          {
+            "code": "FL0024",
+            "url": "https://catalog.example/Interface/0024"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e11",
+      "kind": "Flow",
+      "source": "app-11",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Receipt",
+          "Stock",
+          "Schedule",
+          "Transfer contract / return parcel"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0025",
+            "url": "https://catalog.example/Interface/0025"
+          },
+          {
+            "code": "FL0026",
+            "url": "https://catalog.example/Interface/0026"
+          }
+        ],
+        "flow_type": "catalog"
+      },
+      "id": "e12",
+      "kind": "Flow",
+      "source": "app-03",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": null,
+        "interface_codes": [
+          {
+            "code": "FL0027",
+            "url": "https://catalog.example/Interface/0027"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e13",
+      "kind": "Flow",
+      "source": "app-00",
+      "target": "app-08"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Batch schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0028",
+            "url": "https://catalog.example/Interface/0028"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e14",
+      "kind": "Flow",
+      "source": "app-00",
+      "target": "app-09"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Invoice customer contract",
+          "Payment budget schedule",
+          "Order / stock",
+          "Supplier price"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0029",
+            "url": "https://catalog.example/Interface/0029"
+          },
+          {
+            "code": "FL0030",
+            "url": "https://catalog.example/Interface/0030"
+          },
+          {
+            "code": "FL0031",
+            "url": "https://catalog.example/Interface/0031"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e15",
+      "kind": "Flow",
+      "source": "app-00",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Parcel / order payment shipment",
+          "Voucher supplier"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0032",
+            "url": "https://catalog.example/Interface/0032"
+          },
+          {
+            "code": "FL0033",
+            "url": "https://catalog.example/Interface/0033"
+          },
+          {
+            "code": "FL0034",
+            "url": "https://catalog.example/Interface/0034"
+          },
+          {
+            "code": "FL0035",
+            "url": "https://catalog.example/Interface/0035"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e16",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-02"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Payment budget schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0036",
+            "url": "https://catalog.example/Interface/0036"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e17",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-12"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Rate forecast transfer / tax invoice report forecast"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0037",
+            "url": "https://catalog.example/Interface/0037"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e18",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-13"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Tax / parcel item customer"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0038",
+            "url": "https://catalog.example/Interface/0038"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e19",
+      "kind": "Flow",
+      "source": "app-10",
+      "target": "app-07"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Receipt",
+          "Schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0039",
+            "url": "https://catalog.example/Interface/0039"
+          }
+        ],
+        "flow_type": "catalog"
+      },
+      "id": "e20",
+      "kind": "Flow",
+      "source": "app-09",
+      "target": "app-01"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Price receipt voucher price"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0040",
+            "url": "https://catalog.example/Interface/0040"
+          },
+          {
+            "code": "FL0041",
+            "url": "https://catalog.example/Interface/0041"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e21",
+      "kind": "Flow",
+      "source": "app-11",
+      "target": "app-08"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Payment budget schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0042",
+            "url": "https://catalog.example/Interface/0042"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e22",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-04"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Receipt",
+          "Order stock",
+          "Schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0043",
+            "url": "https://catalog.example/Interface/0043"
+          }
+        ],
+        "flow_type": "catalog"
+      },
+      "id": "e23",
+      "kind": "Flow",
+      "source": "app-01",
+      "target": "app-08"
+    },
+    {
+      "attributes": {
+        "data_types": null,
+        "interface_codes": [
+          {
+            "code": "FL0044",
+            "url": "https://catalog.example/Interface/0044"
+          },
+          {
+            "code": "FL0045",
+            "url": "https://catalog.example/Interface/0045"
+          },
+          {
+            "code": "FL0046",
+            "url": "https://catalog.example/Interface/0046"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e24",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-11"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Item shipment",
+          "Price"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0047",
+            "url": "https://catalog.example/Interface/0047"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e25",
+      "kind": "Flow",
+      "source": "app-03",
+      "target": "app-08"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Stock tax"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0048",
+            "url": "https://catalog.example/Interface/0048"
+          },
+          {
+            "code": "FL0049",
+            "url": "https://catalog.example/Interface/0049"
+          },
+          {
+            "code": "FL0050",
+            "url": "https://catalog.example/Interface/0050"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e26",
+      "kind": "Flow",
+      "source": "app-02",
+      "target": "app-00"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Supplier price",
+          "Order / stock",
+          "Item shipment",
+          "Invoice customer contract",
+          "Payment / budget schedule rate",
+          "Schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0051",
+            "url": "https://catalog.example/Interface/0051"
+          },
+          {
+            "code": "FL0052",
+            "url": "https://catalog.example/Interface/0052"
+          },
+          {
+            "code": "FL0053",
+            "url": "https://catalog.example/Interface/0053"
+          },
+          {
+            "code": "FL0054",
+            "url": "https://catalog.example/Interface/0054"
+          },
+          {
+            "code": "FL0055",
+            "url": "https://catalog.example/Interface/0055"
+          },
+          {
+            "code": "FL0056",
+            "url": "https://catalog.example/Interface/0056"
+          }
+        ],
+        "flow_type": "catalog"
+      },
+      "id": "e27",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-08"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Transfer contract / return parcel",
+          "Stock",
+          "Ledger report forecast / transfer tax"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0057",
+            "url": "https://catalog.example/Interface/0057"
+          },
+          {
+            "code": "FL0058",
+            "url": "https://catalog.example/Interface/0058"
+          },
+          {
+            "code": "FL0059",
+            "url": "https://catalog.example/Interface/0059"
+          },
+          {
+            "code": "FL0060",
+            "url": "https://catalog.example/Interface/0060"
+          },
+          {
+            "code": "FL0061",
+            "url": "https://catalog.example/Interface/0061"
+          },
+          {
+            "code": "FL0062",
+            "url": "https://catalog.example/Interface/0062"
+          },
+          {
+            "code": "FL0063",
+            "url": "https://catalog.example/Interface/0063"
+          },
+          {
+            "code": "FL0064",
+            "url": "https://catalog.example/Interface/0064"
+          },
+          {
+            "code": "FL0065",
+            "url": "https://catalog.example/Interface/0065"
+          },
+          {
+            "code": "FL0066",
+            "url": "https://catalog.example/Interface/0066"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e28",
+      "kind": "Flow",
+      "source": "app-07",
+      "target": "app-03"
+    },
+    {
+      "attributes": {
+        "data_types": [
+          "Payment budget schedule"
+        ],
+        "interface_codes": [
+          {
+            "code": "FL0067",
+            "url": "https://catalog.example/Interface/0067"
+          }
+        ],
+        "flow_type": "default"
+      },
+      "id": "e29",
+      "kind": "Flow",
+      "source": "app-00",
+      "target": "app-04"
+    }
+  ],
+  "layoutHints": {
+    "preset": "archi-layered"
+  },
+  "nodes": [
+    {
+      "attributes": {
+        "description": "OUTSIDE SHARED IS",
+        "domain": "transverse",
+        "external_url": "https://catalog.example/Application/app-00",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-00",
+      "kind": "Application",
+      "label": "Application 00",
+      "zone": "z-outside"
+    },
+    {
+      "attributes": {
+        "description": "Buying",
+        "domain": "reference",
+        "external_url": "https://catalog.example/Application/app-01",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-01",
+      "kind": "Application",
+      "label": "Application 01",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "Customer messaging",
+        "domain": "customer",
+        "external_url": "https://catalog.example/Application/app-02",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-02",
+      "kind": "Application",
+      "label": "Application 02",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "Customer messaging",
+        "domain": "customer",
+        "external_url": "https://catalog.example/Application/app-03",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-03",
+      "kind": "Application",
+      "label": "Application 03",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "Accounting - Finance - Management control",
+        "domain": "invoicing",
+        "external_url": "https://catalog.example/Application/app-04",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-04",
+      "kind": "Application",
+      "label": "Application 04",
+      "zone": "z-sites"
+    },
+    {
+      "attributes": {
+        "description": "Payment",
+        "domain": "store",
+        "external_url": "https://catalog.example/Application/app-05",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-05",
+      "kind": "Application",
+      "label": "Application 05",
+      "zone": "z-sites"
+    },
+    {
+      "attributes": {
+        "description": "Invoicing of regions and sites",
+        "domain": "invoicing",
+        "external_url": "https://catalog.example/Application/app-06",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-06",
+      "kind": "Application",
+      "label": "Application 06",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "★ Seed — SITE BACK-OFFICE SYSTEM",
+        "domain": "store",
+        "external_url": "https://catalog.example/Application/app-07",
+        "external_url_label": "Catalog",
+        "markers": [
+          "seed"
+        ]
+      },
+      "id": "app-07",
+      "kind": "Application",
+      "label": "Seed application",
+      "zone": "z-seed"
+    },
+    {
+      "attributes": {
+        "description": "Digital",
+        "domain": "store",
+        "external_url": "https://catalog.example/Application/app-08",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-08",
+      "kind": "Application",
+      "label": "Application 08",
+      "zone": "z-sites"
+    },
+    {
+      "attributes": {
+        "description": "Buying - Negotiations",
+        "domain": "reference",
+        "external_url": "https://catalog.example/Application/app-09",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-09",
+      "kind": "Application",
+      "label": "Application 09",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "Invoicing of regions and sites",
+        "domain": "invoicing",
+        "external_url": "https://catalog.example/Application/app-10",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-10",
+      "kind": "Application",
+      "label": "Application 10",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "Customer services",
+        "domain": "customer",
+        "external_url": "https://catalog.example/Application/app-11",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-11",
+      "kind": "Application",
+      "label": "Application 11",
+      "zone": "z-upstream"
+    },
+    {
+      "attributes": {
+        "description": "Accounting - Finance - Management control",
+        "domain": "invoicing",
+        "external_url": "https://catalog.example/Application/app-12",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-12",
+      "kind": "Application",
+      "label": "Application 12",
+      "zone": "z-shared"
+    },
+    {
+      "attributes": {
+        "description": "Site replenishment",
+        "domain": "store",
+        "external_url": "https://catalog.example/Application/app-13",
+        "external_url_label": "Catalog"
+      },
+      "id": "app-13",
+      "kind": "Application",
+      "label": "Application 13",
+      "zone": "z-sites"
+    }
+  ],
+  "title": "Hub application — IT landscape (synthetic)",
+  "viewpoint": "drawio-test:/viewpoint/app-flux",
+  "zones": [
+    {
+      "id": "z-seed",
+      "label": "Seed",
+      "order": 0
+    },
+    {
+      "id": "z-upstream",
+      "label": "UPSTREAM (Shared)",
+      "order": 1
+    },
+    {
+      "id": "z-sites",
+      "label": "SITES",
+      "order": 2
+    },
+    {
+      "id": "z-shared",
+      "label": "Cross-cutting / Shared",
+      "order": 4
+    },
+    {
+      "id": "z-outside",
+      "label": "Outside scope",
+      "order": 5
+    }
+  ]
+}

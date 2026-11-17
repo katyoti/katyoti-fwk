@@ -1,0 +1,49 @@
+name: deck-theme-import-input
+root: DeckThemeImportInput
+types:
+  DeckThemeImportInput:
+    type: object
+    fields:
+      template:
+        type: string
+        label: "Modèle PowerPoint"
+        description: "Le chemin du fichier .pptx ou .potx (le masque de la marque)"
+        placeholder: "C:\\Users\\…\\MASQUE PPT.pptx"
+      name:
+        type: string
+        label: "Nom du thème"
+        description: "En minuscules, sans accents ni espaces, mots séparés par des tirets : c'est le nom qu'une présentation écrit dans `theme:`"
+        placeholder: "ex. acme"
+      description:
+        type: string
+        label: "Description"
+        description: "Une ligne : à quoi sert ce thème ; l'agent en propose une si vide"
+        optional: true
+      module:
+        type: string
+        label: "Module"
+        description: "Le module du projet où ranger le thème (dans son dossier themes/, avec le modèle importé) ; les présentations du projet peuvent l'utiliser aussitôt"
+        placeholder: "ex. slidedeck"
+      folder:
+        type: string
+        label: "Dossier (extension)"
+        description: "Facultatif, au lieu d'un module : écrire le thème dans ce dossier (<dossier>/<nom>.yaml et <dossier>/<nom>/), pour le livrer dans une extension"
+        optional: true
+      brand:
+        type: string
+        label: "Règles de la marque"
+        description: "Facultatif : la charte ou les consignes de la marque (ton, couleurs, usages) ; l'agent en tire les règles du thème"
+        optional: true
+        content: markdown
+    extensions:
+      - type: ui-form
+        name: default
+        layout: tabs
+        submit_label: "Importer le modèle"
+        groups:
+          - title: "Essentiel"
+            fields: [template, name, module, description]
+          - title: "Extension"
+            fields: [folder]
+          - title: "Marque"
+            fields: [brand]

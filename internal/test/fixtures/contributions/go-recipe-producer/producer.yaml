@@ -1,0 +1,7 @@
+# What this Go producer publishes: every file under `dir` as one entry of
+# `kind`. The kind is declared — with its schema — by another member of the
+# universe (files-only-pack); this producer names it in data only, exactly as
+# the polyglot producer does in its producer.json, so no Go file anywhere
+# names the pack's kind (internal/core/contribution TestPackKindNeedsNoFrameworkCode).
+kind: recipe
+dir: recipes

@@ -1,0 +1,22 @@
+name: test-skill-output
+root: TestSkillOutput
+types:
+  TestSkillOutput:
+    type: object
+    fields:
+      verdict:
+        type: string@enum(pass, fail, stall)
+      skill:
+        type: string
+        optional: true
+      child_session_id:
+        type: string
+        optional: true
+      evaluation:
+        type: object
+        description: "The evaluation.json envelope (six skill dimensions, severity-tagged, with evidence + conclusion)"
+        catchall: any
+        optional: true
+      unmet_criteria:
+        type: string[]
+        optional: true

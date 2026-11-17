@@ -1,0 +1,68 @@
+# The `task` kind, declared by the task pack: every binary that wires the
+# task extension emits one `<provider>:/task/<name>` Contribution per TASK.md
+# task type. Its schema is provider-relative: the publisher names
+# `<provider>:/data-type/task`, the shape of mbapi.TaskBody (taskkind.Leaf),
+# which IS the TASK.md frontmatter contract.
+name: task
+description: |
+  A runnable task type (TASK.md) — a strategy reference plus config and
+  typed I/O schemas. `data` is the decoded TASK.md (frontmatter + body),
+  `source` the file as written; launch it via the action / delegate surfaces.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: task
+validate: error
+
+# A task RUNS. Its body names a strategy and its configuration, and a strategy
+# may invoke a process directly — so task content can cause code execution with
+# no model in the loop to mediate it. A skill is executable too (its folder
+# carries scripts an agent is told to run), and so is a permission profile
+# (it grants rights): each kind declares its own class, never a list of names.
+#
+# Declared here so a consumer serving content it did not author can decline to
+# run it while still being willing to read it.
+execution: executable
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the frontmatter description a launcher shows; the body is agent-facing
+# and stays in its source language.
+translatable: [description]
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data:   {mediaType: application/json, required: true, default: true}
+  source: {mediaType: text/markdown, required: true}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 2048  # measured max 801 B across 21 binaries (2026-09-21), x1.5 rounded up
+  # The picker fields are written once, in the data layer (the frontmatter).
+  from: data
+  fields: [name, description, icon, hashtags, category, advertised]
+
+# How a file becomes a task (contribution-types.md "How files become
+# layers"): a TASK.md, the entry of its folder (its other files are part of
+# it), or a flat <name>.md; its frontmatter the data layer, its body folded
+# into data as `body`, the file as written the source, `<stem>.i18n.yaml` its
+# translations. Its input and output contracts are DSL files beside it,
+# published as data-types (task/<name>/input|output). Addressed by its name.
+source:
+  folder: tasks
+  match: ["*.md"]
+  id: name
+  claims: TASK.md
+  format: frontmatter
+  layers:
+    data: {from: frontmatter}
+    body: {from: body, fold: body}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}
+  companions:
+    - {kind: data-type, suffix: .input.dsl.yaml, id: "task/{id}/input"}
+    - {kind: data-type, suffix: .output.dsl.yaml, id: "task/{id}/output"}

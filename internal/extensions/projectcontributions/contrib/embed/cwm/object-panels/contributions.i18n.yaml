@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: "Contributions"
+  description: "Ce que le projet publie dans son univers sous son jeton de fournisseur, par kind"

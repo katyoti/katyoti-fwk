@@ -1,0 +1,18 @@
+# A generic review type of the reviews pack: performed by an agent following
+# the review-dimension skill with its guide (a reference of ktw-agents).
+name: usability
+title: Usability
+description: >-
+  How the module feels to the person who uses it — GUI, command line, agent: first contact, core workflows, errors, consistency, feedback.
+dimension: usability
+applies:
+  capabilities: [reviewable]
+trigger:
+  mode: manual
+runner:
+  skill: ktw-agents:/skill/review-dimension
+  input:
+    guide: ktw-agents:/reference/review/usability.md
+rating: The guide's rating rule (its Rate section).
+presets: [full]
+max_cost_usd: 3

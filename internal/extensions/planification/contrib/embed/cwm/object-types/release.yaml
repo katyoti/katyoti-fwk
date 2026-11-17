@@ -1,0 +1,35 @@
+# What ships, and when. A module's release lives in its planning space; the
+# project's in sys-planification. Work TARGETS it (one release per object); a
+# module release SHIPS IN a project release. Its name is the object's name.
+name: release
+label: Release
+folder: .ktw/releases
+id_prefix: RL
+description: >-
+  A version of a module or of the project: what it ships (the work targeting it),
+  frozen before it ships, released once every target is done.
+icon: package
+capabilities: [release, lifecycle]
+workflow: release
+# An agent working on this release keeps in sight only the work aimed at it: its
+# scope - what it takes and the requests targeting it, and the work of the
+# module releases and increments shipping in it - never the backlog.
+agent:
+  system:
+    - id: type-context:release-scope
+      title: "The work of this release"
+      text: |
+        This node is a release. The work in sight is its scope only: what it takes
+        (its takes edges: goals, features, use cases) and the requests targeting
+        it, and - for a release - the work of the module releases and increments
+        shipping in it. Work aimed at no release is backlog: it is out of this scope.
+        Read the scope with the release's scope tool before planning or reporting, and
+        What's Next on its module or project narrowed to it (release: <its id>).
+  tools:
+    - uri: "ktw-agents:releases/scope"
+    - uri: "ktw-agents:releases/backlog"
+
+# Offered in a module's « + » only when the module is planned: a study or a dossier, not planned, offers none - the
+# rule the planning panels follow. `type` and
+# `current` are the parent.
+accept_when: "'module' not in current.capabilities or 'planned' in current.capabilities"

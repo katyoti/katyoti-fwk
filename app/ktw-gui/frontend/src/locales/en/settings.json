@@ -1,0 +1,61 @@
+{
+  "appSettings": {
+    "title": "Application Settings",
+    "savedAt": "Saved at: {{path}}",
+    "nav": {
+      "general": "General",
+      "appearance": "Appearance",
+      "notifications": "Notifications",
+      "feedback": "Feedback"
+    },
+    "general": {
+      "camera": "Camera",
+      "blurBackground": "Blur background",
+      "blurBackgroundHint": "Hide your room behind a Teams/Meet-style blur when the camera is on",
+      "chatBehavior": "Chat Behavior",
+      "autoScroll": "Auto-scroll to latest message",
+      "showToolInputs": "Show tool call inputs",
+      "compactMessages": "Compact message display",
+      "fullWidth": "Full-width messages",
+      "fullWidthHint": "Stretch messages to the full panel width instead of natural content width"
+    },
+    "appearance": {
+      "theme": "Theme",
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System",
+      "accentColor": "Accent Color",
+      "typography": "Typography",
+      "fontSize": "Font size (px)",
+      "uiFont": "UI font family",
+      "monoFont": "Monospace font family",
+      "codeTheme": "Code Block Theme",
+      "codeThemeDark": "Dark mode",
+      "codeThemeLight": "Light mode"
+    },
+    "notifications": {
+      "unavailable": "Notification settings are not available yet.",
+      "future": "This panel will be enabled in a future release."
+    }
+  },
+  "panel": {
+    "title": "Settings",
+    "tabs": {
+      "general": "General",
+      "model": "Model"
+    },
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "themeDark": "Dark",
+    "themeLight": "Light",
+    "themeSystem": "System",
+    "behavior": "Behavior",
+    "autoScroll": "Auto-scroll to latest",
+    "showToolInputs": "Show tool inputs",
+    "compactMode": "Compact mode",
+    "model": "Model",
+    "temperature": "Temperature",
+    "maxTokens": "Max tokens",
+    "streaming": "Streaming"
+  }
+}

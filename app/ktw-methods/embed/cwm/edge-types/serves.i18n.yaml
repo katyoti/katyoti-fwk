@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Une fonctionnalité SERT un ou plusieurs objectifs (les étoiles polaires permanentes). C'est l'axe d'ALIGNEMENT : PAS un lien de parenté, les objectifs ne forment pas un arbre au-dessus de la fonctionnalité. M:N : plusieurs fonctionnalités servent un même objectif, et une fonctionnalité peut en servir plusieurs. Alimente la boucle d'alignement (modules/method-core/concepts.md §8) : une fonctionnalité sans lien `serves` est du GASPILLAGE (volonté sans but) ; un objectif sans `serves` entrant est un MANQUE (but sans volonté) ; les fonctionnalités livrées qui servent un objectif alimentent sa jauge d'avancement."
+  inverse_label: "Servi par"
+  label: "Sert"

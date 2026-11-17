@@ -1,0 +1,20 @@
+name: image
+kind: field-type
+basePrimitive: string
+description: Image URL or base64 data with file-input editor. Renderer comes via gui-media.
+
+configSchema:
+  fields:
+    maxSize:
+      type: number
+      optional: true
+      description: Max display dimension in pixels (used by view/column for thumbnail sizing).
+    maxFileSize:
+      type: number
+      optional: true
+      description: Max upload size in bytes.
+    allowedTypes:
+      type: array
+      items: string
+      optional: true
+      description: Allowed MIME types (e.g., ['image/png', 'image/jpeg']).

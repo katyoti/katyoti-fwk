@@ -1,0 +1,17 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      target:
+        type: string
+        description: "What to audit: a sidecar name (e.g. `ktw-example`) OR a path to a single artifact file (e.g. `app/ktw-x/embed/skills/foo.md`)."
+      kind:
+        type: string@enum(auto, artifact, sidecar)
+        description: "Kind hint. `auto` (default) infers it: a bare name → sidecar; a file path → artifact. Set explicitly to override."
+        optional: true
+      depth:
+        type: string@enum(check, full)
+        description: "For a single artifact: `check` = static only; `full` = also add a behavioral evaluate summary for runnable kinds (skill/task). Ignored for a sidecar (always the 4-phase). Default `check`."
+        optional: true

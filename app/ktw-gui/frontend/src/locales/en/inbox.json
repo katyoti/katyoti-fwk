@@ -1,0 +1,46 @@
+{
+  "title": "Inbox",
+  "noUniverse": "Activate a universe to see its inbox.",
+  "pending_one": "{{count}} pending",
+  "pending_other": "{{count}} pending",
+  "refresh": "Refresh",
+  "error": "Inbox error",
+  "empty": "Inbox empty. Items that need your attention — agent questions, incoming documents, ideas to triage — land here.",
+  "from": "from {{who}}",
+  "answer": "Answer",
+  "open": "Open {{id}}",
+  "answerPlaceholder": "Write your answer…",
+  "notePlaceholder": "Your note — required to reject: say what to change",
+  "notePlaceholderVerdict": "Your note — required to send it back: say what to change",
+  "notePlaceholderChoice": "Your note — why this option; required for none: say why it goes back",
+  "noteRequired": "Write a note first: it says what to change",
+  "dismiss": "Dismiss",
+  "cancel": "Cancel",
+  "reject": "Reject",
+  "approve": "Approve",
+  "sendBack": "Send back",
+  "send": "Send",
+  "none": "None / send back",
+  "kind": {
+    "item": "item",
+    "itemTitle": "Item",
+    "approval-request": "Approval request",
+    "validation": "Validation",
+    "question": "Question",
+    "notice": "Information",
+    "choice": "Decision"
+  },
+  "urgency": {
+    "blocking": "blocking",
+    "high": "high",
+    "medium": "medium",
+    "low": "low"
+  },
+  "time": {
+    "justNow": "just now",
+    "seconds": "{{n}}s ago",
+    "minutes": "{{n}}m ago",
+    "hours": "{{n}}h ago",
+    "days": "{{n}}d ago"
+  }
+}

@@ -1,0 +1,18 @@
+name: test-case
+label: Test case
+description: |
+    A single test artifact verifying one or more `use-case` items.
+    Carries the layer (L1 = code unit test, L2 = token-free scripted
+    probe, L3 = real-LLM end-to-end), the canonical test reference,
+    and the last-run status cache.
+
+    test-case items are written during authoring (e.g. by a tester
+    persona) and updated by verify-type verbs (last_run_status /
+    last_run_at). `verifies` edges from this item to use-case items
+    express coverage.
+fields: ktw-methods:/data-type/test-case
+context:
+    propagation: local
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 4096

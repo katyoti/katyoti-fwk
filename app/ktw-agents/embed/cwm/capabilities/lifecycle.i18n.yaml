@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Cycle de vie
+  description: >-
+    L'état de l'objet dans son workflow, le workflow quand l'objet remplace celui de son type, et l'historique de chaque transition : qui l'a faite, quand, pourquoi.
+  badges:
+    state:
+      tooltip: Où en est l'objet dans son workflow

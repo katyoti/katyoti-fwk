@@ -1,0 +1,13 @@
+# PermissionProfiles.yaml — settings for the kernel permission gate.
+#
+# `default_profile` selects which profile from `Permissions/*.yaml` is
+# active when the user doesn't pass --permission-profile. Falls back to
+# `workspace-edit` if the named profile is missing.
+#
+# `persist_always_decisions` controls whether AllowAlways/DenyAlways
+# selections from the permission prompt are written to a sticky file
+# (`Permissions/_session-additions.yaml`) so they survive across
+# sessions. Defaults to false: in-memory session additions only.
+
+default_profile: workspace-edit
+persist_always_decisions: false

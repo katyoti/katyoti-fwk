@@ -1,0 +1,57 @@
+# Notification Service Configuration
+
+server_host: "127.0.0.1"
+server_port: 8891
+
+# Kind → profile mapping (hierarchical, supports wildcards)
+# "task.complete" matches exactly, "task.*" matches any task sub-kind
+kinds:
+  task.complete: celebrate
+  task.*: default
+  agent.error: urgent
+  agent.*: default
+  bgagent.*: background
+  error: urgent
+  security: critical
+  "*": default
+
+# Channel definitions (strategy instances)
+channels:
+  albert:
+    type: voice
+    voice: chris
+    volume: 0.8
+    emotion: focused
+  celebration:
+    type: voice
+    voice: chris
+    emotion: celebration
+    volume: 1.0
+  desktop:
+    type: desktop
+    max_length: 500
+
+# Profiles — named sets of channels with optional overrides
+profiles:
+  default:
+    channels:
+      - name: albert
+      - name: desktop
+  celebrate:
+    channels:
+      - name: celebration
+        volume: 1.0
+      - name: desktop
+  urgent:
+    channels:
+      - name: desktop
+  background:
+    channels:
+      - name: desktop
+  critical:
+    channels:
+      - name: albert
+        volume: 1.0
+      - name: desktop
+
+default_profile: default

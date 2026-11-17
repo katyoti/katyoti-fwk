@@ -1,0 +1,9 @@
+# One more requirement on the signoff-complete gate, for sign-off items: the
+# capability's function, used where a definition of done is checked.
+name: signoff-approved
+label: Its reviewers approved it
+description: As many approvals as its type requires.
+gate: signoff-complete
+applies: {types: [signoff-item]}
+check: "signedoff()"
+resolve: {title: "Collect the approvals {object} lacks", kind: review}

@@ -1,0 +1,6 @@
+# SkillManager configuration
+# Additional skill directories (beyond the global + universe `skills/` dirs
+# that ktw-agents already scans). Each path is walked for SKILL.md files and
+# joined into the in-memory skill map under the "user" provider.
+# extra_dirs:
+#   - /path/to/shared/skills

@@ -1,0 +1,19 @@
+# An increment's page on its open requests (view 4 of
+# modules/research/delivery-overview/delivery-views-v2-mockup.html): its
+# head - id, title, standing, priority, release, one bar and « n done · n
+# running · n on you · n to do » - then its open requests, each with its step
+# dots and its step and who, the done ones folded underneath. Its first tab.
+name: "Open requests"
+description: "What is not done yet - each request with its step dots, its step and who - the done ones folded underneath"
+icon:
+  tabler: "list-details"
+order: -2
+filter:
+  types:
+    - "increment"
+source: "ktw-agents:increments/pane-page"
+count: "ktw-agents:increments/open-request-count"
+input:
+  tab: "open-requests"
+refresh:
+  scope: "module"

@@ -1,0 +1,104 @@
+# Book — the demo record type for the schema-driven CRUD flows
+# (ms-schema-driven-ui US-S3 book-crud demos). Mirrors the hardcoded
+# TS demo schema in app/ktw-display/src/widgets/{form,table,view}.ts —
+# those stay as standalone widget-route demos; THIS registered copy is
+# what `schemaName: book` resolves to at runtime
+# (URI: ktw-demo:/data-type/book).
+name: book
+version: 1
+root: Book
+types:
+  Book:
+    type: object
+    label: Book
+    idField: [id]
+    titleField: [title]
+    fields:
+      id:
+        type: string
+        label: "ID"
+        description: "Record id — assigned by save-record on create."
+        optional: true
+      title:
+        type: string
+        label: "Title"
+        description: "Title of the book."
+      author_email:
+        type: string@email
+        label: "Author email"
+        optional: true
+      notes:
+        type: string@markdown
+        label: "Notes"
+        optional: true
+      rating:
+        type: number@rating(max:5)
+        label: "Rating"
+        default: 3
+      progress_pct:
+        type: number@slider(min:0, max:100)
+        label: "Progress (%)"
+        default: 0
+      is_finished:
+        type: boolean
+        label: "Finished?"
+        default: false
+      created_at:
+        type: string@date-time
+        label: "Created at"
+        description: "Audit field — set by save-record, never editable."
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        layout: groups
+        submit_label: "Save book"
+        cancel_label: "Discard"
+        groups:
+          - title: "Bibliographic"
+            cols: 2
+            fields: [title, author_email]
+          - title: "Reading status"
+            cols: 2
+            fields: [rating, progress_pct, is_finished]
+          - title: "Notes"
+            cols: 1
+            fields: [notes]
+          - title: "Audit"
+            visibility: [view]
+            fields: [id, created_at]
+      - type: ui-form
+        name: compact
+        layout: single
+        submit_label: "Quick save"
+        groups:
+          - fields: [title, rating, is_finished]
+      - type: ui-view
+        name: default
+        layout: detail-pane
+        groups:
+          - title: "Bibliographic"
+            cols: 2
+            fields: [title, author_email]
+          - title: "Reading status"
+            cols: 2
+            fields: [rating, progress_pct, is_finished]
+          - title: "Notes"
+            cols: 1
+            fields: [notes]
+          - title: "Audit"
+            cols: 2
+            fields: [id, created_at]
+      - type: ui-table
+        name: default
+        columns:
+          - { id: id, label: "ID", width: 110 }
+          - { id: title, label: "Title", sortable: true }
+          - { id: author_email, label: "Author" }
+          - { id: rating, label: "Rating", align: center, width: 80 }
+          - { id: progress_pct, label: "Progress", align: right, width: 100 }
+          - { id: is_finished, label: "Finished", align: center, width: 100 }
+        pagination: true
+        pageSize: 10
+        striped: true
+        highlightOnHover: true

@@ -1,0 +1,35 @@
+# The `source-connector` kind, declared by the sources pack: every binary
+# that ships connectors (its pack's source-connectors folder) emits one
+# `<provider>:/source-connector/<name>` Contribution per connector. Its schema
+# is provider-relative: the publisher names
+# `<provider>:/data-type/source-connector`, the shape of
+# connectordecl.ConnectorDecl (connectorkind.Leaf).
+name: source-connector
+description: |
+  A kind of place a module reads from - a Confluence page, a Dynatrace tag,
+  a LeanIX application, a web site, a folder: the form of its location and
+  the method that syncs a source of that kind (and the one that checks a
+  location), each answering the sources sync contract.
+schema: source-connector
+validate: error
+# Its entries name methods a sync runs.
+execution: executable
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 256
+  # The picker fields are written once, in the data layer (the YAML tree).
+  from: data
+  fields: [name, description]
+
+# How a file becomes a connector (contribution-types.md "How files become
+# layers"): a YAML file of the pack's `source-connectors/` folder, its tree
+# the data layer, the file as written the source. Addressed by its file name.
+source:
+  folder: source-connectors
+  match: ["*.yaml", "*.yml"]
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

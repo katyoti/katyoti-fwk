@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Compilation, tests et lint"
+  description: "Le code Go du module compilé, vérifié et testé, son découpage en paquets et son code mort contrôlés, les détecteurs de lint passés : ce que la chaîne d'outils prouve, sans modèle."

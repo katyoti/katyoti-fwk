@@ -1,0 +1,14 @@
+name: emit-bad-skill-output
+root: EmitBadSkillOutput
+types:
+  EmitBadSkillOutput:
+    type: object
+    fields:
+      node_id:
+        type: string
+        description: "The compose-skill object id created"
+        optional: true
+      skill_file:
+        type: string
+        description: "Workspace path of the emitted bad skill"
+        optional: true

@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Modèle de menaces"
+  description: "Les menaces du module rapportées à l'OWASP et au CWE, leur risque, les chemins d'attaque et les tests à écrire d'abord."

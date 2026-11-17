@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Sources
+  description: Les sources d'information et la base de connaissance de l'objet - l'état et la dernière synchronisation de chaque source, tout synchroniser, réindexer la base

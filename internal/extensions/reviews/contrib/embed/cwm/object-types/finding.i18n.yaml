@@ -1,0 +1,10 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Constat
+  description: >-
+    Un constat d'une revue : sa gravité, ce qui a été trouvé, où, et ce qu'il faut en faire — traité puis clos, ou accepté tel quel.
+  pane:
+    badges:
+      fields.severity:
+        label: gravité

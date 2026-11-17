@@ -1,0 +1,13 @@
+# Sources' save gate on an information source: sources owns the
+# type, so it holds the gate - an information source about to be updated is
+# checked by its connector's `check` method when the connector declares one
+# (a Dynatrace source's time frame...), refused with the connector's reason.
+# A connector's pack never gates the type itself. It takes the default
+# payload: `object` is the source as it is about to be.
+name: source-check-on-update
+description: >-
+  An information source is checked by its connector before it is saved.
+type: before_update
+uri: ktw-agents:sources/source-check
+filter:
+  types: [information-source]

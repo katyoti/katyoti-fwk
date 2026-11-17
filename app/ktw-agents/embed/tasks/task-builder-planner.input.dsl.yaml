@@ -1,0 +1,27 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    description: "One of spec_from_interview / spec_from_extract is set (the master sets whichever ran)"
+    fields:
+      spec_from_interview:
+        type: object
+        description: "Output of task-builder-interview"
+        optional: true
+      spec_from_extract:
+        type: object
+        description: "Output of task-builder-extract"
+        optional: true
+      item_type_hint:
+        type: string
+        description: "Optional override"
+        optional: true
+      previous_plan:
+        type: object
+        description: "On retry: the previous plan that was found insufficient"
+        optional: true
+      previous_findings:
+        type: array
+        description: "Evaluator findings to address"
+        optional: true

@@ -1,0 +1,8 @@
+[
+  {
+    "line": 3,
+    "rule": "theme-unknown",
+    "severity": "error",
+    "message": "unknown theme \"corporate\"; known: katyoti, brand"
+  }
+]

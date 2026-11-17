@@ -1,0 +1,24 @@
+# An opened information source's sub-tab « Contenu lu », one of
+# three shown under a holder carrying the capability source-sub-tabs (the
+# as-is study v2) - any other holder keeps the one « Source »
+# tab (information-source.yaml): drawn by the region `sources/source-tab`
+# returns for tab read.
+name: "Content read"
+description: "What the source brought: its state, its last read and each item it brought with its state, an item read opening"
+icon:
+  tabler: "database"
+  emoji: "🗄️"
+order: 2
+filter:
+  types:
+    - "information-source"
+  when: "source_sub_tabs()"
+refresh:
+  scope: "self"
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "md"
+    children:
+      - {kind: "box", id: "information-source-read", children: [], load: {method: "ktw-agents:sources/source-tab", args: {id: "${id}", tab: "read"}}, placeholder: {kind: "rows", count: 4}, empty: "Contenu lu"}

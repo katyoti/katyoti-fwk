@@ -1,0 +1,15 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    UseCase:
+      fields:
+        last_verified_at:
+          label: "Dernière vérification le"
+        layer_targets:
+          description: "Couches de test attendues par cette UC (L1 / L2 / L3)."
+          label: "Couches ciblées"
+        status_cache:
+          description: "Dernier verdict écrit par un verbe de type verify. Ne jamais modifier à la main."
+          label: "Statut"

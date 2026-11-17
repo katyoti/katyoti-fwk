@@ -1,0 +1,34 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapCheckable:
+      fields:
+        blocked_by:
+          description: "Pourquoi aucune sonde n'existe encore (un jalon, un mécanisme manquant). Transforme un UNPROVEN opaque en un état exploitable ; lu par la lentille DO."
+          label: "Bloqué par"
+        kind:
+          description: "Comment la sonde est exécutée, et donc ce qui compte comme une réussite. command : une commande shell ; réussite = code de sortie 0. expression : une expression EL ; réussite = true. manual : une affirmation humaine ; ne passe JAMAIS automatiquement. none : aucune sonde déclarée. `manual` et `none` donnent tous deux UNPROVEN (raison no-probe) : un contrôle qui ne peut pas s'exécuter n'est jamais vert."
+          label: "Type de sonde"
+        l1:
+          description: "Test de niveau unitaire. Souvent PORTÉ PAR UN PACKAGE plutôt que par le module : référencer la commande de test du package (par ex. `go test ./internal/...`). Un module réalisé par de nombreux packages partagés ne possède pas leurs tests unitaires : il pointe vers eux (G3). Un module qui en possède un le place dans `modules/<name>/tests/L1/`."
+          label: "Test L1"
+        l2:
+          description: "Test de niveau intégration, porté par le MODULE car il traverse plusieurs packages. Se trouve dans `modules/<name>/tests/L2/`."
+          label: "Test L2"
+        l3:
+          description: "Test de bout en bout, porté par le MODULE. Se trouve dans `modules/<name>/tests/L3/`."
+          label: "Test L3"
+        note:
+          description: "Ce que ce contrôle protège : pour la lecture, pas pour l'exécution (markdown)."
+          label: "Note"
+        probe:
+          description: "L'expression ou la référence du contrôle. Absente = pas encore de sonde : le contrôle est non prouvé, pas invalide."
+          label: "Sonde"
+        timeout:
+          description: "Combien de temps une sonde commande peut s'exécuter avant d'être arrêtée et d'échouer pour dépassement : une durée (30m, 1h) supérieure à zéro et d'au plus une heure. Absente = la limite par défaut (10 minutes). Seul un contrôle lent en déclare une ; le verdict et la note disent quand un contrôle a tourné sur une telle limite étendue."
+          label: "Limite de temps"
+        severity:
+          description: "QUELLE PORTE un KO bloque : jamais si cela bloque le vert. Le vert reste « tous les enfants OK » dans tous les cas (concepts.md §3). core : la promesse du module ; un KO ici signifie qu'il ne fait pas ce qu'il prétend. security : jamais dérogeable, quel que soit le niveau de maturité. qol / cosmetic : ne bloquent rien d'autre que le vert. Le vocabulaire est volontairement celui du Module Quality Program : le programme EST la méthode appliquée au logiciel, une seconde échelle de gravité serait le système parallèle que l'alignement a supprimé."
+          label: "Gravité"

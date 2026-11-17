@@ -1,0 +1,8 @@
+name: blank
+description: A free slide with nothing laid out — a full-size diagram, an image or a table that needs the whole slide.
+slots:
+  - name: default
+    description: Anything; a leading level-2 heading becomes the title.
+example: |
+  <!-- slide: layout=blank -->
+  ![Target architecture](assets/target.svg)

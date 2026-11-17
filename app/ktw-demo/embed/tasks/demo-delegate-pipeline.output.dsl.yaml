@@ -1,0 +1,6 @@
+name: demo-delegate-pipeline-output
+root: Output
+types:
+  Output:
+    type: string
+    description: "The final sentence composed by the writer"

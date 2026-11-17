@@ -1,0 +1,18 @@
+{"viewpoint":"ktw-docs:/viewpoint/c4-container","title":"Internet banking — containers",
+"nodes":[
+{"id":"customer","label":"Personal Banking Customer","kind":"Person","attributes":{"description":"A customer of the bank, with personal bank accounts."}},
+{"id":"web","label":"Web Application","kind":"Container","zone":"ibs","attributes":{"technology":"Java and Spring MVC","description":"Delivers the static content and the single-page app."}},
+{"id":"spa","label":"Single-Page Application","kind":"Container","zone":"ibs","attributes":{"technology":"JavaScript and Angular","description":"Provides the banking functionality in the browser."}},
+{"id":"api","label":"API Application","kind":"Container","zone":"ibs","attributes":{"technology":"Java and Spring MVC","description":"Provides the banking functionality via a JSON/HTTPS API."}},
+{"id":"db","label":"Database","kind":"Database","zone":"ibs","attributes":{"technology":"Oracle","description":"Stores registration, credentials, access logs."}},
+{"id":"mainframe","label":"Mainframe Banking System","kind":"ExternalSoftwareSystem","attributes":{"description":"Stores core banking information."}},
+{"id":"email","label":"E-mail System","kind":"ExternalSoftwareSystem","attributes":{"description":"The internal Microsoft Exchange e-mail system."}}],
+"edges":[
+{"id":"r1","source":"customer","target":"web","kind":"uses","label":"Visits","attributes":{"technology":"HTTPS"}},
+{"id":"r2","source":"customer","target":"spa","kind":"uses","label":"Views account balances"},
+{"id":"r3","source":"web","target":"spa","kind":"uses","label":"Delivers"},
+{"id":"r4","source":"spa","target":"api","kind":"uses","label":"Makes API calls to","attributes":{"technology":"JSON/HTTPS"}},
+{"id":"r5","source":"api","target":"db","kind":"uses","label":"Reads from and writes to","attributes":{"technology":"JDBC"}},
+{"id":"r6","source":"api","target":"mainframe","kind":"uses","label":"Makes API calls to","attributes":{"technology":"XML/HTTPS"}},
+{"id":"r7","source":"api","target":"email","kind":"uses","label":"Sends e-mail using","attributes":{"technology":"SMTP"}}],
+"zones":[{"id":"ibs","label":"Internet Banking System [Software System]","order":1}]}

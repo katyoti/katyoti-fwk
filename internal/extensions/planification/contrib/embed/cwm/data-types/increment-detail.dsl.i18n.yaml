@@ -1,0 +1,89 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    IncrementDetail:
+      extensions:
+        default:
+          groups:
+            goals:
+              title: 'Objectifs de livraison, et ce que chacun est devenu'
+            proposal:
+              title: 'Sa proposition'
+      fields:
+        assigned:
+          description: 'Livré dans - prévu pour - ou non affecté - en une ligne'
+        eyebrow:
+          description: 'Incrément · son id'
+        goals:
+          description: 'Chaque objectif de livraison et ce qu''il est devenu'
+        options:
+          description: 'Les versions vers lesquelles il peut aller (Changer de version) - avec son backlog'
+        proposal:
+          description: 'Où en est sa proposition'
+    IncrementRow:
+      extensions:
+        default:
+          menu:
+            change-release:
+              label: 'Changer de version'
+            hold:
+              label: 'Suspendre'
+              prompt: 'Pourquoi attend-il ?'
+            priority:
+              label: 'Priorité'
+            resume:
+              label: 'Reprendre'
+            take-out:
+              confirm: 'Le retirer de sa version ?'
+              label: 'Retirer'
+        team:
+          menu:
+            change-release:
+              label: 'Changer de version'
+            hold:
+              label: 'Suspendre'
+              prompt: 'Pourquoi attend-il ?'
+            priority:
+              label: 'Priorité'
+            resume:
+              label: 'Reprendre'
+            take-out:
+              confirm: 'Le retirer de sa version ?'
+              label: 'Retirer'
+      fields:
+        description:
+          description: 'Ce qu''il livre - montré au survol de son titre'
+        held:
+          description: 'Pourquoi il est suspendu'
+        held_text:
+          description: 'suspendu - tant qu''il est suspendu'
+        id:
+          description: 'L''incrément'
+        needs_you:
+          description: 'Ses étapes qui attendent la personne'
+        needs_you_text:
+          description: 'à vous - tant qu''une de ses étapes attend la personne'
+        options:
+          description: 'Les versions vers lesquelles il peut aller : la prochaine le livre - une plus tardive le planifie'
+        planned_chip:
+          description: 'prévu - tant qu''il est prévu pour une version plus tardive'
+        planned_for:
+          description: 'La version plus tardive pour laquelle il est prévu'
+        priority:
+          description: 'P0 à P3'
+        progress:
+          description: 'Ses demandes : faites - en cours - en attente d''une personne - à faire - bloquées'
+        release:
+          description: 'La version dans laquelle il est livré ou pour laquelle il est prévu (1.006)'
+        place:
+          description: "Son id et la version de sa livraison sur une ligne (billing.IN-001 · 1.006) - la seconde ligne de la vue d'ensemble"
+        ships_in:
+          description: 'La version dans laquelle il est livré'
+        standing:
+          description: 'Où il en est : défini ou en cours ou en livraison ou suspendu ou fait ou livré ou abandonné'
+        title:
+          description: 'Son titre court'
+        waits:
+          description: 'La première chose qu''il attend'

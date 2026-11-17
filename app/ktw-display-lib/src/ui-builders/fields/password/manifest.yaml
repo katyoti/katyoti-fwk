@@ -1,0 +1,27 @@
+name: password
+kind: field-type
+basePrimitive: string
+description: Password input — masked entry + strength rules. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    minLength:
+      type: number
+      optional: true
+      description: Minimum length policy.
+    requireUppercase:
+      type: boolean
+      optional: true
+      description: Require at least one uppercase letter.
+    requireLowercase:
+      type: boolean
+      optional: true
+      description: Require at least one lowercase letter.
+    requireNumbers:
+      type: boolean
+      optional: true
+      description: Require at least one digit.
+    requireSpecial:
+      type: boolean
+      optional: true
+      description: Require at least one special character.

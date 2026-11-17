@@ -1,0 +1,75 @@
+# THE KNOWLEDGE CAPABILITY (modules/sources/): the carrier - a module, a study
+# - has its own information sources and its own knowledge base. Its sources
+# are its child information-source objects and those that feed it; a sync
+# writes into input/<source>/ and the knowledge base in .kb/ (ktw-kb, called
+# by URI) indexes them. The « Sources » tab (object-panels/sources.yaml) shows
+# them from `sources/sources-of`; « Tout synchroniser » is `sources/sync-all`
+# (each source, then the reindex). A chat on the carrier queries its own base:
+# the path comes from sources-of, never stored. Carried by an aspect (a
+# study's), never attached to everything.
+name: knowledge
+label: Knowledge
+icon: books
+description: >-
+  The object's own information sources and knowledge base: each source synced
+  into its input/ folder, the base indexing them, a chat that answers from it.
+# A generated document is read like any other, marked « IA »: no
+# setting excludes it.
+schema: ktw-agents:/data-type/cap-knowledge
+# source_take(): the name of an opened source's « what it takes » tab - its
+# connector's take label, « Ce qu'elle prend » when it
+# declares none. Callable in any panel of the universe, as every capability
+# function: the take panel's name evaluates it over the source.
+functions:
+  - name: source_take
+    description: The name of an opened information source's « what it takes » tab - the take label its connector declares, « Ce qu'elle prend » when none.
+    action: :sources/source-take-function
+    returns: string
+    timeout: 10s
+# source_sub_tabs(): whether an opened source shows its three sub-tabs - its
+# holder carries the capability source-sub-tabs - or the
+# one « Source » tab. The four panels' filters evaluate it over the source.
+  - name: source_sub_tabs
+    description: Whether an opened information source shows its three sub-tabs - its holder carries source-sub-tabs - instead of the one « Source » tab.
+    action: :sources/source-sub-tabs-function
+    returns: boolean
+    timeout: 10s
+files:
+  kb:
+    path: .kb/KnowledgeBase.yaml
+    media: application/yaml
+    description: The knowledge base indexing what the sources brought into input/.
+  input:
+    path: input
+    description: What the sources brought, one folder per source.
+agent:
+  system:
+    - id: knowledge
+      title: Knowledge base
+      order: 30
+      text: |
+        This object has its own information sources and knowledge base.
+        `sources-of {id: "${id}"}` lists its sources (state, last sync, items)
+        and gives `kb_path`, the folder the knowledge base methods take, and
+        whether the base is set up. Answer from it with `kb-query`
+        `{path: <kb_path>, query: "<question>"}` and cite the excerpts;
+        `kb-status {path: <kb_path>}` says what it holds. To read the sources
+        again, `source-sync {id: <source>}` one of them, or `sync-all
+        {id: "${id}"}` every source then the reindex; after adding files to
+        input/ by hand, `kb-run {path: <kb_path>}`. `stale {module: "${id}"}`
+        lists the anchors whose source changed. Never guess or store a path.
+  tools:
+    - uri: ktw-agents:sources/sources-of
+    - uri: ktw-agents:sources/source-sync
+    - uri: ktw-agents:sources/sync-all
+    - uri: ktw-agents:sources/stale
+    - uri: ktw-kb:kb/query
+    - uri: ktw-kb:kb/status
+    - uri: ktw-kb:kb/run
+# A daily source re-reads every day: its carrier keeps the
+# timed capability's sources-daily timer, whose timer.elapsed runs SyncDue.
+hooks:
+  on_timer:
+    - uri: ktw-agents:sources/sync-due
+      input: {id: "${id}", mode: daily}
+      async: {priority: P3}

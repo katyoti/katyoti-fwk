@@ -1,0 +1,6 @@
+name: demo-delegate-magentic-output
+root: Output
+types:
+  Output:
+    type: string
+    description: "The manager's final summary of the completed plan"

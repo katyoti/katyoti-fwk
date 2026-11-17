@@ -1,0 +1,19 @@
+# The Sign-off panel's contest form: the sign-off item the object contests,
+# picked among the sign-off items (an object-ref field: the GUI draws a picker
+# searching the objects its filter admits). Written by hand: no Go type holds
+# it — the form's submit maps its value onto signoff/contest's input, and a
+# Go struct tag cannot carry an object-ref's filter.
+$schema: ktw-schema/v1
+name: contest-form
+version: "1.0.0"
+root: ContestForm
+description: |
+  Which sign-off item this object contests.
+types:
+  ContestForm:
+    type: object
+    fields:
+      target:
+        type: string@object-ref(types:signoff-item)
+        label: Item contested
+        description: The sign-off item this object contests.

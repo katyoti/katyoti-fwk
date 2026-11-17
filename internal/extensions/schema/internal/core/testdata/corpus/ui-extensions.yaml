@@ -1,0 +1,56 @@
+$schema: ktw-schema/v1
+name: ui-extensions
+version: "1.0.0"
+description: "Object with ui-form, ui-table, and ui-filter extensions attached. Extensions are opaque to the parser; the AST preserves them for downstream UI generators."
+types:
+  User:
+    type: object
+    id: id
+    title: [first_name, last_name]
+    fields:
+      id: string@uuid
+      first_name:
+        type: string@text(max:80)
+        label: First name
+      last_name:
+        type: string@text(max:80)
+        label: Last name
+      email: string@email
+      role:
+        type: string@label
+        label: Role
+      active:
+        type: boolean@switch
+        default: true
+    extensions:
+      - type: ui-form
+        name: default
+        layout: groups
+        groups:
+          - title: Identity
+            cols: 2
+            fields:
+              - first_name
+              - last_name
+          - title: Account
+            cols: 1
+            fields:
+              - email
+              - role
+              - active
+      - type: ui-table
+        name: default
+        columns:
+          - first_name
+          - last_name
+          - email
+          - role
+        sortable: true
+        filterable: true
+        pagination: true
+        page_size: 25
+      - type: ui-filter
+        name: default
+        filters:
+          - role
+          - active

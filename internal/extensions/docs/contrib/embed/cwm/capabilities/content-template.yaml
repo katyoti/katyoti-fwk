@@ -1,0 +1,7 @@
+name: content-template
+label: Content template
+description: >-
+  A content template's declaration — its sections, what each must establish,
+  where its facts come from, how to write it — exactly as a sidecar declares
+  one.
+schema: ktw-docs:/data-type/content-template

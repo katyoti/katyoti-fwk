@@ -1,0 +1,13 @@
+name: parent_id
+label: Parent
+inverse_label: Child
+from: node
+to: node
+cardinality: N:1                     # each node has one parent
+description: |
+  The structural tree edge. Every node except the workspace root
+  has a parent_id. Forms the strict tree (single parent, no cycles)
+  underlying the inheritance algebra. Editing parent_id moves the
+  node; UUID is preserved.
+
+inverse_name: children

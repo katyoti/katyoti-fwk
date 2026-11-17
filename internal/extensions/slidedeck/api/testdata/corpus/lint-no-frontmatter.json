@@ -1,0 +1,17 @@
+{
+  "settings": {},
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 1,
+      "slots": [
+        {
+          "name": "default",
+          "line": 1,
+          "markdown": "## A deck with no frontmatter\n\n- still parses"
+        }
+      ]
+    }
+  ]
+}

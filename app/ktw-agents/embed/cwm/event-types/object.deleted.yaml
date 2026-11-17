@@ -1,0 +1,8 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.deleted
+label: Object deleted
+description: >-
+  An object was deleted. An async on_delete entry subscribes to it.
+payload: system:/data-type/object-event
+point: on_delete

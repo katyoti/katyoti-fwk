@@ -1,0 +1,23 @@
+name: progress
+kind: renderer
+basePrimitive: number
+description: Progress bar (Mantine Progress). Read-only display. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    minimum:
+      type: number
+      optional: true
+      default: 0
+    maximum:
+      type: number
+      optional: true
+      default: 100
+    showLabel:
+      type: boolean
+      optional: true
+      default: true
+    color:
+      type: string
+      optional: true
+      description: Mantine color name or theme color (primary, success, warning, …).

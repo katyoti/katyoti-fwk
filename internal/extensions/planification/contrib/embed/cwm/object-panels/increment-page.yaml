@@ -1,0 +1,16 @@
+# An increment's Increment tab: its head, what a person
+# manages - its release, priority, hold and the More menu -, its intent, its
+# proposal and its dependencies.
+name: "Increment"
+description: "The increment itself: its release, priority and hold, its intent, its proposal and what it depends on"
+icon:
+  tabler: "stack-2"
+order: 2
+filter:
+  types:
+    - "increment"
+source: "ktw-agents:increments/pane-page"
+input:
+  tab: "page"
+refresh:
+  scope: "module"

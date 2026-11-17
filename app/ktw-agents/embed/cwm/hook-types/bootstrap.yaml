@@ -1,0 +1,8 @@
+# One of CWM's own hook points, declared like any other: an extension opens
+# a point of its own by shipping a hook-type file beside its hooks.
+name: bootstrap
+label: Project opened
+description: >-
+  When a project opens: an extension creates what it needs (the inbox extension, sys-inbox).
+timing: on-demand
+answer: none

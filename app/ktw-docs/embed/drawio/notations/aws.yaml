@@ -1,0 +1,65 @@
+# A notation: element and relationship kinds, and the rules a model must follow.
+# Looks live in a drawio-template library; which kinds one picture shows, in a viewpoint.
+id: aws
+displayName: AWS architecture
+version: '2023'
+description: 'Cloud architectures on AWS: the most-used services by category, users and clients, and the groups
+  a zone can be (kind AWSCloud, Region, AvailabilityZone, VPC, PublicSubnet, PrivateSubnet, SecurityGroup, AutoScalingGroup).
+  The icons are draw.io''s AWS 4 shapes.'
+elements:
+  EC2: {label: Amazon EC2, description: Virtual servers., category: compute}
+  Lambda: {label: AWS Lambda, description: 'Functions run on demand, no servers to manage.', category: compute}
+  Batch: {label: AWS Batch, description: Batch jobs at any scale., category: compute}
+  ElasticBeanstalk: {label: AWS Elastic Beanstalk, description: Web applications deployed and scaled for you., category: compute}
+  ECS: {label: Amazon ECS, description: Container orchestration., category: containers}
+  EKS: {label: Amazon EKS, description: Managed Kubernetes., category: containers}
+  Fargate: {label: AWS Fargate, description: Containers without servers to manage., category: containers}
+  ECR: {label: Amazon ECR, description: Container image registry., category: containers}
+  S3: {label: Amazon S3, description: Object storage., category: storage}
+  EBS: {label: Amazon EBS, description: Block storage for EC2., category: storage}
+  EFS: {label: Amazon EFS, description: Shared file storage., category: storage}
+  Glacier: {label: Amazon S3 Glacier, description: Archive storage., category: storage}
+  RDS: {label: Amazon RDS, description: Managed relational databases., category: database}
+  Aurora: {label: Amazon Aurora, description: Cloud-native relational database., category: database}
+  DynamoDB: {label: Amazon DynamoDB, description: Key-value and document database., category: database}
+  ElastiCache: {label: Amazon ElastiCache, description: In-memory cache., category: database}
+  Redshift: {label: Amazon Redshift, description: Data warehouse., category: analytics}
+  DocumentDB: {label: Amazon DocumentDB, description: 'Document database, MongoDB compatible.', category: database}
+  Neptune: {label: Amazon Neptune, description: Graph database., category: database}
+  CloudFront: {label: Amazon CloudFront, description: Content delivery network., category: networking}
+  Route53: {label: Amazon Route 53, description: DNS., category: networking}
+  APIGateway: {label: Amazon API Gateway, description: APIs published and secured., category: networking}
+  ElasticLoadBalancing: {label: Elastic Load Balancing, description: Load balancers., category: networking}
+  DirectConnect: {label: AWS Direct Connect, description: A dedicated line to AWS., category: networking}
+  TransitGateway: {label: AWS Transit Gateway, description: A hub joining networks., category: networking}
+  IAM: {label: AWS IAM, description: Identities and permissions., category: security}
+  Cognito: {label: Amazon Cognito, description: User sign-in., category: security}
+  KMS: {label: AWS KMS, description: Encryption keys., category: security}
+  SecretsManager: {label: AWS Secrets Manager, description: Secrets stored and rotated., category: security}
+  WAF: {label: AWS WAF, description: Web application firewall., category: security}
+  Shield: {label: AWS Shield, description: DDoS protection., category: security}
+  GuardDuty: {label: Amazon GuardDuty, description: Threat detection., category: security}
+  SQS: {label: Amazon SQS, description: Message queues., category: integration}
+  SNS: {label: Amazon SNS, description: Publish and subscribe notifications., category: integration}
+  EventBridge: {label: Amazon EventBridge, description: Event bus., category: integration}
+  StepFunctions: {label: AWS Step Functions, description: Workflows of services., category: integration}
+  Kinesis: {label: Amazon Kinesis, description: Data streams., category: analytics}
+  Athena: {label: Amazon Athena, description: SQL over S3., category: analytics}
+  Glue: {label: AWS Glue, description: Data integration (ETL)., category: analytics}
+  EMR: {label: Amazon EMR, description: Big-data clusters., category: analytics}
+  QuickSight: {label: Amazon QuickSight, description: Dashboards., category: analytics}
+  SageMaker: {label: Amazon SageMaker, description: Machine learning., category: ml}
+  CloudWatch: {label: Amazon CloudWatch, description: 'Metrics, logs and alarms.', category: management}
+  CloudFormation: {label: AWS CloudFormation, description: Infrastructure as code., category: management}
+  CloudTrail: {label: AWS CloudTrail, description: API activity audit., category: management}
+  SystemsManager: {label: AWS Systems Manager, description: Operations on instances., category: management}
+  CodePipeline: {label: AWS CodePipeline, description: Delivery pipelines., category: devtools}
+  CodeBuild: {label: AWS CodeBuild, description: Builds and tests., category: devtools}
+  Users: {label: Users, description: People who use the system., category: general}
+  Client: {label: Client, description: A computer or browser., category: general}
+  Mobile: {label: Mobile client, description: A phone or tablet., category: general}
+  Internet: {label: Internet, description: The internet., category: general}
+  Datacenter: {label: Corporate data center, description: Servers outside AWS., category: general}
+relationships:
+  connects: {label: Connects, description: 'A request or a data flow, in its direction.'}
+  async: {label: Asynchronous, description: An event or a message delivered later.}

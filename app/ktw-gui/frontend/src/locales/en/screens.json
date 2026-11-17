@@ -1,0 +1,83 @@
+{
+  "http": {
+    "loading": "Loading model calls…",
+    "loggingOff": "Model-call logging was off for this session.",
+    "enableHint": "Enable it with {{flag}} in {{file}} — globally at the root, or per profile.",
+    "noCalls": "No model calls recorded yet.",
+    "calls_one": "{{count}} call",
+    "calls_other": "{{count}} calls",
+    "msTotal": "{{ms}} ms total",
+    "refresh": "Refresh",
+    "live": "live",
+    "model": "Model",
+    "path": "Path",
+    "status": "Status",
+    "firstByte": "First byte",
+    "duration": "Duration",
+    "headers": "Headers",
+    "request": "Request",
+    "response": "Response",
+    "stream": "Stream",
+    "requestHeaders": "Request headers",
+    "responseHeaders": "Response headers",
+    "noRequestBody": "No request body.",
+    "inFlight": "In flight…",
+    "noResponseBody": "No response body.",
+    "deltas": "deltas (aggregated)",
+    "emptyStream": "Empty stream."
+  },
+  "terminals": {
+    "running": "RUNNING ({{count}})",
+    "start": "Start terminal",
+    "logs": "Logs (in-app)",
+    "guiLogs": "ktw-gui logs",
+    "shells": "Shells (embedded PTY)",
+    "error": "Error: {{error}}",
+    "noneBefore": "No terminals running. Click",
+    "noneAfter": "to start one.",
+    "kindLog": "log",
+    "kindShell": "shell",
+    "noneSelected": "No terminal selected",
+    "clickPlus": "Click + to start one.",
+    "notFound": "Terminal not found",
+    "clear": "Clear scrollback",
+    "close": "Close terminal"
+  },
+  "camera": {
+    "drag": "Drag anywhere to move",
+    "off": "Turn off camera"
+  },
+  "document": {
+    "waiting": "Waiting for artifact {{id}}…",
+    "formSubmitted": "Form submitted — the assistant is working on it…",
+    "actionSent": "Action \"{{action}}\" sent — the assistant is working on it…",
+    "wait": "This can take a few seconds. Further clicks are ignored until it responds."
+  },
+  "conversation": {
+    "empty": "No conversation entries yet.",
+    "initialPrompt": "Initial prompt",
+    "showLess": "Show less",
+    "showMore": "Show more",
+    "turn": "turn {{turn}}",
+    "assistant": "Assistant",
+    "you": "You",
+    "tool": "Tool",
+    "system": "System",
+    "error": "Error"
+  },
+  "skills": {
+    "count": "{{visible}} of {{total}}",
+    "search": "Search by name, provider, description, tag, or category…",
+    "noMatch": "No skills match your filters.",
+    "none": "No skills available in this universe."
+  },
+  "gallery": {
+    "tasks": "Tasks",
+    "skills": "Skills"
+  },
+  "contextTree": {
+    "showFull": "Show full tree",
+    "collapse": "Collapse",
+    "expand": "Expand"
+  }
+}

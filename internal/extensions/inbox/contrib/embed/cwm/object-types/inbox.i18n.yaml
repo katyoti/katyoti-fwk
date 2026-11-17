@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Inbox
+  description: >-
+    Là où attend ce qui demande une personne — la question d'un agent, une
+    demande d'approbation, un élément à trier — jusqu'à une réponse ou un
+    rejet.

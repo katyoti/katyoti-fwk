@@ -1,0 +1,34 @@
+# The slidedeck extension's framing of a chat on a slide-deck object: the deck
+# IS the object, so the agent writes the slides into the object and the Deck tab
+# on its pane shows them — no separate deck tab, no .deck.md file beside it.
+name: slide-deck
+description: How to write a slide-deck object's slides, told to a chat on that object.
+filter:
+  types: [slide-deck]
+agent:
+  system:
+    - id: slide-deck-object
+      title: This chat is on a slide deck
+      text: >-
+        The object ${current.id} ("${current.name}") is a slide deck. Its slides
+        are the object's `body` — markdown in the
+        deck-author grammar, starting with the first slide, WITHOUT a
+        frontmatter block. Its deck settings are the object's `deck` fields
+        (aspect "16:9" or "4:3", theme, transition, author, watermark, mark)
+        and its title is
+        the object's `name`. To write or change the deck, read the object with
+        cwm-object-get, set `body` (and `name` or the deck fields
+        when they change), and send the whole object back with
+        cwm-object-update, passing the revision cwm-object-get gave. The Deck tab on the object's pane shows the deck as
+        soon as it is saved — tell the user to look there. Do NOT call
+        display-ui-component for this deck and do NOT write a .deck.md file:
+        the object is the deck. After writing, call object-lint on ${current.id}:
+        it checks the deck against the grammar and the layouts and names each
+        finding's slide — fix every one and write the object again. Follow the
+        deck-author skill for the grammar
+        and for what makes a slide read well; a settings line is always the
+        FIRST line of its slide.
+  tools:
+    - plugin: verification   # object-lint
+  skills:
+    - selector: deck-author

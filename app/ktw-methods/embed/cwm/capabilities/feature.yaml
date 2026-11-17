@@ -1,0 +1,12 @@
+name: feature
+label: Feature
+icon: sparkles
+description: >-
+  The SUPPLY side: a unit of capability we build, prioritise and schedule.
+
+  A feature has no truth value of its own. It is DONE or NOT DONE; whether the
+  thing it delivers is TRUE OR FALSE belongs to the wants it serves, which is
+  why a feature shows a ratio over its use-cases rather than a verdict. Keeping
+  those apart is what lets one be ordered by cost of delay while the other is
+  graded by a probe.
+schema: ktw-methods:/data-type/cap-feature

@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Une fonctionnalité VEUT un ou plusieurs cas d'usage : les livrables testables qui la réalisent. M:N : plusieurs fonctionnalités peuvent vouloir la même UC durable (la UC appartient à son module via son parent structurel, pas à la fonctionnalité). C'est le lien côté demande du pont vouloir↔avoir ; combiné à la propriété structurelle de la UC par son module, c'est toute la jointure entre une fonctionnalité et un module : pas d'intermédiaire, pas de module-version. Une fonctionnalité est livrée quand les UC voulues passent leur porte effective (method-core §1/§3)."
+  inverse_label: "Voulu par"
+  label: "Veut"

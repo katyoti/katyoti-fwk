@@ -1,0 +1,47 @@
+# Registers `panel-type` as a SYSTEM contribution kind.
+#
+# A panel type is what a display panel of that type shows: its page tree,
+# named by URI (a contributed page template) or inline in the page DSL - the
+# same choice as a part of the one answer -, the data-type of
+# its data, the inputs a person may send it (submit, action, message, cancel),
+# how long an ended panel is kept and what of it stays on the object it worked
+# on (keep: none, outcome or full). Every panel is one of these; the chat is
+# one more type, and packs add their own.
+#
+# Published from any pack with no code: embed/panel-types/<name>.yaml, the
+# name being the file's basename, read as this declaration says (the pack's
+# folder, its tree the data layer, the file the source).
+name: panel-type
+description: |
+  What a display panel of a type shows: its page tree by URI or inline, the
+  type of its data, the inputs a person may send it, how long an ended one is
+  kept and what stays on its object.
+schema: system:/data-type/panel-type
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 320  # measured max 191 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+source:
+  folder: panel-types
+  match: ["*.yaml", "*.yml"]
+  id: basename
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

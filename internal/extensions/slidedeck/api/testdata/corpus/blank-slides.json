@@ -1,0 +1,43 @@
+{
+  "settings": {
+    "title": "Blanks"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 6,
+      "slots": [
+        {
+          "name": "default",
+          "line": 7,
+          "markdown": "## First real slide"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 15,
+      "slots": [
+        {
+          "name": "default",
+          "line": 16,
+          "markdown": "## Vertical under a dropped slide becomes horizontal"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 1,
+      "line": 19,
+      "slots": [
+        {
+          "name": "default",
+          "line": 20,
+          "markdown": "## Real vertical"
+        }
+      ]
+    }
+  ]
+}

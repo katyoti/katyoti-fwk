@@ -1,0 +1,18 @@
+# A generic review type of the reviews pack: performed by an agent following
+# the review-dimension skill with its guide (a reference of ktw-agents).
+name: features-vs-code
+title: Features versus code
+description: >-
+  Does the code deliver what the module's features say, and say all it does: each realized or done feature read against its code with its criteria run, what changed since its proof, what the code does that no feature declares.
+dimension: method
+applies:
+  capabilities: [reviewable]
+trigger:
+  mode: manual
+runner:
+  skill: ktw-agents:/skill/review-dimension
+  input:
+    guide: ktw-agents:/reference/review/features-vs-code.md
+rating: The guide's rating rule (its Rate section).
+presets: [full]
+max_cost_usd: 5

@@ -1,0 +1,14 @@
+name: intake-input
+root: IntakeInput
+types:
+  IntakeInput:
+    type: object
+    fields:
+      request:
+        type: string
+        label: "Request"
+        description: "The id of the request to evaluate (a request of its own, or a goal / feature carrying one)"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Evaluate"

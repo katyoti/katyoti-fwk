@@ -1,0 +1,49 @@
+$schema: ktw-schema/v1
+name: cap-feature
+version: "1.0.0"
+root: CapFeature
+description: |
+  Field-group for the `feature` capability — the supply side of the method.
+
+  A Feature is what we BUILD; a Goal and a Use Case are what must be TRUE.
+  The two are linked M:N in both directions — a `serves` edge upward to goals,
+  a `wants` edge downward to use-cases — never by containment: a feature
+  serving one goal and one use-case only would not need a model.
+
+  Those relations are EDGES, not fields here. §3's reference rule: the tree is
+  a field, everything else that points at another object is an edge.
+
+  Stored under the `feature` key of the object's capability map.
+types:
+  CapFeature:
+    type: object
+    fields:
+      cod:
+        type: number
+        label: Cost of delay
+        description: >-
+          What it costs to NOT have this yet, in whatever unit the project
+          agrees. It is the ordering signal, and it lives on the feature
+          because ordering is a supply-side decision — a goal is not scheduled,
+          it is pursued.
+        optional: true
+      decomposes:
+        type: string
+        label: Decomposes
+        description: >-
+          Id of the parent FEATURE this one breaks down, for a feature tree.
+          Single-valued, because decomposition IS containment — unlike serving
+          a goal, a sub-feature belongs to exactly one parent.
+        optional: true
+
+# `wants` WAS DECLARED HERE AND HAS MOVED TO AN EDGE.
+#
+# Same reason as `want.serves`: it pointed at other objects (the use cases a
+# feature delivers), and §3's reference rule makes every such reference an
+# edge. M:N is preserved — an edge list has never been 1:1.
+#
+# `cod` and `decomposes` stay. `cod` is a NUMBER, not a reference. `decomposes`
+# still points at another object and is therefore the next thing §3 applies to;
+# it is left alone here deliberately rather than changed in passing, because it
+# is arguably containment (`parent`) rather than a relation, and that
+# is a separate question from the one this change answers.

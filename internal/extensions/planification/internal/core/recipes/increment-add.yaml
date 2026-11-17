@@ -1,0 +1,13 @@
+# A goal or a feature added to a running increment:
+# planification files a small proposal holding only that addition - a demand
+# of depth quick whose delta aims it at the increment - and the person
+# approves it. Approved, it is aimed (counted in the increment's progress,
+# listed on its card as joined); sent back, the proposal ends and nothing is
+# aimed.
+name: increment-add
+description: The person approves a goal or a feature added to a running increment - it is then aimed at it - or sends it back.
+kind: demand
+depth: quick
+transition: done
+steps:
+  - {name: approve-addition, phase: preparation, class: refine, actor: person, interaction: validate, instructions: "A goal or a feature was added to the running increment the proposal is about. Approve it - it is aimed at the increment and its work counts in it - or send it back saying why: nothing is aimed."}

@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Ce qu'une décision touche : `C-001 affects F-001, F-004, G-001`. Un lien, jamais un champ de frontmatter (`affects: [...]`) : toute référence hors arbre est un lien (concepts.md §3)."
+  inverse_label: "Affecté par"
+  label: "Affecte"

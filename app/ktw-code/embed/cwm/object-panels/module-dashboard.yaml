@@ -1,0 +1,18 @@
+# A module's health. Its source is the Go language pack's module dashboard: it
+# answers a page (render.Def, kind page) built from the module status — health,
+# tier, use-case totals, audit, promote gates and facets — drawn by the generic
+# page renderer.
+name: "Dashboard"
+description: "Module health: tier, use-case totals, audit, promote gates and facets"
+icon:
+  tabler: "activity"
+  emoji: "📈"
+order: 20
+filter:
+  capabilities:
+    - "module-health"
+  # Only a module with code: a documentation module has no packages to measure.
+  when: "len(object.code?.code_packages ?? []) > 0"
+source: "ktw-gocode:gocode/module-dashboard"
+content:
+  kind: "page"

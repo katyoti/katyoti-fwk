@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Tableau de bord
+  description: "Santé du module : niveau, totaux des cas d'usage, audit, portes de promotion et facettes"

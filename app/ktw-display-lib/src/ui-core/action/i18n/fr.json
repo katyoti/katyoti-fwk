@@ -1,0 +1,25 @@
+{
+  "buttons": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "reset": "Réinitialiser",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "new": "Nouveau",
+    "view": "Voir",
+    "close": "Fermer"
+  },
+  "selected": "sélectionné(s)",
+  "fields": {
+    "ok": "OK",
+    "add": "Ajouter",
+    "empty": "Aucune entrée — « Ajouter » en crée une.",
+    "moveUp": "Monter",
+    "moveDown": "Descendre",
+    "remove": "Retirer",
+    "typeEnter": "Saisir puis Entrée…",
+    "selectValues": "Choisir…",
+    "derivedFrom": "rempli d'après {{source}}",
+    "editedByYou": "modifié par vous"
+  }
+}

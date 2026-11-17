@@ -1,0 +1,26 @@
+name: Apply a config-set
+description: Apply a config-set, its templates and keys, to your universe.
+hashtags:
+- config-set
+- configuration
+- keys
+- templates
+- apply
+level: regular
+requires:
+- open-a-universe
+steps:
+- id: open-marketplace
+  say: Open the {control:ribbon.marketplace} from the ribbon.
+  target: {guide: ribbon.marketplace}
+  await: click
+- id: open-config-sets
+  say: Open its {control:marketplace.tab|configsets} tab.
+  target: {guide: marketplace.tab, name: configsets}
+  await: click
+- id: apply
+  say: Pick a config-set and press {control:configset.apply} on its row.
+  target: {guide: configset.row}
+  await: manual
+- id: keys
+  say: Fill in the keys it asks for (or import a keys file), then apply. Every key not marked optional needs a value. Applying is the only verb; you can apply again later.

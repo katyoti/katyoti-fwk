@@ -1,0 +1,9 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Avancement de la synchronisation d'une source
+  description: >-
+    Où en est la synchronisation d'une source d'information : commencée,
+    éléments lus sur ceux que son connecteur a nommés, puis en échec avec la
+    raison ou terminée ; la charge utile nomme la source, la phase, les
+    comptes et l'erreur.

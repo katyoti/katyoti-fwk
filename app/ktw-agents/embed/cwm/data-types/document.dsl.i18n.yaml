@@ -1,0 +1,20 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    Document:
+      fields:
+        content_type:
+          label: Type de contenu
+        derived_from:
+          label: Dérivé de
+        pinned:
+          label: Épinglé
+        summary:
+          description: Résumé court ; s'affiche dans les listes.
+          label: Résumé
+        tags:
+          label: Étiquettes
+        title:
+          label: Titre

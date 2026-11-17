@@ -1,0 +1,13 @@
+# An accepted feature is specified before anything is built: its use cases and
+# acceptance criteria written, challenged by a person, and the feature split if
+# it is too large. The person approving the challenge confirms ready-to-build's
+# feature-challenged on the feature: the gate does not ask again.
+name: feature-specify
+description: Write its use cases and acceptance criteria, have a person challenge them, split it if too large.
+types: [feature]
+states: [accepted]
+transition: specified
+steps:
+  - {name: specify, phase: preparation, class: refine, role: specifier, gate: ready-to-plan, share: 0.5, skill: ktw-methods:/skill/new-functionality, instructions: "Write the use cases the feature wants, each with runnable acceptance criteria."}
+  - {name: challenge, phase: preparation, class: refine, actor: person, interaction: challenge, confirms: ready-to-build/feature-challenged, after: [specify], share: 0.2, instructions: "Challenge the specification: is anything missing, vague or too much?"}
+  - {name: size, phase: preparation, class: refine, role: specifier, after: [challenge], share: 0.3, instructions: "Size the feature; if it is too large, split it into sub-features.", refines: true}

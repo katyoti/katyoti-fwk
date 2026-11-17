@@ -1,0 +1,6 @@
+name: rectpacking
+description: "Compact grid packing — ignores edges, maximizes space usage"
+layoutOptions:
+  elk.algorithm: rectpacking
+  elk.spacing.nodeNode: "10"
+  elk.rectpacking.widthApproximation.targetWidth: "1200"

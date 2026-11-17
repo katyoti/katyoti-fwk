@@ -1,0 +1,12 @@
+name: toggle
+kind: renderer
+basePrimitive: boolean
+description: |
+  Boolean rendered as a Switch (vs the default Checkbox). Equivalent to legacy `boolean` with `editAs: 'switch'`. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    subLabel:
+      type: string
+      optional: true
+      description: Optional secondary label below the main label.

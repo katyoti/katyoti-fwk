@@ -1,0 +1,77 @@
+# Describes what a `data-type` Contribution looks like. The URI of
+# this entry is `system:/contribution-type/data-type`; consumers fetch
+# it to learn what schema a data-type entry's Body must match.
+#
+# A data-type Contribution's Body is a DataTypeBody wrapping raw DSL
+# Schema bytes (YAML or JSON) — the existing manifest convention
+# (internal/core/contribution/api/data_type_resources.go).
+name: data-type
+description: |
+  Canonical data-type schema referenced by other contributions'
+  `Schema` fields and by method I/O type references in service
+  interfaces. Hub-side SchemaService parses the Body once at boot and
+  serves the AST universe-wide.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/data-type
+validate: error
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go): the label and description of each field of each of
+# its types, as a form shows them (`types.<Type>.fields.<field>.label`); and,
+# in each of a type's display extensions (keyed by its `name`), the label,
+# prompt and confirm of each menu and slots.actions entry (keyed by its `id`),
+# the title and description of each group that has an `id`, and the axis
+# label. Two extensions of one type with the same name share one text per id.
+# A field's options (`content.options`) give the label and description of each
+# option, keyed by its `value` - in the list form only (`- {value, label}`); the
+# short map form `{value: label}` is not translatable, so an option label to
+# translate is written in the list form.
+# A text that is only one `${...}` template is not translated. A translations
+# file is `<name>.dsl.i18n.yaml` beside `<name>.dsl.yaml`.
+translatable:
+  - types.*.fields.*.label
+  - types.*.fields.*.description
+  - types.*.fields.*.content.options[value].label
+  - types.*.fields.*.content.options[value].description
+  - types.*.extensions[name].menu[id].label
+  - types.*.extensions[name].menu[id].prompt
+  - types.*.extensions[name].menu[id].confirm
+  - types.*.extensions[name].slots.actions[id].label
+  - types.*.extensions[name].slots.actions[id].prompt
+  - types.*.extensions[name].slots.actions[id].confirm
+  - types.*.extensions[name].groups[id].title
+  - types.*.extensions[name].groups[id].description
+  - types.*.extensions[name].axisLabel
+
+layers:
+  source: {mediaType: application/yaml, required: true, default: true, resident: true}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 2240  # measured max 1474 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # A data-type's description is its DSL's own `description`, written once in
+  # the source layer as written; the manifest builder derives it into meta, so
+  # a listing reads it from the index.
+  from: source
+  fields: [description]
+
+# How a file becomes an entry (contribution-types.md "How files become
+# layers"): a data-type is its DSL, published as written - the file is its one
+# source layer, never decoded into a data layer. Named by its path under the
+# folder without its `.dsl.<ext>` (or its one extension): sub-folders kept.
+source:
+  folder: data-types
+  match: ["*.yaml", "*.yml", "*.json"]
+  id: path
+  format: dsl
+  layers:
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

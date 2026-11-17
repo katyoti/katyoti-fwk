@@ -1,0 +1,13 @@
+# A goal the work is already aimed at changed: is the work still right? The
+# review comes first — it outranks and holds the work about the goal and the
+# features that serve it.
+name: goal-changed
+description: A goal changed after it was accepted - review whether its features still serve it.
+on: change
+types: [goal]
+states: [accepted, decomposed, active]
+holds: true
+file:
+  kind: review
+  title: Review whether the features still serve the changed goal
+  details: The goal changed. Read what changed; for each feature serving it, say whether it still serves it, must change, or must go; release, change or drop the held to-dos accordingly.

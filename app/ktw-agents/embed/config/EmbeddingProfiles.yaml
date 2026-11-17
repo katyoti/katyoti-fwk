@@ -1,0 +1,48 @@
+# ktw-kb embedding profiles — the endpoints a knowledge base embeds through.
+# A knowledge base names its profile in KnowledgeBase.yaml
+# (indexing.embedding.profile); an empty profile is `default`.
+#
+# Each profile:
+#   type         openai | foundry | azure-openai | openai-compatible
+#   endpoint     full URL of the embeddings endpoint (openai: defaults to
+#                https://api.openai.com/v1/embeddings; required otherwise)
+#   key_env      NAME of the environment variable holding the key — never the
+#                key itself (an api_key field is refused)
+#   auth         bearer (Authorization: Bearer) | api-key (header api-key);
+#                default bearer, api-key for azure-openai
+#   api_version  sent as ?api-version= (required for azure-openai)
+#   model        sent as "model" (the deployment name on Foundry / Azure)
+#   dimensions   vector size the model returns (default 1536)
+#   batch_size   maximum texts per request (default 100)
+#
+# An index records the model and dimensions it was built with: a query
+# through a profile of another model or dimension is refused (re-index);
+# the same model and dimensions from another provider is accepted.
+
+default: openai
+
+profiles:
+  openai:
+    type: openai
+    endpoint: https://api.openai.com/v1/embeddings
+    key_env: OPENAI_API_KEY
+    model: text-embedding-3-small
+    dimensions: 1536
+    batch_size: 100
+
+  # foundry:
+  #   type: foundry
+  #   endpoint: ${{env:AZURE_FOUNDRY_EMBEDDINGS_ENDPOINT}}
+  #   key_env: AZURE_API_KEY
+  #   model: text-embedding-3-small        # the deployment name
+  #   dimensions: 1536
+  #   batch_size: 100
+
+  # azure-openai:
+  #   type: azure-openai
+  #   endpoint: https://<resource>.openai.azure.com/openai/deployments/<deployment>/embeddings
+  #   api_version: "2024-10-21"
+  #   key_env: AZURE_API_KEY
+  #   model: text-embedding-3-small        # the deployment name
+  #   dimensions: 1536
+  #   batch_size: 100

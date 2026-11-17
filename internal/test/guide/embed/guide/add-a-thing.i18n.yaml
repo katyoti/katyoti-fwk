@@ -1,0 +1,7 @@
+fr:
+  name: Ajouter une chose à mon univers
+  description: Ajouter une chose et vérifier qu'elle est là.
+  hashtags: [ajouter une chose, fixture]
+  steps:
+    open: Ouvrez le panneau des choses.
+    there: La chose est là.

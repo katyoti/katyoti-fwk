@@ -1,0 +1,20 @@
+name: supersedes
+label: Supersedes
+inverse_label: Superseded by
+from: any-item                       # any item kind (commonly decision, rule)
+to: any-item                         # same kind as `from`
+cardinality: 1:1
+target: object
+object_storage: edges
+description: |
+  Records that a new item replaces an older one of the same kind.
+  Cycles forbidden (validated on write). The replaced item's status
+  is typically updated to `superseded` or `deprecated` in the same
+  write.
+
+  Used by:
+  - decision.supersedes — the canonical "we changed our mind" trail,
+    written by the decisions service's Supersede.
+  - rule.supersedes — refactored rule replaces older constraint.
+
+inverse_name: superseded_by

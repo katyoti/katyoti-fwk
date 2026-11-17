@@ -1,0 +1,9 @@
+# WeatherService configuration.
+#
+# unit:     temperature/wind/precipitation unit family (advisory — the
+#           Open-Meteo backend currently returns metric regardless).
+# language: language code for geocoding name resolution. Pass any
+#           two-letter ISO code Open-Meteo supports (en, fr, de, es,
+#           ja, …). Affects only city-name lookups, not units.
+unit: metric
+language: en

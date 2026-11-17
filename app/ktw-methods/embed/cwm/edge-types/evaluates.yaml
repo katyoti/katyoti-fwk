@@ -1,0 +1,12 @@
+name: evaluates
+label: Evaluates
+inverse_label: Evaluated by
+from: solution-evaluation
+to: any                              # the alternative scored
+cardinality: N:1
+target: object
+object_storage: edges
+inverse_name: evaluated-by
+description: |
+  The alternative a solution evaluation scores: a candidate solution, an
+  option, the status quo. Its Links tab shows the evaluations of it.

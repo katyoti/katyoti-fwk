@@ -1,0 +1,10 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Confirmations de porte
+  description: >-
+    Qui a confirmé quelle exigence d'une porte nommée sur cet objet, et quand
+    — par <porte>/<exigence> — et, sous `revoked`, les confirmations qu'une
+    personne a retirées. Écrites par la confirmation ou le retrait d'une
+    personne, lues par la vérification de la porte. Ajoute gate(nom) aux
+    expressions : la liste de contrôle de l'objet pour une porte.

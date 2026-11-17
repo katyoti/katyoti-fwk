@@ -1,0 +1,35 @@
+# How a plan moves. Plan makes it ready — from anywhere but its end: its
+# to-dos are planned and may be worked. Whether a step runs now is not a
+# state: it is read from the to-dos (one pulled). Wait makes it idle on an
+# answer (a question to its requester); the answer plans it again. Block says
+# a step failed or was stopped, or its end was refused. Split replaces it by
+# its parts; it ends with them. Finish and drop end it — finish through the
+# module-updated gate (a request that changes a module ends with it up to
+# date; only a person forces it); a request filed again on the same object
+# (its next rung: a feature specified, then built) refiles it.
+name: plan
+label: Plan
+description: >-
+  Ready when its to-dos are planned; idle when nothing is planned or it waits
+  on an answer; blocked when a step failed or its end was refused; split into
+  parts; done or dropped.
+initial: idle
+states:
+  - {name: idle, description: "Nothing planned, or it waits on an answer: what next is someone's call"}
+  - {name: ready, description: "Its to-dos are planned and may be worked"}
+  - {name: blocked, description: "Its step failed or was stopped, or its end was refused: someone looks"}
+  - {name: split, description: "Replaced by its parts; ends when they all have"}
+  - {name: done, description: "Its work is done"}
+  - {name: dropped, description: "Will not be done"}
+transitions:
+  - {name: plan, from: [idle, ready, blocked], to: ready}
+  - {name: wait, from: [ready, blocked], to: idle}
+  - {name: block, from: [idle, ready], to: blocked}
+  - {name: split, from: [idle, ready, blocked], to: split}
+  - name: finish
+    from: [idle, ready, blocked, split]
+    to: done
+    gate: "gate('module-updated').passes"
+    force: person
+  - {name: drop, from: [idle, ready, blocked, split], to: dropped}
+  - {name: refile, from: [done, dropped], to: ready}

@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Utilisabilité"
+  description: "Comment le module se vit pour qui l'utilise — interface, ligne de commande, agent : premier contact, parcours principaux, erreurs, cohérence, retours."

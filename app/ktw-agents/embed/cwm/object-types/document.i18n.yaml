@@ -1,0 +1,9 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Document
+  description: >-
+    Une note libre au corps markdown — l'échappatoire pour le texte long, quand
+    la prose a vraiment sa place (pas dans le corps d'une règle ni d'une
+    décision ouverte). Locale seulement, jamais héritée. Le frontmatter porte
+    les métadonnées, le corps est en markdown.

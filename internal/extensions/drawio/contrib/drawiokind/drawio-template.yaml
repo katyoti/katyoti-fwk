@@ -1,0 +1,39 @@
+# The `drawio-template` kind, declared by the drawio pack (drawiokind.Leaves): any pack
+# holding its folder is read as this kind. Its schema is provider-relative: the
+# publisher names `<provider>:/data-type/drawio-template`, the shape of the drawio body type.
+name: drawio-template
+description: |
+  A template library: draw.io templates (in the .drawio file of the same
+  name) for the kinds of a notation or a house style, with the constants and
+  bindings their placeholders read. The data layer carries the .drawio file.
+
+# Declared, not derived: a kind whose schema is inferred from its name is
+# unvalidatable the moment the inference fails, and fails silently.
+schema: drawio-template
+validate: error
+
+# Every entry carries its decoded body (data) and the YAML as written
+# (source, the default layer).
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 576  # measured max 347 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes an entry (contribution-types.md "How files become
+# layers"): a YAML file in `drawio-templates/`, its tree the data layer, the file as written
+# the source. The .drawio file of the same name beside it is folded into
+# data as `drawio`: part of the entry, not a layer of its own.
+source:
+  folder: drawio-templates
+  match: ["*.yaml", "*.yml"]
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    drawio: {from: sibling, suffix: .drawio, fold: drawio}

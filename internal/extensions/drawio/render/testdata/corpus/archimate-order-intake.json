@@ -1,0 +1,68 @@
+{
+  "viewpoint": "ktw-docs:/viewpoint/archimate3-layered",
+  "title": "ArchiMate — order intake",
+  "nodes": [
+    {
+      "id": "customer",
+      "label": "Customer",
+      "kind": "BusinessActor"
+    },
+    {
+      "id": "place-order",
+      "label": "Place Order",
+      "kind": "BusinessProcess"
+    },
+    {
+      "id": "order-svc",
+      "label": "Order Service",
+      "kind": "ApplicationService"
+    },
+    {
+      "id": "order-comp",
+      "label": "OrderApp",
+      "kind": "ApplicationComponent"
+    },
+    {
+      "id": "order-data",
+      "label": "Order",
+      "kind": "DataObject"
+    },
+    {
+      "id": "prod-node",
+      "label": "ProductionServer",
+      "kind": "TechnologyNode"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "customer",
+      "target": "place-order",
+      "kind": "triggering"
+    },
+    {
+      "id": "e2",
+      "source": "order-svc",
+      "target": "place-order",
+      "kind": "serving"
+    },
+    {
+      "id": "e3",
+      "source": "order-comp",
+      "target": "order-svc",
+      "kind": "realization"
+    },
+    {
+      "id": "e4",
+      "source": "order-comp",
+      "target": "order-data",
+      "kind": "access"
+    },
+    {
+      "id": "e5",
+      "source": "prod-node",
+      "target": "order-comp",
+      "kind": "serving"
+    }
+  ]
+}

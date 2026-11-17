@@ -1,0 +1,13 @@
+# What can be run on this object: its type's and its capabilities' actions,
+# their when-guards evaluated.
+name: "Actions"
+description: "What can be run on this object"
+icon:
+  tabler: "bolt"
+  emoji: "⚡"
+order: 860
+filter:
+  types: ["*"]
+content:
+  kind: "extension"
+  extension: "object-actions"

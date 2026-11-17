@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Justesse"
+  description: "Bogues, erreurs de logique, gestion des erreurs, cas limites et validation des entrées dans le code du module."

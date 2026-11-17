@@ -1,0 +1,354 @@
+<mxfile host="ktw-docs">
+    <diagram name="templates">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="%name%" placeholders="1" name="Amazon EC2" ktw-template="EC2" id="tpl-EC2">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;" vertex="1" parent="1">
+              <mxGeometry x="40" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Lambda" ktw-template="Lambda" id="tpl-Lambda">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+              <mxGeometry x="180" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Batch" ktw-template="Batch" id="tpl-Batch">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.batch;" vertex="1" parent="1">
+              <mxGeometry x="320" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Elastic Beanstalk" ktw-template="ElasticBeanstalk" id="tpl-ElasticBeanstalk">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_beanstalk;" vertex="1" parent="1">
+              <mxGeometry x="460" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon ECS" ktw-template="ECS" id="tpl-ECS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;" vertex="1" parent="1">
+              <mxGeometry x="600" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon EKS" ktw-template="EKS" id="tpl-EKS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;" vertex="1" parent="1">
+              <mxGeometry x="740" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Fargate" ktw-template="Fargate" id="tpl-Fargate">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fargate;" vertex="1" parent="1">
+              <mxGeometry x="880" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon ECR" ktw-template="ECR" id="tpl-ECR">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecr;" vertex="1" parent="1">
+              <mxGeometry x="1020" y="40" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon S3" ktw-template="S3" id="tpl-S3">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+              <mxGeometry x="40" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon EBS" ktw-template="EBS" id="tpl-EBS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_block_store;" vertex="1" parent="1">
+              <mxGeometry x="180" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon EFS" ktw-template="EFS" id="tpl-EFS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_file_system;" vertex="1" parent="1">
+              <mxGeometry x="320" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon S3 Glacier" ktw-template="Glacier" id="tpl-Glacier">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glacier;" vertex="1" parent="1">
+              <mxGeometry x="460" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon RDS" ktw-template="RDS" id="tpl-RDS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;" vertex="1" parent="1">
+              <mxGeometry x="600" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Aurora" ktw-template="Aurora" id="tpl-Aurora">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.aurora;" vertex="1" parent="1">
+              <mxGeometry x="740" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon DynamoDB" ktw-template="DynamoDB" id="tpl-DynamoDB">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;" vertex="1" parent="1">
+              <mxGeometry x="880" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon ElastiCache" ktw-template="ElastiCache" id="tpl-ElastiCache">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elasticache;" vertex="1" parent="1">
+              <mxGeometry x="1020" y="170" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Redshift" ktw-template="Redshift" id="tpl-Redshift">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.redshift;" vertex="1" parent="1">
+              <mxGeometry x="40" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon DocumentDB" ktw-template="DocumentDB" id="tpl-DocumentDB">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.documentdb_with_mongodb_compatibility;" vertex="1" parent="1">
+              <mxGeometry x="180" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Neptune" ktw-template="Neptune" id="tpl-Neptune">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.neptune;" vertex="1" parent="1">
+              <mxGeometry x="320" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon CloudFront" ktw-template="CloudFront" id="tpl-CloudFront">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" vertex="1" parent="1">
+              <mxGeometry x="460" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Route 53" ktw-template="Route53" id="tpl-Route53">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.route_53;" vertex="1" parent="1">
+              <mxGeometry x="600" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon API Gateway" ktw-template="APIGateway" id="tpl-APIGateway">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
+              <mxGeometry x="740" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Elastic Load Balancing" ktw-template="ElasticLoadBalancing" id="tpl-ElasticLoadBalancing">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_load_balancing;" vertex="1" parent="1">
+              <mxGeometry x="880" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Direct Connect" ktw-template="DirectConnect" id="tpl-DirectConnect">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.direct_connect;" vertex="1" parent="1">
+              <mxGeometry x="1020" y="300" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Transit Gateway" ktw-template="TransitGateway" id="tpl-TransitGateway">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.transit_gateway;" vertex="1" parent="1">
+              <mxGeometry x="40" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS IAM" ktw-template="IAM" id="tpl-IAM">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.identity_and_access_management;" vertex="1" parent="1">
+              <mxGeometry x="180" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Cognito" ktw-template="Cognito" id="tpl-Cognito">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;" vertex="1" parent="1">
+              <mxGeometry x="320" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS KMS" ktw-template="KMS" id="tpl-KMS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.key_management_service;" vertex="1" parent="1">
+              <mxGeometry x="460" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Secrets Manager" ktw-template="SecretsManager" id="tpl-SecretsManager">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.secrets_manager;" vertex="1" parent="1">
+              <mxGeometry x="600" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS WAF" ktw-template="WAF" id="tpl-WAF">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.waf;" vertex="1" parent="1">
+              <mxGeometry x="740" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Shield" ktw-template="Shield" id="tpl-Shield">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.shield;" vertex="1" parent="1">
+              <mxGeometry x="880" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon GuardDuty" ktw-template="GuardDuty" id="tpl-GuardDuty">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD3522;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.guardduty;" vertex="1" parent="1">
+              <mxGeometry x="1020" y="430" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon SQS" ktw-template="SQS" id="tpl-SQS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" vertex="1" parent="1">
+              <mxGeometry x="40" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon SNS" ktw-template="SNS" id="tpl-SNS">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;" vertex="1" parent="1">
+              <mxGeometry x="180" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon EventBridge" ktw-template="EventBridge" id="tpl-EventBridge">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;" vertex="1" parent="1">
+              <mxGeometry x="320" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Step Functions" ktw-template="StepFunctions" id="tpl-StepFunctions">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;" vertex="1" parent="1">
+              <mxGeometry x="460" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Kinesis" ktw-template="Kinesis" id="tpl-Kinesis">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.kinesis;" vertex="1" parent="1">
+              <mxGeometry x="600" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon Athena" ktw-template="Athena" id="tpl-Athena">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.athena;" vertex="1" parent="1">
+              <mxGeometry x="740" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Glue" ktw-template="Glue" id="tpl-Glue">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;" vertex="1" parent="1">
+              <mxGeometry x="880" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon EMR" ktw-template="EMR" id="tpl-EMR">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.emr;" vertex="1" parent="1">
+              <mxGeometry x="1020" y="560" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon QuickSight" ktw-template="QuickSight" id="tpl-QuickSight">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.quicksight;" vertex="1" parent="1">
+              <mxGeometry x="40" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon SageMaker" ktw-template="SageMaker" id="tpl-SageMaker">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" vertex="1" parent="1">
+              <mxGeometry x="180" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Amazon CloudWatch" ktw-template="CloudWatch" id="tpl-CloudWatch">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudwatch_2;" vertex="1" parent="1">
+              <mxGeometry x="320" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS CloudFormation" ktw-template="CloudFormation" id="tpl-CloudFormation">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudformation;" vertex="1" parent="1">
+              <mxGeometry x="460" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS CloudTrail" ktw-template="CloudTrail" id="tpl-CloudTrail">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudtrail;" vertex="1" parent="1">
+              <mxGeometry x="600" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Systems Manager" ktw-template="SystemsManager" id="tpl-SystemsManager">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.systems_manager;" vertex="1" parent="1">
+              <mxGeometry x="740" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS CodePipeline" ktw-template="CodePipeline" id="tpl-CodePipeline">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codepipeline;" vertex="1" parent="1">
+              <mxGeometry x="880" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS CodeBuild" ktw-template="CodeBuild" id="tpl-CodeBuild">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codebuild;" vertex="1" parent="1">
+              <mxGeometry x="1020" y="690" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Users" ktw-template="Users" id="tpl-Users">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" vertex="1" parent="1">
+              <mxGeometry x="40" y="820" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Client" ktw-template="Client" id="tpl-Client">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;" vertex="1" parent="1">
+              <mxGeometry x="180" y="820" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Mobile client" ktw-template="Mobile" id="tpl-Mobile">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mobile_client;" vertex="1" parent="1">
+              <mxGeometry x="320" y="820" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Internet" ktw-template="Internet" id="tpl-Internet">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_alt2;" vertex="1" parent="1">
+              <mxGeometry x="460" y="820" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Corporate data center" ktw-template="Datacenter" id="tpl-Datacenter">
+            <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.corporate_data_center;" vertex="1" parent="1">
+              <mxGeometry x="600" y="820" width="64" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="AWS Cloud" ktw-template="zone:AWSCloud" id="tpl-zone-AWSCloud">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
+              <mxGeometry x="40" y="950" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Region" ktw-template="zone:Region" id="tpl-zone-Region">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" vertex="1" parent="1">
+              <mxGeometry x="340" y="950" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Availability Zone" ktw-template="zone:AvailabilityZone" id="tpl-zone-AvailabilityZone">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;fillColor=none;strokeColor=#147EBA;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#147EBA;" vertex="1" parent="1">
+              <mxGeometry x="640" y="950" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="VPC" ktw-template="zone:VPC" id="tpl-zone-VPC">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#8C4FFF;dashed=0;" vertex="1" parent="1">
+              <mxGeometry x="940" y="950" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Public subnet" ktw-template="zone:PublicSubnet" id="tpl-zone-PublicSubnet">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7AA116;fillColor=#F2F6E8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;" vertex="1" parent="1">
+              <mxGeometry x="40" y="1170" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Private subnet" ktw-template="zone:PrivateSubnet" id="tpl-zone-PrivateSubnet">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#00A4A6;fillColor=#E6F6F7;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" vertex="1" parent="1">
+              <mxGeometry x="340" y="1170" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Security group" ktw-template="zone:SecurityGroup" id="tpl-zone-SecurityGroup">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;fillColor=none;strokeColor=#DD3522;verticalAlign=top;fontStyle=0;fontColor=#DD3522;" vertex="1" parent="1">
+              <mxGeometry x="640" y="1170" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Auto Scaling group" ktw-template="zone:AutoScalingGroup" id="tpl-zone-AutoScalingGroup">
+            <mxCell style="fontSize=12;container=1;collapsible=0;recursiveResize=0;points=[];html=1;whiteSpace=wrap;shape=mxgraph.aws4.groupCenter;grIcon=mxgraph.aws4.group_auto_scaling_group;grStroke=1;strokeColor=#D86613;fillColor=none;verticalAlign=top;align=center;fontColor=#D86613;dashed=1;spacingTop=25;" vertex="1" parent="1">
+              <mxGeometry x="940" y="1170" width="260" height="180" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:connects" id="tpl-edge-connects">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=open;endFill=0;strokeColor=#545B64;strokeWidth=1.5;fontSize=10;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="40" y="1410" as="sourcePoint"/>
+                <mxPoint x="240" y="1410" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="" ktw-template="edge:async" id="tpl-edge-async">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endFill=0;strokeColor=#545B64;strokeWidth=1.5;fontSize=10;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="300" y="1410" as="sourcePoint"/>
+                <mxPoint x="500" y="1410" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Unknown kind" ktw-template="*" id="tpl-default">
+            <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;" vertex="1" parent="1">
+              <mxGeometry x="600" y="1380" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+    <diagram name="page:default">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%title%&lt;/b&gt;" placeholders="1" title="Diagram title" id="page-title">
+            <mxCell style="text;html=1;align=left;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+              <mxGeometry x="20" y="10" width="900" height="30" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="" ktw-slot="content" id="page-content">
+            <mxCell style="rounded=0;dashed=1;fillColor=none;strokeColor=#CCCCCC;" vertex="1" parent="1">
+              <mxGeometry x="20" y="60" width="900" height="600" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+</mxfile>

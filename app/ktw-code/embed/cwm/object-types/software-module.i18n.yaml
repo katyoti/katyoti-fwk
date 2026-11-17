@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Module logiciel
+  label_plural: Modules logiciels
+  description: >-
+    Un module réalisé par du code : ses packages, ses paliers et ses facettes,
+    avec les objets de la méthode qui disent ce qu'il doit faire.

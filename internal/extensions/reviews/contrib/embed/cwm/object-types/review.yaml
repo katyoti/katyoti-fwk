@@ -1,0 +1,37 @@
+# One review type run on a module or an object, filed under what it reviews
+# (the Reviews panel lists the reviews of every object carrying `reviewable`).
+# Its fields say which review type it ran, when, on which commit, what
+# triggered it, who reviewed, its rating and score; its body is the report.
+# Its findings are filed under the object reviewed and point at it (found-in,
+# seen-in). It holds the documents and slide decks written for it, and its
+# overview (the file-overview capability: the Overview tab). It moves draft →
+# in-review → closed. It is not drawn in the project tree (no `tree:`): a
+# review is reached through the Reviews panel of what it reviews.
+name: review
+label: Review
+description: >-
+  One review type run on a module or an object: when, on which commit, what
+  triggered it, a rating and its summary; its body is the report. It holds the
+  documents and slide decks written for it, and an overview.
+icon: clipboard-check
+folder: reviews
+id_prefix: RV
+capabilities: [lifecycle, file-overview]
+fields: :/data-type/review
+workflow: review
+accept_parents: ["*"]
+allowed_children: [finding, document, slide-deck]
+body:
+  label: Report
+  description: The review's report — what was looked at, what was found and what to do next.
+  format: markdown
+# The rating as a header chip.
+pane:
+  badges:
+    - field: fields.rating
+      label: rating
+      icon: clipboard-check
+      colors:
+        good: green
+        needs-attention: orange
+        critical: red

@@ -1,0 +1,16 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Livrable
+  description: >-
+    Un document écrit pour quelqu'un : le modèle qui l'a écrit, son public, sa
+    langue et son format, et où il en est - brouillon, en revue, validé par
+    une personne, publié.
+  actions:
+    Regenerate: Régénérer
+    Export: Exporter
+  badges:
+    state:
+      tooltip: Où en est le livrable
+    template:
+      tooltip: Ce qui l'a écrit

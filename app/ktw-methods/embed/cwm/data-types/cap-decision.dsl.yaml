@@ -1,0 +1,126 @@
+$schema: ktw-schema/v1
+name: cap-decision
+version: "1.0.0"
+root: CapDecision
+description: |
+  Field-group for the `decision` capability: a decision's STATE. The options
+  are short labels; what each option means, its pros, its cons, its cost and
+  what follows if it is chosen are a short prose section `### <label>` of the
+  body (under `## Options`, written by decisions/prepare), which the Decision
+  panel draws as a card. The long argument stays prose too (`## Question`,
+  `## Decision`); who decided and when is the last lifecycle transition.
+types:
+  CapDecision:
+    type: object
+    fields:
+      options:
+        type: string[]
+        label: Options
+        description: >-
+          The options considered, as short labels (a few words each, in the
+          author's language); what each means is its `### <label>` prose section.
+        optional: true
+      selected:
+        type: string[]
+        label: Selected
+        description: The option(s) chosen; empty while open.
+        optional: true
+      raised:
+        type: string
+        label: Raised
+        description: When the question was raised (a date).
+        optional: true
+      resolved:
+        type: string
+        label: Resolved
+        description: >-
+          When it was decided (a date). NON-EMPTY MEANS DECIDED: this is what
+          the grader reads; an open decision has none.
+        optional: true
+      raised_by:
+        type: string
+        label: Raised by
+        description: Who raised the question (a person, a run, a review).
+        optional: true
+      source:
+        type: string
+        label: Source
+        description: >-
+          Where the question came from -- a document, a review, a run. A short
+          reference, never the argument itself (that is the body).
+        optional: true
+      proposal:
+        type: DecisionProposal
+        label: Proposal
+        description: The option the preparation recommends and why; empty until it is prepared.
+        optional: true
+      challenge:
+        type: DecisionChallenge
+        label: Challenged proposal
+        description: >-
+          The points a reviewer raised against the proposal; empty while nobody
+          challenged it. The person judges whether they are answered.
+        optional: true
+      owner:
+        type: string
+        label: Whose
+        description: >-
+          Whose decision it is - person (product direction, cost, a customer's
+          commitment, an irreversible choice) or agent (technical, reversible,
+          inside an approved study). Empty reads person.
+        optional: true
+      owner_reason:
+        type: string
+        label: Why it is an agent's
+        description: Why an agent may take it - one line; set with owner agent.
+        optional: true
+      relayed:
+        type: DecisionRelayed
+        label: Relayed
+        description: >-
+          Set when an agent's session relayed the person's decision: which
+          session and how the person confirmed it.
+        optional: true
+  DecisionRelayed:
+    type: object
+    fields:
+      by:
+        type: string
+        label: Relayed by
+        description: The agent session that relayed the decision.
+      confirmed:
+        type: string
+        label: Confirmed
+        description: How the person confirmed it (prompt or totp or entra).
+      at:
+        type: string
+        label: At
+        description: When the person confirmed it.
+        optional: true
+  DecisionProposal:
+    type: object
+    fields:
+      option:
+        type: string
+        label: Option
+        description: The recommended option; one of the labels.
+      why:
+        type: string@markdown
+        label: Why
+        description: Why it is recommended, in a few lines.
+        optional: true
+  DecisionChallenge:
+    type: object
+    fields:
+      by:
+        type: string
+        label: By
+        description: Who challenged it (an agent or a person).
+      at:
+        type: string
+        label: At
+        description: When it was challenged (a date).
+      points:
+        type: string[]
+        label: Points
+        description: Each point against the proposal, one line each.

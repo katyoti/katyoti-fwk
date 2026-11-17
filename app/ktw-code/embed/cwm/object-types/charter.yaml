@@ -1,0 +1,18 @@
+name: charter
+label: Charter
+description: |
+    The per-module canonical reference. Mostly a projection target —
+    only the Concepts / Glossary / Public API contract sections are
+    authored prose stored on the item; the UC table, DoD-per-UC bodies,
+    Open Decisions, audit history, and manifest stats are rendered
+    from their own typed items at publish time.
+
+    `module charter publish <m>` regenerates `<workspace>/modules/<m>/charter.md`
+    by composing authored prose + projected sections. Hand-edits to
+    projected sections in the published markdown are flagged by lint
+    as drift.
+context:
+    propagation: local
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 65536

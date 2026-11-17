@@ -1,0 +1,12 @@
+name: gate-dots
+kind: renderer
+basePrimitive: array
+description: Gates [{name, passed?, why?}] as dots - passed green, failed red, unknown grey - each with « name: why » on hover; with labels each gate reads « ● Label (reason) ».
+
+configSchema:
+  fields:
+    labels:
+      type: boolean
+      optional: true
+      default: false
+      description: Each gate with its readable label beside its dot (increments → Increments done, e2e → End to end, …), its reason in brackets while it does not pass.

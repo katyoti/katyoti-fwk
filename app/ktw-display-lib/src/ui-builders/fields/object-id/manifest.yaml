@@ -1,0 +1,7 @@
+name: object-id
+kind: renderer
+basePrimitive: string
+description: An object's id as a mono chip; a click opens the object through the host.
+
+configSchema:
+  fields: {}

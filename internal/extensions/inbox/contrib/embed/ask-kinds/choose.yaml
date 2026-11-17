@@ -1,0 +1,5 @@
+name: choose
+label: Choice
+description: Pick one of the options offered.
+answerable_by: any
+order: 6

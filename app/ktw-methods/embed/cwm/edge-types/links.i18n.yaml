@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Quelque chose auquel cet objet se réfère et qui ne vit PAS dans le dépôt : un document SharePoint, une page Confluence, un tableau de bord, un ticket. C'est la seconde moitié de la règle des pièces jointes décidée le 2026-09-25 : si on ne le met pas dans git, alors on y attache un lien. Il existe pour que « il y a une chose, et elle est ailleurs » soit DÉCLARÉ plutôt qu'enfoui dans la prose : un lien peut être listé, compté et un jour vérifié, ce qu'une URL écrite dans un paragraphe ne permet pas. Ce n'est pas un `attaches` plus faible : choisir entre les deux, c'est choisir si les octets font partie du module, et c'est une vraie décision à chaque fois."
+  inverse_label: "Référencé depuis"
+  label: "Renvoie vers"

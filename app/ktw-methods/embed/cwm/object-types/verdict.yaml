@@ -1,0 +1,24 @@
+name: verdict
+label: Verdict
+description: >-
+  The recorded result of running one criterion's probe. Written by a verify
+  run, never by hand.
+
+  FILED WITH ITS CRITERION, SHOWN ONLY WHEN ASKED (decided 2026-09-25): a
+  verdict lives in the module its criterion belongs to, in its own `verdicts/`
+  folder, and its parent IS the criterion. So it travels with the thing it is
+  about and is read where that thing is read.
+
+  Its type is not drawn (no `tree:`), so it never shows in the tree: several hundred
+  verdicts would bury the objects a person came to look at. `load: on-demand`
+  says the same to the index — a verdict is read when its criterion's pane is
+  opened, not with the workspace.
+
+  The id is DERIVED from the criterion, so a re-run overwrites one record
+  rather than appending one per run. That is what keeps a committed folder
+  bounded; the history of runs belongs to the journal.
+icon: gavel
+folder: verdicts
+load: on-demand
+capabilities: [verdict]
+accept_parents: [acceptance-criterion, use-case, feature, module]

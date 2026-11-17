@@ -1,0 +1,7 @@
+name: publication
+label: Publication
+description: >-
+  What it publishes (a management view and its scope, or a document-tree source
+  object), its target (a publication connector or a view's converter) and its
+  settings, whether a release re-publishes it, and the last outcome.
+schema: ktw-agents:/data-type/cap-publication

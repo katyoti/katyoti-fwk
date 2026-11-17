@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Commentaires
+  description: >-
+    Ce que chacun — une personne, un agent, un module — a dit de cet objet, et
+    les réponses : un fil à côté de l'objet, jamais dedans.

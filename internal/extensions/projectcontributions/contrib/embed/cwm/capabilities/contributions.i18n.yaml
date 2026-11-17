@@ -1,0 +1,11 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Contributions
+  description: >-
+    Où le projet garde ce qu'il apporte à son univers — skills, tâches, kinds
+    et packs : le jeton de fournisseur sous lequel ils sont publiés et leur
+    dossier. Les deux ont une valeur par défaut : l'id du projet en kebab, et
+    le module sys-contributions du dossier des modules.
+  actions:
+    Start contributing: Commencer à contribuer

@@ -1,0 +1,20 @@
+# A rule over every object under sign-off, measured by its own verify hook and told
+# to a chat — no field of its own. Selected by shape (the sign-off capability),
+# never by content.
+name: signoff-has-notes
+label: Sign-offs say why
+description: >-
+  An object's sign-off carries notes saying why it is approved or what
+  must change.
+applies:
+  capabilities: [signoff]
+hooks:
+  verify:
+    - uri: :signoff/verify-notes
+agent:
+  system:
+    - id: signoff-has-notes
+      title: Sign-offs say why
+      text: >-
+        Every sign-off on ${current.id} must carry notes: a verdict without notes
+        fails this rule's verification.

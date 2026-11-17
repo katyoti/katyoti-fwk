@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Quand le `status_cache` d'un cas d'usage est `fail-deferred`, il DOIT pointer vers l'OD qui justifie le report. La porte de promotion traite les UC fail-deferred comme des limitations documentées (pas des bloquants), mais seulement si ce lien est présent et que l'OD est en state=open. Le détecteur de lint `DeferredWithoutOD` signale les UC avec status_cache=fail-deferred mais sans lien `deferred-by`."
+  inverse_label: "Diffère"
+  label: "Différé par"

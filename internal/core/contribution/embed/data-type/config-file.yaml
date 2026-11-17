@@ -1,0 +1,24 @@
+# Canonical data-type for a config-file entry's body —
+# `system:/data-type/config-file`. The Body shape every
+# `<provider>:/config-file/<name>` Contribution carries. Mirrors
+# `ConfigFileBody` in internal/extensions/manifest/api/config_resources.go.
+# The entry ID is the config file name (e.g. `Settings.yaml`).
+$schema: ktw-schema/v1
+name: config-file
+version: "1.0.0"
+root: ConfigFile
+description: |
+  Declares one config file the binary reads at runtime. The descriptor
+  records whether the binary ships a first-run default template and a
+  short description; the actual file lives in the workspace config dir.
+types:
+  ConfigFile:
+    type: object
+    fields:
+      has_default:
+        type: boolean
+        description: whether the binary ships a first-run default template for this file
+      description:
+        type: string
+        description: one-line purpose of the config file
+        optional: true

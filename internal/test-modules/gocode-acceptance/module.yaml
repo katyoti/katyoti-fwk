@@ -1,0 +1,14 @@
+# Starter manifest for the gocode-acceptance throwaway module.
+# The architect persona will refine this; ktw-gocode tests can also
+# use it as the source of truth when initializing the module node.
+name: gocode-acceptance
+kind: library
+code_packages:
+  - internal/test-modules/gocode-acceptance/
+tier_current: 0
+tier_target: 1
+tier_state: bootstrapping
+description: >-
+  Purpose-built throwaway module exercising the ktw-gocode v1
+  acceptance flow (greenfield + retro-engineering). Lives only as
+  fixture — never imported by production code.

@@ -1,0 +1,22 @@
+$schema: ktw-schema/v1
+name: compose-task
+version: "1.0.0"
+root: ComposeTask
+description: |
+  Type-specific body schema for CWM nodes of type 'compose-task' — a TASK
+  artifact being authored. task_file points at the TASK.md the node's
+  linters run over; status tracks the authoring phase.
+types:
+  ComposeTask:
+    type: object
+    fields:
+      task_file:
+        type: string
+        label: Task file
+        description: Workspace-relative or absolute path to the TASK.md being authored. The compose-task linters run over this file.
+      status:
+        type: string@enum(drafting, verifying, verified)
+        label: Status
+        default: drafting
+        optional: true
+        description: Authoring phase — drafting (being written), verifying (linters running), verified (all checks pass).

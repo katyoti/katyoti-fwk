@@ -1,0 +1,20 @@
+name: checkable
+label: Checkable
+icon: checkbox
+description: >-
+  A runnable acceptance criterion -- its probe, how the probe runs, and its
+  severity. The VERDICT is derived, never authored here: declaring this
+  capability without populating a probe is exactly UNPROVEN/no-probe, which
+  is a legitimate state rather than an error.
+schema: ktw-methods:/data-type/cap-checkable
+# The probe is NOT here: it lives in each object's own field-group, which is
+# why a declared-but-unpopulated checkable is UNPROVEN/no-probe rather than an
+# error.
+#
+# VERIFYING a criterion is a hook: the verify point (read by the verification
+# service, verify()) walks an object and everything under it and, on each
+# object carrying this capability, asks the acceptance service to run the
+# probe and record the verdict.
+hooks:
+  verify:
+    - uri: ktw-methods:acceptance/verify

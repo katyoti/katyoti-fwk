@@ -1,0 +1,11 @@
+# Every project has a place for requests not yet routed to a module: a `hook`
+# at the `bootstrap` point makes sure it has the sys-planification system module
+# (RequestService.Ensure is idempotent).
+name: planification-bootstrap
+description: >-
+  When a project opens, the planification extension makes sure it has
+  sys-planification, where requests wait until intake routes them.
+type: bootstrap
+uri: ktw-agents:requests/ensure
+filter:
+  capabilities: [project]

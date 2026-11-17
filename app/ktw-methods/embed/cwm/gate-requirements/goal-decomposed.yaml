@@ -1,0 +1,8 @@
+# A goal is ready to plan once a want serves it: the features (or use cases)
+# that make it happen are known, and so what its plan depends on.
+name: goal-decomposed
+label: A want serves it (its features are known)
+gate: ready-to-plan
+applies: {types: [goal]}
+check: "any(links, {.kind == 'serves' && .direction == 'in'})"
+resolve: {title: "Find the features of {object}", kind: analyse, on: object}

@@ -1,0 +1,13 @@
+# A content template kept in the project: a team's own storyline for a
+# deliverable (th21). Its declaration is its `content-template` capability
+# (the same ContentTemplate a sidecar publishes). A task that writes a
+# deliverable offers it, before a sidecar's template of the same name.
+name: content-template
+label: Content template
+description: >-
+  What a deliverable must say whatever its format: ordered sections, each with
+  its intent, its sources and its guidance; a partial one is a section group
+  other templates include.
+folder: templates
+icon: list-details
+capabilities: [content-template]

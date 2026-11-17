@@ -1,0 +1,7 @@
+name: display-switch
+label: Display switch
+description: >-
+  A TAG, with no schema: the feature that puts an increment's new screens
+  behind its display switch. It is built first - the
+  increment's other screen features depend on it - and the switch is turned on
+  only at the increment's approved delivery.

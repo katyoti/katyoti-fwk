@@ -1,0 +1,22 @@
+# What the project contributes to its universe — its skills, tasks, kinds and
+# packs — on the system module that operates the project's contributions
+# (sys-contributions, `system-module: {operates: contributions}`). The source
+# answers what the universe SERVES under the project's provider token (the hub
+# reads the contributions folder as a member of that name), grouped by kind;
+# the GUI's `contributions` view shows a group per kind and opens an entry in
+# place, and re-reads when the catalog changes (contributions-changed).
+name: "Contributions"
+description: "What the project publishes to its universe under its provider token, by kind"
+icon:
+  tabler: "package"
+  emoji: "📦"
+order: 10
+filter:
+  capabilities: [system-module]
+  when: "(object.system_module?.operates ?? '') == 'contributions'"
+source: ":project-contributions/panel"
+content:
+  kind: "extension"
+  extension: "contributions"
+refresh:
+  scope: "self"

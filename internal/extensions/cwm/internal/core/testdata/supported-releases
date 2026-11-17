@@ -1,0 +1,4 @@
+# The git tags of the user releases whose data the code still migrates
+# (release_chain_test.go): one per line, append only - removing one
+# drops an end user's way from that release to the latest. The first user
+# release with a data version opens the list.

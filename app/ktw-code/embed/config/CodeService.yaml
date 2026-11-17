@@ -1,0 +1,4 @@
+# CodeService configuration
+default_extensions: [".go", ".ts", ".py", ".js", ".md"]
+max_file_size: 1048576  # 1MB
+exclude_dirs: ["vendor", "node_modules", ".git", "dist", "build", "testdata"]

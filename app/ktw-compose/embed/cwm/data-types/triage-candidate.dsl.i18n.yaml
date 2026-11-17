@@ -1,0 +1,30 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TriageCandidate:
+      fields:
+        asset:
+          description: "Le candidat : son nom ou sa source (un chemin, un titre)."
+          label: "Ressource"
+        asset_kind:
+          label: "Type de ressource"
+        compared_against:
+          description: "L'URI du catalogue existant avec lequel il a été comparé, ou \"none — no existing artifact covers this\". Obligatoire : un verdict sans cette valeur est invalide."
+          label: "Comparé à"
+        nuance_harvested:
+          description: "superseded uniquement : la seule nuance du candidat qui mérite d'être conservée."
+          label: "Nuance retenue"
+        probe:
+          description: "add : la valeur testable qui devient possible ; enhance : le cas manquant (l'écart à fusionner)."
+          label: "Test / écart"
+        route:
+          description: "Destination de ce verdict (par ex. \"composition deliverable\", \"extend ktw-docs:/skill/mermaid-syntax\", \"discard\")."
+          label: "Destination"
+        status:
+          description: "Décision de tri de l'utilisateur ; realized : le livrable à ajouter a été construit."
+          label: "Statut"
+        verdict:
+          description: "Décision d'adéquation de valeur pour ce candidat."
+          label: "Verdict"

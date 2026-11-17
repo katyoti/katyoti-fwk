@@ -1,0 +1,21 @@
+name: wants
+label: Wants
+inverse_label: Wanted by
+from: feature                     # node
+to: use-case                      # item — owned by its Module (lives-in = structural parent)
+cardinality: M:N
+from_capabilities: [want]
+to_capabilities: [want]
+target: object
+object_storage: edges
+description: |
+  A Feature WANTS one or more Use Cases — the testable deliverables
+  that realize it. M:N: many features can want the same durable UC (the
+  UC is owned by its Module via its structural parent, not by the
+  feature). This is the demand-side link of the want↔have bridge; combined
+  with the UC's structural Module ownership it is the whole join between a
+  feature and a module — no liaison, no module-version. A feature is
+  delivered when its wanted UCs pass their effective gate (method-core
+  §1/§3).
+
+inverse_name: wanted-by

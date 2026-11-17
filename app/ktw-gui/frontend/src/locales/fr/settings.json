@@ -1,0 +1,61 @@
+{
+  "appSettings": {
+    "title": "Paramètres de l’application",
+    "savedAt": "Enregistré dans : {{path}}",
+    "nav": {
+      "general": "Général",
+      "appearance": "Apparence",
+      "notifications": "Notifications",
+      "feedback": "Retours"
+    },
+    "general": {
+      "camera": "Caméra",
+      "blurBackground": "Flouter l’arrière-plan",
+      "blurBackgroundHint": "Masquer votre pièce derrière un flou façon Teams/Meet quand la caméra est allumée",
+      "chatBehavior": "Comportement du chat",
+      "autoScroll": "Défiler jusqu’au dernier message",
+      "showToolInputs": "Afficher les entrées des appels d’outils",
+      "compactMessages": "Affichage compact des messages",
+      "fullWidth": "Messages en pleine largeur",
+      "fullWidthHint": "Étirer les messages sur toute la largeur du panneau au lieu de la largeur naturelle du contenu"
+    },
+    "appearance": {
+      "theme": "Thème",
+      "dark": "Sombre",
+      "light": "Clair",
+      "system": "Système",
+      "accentColor": "Couleur d’accent",
+      "typography": "Typographie",
+      "fontSize": "Taille de police (px)",
+      "uiFont": "Police de l’interface",
+      "monoFont": "Police à chasse fixe",
+      "codeTheme": "Thème des blocs de code",
+      "codeThemeDark": "Mode sombre",
+      "codeThemeLight": "Mode clair"
+    },
+    "notifications": {
+      "unavailable": "Les paramètres de notification ne sont pas encore disponibles.",
+      "future": "Ce panneau sera activé dans une prochaine version."
+    }
+  },
+  "panel": {
+    "title": "Paramètres",
+    "tabs": {
+      "general": "Général",
+      "model": "Modèle"
+    },
+    "appearance": "Apparence",
+    "theme": "Thème",
+    "themeDark": "Sombre",
+    "themeLight": "Clair",
+    "themeSystem": "Système",
+    "behavior": "Comportement",
+    "autoScroll": "Défiler jusqu’au dernier",
+    "showToolInputs": "Afficher les entrées des outils",
+    "compactMode": "Mode compact",
+    "model": "Modèle",
+    "temperature": "Température",
+    "maxTokens": "Jetons max",
+    "streaming": "Streaming"
+  }
+}

@@ -1,0 +1,22 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    SolutionEvaluation:
+      fields:
+        scores:
+          label: 'Notes'
+          description: 'Une par critère de la grille.'
+        total:
+          label: 'Total'
+          description: "Le total pondéré sur l'échelle de la grille (calculé)."
+        eliminated_by:
+          label: 'Éliminée par'
+          description: "Les critères éliminatoires qu'elle ne passe pas (calculé)."
+        missing:
+          label: 'Non notés'
+          description: 'Les critères sans note - comptés 0 (calculé).'
+        computed_at:
+          label: 'Calculé le'
+          description: 'Quand le total a été calculé.'

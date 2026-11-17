@@ -1,0 +1,7 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Aperçu en fichier
+  description: >-
+    Le panneau d'aperçu : une présentation soignée de l'objet, gardée dans un
+    fichier de son module — une page markdown ou une définition de page.

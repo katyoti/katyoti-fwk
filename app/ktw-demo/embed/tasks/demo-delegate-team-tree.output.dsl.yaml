@@ -1,0 +1,7 @@
+name: demo-delegate-team-tree-output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Map with `team-a` and `team-b` keys, each the team lead's synthesized sentence"
+    fields: {}

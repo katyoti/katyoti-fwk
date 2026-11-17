@@ -1,0 +1,14 @@
+name: follows-up
+from: request
+to: request
+cardinality: N:1
+from_capabilities: [request]
+to_capabilities: [request]
+target: object
+object_storage: edges
+description: |
+  A request is a FOLLOW-UP of the request whose step filed it (the step's
+  result names work to do next, in its module or another). The request that
+  filed it shows it in its tree, beside its parts, and ends once its
+  follow-ups have.
+inverse_name: followed-up-by

@@ -1,0 +1,58 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: install ALSA headers
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev
+      - name: build
+        run: go build ./...
+      - name: vet
+        run: go vet ./...
+      - name: short tests
+        run: go test -short -p 2 -timeout 30m ./...
+      - name: fresh-clone smoke
+        run: bash scripts/fresh-clone-smoke.sh
+
+  # The public gate: the release gate's public subset, re-run on every push - the pinned
+  # gitleaks over the whole tree, then the host, GUID and binary rules with the public
+  # lists of .github/gate. A finding fails the workflow.
+  gate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: install the pinned gitleaks
+        run: go install -ldflags "-X github.com/zricethezav/gitleaks/v8/cmd.Version=v8.21.2" github.com/zricethezav/gitleaks/v8@v8.21.2
+      - name: secret scan
+        run: |
+          ignore=$(mktemp -d)
+          env -u GITLEAKS_CONFIG "$(go env GOPATH)/bin/gitleaks" dir --no-banner --redact --exit-code 1 --config .github/gate/gitleaks.toml --gitleaks-ignore-path "$ignore" --ignore-gitleaks-allow .
+      - name: host, GUID and binary rules
+        run: bash .github/gate/public-gate.sh

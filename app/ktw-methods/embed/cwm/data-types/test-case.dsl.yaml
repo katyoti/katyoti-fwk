@@ -1,0 +1,41 @@
+$schema: ktw-schema/v1
+name: test-case
+version: "1.0.0"
+root: TestCase
+description: |
+  Body schema for CWM items of kind 'test-case' — a single test
+  artifact verifying one or more use-case items, layer-tagged
+  (L1 unit / L2 token-free probe / L3 real-LLM).
+types:
+  TestCase:
+    type: object
+    fields:
+      # What the test-case verifies is a `verifies` edge, never a field.
+      layer:
+        type: string@enum(L1, L2, L3)
+        label: Layer
+        description: L1 = code unit test; L2 = token-free scripted probe; L3 = real-LLM scenario.
+      test_ref:
+        type: string
+        label: Test ref
+        description: Canonical reference (test name, .tasktest path, TASK.md path).
+      last_run_status:
+        type: string@enum(pass, fail, harness-error, not-run)
+        label: Last run status
+        default: not-run
+        description: Written by verify-type verbs; honor-system protected.
+        optional: true
+      last_run_at:
+        type: string@date-time
+        label: Last run at
+        optional: true
+      negative:
+        type: boolean
+        label: Negative
+        default: false
+        description: True for must-not-happen assertions.
+        optional: true
+      tags:
+        type: string[]
+        label: Tags
+        optional: true

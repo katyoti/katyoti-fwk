@@ -1,0 +1,69 @@
+$schema: ktw-schema/v1
+name: test-run
+version: "1.0.0"
+root: TestRun
+description: |
+  The test-run type's own fields: an immutable record of one `module verify`
+  invocation — when it ran, which layers, per-UC verdicts, totals, and whether
+  the tier-promotion DoD was met. Append-only: a re-run is a new test run.
+types:
+  TestRun:
+    type: object
+    fields:
+      module:
+        type: string(max:80)
+        label: Module
+        description: Module slug (e.g. tasks, echo).
+      ran_at:
+        type: string@date-time
+        label: Ran at
+        description: When the verify verb fired.
+      layer_filter:
+        type: string@enum(L1, L2, L3, L1+L2, all)
+        label: Layers
+        description: Which test layers were exercised.
+      uc_filter:
+        type: string(max:256)
+        label: UC filter
+        description: The UC-id pattern or list passed via --uc.
+        optional: true
+      verdicts:
+        type: object
+        label: Verdicts
+        description: Map of UC-id to its verdict ({layers, verdict, reason}).
+        catchall: any
+        optional: true
+      totals:
+        type: Totals
+        label: Totals
+      tier_N_dod_met:
+        type: boolean
+        label: Tier DoD met
+        description: Whether the module's tier_target was met by this run.
+        optional: true
+      tier_N_blockers:
+        type: string[]
+        label: Tier blockers
+        description: Failure summaries blocking tier promotion.
+        optional: true
+      archived_to:
+        type: string
+        label: Archived to
+        description: The filesystem path the projection wrote to.
+        optional: true
+  Totals:
+    type: object
+    fields:
+      pass:
+        type: number
+      fail:
+        type: number
+      fail_deferred:
+        type: number
+      no_test:
+        type: number
+      skipped:
+        type: number
+        optional: true
+      uc_total:
+        type: number

@@ -1,0 +1,13 @@
+name: document
+label: Document
+description: |
+    Free-form note with markdown body — the long-form escape hatch.
+    Use this when prose genuinely belongs (not in a rule's or an
+    decision's body). Local only; never inherited. Frontmatter is
+    metadata, body is markdown.
+fields: ktw-agents:/data-type/document
+context:
+    propagation: local
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 65536  # the long-form escape hatch; the file holds its prose (modules/ docs: p90 24.7 KB)

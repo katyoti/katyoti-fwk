@@ -1,0 +1,38 @@
+$schema: ktw-schema/v1
+name: document
+version: "1.0.0"
+root: Document
+description: |
+  Body schema for CWM items of kind 'document' — a sibling-Markdown
+  document with optional metadata. The Markdown body lives in the
+  .md file next to the YAML; this schema describes the metadata.
+types:
+  Document:
+    type: object
+    fields:
+      title:
+        type: string
+        label: Title
+      summary:
+        type: string
+        label: Summary
+        description: Short summary; renders in lists.
+        optional: true
+      tags:
+        type: string[]
+        label: Tags
+        optional: true
+      pinned:
+        type: boolean
+        label: Pinned
+        default: false
+        optional: true
+      derived_from:
+        type: string[]
+        label: Derived from
+        optional: true
+      content_type:
+        type: string@enum(markdown, plaintext)
+        label: Content type
+        default: markdown
+        optional: true

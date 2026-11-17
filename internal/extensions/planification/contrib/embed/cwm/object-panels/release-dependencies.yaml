@@ -1,0 +1,18 @@
+# A release's Dependencies: beside its Release panel,
+# its increments as frames holding their goals, features and requests, every
+# depends-on an arrow, the work outside the release that something waits on
+# in dotted frames saying where it is scheduled, and each increment ready to
+# run, waiting (on what) or running (who holds it) - so the person sees which
+# increments can take an agent now (release_dependencies.go: DependenciesPage).
+name: "Dependencies"
+description: "What waits for what: each increment and its work, the work outside it waits on, and which increments can take an agent now"
+icon:
+  tabler: "binary-tree-2"
+  emoji: "🕸️"
+order: 0
+filter:
+  types:
+    - "release"
+source: "ktw-agents:releases/dependencies-page"
+refresh:
+  scope: "module"

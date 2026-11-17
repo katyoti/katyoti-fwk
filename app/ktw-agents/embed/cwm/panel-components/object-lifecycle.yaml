@@ -1,0 +1,2 @@
+# A named view of the GUI's ui-components registry (panel-component kind).
+description: "Where the object stands and where it may go: its lifecycles, the gates on each move and its history; the view calls CWM itself."

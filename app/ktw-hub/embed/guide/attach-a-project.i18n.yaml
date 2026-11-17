@@ -1,0 +1,17 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label:
+# the player says the label the GUI shows in the person's language
+# (internal/test/guide/labels_test.go holds it).
+fr:
+  name: Rattacher un projet
+  description: Rattachez l'un de vos dossiers ou dépôts git à l'univers, comme projet.
+  hashtags:
+  - projet
+  - rattacher un projet
+  - dossier
+  - dépôt
+  steps:
+    open-menu: Faites un clic droit sur l'icône de l'univers dans le ruban pour ouvrir son menu.
+    edit: Choisissez {control:universe-menu.edit}.
+    attach: Ouvrez l'onglet {control:universe-edit.projects}, appuyez sur {control:projects.attach} et choisissez le dossier.
+    attached: Une fois le projet rattaché, appuyez sur {control:guide.check}.

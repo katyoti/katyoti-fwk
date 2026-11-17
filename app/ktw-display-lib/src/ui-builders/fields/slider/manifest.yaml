@@ -1,0 +1,19 @@
+name: slider
+kind: renderer
+basePrimitive: number
+description: Range-slider widget for numbers within an inclusive [min, max] range.
+
+configSchema:
+  fields:
+    min:
+      type: number
+      optional: true
+      default: 0
+    max:
+      type: number
+      optional: true
+      default: 100
+    step:
+      type: number
+      optional: true
+      default: 1

@@ -1,0 +1,35 @@
+{
+  "segment": { "done": "terminé", "running": "en cours", "waiting": "en attente", "todo": "à faire", "blocked": "bloqué" },
+  "gate": {
+    "increments": "Incréments terminés",
+    "dependencies": "Dépendances",
+    "no-open-p0-fix": "Aucun correctif P0 ouvert",
+    "e2e": "De bout en bout",
+    "alpha-sign-off": "Validation",
+    "change-log": "Journal des changements"
+  },
+  "status": {
+    "done": "terminé", "shipped": "livré", "released": "publiée", "passed": "réussi",
+    "running": "en cours", "delivering": "en livraison", "current": "actuel", "review": "en revue",
+    "waiting": "en attente", "on-hold": "en pause", "idle": "inactif", "held": "suspendu",
+    "todo": "à faire", "defined": "défini", "ready": "prêt", "pending": "en suspens", "split": "scindé",
+    "blocked": "bloqué", "failed": "échoué",
+    "planned": "prévue", "frozen": "gelée", "candidate": "candidate", "on-you": "pour vous",
+    "dropped": "abandonné"
+  },
+  "stage": {
+    "planned": "prévue", "frozen": "gelée", "candidate": "candidate", "canary": "canari",
+    "released": "publiée", "dropped": "abandonnée"
+  },
+  "step": {
+    "intake": "accueil", "analyse": "analyse", "implement": "réalisation", "auto-review": "revue auto",
+    "auto-test": "test auto", "module-update": "mise à jour du module", "verify": "vérification", "review": "revue",
+    "specify": "spécification", "size": "estimation", "survey": "inventaire", "propose": "proposition",
+    "prepare": "préparation", "decide": "décision", "approve": "approbation", "approve-addition": "approbation de l'ajout",
+    "approve-delivery": "approbation de la livraison", "accept": "acceptation", "answer": "réponse", "apply": "application",
+    "reconcile": "réconciliation", "challenge": "contestation", "validate": "validation", "follow": "suivi",
+    "find-features": "recherche des fonctionnalités", "changelog": "journal des changements", "update": "mise à jour"
+  },
+  "legend": { "waiting": "en attente d'une personne", "todo": "à faire" },
+  "open": "Ouvrir {{id}}"
+}

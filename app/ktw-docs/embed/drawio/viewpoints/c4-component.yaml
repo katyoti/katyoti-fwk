@@ -1,0 +1,18 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: c4-component
+displayName: C4 — components
+description: The components inside a container (a zone is the container boundary), with the containers and systems they use.
+notation: ktw-docs:/notation/c4
+templates: ktw-docs:/drawio-template/c4
+page: default
+elements:
+- Person
+- ExternalPerson
+- ExternalSoftwareSystem
+- Container
+- Database
+- Queue
+- Component
+layout:
+  algorithm: layered
+  direction: DOWN

@@ -1,0 +1,11 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Présentation
+  description: >-
+    Une présentation : des slides en markdown affichées en direct avec
+    reveal.js. Le corps contient les slides ; les réglages (format, thème,
+    transition, auteur, filigrane, marque) sont des champs.
+  actions:
+    Translate: Traduire
+    Short version: Version courte

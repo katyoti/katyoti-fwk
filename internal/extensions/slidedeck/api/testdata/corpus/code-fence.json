@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "title": "Fences"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 4,
+      "slots": [
+        {
+          "name": "default",
+          "line": 5,
+          "markdown": "## Code keeps its lines\n\n```yaml\n---\nkey: value\n---\n::right::\nNote: not a note\n\u003c!-- slide: layout=cover --\u003e\n```\n\n~~~~\n--\n~~~\nstill code\n~~~~"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 23,
+      "slots": [
+        {
+          "name": "default",
+          "line": 24,
+          "markdown": "## After the fence"
+        }
+      ]
+    }
+  ]
+}

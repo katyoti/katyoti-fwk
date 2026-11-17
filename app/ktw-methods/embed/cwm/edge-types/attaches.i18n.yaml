@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Un fichier attaché à cet objet, sous forme de chemin dans le projet. Décidé le 2026-09-25 : les pièces jointes d'un objet vivent DANS SON MODULE, car un module doit être une vue autonome (G1) : il voyage avec ses propres octets, et quiconque clone le dépôt les a. Le chemin est validé comme EXISTANT. Une pièce jointe qui ne désigne rien est une référence cassée, et la raison même de déclarer une relation vers un non-objet est de pouvoir la vérifier plutôt que d'y croire. Quand les octets n'ont PAS leur place dans git (trop gros, externes, gérés par un autre système), ce n'est pas le bon genre : utiliser `links` et pointer là où ils se trouvent. Deux formes, pas de troisième : un fichier dans le module, ou un lien."
+  inverse_label: "Attaché à"
+  label: "Attache"

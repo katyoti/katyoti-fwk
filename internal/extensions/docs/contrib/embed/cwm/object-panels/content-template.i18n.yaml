@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Trame
+  description: "Les parties de la trame dans l'ordre de lecture : ce que chacune doit établir, ses sources et ses consignes, avec les groupes de sections inclus dépliés"

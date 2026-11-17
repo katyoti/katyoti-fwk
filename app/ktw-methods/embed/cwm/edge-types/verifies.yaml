@@ -1,0 +1,25 @@
+name: verifies
+label: Verifies
+inverse_label: Verified by
+from: test-case                 # item
+to: use-case                    # item
+cardinality: N:1
+from_capabilities: []            # a test-case is EVIDENCE, not a criterion: `checkable` is the runnable want
+                                 # (its probe, its verify hook, UNPROVEN when probe-less) and a test-case carries
+                                 # none of it — its run is test_ref + last_run_status. Requiring it refused every edge.
+to_capabilities: [want]
+target: object
+object_storage: edges
+description: |
+  Coverage edge: this `test-case` exercises this `use-case`. Required
+  when authoring a test-case — a test that doesn't claim a UC is a
+  lint signal (`OrphanedTestCases`).
+
+  Drives:
+    - `module verify` aggregation: a UC's verdict is the worst of
+      its `verifies` test-cases' last_run_status (with fail-deferred
+      taking precedence via `deferred-by`).
+    - Charter Use Cases table projection: rendered status column.
+    - Tier-promote gate condition #2 (all UCs pass-or-deferred).
+
+inverse_name: verified-by

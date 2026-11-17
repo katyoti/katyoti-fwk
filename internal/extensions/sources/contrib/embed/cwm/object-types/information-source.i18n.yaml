@@ -1,0 +1,13 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Source d'information
+  label_plural: Sources d'information
+  description: >-
+    Un endroit où le module s'informe - une page Confluence, un tag Dynatrace,
+    une application LeanIX, un site web, un dossier : son connecteur, sa
+    localisation et sa sélection, et ce que sa dernière synchronisation a
+    apporté, ancré pour qu'un changement soit remarqué.
+  actions:
+    Read / update: Lire / Mettre à jour
+    Test the connection: Tester la connexion

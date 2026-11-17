@@ -1,0 +1,24 @@
+id: content-types/fields/url
+category: content-types
+title: "Content: url"
+description: "string with content { type: url }. Walker v1 renders as a plain text input. Real renderer (per-content-type todo) will validate + show favicon in view mode."
+schema:
+  name: url-content-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      fields:
+        homepage:
+          type: string
+          label: Homepage URL
+          content:
+            type: url
+value:
+  homepage: https://anthropic.com
+mode: edit
+tags:
+  - content-types
+  - string
+  - url

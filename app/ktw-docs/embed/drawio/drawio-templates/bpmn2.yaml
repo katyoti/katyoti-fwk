@@ -1,0 +1,7 @@
+# A template library: bindings and constants for the templates in the .drawio file of
+# the same name. Edit the shapes in draw.io; a template is a cell marked ktw-template.
+id: bpmn2
+displayName: BPMN 2
+description: 'draw.io''s BPMN shapes: tasks with their marker, events with their outline and symbol, gateways,
+  data; pools and lanes as swimlanes with the name on the left (the zone and zone:nested templates).'
+notation: ktw-docs:/notation/bpmn2

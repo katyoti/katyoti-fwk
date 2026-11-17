@@ -1,0 +1,10 @@
+# The inbox itself: the one place what needs a person waits. Its live instance
+# is `sys-inbox.inbox`, in the system module `sys-inbox`; the requests filed
+# into it are its children.
+name: inbox
+label: Inbox
+folder: objects
+description: >-
+  Where what needs a person waits — an agent's question, an approval request, an
+  item to triage — until it is answered or dismissed.
+icon: inbox

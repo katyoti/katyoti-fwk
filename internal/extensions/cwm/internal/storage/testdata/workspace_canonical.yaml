@@ -1,0 +1,25 @@
+version: 1
+
+embedding:
+  provider: ollama
+  model: nomic-embed-text
+  dimension: 768
+
+storage:
+  yaml_indent: 2
+  alphabetical_keys: true
+
+index:
+  path: .katyoti/.index
+  rebuild_on_startup: false
+
+budgets:
+  records_max_size_bytes: 2048
+  compact_max_size_bytes: 4096
+  document_max_size_bytes: 16384
+
+types:
+  pinned: 1.0.0
+
+git:
+  auto_stage: false

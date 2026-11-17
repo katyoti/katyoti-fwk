@@ -1,0 +1,94 @@
+$schema: ktw-schema/v1
+name: source-document
+version: "1.3.0"
+root: SourceDocument
+description: |
+  The fields of a 'source-document' object — an anchored
+  reference into an external document (Confluence, Drive, file URL),
+  carrying a content hash + snapshot so drift can be detected.
+types:
+  SourceDocument:
+    type: object
+    fields:
+      source_uri:
+        type: string
+        label: Source URI
+        description: |
+          Stable URI to the source. Examples:
+          - confluence://Space/Page#Heading
+          - gdrive://docID
+          - file:///docs/spec.md
+          - https://example.com/spec
+      section_path:
+        type: string[]
+        label: Section path
+        description: |
+          Heading breadcrumb (e.g. ["Authentication", "Rate Limits"]).
+          More stable than numeric anchors against doc rewrites. Absent for
+          a whole document (a page, a fact sheet a source's sync brought).
+        optional: true
+      section_anchor_legacy:
+        type: string
+        label: Legacy section anchor
+        description: Numeric anchor (e.g. "section-3.2") — accepted but flagged fragile.
+        optional: true
+      content_hash:
+        type: string
+        label: Content hash
+        description: 'Expected pattern: sha256:<64-hex>.'
+      content_snapshot:
+        type: string
+        label: Content snapshot
+        description: The anchored section's text as read, at most 3,500 characters and cut so the document fits its type's max_size_bytes.
+      ingested_at:
+        type: string@date-time
+        label: Ingested at
+      ingested_by:
+        type: string
+        label: Ingested by
+        description: Persona / process name.
+        optional: true
+      anchor_status:
+        type: string@enum(valid, stale, missing)
+        label: Anchor status
+        default: valid
+        optional: true
+      last_reanchor_at:
+        type: string@date-time
+        label: Last reanchor at
+        optional: true
+      generated:
+        type: boolean
+        label: Generated
+        description: The document carries a generator's mark (a connector recognised it) - a carrier's sources show which inputs were generated.
+        optional: true
+      generator:
+        type: string
+        label: Generator
+        description: What produced the document - from its mark.
+        optional: true
+      item_key:
+        type: string
+        label: Item key
+        description: The key of the item picked a sync brought it for (a page's id or a fact sheet's) - a source's detail matches its items to their documents by it. Absent when its connector does not say.
+        optional: true
+      item_kind:
+        type: string
+        label: Item kind
+        description: What the item a sync brought is in its connector's words - its data is typed by the data-type the connector declares for that kind.
+        optional: true
+      data_file:
+        type: string
+        label: Data file
+        description: The item's data (JSON) - relative to the project.
+        optional: true
+      data_type:
+        type: string
+        label: Data type
+        description: The data-type the item's data is shaped by.
+        optional: true
+      text_file:
+        type: string
+        label: Text file
+        description: The item's text (rich markdown, its images beside it) - relative to the project.
+        optional: true

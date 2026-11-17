@@ -1,0 +1,29 @@
+[User]
+*id
+name
+email
++role_id
+
+[Role]
+*id
+name
+permissions
+
+[Document]
+*id
+title
+content
++author_id
+created_at
+
+[DiagramCache]
+*id
+hash
+type
+format
+data
++document_id
+
+User *--1 Role
+User 1--* Document
+Document 1--* DiagramCache

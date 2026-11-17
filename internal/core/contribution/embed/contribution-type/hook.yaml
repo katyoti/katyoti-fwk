@@ -1,0 +1,42 @@
+# Registers `hook` as a SYSTEM contribution kind: one hook AT a point, from a
+# pack — the action to run, when, on which objects (a filter, as an
+# object-panel's), with which input. The farthest layer of an object's hook
+# table: hook contributions, then the capabilities in force, then the type,
+# then the object itself (a closer entry with the same uri replaces it, a closer
+# when "false" removes it).
+#
+# Published from a CWM pack: embed/cwm/hooks/<name>.yaml.
+name: hook
+description: |
+  One hook at a point, from a pack: the action to run, when, on which objects,
+  with which input.
+schema: system:/data-type/hook
+validate: error
+
+# A hook RUNS: it names the action an event fires on an object, so an
+# untrusted origin may not override one.
+execution: executable
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+meta:
+  budget: 384  # measured max 228 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `hooks/` folder, its tree the data
+# layer, the file as written the source. Addressed by its name.
+source:
+  folder: hooks
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}

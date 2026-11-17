@@ -1,0 +1,25 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapPublication:
+      fields:
+        connector:
+          description: 'Le connecteur de publication par lequel elle publie (confluence ...) - ses réglages sont ceux de ce connecteur'
+        converter:
+          description: 'Le convertisseur d''une vue de pilotage : l''URI d''action qui met ses documents en page à la cible'
+        lang:
+          description: 'La langue des libellés : en ou fr'
+        last:
+          description: 'Le résultat de la dernière publication'
+        object:
+          description: 'La source arborescente qu''elle publie (une étude de toute version), par son identifiant ; vide pour une vue de pilotage'
+        on_release:
+          description: 'Publiée de nouveau à chaque livraison d''une version'
+        scope:
+          description: 'La portée de la vue : le nom du flux (stream), le module (changelog) ou la version (release-board, release-plan)'
+        settings:
+          description: 'Les réglages de la cible (un connecteur Confluence : son espace et sa page parente)'
+        view:
+          description: 'La vue de pilotage qu''elle publie : stream, changelog, release-board ou release-plan ; vide pour un objet'

@@ -1,0 +1,28 @@
+name: Sign off an item
+description: Create a sign-off item, collect its approvals and approve it once its sign-off is complete.
+hashtags:
+- signoff
+- approve
+- contest
+- demo
+level: beginner
+requires:
+- find-your-way
+related:
+- ktw-demo:/skill/signoff-an-object
+steps:
+- id: pick-object
+  say: Pick a *sign-off item* in the tree, or create one with {control:object.new}.
+  target: {guide: tree.node}
+  await: manual
+- id: signoff-tab
+  say: Open its {control:objtab.tab:signoff-board} tab. It shows the approvals the item still needs, its reviewers and what contests it.
+  await: manual
+- id: approve
+  say: Press {control:page.action|ktw-demo:signoff/approve} on a reviewer's row. The item needs two approvals.
+  await: manual
+- id: move
+  say: In its {control:objtab.tab:lifecycle} tab, press {control:lifecycle.move|approved}. The move is refused, with the gate's checklist, until the sign-off is complete.
+  await: manual
+- id: done
+  say: The item is approved — its sign-off is complete.

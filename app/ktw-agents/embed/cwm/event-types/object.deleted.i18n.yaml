@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Un objet a été supprimé. Une entrée on_delete asynchrone s'y abonne.
+  label: Objet supprimé

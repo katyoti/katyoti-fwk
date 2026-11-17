@@ -1,0 +1,12 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Demande d'approbation
+  description: En attente jusqu'à ce qu'une personne y réponde ou l'écarte ; l'un ou l'autre la clôt.
+  states:
+    pending: En attente
+    answered: Répondue
+    dismissed: Écartée
+  transitions:
+    answer: Répondre
+    dismiss: Écarter

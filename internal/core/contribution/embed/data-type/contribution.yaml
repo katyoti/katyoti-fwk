@@ -1,0 +1,131 @@
+# Canonical data-type for the Contribution envelope itself —
+# `system:/data-type/contribution`. A reader anywhere in the topology, in any
+# language, resolves this URI to learn the shape every contribution travels in.
+#
+# Held field for field against the Go envelope (contribapi.Contribution) by
+# internal/core/contribution/api/envelope_drift_test.go — so this file cannot
+# describe an envelope the code no longer ships. It did, for a while: it kept
+# the retired 9-field shape (schema, schemaV, body, edges) after those fields
+# left, and G3 ("the meta-model is self-describing") was false for any polyglot
+# consumer that trusted it.
+$schema: ktw-schema/v1
+name: contribution
+version: "2.0.0"
+root: Contribution
+description: |
+  The envelope every readable resource flows through: identity (provider,
+  type, id, uri), picker-level metadata, named content-addressed layers, an
+  optional provenance assertion, and the validation verdict the aggregator
+  records at ingest. A contribution does not name its schema — its kind does.
+types:
+  Contribution:
+    type: object
+    fields:
+      provider:
+        type: string
+        description: "The binary or namespace that owns the entry; `system` for the bootstrap meta-model, `local` for binary-private entries."
+      type:
+        type: string
+        description: The kind discriminator — governed by the `contribution-type` declaration of that name.
+      id:
+        type: string
+        description: Addressable identifier within (provider, type); slashes permitted for tree-shaped kinds.
+      uri:
+        type: string
+        description: Canonical `<provider>:/<type>/<id>`; derived when omitted.
+        optional: true
+      metadata:
+        type: ContributionMeta
+        description: Picker-level metadata — always resident, budgeted by the kind.
+        optional: true
+      layers:
+        type: object
+        catchall: LayerRef
+        description: Named, content-addressed content. Conventional names are `data` (the structured body) and `source` (the raw readable bytes).
+        optional: true
+      provenance:
+        type: Provenance
+        description: Optional assertion of origin over the contribution's identity. Absent is normal.
+        optional: true
+      valid:
+        type: boolean
+        description: Validation verdict recorded at ingest. Absent means NOT validated — which is not the same as valid.
+        optional: true
+      validationErrors:
+        type: string[]
+        description: Human-readable diagnostics recorded under any non-off severity.
+        optional: true
+
+  ContributionMeta:
+    type: object
+    description: The typed picker-level view; small so listing a universe stays cheap.
+    fields:
+      name:
+        type: string
+        description: Human-readable label; never empty on the wire.
+      description:
+        type: string
+        optional: true
+      icon:
+        type: ContributionIcon
+        optional: true
+      hashtags:
+        type: string[]
+        optional: true
+      category:
+        type: string
+        optional: true
+      mediaType:
+        type: string
+        description: MIME type of the READABLE content, so a listing can pick a renderer without fetching it.
+        optional: true
+      advertised:
+        type: boolean
+        description: Picker visibility; absent means true.
+        optional: true
+      annotations:
+        type: object
+        catchall: string
+        optional: true
+
+  ContributionIcon:
+    type: object
+    fields:
+      tabler:
+        type: string
+        optional: true
+      emoji:
+        type: string
+        optional: true
+
+  LayerRef:
+    type: object
+    description: One layer without its content — the hash is its identity, the size decides its transport band, the media type says how to render it.
+    fields:
+      hash:
+        type: string
+        description: "`sha256:` + hex digest of the content."
+      size:
+        type: number
+        description: Bytes. Decides the band — inline ≤ 4 KiB, control ≤ 256 KiB, bulk above.
+      mediaType:
+        type: string
+        optional: true
+      inline:
+        type: string@byte
+        description: The content itself, present only in the inline band.
+        optional: true
+
+  Provenance:
+    type: object
+    description: An optional, verifiable assertion of who published the entry, signed over its identity digest.
+    fields:
+      signature:
+        type: string
+        optional: true
+      keyId:
+        type: string
+        optional: true
+      publisher:
+        type: string
+        optional: true

@@ -1,0 +1,5 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Module
+  description: "Un sujet fonctionnel : un dossier, ses documents et ses objets."

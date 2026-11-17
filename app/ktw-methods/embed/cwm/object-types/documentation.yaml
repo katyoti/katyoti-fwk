@@ -1,0 +1,20 @@
+name: documentation
+label: Documentation
+label_plural: Documentation
+folder: objects
+description: >-
+  A planned module with no code: its documents, its decisions, its goals and
+  its features.
+icon: book-2
+color: teal
+# The module level, planned work, a state set by hand.
+capabilities: [module, planned, lifecycle]
+tree: root
+workflow: manual
+allowed_children: [document, decision, goal, feature]
+child_order: [document, decision, goal, feature]
+
+body:
+  label: Overview
+  description: What the documentation covers and what it holds.
+  format: markdown

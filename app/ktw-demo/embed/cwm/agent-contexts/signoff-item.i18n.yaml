@@ -1,0 +1,7 @@
+# Translations of the agent-context beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  agent:
+    system:
+      signoff-item-workflow: 'Ce chat porte sur un élément de visa'

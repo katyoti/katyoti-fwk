@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Un objet a été remplacé par plusieurs (un événement par scission). Déclaré ; pas encore abonnable.
+  label: Objet scindé

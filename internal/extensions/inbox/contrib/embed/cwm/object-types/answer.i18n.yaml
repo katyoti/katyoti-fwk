@@ -1,0 +1,7 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Réponse
+  description: >-
+    La réponse à une question posée à une personne : ce qui était demandé, ce
+    qui a été répondu, par qui et avec quelle preuve.

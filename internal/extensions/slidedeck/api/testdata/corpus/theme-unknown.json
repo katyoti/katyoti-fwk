@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "theme": "corporate",
+    "title": "Unknown theme"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 5,
+      "settings": {
+        "variant": "anything"
+      },
+      "settingsLine": 6,
+      "slots": [
+        {
+          "name": "default",
+          "line": 7,
+          "markdown": "## Not checked: the theme is unknown\n\n![icon](icon:whatever)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    AcceptanceCriterion:
+      fields:
+        kind:
+          description: "anti = un critère de ce qui ne doit PAS arriver."
+          label: "Type"
+        layer:
+          description: "Couche de test choisie à la rédaction."
+          label: "Couche"
+        test_ref:
+          description: "Le test qui prouve l'affirmation : un nom de test ou une référence de contrôle."
+          label: "Réf. du test"

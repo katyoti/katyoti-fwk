@@ -1,0 +1,15 @@
+# A goal its work is aimed at (decomposed, active) that no want serves any more
+# lost its features: they are found again (filed on the goal). A goal just
+# accepted has none yet — its decomposition is the person's next step, not a
+# failure.
+name: goal-served
+description: A decomposed or active goal is served by a feature - else its features are found again.
+on: rule
+types: [goal]
+states: [decomposed, active]
+check: "any(links, {.kind == 'serves' && .direction == 'in'})"
+on_object: true
+file:
+  kind: analyse
+  title: Find the features that serve the goal again
+  details: No feature serves this goal any more. Find the features that make it happen.

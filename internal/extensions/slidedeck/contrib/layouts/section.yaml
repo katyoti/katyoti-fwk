@@ -1,0 +1,14 @@
+name: section
+description: A divider that opens a part of the deck — one heading, at most one line under it, and optionally the part's number.
+slots:
+  - name: default
+    description: A level-2 heading naming the part, optionally one line of context.
+    required: true
+  - name: number
+    description: The part's number, shown large above its heading (e.g. 02).
+example: |
+  <!-- slide: layout=section -->
+  ## Where we are
+
+  ::number::
+  01

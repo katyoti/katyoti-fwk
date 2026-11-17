@@ -1,0 +1,8 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Quand un objet ou un module est contrôlé par lint (Lint du service de vérification,
+    lint()). Répond par des constats (règle, message, gravité), jamais par un verdict.
+  label: Lint

@@ -1,0 +1,123 @@
+schema :/data-type/answer 32edbd981ef549f7
+schema :/data-type/approval-request b4af5a38e5f2f2d0
+schema :/data-type/cap-contributes a822078975edb987
+schema :/data-type/cap-contributions ca21b093e229fbcb
+schema :/data-type/cap-signoff 354baa63faf4e99f
+schema :/data-type/evaluation-grid e8652ff4d0e80d6c
+schema :/data-type/feedback 07cbc9722a6007c5
+schema :/data-type/finding 2b13c8a29f6c624c
+schema :/data-type/holding-list de4fdea6ecb8e907
+schema :/data-type/information-source 7c704f190296d6c4
+schema :/data-type/portfolio 445f09124fc83cd4
+schema :/data-type/review ef8a63b3ed56a830
+schema :/data-type/signoff-item daa9c67efc69b99c
+schema :/data-type/solution-evaluation 14d16c00f63d45a7
+schema :/data-type/source-document 69bf6617bf53bffc
+schema :/data-type/stream 624eb3812b712769
+schema :/data-type/type-context d7de3fa8b9ca35eb
+schema :/data-type/type-pane 9333ead1e66eac22
+schema :/data-type/type-signoff 0c8cbc3ac70ae79a
+schema :/data-type/type-verification 2e92211888821e5f
+schema ktw-agents:/data-type/cap-change 86acc7fdb9db8332
+schema ktw-agents:/data-type/cap-gate-wait 7b6e66886f935a71
+schema ktw-agents:/data-type/cap-knowledge f033b0cc887c2f67
+schema ktw-agents:/data-type/cap-lifecycle 1a8884f387b725a9
+schema ktw-agents:/data-type/cap-module-uses 14095584f943dd3a
+schema ktw-agents:/data-type/cap-plan 802334b6a6d1b93e
+schema ktw-agents:/data-type/cap-project 5f60848a0b7207da
+schema ktw-agents:/data-type/cap-publication 93f1114eb6226e32
+schema ktw-agents:/data-type/cap-release 146b4fd767db2a0d
+schema ktw-agents:/data-type/cap-request 5e7e04458dc521c9
+schema ktw-agents:/data-type/cap-reviewable f59d10573d492cd2
+schema ktw-agents:/data-type/cap-step fe76d666b6e4e31a
+schema ktw-agents:/data-type/cap-system-module d86e8c295cf83ab9
+schema ktw-agents:/data-type/cap-timed 783d47dc1b8f793f
+schema ktw-agents:/data-type/document b15d257de35a26a6
+schema ktw-agents:/data-type/gate bcf596af6e75d258
+schema ktw-agents:/data-type/rule 924ba2d358937c22
+schema ktw-code:/data-type/cap-code 646480052cf3e125
+schema ktw-code:/data-type/test-run 4a7b734ea58ea197
+schema ktw-compose:/data-type/compose-skill 011b55fa9acc4094
+schema ktw-compose:/data-type/compose-task 7273e290389efa7f
+schema ktw-compose:/data-type/marketplace-project 6d238433b447375f
+schema ktw-compose:/data-type/triage-candidate 8a4b99245b949494
+schema ktw-docs:/data-type/cap-deck 910085a9543f7f72
+schema ktw-docs:/data-type/cap-deliverable 8e19c8c5f9d4fb61
+schema ktw-docs:/data-type/content-template ad858393d31bd0c2
+schema ktw-docs:/data-type/deck-theme 8c33049393dc7348
+schema ktw-methods:/data-type/acceptance-criterion ffa5a326025be069
+schema ktw-methods:/data-type/cap-checkable 7a381c5793ee9c07
+schema ktw-methods:/data-type/cap-decision f4943003d9e4fcde
+schema ktw-methods:/data-type/cap-feature 0b7fc1f28cf8d520
+schema ktw-methods:/data-type/cap-module dc3e3bc57727c362
+schema ktw-methods:/data-type/cap-verdict eb847d8a6267aa1c
+schema ktw-methods:/data-type/cap-want 629b7ab35072c245
+schema ktw-methods:/data-type/test-case 419482369749ecc6
+schema ktw-methods:/data-type/use-case e49e3deb474716a4
+type acceptance-criterion fields=ktw-methods:/data-type/acceptance-criterion caps=checkable,want
+type answer fields=:/data-type/answer caps=
+type approval-request fields=:/data-type/approval-request caps=lifecycle
+type change fields= caps=change
+type charter fields= caps=
+type code-symbol fields= caps=
+type compose-artifact fields= caps=
+type compose-skill fields=ktw-compose:/data-type/compose-skill caps=
+type compose-task fields=ktw-compose:/data-type/compose-task caps=
+type composition fields= caps=
+type content-template fields= caps=content-template
+type decision fields= caps=decision,lifecycle
+type deck-theme fields= caps=deck-theme
+type document fields=ktw-agents:/data-type/document caps=
+type documentation fields= caps=lifecycle,module,planned
+type evaluation-grid fields=:/data-type/evaluation-grid caps=lifecycle
+type feature fields= caps=feature,lifecycle,want
+type feedback fields=:/data-type/feedback caps=lifecycle
+type finding fields=:/data-type/finding caps=lifecycle
+type gate fields=ktw-agents:/data-type/gate caps=
+type goal fields= caps=lifecycle,want
+type group fields= caps=
+type holding-list fields=:/data-type/holding-list caps=
+type inbox fields= caps=
+type increment fields= caps=lifecycle,release
+type information-source fields=:/data-type/information-source caps=lifecycle
+type journal-day fields= caps=
+type marketplace-project fields=ktw-compose:/data-type/marketplace-project caps=
+type portfolio fields=:/data-type/portfolio caps=
+type publication fields= caps=publication
+type release fields= caps=lifecycle,release
+type request fields= caps=network-node,request
+type review fields=:/data-type/review caps=file-overview,lifecycle
+type rule fields=ktw-agents:/data-type/rule caps=
+type signoff-item fields=:/data-type/signoff-item caps=lifecycle,signoff
+type slide-deck fields= caps=deck
+type slide-group fields= caps=deck
+type software-module fields= caps=code,lifecycle,module,planned
+type software-project fields= caps=lifecycle,project
+type solution-evaluation fields=:/data-type/solution-evaluation caps=lifecycle
+type source-document fields=:/data-type/source-document caps=
+type step fields= caps=lifecycle,network-node,step
+type stream fields=:/data-type/stream caps=
+type system-module fields= caps=module,system-module
+type test-case fields=ktw-methods:/data-type/test-case caps=
+type test-run fields=ktw-code:/data-type/test-run caps=
+type triage fields= caps=
+type triage-candidate fields=ktw-compose:/data-type/triage-candidate caps=
+type use-case fields=ktw-methods:/data-type/use-case caps=checkable,lifecycle,want
+type verdict fields= caps=verdict
+workflow approval-request answered,dismissed,pending
+workflow decision applies,dropped,open,retired,superseded
+workflow deliverable draft,in-review,published,validated
+workflow evaluation-grid draft,frozen
+workflow feature accepted,active,done,dropped,idea,in-review,proposed,ready,realized,specified
+workflow feedback accepted,declined,done,duplicate,in-work,needs-info,received,triaged
+workflow finding accepted,addressed,closed,open
+workflow goal accepted,active,assumed,decomposed,dropped,idea,in-review,proposed
+workflow increment done,dropped,open
+workflow information-source declared,failed,stale,synced
+workflow manual accepted,active,done,dropped,idea,proposed
+workflow plan blocked,done,dropped,idle,ready,split
+workflow release dropped,frozen,planned,released
+workflow review closed,draft,in-review
+workflow signoff approved,changes-requested,closed,draft,in-review
+workflow solution-evaluation draft,reviewed
+workflow step dropped,open,reached

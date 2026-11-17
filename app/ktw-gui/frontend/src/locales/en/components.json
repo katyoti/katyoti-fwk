@@ -1,0 +1,183 @@
+{
+  "documentView": {
+    "toc": "Table of contents",
+    "noDocument": "No document.",
+    "noEngine": "No display engine for {{mediaType}}.",
+    "remoteUpdateHint": "A new version arrived while editing. Saving will overwrite it. Cancel + reopen to see the new version.",
+    "remoteUpdate": "remote update",
+    "cancelEdit": "Cancel edit (discard changes)",
+    "edit": "Edit",
+    "streaming": "streaming...",
+    "complete": "✓ Complete",
+    "sizeKb": "{{size}} KB",
+    "exportFailed": "export failed",
+    "exporting": "Exporting {{format}}…",
+    "export": "Export",
+    "exportDocument": "Export document",
+    "exportAs": "Export as",
+    "closeExport": "Close the export",
+    "saved": "Saved!",
+    "saveToFile": "Save to file",
+    "saveDocument": "Save document"
+  },
+  "saveToWorkspace": {
+    "hint": "Keep it in the workspace: its panels, its actions, its history",
+    "title": "Save to workspace",
+    "name": "Name",
+    "where": "Where",
+    "whereHint": "Under an item (write to find it), or in the drafts",
+    "drafts": "Brouillons (drafts) — move it later",
+    "typeTwoLetters": "Write two letters to find an item",
+    "noObjectFound": "No item found",
+    "deckNote": "A slide deck: its settings become its Deck fields, its slides its body.",
+    "markdownNote": "A document: the markdown becomes its body."
+  },
+  "download": {
+    "document": "Document",
+    "unknownType": "unknown format",
+    "noViewer": "No viewer for this format — save it to open it with another application."
+  },
+  "uiComponents": {
+    "noComponent": "This ui-component document has no component to show.",
+    "unknownExtension": "Unknown UI extension “{{name}}”."
+  },
+  "mermaid": {
+    "pending": "Diagram — drawn once it is complete…",
+    "error": "Mermaid: {{error}}"
+  },
+  "errorBoundary": {
+    "title": "⚠ Render error",
+    "dismiss": "Dismiss"
+  },
+  "welcome": {
+    "close": "close"
+  },
+  "dynamicForm": {
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "unknownElement": "Unknown UI element: {{type}}"
+  },
+  "fieldRenderer": {
+    "edit": "Edit",
+    "preview": "Preview",
+    "nothingToPreview": "Nothing to preview",
+    "time": "Time"
+  },
+  "deckSettings": {
+    "default": "(default)",
+    "noVariant": "The theme {{theme}} has no variant of {{layout}}",
+    "backgroundHint": "A colour of the {{theme}} palette, or an image path",
+    "deck": "Deck",
+    "slide": "Slide",
+    "slideN": "Slide {{n}}",
+    "missingSlots": "The layout {{layout}} expects {{slots}}: the slide has none. Write it, or choose another layout."
+  },
+  "deckTheme": {
+    "unreadable": "This theme cannot be read",
+    "noSample": "This theme has no sample deck to preview.",
+    "title": "Theme « {{name}} »",
+    "usage": "A deck uses it by writing {{code}}. Variants, chrome and icons stay as imported.",
+    "description": "Description",
+    "colours": "Colours",
+    "fonts": "Fonts and sizes",
+    "notSaved": "Not saved",
+    "undo": "Undo",
+    "save": "Save",
+    "tokens": {
+      "bg": "Background",
+      "fg": "Text",
+      "heading": "Titles",
+      "muted": "Captions",
+      "accent": "Accent",
+      "accent-2": "Second accent (key figures)",
+      "surface": "Surfaces (cards)",
+      "border": "Borders",
+      "icon": "Pictograms",
+      "heading-font": "Title font",
+      "font": "Text font",
+      "size": "Text size",
+      "h1": "Cover title size",
+      "h2": "Slide title size"
+    }
+  },
+  "uiDeck": {
+    "editHint": "Edit the deck's settings and the shown slide's (layout, variant, theme, proportions...)",
+    "edit": "✎ Edit",
+    "presentHint": "Open the deck in a browser window — for a second screen, the speaker view (S), or sharing in Teams",
+    "present": "⧉ Present in a window",
+    "opening": "{{icon}} Opening…",
+    "exportHint": "Export the deck: PDF, PowerPoint, or one HTML page that presents offline",
+    "pptxProgress_one": "⇩ PowerPoint… {{seconds}} s / {{count}} slide",
+    "pptxProgress_other": "⇩ PowerPoint… {{seconds}} s / {{count}} slides",
+    "export": "⇩ Export ▾",
+    "exportPdf": "⎙ PDF — your browser's print dialog (one page per slide and step)",
+    "exportPptx": "PowerPoint — editable slides in the theme, with the speaker notes",
+    "exportPptxPictures": "PowerPoint (pictures) — one image per slide, exactly as shown",
+    "exportHtml": "HTML page — presents offline by a double click, to send by email",
+    "assetsMissing": "Not found beside the deck: {{files}}",
+    "titleReadOnly": "The item's name: change it in the Identity tab",
+    "openedPdf": "Opened in your browser: its print dialog appears there — choose Save as PDF",
+    "openedWindow": "Opened in your browser — S for the speaker view",
+    "pptxSaved": "PowerPoint saved: {{path}}",
+    "htmlSaved": "Page saved: {{path}} — open it with a double click to present"
+  },
+  "drawio": {
+    "loadFailed": "Failed to load drawio editor",
+    "loading": "Loading drawio editor…",
+    "title": "Drawio editor"
+  },
+  "liveObject": {
+    "start": "Start",
+    "running": "Running…",
+    "done": "done"
+  },
+  "graphFlow": {
+    "empty": "Nothing to show."
+  },
+  "displayPanel": {
+    "untitled": "Panel",
+    "tab": "Panel",
+    "state": {
+      "open": "running",
+      "asking": "waiting for your answer",
+      "complete": "complete",
+      "closed": "closed"
+    },
+    "meta": {
+      "type": "template {{type}}",
+      "owner": "owner {{owner}}",
+      "seq": "seq {{seq}}"
+    },
+    "lost": "Disconnected. The task goes on; this panel shows its last known state (seq {{seq}}).",
+    "progress": "{{current}} / {{total}}",
+    "ask": {
+      "send": "Send my answer",
+      "placeholder": "Your answer…",
+      "note": "The task waits for this answer: it can wait for days.",
+      "yours": "Your answer:",
+      "formSent": "the form sent"
+    },
+    "chat": {
+      "placeholder": "Write to the agent…",
+      "send": "Send"
+    },
+    "done": {
+      "ok": "✓ Done",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "okSaid": "✓ {{message}}"
+    },
+    "cancel": "Cancel",
+    "openTab": "Open in a tab",
+    "chip": {
+      "running": "running",
+      "asking": "asking",
+      "complete": "complete"
+    },
+    "list": {
+      "aria": "Open panels",
+      "empty": "No panel is open.",
+      "none": "Choose a panel in the list."
+    }
+  }
+}

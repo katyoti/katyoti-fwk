@@ -1,0 +1,8 @@
+name: no-screen
+label: Changes no screen
+description: >-
+  A TAG, with no schema: the feature changes no screen although its module's
+  code draws one (a pack shipping object panels, the GUI) - a code removal, a
+  migration, a guard. The gui-tested requirement of ready-to-test does not hold
+  it, unless it realizes screen code or a criterion serving it runs a live GUI
+  test.

@@ -1,0 +1,58 @@
+name: Welcome to KaTyoti
+description: Create a universe, attach a project, look around it and answer your first inbox question.
+hashtags:
+- welcome
+- first run
+- getting started
+- tour
+level: beginner
+essential: true
+gui: '>=0.9'
+# Pour aller plus loin: what to read once this guide is done.
+next: [use-katyoti, answer-the-inbox, run-a-task]
+steps:
+- id: create-universe
+  say: Welcome. A *universe* is your own KaTyoti, with its capabilities, attaching your projects. On the universe page press {control:picker.create}, give it a name, then press {control:create-universe.submit}; inside a universe, start from {control:ribbon.add-universe} at the bottom of the ribbon and {control:add-universe.create}.
+  target: {guide: picker.create}
+  await: manual
+- id: universe-ready
+  say: Once created, the universe opens on screen. When you see it, press {control:guide.check}.
+  check: ktw-univers:universe-checks/universe-ready
+- id: add-agents
+  say: The inbox, the tasks and the chat agent come with the ktw-agents capability. If you did not tick it when creating the universe, press {control:guide.do-it}.
+  do: ktw-univers:universe-setup/ensure-agents
+- id: agents-ready
+  say: Once ktw-agents is in your universe, press {control:guide.check}.
+  check: ktw-univers:universe-checks/capability-wired
+  with: {sidecar: ktw-agents}
+- id: open-edit
+  say: A universe works on *projects*. Right-click the universe's icon in the ribbon and choose {control:universe-menu.edit}.
+  target: {guide: ribbon.universe}
+  await: manual
+- id: attach-project
+  say: Open the {control:universe-edit.projects} tab, press {control:projects.attach} and pick one of your folders. No project at hand? Press {control:guide.do-it} for a small sample project in a katyoti-sample folder of your projects folder.
+  target: {guide: projects.attach}
+  await: manual
+  do: ktw-univers:universe-setup/create-sample-project
+- id: project-attached
+  say: Once the project is attached, press {control:guide.check}.
+  check: ktw-univers:universe-checks/project-attached
+- id: open-objects
+  say: The {control:project.tab|objects} tab shows your project as a tree of modules and objects. Open it and pick any object; its tabs on the right come from what it is.
+  target: {guide: project.tab, name: objects}
+  await: click
+- id: ask-question
+  say: The {control:ribbon.inbox} holds what needs you when a task asks a question. Press {control:guide.do-it} to have a small demo task ask you one.
+  do: ktw-agents:tasks/welcome-inbox-demo
+- id: open-inbox
+  say: Open the {control:ribbon.inbox} from the ribbon.
+  target: {guide: ribbon.inbox}
+  await: click
+- id: answer
+  say: In « À faire », answer the question on its card and send your answer.
+  target: {guide: todo.screen}
+  await: manual
+- id: answered
+  say: Once your answer is sent, press {control:guide.check}; the task that asked can then go on. That's the tour; {control:profile.help} in your profile menu brings this guide back, with a recipe for everything else.
+  check: ktw-agents:inbox-checks/request-answered
+  with: {title: Welcome to KaTyoti}

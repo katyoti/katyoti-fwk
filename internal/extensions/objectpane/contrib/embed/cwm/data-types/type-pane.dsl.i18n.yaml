@@ -1,0 +1,21 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TypePane:
+      fields:
+        badges:
+          description: 'Pastilles d''en-tête : chacune lit un champ et prend la couleur de sa valeur'
+        header:
+          description: 'Si le panneau dessine l''en-tête standard de l''objet au-dessus de ses onglets ; non renseigné - montré sauf sous only ; true - montré même sous only ; false - jamais'
+        more:
+          description: 'Les onglets derrière Plus, dans l''ordre (le nom d''un panneau ou un identifiant d''onglet complet) ; donnée - tout onglet absent des deux listes est masqué et information peut en faire partie'
+        only:
+          description: 'Les onglets listés sont tout le panneau : aucun autre onglet (pas même derrière Plus) et pas d''en-tête d''objet - pour un type dont les panneaux dessinent leur propre en-tête'
+        tabs:
+          description: 'Les onglets principaux de tout objet de ce type, dans l''ordre (le nom d''un panneau ou un identifiant d''onglet complet) ; les autres onglets passent derrière Plus'
+        variants:
+          description: 'Les onglets principaux selon une condition : la première variante dont le when est vrai sur l''objet les donne ; sinon tabs'
+        view:
+          description: 'Comment un objet de ce type s''affiche dans son onglet Information ; vide = un formulaire de ses champs'

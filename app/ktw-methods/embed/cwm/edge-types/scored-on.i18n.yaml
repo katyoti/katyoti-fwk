@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "La grille d'évaluation sur laquelle une évaluation de solution est notée : ses critères, leurs poids et son échelle. Rouvrir la grille renvoie en brouillon les évaluations notées dessus."
+  inverse_label: 'Grille de'
+  label: 'Notée sur'

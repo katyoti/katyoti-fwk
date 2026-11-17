@@ -1,0 +1,18 @@
+# USABLE DELIVERED — an increment is done only when the user can use what it
+# delivers: its delivery review passed and its checks
+# still hold now - every goal and feature it holds done, every screen
+# feature's GUI test passed, every display switch retired or turned on by an
+# increment of the same release (a test delivery), a demo path written, each
+# follow-up a request in an increment of the same release. One requirement,
+# answered by the increment service; on the increment's done, which only a
+# person forces, with a note.
+name: usable-delivered
+label: Usable delivered
+description: >-
+  Its delivery review passed: the user can use what it delivers, or what
+  follows is planned in the same release.
+requirements:
+  - name: delivery-reviewed
+    label: Its delivery review passed and still holds
+    uri: "ktw-agents:increments/check-usable-delivered"
+    applies: {types: [increment]}

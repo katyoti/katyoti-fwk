@@ -1,0 +1,124 @@
+{
+  "common": {
+    "loadingJournal": "Loading from journal…",
+    "stillRunning": "Still running…",
+    "noOutput": "No output recorded.",
+    "state": {
+      "running": "running",
+      "done": "done",
+      "failed": "failed"
+    }
+  },
+  "agentNode": {
+    "ledger": "shared-state ledger",
+    "modeTip": "spawn mode: {{mode}}",
+    "status": {
+      "running": "Running",
+      "done": "Done",
+      "error": "Error",
+      "waiting": "Waiting",
+      "idle": "Idle"
+    }
+  },
+  "edgeDetail": {
+    "coordinator": "coordinator",
+    "commsTip": "comms relationship (delegate intent): {{comms}}",
+    "modeTip": "child spawn mode: {{mode}}",
+    "linkIntro": "What this link carried — the payload the parent bound down into the child, and the result the child returned up.",
+    "sentDown": "Sent down (input)",
+    "noInput": "No input bound on this link.",
+    "returnedUp": "Returned up (output)",
+    "channel": "channel",
+    "channelIntro_one": "What this channel carried — {{count}} message sent directly from {{from}} to {{to}}.",
+    "channelIntro_other": "What this channel carried — {{count}} messages sent directly from {{from}} to {{to}}.",
+    "noMessages": "No messages recorded on this link."
+  },
+  "ledger": {
+    "empty": "No shared-state ledger in this run. The ledger appears when a Magentic-style task publishes shared state for its specialists.",
+    "title": "Shared-state ledger",
+    "complete": "complete",
+    "updates_one": "{{count}} update",
+    "updates_other": "{{count}} updates"
+  },
+  "mailbox": {
+    "title": "Mailbox · {{teammate}}",
+    "empty": "No messages yet.",
+    "placeholder": "Send a message to {{teammate}}…",
+    "send": "Send"
+  },
+  "narrative": {
+    "empty": "No team activity in this run. Teams appear here when an agent uses create-team / spawn-teammate.",
+    "team": "team",
+    "unknown": "unknown",
+    "someone": "someone",
+    "memberTip": "{{member}} — {{state}} (click for mailbox)",
+    "teamState": {
+      "forming": "forming",
+      "active": "active",
+      "done": "done",
+      "failed": "failed"
+    },
+    "memberState": {
+      "working": "working",
+      "done": "done",
+      "left": "left"
+    },
+    "event": {
+      "created": "Team \"{{team}}\" created",
+      "memberJoined": "{{member}} joined",
+      "memberLeft": "{{member}} left",
+      "message": "{{member}} sent a message",
+      "itemShared": "{{member}} shared an item",
+      "stateChanged": "Team → {{state}}",
+      "completed": "Team completed",
+      "failed": "Team failed"
+    }
+  },
+  "taskDetail": {
+    "userSession": "user / session",
+    "task": "task",
+    "startedBy": "Started by",
+    "runId": "Run ID",
+    "copied": "Copied",
+    "copyRunId": "Copy run ID",
+    "input": "Input",
+    "noInput": "No input recorded.",
+    "error": "Error",
+    "output": "Output",
+    "resources": "Resources",
+    "tokens_one": "{{tokens}} token",
+    "tokens_other": "{{tokens}} tokens",
+    "sessionRunning": "Session still running — totals appear at session end.",
+    "openJournal": "Open session journal",
+    "journalTitle": "Journal · {{sessionId}}"
+  },
+  "panel": {
+    "lens": {
+      "tasks": "Tasks",
+      "team": "Team",
+      "ledger": "Ledger"
+    },
+    "journal": "journal",
+    "live": "live",
+    "clear": "Clear team state",
+    "callTip": "{{node}} → {{uri}} · {{outcome}} · {{durationMs}}ms (attempt {{attempt}})",
+    "calls_one": "{{count}} call",
+    "calls_other": "{{count}} calls",
+    "running_one": "{{count}} running",
+    "running_other": "{{count}} running",
+    "done_one": "{{count}} done",
+    "done_other": "{{count}} done",
+    "tasks_one": "{{count}} task",
+    "tasks_other": "{{count}} tasks",
+    "empty": "No delegation activity in this run.",
+    "emptyHint": "The tree appears when a task forks workers or sub-teams."
+  },
+  "workflowStatus": {
+    "none": "No workflow running. Launch a task from the CLI to see live activity here.",
+    "workflow": "Workflow",
+    "dryRunTip_one": "{{count}} child replaced with simulator (dry-run)",
+    "dryRunTip_other": "{{count}} children replaced with simulator (dry-run)",
+    "dryRun_one": "dry-run · {{count}}",
+    "dryRun_other": "dry-run · {{count}}"
+  }
+}

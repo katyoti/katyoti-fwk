@@ -1,0 +1,14 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Fonctionnalité
+  label_plural: Fonctionnalités
+  description: >-
+    Ce que l'on construit et qu'un test peut déclarer terminé : elle répond au
+    QUOI, formulée comme ce que quelqu'un peut faire une fois qu'elle existe.
+    Toujours atteignable (closable). Elle sert un ou plusieurs objectifs et se
+    prouve terminée par ses cas d'usage, chacun un ensemble de critères
+    d'acceptation. Récursive : une grosse fonctionnalité contient des
+    sous-fonctionnalités ; initiative, epic et user story sont des mots de
+    taille, jamais des types. Un test pourra-t-il dire qu'elle est terminée ?
+    Oui : une fonctionnalité. Non : un objectif.

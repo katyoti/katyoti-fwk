@@ -1,0 +1,18 @@
+name: file-overview
+label: File overview
+icon: file-text
+description: >-
+  The file-overview strip panel: a curated overview of the object, kept as a
+  file in its module — a markdown page, or a UI page definition.
+# NAMED FILES: the panel reads these by name, so no caller composes the path.
+# The order they are tried in is fileoverview/api.Names (a test keeps the two
+# in step).
+files:
+  overview:
+    path: overview/${id}.md
+    media: text/markdown
+    description: The curated overview, as markdown.
+  page:
+    path: overview/${id}.page.json
+    media: application/json
+    description: The curated overview, as a UI page definition; shown instead of the markdown overview when both exist.

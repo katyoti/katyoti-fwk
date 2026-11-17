@@ -1,0 +1,36 @@
+id: content-types/fields/slider
+category: content-types
+title: "Content: slider"
+description: "number with content { type: slider, min, max }. Renders as a range input with a live value label."
+schema:
+  name: slider-content-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      fields:
+        progress:
+          type: number
+          label: Progress (%)
+          description: Drag to set progress.
+          content:
+            type: slider
+            min: 0
+            max: 100
+          default: 25
+        temperature:
+          type: number
+          label: Temperature (°C)
+          description: Negative range supported.
+          content:
+            type: slider
+            min: -20
+            max: 40
+          default: 18
+value: {}
+mode: edit
+tags:
+  - content-types
+  - number
+  - slider

@@ -1,0 +1,53 @@
+@startuml
+title ktw-docs Architecture
+
+package "app/ktw-docs" {
+    class Server {
+        +Start(ctx)
+        +handleRender()
+        +handleDiagram()
+        +handleHealth()
+        +handleCapabilities()
+    }
+
+    class KrokiClient {
+        +ServerURL: string
+        +Render(req): RenderResult
+        +RenderCached(req, dir): string
+    }
+
+    class PandocExecutor {
+        +PandocPath: string
+        +TypstPath: string
+        +Render(opts): error
+        +CheckPandoc(): string
+        +CheckTypst(): string
+    }
+
+    class PandocFilter {
+        +Kroki: KrokiClient
+        +OutputDir: string
+        +RunFilter(r, w): error
+    }
+}
+
+package "internal/extensions/docs" {
+    class Extension {
+        +Name(): string
+        +Manifest(): Manifest
+        +Init(ctx): error
+    }
+
+    class docsPlugin {
+        +Tools(): PluginTool[]
+        +handleRenderDocument()
+        +handleRenderDiagram()
+    }
+}
+
+Server --> KrokiClient : uses
+Server --> PandocExecutor : uses
+PandocFilter --> KrokiClient : uses
+docsPlugin --> Server : HTTP proxy
+Extension --> docsPlugin : creates
+@enduml

@@ -1,0 +1,8 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Avant l'écrasement d'un objet. Synchrone : la première entrée qui n'accepte pas refuse
+    l'écriture.
+  label: Avant mise à jour

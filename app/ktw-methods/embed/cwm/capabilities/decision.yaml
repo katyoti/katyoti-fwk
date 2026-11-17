@@ -1,0 +1,9 @@
+name: decision
+label: Decision
+icon: scale
+description: >-
+  The STATE of a decision as fields -- the options, what was selected, when it
+  was raised and when it was resolved. The reasoning is never here: it is the
+  object's prose body (## Question, ## Options, ## Decision). `affects` is NOT a
+  field either -- what a decision touches is an edge (concepts.md §3).
+schema: ktw-methods:/data-type/cap-decision

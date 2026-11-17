@@ -1,0 +1,7 @@
+name: email
+kind: field-type
+basePrimitive: string
+description: Email address input with HTML5 format validation.
+
+configSchema:
+  fields: {}

@@ -1,0 +1,12 @@
+name: slots
+kind: view-layout
+description: >-
+  A compact card or header: the view's `slots` place fields by path in an
+  eyebrow, a bold title with an id and badges beside it, one dimmed meta line
+  (values joined by « · »), full-width footer rows and inline actions (a
+  choice as a select, a prompt or plain action as a button). Each field is
+  drawn by its content renderer's view, without a label. No frame: the host
+  frames it.
+
+configSchema:
+  fields: {}

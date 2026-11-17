@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: 'Contenu lu'
+  description: 'Ce que la source a apporté - son état, sa dernière lecture et chaque élément avec son état'

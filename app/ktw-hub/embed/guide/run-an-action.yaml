@@ -1,0 +1,24 @@
+name: Run an action
+description: Run one of the actions an object offers.
+hashtags:
+- action
+- run action
+- actions bar
+level: beginner
+requires:
+- find-your-way
+steps:
+- id: pick-object
+  say: Pick an object in the tree.
+  target: {guide: tree.node}
+  await: manual
+- id: actions-tab
+  say: Open its {control:objtab.tab:actions} tab.
+  target: {guide: objtab.tab:actions}
+  await: click
+- id: pick-action
+  say: Pick an action card. Its form asks for what it needs.
+  target: {guide: card}
+  await: manual
+- id: run
+  say: Press {control:action.run}. The result shows when it is done.

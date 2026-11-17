@@ -1,0 +1,16 @@
+name: html
+kind: renderer
+basePrimitive: string
+description: Sanitized HTML content. Renderer comes via gui-rich-text.
+
+configSchema:
+  fields:
+    maxLength:
+      type: number
+      optional: true
+      description: Max character count.
+    sanitize:
+      type: boolean
+      optional: true
+      default: true
+      description: Apply HTML sanitization on render. Strongly recommended unless content is trusted.

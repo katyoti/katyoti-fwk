@@ -1,0 +1,17 @@
+# A slide-deck object's deck, checked against the deck grammar and the layouts:
+# the deck composed from the object (its title, its Deck settings, its slides)
+# as the Deck panel shows it. `object-lint` / lint() run it.
+name: deck-lint
+description: >-
+  The deck of a slide-deck object against the deck grammar and the layouts —
+  each finding names its slide.
+type: lint
+uri: ktw-docs:deck/lint-object
+filter:
+  types: [slide-deck, slide-group]
+# The object a hook receives by default carries no prose body; bind the three
+# parts the Deck panel composes, the same way.
+input:
+  title: "${current.name}"
+  deck: "${current.deck}"
+  body: "${current.body}"

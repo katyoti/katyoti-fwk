@@ -1,0 +1,16 @@
+# A section group (partial template): what could go wrong and how it is
+# handled.
+name: risks-and-mitigations
+label: Risques et parades
+description: The risks of the chosen path and how each is handled.
+partial: true
+sections:
+  - id: risks
+    title: Risques et parades
+    intent: The risks that could stop or derail the solution, each with its parade and its owner.
+    sources:
+      - {from: files, value: "scope.yaml", note: "the risks and assumptions recorded"}
+      - {from: files, value: "gap-report.yaml", note: "gaps between target and current"}
+    guidance: Three to five risks, the worst first; a risk without a parade is said as such.
+    required: true
+    weight: 2

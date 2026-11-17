@@ -1,0 +1,17 @@
+# One day of the journal: what happened to every object that day, one JSON
+# record per line in its `entries` file, appended by the journal as the events
+# arrive. Its live instances are `sys-journal.<date>`, in the system module
+# `sys-journal`; days older than the retention are pruned (git keeps them).
+name: journal-day
+label: Journal day
+folder: days
+description: >-
+  One day of the journal — every object created, updated, moved, deleted or
+  transitioned that day, one record per line.
+icon: calendar-event
+capabilities: []
+files:
+  entries:
+    path: days/${current.name}.jsonl
+    media: application/x-ndjson
+    description: The day's records, one JSON object per line, appended.

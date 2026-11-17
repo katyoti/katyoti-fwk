@@ -1,0 +1,35 @@
+name: composition
+label: Composition
+icon: "🧩"
+icon_name: puzzle
+tree: node
+allowed_children:
+    - compose-artifact
+    - compose-skill
+    - compose-task
+    - feature
+    - goal
+    - use-case
+    - test-case
+    - decision
+    - document
+accept_parents:
+    - '*'
+description_max_chars: 800
+actions:
+    - uri: ktw-compose:tasks/compose-artifact
+      label: Compose Artifact
+      description: Start the composition wizard — interview to a clear intention, then build and verify the artifacts as deliverables on this node.
+      kind: ai
+      icon: puzzle
+agent:
+    system:
+        - id: type-context:composition
+          text: |
+              This node is a COMPOSITION — a guided build of katyoti artifacts.
+              Its goal items say why; its use-case items carry the inline
+              acceptance criteria (the testable definition of done); its
+              deliverable items list what gets produced and where. Work happens
+              through the compose-artifact wizard task — drive decomposition
+              through it rather than hand-editing criteria. Files-only artifacts
+              here; anything needing Go routes to the ktw-code track.

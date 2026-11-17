@@ -1,0 +1,23 @@
+# The sign-off log — a capability ATTACHED to every object carrying `signoff`
+# (attach: matched against what the object carries before attachment), that
+# owns one named file: the log the sign-off's on_update hook appends to. A
+# write to it never changes the committed object.
+name: signoff-log
+label: Sign-off log
+icon: history
+description: >-
+  One line per write of the object's sign-off, appended by its on_update hook,
+  kept in a file beside the object.
+attach:
+  capabilities: [signoff]
+files:
+  log:
+    path: "signoffs/${id}.log"
+    media: text/plain
+    description: One line per write of the sign-off.
+    owned: true
+agent:
+  files:
+    - capability: signoff-log
+      name: log
+      title: The sign-off log of this object

@@ -1,0 +1,13 @@
+# Decide: settle a question — an agent prepares the options, a reviewer
+# challenges the proposal (its verdict: rejected, the decision is prepared
+# again), a person chooses. On a decision, the person
+# chooses on the decision's own panel (or anywhere it is resolved): its move to
+# `applies` ends the person's step, by that person, and closes its question.
+name: decide
+description: Prepare the options, challenge the proposal, a person chooses.
+kind: decide
+transition: done
+steps:
+  - {name: prepare, phase: preparation, class: refine, role: specifier, share: 0.6, skill: ktw-methods:/skill/decision-capture, instructions: "Prepare the decision (ktw-methods:decisions/prepare): its options as short labels, what each means with its pros, cons, cost and consequence, and the option proposed with why."}
+  - {name: challenge, phase: preparation, class: refine, role: reviewer, interaction: challenge, after: [prepare], share: 0.15, skill: ktw-methods:/skill/decision-capture, instructions: "Challenge the proposal (ktw-methods:decisions/challenge): the points against it, or say it holds. Report your verdict: approved when the proposal holds, or rejected saying what to change - the decision is then prepared again with it, and challenged again, before the person chooses."}
+  - {name: decide, phase: preparation, class: refine, actor: person, interaction: decide, after: [challenge], share: 0.25, ends_on: applies, instructions: "Choose an option on the decision's panel, with the reason; the step ends when it is decided."}

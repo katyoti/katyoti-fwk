@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    VerdictForm:
+      fields:
+        notes:
+          description: 'Ce que les relecteurs ont dit'
+          label: 'Notes'
+        verdict:
+          description: 'Où en est le visa'
+          label: 'Verdict'

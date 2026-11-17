@@ -1,0 +1,21 @@
+# A SYSTEM MODULE: an OPERATIONAL space
+# the platform keeps for itself — the inbox's messages, the journal's days, the
+# requests not yet routed — beside the FUNCTIONAL module that describes the
+# concept (`modules/inbox/` documents the inbox; `modules/sys-inbox/` holds its
+# messages, committed).
+#
+# Its field-group says what the module operates, when it operates a
+# capability (`operates: contributions` on sys-contributions): optional,
+# typed by cap-system-module, checked to name a declared capability. The
+# name is RESERVED both ways — a module named `sys-*`
+# must carry this capability, and a module carrying it must be named `sys-*` —
+# refused on every write and reported on every object read. Every "is it a
+# user module?" question reads this capability (cwm api IsSystemModule /
+# UserModules); a system module holds no to-dos.
+name: system-module
+label: System module
+icon: settings
+description: >-
+  An operational space the platform keeps for itself, named `sys-<name>`,
+  beside the functional module that describes its concept.
+schema: ktw-agents:/data-type/cap-system-module

@@ -1,0 +1,17 @@
+# Where an information source stands: declared, read by a sync, then stale
+# when what it read changed; failed when its last sync could not read it.
+name: information-source
+label: Information source
+description: >-
+  Declared, synced by its connector, stale when what it read changed; failed
+  when the last sync could not read it.
+initial: declared
+states:
+  - {name: declared, description: "Declared, not read yet"}
+  - {name: synced, description: "Read by its last sync"}
+  - {name: stale, description: "What it read has changed since"}
+  - {name: failed, description: "Its last sync could not read it"}
+transitions:
+  - {name: sync, from: [declared, stale, failed, synced], to: synced}
+  - {name: fail, from: [declared, synced, stale, failed], to: failed}
+  - {name: go-stale, from: [synced], to: stale}

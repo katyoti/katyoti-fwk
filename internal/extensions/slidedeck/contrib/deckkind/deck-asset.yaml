@@ -1,0 +1,33 @@
+# The `deck-asset` kind, declared by the slide-deck pack: one file a deck
+# theme ships (a logo, a background, a font, an icon), kept in a pack as
+# `deck-assets/<theme>/<path>` and published as
+# `<provider>:/deck-asset/<theme>/<path>`. Its schema is provider-relative:
+# `<provider>:/data-type/deck-asset`, the shape of deckbody.AssetBody.
+name: deck-asset
+description: |
+  One file a deck theme ships — a logo, a background, a font or an icon. The
+  body is the file's path under deck-assets (its theme, then its path in the
+  theme); the file is the source layer, typed by its extension. Each file
+  stays within the control band (256 KiB) so the host can fetch it from the
+  sidecar that ships it.
+
+schema: deck-asset
+validate: error
+
+# The body (data) and the file (source, the default layer). The source layer
+# declares no media type: each entry's is its file's.
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {required: true, default: true}
+meta:
+  budget: 128
+
+# A folder of its own: two kinds never claim one folder, so a theme's files
+# sit under deck-assets/<theme>/, beside deck-themes/<theme>.yaml.
+source:
+  folder: deck-assets
+  id: file
+  format: raw
+  layers:
+    data: {from: path}
+    source: {from: file}

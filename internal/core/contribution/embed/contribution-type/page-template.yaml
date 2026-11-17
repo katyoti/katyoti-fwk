@@ -1,0 +1,45 @@
+# Registers `page-template` as a SYSTEM contribution kind.
+#
+# A page template is a page tree in the page DSL contributed once and named by
+# its URI: an answer (a page source's, a section's, a display panel's opening -
+# a display feature) names it by {uri, hash} instead of carrying it, so a host
+# holding it at that hash draws the answer from its data alone. A panel type's
+# `page` names one. The part an answer names is the template's `tree`; its hash
+# is render.SpecHash of that tree.
+#
+# Published from any pack with no code: embed/page-templates/<name>.yaml, the
+# name being the file's basename, read as this declaration says (the pack's
+# folder, its tree the data layer, the file the source).
+name: page-template
+description: |
+  A page tree in the page DSL named by its URI: an answer names it by URI and
+  hash instead of carrying it, so a host that holds it receives data alone.
+schema: system:/data-type/page-template
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 128
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+source:
+  folder: page-templates
+  match: ["*.yaml", "*.yml"]
+  id: basename
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

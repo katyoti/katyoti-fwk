@@ -1,0 +1,7 @@
+# ktw-docs server settings.
+# This file is owned by ktw-docs and managed by 'ktw-docs config'.
+
+server_host: "127.0.0.1"
+server_port: 8890
+kroki_url: "https://kroki.io"
+log_level: info

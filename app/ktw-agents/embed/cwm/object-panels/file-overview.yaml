@@ -1,0 +1,17 @@
+# The object's curated overview. Its source is the file-overview verb, which
+# reads the capability's named files (`page` wins over `overview`) and answers
+# the display itself: the page as written, the markdown overview as a
+# document, or a page saying there is none yet.
+name: "Overview"
+description: "Curated overview backed by the object's overview file"
+icon:
+  tabler: "file-text"
+  emoji: "📄"
+order: 10
+filter:
+  capabilities:
+    - "file-overview"
+source: "ktw-agents:file-overview/page"
+# Re-read when the object itself changes.
+refresh:
+  scope: "self"

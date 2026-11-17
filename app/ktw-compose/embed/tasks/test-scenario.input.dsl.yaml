@@ -1,0 +1,47 @@
+name: test-scenario-input
+root: TestScenarioInput
+types:
+  TestScenarioInput:
+    type: object
+    fields:
+      target:
+        type: ScenarioTarget
+        description: "What to test. Exactly one of task OR action_uri; node_id optional (action-on-node)."
+        optional: true
+      persona:
+        type: string
+        description: "Who the simulated user is (role, expertise, temperament)"
+      goal:
+        type: string
+        description: "What the simulated user wants — one hard-to-vary sentence"
+      constraints:
+        type: string[]
+        description: "Concrete facts the user would know (names, paths, choices) so the sim stays consistent"
+        optional: true
+      criteria:
+        type: string[]
+        description: "The expected-outcome acceptance criteria the run is SCORED against (not a transcript)"
+      max_turns:
+        type: number
+        description: "Cap on driver turns before declaring a stall (default 40)"
+        optional: true
+  ScenarioTarget:
+    type: object
+    fields:
+      task:
+        type: string
+        description: "Task name to run (e.g. compose-artifact)"
+        optional: true
+      action_uri:
+        type: string
+        description: "Action URI to run (e.g. ktw-compose:tasks/compose-artifact)"
+        optional: true
+      node_id:
+        type: string
+        description: "CWM node id the action/task targets (optional)"
+        optional: true
+      input:
+        type: object
+        description: "Input payload for the target"
+        catchall: any
+        optional: true

@@ -1,0 +1,23 @@
+# THE TASK RUNTIME'S L2 CASE — the universe the restart harness
+# (internal/extensions/task/internal/l2test, `make tasks-l2`) installs with
+# `ktw-compose scenario install`. It has no stages: the harness drives the
+# universe's processes itself (a hub, `ktw-agents sc ktsp nats`), kills them,
+# starts them again and reads what the task service says.
+#
+# config/LLMProviders.yaml names a model served by the harness's own fake
+# OpenAI endpoint (no LLM is ever called); its URL is filled in by the harness.
+name: tasks-l2
+title: The task runtime's restart guarantees on the real binaries
+description: |
+  A ledger and an agent that wait, a simulator and a workflow that work, a CLI
+  run: killed, stopped and started again on a real hub and serving process.
+
+universe:
+  sidecars: [ktw-agents]
+  copy:
+    - {from: tasks, to: tasks}
+    - {from: config, to: config}
+
+project:
+  from: project
+  git: true

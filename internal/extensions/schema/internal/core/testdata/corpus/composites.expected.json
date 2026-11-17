@@ -1,0 +1,120 @@
+{
+  "$schema": "ktw-schema/v1",
+  "description": "Composite types: Object, Array, Choice — including nested arrays and recursive choice (JSON-value pattern).",
+  "name": "composites",
+  "root": "BlogPost",
+  "types": {
+    "Author": {
+      "fields": {
+        "bio": {
+          "content": "markdown",
+          "optional": true,
+          "type": "string"
+        },
+        "email": {
+          "content": "email",
+          "optional": true,
+          "type": "string"
+        },
+        "id": {
+          "content": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "content": "text",
+          "contentParams": {
+            "max": 120
+          },
+          "description": "Public name shown on posts",
+          "label": "Display name",
+          "type": "string"
+        }
+      },
+      "idField": [
+        "id"
+      ],
+      "titleField": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "BlogPost": {
+      "fields": {
+        "author": {
+          "mode": "many2one",
+          "target": "Author",
+          "type": "link"
+        },
+        "body": {
+          "content": "markdown",
+          "type": "string"
+        },
+        "id": {
+          "content": "uuid",
+          "type": "string"
+        },
+        "ratings": {
+          "items": {
+            "content": "rating",
+            "contentParams": {
+              "max": 5
+            },
+            "type": "number"
+          },
+          "max": 100,
+          "min": 0,
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "content": "text",
+          "contentParams": {
+            "max": 200
+          },
+          "label": "Title",
+          "type": "string"
+        }
+      },
+      "idField": [
+        "id"
+      ],
+      "titleField": [
+        "title"
+      ],
+      "type": "object"
+    },
+    "JsonArray": {
+      "items": "JsonValue",
+      "type": "array"
+    },
+    "JsonObject": {
+      "catchall": "JsonValue",
+      "type": "object"
+    },
+    "JsonValue": {
+      "cases": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        "JsonObject",
+        "JsonArray"
+      ],
+      "type": "choice"
+    }
+  },
+  "version": "1.0.0"
+}

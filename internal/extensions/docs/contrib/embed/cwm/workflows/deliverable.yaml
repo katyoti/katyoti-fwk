@@ -1,0 +1,22 @@
+# Where a deliverable stands (the `deliverable` capability's own state):
+# written, reviewed, validated by a person, published. A validated or
+# published deliverable that must change goes back to draft.
+name: deliverable
+label: Deliverable
+description: >-
+  Written, reviewed, validated by a person, then published; rework sends it
+  back to draft.
+initial: draft
+states:
+  - {name: draft, description: "Being written"}
+  - {name: in-review, description: "Written and put up for review"}
+  - {name: validated, description: "Approved by a person"}
+  - {name: published, description: "Published where its readers find it"}
+transitions:
+  - {name: submit, from: [draft], to: in-review}
+  - {name: rework, from: [in-review, validated, published], to: draft}
+  - name: validate
+    from: [in-review]
+    to: validated
+    gate: "by.kind == 'person'"
+  - {name: publish, from: [validated], to: published}

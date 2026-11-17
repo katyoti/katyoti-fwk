@@ -1,0 +1,27 @@
+name: panel-ref
+kind: field-type
+basePrimitive: string
+description: A reference to one panel of an object — its value `<id>#<panel>`. The form picks the object (filtered by the field's ObjectFilter) then one of its panels through the host; without a host it is a text input. The view opens the object on that panel.
+
+configSchema:
+  fields:
+    types:
+      type: string[]
+      optional: true
+      description: Object types it may name (any of).
+    capabilities:
+      type: string[]
+      optional: true
+      description: Capabilities the object must carry at least one of.
+    incoming:
+      type: string[]
+      optional: true
+      description: Edge kinds of which the object must have an incoming edge.
+    outgoing:
+      type: string[]
+      optional: true
+      description: Edge kinds of which the object must have an outgoing edge.
+    when:
+      type: string
+      optional: true
+      description: An el predicate over the object vocabulary.

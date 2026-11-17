@@ -1,0 +1,17 @@
+name: song-writer-input
+root: SongWriterInput
+types:
+  SongWriterInput:
+    type: object
+    fields:
+      theme:
+        type: string
+        label: "Thème de la chanson"
+        description: "Le sujet de la chanson"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Écrire la chanson"
+        groups:
+          - title: "Chanson"
+            fields: [theme]

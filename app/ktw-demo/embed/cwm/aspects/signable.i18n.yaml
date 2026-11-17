@@ -1,0 +1,6 @@
+# Translations of the aspect beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Un visa et un cycle de vie sur n''importe quel objet : relecteurs, approbations, un verdict et un état.'
+  label: Soumis à visa

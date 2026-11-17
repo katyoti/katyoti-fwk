@@ -1,0 +1,10 @@
+# Reviewed findings: « <rooted path glob> <kind> ».
+/tools/secret-scan/secretscan/change_test.go host
+/THIRD_PARTY_NOTICES host
+/app/ktw-gui/frontend/public/mediapipe/wasm/vision_wasm_*internal.js host
+/internal/extensions/agent/api/agent.go private-address
+/internal/extensions/agent/internal/runtime/url_allowlist.go private-address
+/internal/extensions/agent/internal/runtime/url_allowlist_test.go private-address
+/app/ktw-docs/embed/references/diagrams/network-infra.md private-address
+/internal/extensions/drawio/render/testdata/corpus/aws-web-app.json private-address
+/internal/core/contribution/testdata/data-type-ledger.json host

@@ -1,0 +1,23 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: archimate3-implementation-migration
+displayName: ArchiMate — implementation and migration
+description: Work packages, deliverables and events, the plateaus they lead through and the gaps between
+  them.
+notation: ktw-docs:/notation/archimate3
+templates: ktw-docs:/drawio-template/archimate3
+page: default
+elements:
+- WorkPackage
+- Deliverable
+- ImplementationEvent
+- Plateau
+- Gap
+- BusinessActor
+- BusinessRole
+- Goal
+- Requirement
+- Grouping
+- Junction
+layout:
+  algorithm: layered
+  direction: RIGHT

@@ -1,0 +1,15 @@
+# What lets an object HAVE reviews: the Reviews panel shows on every object
+# carrying it, listing the reviews filed under it and creating one. Attached
+# to every module; any other object takes it with ObjectAddCapability. Its
+# reviews are objects of their own (the current and the previous one of each
+# type); its field-group keeps the compact history of the older ones.
+name: reviewable
+label: Reviewable
+icon: clipboard-check
+description: >-
+  The object has reviews: the current and the previous review of each review
+  type filed under it, each with its rating and its findings, and the history
+  of the older ones.
+schema: ktw-agents:/data-type/cap-reviewable
+attach:
+  capabilities: [module]

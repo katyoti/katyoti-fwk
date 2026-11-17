@@ -1,0 +1,11 @@
+name: date
+kind: field-type
+basePrimitive: string
+description: ISO 8601 date / date-time / time string. Renderer comes via gui-rich-text.
+
+configSchema:
+  fields:
+    pattern:
+      type: string
+      optional: true
+      description: ISO 8601 sub-format — date-time | time | date | duration | <regex>.

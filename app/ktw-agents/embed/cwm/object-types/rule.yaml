@@ -1,0 +1,24 @@
+name: rule
+label: Rule
+description: |
+    A way of working stated once, in the module that owns it. Its kind says
+    how it reaches an agent: a constraint is told to every agent working in
+    its scope; a recipe, a reference or an example is fetched on demand. Its
+    scope is the subtree of the module it sits in, or, with `scope: repo`,
+    every module. Its strength (pattern, rule, policy) is a field, never a
+    type.
+icon: scale
+folder: rules
+id_prefix: R
+fields: ktw-agents:/data-type/rule
+context:
+    propagation: inherit-from-ancestors
+    resolution_strategy: accumulate
+side: both
+
+# What the body is on this type: CWM stores it, the type names it.
+body:
+    label: Explanation
+    description: Why the rule holds and how to follow it, in prose; the statement is the field.
+    format: markdown
+max_size_bytes: 8192  # statement + explanation (measured rules: p90 5.5 KB, max 7.3 KB)

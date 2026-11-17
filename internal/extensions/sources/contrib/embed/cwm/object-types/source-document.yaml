@@ -1,0 +1,14 @@
+name: source-document
+label: Source document
+description: |
+    Reference + content snapshot of an external document section, used
+    as a derivation anchor for ingested items. Carries content_hash
+    for drift detection. Recorded by the sources service (sources/Ingest,
+    the source-ingest tool), re-anchored by it (sources/Reanchor,
+    source-reanchor) and listed when stale (sources/Stale, source-stale).
+fields: :/data-type/source-document
+context:
+    propagation: local-visible-up
+    resolution_strategy: local-only
+side: both
+max_size_bytes: 4096

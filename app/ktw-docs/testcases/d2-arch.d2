@@ -1,0 +1,33 @@
+direction: right
+
+ktw-agents: ktw-agents {
+  agent: LLM Agent
+  docs-plugin: Docs Plugin
+  agent -> docs-plugin: render_document\nrender_diagram
+}
+
+ktw-docs: ktw-docs Server {
+  api: HTTP API {
+    render: POST /render
+    diagram: POST /diagram
+    health: GET /health
+  }
+  pandoc: Pandoc Executor
+  kroki-client: Kroki Client
+  filter: Pandoc Filter
+
+  api.render -> pandoc
+  api.diagram -> kroki-client
+  filter -> kroki-client
+}
+
+external: External Tools {
+  pandoc-bin: Pandoc Binary
+  typst-bin: Typst Binary
+  kroki-api: Kroki.io API
+}
+
+ktw-agents.docs-plugin -> ktw-docs.api: HTTP
+ktw-docs.pandoc -> external.pandoc-bin: exec
+ktw-docs.pandoc -> external.typst-bin: --pdf-engine
+ktw-docs.kroki-client -> external.kroki-api: POST

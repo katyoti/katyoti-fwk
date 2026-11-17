@@ -1,0 +1,11 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Cas de test
+  description: >-
+    Un test qui vérifie un ou plusieurs cas d'usage. Il porte sa couche (L1 =
+    test unitaire, L2 = sonde scriptée sans jeton, L3 = bout en bout avec un
+    vrai LLM), la référence du test et le dernier résultat connu. Écrit à la
+    rédaction (par une persona de test, par exemple), mis à jour par les
+    verbes de vérification ; ses liens `verifies` vers les cas d'usage disent
+    la couverture.

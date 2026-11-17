@@ -1,0 +1,26 @@
+# ktw-gocode's checks as a review type: build, vet, tests, package layout,
+# dead code and lint run on a module with code, answered as a review result
+# (gocode.ModuleReviewCheck) and filed by the reviews service. Automatic: a
+# build or fix request runs it, before the person's review, on each module
+# owning a Go file the change touched (package-facts ChangeOwners).
+name: go-checks
+title: Build, tests and lint
+description: >-
+  The module's Go code built, vetted and tested, its package layout and dead
+  code checked and the lint detectors run: what the toolchain proves, with no
+  model.
+dimension: quality
+applies:
+  capabilities: [code]
+  when: "len(object.code.code_packages) > 0"
+trigger:
+  mode: automatic
+  kinds: [build, fix]
+  owners: ktw-gocode:package-facts/change-owners
+runner:
+  check: ktw-gocode:gocode/module-review-check
+rating: >-
+  critical when a check finds a critical problem (the build or vet fails),
+  needs-attention when one is high or medium, good otherwise; the score is 100
+  less 25 per critical, 10 per high, 3 per medium and 1 per low.
+presets: [code, full]

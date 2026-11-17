@@ -1,0 +1,22 @@
+name: Record my screen
+description: Record a video of your screen, with the camera if you want, and find the file.
+hashtags:
+- katyoti-usage
+- record
+- video
+- screen recording
+- camera
+level: beginner
+# Pour aller plus loin: what to read once this guide is done.
+next: [use-katyoti]
+steps:
+- id: start
+  say: Press {control:ribbon.record} in the ribbon and choose the screen, window or tab to record.
+  target: {guide: ribbon.record}
+  await: click
+- id: stop
+  say: Do what you want to show. Press {control:ribbon.record} when done.
+  target: {guide: ribbon.record}
+  await: click
+- id: find
+  say: The video is saved as ktw-recording-<number>.webm in your Downloads folder.

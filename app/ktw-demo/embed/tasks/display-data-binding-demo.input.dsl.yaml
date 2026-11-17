@@ -1,0 +1,17 @@
+name: display-data-binding-demo-input
+root: DataBindingDemoInput
+types:
+  DataBindingDemoInput:
+    type: object
+    fields:
+      entity:
+        type: string
+        label: "Entity"
+        description: "What the data-binding demo should show (e.g. 'a customer', 'a project', 'a server')"
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Run demo"
+        groups:
+          - title: "Entity"
+            fields: [entity]

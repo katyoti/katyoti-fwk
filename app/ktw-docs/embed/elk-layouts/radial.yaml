@@ -1,0 +1,6 @@
+name: radial
+description: "Concentric circles from center — shows distance from seed"
+layoutOptions:
+  elk.algorithm: radial
+  elk.spacing.nodeNode: "40"
+  elk.radial.compactor: WEDGE_COMPACTION

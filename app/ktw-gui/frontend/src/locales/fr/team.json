@@ -1,0 +1,124 @@
+{
+  "common": {
+    "loadingJournal": "Chargement depuis le journal…",
+    "stillRunning": "En cours…",
+    "noOutput": "Aucune sortie enregistrée.",
+    "state": {
+      "running": "en cours",
+      "done": "terminé",
+      "failed": "échec"
+    }
+  },
+  "agentNode": {
+    "ledger": "registre d’état partagé",
+    "modeTip": "mode de lancement : {{mode}}",
+    "status": {
+      "running": "En cours",
+      "done": "Terminé",
+      "error": "Erreur",
+      "waiting": "En attente",
+      "idle": "Inactif"
+    }
+  },
+  "edgeDetail": {
+    "coordinator": "coordinateur",
+    "commsTip": "relation de communication (intention de délégation) : {{comms}}",
+    "modeTip": "mode de lancement de l’enfant : {{mode}}",
+    "linkIntro": "Ce que ce lien a transporté : les données que le parent a transmises à l’enfant, et le résultat que l’enfant a renvoyé.",
+    "sentDown": "Transmis (entrée)",
+    "noInput": "Aucune entrée transmise sur ce lien.",
+    "returnedUp": "Renvoyé (sortie)",
+    "channel": "canal",
+    "channelIntro_one": "Ce que ce canal a transporté : {{count}} message envoyé directement de {{from}} à {{to}}.",
+    "channelIntro_other": "Ce que ce canal a transporté : {{count}} messages envoyés directement de {{from}} à {{to}}.",
+    "noMessages": "Aucun message enregistré sur ce lien."
+  },
+  "ledger": {
+    "empty": "Aucun registre d’état partagé dans cette exécution. Le registre apparaît quand une tâche de type Magentic publie un état partagé pour ses spécialistes.",
+    "title": "Registre d’état partagé",
+    "complete": "terminé",
+    "updates_one": "{{count}} mise à jour",
+    "updates_other": "{{count}} mises à jour"
+  },
+  "mailbox": {
+    "title": "Boîte aux lettres · {{teammate}}",
+    "empty": "Aucun message pour l’instant.",
+    "placeholder": "Envoyer un message à {{teammate}}…",
+    "send": "Envoyer"
+  },
+  "narrative": {
+    "empty": "Aucune activité d’équipe dans cette exécution. Les équipes apparaissent ici quand un agent utilise create-team / spawn-teammate.",
+    "team": "équipe",
+    "unknown": "inconnu",
+    "someone": "quelqu’un",
+    "memberTip": "{{member}} — {{state}} (cliquez pour ouvrir sa boîte aux lettres)",
+    "teamState": {
+      "forming": "en formation",
+      "active": "active",
+      "done": "terminée",
+      "failed": "en échec"
+    },
+    "memberState": {
+      "working": "au travail",
+      "done": "terminé",
+      "left": "parti"
+    },
+    "event": {
+      "created": "Équipe « {{team}} » créée",
+      "memberJoined": "{{member}} a rejoint l’équipe",
+      "memberLeft": "{{member}} a quitté l’équipe",
+      "message": "{{member}} a envoyé un message",
+      "itemShared": "{{member}} a partagé un élément",
+      "stateChanged": "Équipe → {{state}}",
+      "completed": "Équipe terminée",
+      "failed": "Équipe en échec"
+    }
+  },
+  "taskDetail": {
+    "userSession": "utilisateur / session",
+    "task": "tâche",
+    "startedBy": "Lancée par",
+    "runId": "ID d’exécution",
+    "copied": "Copié",
+    "copyRunId": "Copier l’ID d’exécution",
+    "input": "Entrée",
+    "noInput": "Aucune entrée enregistrée.",
+    "error": "Erreur",
+    "output": "Sortie",
+    "resources": "Ressources",
+    "tokens_one": "{{tokens}} jeton",
+    "tokens_other": "{{tokens}} jetons",
+    "sessionRunning": "Session en cours : les totaux apparaissent à la fin de la session.",
+    "openJournal": "Ouvrir le journal de session",
+    "journalTitle": "Journal · {{sessionId}}"
+  },
+  "panel": {
+    "lens": {
+      "tasks": "Tâches",
+      "team": "Équipe",
+      "ledger": "Registre"
+    },
+    "journal": "journal",
+    "live": "en direct",
+    "clear": "Effacer l’état de l’équipe",
+    "callTip": "{{node}} → {{uri}} · {{outcome}} · {{durationMs}} ms (tentative {{attempt}})",
+    "calls_one": "{{count}} appel",
+    "calls_other": "{{count}} appels",
+    "running_one": "{{count}} en cours",
+    "running_other": "{{count}} en cours",
+    "done_one": "{{count}} terminée",
+    "done_other": "{{count}} terminées",
+    "tasks_one": "{{count}} tâche",
+    "tasks_other": "{{count}} tâches",
+    "empty": "Aucune délégation dans cette exécution.",
+    "emptyHint": "L’arbre apparaît quand une tâche lance des workers ou des sous-équipes."
+  },
+  "workflowStatus": {
+    "none": "Aucun workflow en cours. Lancez une tâche depuis la CLI pour voir l’activité en direct ici.",
+    "workflow": "Workflow",
+    "dryRunTip_one": "{{count}} enfant remplacé par le simulateur (dry-run)",
+    "dryRunTip_other": "{{count}} enfants remplacés par le simulateur (dry-run)",
+    "dryRun_one": "dry-run · {{count}}",
+    "dryRun_other": "dry-run · {{count}}"
+  }
+}

@@ -1,0 +1,7 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: project.caught-up
+label: Objects caught up
+description: >-
+  Objects changed outside the CWM verbs (a git pull or merge, an editor, a bulk copy) were caught up when CWM opened or scanned the repository: one grouped event names the ids added, modified and removed, the cause, the outside actor (the commit's author and sha) and the count. At 50 objects or fewer each one also gets its object event (operation caught-up); above 50 the event says held and the object events wait until CatchUpRelease is called with its id. Declared; not subscribable yet.
+payload: system:/data-type/objects-caught-up-event

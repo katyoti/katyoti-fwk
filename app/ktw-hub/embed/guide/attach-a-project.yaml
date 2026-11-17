@@ -1,0 +1,27 @@
+name: Attach a project
+description: Attach one of your folders or git repositories to the universe as a project.
+hashtags:
+- project
+- attach project
+- mount
+- folder
+- repository
+level: beginner
+requires:
+- open-a-universe
+steps:
+- id: open-menu
+  say: Right-click the universe's icon in the ribbon to open its menu.
+  target: {guide: ribbon.universe}
+  await: manual
+- id: edit
+  say: Choose {control:universe-menu.edit}.
+  target: {guide: universe-menu.edit}
+  await: click
+- id: attach
+  say: Open the {control:universe-edit.projects} tab, press {control:projects.attach} and pick the folder.
+  target: {guide: projects.attach}
+  await: manual
+- id: attached
+  say: Once the project is attached, press {control:guide.check}.
+  check: ktw-univers:universe-checks/project-attached

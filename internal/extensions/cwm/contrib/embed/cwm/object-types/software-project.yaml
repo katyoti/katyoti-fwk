@@ -1,0 +1,16 @@
+# The default project type: a git
+# repository holding software modules, documentation, studies and the system
+# modules, in that order - what `cwm project-init` and the new-project wizard
+# create. It needs no solution: any universe opens it.
+name: software-project
+label: Software project
+label_plural: Software projects
+folder: objects
+description: "A git repository holding software modules, documentation, studies and the platform's system modules."
+icon: git-branch
+color: blue
+capabilities: [project, lifecycle]
+tree: root
+workflow: manual
+allowed_children: [software-module, documentation, system-module]
+child_order: [software-module, documentation, system-module]

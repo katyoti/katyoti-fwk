@@ -1,0 +1,18 @@
+name: source-set
+kind: field-type
+basePrimitive: array
+description: The sources an object reads from, chosen in any form or action - one picker per contributed source connector, the connectors and their methods listed by the method the field names and called through the host (callMethod); its value the items picked, each with its connector. Without a host that calls methods the form shows the value only.
+
+configSchema:
+  fields:
+    connectors:
+      type: string
+      description: The method listing the connectors - {object} to {connectors - each with name, label, search, badges, layout}.
+    object:
+      type: string
+      optional: true
+      description: The object the sources are for (the methods' object).
+    note:
+      type: string
+      optional: true
+      description: A note under the field in a form - what happens at creation (each source used becomes one of the object's sources with its selection, read in the background).

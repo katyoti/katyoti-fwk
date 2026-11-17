@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Les critères qui JUGENT la livraison d''une version, une partie de ce qui la vise. Quand une version les nomme, sa note est le cumul sur eux seuls ; sinon sur tout ce qui la vise.'
+  inverse_label: 'Juge'
+  label: 'Jugé par'

@@ -1,0 +1,116 @@
+{
+  "$schema": "ktw-schema/v1",
+  "description": "Coverage of every shorthand grammar variant from §3 of the DSL reference.",
+  "name": "shorthand",
+  "types": {
+    "Author": {
+      "fields": {
+        "id": {
+          "content": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "idField": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "Category": {
+      "fields": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PostLikeFields": {
+      "fields": {
+        "author": {
+          "mode": "many2one",
+          "target": "Author",
+          "type": "link"
+        },
+        "avatar": {
+          "content": "avatar",
+          "optional": true,
+          "type": "string"
+        },
+        "contributors": {
+          "mode": "many2many",
+          "target": "Author",
+          "type": "link"
+        },
+        "featured_tag": {
+          "type": "Tag"
+        },
+        "mixed": {
+          "cases": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "type": "choice"
+        },
+        "parent": {
+          "linkType": "part_of",
+          "mode": "many2one",
+          "target": "Category",
+          "type": "tree"
+        },
+        "score": {
+          "content": "slider",
+          "contentParams": {
+            "max": 100,
+            "min": 0,
+            "step": 5
+          },
+          "type": "number"
+        },
+        "slug": {
+          "content": "text",
+          "contentParams": {
+            "max": 120,
+            "transform": "lowercase"
+          },
+          "type": "string"
+        },
+        "summary": {
+          "content": "markdown",
+          "type": "string"
+        },
+        "tag_refs": {
+          "items": "Tag",
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Tag": {
+      "fields": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "version": "1.0.0"
+}

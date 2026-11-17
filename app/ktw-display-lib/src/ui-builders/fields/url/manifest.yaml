@@ -1,0 +1,7 @@
+name: url
+kind: field-type
+basePrimitive: string
+description: URL input with format validation + clickable link in view. Renderer comes via gui-advanced.
+
+configSchema:
+  fields: {}

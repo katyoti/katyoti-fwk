@@ -1,0 +1,14 @@
+# A ready feature is built: active as it starts, implemented, its module
+# brought up to date (the module-updated gate: its use cases, its acceptance
+# checks, the pages, the change log), verified against its acceptance
+# criteria (ready-to-test), then done.
+name: feature-build
+description: Implement the feature, bring its module up to date, verify it against its acceptance criteria.
+types: [feature]
+states: [ready]
+start: active
+transition: done
+steps:
+  - {name: implement, phase: build, class: deliver, role: coder, share: 0.6, instructions: "Build the feature its use cases describe, with the tests behind its criteria."}
+  - {name: module-update, phase: build, class: deliver, role: documenter, after: [implement], share: 0.2, gate: module-updated, skill: ktw-agents:/skill/module-update, instructions: "Bring the module up to date with the change: the feature it serves and its use cases, the acceptance check that proves it (kept for non-regression), the module pages updated in place, the change-log entry naming the request — then record it (requests module-update)."}
+  - {name: verify, phase: verify, class: deliver, role: tester, gate: ready-to-test, after: [module-update], share: 0.2, skill: ktw-methods:/skill/verify-and-gate, instructions: "Run the feature's acceptance criteria; it is verified when they pass."}

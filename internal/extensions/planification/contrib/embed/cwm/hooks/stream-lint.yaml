@@ -1,0 +1,9 @@
+# A module placed in a stream: a module serves several streams, so its
+# releases are in one instead.
+name: stream-lint
+description: >-
+  A module in a stream.
+type: lint
+uri: ktw-agents:streams/lint
+filter:
+  types: [stream]

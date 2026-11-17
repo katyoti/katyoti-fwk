@@ -1,0 +1,13 @@
+name: in-stream
+label: In stream
+inverse_label: Holds
+from: any
+to: stream
+cardinality: N:1
+target: object
+object_storage: edges
+description: |
+  A release IS IN its stream (exactly one), its version following the stream's
+  scheme; an increment names the stream it aims at. A module in a stream is a
+  lint finding: a module serves several streams.
+inverse_name: holds

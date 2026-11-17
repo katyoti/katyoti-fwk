@@ -1,0 +1,15 @@
+# A deck theme shown as itself: its sample deck in its look, and a form for
+# its description, colours, sizes and fonts (variants, chrome and icons stay
+# as imported) — the GUI's `deck-theme` view.
+name: "Theme"
+description: "The theme's sample deck in its look, and its colours, sizes and fonts to adjust"
+icon:
+  tabler: "palette"
+  emoji: "🎨"
+order: 10
+filter:
+  types:
+    - "deck-theme"
+content:
+  kind: "extension"
+  extension: "deck-theme"

@@ -1,0 +1,72 @@
+# Registers `object-type` as a SYSTEM contribution kind, beside node-type and
+# item-type — the two it replaces.
+#
+# It lives here rather than in a method pack because every binary that publishes
+# a CWM type pack now publishes object types: the object type of a node or item
+# kind is DERIVED from it (see storage.LoadObjectTypesWithLegacy), so the kind
+# appears wherever CWM types do. Left in ktw-methods, the census refused every
+# other binary's manifest — correctly: "every kind needs a contribution-type
+# declaration naming its schema".
+#
+# Registers `object-type` as a contribution kind. Each declaration says what one
+# `Object.Type` value means: its capability bundle, description, icon, actions.
+#
+# A sidecar ships one `<provider>:/object-type/<name>` contribution per type it
+# owns (D2, 2026-09-18) — replacing the node_types/ + item_types/ folder pair,
+# whose split encoded a node/item distinction the object model removed.
+#
+# `validate: error`, like every kind: an object type that does not fit the
+# schema is marked invalid at ingest, never only warned about.
+name: object-type
+description: |
+  The meaning of one `Object.Type` value: the capability bundle it composes,
+  plus description, icon and actions. Read by CWM to validate a type on write,
+  and by the GUI to select panels BY CAPABILITY — so a new type ships a usable
+  interface without any change to ktw-gui.
+schema: system:/data-type/object-type
+validate: error
+
+# An object type names something to run: its actions bind the action URIs
+# its pane and action bar fire on an object, so an untrusted origin may not
+# override one.
+execution: executable
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the type's name and description as the tree, the pane header and the
+# action bar show them, and each action's label (an action is named by its
+# label: two bindings of one URI are two actions), and each badge of the
+# type's pane section (its prefix and tooltip, a badge named by its field).
+translatable: [label, label_plural, description, "actions[label].label", "pane.badges[field].label", "pane.badges[field].tooltip"]
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 1472  # measured max 959 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `object-types/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: object-types
+  former: [object_types]   # a pack or an override tree laid out before the rename: read, with a warning
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

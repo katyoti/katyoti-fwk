@@ -1,0 +1,27 @@
+# The use-cases extension's framing of a chat on a use-case, or on a module
+# (whose use-cases it is): what a use-case is, and the use-cases service as
+# tools.
+name: use-cases
+description: How use-cases are added, split, retired and checked, told to a chat on a use-case or on a module.
+filter:
+  # a use-case, or any module - its type's level capability
+  when: "type == 'use-case' or 'module' in current.capabilities"
+agent:
+  system:
+    - id: use-cases-how
+      title: Use-cases
+      text: >-
+        A use-case is a need of module ${current.module} a person can check: it
+        serves one or more goals and is proven by its acceptance criteria, each
+        verified with object-verify (a verdict per criterion). A use-case no longer
+        wanted is retired, one that holds two needs is split — both keep the
+        trail in the journal. Add, split, retire and attach criteria with the
+        use-cases tools.
+  tools:
+    - uri: ktw-methods:use-cases/add
+    - uri: ktw-methods:use-cases/split
+    - uri: ktw-methods:use-cases/retire
+    - uri: ktw-methods:use-cases/attach-criterion
+    - uri: ktw-methods:use-cases/uncovered
+    - uri: ktw-methods:use-cases/goals
+    - plugin: verification   # object-verify

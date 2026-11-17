@@ -1,0 +1,21 @@
+# The method assistant on an object. Its source is the method-assistant verb
+# drawing What's Next as a page: where the object's scope stands, the requests
+# to triage, the goals and features (each opening its chat), the findings and
+# the ranked actions, each run on the act URI.
+name: "What's Next"
+description: "The method assistant: what to do next on this object"
+icon:
+  tabler: "compass"
+  emoji: "🧭"
+order: 10
+filter:
+  # A project or a module, whatever its type's name: the level is a
+  # capability.
+  capabilities: ["project", "module"]
+  # Only a planned module shows it: a study or a dossier, not planned, does
+  # not; the project keeps it.
+  when: "'module' not in current.capabilities or 'planned' in current.capabilities"
+source: "ktw-methods:method-assistant/next-page"
+# Any method object of the module moves what is next.
+refresh:
+  scope: "module"

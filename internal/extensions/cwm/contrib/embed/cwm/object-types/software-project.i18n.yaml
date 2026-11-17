@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Projet logiciel
+  label_plural: Projets logiciels
+  description: >-
+    Un dépôt git qui tient des modules logiciels, de la documentation, des
+    études et les modules système de la plateforme.

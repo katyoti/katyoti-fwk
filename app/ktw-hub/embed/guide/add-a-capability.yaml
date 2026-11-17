@@ -1,0 +1,27 @@
+name: Add a capability to my universe
+description: Install a sidecar from the Marketplace and wire it into this universe.
+hashtags:
+- capability
+- add capability
+- install sidecar
+- marketplace
+- wire
+level: beginner
+requires:
+- open-a-universe
+steps:
+- id: open-marketplace
+  say: Open the {control:ribbon.marketplace} from the ribbon.
+  target: {guide: ribbon.marketplace}
+  await: click
+- id: install
+  say: Find the capability you want and press {control:marketplace.install} on its row.
+  target: {guide: marketplace.row}
+  await: manual
+- id: wire
+  say: On the same row, press the check mark ({control:marketplace.wire}) to use it in this universe.
+  target: {guide: marketplace.row}
+  await: manual
+- id: wired
+  say: Once it is wired, press {control:guide.check}.
+  check: ktw-univers:universe-checks/capability-wired

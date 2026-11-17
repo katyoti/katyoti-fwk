@@ -1,0 +1,19 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ObjectCore:
+      fields:
+        description:
+          description: 'De quoi parle l''objet, en une ou deux phrases.'
+          label: 'Description'
+        icon:
+          description: 'Un nom d''icône ; celle du type si vide.'
+          label: 'Icône'
+        name:
+          description: 'Le nom de l''objet.'
+          label: 'Nom'
+        tags:
+          description: 'Libellés libres pour filtrer.'
+          label: 'Étiquettes'

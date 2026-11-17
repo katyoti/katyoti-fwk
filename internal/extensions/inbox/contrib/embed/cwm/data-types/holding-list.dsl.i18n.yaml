@@ -1,0 +1,11 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    HoldingListFields:
+      fields:
+        description:
+          description: 'Pour qui est la liste et ce qu''elle contient.'
+        members:
+          description: 'Qui peut répondre à ses questions : personnes, rôles et agents.'

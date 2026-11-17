@@ -1,0 +1,25 @@
+# « À faire »: everything waiting on the person, each item asking ONE action
+# of a closed set — decide, test by hand, validate, answer, unblock (notices
+# apart) — read from the person steps, the open decisions with a proposal, the
+# hand tests and the Inbox (views.go: PersonQueue). A GLOBAL panel, first of
+# the Global strip with its count in the rail; on a module's pane its items,
+# on a request's or a decision's pane that object's own (the Inbox opens a
+# person step's entry there), those on hold among them. The page is composed of the page DSL's generic nodes only; its
+# buttons and forms run the verbs that move the work on.
+name: "To do"
+description: "Everything waiting on you, by the one action each asks: decide, test by hand, validate, answer, unblock"
+icon:
+  tabler: "checklist"
+  emoji: "✅"
+order: 5
+global: true
+filter:
+  capabilities:
+    - "planned"
+    - "request"
+    - "decision"
+source: "ktw-agents:views/person-queue-page"
+count: "ktw-agents:views/person-queue-count"
+# What waits on the person changes anywhere: a step, a decision, the Inbox.
+refresh:
+  scope: "universe"

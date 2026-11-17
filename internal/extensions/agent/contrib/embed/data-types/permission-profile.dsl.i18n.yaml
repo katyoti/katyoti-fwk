@@ -1,0 +1,13 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ProfileSpec:
+      fields:
+        description:
+          description: 'Ce que le profil autorise et quand l''utiliser.'
+        allow_rules:
+          description: 'Les règles qui pré-approuvent un appel d''outil qui demanderait (outil.dimension:glob, outil:** ou *) ; la première qui correspond l''emporte.'
+        deny_rules:
+          description: 'Les règles qui refusent un appel d''outil d''emblée, vérifiées avant les règles d''autorisation.'

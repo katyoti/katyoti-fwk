@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Une source par connecteur
+  description: >-
+    L'objet lit chaque connecteur par une seule source d'information : une
+    deuxième source d'un connecteur qu'il lit déjà est refusée, on ouvre celle
+    qu'il a pour changer ce qu'elle prend.

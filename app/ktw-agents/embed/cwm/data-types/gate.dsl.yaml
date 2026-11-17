@@ -1,0 +1,70 @@
+$schema: ktw-schema/v1
+name: gate
+version: "1.0.0"
+root: Gate
+description: |
+  Body schema for CWM items of kind 'gate' — a scoped, inheritable
+  acceptance gate. Unifies definition-of-done (phase: done) and
+  definition-of-ready (phase: ready). Criteria support inheritance +
+  applies_to gating + overrides; satisfaction is computed from each
+  criterion's verifier probe, never hand-set.
+types:
+  Gate:
+    type: object
+    fields:
+      phase:
+        type: string@enum(ready, done)
+        label: Phase
+        description: >-
+          ready = preconditions before work starts (was
+          definition-of-ready); done = acceptance conditions (was
+          definition-of-done).
+        default: done
+      scope:
+        type: string@enum(method, project, us, uc)
+        label: Scope
+        description: >-
+          The altitude this gate is authored at; it cascades to
+          descendants (method→project→us→uc) unless a criterion sets
+          inherit:false or is overridden.
+        default: project
+        optional: true
+      criteria:
+        type: GateCriterion[]
+        label: Criteria
+        description: |
+          Criteria that must all hold for this gate. A descendant inherits
+          criteria from ancestors unless their 'inherit' flag is false.
+  GateCriterion:
+    type: object
+    fields:
+      id:
+        type: string
+        label: ID
+        description: Local ID; full ID is {nodeID}.{id}.
+      label:
+        type: string
+        label: Label
+      inherit:
+        type: boolean
+        label: Inherit to descendants
+        default: true
+        optional: true
+      applies_to:
+        type: string[]
+        label: Applies to node types
+        description: Node types this criterion applies to (empty = all).
+        optional: true
+      overrides:
+        type: string
+        label: Overrides ancestor criterion
+        description: Full ancestor criterion ID this replaces.
+        optional: true
+      verifier:
+        type: string
+        label: Auto-verifier
+        description: |
+          The probe whose result computes this criterion's satisfaction
+          (e.g. "test-case T-1234 passing", "addressing-tasks-all-done").
+          Computed, never hand-set.
+        optional: true

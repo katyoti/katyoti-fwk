@@ -1,0 +1,12 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Enregistre qu'un nouvel élément remplace un plus ancien du même genre. Cycles interdits
+    (validé à l'écriture). Le statut de l'élément remplacé passe en général à `superseded` ou
+    `deprecated` dans la même écriture. Utilisée par decision.supersedes (la trace « nous
+    avons changé d'avis », écrite par Supersede du service des décisions) et rule.supersedes
+    (une règle remaniée remplace une contrainte plus ancienne).
+  inverse_label: Remplacé par
+  label: Remplace

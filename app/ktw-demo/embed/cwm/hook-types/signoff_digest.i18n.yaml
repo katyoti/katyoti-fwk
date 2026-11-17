@@ -1,0 +1,6 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Quand les visas d''un objet, d''un sous-arbre ou d''un module sont récapitulés. Répond par des constats : le visa de chaque objet en une ligne.'
+  label: 'Récapitulatif des visas'

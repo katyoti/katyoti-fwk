@@ -1,0 +1,12 @@
+# A POLICY, authored once and attached by selector — migrated from the
+# `aspect-contribution` kind 2026-09-19.
+#
+# The selector lives here rather than in a separate artefact because UC-4's
+# shape is that the policy's AUTHOR declares who it governs. No target type
+# re-authors it; tightening it propagates with no per-type edit.
+name: require-tests
+label: Tests required
+description: >-
+  Objects of the named types must declare their test levels.
+applies:
+  types: [feature, use-case]

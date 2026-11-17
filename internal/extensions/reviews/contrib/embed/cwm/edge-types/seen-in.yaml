@@ -1,0 +1,13 @@
+name: seen-in
+label: Seen in
+inverse_label: Saw
+from: finding
+to: review
+cardinality: N:1
+description: |
+  The latest review that saw a finding. Each review of the finding's type
+  that finds it again (by its fingerprint) moves this edge to itself; a
+  finding the current review no longer sees is resolved by it. Comparing a
+  review with the previous one reads these edges: new (found in it), persisting
+  (seen in it, found before), resolved (seen last in the previous one).
+inverse_name: saw

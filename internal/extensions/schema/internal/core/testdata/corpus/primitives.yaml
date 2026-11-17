@@ -1,0 +1,29 @@
+$schema: ktw-schema/v1
+name: primitives
+version: "1.0.0"
+description: "Primitive types catalog — string / number / boolean / any / null."
+types:
+  PlainText:
+    type: string
+  Email:
+    type: string@email
+  MarkdownDoc:
+    type: string@markdown
+  Slug:
+    type: string@text(max:120, transform:lowercase)
+  Score:
+    type: number@rating(max:5, half:true)
+  Money:
+    type: number@currency(code:EUR)
+  Active:
+    type: boolean@switch
+  Anything:
+    type: any
+  Nothing:
+    type: "null"
+  Role:
+    type: string@enum(admin, member, guest)
+  Status:
+    type: string@enum(active, archived)?
+  Priority:
+    type: number@enum(1, 2, 3)

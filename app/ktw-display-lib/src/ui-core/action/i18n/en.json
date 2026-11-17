@@ -1,0 +1,25 @@
+{
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "delete": "Delete",
+    "edit": "Edit",
+    "new": "New",
+    "view": "View",
+    "close": "Close"
+  },
+  "selected": "selected",
+  "fields": {
+    "ok": "OK",
+    "add": "Add",
+    "empty": "No entries yet — click « Add » to create one.",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "remove": "Remove",
+    "typeEnter": "Type and press Enter…",
+    "selectValues": "Select values…",
+    "derivedFrom": "filled from {{source}}",
+    "editedByYou": "edited by you"
+  }
+}

@@ -1,0 +1,24 @@
+# The authored object type for approval-request — supersedes the derived one
+# (first writer wins).
+#
+# COMMITTED since 2026-09-26 (the user: "inbox messages need commit"). It was a
+# RUNTIME kind kept in the project's CWM store (decided 2026-09-25); it is now
+# filed in the operational system module `sys-inbox`, under `approvals/`, and
+# travels with the repository like every other object.
+name: approval-request
+label: Approval request
+folder: approvals
+description: >-
+  A human-in-the-loop checkpoint: an agent that hits a decision beyond its
+  authority creates one under the inbox and waits; a person answers it there.
+capabilities: [lifecycle]
+workflow: approval-request
+context:
+  propagation: local-visible-up
+  resolution_strategy: local-only
+side: both
+# No max_size_bytes: a request is ~600 bytes of fixed fields plus the question
+# (unbounded prose the asker writes) and the answer note (stored twice: in the
+# fields and in the lifecycle history). A cap would refuse the question of a
+# task blocked on it, or admit it and then refuse the answer that grows it.
+fields: :/data-type/approval-request

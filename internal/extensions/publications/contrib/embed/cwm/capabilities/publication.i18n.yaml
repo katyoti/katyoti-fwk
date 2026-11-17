@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Publication
+  description: >-
+    Ce qu'elle publie (une vue de pilotage et sa portée, ou un objet source
+    arborescent), sa cible (un connecteur de publication ou le convertisseur
+    d'une vue) et ses réglages, si une livraison la republie, et le dernier
+    résultat.

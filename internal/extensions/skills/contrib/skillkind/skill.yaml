@@ -1,0 +1,57 @@
+# The `skill` kind, declared by the skills pack: every binary that wires the
+# skills extension emits one `<provider>:/skill/<name>` Contribution per
+# discovered SKILL.md. Its schema is provider-relative: the publisher names
+# `<provider>:/data-type/skill`, the shape of mbapi.SkillBody (skillkind.Leaf),
+# which IS the SKILL.md frontmatter contract.
+name: skill
+description: |
+  A progressively-disclosed capability (L0 meta / L1 instructions / L2
+  references). One SKILL.md, split once by the producer: the frontmatter is
+  the `data` layer, the markdown body is the `instructions` layer (what a
+  reader opens), the file as written is the `source` layer (what provenance
+  signs). No consumer parses a frontmatter fence.
+
+# The data schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: skill
+validate: error
+
+# A skill names something to run: its folder carries scripts an agent is told
+# to execute, and its instructions steer what the agent does with its tools.
+# Declared so the override gate refuses a skill override from an origin the
+# universe does not trust, as it does a task's.
+execution: executable
+
+# Layers every entry of this kind carries, and the metadata contract — read by
+# the framework (default layer, residency, budget check, meta derivation).
+# `instructions` is the default: opening a skill means reading it. None of the
+# markdown is resident — a listing needs meta, a reader fetches by hash.
+layers:
+  data:         {mediaType: application/json, required: true}
+  instructions: {mediaType: text/markdown, required: true, default: true}
+  source:       {mediaType: text/markdown, required: true}
+meta:
+  budget: 2048  # measured max 1015 B across 21 binaries (2026-09-21), x1.5 rounded up
+  # The picker fields are written ONCE, in the data layer (the frontmatter);
+  # the manifest builder derives meta from them. The producer writes no meta
+  # but the media type. A census guard refuses a disagreement (e8, 2026-09-22).
+  from: data
+  fields: [name, description, icon, hashtags, category, advertised]
+
+# How a file becomes a skill (contribution-types.md "How files become
+# layers"): a markdown file split once - its frontmatter is the data layer,
+# its body the instructions, the file as written the source. A skill is
+# addressed by its name, whatever its layout (flat, grouped, a folder's
+# SKILL.md); a skill folder's own references, scripts and assets are part of
+# it, never skills.
+source:
+  folder: skills
+  match: ["*.md"]
+  id: name
+  skip: [references, scripts, assets]
+  format: frontmatter
+  layers:
+    data: {from: frontmatter}
+    instructions: {from: body}
+    source: {from: file}

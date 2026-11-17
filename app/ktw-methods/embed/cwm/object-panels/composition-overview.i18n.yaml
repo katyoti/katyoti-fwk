@@ -1,0 +1,5 @@
+# Translations of the panel beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  name: Composition
+  description: "Ce dont cet objet est fait : ses objectifs et ses fonctionnalités"

@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "title": "Pass-through"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 4,
+      "settings": {
+        "background": "#1e293b",
+        "class": "dark wide",
+        "transition": "fade"
+      },
+      "settingsLine": 5,
+      "slots": [
+        {
+          "name": "default",
+          "line": 6,
+          "markdown": "\u003c!-- .slide: data-auto-animate --\u003e\n## reveal.js comments stay\n\n- Kept \u003c!-- .element: class=\"fragment\" --\u003e"
+        }
+      ]
+    }
+  ]
+}

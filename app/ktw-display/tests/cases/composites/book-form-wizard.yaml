@@ -1,0 +1,76 @@
+id: composites/book-form-wizard
+category: composites
+title: Composite — Book form (wizard layout)
+description: "Book entity rendered with layout=wizard (each group becomes a Stepper.Step). Validates the new wizard form-layout introduced in Subtask 3 of gui-form. Until /widget/form is wired through buildUIForm() (Subtask 4), the proto walker ignores layout: and renders flat."
+schema:
+  name: reading-list-wizard
+  version: 1
+  root: Book
+  types:
+    Book:
+      type: object
+      label: Book
+      idField:
+        - id
+      titleField:
+        - title
+      fields:
+        id:
+          type: string
+          label: ID
+        title:
+          type: string
+          label: Title
+        author_email:
+          type: string
+          label: Author email
+          content:
+            type: email
+          optional: true
+        rating:
+          type: number
+          label: Rating
+          content:
+            type: rating
+            max: 5
+          default: 3
+        notes:
+          type: string
+          label: Notes
+          content:
+            type: markdown
+            maxLength: 500
+          optional: true
+        is_finished:
+          type: boolean
+          label: Finished?
+          default: false
+      extensions:
+        - type: ui-form
+          layout: wizard
+          groups:
+            - title: Identify
+              description: Step 1 — what is this book?
+              cols: 1
+              fields:
+                - title
+                - author_email
+            - title: Rate
+              description: Step 2 — how did you rate it?
+              cols: 1
+              fields:
+                - rating
+            - title: Annotate
+              description: Step 3 — your notes (optional).
+              cols: 1
+              fields:
+                - notes
+                - is_finished
+value: {}
+mode: create
+tags:
+  - composites
+  - object
+  - ui-form
+  - layouts
+  - wizard

@@ -1,0 +1,14 @@
+# The sources extension's: where a source's sync stands.
+# Raised on the information source itself - started, items read n of m, then
+# failed (with why) or ended -, so a run reading several sources shows a line
+# per source and the source's card follows its own. Published: a follower
+# subscribes to the source's raised events (its subject carries the source's
+# subject token); an async on_source_sync entry reacts to it.
+name: source.sync
+label: Source sync progress
+description: >-
+  Where a sync of an information source stands: started, items read of the
+  items its connector named, then failed with why or ended; the payload names
+  the source, the phase, the counts and the error.
+point: on_source_sync
+published: true

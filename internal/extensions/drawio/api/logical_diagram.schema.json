@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LogicalDiagram",
+  "description": "LLM-facing pivot for the v2 drawio pipeline. See logical_diagram.go for the Go type + docs/modules/doc-engine/drawio/concepts.md for the design.",
+  "type": "object",
+  "required": ["viewpoint", "nodes"],
+  "additionalProperties": false,
+  "properties": {
+    "viewpoint": {
+      "type": "string",
+      "description": "Catalog URI of the viewpoint that draws the diagram (e.g. ktw-docs:/viewpoint/archimate3-layered): a notation, its template library and a layout profile.",
+      "pattern": "^[a-z][a-z0-9-]*:/viewpoint/[a-z][a-z0-9-]*$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Optional human-readable title of the diagram."
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/Node"},
+      "description": "Diagram nodes. At least one is required."
+    },
+    "edges": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Edge"},
+      "description": "Directed edges between nodes."
+    },
+    "zones": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Zone"},
+      "description": "Named partitions (swimlanes / containers) over subsets of nodes."
+    },
+    "layoutHints": {"$ref": "#/$defs/LayoutHints"},
+    "page": {"$ref": "#/$defs/Page"},
+    "mark": {
+      "type": "string",
+      "description": "The production mark under the diagram (ArchiFactory, its version, the date): on when omitted, off removes it, or a text of its own."
+    }
+  },
+  "$defs": {
+    "Page": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The frame the diagram is drawn in: a page template of the viewpoint's library, and the values of its placeholders.",
+      "properties": {
+        "name": {"type": "string", "description": "Page template name (e.g. dossier); empty keeps the viewpoint's page."},
+        "values": {"type": "object", "additionalProperties": {"type": "string"}, "description": "Values of the page's %placeholders% (project_code, project_name, ...)."}
+      }
+    },
+    "Node": {
+      "type": "object",
+      "required": ["id", "label", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Stable identifier, unique within the diagram."
+        },
+        "label": {
+          "type": "string",
+          "description": "Human-readable display name."
+        },
+        "kind": {
+          "type": "string",
+          "description": "An element kind of the viewpoint's notation."
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Free-form per-node data; templates read scalar values as %key% placeholders and bindings read paths like attributes.domain."
+        },
+        "zone": {
+          "type": "string",
+          "description": "Optional zone id (must reference an entry in zones[])."
+        }
+      }
+    },
+    "Edge": {
+      "type": "object",
+      "required": ["id", "source", "target", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Stable identifier, unique within the diagram."
+        },
+        "source": {
+          "type": "string",
+          "description": "Source node id."
+        },
+        "target": {
+          "type": "string",
+          "description": "Target node id."
+        },
+        "kind": {
+          "type": "string",
+          "description": "A relationship kind of the viewpoint's notation."
+        },
+        "label": {
+          "type": "string",
+          "description": "Optional inline label."
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Free-form per-edge data; templates read scalar values as %key% placeholders and bindings read paths like attributes.fl_codes."
+        }
+      }
+    },
+    "Zone": {
+      "type": "object",
+      "required": ["id", "label", "order"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "label": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Partition ordering (left-to-right or top-to-bottom by layout direction). Zero-based, monotonic within a diagram."
+        },
+        "members": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Optional explicit member node ids. Either this OR node.zone fields assign membership; both is allowed."
+        },
+        "parent": {
+          "type": "string",
+          "description": "The zone this one is drawn inside (a lane in its pool)."
+        },
+        "kind": {
+          "type": "string",
+          "description": "The zone's look: the template library's zone:<kind> template (an AWS Region, a VPC)."
+        }
+      }
+    },
+    "LayoutHints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preset": {
+          "type": "string",
+          "description": "Named preset (e.g. archi-layered, layered-right, force). When set, wins over algorithm + direction."
+        },
+        "algorithm": {
+          "type": "string",
+          "enum": ["layered", "force", "stress", "radial"],
+          "description": "ELK algorithm name."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["UP", "DOWN", "LEFT", "RIGHT"],
+          "description": "Flow direction (used by layered)."
+        },
+        "elkOptions": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "description": "Raw ELK layout options that win over the preset's."
+        },
+        "lanes": {
+          "type": "boolean",
+          "description": "Draw zones as lanes: bands across the reading direction (BPMN pools and lanes)."
+        },
+        "laneHeader": {
+          "type": "string",
+          "enum": ["side", "top"],
+          "description": "Where a lane's label sits: side (the default) or top (boxes inside boxes)."
+        }
+      }
+    }
+  }
+}

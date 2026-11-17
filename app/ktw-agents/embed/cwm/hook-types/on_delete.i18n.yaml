@@ -1,0 +1,7 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Après la suppression d'un objet. Un échec est signalé ; il n'annule jamais la suppression.
+  label: Supprimé

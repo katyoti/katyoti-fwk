@@ -1,0 +1,23 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    TestCase:
+      fields:
+        last_run_at:
+          label: "Dernière exécution le"
+        last_run_status:
+          description: "Écrit par les verbes de type verify ; protégé sur l'honneur."
+          label: "Statut de la dernière exécution"
+        layer:
+          description: "L1 = test unitaire de code ; L2 = sonde scriptée sans jetons ; L3 = scénario avec un vrai LLM."
+          label: "Couche"
+        negative:
+          description: "Vrai pour les assertions de ce qui ne doit pas arriver."
+          label: "Négatif"
+        tags:
+          label: "Étiquettes"
+        test_ref:
+          description: "Référence canonique (nom de test, chemin .tasktest, chemin TASK.md)."
+          label: "Réf. du test"

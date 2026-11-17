@@ -1,0 +1,8 @@
+# A feature is ready to plan once what done is is written: an acceptance
+# criterion under it, or a want it holds (a use case, while that type remains).
+name: feature-specified
+label: Its acceptance criteria say what done is
+gate: ready-to-plan
+applies: {types: [feature]}
+check: "any(children, {.type == 'acceptance-criterion'}) || any(links, {.kind == 'wants' && .direction == 'out'})"
+resolve: {title: "Specify {object}: its acceptance criteria", kind: analyse, on: object}

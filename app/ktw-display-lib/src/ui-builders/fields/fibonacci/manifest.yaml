@@ -1,0 +1,12 @@
+name: fibonacci
+kind: renderer
+basePrimitive: number
+description: Modified-Fibonacci point picker (1, 2, 3, 5, 8, 13, 20) — relative estimation for story points / WSJF primitives.
+
+configSchema:
+  fields:
+    allowZero:
+      type: boolean
+      optional: true
+      default: false
+      description: Prepend 0 to the scale (a primitive that may legitimately contribute nothing).

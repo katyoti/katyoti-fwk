@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Modèle de contenu
+  description: >-
+    La déclaration d'un modèle de contenu — ses sections, ce que chacune doit
+    établir, d'où viennent ses faits, comment l'écrire — telle qu'un sidecar
+    la déclare.

@@ -1,0 +1,27 @@
+name: cod
+kind: renderer
+basePrimitive: number
+description: >-
+  Read-only Cost of Delay (CoD) computed from sibling primitive fields —
+  business value + time criticality + risk/opportunity. Live in the form as
+  the primitives change. The method-core prioritization signal (replaces
+  WSJF — no job-size divisor; effort is the DERIVED count of unfinished Use
+  Cases, not a stored field).
+
+configSchema:
+  fields:
+    value:
+      type: string
+      optional: true
+      default: business_value
+      description: Sibling field holding Business Value.
+    criticality:
+      type: string
+      optional: true
+      default: time_criticality
+      description: Sibling field holding Time Criticality.
+    risk:
+      type: string
+      optional: true
+      default: risk_opportunity
+      description: Sibling field holding Risk Reduction / Opportunity Enablement.

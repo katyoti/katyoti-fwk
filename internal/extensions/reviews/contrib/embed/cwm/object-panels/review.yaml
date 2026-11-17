@@ -1,0 +1,16 @@
+# A review's own page: its verdict and summary, its findings by severity (each
+# opening the finding), the documents and slide decks written for it, and
+# buttons filing a finding, a document or a deck under it. Its overview is the
+# Overview tab (the file-overview capability). Re-read when an object of the
+# module changes.
+name: Review
+description: "The review: its verdict, its findings by severity, its documents and slide decks"
+icon:
+  tabler: clipboard-check
+  emoji: "📋"
+order: 2
+filter:
+  types: [review]
+source: ":reviews/review"
+refresh:
+  scope: module

@@ -1,0 +1,14 @@
+# A synchronisation point of a release's plan — not a sprint (no
+# timebox): parallel branches join here into something deliverable. Reached
+# only when everything it waits on is done. Management pages label it
+# "Sprint N".
+name: step
+label: Step
+folder: .ktw/steps
+id_prefix: ST
+description: >-
+  A sync point of a release's plan: the branches feeding it join into a
+  deliverable once each of them is done.
+icon: flag-checkered
+capabilities: [step, network-node, lifecycle]
+workflow: step

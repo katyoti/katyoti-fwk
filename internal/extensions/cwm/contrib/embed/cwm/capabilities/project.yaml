@@ -1,0 +1,6 @@
+name: project
+label: Project
+icon: git-branch
+description: >-
+  A git repository -- the folder that holds the work and hosts the graph.
+schema: ktw-agents:/data-type/cap-project

@@ -1,0 +1,10 @@
+name: weather-forecast-page-input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      city:
+        type: string
+        description: City to forecast. If omitted, ask the user.
+        optional: true

@@ -1,0 +1,1730 @@
+[
+  {
+    "name": "s10-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 40,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 112,
+      "y": 47,
+      "width": 97,
+      "height": 8
+    }
+  },
+  {
+    "name": "s10-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 124,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 103,
+      "y": 129,
+      "width": 113,
+      "height": 10
+    }
+  },
+  {
+    "name": "s10-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 208,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 120,
+      "y": 215,
+      "width": 79,
+      "height": 8
+    }
+  },
+  {
+    "name": "s10-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 292,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 118,
+      "y": 297,
+      "width": 84,
+      "height": 13
+    }
+  },
+  {
+    "name": "s10-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 376,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 108,
+      "y": 383,
+      "width": 105,
+      "height": 8
+    }
+  },
+  {
+    "name": "s10-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 460,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 102,
+      "y": 465,
+      "width": 116,
+      "height": 10
+    }
+  },
+  {
+    "name": "s10-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 544,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 120,
+      "y": 551,
+      "width": 80,
+      "height": 8
+    }
+  },
+  {
+    "name": "s10-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;",
+    "size": 10,
+    "cell": {
+      "x": 80,
+      "y": 628,
+      "width": 160,
+      "height": 24
+    },
+    "ink": {
+      "x": 116,
+      "y": 633,
+      "width": 88,
+      "height": 13
+    }
+  },
+  {
+    "name": "s11-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 712,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 115,
+      "y": 720,
+      "width": 107,
+      "height": 9
+    }
+  },
+  {
+    "name": "s11-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 798,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 105,
+      "y": 804,
+      "width": 124,
+      "height": 11
+    }
+  },
+  {
+    "name": "s11-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 884,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 124,
+      "y": 893,
+      "width": 87,
+      "height": 8
+    }
+  },
+  {
+    "name": "s11-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 970,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 122,
+      "y": 976,
+      "width": 93,
+      "height": 13
+    }
+  },
+  {
+    "name": "s11-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 1056,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 111,
+      "y": 1064,
+      "width": 115,
+      "height": 9
+    }
+  },
+  {
+    "name": "s11-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 1142,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 104,
+      "y": 1148,
+      "width": 128,
+      "height": 11
+    }
+  },
+  {
+    "name": "s11-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 1228,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 124,
+      "y": 1237,
+      "width": 87,
+      "height": 8
+    }
+  },
+  {
+    "name": "s11-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;",
+    "size": 11,
+    "cell": {
+      "x": 80,
+      "y": 1314,
+      "width": 176,
+      "height": 26
+    },
+    "ink": {
+      "x": 120,
+      "y": 1320,
+      "width": 96,
+      "height": 13
+    }
+  },
+  {
+    "name": "s12-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1400,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 118,
+      "y": 1410,
+      "width": 117,
+      "height": 9
+    }
+  },
+  {
+    "name": "s12-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1489,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 107,
+      "y": 1497,
+      "width": 137,
+      "height": 12
+    }
+  },
+  {
+    "name": "s12-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1578,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 128,
+      "y": 1589,
+      "width": 95,
+      "height": 9
+    }
+  },
+  {
+    "name": "s12-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1667,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 125,
+      "y": 1675,
+      "width": 102,
+      "height": 14
+    }
+  },
+  {
+    "name": "s12-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1756,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 114,
+      "y": 1766,
+      "width": 125,
+      "height": 9
+    }
+  },
+  {
+    "name": "s12-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1845,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 106,
+      "y": 1853,
+      "width": 139,
+      "height": 12
+    }
+  },
+  {
+    "name": "s12-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 1934,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 128,
+      "y": 1945,
+      "width": 95,
+      "height": 9
+    }
+  },
+  {
+    "name": "s12-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 2023,
+      "width": 192,
+      "height": 29
+    },
+    "ink": {
+      "x": 123,
+      "y": 2031,
+      "width": 106,
+      "height": 14
+    }
+  },
+  {
+    "name": "s13-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2112,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 121,
+      "y": 2123,
+      "width": 127,
+      "height": 10
+    }
+  },
+  {
+    "name": "s13-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2203,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 110,
+      "y": 2212,
+      "width": 146,
+      "height": 12
+    }
+  },
+  {
+    "name": "s13-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2294,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 132,
+      "y": 2305,
+      "width": 103,
+      "height": 10
+    }
+  },
+  {
+    "name": "s13-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2385,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 129,
+      "y": 2394,
+      "width": 110,
+      "height": 14
+    }
+  },
+  {
+    "name": "s13-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2476,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 116,
+      "y": 2487,
+      "width": 136,
+      "height": 10
+    }
+  },
+  {
+    "name": "s13-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2567,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 109,
+      "y": 2576,
+      "width": 150,
+      "height": 12
+    }
+  },
+  {
+    "name": "s13-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2658,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 132,
+      "y": 2669,
+      "width": 103,
+      "height": 10
+    }
+  },
+  {
+    "name": "s13-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 2749,
+      "width": 208,
+      "height": 31
+    },
+    "ink": {
+      "x": 127,
+      "y": 2757,
+      "width": 114,
+      "height": 15
+    }
+  },
+  {
+    "name": "s14-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 2840,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 124,
+      "y": 2851,
+      "width": 137,
+      "height": 11
+    }
+  },
+  {
+    "name": "s14-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 2934,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 112,
+      "y": 2943,
+      "width": 160,
+      "height": 13
+    }
+  },
+  {
+    "name": "s14-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 3028,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 136,
+      "y": 3039,
+      "width": 111,
+      "height": 11
+    }
+  },
+  {
+    "name": "s14-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 3122,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 133,
+      "y": 3131,
+      "width": 118,
+      "height": 16
+    }
+  },
+  {
+    "name": "s14-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 3216,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 120,
+      "y": 3226,
+      "width": 146,
+      "height": 12
+    }
+  },
+  {
+    "name": "s14-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 3310,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 111,
+      "y": 3318,
+      "width": 162,
+      "height": 14
+    }
+  },
+  {
+    "name": "s14-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 3404,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 136,
+      "y": 3415,
+      "width": 111,
+      "height": 12
+    }
+  },
+  {
+    "name": "s14-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;",
+    "size": 14,
+    "cell": {
+      "x": 80,
+      "y": 3498,
+      "width": 224,
+      "height": 34
+    },
+    "ink": {
+      "x": 131,
+      "y": 3506,
+      "width": 122,
+      "height": 17
+    }
+  },
+  {
+    "name": "s16-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 3592,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 131,
+      "y": 3605,
+      "width": 155,
+      "height": 12
+    }
+  },
+  {
+    "name": "s16-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 3690,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 116,
+      "y": 3700,
+      "width": 183,
+      "height": 15
+    }
+  },
+  {
+    "name": "s16-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 3788,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 144,
+      "y": 3801,
+      "width": 126,
+      "height": 12
+    }
+  },
+  {
+    "name": "s16-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 3886,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 140,
+      "y": 3896,
+      "width": 135,
+      "height": 19
+    }
+  },
+  {
+    "name": "s16-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 3984,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 125,
+      "y": 3997,
+      "width": 167,
+      "height": 12
+    }
+  },
+  {
+    "name": "s16-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 4082,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 115,
+      "y": 4092,
+      "width": 186,
+      "height": 15
+    }
+  },
+  {
+    "name": "s16-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 4180,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 144,
+      "y": 4193,
+      "width": 127,
+      "height": 13
+    }
+  },
+  {
+    "name": "s16-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;",
+    "size": 16,
+    "cell": {
+      "x": 80,
+      "y": 4278,
+      "width": 256,
+      "height": 38
+    },
+    "ink": {
+      "x": 138,
+      "y": 4288,
+      "width": 140,
+      "height": 19
+    }
+  },
+  {
+    "name": "s19-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 4376,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 140,
+      "y": 4392,
+      "width": 185,
+      "height": 14
+    }
+  },
+  {
+    "name": "s19-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 4482,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 123,
+      "y": 4495,
+      "width": 217,
+      "height": 17
+    }
+  },
+  {
+    "name": "s19-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 4588,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 156,
+      "y": 4604,
+      "width": 150,
+      "height": 14
+    }
+  },
+  {
+    "name": "s19-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 4694,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 152,
+      "y": 4707,
+      "width": 160,
+      "height": 21
+    }
+  },
+  {
+    "name": "s19-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;fontStyle=1;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 4800,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 133,
+      "y": 4814,
+      "width": 199,
+      "height": 16
+    }
+  },
+  {
+    "name": "s19-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;fontStyle=1;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 4906,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 122,
+      "y": 4917,
+      "width": 220,
+      "height": 19
+    }
+  },
+  {
+    "name": "s19-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;fontStyle=1;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 5012,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 156,
+      "y": 5028,
+      "width": 150,
+      "height": 14
+    }
+  },
+  {
+    "name": "s19-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=19;fontStyle=1;",
+    "size": 19,
+    "cell": {
+      "x": 80,
+      "y": 5118,
+      "width": 304,
+      "height": 46
+    },
+    "ink": {
+      "x": 149,
+      "y": 5129,
+      "width": 166,
+      "height": 24
+    }
+  },
+  {
+    "name": "s22-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5224,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 150,
+      "y": 5243,
+      "width": 214,
+      "height": 16
+    }
+  },
+  {
+    "name": "s22-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5337,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 130,
+      "y": 5351,
+      "width": 251,
+      "height": 21
+    }
+  },
+  {
+    "name": "s22-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5450,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 168,
+      "y": 5469,
+      "width": 174,
+      "height": 16
+    }
+  },
+  {
+    "name": "s22-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5563,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 163,
+      "y": 5577,
+      "width": 185,
+      "height": 26
+    }
+  },
+  {
+    "name": "s22-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5676,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 142,
+      "y": 5695,
+      "width": 230,
+      "height": 16
+    }
+  },
+  {
+    "name": "s22-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5789,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 128,
+      "y": 5803,
+      "width": 255,
+      "height": 21
+    }
+  },
+  {
+    "name": "s22-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 5902,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 168,
+      "y": 5921,
+      "width": 174,
+      "height": 17
+    }
+  },
+  {
+    "name": "s22-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;",
+    "size": 22,
+    "cell": {
+      "x": 80,
+      "y": 6015,
+      "width": 352,
+      "height": 53
+    },
+    "ink": {
+      "x": 159,
+      "y": 6029,
+      "width": 193,
+      "height": 26
+    }
+  },
+  {
+    "name": "s26-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6128,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 162,
+      "y": 6148,
+      "width": 253,
+      "height": 20
+    }
+  },
+  {
+    "name": "s26-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6250,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 139,
+      "y": 6265,
+      "width": 296,
+      "height": 25
+    }
+  },
+  {
+    "name": "s26-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6372,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 184,
+      "y": 6393,
+      "width": 205,
+      "height": 19
+    }
+  },
+  {
+    "name": "s26-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6494,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 178,
+      "y": 6509,
+      "width": 219,
+      "height": 30
+    }
+  },
+  {
+    "name": "s26-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6616,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 153,
+      "y": 6636,
+      "width": 271,
+      "height": 20
+    }
+  },
+  {
+    "name": "s26-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6738,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 137,
+      "y": 6753,
+      "width": 301,
+      "height": 25
+    }
+  },
+  {
+    "name": "s26-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6860,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 184,
+      "y": 6881,
+      "width": 206,
+      "height": 20
+    }
+  },
+  {
+    "name": "s26-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;",
+    "size": 26,
+    "cell": {
+      "x": 80,
+      "y": 6982,
+      "width": 416,
+      "height": 62
+    },
+    "ink": {
+      "x": 174,
+      "y": 6997,
+      "width": 228,
+      "height": 30
+    }
+  },
+  {
+    "name": "s34-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7104,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 188,
+      "y": 7131,
+      "width": 330,
+      "height": 26
+    }
+  },
+  {
+    "name": "s34-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7246,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 157,
+      "y": 7268,
+      "width": 388,
+      "height": 31
+    }
+  },
+  {
+    "name": "s34-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7388,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 216,
+      "y": 7416,
+      "width": 268,
+      "height": 25
+    }
+  },
+  {
+    "name": "s34-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7530,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 208,
+      "y": 7552,
+      "width": 287,
+      "height": 39
+    }
+  },
+  {
+    "name": "s34-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;fontStyle=1;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7672,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 175,
+      "y": 7700,
+      "width": 355,
+      "height": 25
+    }
+  },
+  {
+    "name": "s34-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;fontStyle=1;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7814,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 154,
+      "y": 7835,
+      "width": 394,
+      "height": 32
+    }
+  },
+  {
+    "name": "s34-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;fontStyle=1;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 7956,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 216,
+      "y": 7984,
+      "width": 269,
+      "height": 26
+    }
+  },
+  {
+    "name": "s34-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=34;fontStyle=1;",
+    "size": 34,
+    "cell": {
+      "x": 80,
+      "y": 8098,
+      "width": 544,
+      "height": 82
+    },
+    "ink": {
+      "x": 202,
+      "y": 8119,
+      "width": 298,
+      "height": 40
+    }
+  },
+  {
+    "name": "s46-w0",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 8240,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 226,
+      "y": 8277,
+      "width": 446,
+      "height": 34
+    }
+  },
+  {
+    "name": "s46-w1",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 8410,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 184,
+      "y": 8438,
+      "width": 524,
+      "height": 44
+    }
+  },
+  {
+    "name": "s46-w2",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 8580,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 263,
+      "y": 8617,
+      "width": 363,
+      "height": 34
+    }
+  },
+  {
+    "name": "s46-w3",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 8750,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 252,
+      "y": 8778,
+      "width": 389,
+      "height": 53
+    }
+  },
+  {
+    "name": "s46-w0-b",
+    "label": "Planifié en bonne voie",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;fontStyle=1;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 8920,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 209,
+      "y": 8957,
+      "width": 480,
+      "height": 35
+    }
+  },
+  {
+    "name": "s46-w1-b",
+    "label": "AOÛT SEPT. DÉC. JANV.",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;fontStyle=1;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 9090,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 180,
+      "y": 9118,
+      "width": 534,
+      "height": 44
+    }
+  },
+  {
+    "name": "s46-w2-b",
+    "label": "0123456789 % 41",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;fontStyle=1;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 9260,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 263,
+      "y": 9297,
+      "width": 364,
+      "height": 36
+    }
+  },
+  {
+    "name": "s46-w3-b",
+    "label": "Wq,|Éjgy (ÀÇ) – «»",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;align=center;verticalAlign=middle;fontSize=46;fontStyle=1;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 9430,
+      "width": 736,
+      "height": 110
+    },
+    "ink": {
+      "x": 245,
+      "y": 9458,
+      "width": 404,
+      "height": 53
+    }
+  },
+  {
+    "name": "wrap-bottom",
+    "label": "\u003cb\u003eUn référentiel d'objets unique et fiable\u003c/b\u003e",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;whiteSpace=wrap;fontSize=13;align=center;verticalAlign=bottom;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 9600,
+      "width": 174.5,
+      "height": 44
+    },
+    "ink": {
+      "x": 100,
+      "y": 9613,
+      "width": 135,
+      "height": 28
+    }
+  },
+  {
+    "name": "wrap-top-3",
+    "label": "\u003cb\u003eLe dossier d'architecture, de sa création à sa publication\u003c/b\u003e",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;whiteSpace=wrap;fontSize=13;align=center;verticalAlign=top;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 9704,
+      "width": 174.5,
+      "height": 40
+    },
+    "ink": {
+      "x": 89,
+      "y": 9713,
+      "width": 156,
+      "height": 44
+    }
+  },
+  {
+    "name": "wrap-middle",
+    "label": "Un historique de session unique, quel que soit le terminal",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;whiteSpace=wrap;fontSize=13;align=center;verticalAlign=middle;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 9804,
+      "width": 120,
+      "height": 70
+    },
+    "ink": {
+      "x": 94,
+      "y": 9810,
+      "width": 93,
+      "height": 57
+    }
+  },
+  {
+    "name": "runs-kpi",
+    "label": "\u003cb style=\"font-size:46px\"\u003e41\u003cfont style=\"font-size:22px\"\u003e%\u003c/font\u003e\u003c/b\u003e\u003cbr\u003e\u003cfont style=\"font-size:10px\"\u003eAVANCEMENT\u003c/font\u003e",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;whiteSpace=wrap;fontSize=12;align=center;verticalAlign=middle;",
+    "size": 46,
+    "cell": {
+      "x": 80,
+      "y": 9934,
+      "width": 156,
+      "height": 110
+    },
+    "ink": {
+      "x": 123,
+      "y": 9964,
+      "width": 69,
+      "height": 57
+    }
+  },
+  {
+    "name": "div-lines",
+    "label": "\u003cdiv\u003ePremière ligne\u003c/div\u003e\u003cdiv\u003e\u003cb\u003eDeuxième\u003c/b\u003e ligne\u003c/div\u003e",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 10104,
+      "width": 200,
+      "height": 60
+    },
+    "ink": {
+      "x": 83,
+      "y": 10113,
+      "width": 84,
+      "height": 26
+    }
+  },
+  {
+    "name": "align-right",
+    "label": "Aligné à droite",
+    "style": "text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=13;align=right;verticalAlign=bottom;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 10224,
+      "width": 200,
+      "height": 40
+    },
+    "ink": {
+      "x": 196,
+      "y": 10249,
+      "width": 82,
+      "height": 12
+    }
+  },
+  {
+    "name": "spacing-left",
+    "label": "Carte avec marge",
+    "style": "rounded=1;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=26;spacingTop=8;spacingRight=10;fillColor=none;strokeColor=none;fontSize=13;fontFamily=Helvetica;",
+    "size": 13,
+    "cell": {
+      "x": 80,
+      "y": 10324,
+      "width": 220,
+      "height": 60
+    },
+    "ink": {
+      "x": 109,
+      "y": 10341,
+      "width": 101,
+      "height": 13
+    }
+  },
+  {
+    "name": "plain-lines",
+    "label": "Deux lignes\nsans HTML",
+    "style": "text;strokeColor=none;fillColor=none;fontSize=12;align=center;verticalAlign=middle;",
+    "size": 12,
+    "cell": {
+      "x": 80,
+      "y": 10444,
+      "width": 150,
+      "height": 50
+    },
+    "ink": {
+      "x": 124,
+      "y": 10458,
+      "width": 62,
+      "height": 23
+    }
+  }
+]

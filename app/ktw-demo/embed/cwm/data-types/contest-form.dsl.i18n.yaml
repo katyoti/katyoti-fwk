@@ -1,0 +1,10 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ContestForm:
+      fields:
+        target:
+          description: 'L''élément de visa que cet objet conteste.'
+          label: 'Élément contesté'

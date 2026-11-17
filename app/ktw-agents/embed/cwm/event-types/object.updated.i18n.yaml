@@ -1,0 +1,7 @@
+# Translations of the event type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Un objet a été réécrit (y compris un lien modifié). Une entrée on_update asynchrone s'y abonne.
+  label: Objet modifié

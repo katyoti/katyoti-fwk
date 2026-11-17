@@ -1,0 +1,84 @@
+<mxfile host="drawio-test">
+    <diagram name="templates">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&quot;font-size:9px&quot;&gt;%description%&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;a href=&quot;%external_url%&quot; style=&quot;font-size:8px&quot;&gt;%linkLabel%&lt;/a&gt;" placeholders="1" name="Billing" description="Invoices and prices" external_url="https://catalog.example.com/apps/billing" linkLabel="Catalog" ktw-template="Application" ktw-style="fillColor=appFill;strokeColor=appStroke;strokeWidth=appStrokeWidth" id="tpl-Application">
+            <mxCell style="fontSize=11;fontStyle=1;html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82B366;" vertex="1" parent="1">
+              <mxGeometry x="40" y="40" width="180" height="70" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="XLS" placeholders="1" ktw-when="&#x27;xls&#x27; in (attributes.markers ?? [])" id="tpl-Application-xls">
+            <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#107C41;strokeColor=#107C41;fontColor=#FFFFFF;fontSize=9;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="tpl-Application">
+              <mxGeometry x="166" y="-8" width="28" height="16" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;&lt;br&gt;&lt;i&gt;&lt;font style=&quot;font-size:9px&quot;&gt;%description%&lt;/font&gt;&lt;/i&gt;" placeholders="1" name="Spreadsheet" description="" ktw-template="Spreadsheet" id="tpl-Spreadsheet">
+            <mxCell style="fillColor=#FFFFCC;fontSize=11;html=1;shape=note;strokeColor=#D6B656;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="280" y="40" width="140" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%name%" placeholders="1" name="Note" description="" ktw-template="Note" id="tpl-Note">
+            <mxCell style="dashed=1;fillColor=#FFFFFF;fontSize=9;html=1;shape=callout;strokeColor=#999999;whiteSpace=wrap;" vertex="1" parent="1">
+              <mxGeometry x="520" y="40" width="160" height="60" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="%flowCodes%&lt;br&gt;&lt;i&gt;%flowData%&lt;/i&gt;" placeholders="1" tooltip="%flowTooltip%" ktw-template="edge:Flow" ktw-style="strokeColor=flowColor" id="tpl-edge-Flow">
+            <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;endFill=1;fontSize=9;html=1;strokeWidth=2;strokeColor=#444444;" edge="1" parent="1">
+              <mxGeometry relative="1" as="geometry">
+                <mxPoint x="760" y="80" as="sourcePoint"/>
+                <mxPoint x="940" y="80" as="targetPoint"/>
+              </mxGeometry>
+            </mxCell>
+          </UserObject>
+          <UserObject label="&lt;b&gt;%name%&lt;/b&gt;" placeholders="1" name="Unknown kind" ktw-template="*" id="tpl-default">
+            <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;" vertex="1" parent="1">
+              <mxGeometry x="40" y="190" width="180" height="70" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+    <diagram name="page:default">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%title%&lt;/b&gt;" placeholders="1" title="Diagram title" id="page-title">
+            <mxCell style="text;html=1;align=left;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+              <mxGeometry x="20" y="10" width="900" height="30" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="" ktw-slot="content" id="page-content">
+            <mxCell style="rounded=0;dashed=1;fillColor=none;strokeColor=#CCCCCC;" vertex="1" parent="1">
+              <mxGeometry x="20" y="60" width="900" height="600" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+    <diagram name="page:dossier">
+      <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+        <root>
+          <mxCell id="0"/>
+          <mxCell id="1" parent="0"/>
+          <UserObject label="&lt;b&gt;%project_code% · %project_name%&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;%title%&lt;/span&gt;" placeholders="1" project_code="PRJ-000" project_name="Nom du projet" title="Architecture applicative actuelle" id="dossier-banner">
+            <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;strokeColor=none;fontColor=#FFFFFF;fontSize=12;align=left;verticalAlign=middle;spacingLeft=14;" vertex="1" parent="1">
+              <mxGeometry x="20" y="10" width="1560" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="Dossier d&#39;architecture&lt;br&gt;%date%" placeholders="1" date="2026-01-01" id="dossier-stamp">
+            <mxCell style="text;html=1;fontColor=#FFFFFF;fontSize=10;align=right;verticalAlign=middle;spacingRight=14;" vertex="1" parent="1">
+              <mxGeometry x="1280" y="10" width="300" height="64" as="geometry"/>
+            </mxCell>
+          </UserObject>
+          <UserObject label="" ktw-slot="content" id="dossier-content">
+            <mxCell style="rounded=0;dashed=1;fillColor=none;strokeColor=#CCCCCC;" vertex="1" parent="1">
+              <mxGeometry x="20" y="100" width="1560" height="860" as="geometry"/>
+            </mxCell>
+          </UserObject>
+        </root>
+      </mxGraphModel>
+    </diagram>
+</mxfile>

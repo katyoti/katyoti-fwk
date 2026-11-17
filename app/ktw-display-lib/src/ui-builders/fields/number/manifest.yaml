@@ -1,0 +1,16 @@
+name: number
+kind: field-type
+basePrimitive: number
+description: Plain numeric input — the default number renderer.
+
+configSchema:
+  fields:
+    min:
+      type: number
+      optional: true
+    max:
+      type: number
+      optional: true
+    step:
+      type: number
+      optional: true

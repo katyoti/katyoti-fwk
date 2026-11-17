@@ -1,0 +1,15 @@
+# A section group (partial template): what happens next.
+name: next-steps
+label: Prochaines étapes
+description: The roadmap and the next milestones.
+partial: true
+sections:
+  - id: roadmap
+    title: Feuille de route
+    intent: The steps to the target, with their milestones and dates when known.
+    sources:
+      - {from: files, value: "architecture-cible.md", note: "the target and its transition"}
+      - {from: object, note: "a planning or milestones linked to the subject"}
+    guidance: Four to six milestones; a date only when the sources give one.
+    weight: 1
+    deck: {layout: timeline}

@@ -1,0 +1,15 @@
+name: produced-from
+label: Produced from
+inverse_label: Produced
+from: any                            # a deliverable
+to: any                              # any object it was written from
+from_capabilities: [deliverable]
+to_capabilities: []
+cardinality: M:N
+target: object
+object_storage: edges
+inverse_name: produced
+description: |
+  The objects a deliverable was written from: a study, a solution, a grid, a
+  source. Regenerating the deliverable reads them again; the Links tab of
+  each shows the deliverables written from it.

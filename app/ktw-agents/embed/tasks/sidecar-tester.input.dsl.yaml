@@ -1,0 +1,22 @@
+name: sidecar-tester-input
+root: SidecarTesterInput
+types:
+  SidecarTesterInput:
+    type: object
+    fields:
+      sidecar_path:
+        type: string
+        label: "Sidecar binary path"
+        description: "Full path to the sidecar executable to test"
+      output_dir:
+        type: string
+        label: "Output directory"
+        description: "Where to write test outputs (default: test_results/sidecar-test/)"
+        optional: true
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Run tests"
+        groups:
+          - title: "Target"
+            fields: [sidecar_path, output_dir]

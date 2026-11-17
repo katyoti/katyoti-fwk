@@ -1,0 +1,24 @@
+# Registers `ask-kind` as a contribution kind of the inbox extension: a kind
+# of question a human task asks a person. Its body schema is the
+# generated data-type `ask-kind` (from api.AskKind). The inbox pack ships the
+# nine built-in kinds; any member publishes its own as a foreign kind
+# (inboxcontrib.ContributeAskKinds), so the producer writes name and
+# description into meta itself.
+name: ask-kind
+description: |
+  A kind of question a person is asked - a validation, a test by hand, a
+  decision, data to provide: its short label every card shows first, the
+  shape of its answer, who may answer it, the permission code it requires
+  and what its answer settles, by default.
+schema: ktw-agents:/data-type/ask-kind
+validate: error
+layers:
+  data: {mediaType: application/json, required: true}
+  source: {mediaType: application/yaml, required: true, default: true}
+meta:
+  budget: 256
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]

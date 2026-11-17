@@ -1,0 +1,29 @@
+# The verify and lint points, READ: CWM runs the hooks, the verification
+# service counts the answers. Its two functions let a guard or a gate check
+# ask — `verify().green && lint().blocking == 0` — about the object and
+# everything under it. Both run every hook of their point over the subtree, so
+# they are costly: a list of possible moves leaves them to the move itself.
+#
+# A TYPE-LEVEL capability: a type sets the lint bar in its `verification:`
+# section (gate_blocks_on), which CWM checks against type_schema and the
+# verification service reads; an object carries no group of it.
+name: verification
+label: Verification
+description: >-
+  Adds verify() and lint() to expressions: the verification of an object and
+  everything under it (runs, passed, failed, unproven, green), and its lint
+  (findings, blocking — at or above the type's verification.gate_blocks_on).
+type_schema: :/data-type/type-verification
+functions:
+  - name: verify
+    description: The verification of the object and everything under it — runs, passed, failed, unproven, green.
+    action: :verification/verify-function
+    returns: object
+    timeout: 60s
+    costly: true
+  - name: lint
+    description: The lint of the object and everything under it — findings, and blocking (at or above the type's verification.gate_blocks_on).
+    action: :verification/lint-function
+    returns: object
+    timeout: 60s
+    costly: true

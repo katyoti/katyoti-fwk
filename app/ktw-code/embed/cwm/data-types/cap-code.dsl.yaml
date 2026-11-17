@@ -1,0 +1,54 @@
+$schema: ktw-schema/v1
+name: cap-code
+version: "1.0.0"
+root: CapCode
+description: |
+  Field-group for the `code` capability: a software module's code,
+  split from the `module` capability so a documentation module or a study
+  carries none of it.
+types:
+  CapCode:
+    type: object
+    fields:
+      kind:
+        type: string@enum(framework, library, sidecar)
+        label: Kind
+        description: What sort of code this is - the one list of code kinds.
+        optional: true
+      code_packages:
+        type: string[]
+        label: Code packages
+        description: Source packages this module is realized by.
+        optional: true
+      tier_current:
+        type: number
+        label: Current tier
+        description: >-
+          Realization maturity, 0-3; orthogonal to the method's articulation
+          depth.
+        optional: true
+      tier_target:
+        type: number
+        label: Target tier
+        optional: true
+      tier_state:
+        type: string
+        label: Tier state
+        description: bootstrapping | planning | verifying | promoted
+        optional: true
+      facets:
+        type: Facet[]
+        label: Facets
+        description: The other paths the module points at (app, tests, docs) - its code is code_packages.
+        optional: true
+  Facet:
+    type: object
+    fields:
+      kind:
+        type: string
+        label: Kind
+        description: What the path is (app, tests, docs, ucs, charter, manifest).
+      path:
+        type: string
+        label: Path
+        description: The path, relative to the project.

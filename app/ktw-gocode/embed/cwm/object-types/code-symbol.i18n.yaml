@@ -1,0 +1,11 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Symbole de code
+  description: >-
+    Un identifiant Go exporté (fonction, type, interface, structure, variable
+    ou constante) découvert par le verbe `module.discover` de ktw-gocode. Ces
+    objets dérivent de l'AST et sont déterministes : un nouveau scan des mêmes
+    sources produit les mêmes objets. Sans part de jugement, ils sont validés
+    d'office ; les objets qui demandent un jugement (cas d'usage, charte…)
+    restent des propositions qu'une persona doit accepter.

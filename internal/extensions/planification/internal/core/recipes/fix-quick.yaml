@@ -1,0 +1,9 @@
+# Fix, quick: an obvious defect — fix it with its test; no separate verify step.
+name: fix-quick
+description: Fix an obvious defect, with the test that proves it.
+kind: fix
+depth: quick
+transition: done
+steps:
+  - {name: implement, phase: build, class: deliver, role: coder, instructions: "Fix the gap the request names, with a test that fails before and passes after. Then bring the module up to date, following the skill module-update (ktw-agents:/skill/module-update): the feature it serves and its use cases, the acceptance check that proves the change, the module pages in place, the change-log entry naming the request — recorded with requests module-update."}
+  - {name: auto-review, phase: verify, class: deliver, role: auto-review, after: [implement], instructions: "Run the automatic reviews that apply to the change (reviews start --trigger automatic with the request's kind and the paths its commits changed) and report each rating and its new findings; a new critical finding blocks the request."}

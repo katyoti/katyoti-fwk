@@ -1,0 +1,51 @@
+# Agent Profiles (June 2026)
+#
+# Four capability profiles. Tasks select one by name in `config.capability`.
+# All merges stay within one underlying model, so behaviour is preserved.
+#
+# $/MTok shown as blended estimate (input-heavy workloads).
+
+default: smart
+
+# Auto-compaction (per profile): once a long run's prompt reaches
+# `trigger_ratio` of the model's context window (LLMProviders.yaml
+# `context_window`), older turns are summarized into one message and a
+# verbatim recent tail of ~`keep_recent_ratio` of the window is kept. Sizes are
+# FRACTIONS of the real window — never absolute token counts — so the same
+# policy is correct on a 128K and a 1M model. Set `enabled: false` to turn off.
+compaction_defaults: &compaction_defaults
+  enabled: true
+  trigger_ratio: 0.75       # compact at 75% of the model's context window
+  keep_recent_ratio: 0.25   # keep the most recent ~25% verbatim
+  summary_max_tokens: 8192  # cap on the summarizer's output
+
+profiles:
+  # ── Fast: quick tasks, classification, routing, simple demos ─────────
+  fast:                         # $1/MTok
+    model: claude-haiku
+    max_turns: 20
+    compaction: *compaction_defaults
+
+  # ── Smart: default workhorse — general work + agentic tool-calling ───
+  smart:                        # $6/MTok
+    model: claude-sonnet
+    max_turns: 100
+    compaction: *compaction_defaults
+
+  # ── Creative: writing, brainstorming, content ───────────────────────
+  creative:                     # $6/MTok — high temperature for diversity
+    model:
+      name: claude-sonnet
+      temperature: 0.9
+    max_turns: 100
+    compaction: *compaction_defaults
+
+  # ── Powerful: deep planning, reasoning, coordination ────────────────
+  powerful:                     # $10/MTok — extended thinking
+    model:
+      name: claude-opus
+      thinking:
+        enabled: true
+        budget_tokens: 30000
+    max_turns: 50
+    compaction: *compaction_defaults

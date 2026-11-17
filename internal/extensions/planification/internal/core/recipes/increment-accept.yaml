@@ -1,0 +1,17 @@
+# An increment's delivery, reviewed then approved by the person: once
+# everything it holds is done, planification files this review on it. An agent - a person where
+# asked - first reviews that the user can use what it delivers; failed, what
+# it found missing is filed as fixes inside the increment and the approval is
+# asked again once they end. Passed, the person reads one card - the
+# increment's pane, with the review's result and its demo path - and
+# approves: the increment is done (the gate usable-delivered); rejected, the
+# person's note is filed as a fix inside the increment, and the approval is
+# asked again once that work ends.
+name: increment-accept
+description: An agent reviews that the user can use what an increment delivers, then the person approves its delivery - each delivery goal with what it became - or sends it back saying what is missing.
+types: [increment]
+kind: review
+transition: done
+steps:
+  - {name: delivery-review, phase: verify, class: deliver, role: reviewer, person_when_asked: true, interaction: validate, instructions: "Check that the user can use what the increment delivers: run increments check-usable-delivered --id <the increment> for what is mechanical (every goal and feature done, every screen feature's GUI test passed, every display switch retired or turned on by an increment of the same release), then judge the rest - no legacy left that it replaces, nothing it waits on that cannot be delivered, its delivery goals met. Report approved or rejected with more.review = {demo: the short path a user follows to see what it delivers, findings: [{what, follow_up: the request in an increment of the same release}], switches_retired: [the display-switch features retired]}. Rejected, each finding with no follow-up is filed as a fix inside the increment, and the approval is asked again once they end."}
+  - {name: approve-delivery, phase: verify, class: deliver, actor: person, interaction: validate, after: [delivery-review], instructions: "Read the increment's pane - each delivery goal, what it became and the requests that did it - with the delivery review's result and its demo path (params review and demo). Approve its delivery - it is then done - or reject it saying which goal is not met and what is missing: that note is filed as a fix inside the increment, and its delivery is asked again once that work ends."}

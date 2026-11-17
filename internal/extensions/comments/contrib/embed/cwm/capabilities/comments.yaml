@@ -1,0 +1,33 @@
+# Comments, on every object: what anyone said about it, and the answers. The
+# thread is an OWNED named file — CWM keeps it with its object (moved on a
+# rename, deleted with it) — read and appended by the comments service. A chat
+# on the object receives the thread and the tools to answer it.
+name: comments
+label: Comments
+icon: message
+description: >-
+  What anyone — a person, an agent, a module — said about this object, and the
+  answers: a thread beside the object, never in it.
+files:
+  thread:
+    path: comments/${id}.yaml
+    media: application/yaml
+    owned: true
+    description: The comments on this object, oldest first (id, by, at, text, reply_to).
+attach:
+  types: ["*"]
+agent:
+  system:
+    - id: comments-how
+      title: Comments
+      order: 31
+      text: >-
+        A comment is said TO the people who look at this object, who may answer
+        it: comment-add (by yourself as an agent; reply_to answers one) and
+        comment-list to read the thread. Use it when the user asks to comment,
+        to ask someone, or to answer a comment; what you want to remember for
+        later chats is memory, not a comment.
+  tools:
+    - plugin: comments
+  files:
+    - {capability: comments, name: thread, title: "Comments on this object", order: 40}

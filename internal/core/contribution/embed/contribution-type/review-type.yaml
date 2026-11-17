@@ -1,0 +1,47 @@
+# Registers `review-type` as a SYSTEM contribution kind (reviews, CWM).
+#
+# Published from a CWM pack: embed/cwm/review-types/<name>.yaml — the reviews
+# pack ships the generic review types, ktw-code its code reviews, a check's
+# owner its checks. A new review type is a file, never code.
+name: review-type
+description: |
+  One review type a module or an object can be reviewed by: its title and
+  description, the dimension it is grouped under, the objects it applies to,
+  when it runs (by a person or by a request's change) and what performs it (a
+  skill or a check).
+schema: system:/data-type/review-type
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — the review type's title and description.
+translatable: [title, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 512  # measured max 299 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `review-types/` folder, its tree the
+# data layer, the file as written the source, its `.i18n.yaml` its
+# translations. Addressed by its name.
+source:
+  folder: review-types
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

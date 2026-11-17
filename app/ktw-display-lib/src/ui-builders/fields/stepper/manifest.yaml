@@ -1,0 +1,7 @@
+name: stepper
+kind: renderer
+basePrimitive: array
+description: Steps [{name, state}] (done, current or running, todo) as joined pills - done green, current filled, the rest grey.
+
+configSchema:
+  fields: {}

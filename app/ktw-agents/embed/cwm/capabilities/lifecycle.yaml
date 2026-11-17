@@ -1,0 +1,40 @@
+# The state of an intent object. Its WORKFLOW (named by the object's type)
+# says which states exist and how the object may move between them;
+# ObjectTransition is the one way the state changes — never a raw field edit.
+# How it got there is the journal's transitioned records, never stored here.
+name: lifecycle
+label: Lifecycle
+icon: progress
+description: >-
+  The object's state in the workflow its type names. Every transition — who
+  made it, when, why — is in the journal, read as the object's history.
+schema: ktw-agents:/data-type/cap-lifecycle
+# The state as a header badge — derived, so it always says the state.
+badges:
+  - field: state
+    icon: progress
+    tooltip: Where the object stands in its workflow
+    colors:
+      idea: gray
+      draft: gray
+      new: gray
+      proposed: yellow
+      open: yellow
+      pending: orange
+      parked: orange
+      in-review: orange
+      ready: cyan
+      scheduled: cyan
+      accepted: teal
+      active: blue
+      in-progress: blue
+      done: green
+      decided: green
+      answered: green
+      applies: green
+      achieved: green
+      dropped: red
+      rejected: red
+      superseded: gray
+      retired: gray
+      dismissed: gray

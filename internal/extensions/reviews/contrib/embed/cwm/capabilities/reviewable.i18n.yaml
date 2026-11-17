@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Révisable
+  description: >-
+    L'objet a des revues : la revue courante et la précédente de chaque type de
+    revue rangées sous lui, chacune avec sa note et ses constats, et l'historique
+    des plus anciennes.

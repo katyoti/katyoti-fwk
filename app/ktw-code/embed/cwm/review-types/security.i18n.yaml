@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Sécurité"
+  description: "Injections, authentification, secrets, le top dix de l'OWASP et les dépendances vulnérables dans le code du module."

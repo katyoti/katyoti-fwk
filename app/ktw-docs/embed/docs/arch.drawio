@@ -1,0 +1,200 @@
+<mxfile host="65bd71144e">
+    <diagram id="HSTj7bK4A_V5MskUI6rW" name="Page-1">
+        <mxGraphModel dx="1351" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="ktw-docs — Rendering Pipeline Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="20" width="1100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="lane-entry" value="Entry Points" style="swimlane;startSize=30;horizontal=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="80" width="1100" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="cli" value="&lt;b&gt;CLI&lt;/b&gt;&lt;br/&gt;cobra commands&lt;br/&gt;render / diagram&lt;br/&gt;doc / filter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e4d78;strokeColor=#1e4d78;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-entry" vertex="1">
+                    <mxGeometry x="450" y="20" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="http" value="&lt;b&gt;HTTP API&lt;/b&gt;&lt;br/&gt;REST server&lt;br/&gt;POST /render&lt;br/&gt;POST /diagram" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e4d78;strokeColor=#1e4d78;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-entry" vertex="1">
+                    <mxGeometry x="660" y="20" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="ktsp" value="&lt;b&gt;KTSP (stdio)&lt;/b&gt;&lt;br/&gt;JSON-RPC 2.0&lt;br/&gt;DocServices slot&lt;br/&gt;render / diagram" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e4d78;strokeColor=#1e4d78;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-entry" vertex="1">
+                    <mxGeometry x="870" y="20" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="lane-core" value="Core Services" style="swimlane;startSize=30;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="220" width="1100" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="docsvc" value="&lt;b&gt;DocServices&lt;/b&gt;&lt;br/&gt;Go interface&lt;br/&gt;Render()&lt;br/&gt;Diagram()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#006633;strokeColor=#006633;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-core" vertex="1">
+                    <mxGeometry x="680" y="25" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="preproc" value="&lt;b&gt;Preprocessor&lt;/b&gt;&lt;br/&gt;alerts → divs&lt;br/&gt;admonitions&lt;br/&gt;badges · emoji · ==highlights==" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d6a4f;strokeColor=#2d6a4f;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-core" vertex="1">
+                    <mxGeometry x="250" y="25" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="diagrend" value="&lt;b&gt;Diagram Renderer&lt;/b&gt;&lt;br/&gt;code fences → images&lt;br/&gt;.drawio files → SVG/PNG&lt;br/&gt;inline diagram blocks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d6a4f;strokeColor=#2d6a4f;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-core" vertex="1">
+                    <mxGeometry x="480" y="25" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="pandoc-orch" value="&lt;b&gt;Pandoc Orchestrator&lt;/b&gt;&lt;br/&gt;builds args + filters&lt;br/&gt;selects template&lt;br/&gt;invokes pandoc binary" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d6a4f;strokeColor=#2d6a4f;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-core" vertex="1">
+                    <mxGeometry x="870" y="25" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="lane-tools" value="External Tools" style="swimlane;startSize=30;horizontal=0;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="380" width="1100" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="pandoc" value="&lt;b&gt;Pandoc&lt;/b&gt;&lt;br/&gt;universal converter&lt;br/&gt;MD → DOCX · HTML&lt;br/&gt;MD → Typst → PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7d5a00;strokeColor=#7d5a00;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-tools" vertex="1">
+                    <mxGeometry x="130" y="25" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="typst" value="&lt;b&gt;Typst&lt;/b&gt;&lt;br/&gt;PDF typesetting&lt;br/&gt;invoked by Pandoc&lt;br/&gt;via --pdf-engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7d5a00;strokeColor=#7d5a00;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-tools" vertex="1">
+                    <mxGeometry x="320" y="25" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="kroki" value="&lt;b&gt;Kroki API&lt;/b&gt;&lt;br/&gt;cloud diagram renderer&lt;br/&gt;mermaid · plantuml&lt;br/&gt;graphviz · d2 · …" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7d5a00;strokeColor=#7d5a00;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-tools" vertex="1">
+                    <mxGeometry x="510" y="25" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="drawio" value="&lt;b&gt;draw.io Desktop&lt;/b&gt;&lt;br/&gt;local renderer&lt;br/&gt;.drawio → SVG/PNG&lt;br/&gt;Electron headless" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7d5a00;strokeColor=#7d5a00;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-tools" vertex="1">
+                    <mxGeometry x="700" y="25" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="chrome" value="&lt;b&gt;Chrome&lt;/b&gt;&lt;br/&gt;headless browser&lt;br/&gt;HTML → PDF&lt;br/&gt;(alternate path)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7d5a00;strokeColor=#7d5a00;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-tools" vertex="1">
+                    <mxGeometry x="890" y="25" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="lane-output" value="Output Formats" style="swimlane;startSize=30;horizontal=0;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="540" width="1100" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="out-pdf" value="&lt;b&gt;PDF&lt;/b&gt;&lt;br/&gt;via Typst" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1830;strokeColor=#7b1830;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-output" vertex="1">
+                    <mxGeometry x="130" y="20" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="out-docx" value="&lt;b&gt;DOCX&lt;/b&gt;&lt;br/&gt;via Pandoc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1830;strokeColor=#7b1830;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-output" vertex="1">
+                    <mxGeometry x="310" y="20" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="out-pptx" value="&lt;b&gt;PPTX&lt;/b&gt;&lt;br/&gt;via Pandoc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1830;strokeColor=#7b1830;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-output" vertex="1">
+                    <mxGeometry x="490" y="20" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="out-html" value="&lt;b&gt;HTML&lt;/b&gt;&lt;br/&gt;via Pandoc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1830;strokeColor=#7b1830;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-output" vertex="1">
+                    <mxGeometry x="670" y="20" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="out-svg" value="&lt;b&gt;SVG / PNG&lt;/b&gt;&lt;br/&gt;diagram only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1830;strokeColor=#7b1830;fontColor=#ffffff;fontSize=11;arcSize=8;" parent="lane-output" vertex="1">
+                    <mxGeometry x="850" y="20" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#1e4d78;strokeWidth=2;" parent="1" source="cli" target="docsvc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="570" y="210"/>
+                            <mxPoint x="795" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#1e4d78;strokeWidth=2;" parent="1" source="http" target="docsvc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="780" y="210"/>
+                            <mxPoint x="795" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#1e4d78;strokeWidth=2;" parent="1" source="ktsp" target="docsvc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="990" y="210"/>
+                            <mxPoint x="795" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4" value="Render()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#006633;strokeWidth=2;fontSize=10;" parent="1" source="docsvc" target="preproc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="760" y="230"/>
+                            <mxPoint x="380" y="230"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#2d6a4f;strokeWidth=2;" parent="1" source="preproc" target="diagrend" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#2d6a4f;strokeWidth=2;" parent="1" source="diagrend" target="pandoc-orch" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7" value="Diagram()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#006633;strokeWidth=2;fontSize=10;dashed=1;" parent="1" source="docsvc" target="diagrend" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#2d6a4f;strokeWidth=2;" parent="1" source="diagrend" target="kroki" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="610" y="370"/>
+                            <mxPoint x="625" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e9" value=".drawio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#2d6a4f;strokeWidth=2;fontSize=10;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1" target="drawio">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="610" y="360" as="sourcePoint"/>
+                        <mxPoint x="815.0285714285715" y="440" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="610" y="370"/>
+                            <mxPoint x="815" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#7d5a00;strokeWidth=2;" parent="1" source="pandoc-orch" target="pandoc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1000" y="350"/>
+                            <mxPoint x="245" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e11" value="PDF" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#7d5a00;strokeWidth=2;fontSize=10;" parent="1" source="pandoc" target="typst" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;" parent="1" source="pandoc" target="out-docx" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;" parent="1" source="pandoc" target="out-pptx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="245" y="510"/>
+                            <mxPoint x="595" y="510"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;" parent="1" source="pandoc" target="out-html" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="245" y="510"/>
+                            <mxPoint x="775" y="510"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;" parent="1" source="typst" target="out-pdf" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="435" y="520"/>
+                            <mxPoint x="210" y="520"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;" parent="1" source="kroki" target="out-svg" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="625" y="500"/>
+                            <mxPoint x="955" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;" parent="1" source="drawio" target="out-svg" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="815" y="500"/>
+                            <mxPoint x="955" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e18" value="HTML→PDF" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#7d5a00;strokeWidth=2;fontSize=10;dashed=1;" parent="1" source="pandoc-orch" target="chrome" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;dashed=1;" parent="1" source="chrome" target="out-pdf" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1005" y="530"/>
+                            <mxPoint x="235" y="530"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

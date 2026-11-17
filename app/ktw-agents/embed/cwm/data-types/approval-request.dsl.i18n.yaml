@@ -1,0 +1,79 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ApprovalRequest:
+      fields:
+        approver:
+          description: Utilisateur, rôle ou « any-human ».
+          label: Approbateur requis
+        blocks_task:
+          description: Si vrai, la tâche demandeuse est suspendue jusqu'à la résolution.
+          label: Bloque la tâche demandeuse
+        choice:
+          description: >-
+            L'option choisie par la personne en réponse à un choix ; absente tant qu'elle attend et
+            quand aucune ne l'a été.
+          label: Choix
+        decision:
+          description: >-
+            La réponse : approuvé, refusé ou texte libre. Renseignée quand la demande reçoit une
+            réponse ; qu'elle soit encore en attente relève de son état de cycle de vie.
+          label: Décision
+        decision_note:
+          description: Note de l'approbateur à la résolution.
+          label: Note de décision
+        description:
+          label: Description
+        expects:
+          description: >-
+            Ce qu'attend la réponse. verdict : approuvé, ou refusé avec une note disant quoi changer.
+            text : la réponse de la personne, en note ; sinon écartée, jamais refusée. choice : l'une
+            des options, approuvée, qui tranche la décision concernée ; ou aucune, refusée avec une
+            note qui la renvoie. notice : rien - une information, lue puis écartée, hors du total en
+            attente. Absent : toute réponse, un refus avec une note.
+          label: Réponse attendue
+        expires_at:
+          label: Expire le
+        options:
+          description: >-
+            Les options d'un choix : les libellés de la décision concernée, au moins deux et
+            distincts. Seulement sur un choix.
+          label: Options
+        panel:
+          description: >-
+            Le panneau de l'objet concerné sur lequel la Boîte de réception l'ouvre — là où l'on y
+            répond (la carte d'une étape dans « À faire »). Absent : son premier panneau.
+          label: Panneau
+        related_items:
+          description: >-
+            Décisions, décisions ouvertes et défauts auxquels cette demande se rapporte.
+          label: Éléments liés
+        requested_at:
+          label: Demandée le
+        requested_by:
+          description: Nom du persona ou processus qui a besoin d'une approbation.
+          label: Demandée par
+        resolved_at:
+          label: Résolue le
+        relayed:
+          label: Relayée
+          description: "Renseigné quand une session d'agent a relayé la réponse de la personne : quelle session, et comment la personne l'a confirmée."
+        resolved_by:
+          label: Résolue par
+        title:
+          label: Titre
+        urgency:
+          label: Urgence
+    ApprovalRelayed:
+      fields:
+        by:
+          label: Relayée par
+          description: "La session d'agent qui a relayé la réponse."
+        confirmed:
+          label: Confirmée par
+          description: "Comment la personne l'a confirmée (prompt, totp ou entra)."
+        at:
+          label: Le
+          description: "Quand la personne l'a confirmée."

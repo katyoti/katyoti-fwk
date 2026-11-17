@@ -1,0 +1,11 @@
+name: phone
+kind: field-type
+basePrimitive: string
+description: Phone-number input with format validation. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    pattern:
+      type: string
+      optional: true
+      description: Regex (or named pattern) the phone number must match.

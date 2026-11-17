@@ -1,0 +1,7 @@
+name: demo-delegate-magentic-input
+root: Input
+types:
+  Input:
+    type: object
+    description: "No parameters — the magentic-pattern demo is self-contained"
+    fields: {}

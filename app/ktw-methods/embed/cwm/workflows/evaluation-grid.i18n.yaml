@@ -1,0 +1,11 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Grille d'évaluation
+  description: Rédigée, puis figée avant la notation ; rouverte quand un critère doit changer.
+  states:
+    draft: Brouillon
+    frozen: Figée
+  transitions:
+    freeze: Figer
+    reopen: Rouvrir

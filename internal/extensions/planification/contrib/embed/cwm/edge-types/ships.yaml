@@ -1,0 +1,11 @@
+name: ships
+from: step
+to: release
+cardinality: N:1
+from_capabilities: [step]
+to_capabilities: [release]
+target: object
+object_storage: edges
+description: |
+  A step SHIPS a release when it is reached.
+inverse_name: shipped-at

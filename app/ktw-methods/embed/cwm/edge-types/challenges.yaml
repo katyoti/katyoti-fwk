@@ -1,0 +1,19 @@
+# A decision raised against an object: the challenge IS the decision, and this
+# edge names what it questions. Stored on the decision, read from the target's
+# side as `challenged-by` — the target's Challenged by tab and the Objects
+# search's Challenged objects view read it. No capability is required at either
+# end: anything may be questioned. The one declaration of the kind (ktw-demo's
+# sign-off dispute is its own kind, `contests`).
+name: challenges
+label: Challenges
+inverse_label: Challenged by
+from: decision                     # documentation: a challenge is a decision
+to: any
+cardinality: M:N
+target: object
+object_storage: edges
+inverse_name: challenged-by
+description: >-
+  The decision questions the target object: a critique, a risk or an "is this
+  right?" raised against it, open until decided. Written on the decision, read
+  from the target's side as `challenged-by`.

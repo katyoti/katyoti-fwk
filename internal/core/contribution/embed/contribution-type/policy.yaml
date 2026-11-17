@@ -1,0 +1,50 @@
+# Registers `policy` as a SYSTEM contribution kind: a rule put on objects by
+# shape — what it says, the types and capabilities it applies to, the checks that measure it and
+# what an agent working on such an object is told. A policy holds no field of
+# the object (a capability does), so it is never in an object's capability set.
+#
+# Published from a CWM pack: embed/cwm/policies/<name>.yaml.
+name: policy
+description: |
+  A rule put on objects by shape: what it says, the types and capabilities it applies to, the
+  checks that measure it and what an agent working on such an object is told.
+schema: system:/data-type/policy
+validate: error
+
+# A policy names something to run: the checks that measure it and what an
+# agent working on an object is told, so an untrusted origin may not override one.
+execution: executable
+
+# The texts a person reads, translatable through the `translations` layer
+# (contribapi translations.go) — its name and description as the Information tab shows
+# them, and the titles of the sections an agent context shows from it.
+translatable: [label, description, "agent.system[id].title", "agent.files[name].title"]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <name>.i18n.yaml beside the entry, as
+  # canonical JSON (language code -> texts). Resident: the hub's translation
+  # bundle reads it from the index.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 256  # measured max 157 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# How a file becomes a declaration (contribution-types.md "How files become
+# layers"): a YAML file in the CWM pack's `policies/` folder, its tree the data
+# layer, the file as written the source, its `.i18n.yaml` its translations. Addressed by its name.
+source:
+  folder: policies
+  match: ["*.yaml", "*.yml"]
+  id: name-or-file
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Liste d'attente
+  description: >-
+    Qui peut répondre aux questions qu'elle contient - personnes, rôles et
+    agents : n'importe quel membre répond, la première réponse prouvée
+    l'emporte, et la trace dit qui.

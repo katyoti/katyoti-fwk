@@ -1,0 +1,10 @@
+name: contributes
+label: Contributes
+icon: package
+description: >-
+  Publishes the object as a contribution entry of a declared kind, under the
+  provider token of its project: its kind, its id (the object's slug or id by
+  default), where each of its layers comes from (its body, its fields, a
+  capability's field-group, a file of its module) and, for an override, the
+  URI of the entry it overrides - it then carries only the layers it replaces.
+schema: :/data-type/cap-contributes

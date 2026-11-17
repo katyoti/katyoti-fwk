@@ -1,0 +1,19 @@
+name: avatar
+kind: field-type
+basePrimitive: string
+description: Avatar image — URL pointing at an image, optionally paired with a sibling display-name field. Renderer comes via gui-media.
+
+configSchema:
+  fields:
+    nameKey:
+      type: string
+      optional: true
+      description: Sibling field name on the parent item — when set, displayed next to the avatar.
+    size:
+      type: number
+      optional: true
+      description: Avatar size in pixels (Mantine size scale).
+    fallback:
+      type: string
+      optional: true
+      description: Fallback initials text shown when the URL is empty / fails to load.

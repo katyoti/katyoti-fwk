@@ -1,0 +1,7 @@
+name: demo-delegate-pipeline-input
+root: Input
+types:
+  Input:
+    type: object
+    description: "No parameters — the pipeline-agents demo is self-contained"
+    fields: {}

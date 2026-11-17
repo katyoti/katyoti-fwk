@@ -1,0 +1,16 @@
+name: closes
+label: Closes
+inverse_label: Closed by
+from: use-case                  # item
+to: finding                     # a finding of a review (an audit's, say)
+cardinality: M:N
+description: |
+  When a UC's implementation resolves a finding (one of an audit's,
+  say), this edge expresses the resolution; the finding moves to
+  `closed` by its own workflow.
+
+  Drives the promote-gate accounting: an open critical/high finding
+  blocks tier promotion until either a `closes` edge from a passing
+  UC closes it OR the finding is deferred via `deferred-by` to an OD.
+
+inverse_name: closed-by

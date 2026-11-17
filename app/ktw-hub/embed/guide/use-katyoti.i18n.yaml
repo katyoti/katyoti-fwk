@@ -1,0 +1,19 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+# A control is named {control:<anchor>} as in the recipe, never by its label.
+fr:
+  name: Utiliser KaTyoti
+  description: Une visite de l'interface - la barre de gauche, votre menu, le niveau d'affichage, les guides, la discussion, votre avis, la caméra et l'enregistrement.
+  hashtags:
+  - katyoti-usage
+  - visite
+  - interface
+  - menu
+  - niveau
+  steps:
+    left-bar: La barre de gauche contient votre univers, la discussion, l'Inbox, votre avis et les réglages ; votre avatar est en bas.
+    menu: Ouvrez votre avatar en bas de la barre - votre menu. Votre nom et votre e-mail y sont déjà, renseignés à l'installation de KaTyoti.
+    level: Dans le même menu, le niveau d'affichage - Essentiel montre l'essentiel, Standard ajoute les outils du quotidien, Expert le reste. Choisissez ; il vaut pour tous vos univers.
+    guides: '{control:profile.help} dans le même menu ouvre les guides ; un « ? » sur un écran ouvre ceux de cet écran.'
+    chat: Le bouton {control:ribbon.chat} ouvre une discussion avec l'assistant ; sur l'accueil, l'action rapide « Démarrer une discussion » fait de même.
+    feedback: Le bouton Avis de la barre nous envoie votre remarque avec une capture de l'écran.
+    camera-record: Sauf si votre univers les masque, la barre montre aussi la caméra (allumée ou éteinte) et l'enregistrement de votre écran - le guide « Enregistrer mon écran » le montre pas à pas.

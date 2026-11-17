@@ -1,0 +1,9 @@
+# Translations of the recipe beside this file (modules/guide, OD-015).
+fr:
+  name: Quoi de neuf
+  description: Les changements des versions sorties depuis votre dernier passage, chaque version ouvrant sur ce qu'elle vous apporte.
+  hashtags:
+  - quoi de neuf
+  - nouveautés
+  - changements
+  - nouvelle version

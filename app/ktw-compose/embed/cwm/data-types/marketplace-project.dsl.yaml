@@ -1,0 +1,27 @@
+$schema: ktw-schema/v1
+name: marketplace-project
+version: "2.0.0"
+root: MarketplaceProject
+description: |
+  Type-specific body schema for a `marketplace-project` node — a marketplace
+  defined by its marketplace.yaml (name, output, key, platforms, config-sets,
+  seeds, vaults, solutions, demo), published at a version from a build. The node
+  holds where the definition is; the definition holds everything else.
+types:
+  MarketplaceProject:
+    type: object
+    fields:
+      definition:
+        type: string
+        label: Definition
+        description: The marketplace's marketplace.yaml (or the folder holding it) — what it publishes, where, with which key.
+      version:
+        type: string
+        label: Version
+        description: The version the next publish is stamped with — immutable once published.
+        optional: true
+      dist:
+        type: string
+        label: Build
+        description: The built binaries, <os>-<arch>/ folders (default dist).
+        optional: true

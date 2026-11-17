@@ -1,0 +1,17 @@
+name: tabs
+kind: form-layout
+description: >-
+  Each schema group becomes a Mantine Tab. Best for long forms with
+  weakly-related sections where the user typically focuses on one section
+  at a time (Profile / Notifications / Security / Billing / ...).
+
+configSchema:
+  fields:
+    orientation:
+      type: string
+      default: horizontal
+      description: "Tab strip orientation (horizontal | vertical)"
+    keep_mounted:
+      type: boolean
+      default: true
+      description: "Keep inactive tab content mounted (preserves form state across tab switches)"

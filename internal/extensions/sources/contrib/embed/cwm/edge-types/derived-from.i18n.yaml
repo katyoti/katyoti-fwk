@@ -1,0 +1,7 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Traçabilité de tout objet jusqu''au document source dont il est issu (une spécification, une page Confluence, une séance de capture d''idées). La section ancrée est le `section_path` du document source : un document source par section ancrée. Permet : la couverture directe (« sections de cette spécification pas encore capturées »), la couverture inverse (« d''où vient cette règle ? ») et la résilience de l''ancrage : sources/Reanchor recalcule l''empreinte du document source, et les objets liés par `derived-from` sont signalés périmés ou manquants quand la section a changé ou disparu.'
+  inverse_label: 'Dérive'
+  label: 'Dérivé de'

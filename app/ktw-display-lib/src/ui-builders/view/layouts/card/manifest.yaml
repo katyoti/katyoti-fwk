@@ -1,0 +1,22 @@
+name: card
+kind: view-layout
+description: >-
+  Each group renders as a Mantine Card with a shadow + title. Cards stack
+  vertically with consistent spacing. Best for views where each group is a
+  semantically distinct concept (Identity / Permissions / Activity / etc.)
+  and visual separation matters.
+
+configSchema:
+  fields:
+    shadow:
+      type: string
+      default: sm
+      description: "Mantine Card shadow (xs | sm | md | lg | xl)"
+    radius:
+      type: string
+      default: md
+      description: "Card border radius (xs | sm | md | lg | xl)"
+    padding:
+      type: string
+      default: lg
+      description: "Card content padding (xs | sm | md | lg | xl)"

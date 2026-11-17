@@ -1,0 +1,94 @@
+id: composites/book-form-multi
+category: composites
+title: Composite — Book form, multi-form variants
+description: 'Two ui-form extensions on the same Book schema: a full "default" form using the groups layout and a "compact" form using the single layout. Once /widget/form is wired through buildUIForm() (Subtask 4 of gui-form), the ?form=<name> query param picks between them.'
+schema:
+  name: reading-list-multi-form
+  version: 1
+  root: Book
+  types:
+    Book:
+      type: object
+      label: Book
+      idField:
+        - id
+      titleField:
+        - title
+      fields:
+        id:
+          type: string
+          label: ID
+        title:
+          type: string
+          label: Title
+        author_email:
+          type: string
+          label: Author email
+          content:
+            type: email
+          optional: true
+        notes:
+          type: string
+          label: Notes
+          content:
+            type: markdown
+            maxLength: 500
+          optional: true
+        rating:
+          type: number
+          label: Rating
+          content:
+            type: rating
+            max: 5
+          default: 3
+        progress_pct:
+          type: number
+          label: Progress (%)
+          content:
+            type: slider
+            min: 0
+            max: 100
+          default: 0
+        is_finished:
+          type: boolean
+          label: Finished?
+          default: false
+      extensions:
+        - type: ui-form
+          name: default
+          layout: groups
+          submit_label: Save book
+          cancel_label: Discard
+          groups:
+            - title: Bibliographic
+              cols: 2
+              fields:
+                - title
+                - author_email
+            - title: Reading status
+              cols: 2
+              fields:
+                - rating
+                - progress_pct
+                - is_finished
+            - title: Notes
+              cols: 1
+              fields:
+                - notes
+        - type: ui-form
+          name: compact
+          layout: single
+          submit_label: Quick save
+          groups:
+            - fields:
+                - title
+                - rating
+                - is_finished
+value: {}
+mode: edit
+tags:
+  - composites
+  - object
+  - ui-form
+  - multi-form
+  - layouts

@@ -1,0 +1,8 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.updated
+label: Object updated
+description: >-
+  An object was written over (an edge edit included). An async on_update entry subscribes to it.
+payload: system:/data-type/object-event
+point: on_update

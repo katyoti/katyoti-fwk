@@ -1,0 +1,11 @@
+# A deck theme stored in the project: what « Import d'un modèle PowerPoint »
+# makes. The theme's declaration is its `deck-theme` capability (the same
+# ThemeBody a sidecar's theme declares); its files — logos, backgrounds,
+# icons, fonts, the sample deck and the imported template (reference.pptx) —
+# are module files in themes/<name>/. A deck names it in `theme:`, and it
+# comes before a sidecar's theme of the same name.
+name: deck-theme
+label: Deck theme
+folder: themes
+icon: palette
+capabilities: [deck-theme]

@@ -1,0 +1,22 @@
+# A code review type of ktw-code: performed by an agent following the
+# code-review skill in its run mode, with its guide.
+name: performance
+title: Performance
+description: >-
+  Algorithmic complexity, repeated queries, caching, input and output, memory and hot paths.
+dimension: performance
+applies:
+  capabilities: [code]
+  when: "len(object.code.code_packages) > 0"
+trigger:
+  mode: manual
+runner:
+  skill: ktw-code:/skill/code-review
+  input:
+    review: performance
+    guide: ktw-code:/reference/review/performance-review.md
+rating: >-
+  critical when a finding is critical, needs-attention when one is high or
+  medium, good otherwise.
+presets: [code-deep]
+max_cost_usd: 4

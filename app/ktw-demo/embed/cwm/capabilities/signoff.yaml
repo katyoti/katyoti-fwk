@@ -1,0 +1,78 @@
+# THE SIGN-OFF CAPABILITY — ktw-demo's reference capability: every slot a
+# capability declaration has, served by the sign-off service
+# (internal/extensions/demosignoff) on its `signoff` slot: panels, acts, the
+# function, and what CWM asks on a write or on demand. A `:`
+# URI names the binary hosting the pack (ktw-demo). The guide that walks it: modules/cwm/objects/
+# what-a-capability-and-a-sidecar-give.cwm.md §7.
+name: signoff
+label: Sign-off
+icon: eye-check
+description: >-
+  Who reviews the object, who approved it, the verdict and the notes. A type
+  says how many approvals its objects need (its sign-off section); signedoff()
+  answers whether they have them.
+# The group on an object (capabilities.signoff) and the section on a type
+# (signoff:), both rendered from the service's Go types.
+schema: :/data-type/cap-signoff
+type_schema: :/data-type/type-signoff
+# A header chip over the group's verdict.
+badges:
+  - field: verdict
+    icon: eye-check
+    tooltip: Where the sign-off stands
+    colors:
+      pending: gray
+      approved: green
+      changes: orange
+# A question expressions can ask: in a guard, a gate's check, a panel filter.
+functions:
+  - name: signedoff
+    description: The object has the approvals its type requires.
+    action: :signoff/signedoff-function
+    returns: boolean
+    timeout: 10s
+# Behaviour at the points of the object's life: a write refused, a write
+# recorded, findings on demand, a verdict on demand, and the point the pack
+# opens itself (hook-types/signoff_digest.yaml), run with ObjectRunHooks.
+hooks:
+  before_update:
+    - uri: :signoff/check-write
+  on_update:
+    - uri: :signoff/record
+  lint:
+    - uri: :signoff/lint
+  verify:
+    - uri: :signoff/verify
+  signoff_digest:
+    - uri: :signoff/digest
+# What every carrier can run.
+actions:
+  - uri: :tasks/signoff-request
+    label: Ask for a sign-off
+    kind: ai
+    icon: message-question
+  - uri: :signoff/approve
+    label: Approve
+    kind: sync
+    icon: check
+    confirm: true
+    when: "object.signoff.verdict != 'approved'"
+    input: {id: "${id}"}
+# What a chat on a carrier knows and may do.
+agent:
+  system:
+    - id: signoff-how
+      title: Signing off this object
+      order: 40
+      text: >-
+        ${current.name} carries a sign-off: its reviewers, their approvals, a
+        verdict (pending, approved, changes) and notes. Read the object, then
+        write your notes and a verdict through signoff/write; approving belongs
+        to a reviewer, never to you. An approved verdict is refused until the
+        object has the approvals its type requires.
+  tools:
+    - uri: :signoff/log
+    - uri: :signoff/write
+    - uri: :signoff/contest
+  skills:
+    - selector: signoff-an-object

@@ -1,0 +1,25 @@
+name: output
+root: Output
+types:
+  Output:
+    type: object
+    description: "Structured spec consumed by the planner"
+    fields:
+      item_type:
+        type: string@enum(task, agent, skill, service, sidecar)
+      name:
+        type: string
+        description: "kebab-case slug"
+      purpose:
+        type: string
+        description: "1-paragraph summary of what the item does"
+      success_criteria:
+        type: string[]
+        description: "How we'll know it works"
+      constraints:
+        type: string[]
+        description: "Limitations, dependencies, must-haves"
+      notes:
+        type: string
+        description: "Free-form additional context"
+        optional: true

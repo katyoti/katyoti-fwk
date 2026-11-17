@@ -1,0 +1,13 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      source_path:
+        type: string
+        description: "Absolute or workspace-relative path to a file or directory to extract from"
+      item_type_hint:
+        type: string@enum(task, agent, skill, service, sidecar)
+        description: "Optional pre-selected item type — biases extraction"
+        optional: true

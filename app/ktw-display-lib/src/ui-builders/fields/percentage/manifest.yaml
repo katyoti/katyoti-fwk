@@ -1,0 +1,20 @@
+name: percentage
+kind: field-type
+basePrimitive: number
+description: Percentage value with % suffix display. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    minimum:
+      type: number
+      optional: true
+      default: 0
+    maximum:
+      type: number
+      optional: true
+      default: 100
+    decimals:
+      type: number
+      optional: true
+      default: 0
+      description: Decimal places to display.

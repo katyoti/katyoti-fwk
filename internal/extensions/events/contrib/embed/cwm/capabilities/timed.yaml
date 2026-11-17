@@ -1,0 +1,10 @@
+# The events extension's: an object's recurring timers. The serving process
+# raises timer.elapsed on the object when one comes due; an async on_timer
+# entry reacts to it (a nightly re-check, say).
+name: timed
+label: Timers
+icon: clock
+description: >-
+  This object's recurring timers — every a period, or daily at a time — each
+  raising timer.elapsed on it when due.
+schema: ktw-agents:/data-type/cap-timed

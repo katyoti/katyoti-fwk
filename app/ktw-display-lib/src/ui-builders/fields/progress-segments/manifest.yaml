@@ -1,0 +1,7 @@
+name: progress-segments
+kind: renderer
+basePrimitive: array
+description: Five counts [done, running, waiting, todo, blocked] as one segmented bar - its tooltip the counts.
+
+configSchema:
+  fields: {}

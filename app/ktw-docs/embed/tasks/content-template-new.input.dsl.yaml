@@ -1,0 +1,38 @@
+name: content-template-new-input
+root: ContentTemplateNewInput
+types:
+  ContentTemplateNewInput:
+    type: object
+    fields:
+      base:
+        type: string
+        label: "Partir de"
+        description: "La trame que l'on copie puis modifie"
+        default: architecture-board
+        content:
+          type: text
+          options_from:
+            source: content-templates
+            value: name
+            label: label
+      name:
+        type: string
+        label: "Nom"
+        description: "En minuscules et tirets (ex. comite-archi-acme) ; le même nom qu'une trame fournie la remplace dans ce projet"
+      label:
+        type: string
+        label: "Libellé"
+        description: "Ce que la liste « Trame » affiche (ex. Comité d'architecture Acme)"
+      changes:
+        type: string
+        label: "Ce qui change"
+        description: "Les parties à ajouter, retirer, déplacer, ou les sources à changer (ex. « ajoute une partie Sécurité après l'architecture cible, avec ses sources dans travail/securite*.md »)"
+        optional: true
+        content: markdown
+    extensions:
+      - type: ui-form
+        name: default
+        submit_label: "Créer la trame"
+        groups:
+          - title: "Trame"
+            fields: [base, name, label, changes]

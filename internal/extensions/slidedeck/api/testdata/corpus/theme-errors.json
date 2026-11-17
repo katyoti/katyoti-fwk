@@ -1,0 +1,58 @@
+{
+  "settings": {
+    "theme": "brand",
+    "title": "Themed"
+  },
+  "slides": [
+    {
+      "h": 0,
+      "v": 0,
+      "line": 5,
+      "settings": {
+        "layout": "cover",
+        "variant": "sand"
+      },
+      "settingsLine": 6,
+      "slots": [
+        {
+          "name": "default",
+          "line": 7,
+          "markdown": "# Themed\nA known cover variant"
+        }
+      ]
+    },
+    {
+      "h": 1,
+      "v": 0,
+      "line": 11,
+      "settings": {
+        "layout": "cover",
+        "variant": "bordeaux"
+      },
+      "settingsLine": 12,
+      "slots": [
+        {
+          "name": "default",
+          "line": 13,
+          "markdown": "# Unknown variant"
+        }
+      ]
+    },
+    {
+      "h": 2,
+      "v": 0,
+      "line": 16,
+      "settings": {
+        "variant": "sand"
+      },
+      "settingsLine": 17,
+      "slots": [
+        {
+          "name": "default",
+          "line": 18,
+          "markdown": "## Content has no variants\n\n![Camion](icon:truck) and ![Grue](icon:crane)\n\nWritten as text, not checked: `![label](icon:\u003cname\u003e)`\n\n```markdown\n![not checked in code](icon:crane)\n```"
+        }
+      ]
+    }
+  ]
+}

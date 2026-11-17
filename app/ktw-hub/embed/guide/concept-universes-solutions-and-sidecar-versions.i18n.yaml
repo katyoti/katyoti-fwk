@@ -1,0 +1,181 @@
+# Translations of the concept document beside this file (modules/guide, OD-015).
+fr:
+  name: 'Univers, solutions et versions des sidecars'
+  description: 'Comment KaTyoti est livré et tenu à jour : ce qu''une marketplace propose, la solution comme ensemble de départ dont on crée un univers, quelle version de chaque sidecar un univers exécute, et comment les données d''un projet suivent une mise à jour.'
+  hashtags:
+  - concepts
+  - univers
+  - solution
+  - version
+  - mise-à-jour
+  - marketplace
+  body: |-
+    La référence sur la façon dont KaTyoti est livré et tenu à jour : ce qu'une
+    marketplace propose, comment un univers est créé à partir d'une solution, quelle
+    version de chaque sidecar s'exécute dans un univers, et comment les données d'un
+    projet suivent une mise à jour. « Projets, dépôts et univers » explique les projets
+    qu'un univers ouvre. Ce qui n'est pas encore livré est marqué **À venir**.
+
+    ## 1. Vue d'ensemble
+
+    ```mermaid
+    flowchart LR
+      subgraph PUB["Côté éditeur"]
+        PR["Produits<br/>livrés en sidecars"] --> S1["Sidecars<br/>chacun à sa version"] --> SOL["Version de solution<br/>un ensemble de départ : sidecars figés · config-sets · modèle de projet · coffres"]
+      end
+      SOL -->|marketplace signée : on en crée un univers| INST
+      subgraph PERSON["Votre poste"]
+        ST["Magasin de versions<br/>une copie de chaque version"]
+        INST["Univers<br/>exécute exactement les versions qu'il fixe, et les sidecars que vous ajoutez"]
+        INST -->|utilise| ST
+        INST -->|sert| P["Projet<br/>sa version de données"]
+      end
+    ```
+
+    - **Un éditeur compose une solution ; vous en créez un univers et le mettez à
+      jour.**
+    - Une version de solution **fixe chaque sidecar à une version exacte**, et un
+      univers créé à partir d'elle exécute exactement celles-là - il n'y a pas de
+      plages de versions.
+    - Une solution est un **ensemble de départ**, pas une clôture : votre univers
+      ajoute ses propres sidecars et rattache des projets de n'importe quel type.
+    - **Plusieurs versions cohabitent** sur un même poste : chaque univers exécute les
+      siennes.
+
+    ## 2. Les concepts
+
+    | Concept | Ce que c'est | Qui le change |
+    |---|---|---|
+    | **Produit** | Ce que vous choisissez par son nom - KaTyoti, SoftwareFactory, KaTyoti Studio, ArchiFactory : des sidecars, des écrans et des guides sous un même nom. Un produit n'est pas un univers | Son éditeur |
+    | **Marketplace** | Un catalogue signé avec la clé de son éditeur : le plan de contrôle, des sidecars, des config-sets, des modèles de projet, des coffres et des solutions, chacun à ses versions | Son éditeur |
+    | **Sidecar** | Un composant à une version, qui donne des capacités à un univers : types d'objets, actions, connecteurs | Ses développeurs |
+    | **Solution** | Un ensemble de départ figé à une version : la version du plan de contrôle, ses sidecars à des versions exactes, ses config-sets, son modèle de projet, ses coffres et ses documents. On en crée un univers et on le met à jour avec elle ; ensuite, elle dit seulement d'où vient l'univers. Une version publiée ne change jamais. Aujourd'hui une solution peut aussi poser plusieurs univers, dont un principal | Son éditeur |
+    | **Univers** | Votre KaTyoti, votre contexte de travail : les sidecars qu'il fait tourner - ceux de sa solution et ceux que vous ajoutez -, ses réglages, ses clés, les guides et les écrans qu'il montre, les projets qu'il rattache. Il nomme la solution dont il vient | Vous : création, mise à jour, sidecars, réglages, clés |
+    | **Config-set** | Des réglages appliqués à un univers, avec les clés dont ils ont besoin | Son éditeur |
+    | **Modèle de projet** | Le contenu de départ d'un univers : un projet (ses objets, documents et fichiers) et ses tâches ; un badge « Démo » marque celui qui est une démonstration | Son éditeur |
+    | **Coffre** | Un fichier de clés scellé, ouvert avec le mot de passe de votre équipe | Son éditeur |
+    | **Version de données** | La forme des données d'un projet, inscrite dans son fichier de projet | Ne bouge que si la forme change, avec une étape de migration |
+
+    ## 3. Les règles
+
+    1. **L'éditeur compose les solutions ;** vous en créez des univers, les mettez à
+       jour, ajoutez des sidecars et renseignez vos clés et vos réglages.
+    2. **Une version de solution est figée.** Une fois publiée, elle ne change jamais :
+       l'installer n'importe où donne exactement les mêmes versions.
+    3. **Un univers exécute exactement les versions qu'il fixe.** Un sidecar dont le
+       programme annonce une autre version que celle fixée n'est pas démarré, et
+       KaTyoti nomme les deux versions.
+    4. **Les versions cohabitent.** Le poste garde une copie de chaque version ; deux
+       univers peuvent exécuter deux versions du même sidecar en même temps.
+    5. **Une solution est le point de départ d'un univers, pas une clôture.** L'univers
+       ajoute ou retire ses propres sidecars et rattache des projets de n'importe quel
+       type. **À venir :** un univers combine plusieurs solutions dont les versions
+       s'accordent, un conflit étant nommé et refusé.
+    6. **Une mise à jour fait passer ensemble les univers d'une solution** à une autre
+       de ses versions, et n'interrompt jamais un travail en cours : un univers qui
+       exécute des tâches, ou dont un travail est tenu par un agent, est refusé.
+       Aujourd'hui la mise à jour ramène l'univers exactement aux sidecars de la
+       solution ; **à venir :** elle ne fait bouger que les sidecars de la solution et
+       garde ceux que vous avez ajoutés.
+    7. **Les données du projet suivent la mise à jour, aujourd'hui :**
+       - **plus anciennes** → mises à niveau par la mise à jour, après une sauvegarde ;
+       - **plus récentes** que ce que le programme connaît → refusées : le projet n'est
+         pas ouvert, et les deux versions sont nommées ;
+       - **égales** → rien à faire.
+       Vous validez ensuite le projet migré avec git. **À venir :** une mise à jour ne
+       change jamais les données d'un projet. Leur forme ne bouge que lorsque vous
+       choisissez « Convertir », composant par composant ; un projet écrit par une
+       version plus récente s'ouvre en lecture seule, nomme le produit et propose de
+       l'installer ou d'ouvrir le projet dans un autre univers.
+    8. **Un correctif qui ne change aucune donnée ne bloque personne,** puisque la
+       version de données n'a pas bougé.
+
+    ## 4. Installer une solution
+
+    Dans la Marketplace, l'onglet « Solutions » installe une solution dans un univers
+    que vous nommez - un nouveau, ou un que vous avez déjà :
+
+    1. **D'abord les contrôles :** chaque coffre est ouvert avec le mot de passe de
+       votre équipe, demandé une fois, et chaque clé dont les config-sets ont besoin
+       est vérifiée. Rien n'est installé tant qu'un coffre ne s'ouvre pas ou qu'une
+       clé manque.
+    2. **Ses sidecars** sont installés à leurs versions exactes, dans le magasin de
+       versions.
+    3. **Ses univers** sont créés, le principal d'abord ; un autre univers de la
+       solution est placé à côté, nommé d'après lui.
+    4. **Leur contenu :** les clés sont importées, les config-sets appliqués, le modèle
+       de projet déposé comme projet de l'univers, et les documents de la solution placés dedans.
+    5. Au premier démarrage, **« Prêt à démarrer »** montre l'état de chaque sidecar,
+       les programmes à installer sur votre poste et les clés qui manquent encore.
+
+    Installer à nouveau répare l'univers et n'écrase jamais votre projet.
+
+    ## 5. Se tenir à jour
+
+    | Ce qui bouge | Comment | Ce qui se passe |
+    |---|---|---|
+    | **Une solution entière** | `katyoti solution update`, vers sa version la plus récente ou celle que vous nommez | D'abord le plan ; l'univers arrêté ; les données de son projet sauvegardées ; chaque univers de la solution fixé aux nouvelles versions ; l'univers redémarré ; les données du projet migrées ; un test de bon fonctionnement. Un échec après la sauvegarde revient à la version et aux données précédentes |
+    | **Un sidecar** | Marketplace › « Sidecars » : « Mettre à jour », « Mettre à jour dans … » | La nouvelle version est ajoutée au magasin et l'univers pointé vers elle ; l'ancienne reste. Un univers installé depuis une solution garde la version qu'il fixe |
+    | **Le plan de contrôle** | Marketplace › « Infra » : « Mettre à jour en … et redémarrer » | Les programmes de KaTyoti passent à la version du canal et redémarrent |
+
+    ## 6. Exemple - ArchiFactory
+
+    ### Ce que l'éditeur publie
+
+    ```yaml
+    # une version de solution - « ArchiFactory pour Acme »
+    name: acme
+    version: "1.006"
+    infra: "1.006"                 # le plan de contrôle avec lequel elle a été faite
+    includes:                      # ses sidecars, à des versions exactes
+      - { name: ktw-acme,       version: 3.4.0 }
+      - { name: ktw-docs,       version: 1.8.1 }
+      - { name: ktw-kb,         version: 2.1.0 }
+    universes:
+      - name: archifactory
+        main: true                 # l'univers qui s'ouvre après l'installation
+    configSets: [{ name: acme-base, version: "1.006" }]
+    seed:       { name: acme-seed, version: "1.006" }
+    vaults:     [{ name: acme-keys, version: "1.006" }]
+    ```
+
+    ### Deux architectes sur un même dossier
+
+    ```mermaid
+    sequenceDiagram
+      actor A as Alice (solution 1.007)
+      participant G as Dossier SI RH (git)
+      actor B as Bob (solution 1.006)
+      A->>A: mise à jour en 1.007 : les données de son dossier migrées, une sauvegarde gardée
+      A->>G: valide le dossier migré et pousse
+      B->>G: tire, ouvre : ses données sont plus récentes que ce que son KaTyoti connaît
+      G-->>B: refusé, en nommant les deux versions de données
+      B->>B: mise à jour en 1.007
+      B->>G: ouvre : égales, rien à faire
+    ```
+
+    Si la 1.007 n'avait changé aucune forme de données, la version de données n'aurait
+    pas bougé, et Bob ouvrirait le dossier sans mettre à jour. **À venir :** la mise à
+    jour d'Alice laisse son dossier tel quel tant qu'elle ne choisit pas « Convertir » ;
+    Bob, resté sur l'ancienne version, le voit alors en lecture seule et se voit
+    proposer d'installer la nouvelle.
+
+    ## 7. Exemple - KaTyoti Studio
+
+    - **KaTyoti Studio est un produit, pas un univers :** les sidecars qui construisent
+      et étendent KaTyoti, avec une solution qui s'appuie sur celle de SoftwareFactory,
+      l'usine logicielle générique. L'équipe KaTyoti crée son univers à partir de cette
+      solution, et ses sidecars comprennent les outils de développement qu'aucun autre
+      produit n'a.
+    - **L'univers d'un développeur** exécute des sidecars construits depuis le code en
+      cours de développement. Ils ne viennent pas du magasin de versions, si bien que
+      le contrôle de version les laisse tranquilles. L'univers d'un utilisateur exécute
+      toujours des versions publiées.
+
+    ## 8. Rôles
+
+    | Rôle | Fait |
+    |---|---|
+    | **Développeur de sidecar** | Publie le sidecar à une nouvelle version ; livre une étape de migration avec tout changement de forme des données |
+    | **Éditeur de la marketplace** | Compose et teste les solutions, les publie signées ; ne change jamais une version publiée |
+    | **Personne** | Crée un univers à partir d'une solution, renseigne ses clés, ajoute des sidecars, met à jour, et valide les projets migrés avec git |

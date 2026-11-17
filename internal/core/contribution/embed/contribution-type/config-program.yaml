@@ -1,0 +1,27 @@
+# Registers `config-program` as a system contribution kind. Binaries that
+# depend on external programs emit one `<provider>:/config-program/<name>`
+# Contribution each. The URI of this entry is
+# `system:/contribution-type/config-program`; its body schema is
+# `system:/data-type/config-program`.
+name: config-program
+description: |
+  An external program the binary depends on, verified by `config check`
+  (availability + version) with a pointer to an install skill when missing.
+
+# The body schema of every contribution of this kind. Declared, never
+# derived: a kind whose schema is inferred from its name cannot be validated
+# when the inference fails, and the failure is silent.
+schema: system:/data-type/config-program
+validate: error
+
+# A config program names something to run: `config check` executes the
+# program it declares, so an untrusted origin may not override one.
+execution: executable
+
+# Layers every entry of this kind carries, and the metadata budget — read by
+# the framework (default layer, residency, budget check); measured from the
+# census on 2026-09-21, not guessed. See contribution-types.md §2.
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+meta:
+  budget: 128  # measured max 22 B across 21 binaries (2026-09-21), x1.5 rounded up

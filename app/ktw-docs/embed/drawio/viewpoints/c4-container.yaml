@@ -1,0 +1,18 @@
+# A viewpoint: the type of drawing a user picks — a notation, a template library and a layout.
+id: c4-container
+displayName: C4 — containers
+description: The applications and data stores inside a software system (a zone is the system boundary), with the people and systems around it.
+notation: ktw-docs:/notation/c4
+templates: ktw-docs:/drawio-template/c4
+page: default
+elements:
+- Person
+- ExternalPerson
+- SoftwareSystem
+- ExternalSoftwareSystem
+- Container
+- Database
+- Queue
+layout:
+  algorithm: layered
+  direction: DOWN

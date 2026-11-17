@@ -1,0 +1,21 @@
+name: timeline
+description: A sequence of steps along a line — phases, milestones, a roadmap (two to eight; past six they take two rows).
+slots:
+  - name: default
+    description: A level-2 heading, optionally one line under it.
+    required: true
+  - name: steps
+    description: An ordered list, one item per step — **Step** then a short line.
+    required: true
+    minItems: 2
+    maxItems: 8
+example: |
+  <!-- slide: layout=timeline -->
+  ## Our approach
+
+  ::steps::
+  1. **Scoping** — needs and boundaries
+  2. **Design** — the target architecture
+  3. **Build** — in short increments
+  4. **Acceptance** — with the business
+  5. **Go-live** — and support

@@ -1,0 +1,9 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Réglages de la présentation
+  description: >-
+    Les réglages d'une présentation - format, thème, transition par défaut,
+    auteur, filigrane et marque de production du thème. Les slides sont le
+    corps de l'objet ; le panneau de la présentation et le contrôle de l'objet
+    réunissent les deux.

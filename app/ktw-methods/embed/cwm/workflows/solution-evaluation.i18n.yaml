@@ -1,0 +1,11 @@
+# Translations of the workflow beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Évaluation de solution
+  description: Notée, puis relue par une personne ; renvoyée en brouillon quand sa grille est rouverte.
+  states:
+    draft: Brouillon
+    reviewed: Relue
+  transitions:
+    review: Valider
+    rework: Reprendre

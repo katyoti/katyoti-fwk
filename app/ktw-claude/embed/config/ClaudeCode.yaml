@@ -1,0 +1,24 @@
+# Claude Code workers: the claude CLI driven over stdio, on the person's own
+# Claude subscription (an API key is refused).
+
+# The claude binary; empty: claude.exe on PATH, else ~/.local/bin.
+# A .cmd or .bat is refused.
+# claude_path: ""
+
+# The Git Bash Claude Code runs its shell in on Windows; empty: the usual
+# install places.
+# git_bash_path: ""
+
+# A worker's permission mode when its start names none.
+permission_mode: auto
+
+# The settings a worker reads: the person's own rules apply.
+setting_sources: [user, project, local]
+
+# How many workers run at once.
+max_workers: 2
+
+# Open every worker to claude.ai/code and the Claude app (Remote Control): the
+# person watches and drives it there too. ktw-claude run --remote-control does
+# it for one run.
+remote_control: false

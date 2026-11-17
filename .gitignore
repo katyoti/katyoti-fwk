@@ -1,0 +1,98 @@
+.tmp/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.lock
+.holds.lock
+tmp/
+.tmp-matrix/
+
+
+node_modules/
+.katyoti/
+smoke-output
+
+# Claude Code local settings
+.claude/settings.local.json
+.config/sessions/
+.config/logs/
+.config/cache/
+
+# Python
+__pycache__/
+
+test_results/
+
+.VSCodeCounter/
+
+.worktrees/
+.teams/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Go (future)
+/bin/
+/dist/
+*.exe
+*.dll
+*.so
+*.dylib
+vendor/
+
+# Secrets: exactly the one secret-path list,
+# secrets.GitignorePatterns() in internal/extensions/tools/api/secrets, from
+# this comment to the next blank line - the secret-scan test refuses a missing
+# entry, an extra one, and a secret pattern ignored elsewhere in this file
+# (add it to the list instead, so the hook refuses it too). Secrets by purpose (.env.build,
+# .env.test): Claude copies them, never reads them. The pre-commit hook
+# (.githooks/pre-commit, make hooks) refuses a secret staged anyway.
+.env
+.env.*
+*.env
+!.env.example
+!.env.*.example
+.secret/
+.secrets/
+**/hub/keys/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.token
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+.netrc
+.pgpass
+.git-credentials
+
+# Cloud sync folders (hygiene, not secrets)
+.dropbox/
+.dropbox.cache/
+.stfolder/
+.stversions/
+
+# Build artifacts
+/ktw-*.exe
+katyoti-preview/
+/terminal/
+/marketplace/
+
+# Demo world — scripts/demo/, rebuilt by demo-reset.sh
+.demo/
+
+# A CWM workspace bootstrapped at the REPOSITORY ROOT is always a mistake.
+# The real workspace is `.katyoti/cwm/`; these appear when something points the
+# service at the repo itself, which used to happen on every
+# `go test ./internal/extensions/cwm/...`. Ignored so a stray bootstrap can
+# never be committed again, even if a future caller reintroduces one.
+/config/
+/cwm/

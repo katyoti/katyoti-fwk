@@ -1,0 +1,12 @@
+# Where the work on an object stands: its state in the `plan` workflow,
+# beside the object's lifecycle, and the trail of its moves; its priority; a
+# note on why it is blocked or idle; one step record per step its to-dos did.
+# The steps themselves are the scheduler's to-dos, planned from the object's
+# work template: what a step runs, in which phase, is on its to-do.
+name: plan
+label: Plan
+description: >-
+  Where the work on an object stands — idle, ready, blocked, split, done,
+  dropped — its priority, and what each of its steps came to.
+schema: ktw-agents:/data-type/cap-plan
+workflow: {name: plan, state: state, history: trail}

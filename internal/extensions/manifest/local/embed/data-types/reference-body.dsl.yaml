@@ -1,0 +1,39 @@
+$schema: ktw-schema/v1
+name: reference-body
+version: "1.0.0"
+description: |
+  Canonical shape of the Body for a reference Contribution
+  (Contribution.Type == "reference"). Intentionally minimal — the
+  descriptor records what references exist; the actual file bytes are
+  fetched on demand via ContributionService.Get(uri).
+root: ReferenceBody
+types:
+  ReferenceBody:
+    type: object
+    id: path
+    title: path
+    fields:
+      path:
+        type: string
+        label: Path
+        description: |
+          Relative path under the sidecar's references root
+          (e.g. "diagrams/architecture.md"). Same as the entry's ID — duplicated
+          here so consumers reading just the body keep the path locally.
+      mediaType:
+        type: string
+        label: Media type
+        description: |
+          MIME type derived from the file extension
+          (e.g. "text/markdown", "application/pdf"). Set by the provider.
+        optional: true
+    extensions:
+      - type: ui-table
+        name: default
+        columns: [path, mediaType]
+        sortable: true
+        filterable: true
+      - type: ui-cli
+        name: default
+        mode: table
+        columns: [path, mediaType]

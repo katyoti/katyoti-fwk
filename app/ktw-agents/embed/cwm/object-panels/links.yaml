@@ -1,0 +1,14 @@
+# Every incident edge, named from this object's side — only on an object that
+# has any (`links` is in the object vocabulary).
+name: "Links"
+description: "What this object links to, and what links to it"
+icon:
+  tabler: "link"
+  emoji: "🔗"
+order: 850
+filter:
+  types: ["*"]
+  when: "len(links) > 0"
+content:
+  kind: "extension"
+  extension: "object-links"

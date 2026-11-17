@@ -1,0 +1,12 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Visa
+  description: >-
+    Qui relit l'objet, qui l'a approuvé, le verdict et les notes. Un type dit combien d'approbations ses objets demandent (sa section signoff) ; signedoff() répond s'ils les ont.
+  actions:
+    Ask for a sign-off: Demander un visa
+    Approve: Approuver
+  badges:
+    verdict:
+      tooltip: 'Où en est le visa'

@@ -1,0 +1,26 @@
+id: content-types/fields/rating
+category: content-types
+title: "Content: rating (stars)"
+description: "number with content { type: rating, max }. Renders as a clickable star widget. Click any star to set the value."
+schema:
+  name: rating-content-demo
+  version: 1
+  root: Demo
+  types:
+    Demo:
+      type: object
+      fields:
+        score:
+          type: number
+          label: Your rating
+          description: Click a star to rate.
+          content:
+            type: rating
+            max: 5
+          default: 3
+value: {}
+mode: edit
+tags:
+  - content-types
+  - number
+  - rating

@@ -1,0 +1,8 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Documentation
+  label_plural: Documentation
+  description: >-
+    Un module planifié sans code : ses documents, ses décisions, ses objectifs
+    et ses fonctionnalités.

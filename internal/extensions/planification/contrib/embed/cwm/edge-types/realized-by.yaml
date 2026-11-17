@@ -1,0 +1,13 @@
+name: realized-by
+from: any
+to: any
+cardinality: M:N
+from_capabilities: []                # a request, or an increment (release capability): CWM requires every capability listed, so none is
+target: object
+object_storage: edges
+description: |
+  A demand is REALIZED BY each object its delta changed or created - a goal,
+  a feature, an increment, a request: what the person's ask became. The demand
+  is a request, or an increment whose delivery goals were proposed and applied
+  (it carries the release capability).
+inverse_name: realizes-demand

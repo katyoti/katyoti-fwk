@@ -1,0 +1,14 @@
+name: quote
+description: One quotation, large, with who said it.
+slots:
+  - name: default
+    description: The quotation, as plain text or a > blockquote.
+    required: true
+  - name: author
+    description: Who said it, and where.
+example: |
+  <!-- slide: layout=quote -->
+  > A path is filing, never meaning.
+
+  ::author::
+  The module layout decision

@@ -1,0 +1,10 @@
+# Translations of the gate beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Module à jour
+  description: >-
+    Le besoin qu'elle sert est nommé, un critère d'acceptation prouve le
+    changement et le journal des changements la cite, ou elle en est exemptée.
+  requirements:
+    module-up-to-date:
+      label: Son module est à jour

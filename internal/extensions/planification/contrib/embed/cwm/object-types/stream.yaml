@@ -1,0 +1,21 @@
+# A stream: a line of releases management recognises by name (the KaTyoti
+# packages, ArchiFactory, the docs site) - the level above the release. It
+# numbers its releases by one version scheme and makes them by one release
+# mode; a release is in exactly one (`in-stream`), an increment may name the
+# one it aims at. A module serves several streams: it is in none. The project's
+# streams live in sys-planification, beside its releases.
+name: stream
+label: Stream
+description: >-
+  A line of releases management recognises by name: its releases follow one
+  version scheme and are made by one release mode.
+icon: route
+folder: streams
+id_prefix: SM
+fields: :/data-type/stream
+accept_parents: [module, system-module]
+
+# Offered in a module's « + » only when the module is planned: a study or a dossier, not planned, offers none - the
+# rule the planning panels follow. `type` and
+# `current` are the parent.
+accept_when: "'module' not in current.capabilities or 'planned' in current.capabilities"

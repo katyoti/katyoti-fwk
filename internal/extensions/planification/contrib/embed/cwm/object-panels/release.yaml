@@ -1,0 +1,18 @@
+# A release's pane: the release level of the Delivery screen -
+# its header with its stage stepper, gates and next action, the legend, the
+# increments that ship in it and those planned for it as dense rows
+# (delivery_pages.go: RowsPage). The GUI calls it with the person's language,
+# so its words are in that language; it declares no
+# input that would override it.
+name: "Release"
+description: "What it ships, what holds it, its next action - and each increment where it stands"
+icon:
+  tabler: "package"
+  emoji: "📦"
+order: -1
+filter:
+  types:
+    - "release"
+source: "ktw-agents:releases/rows-page"
+refresh:
+  scope: "module"

@@ -1,0 +1,15 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    ContestRow:
+      fields:
+        id:
+          description: 'Le contestataire'
+        name:
+          description: 'Son nom'
+        type:
+          description: 'Son type'
+        verdict:
+          description: 'Son propre verdict de visa (vide s''il ne porte pas de visa)'

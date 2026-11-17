@@ -1,0 +1,11 @@
+name: code
+kind: renderer
+basePrimitive: string
+description: Code block with syntax highlighting. Renderer comes via gui-rich-text.
+
+configSchema:
+  fields:
+    language:
+      type: string
+      optional: true
+      description: Language id for highlighting (json, python, typescript, javascript, html, css, sql, bash, powershell, …).

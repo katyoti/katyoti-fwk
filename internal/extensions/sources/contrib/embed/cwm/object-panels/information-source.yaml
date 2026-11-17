@@ -1,0 +1,28 @@
+# An information source's « Source » tab: its
+# detail - its state in a word, when it was last read, what to do when it
+# failed, then each item it brought or keeps with its state, an item read
+# opening its source-document - drawn by the region `sources/source-detail`
+# returns, the one an opened source card shows. Its title is the connector's
+# declared label. The page speaks French: the study it serves does. Shown
+# under every holder but one carrying the capability source-sub-tabs, whose
+# sources open on the three sub-tabs information-source-take, -read and
+# -settings instead.
+name: "Source"
+description: "The source's detail: its state, its last read and each item it brought with its state"
+icon:
+  tabler: "plug-connected"
+  emoji: "🔌"
+order: 1
+filter:
+  types:
+    - "information-source"
+  when: "source_sub_tabs() == false"
+refresh:
+  scope: "self"
+content:
+  kind: "page"
+  dslTree:
+    kind: "vbox"
+    gap: "md"
+    children:
+      - {kind: "box", id: "information-source-detail", children: [], load: {method: "ktw-agents:sources/source-detail", args: {id: "${id}"}}, placeholder: {kind: "rows", count: 4}, empty: "Source"}

@@ -1,0 +1,17 @@
+name: currency
+kind: field-type
+basePrimitive: number
+description: Monetary value with currency formatting. Renderer comes via gui-advanced.
+
+configSchema:
+  fields:
+    currencyCode:
+      type: string
+      optional: true
+      description: ISO 4217 currency code (e.g., 'USD', 'EUR'). Default 'USD'.
+    minimum:
+      type: number
+      optional: true
+    maximum:
+      type: number
+      optional: true

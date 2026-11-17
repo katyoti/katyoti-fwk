@@ -1,0 +1,7 @@
+name: boolean
+kind: field-type
+basePrimitive: boolean
+description: Default boolean checkbox renderer.
+
+configSchema:
+  fields: {}

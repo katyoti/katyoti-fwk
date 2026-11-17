@@ -1,0 +1,30 @@
+# One alternative scored on an evaluation grid (modules/decisions/): a score
+# per criterion with its justification and evidence; the total, the
+# eliminations and the criteria left unscored are computed (« Calculer »),
+# never typed. It `evaluates` the alternative and is `scored-on` its grid.
+name: solution-evaluation
+label: Solution evaluation
+label_plural: Solution evaluations
+description: >-
+  An alternative scored on an evaluation grid: a score per criterion with its
+  justification and evidence, and the weighted total computed on the frozen
+  grid.
+icon: chart-bar
+folder: evaluations
+id_prefix: EV
+capabilities: [lifecycle]
+fields: :/data-type/solution-evaluation
+workflow: solution-evaluation
+accept_parents: ["*"]
+actions:
+  - uri: ktw-methods:decisions/evaluation-compute
+    label: Compute
+    description: Compute the total on the frozen grid - the eliminations and the criteria not scored.
+    kind: sync
+    icon: calculator
+    input: {id: "${id}"}
+pane:
+  badges:
+    - field: fields.total
+      icon: chart-bar
+      label: total

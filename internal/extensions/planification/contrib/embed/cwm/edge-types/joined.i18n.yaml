@@ -1,0 +1,5 @@
+# Translations of the edge-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: 'Une demande a REJOINT un incrément en cours : déposée directement dedans - une correction depuis la ligne de commande ou son panneau, le correctif d''un critère d''acceptation en échec, un ajout proposé - plutôt que planifiée par sa propre proposition. La carte de livraison de l''incrément liste ce qui l''a rejoint, avec pourquoi.'

@@ -1,0 +1,6 @@
+# Translations of the aspect beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: "Un état voulu avec la manière de le prouver : want + checkable, la paire du nœud de volonté récursif, sur n'importe quel objet."
+  label: "État voulu, prouvé"

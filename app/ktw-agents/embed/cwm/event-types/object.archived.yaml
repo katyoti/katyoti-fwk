@@ -1,0 +1,6 @@
+# One of CWM's own event types, declared like any other: a pack declares the
+# events it emits by shipping an event-type file. Private (published: false).
+name: object.archived
+label: Object archived
+description: >-
+  An object ended: its file moved, unchanged, to its module's history folder and links to it stay valid as ended (one event per archive). Declared; not subscribable yet.

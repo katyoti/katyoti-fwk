@@ -1,0 +1,42 @@
+# The architecture board: have a target architecture approved.
+name: architecture-board
+label: Comité d'architecture
+description: Have an architecture validated by the architecture board — the decision asked, the context, the target, the options, the risks, the roadmap.
+purpose: architecture board
+target: dossier
+sections:
+  - id: ask
+    title: La décision attendue
+    intent: What the board is asked to decide today, in one sentence.
+    sources:
+      - {from: form, value: audience, note: "who decides"}
+      - {from: named-file, value: overview}
+    guidance: Say it before anything else; the rest of the deck supports it.
+    required: true
+    weight: 1
+    deck: {layout: statement}
+  - id: context
+    include: context-and-scope
+  - id: target-architecture
+    title: Architecture cible
+    intent: The target architecture and how it answers the pains.
+    sources:
+      - {from: files, value: "architecture-cible.md"}
+      - {from: files, value: "**/*cible*.drawio", note: "the target diagram — shown, not described"}
+    guidance: One diagram per slide, a short title; the two or three principles it applies.
+    required: true
+    weight: 3
+    deck: {layout: blank}
+  - id: options
+    include: options-and-recommendation
+  - id: risks
+    include: risks-and-mitigations
+  - id: next
+    include: next-steps
+  - id: decision
+    title: Décision demandée
+    intent: The decision asked again, with what it commits — budget, dates, owners.
+    guidance: The last slide the board sees; leave it on screen during the discussion.
+    required: true
+    weight: 1
+    deck: {layout: statement}

@@ -1,0 +1,8 @@
+# Translations of the capability beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Mémoire
+  description: >-
+    Où en est le travail sur un objet d'une session à l'autre : sa mémoire de
+    travail (ce qui est en cours, ce qui vient ensuite), un fichier markdown
+    dans le module de l'objet, remplacé en entier quand il change.

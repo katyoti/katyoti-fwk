@@ -1,0 +1,21 @@
+name: contributions
+label: Contributions
+icon: package
+description: >-
+  Where the project keeps what it contributes to its universe - skills, tasks,
+  kinds and packs: the provider token they are published under and their
+  folder. Both have defaults: the project id made kebab, and the
+  sys-contributions module of the modules folder.
+schema: :/data-type/cap-contributions
+attach:
+  capabilities: [project]
+# Start contributing: the project's sys-contributions module, created on a
+# person's request, never at boot (its Contributions panel then shows what
+# the universe serves under the token), by Compose's ensure method. Run
+# again, it changes nothing.
+actions:
+  - uri: ktw-compose:compose/ensure-contributions
+    label: Start contributing
+    description: Gives the project its sys-contributions module, where its own skills, tasks, kinds and packs go and are shown.
+    icon: package
+    confirm: true

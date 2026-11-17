@@ -1,0 +1,70 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapDecision:
+      fields:
+        challenge:
+          description: "Les points qu'un relecteur a soulevés contre la proposition ; vide tant que personne ne l'a contestée. La personne juge s'ils sont résolus."
+          label: "Proposition contestée"
+        options:
+          description: "Les options envisagées, sous forme de libellés courts (quelques mots, dans la langue de l'auteur) ; ce que chacune signifie est sa section de prose `### <libellé>`."
+          label: "Options"
+        proposal:
+          description: "L'option que la préparation recommande et pourquoi ; vide tant qu'elle n'est pas préparée."
+          label: "Proposition"
+        owner:
+          description: "À qui revient la décision : person (orientation produit, coût, engagement envers un client, choix irréversible) ou agent (technique, réversible, dans une étude approuvée). Vide vaut person."
+          label: "À qui"
+        owner_reason:
+          description: "Pourquoi un agent peut la prendre, en une ligne ; posé avec owner agent."
+          label: "Pourquoi elle revient à un agent"
+        raised:
+          description: "Quand la question a été posée (une date)."
+          label: "Posée le"
+        raised_by:
+          description: "Qui a posé la question (une personne, une exécution, une revue)."
+          label: "Posée par"
+        resolved:
+          description: "Quand elle a reçu sa réponse (une date). NON VIDE = RÉPONDUE : c'est ce que lit le correcteur ; une décision ouverte n'en a pas."
+          label: "Résolue le"
+        selected:
+          description: "La ou les options retenues ; vide tant que la décision est ouverte."
+          label: "Retenue"
+        source:
+          description: "D'où vient la question : un document, une revue, une exécution. Une référence courte, jamais l'argument lui-même (c'est le corps)."
+          label: "Source"
+        relayed:
+          description: "Renseigné quand une session d'agent a relayé la décision de la personne : quelle session, et comment la personne l'a confirmée."
+          label: "Relayée"
+    DecisionRelayed:
+      fields:
+        by:
+          description: "La session d'agent qui a relayé la décision."
+          label: "Relayée par"
+        confirmed:
+          description: "Comment la personne l'a confirmée (prompt, totp ou entra)."
+          label: "Confirmée par"
+        at:
+          description: "Quand la personne l'a confirmée."
+          label: "Le"
+    DecisionProposal:
+      fields:
+        option:
+          description: "L'option recommandée ; l'un des libellés."
+          label: "Option"
+        why:
+          description: "Pourquoi elle est recommandée, en quelques lignes."
+          label: "Pourquoi"
+    DecisionChallenge:
+      fields:
+        by:
+          description: "Qui l'a contestée (un agent ou une personne)."
+          label: "Par"
+        at:
+          description: "Quand elle a été contestée (une date)."
+          label: "Le"
+        points:
+          description: "Chaque point contre la proposition, une ligne chacun."
+          label: "Points"

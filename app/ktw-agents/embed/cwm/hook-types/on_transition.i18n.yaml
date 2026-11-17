@@ -1,0 +1,8 @@
+# Translations of the hook-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  description: >-
+    Quand un état de cycle de vie est sur le point de changer (ObjectTransition). Peut refuser
+    la transition.
+  label: Changement d'état

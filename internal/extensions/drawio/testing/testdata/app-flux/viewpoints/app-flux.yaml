@@ -1,0 +1,14 @@
+# A test viewpoint (not shipped): the app-flux notation, its template library
+# and a layered layout read left to right.
+id: app-flux
+displayName: Application flux (test)
+description: Applications coloured by domain and the flows between them, with their interface codes,
+  read left to right.
+notation: drawio-test:/notation/app-flux
+templates: drawio-test:/drawio-template/app-flux
+page: default
+layout:
+  algorithm: layered
+  direction: RIGHT
+  elkOptions:
+    elk.layered.nodePlacement.strategy: BRANDES_KOEPF

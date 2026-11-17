@@ -1,0 +1,5 @@
+# Translations of the review type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  title: "Contre-expertise de l'architecture"
+  description: "Une mise à l'épreuve contradictoire des décisions d'architecture du module : chaque affirmation, sa meilleure défense et son contre-argument."

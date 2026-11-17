@@ -1,0 +1,9 @@
+# Translations of the object type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+fr:
+  label: Document source
+  description: >-
+    La référence et un instantané du contenu d'une section d'un document
+    externe, ancre de dérivation des objets ingérés. Porte un content_hash
+    pour détecter la dérive. Enregistré par le service sources (ingestion),
+    réancré par lui et listé quand il est périmé.

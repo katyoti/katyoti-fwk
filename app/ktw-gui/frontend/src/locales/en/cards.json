@@ -1,0 +1,26 @@
+{
+  "count": "{{visible}} of {{total}}",
+  "searchTasks": "Search by name, description, tag, or category…",
+  "searchItems": "Search by name, description, or tag…",
+  "filterByTags": "Filter by tags",
+  "noTasks": "No tasks available yet.",
+  "tryBuilder": "Try {{task}} to create one.",
+  "noNodeTasks": "This item has no tasks yet.",
+  "pickNode": "Pick a different item or create one with {{task}}.",
+  "noMatch": "No tasks match your filters.",
+  "noMatches": "No matches for the current filters.",
+  "nothingToShow": "Nothing to show.",
+  "sortBy": "Sort by",
+  "sort": {
+    "name": "Name",
+    "category": "Category",
+    "source": "Source"
+  },
+  "star": "Add to the quick actions",
+  "unstar": "Remove from the quick actions",
+  "starLocked": "In the quick actions by default - its ✕ there removes it",
+  "removeQuick": "Remove from the quick actions - a star brings it back",
+  "showAllTasks": "See all tasks ({{count}} more)",
+  "formBadge": "form",
+  "showDescription": "Show task description"
+}

@@ -1,0 +1,44 @@
+# Registers `universe-tag` as a SYSTEM contribution kind (univers).
+#
+# Published from a sidecar's pack: embed/universe-tags/<tag>.yaml - a tag a
+# universe can carry (Univers.yaml `tags:`), declared by the pack whose work
+# it frames (ktw-acme declares archifactory). The universe-view service
+# resolves what a universe shows from the tags it carries.
+name: universe-tag
+description: |
+  What a universe carrying this tag shows, as allow-lists: its rail items,
+  Home panels, quick actions, + New types and object tabs, each with the
+  lowest display level (essentiel, standard, expert) that sees it, and the
+  task hashtags listed first. Presentation only: no permission.
+schema: system:/data-type/universe-tag
+validate: error
+
+# The texts a person reads, translatable through the `translations` layer.
+translatable: [label, description]
+
+layers:
+  data: {mediaType: application/json, required: true, default: true}
+  # The declaration as written: the YAML file of its pack.
+  source: {mediaType: application/yaml}
+  # Its texts in other languages: <tag>.i18n.yaml beside the entry.
+  translations: {mediaType: application/json, resident: true}
+meta:
+  budget: 320  # measured max 178 B across the shipped binaries (2026-11-16, description derived into meta), x1.5 rounded up
+  # Each entry's description is written once, in its data layer; the
+  # manifest builder derives it into meta, so a listing reads it from
+  # the index.
+  from: data
+  fields: [description]
+
+# A YAML file in the pack's `universe-tags/` folder, named by its file (the
+# tag a universe names), its tree the data layer, the file as written the
+# source, its `.i18n.yaml` its translations.
+source:
+  folder: universe-tags
+  match: ["*.yaml", "*.yml"]
+  id: basename
+  format: structured
+  layers:
+    data: {from: tree}
+    source: {from: file}
+    translations: {from: sibling, suffix: .i18n.yaml}

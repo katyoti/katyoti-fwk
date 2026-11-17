@@ -1,0 +1,14 @@
+name: input
+root: Input
+types:
+  Input:
+    type: object
+    fields:
+      seed:
+        type: string
+        description: "Optional starter prompt — what the user typed at task launch (e.g. 'a task that summarizes PDFs')"
+        optional: true
+      item_type_hint:
+        type: string@enum(task, agent, skill, service, sidecar)
+        description: "Optional pre-selected item type — skip Q1 if set"
+        optional: true

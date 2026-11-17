@@ -1,0 +1,19 @@
+# Translations of the data-type beside this file (modules/contributions/
+# contribution-types.md, Translations).
+
+fr:
+  types:
+    CapContributes:
+      fields:
+        kind:
+          description: "Le kind sous lequel l'objet est publié - tout kind déclaré (deck-theme, persona, task)"
+          label: "Kind"
+        id:
+          description: "L'id de l'entrée sous son kind ; vide signifie le slug de l'objet, sinon son id"
+          label: "Id"
+        layers:
+          description: "D'où vient chaque couche, par nom de couche : body, fields, fields.<clé>, capabilities.<capacité>, capabilities.<capacité>.<clé> ou files/<chemin relatif au module de l'objet>"
+          label: "Couches"
+        overrides:
+          description: "L'URI de l'entrée que celle-ci surcharge (fournisseur:/kind/id) ; elle ne porte alors que les couches qu'elle remplace et hérite des autres"
+          label: "Surcharge"
